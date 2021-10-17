@@ -1,0 +1,450 @@
+
+      ---------------------------------------------------------
+      Over the last few years the Standard MIDI File format 
+      has undergone several revisions and, not surprisingly, 
+      this has led to some confusion amongst both programmers 
+      and MIDI File users. In this first part of a two-part 
+      article Paul Overaa examines the current standard in 
+      detail !
+      ---------------------------------------------------------
+
+Standard MIDI Files (often called SMF files) are used primarily to transfer
+time-stamped MIDI data between different software packages. These files have
+been around for quite a time and those of you who are established 'MIDI-
+ites' will no doubt remember the many early MIDI programs (such as Opcode's 
+Sequencer 2.5, Intelligent Music's Jam Factory and Steinburg's Pro 24) which
+were quick to lend their support to the idea of such a common, portable, 
+file format. Today a great many software packages provide some level of 
+MIDI file support.
+
+Unfortunately things have gone less than smoothly on the MIDI file 
+development front. To start with the file format initially proposed was 
+limited to just a single stream of MIDI data. This was felt by many to be 
+too restrictive but nowadays, the MIDI File standard, under the control of 
+the International MIDI Association, has grown to allow track information,
+multiple streams, sequencer specific messages, and a host of other new event 
+types. The penalty we've had to pay for these new benefits is that the 
+standard has changed significantly from that which was originally proposed.
+It is obvious from the questions we get asked about MIDI files that most 
+MIDI users and ST programmers are not aware of exactly how the MIDI File 
+specification has changed. In this two-part mini-series we'll attempt to 
+put this right... firstly by looking at the MIDI File standard itself, and 
+secondly by looking at some of the programming tricks needed to interpret 
+the contents of such files.
+
+At the highest level MIDI Files consist of identifiable blocks of data 
+called 'chunks'. Each chunk consists of a 4 character identifier followed 
+by a 32 bit number which specifies the byte-length of the data held in the 
+chunk, ie all chunks adopt this type of arrangement...
+
+
+   Chunk  <chunk-identifier> <chunk-size> <actual chunk data>
+
+         4 Bytes       4 Bytes   chunk-size bytes
+
+
+At the moment only two types of chunks are defined: Header chunks which 
+have a 'MThd' identifier, and track chunks which have a 'MTrk' identifier.
+It is however highly likely that new chunk types will come into existence 
+in years to come... so any programs which read SMF files have to assume 
+that they WILL, one day, come across chunks which they cannot interpret. 
+The idea then, if you are writing your own software, is to write programs 
+which look at the chunk identifiers and skip over any chunks that cannot 
+be recognised. It's easy to do and we'll look at some typical chunk reading
+code next month !
+
+The idea of files consisting of identifiable chunks which may be used or 
+skipped over is similar to that used by Electronic Art's IFF format. 
+There are however a couple of important differences: Firstly, the SMF 
+arrangement does NOT support the idea of nested chunks - so the SMF 
+read/write routines are much simpler than the equivalent IFF routines.
+Secondly, SMF chunks are not padded to an even number of bytes like IFF 
+files. To be honest it would have been better for 68000 programmers if 
+they were because if the first chunk in memory started word-aligned then 
+all subsequent chunks would then also be word-aligned. Why would that 
+help ? It's because it leads to tidier code based on the adoption of
+structure based chunk access to all SMF chunks. As it is you can use some
+structure based code, but you do have to be careful to avoid inadvertently
+causing 68000 addressing errors. 
+
+
+Overall Chunk Arrangements
+--------------------------
+
+At the moment the two chunk types (Header and Track chunks) can be arranged
+in three ways, and this leads to three types of MIDI files: 
+
+Format 0 type files contain a header chunk followed by a single track 
+chunk - It's the simplest and most portable of all the MIDI file 
+arrangements and is used for storing a sequence as a single stream of MIDI 
+file events.
+
+Format 1 type files allow multiple simultaneous track sequences to be 
+handled. Such files will contain a header chunk followed by any number of 
+separate track chunks.
+
+Format 2 files allow sets of independent sequences to be stored. A sequencer
+might save the individual sequences (intro, verse, chorus etc.) which make
+up a complete song as a single format 2 type MIDI file. 
+
+Figure 1 shows the differences between these files types graphically. 
+
+
+                        ++++++++ header chunk
+   
+                        ******** track chunk
+
+
+                +++++++++++++
++++++++++++++          *** Trk 1 ***
+*** Trk 1 ***          *** Trk 2 ***  
+                *** Trk 3 ***
+
+Type 0 files hold      Type 1 files hold chunks of      
+ a single track       parallel track information.
+ of sequence data.          
+        
+
+
+   +++++++++++... *** Seq 1***... *** Seq 2 ***... *** Seq 3 *** etc.
+
+     Type 2 files can handle sets of independent sequences by 
+       treating each track chunk as a separate sequence. 
+
+
+    Figure 1: Three types of MIDI files are currently supported.
+
+
+
+
+
+The standard guarantees that all SMF files will start with a header 
+chunk, and that even if this header chunk is extended existing fields 
+will not be re-arranged. Programs can therefore assume that even though 
+they may find header chunks larger than they anticipated the fields 
+defined to-date will remain in the same relative positions.  
+
+
+Header Chunks
+-------------
+
+As we've said, the 'MThd' header chunk is always the first chunk in a 
+MIDI file. Like all chunks these start with the identifier followed by 
+four bytes which specify the chunk's size. Current header chunks have six 
+bytes of data... the first word gives the file format (0,1, or 2), the 
+second word tells you how many track chunks are present in the file, and 
+the last word contains timing division information. The contents therefore 
+take this form...
+
+
+    4 Bytes     'MThd' identifier
+    4 Bytes     Byte size of following data (currently 6) 
+    2 Bytes     MIDI file type (0, 1 or 2)
+    2 Bytes     Number of Tracks (always 1 for file type 0)
+    2 Bytes     Division information
+
+Interpretation-wise the only tricky item is the 'division' field because 
+it's contents and format may vary. If bit 15, ie the most significant bit, 
+is zero then bits 14-0 give a 15 bit number which specifies how many 
+delta-time ticks make up a crotchet...
+
+
+    bit 15   bit 14 -------------------- bit 0
+
+    0         Ticks per crotchet
+
+
+
+If bit 15 is set to 1 it indicates that a time-code based time is being 
+specified. In this case bits 14-8 give a negative number (two's complement)
+representing one of the four SMPTE or MIDI Timecode formats... -24,-25, -29
+(used for 30 drop frame) or -30. The second byte gives the resolution 
+within the frame with typical values being 4, 8, 10, 80 or 100...
+
+
+    bit 15   bit 14 -- bit 8  bit 7 -- bit 0
+    
+     1     Negative of the   Resolution
+          SMPTE format
+
+
+
+
+
+
+Track Chunks
+------------
+
+These consist of a 4 byte Track chunk identifier 'MTrk', a 32 bit length 
+field which tells you how much data the chunk contains, and one or more 
+Mtrk 'events'. The events themselves take a standardised form which 
+starts with a time field that specifies the amount of time which should 
+pass before the specified event occurs.
+
+These time fields, which are an integral part of the syntax of a MIDI 
+file event are called 'delta times'. Like several MIDI file items these 
+values are stored in a variable length format containing 7 real bits per 
+byte. The most significant bit (bit 7) is used to indicate either the 
+continuation, or the end, of the number...
+
+     1st Byte  2nd Byte....   n'th Byte
+     
+    1xxx xxxx  1xxx xxxx...   0xxx xxxx
+
+    ^      ^         ^
+    |      |         |
+    |      |    indicates the last byte of the number
+   indicates that more
+   bytes are to follow
+
+Using this arrangement, inter-event times which are less than 128 (usually 
+the majority of delta-times) can be stored in a single byte. The number 
+127 for example can be stored simply as binary 0111 1111. Once we get 
+above 127 we need more bytes to store the number. The variable length 
+format can, if you're not used to it, seem awkward to decode so here is 
+an example using the number 128 decimal to show how it's done...
+
+Basically we take the binary form of the number, peel off bits seven at a 
+time, and then push each group of seven bits into an eight bit (ie 1 byte)
+arrangement. Once a suitable number of bytes have been formed (and the 
+MIDI spec now specifies that a maximum of 4 bytes only may be used to 
+represent delta-times) we set the high bits in every byte except the last 
+one...
+
+Decimal number                  128
+
+Hex form                      80
+
+Binary representation           1 000 0000
+
+7 bits per byte form       0000 0001 0000 0000
+
+indicator bits          ^     ^
+                 |     |
+                 
+                set this   keep this                                 
+                bit high   bit clear
+
+
+Final binary form         1000 0001 0000 0000
+
+Hex equivalent           81 hex   00
+
+The number 128 decimal is therefore stored (most significant byte first) 
+as two bytes... 81 hex followed by 00 hex. 
+
+
+
+MIDI File events themselves can be one of three types:
+
+
+1: MIDI Events
+--------------
+
+Nowadays these are defined as being any MIDI channel message. By definition
+this means that MIDI files can only contain channel voice or channel mode 
+MIDI messages. In this respect the standard has changed because the early 
+(pre IMA) MIDI file standard used to allow storage of both channel messages
+and system common messages. 
+
+
+2: SYSEX Events
+---------------
+
+Normal SYSEX messages use a modified form which includes an additional 
+length, ie byte-count, field (stored as a variable length number)...
+
+        SYSEX Event1   <F0 hex> <length> <data bytes>
+
+If the SYSEX message is sent as a single packet then the last data byte 
+should be the EOX (F7 hex) SYSEX terminator. This may appear to be 
+unnecessary since a SYSEX message length field is also included. In the 
+original MIDI File standard it was indeed unnecessary and the terminal F7 
+byte was not required. The reason that the F7 terminator has been 
+re-introduced is that a new MIDI file SYSEX message has been devised 
+which allows large SYSEX messages to be broken up into time-stamped 
+packets.
+
+The new message actually starts with the F7 hex terminator and takes this
+general form...
+
+
+        SYSEX Event2   <F7> <length> <data bytes>
+
+
+If you want to split a SYSEX message up into time-stamped packets you 
+can do it by using the F0 form for the first data packet, and F7 forms 
+for any subsequent packets. The last data byte of the last packet of 
+information containing a 'real' terminal F7 hex data byte.
+
+There is no requirement within the current MIDI File Standard for this 
+second message type to include an initial F0 hex SYSEX status byte. This 
+means that it is permissible for non-legal MIDI file MIDI Messages, such 
+as Song Select, Song Position Pointer, real-time or MTC messages, to be 
+embedded within this latter form of SYSEX message. To be honest this is an 
+area of the standard that could lead to a number of compatibility problems.
+
+
+3: Meta Events
+--------------
+
+The current MIDI File standard supports a number of 'non-MIDI' events 
+known as Meta events. All start with an FF hex as the primary meta-event 
+identifier and this is followed by a meta event 'type' field, a byte count,
+and finally the data itself...
+
+  Meta Event   <FF hex> <meta-event type> <length> <data bytes> 
+              
+
+The meta-event type field is a 1 byte value between 0 and 127 and the 
+length field is stored in the same variable length format as is used for 
+delta-time values.
+
+The following table gives a brief summary of the meta events currently 
+defined, their formats and their contents. Amongst the following meta 
+events types are some variations of the basic Text event which are used 
+to identify particular types of ASCII text messages. Meta event type 
+identifiers 02 hex - 0F hex have been reserved for such messages although 
+not all have been defined at the current time...
+
+
+Description   Type (Hex) Length   Details
+-----------   ---------  ------   -------
+
+Sequence No.    00     2     16 bit number representing
+                    a sequence number. Must occur
+                    at the beginning of the track,
+                    ie before any non zero delta-times.
+
+Text Event     01   variable   Text describing anything at all.
+
+
+Copyright Notice  02   variable   Should be the first event in the
+                    first track.
+
+
+Sequence or    03   variable   Another ASCII text event
+Track Name
+
+
+Instrument Name  04   variable   An indication of the instrumentaton
+                    to be used for a track. It can be 
+                    used in conjunction with a Prefix 
+                    event to specify which MIDI channel
+                    the description applies to, or the
+                    channel number can be specified 
+                    within the text itself.
+
+
+Lyric       05   variable   A lyric to be sung. The idea here 
+                    is that each syllable will be a
+                    separate lyric event which is to 
+                    begin at the events starting time.
+
+
+
+Marker       06   variable   Used to mark a specific point in 
+                    a sequence.
+
+
+Cue Point     07   variable   A marker event used for video/film
+                    cue point marking.
+
+
+          08 - 0F       Reserved, but currently undefined
+
+
+
+Channel Prefix   20     1     This event contains a single data 
+                    byte which associates subsequent 
+                    events with a particular MIDI 
+                    channel. This state is effective 
+                    until the next normal MIDI event, 
+                    or the next Channel Prefix event.
+
+
+End Of Track    2F     0     This event MUST be used so that 
+                    an exact ending point can be 
+                    specified for a track. It's use 
+                    is non-optional !
+                    
+                    
+                    
+Set Tempo     51     3     A 24 bit number which represents 
+                    microseconds per quarter note. 
+                    These events should really only 
+                    occur at positions where real MIDI
+                    clocks would be located.   
+                  
+                  
+SMPTE Offset    54     5     The five bytes of this message 
+                    indicate hours, minutes, seconds 
+                    frame and frame fraction (in 
+                    1/100th's of a frame).
+
+                  
+Time Signature   58     4     The time signature is expressed 
+                    as four numbers NN DD CC and BB.
+                    NN is the time signature numerator,
+                    DD is the denominator expressed 
+                    as a power of 2, CC is the number 
+                    of MIDI clocks in a metronome click,
+                    and BB represents the number of 32nd
+                    notes in a MIDI quarter note.
+ 
+                    
+Sequencer Specific 7F   variable   This event allows sequencers to 
+                    include their own sequencer specific
+                    info. Manufacturers who use such 
+                    events are SUPPOSED to publish the 
+                    formats so that others can interpret 
+                    them.
+
+             
+             
+             
+  
+Last words
+----------
+
+So, that then is the basis of the current MIDI file standard as adopted 
+by the International MIDI Association. It's worth mentioning that running 
+status (ie the use of implied status bytes) is allowed within a stream of 
+MIDI events but this must not be carried across non-channel events. If a 
+stream of running status MIDI messages are interrupted by one or more Meta 
+or SYSEX events then a new status byte must be present in the first of any
+MIDI messages which follow. 
+
+To those of us who were involved with early MIDI files it is evident that 
+several changes have occured which may make MIDI files written with early 
+programs incompatible with sequencers designed to read the current standard.
+If nothing else this might be a useful warning for many people who seem to 
+believe that early MIDI files are equivalent to the new type 0 MIDI files. 
+Agreed they are similar... but they are clearly NOT identical... The End 
+of track events, which used to be optional, must now always be present. Set 
+Tempo and Time Signature meta-events have changed size, SYSEX messages have
+been re-defined, and a variety of new meta-events have been proposed. There
+are now explicitly defined header and track chunks and of course system 
+common messages are no longer allowed. The standard was officially published 
+in July 1988, so if you've got software packages which support MIDI files, 
+but were released before this time it is quite likely that they are not 
+implementing the full IMA adopted standard. 
+
+If you have had problems with MIDI files you should do two things: Firstly 
+write to your software supplier and ask whether the software you purchased
+conforms to the July 88 Standard MIDI File (1.0) document - and if not 
+press for details about the differences. Secondly, write to Atari ST 
+User... a lot of people seem to be having problems with MIDI files and, 
+with so many ST based musicians out there, we're getting rather interested 
+in finding out just what sort of difficulties you've been experiencing !
+
+
+Coming Soon
+-----------
+
+Next month we're going to delve into some of the problems associated with 
+writing your own MIDI File programs. It's not exactly beginners stuff... 
+but it's not impossibly hard either. If you want to know how to isolate 
+chunks, read variable length fields, identify events and interpret them 
+etc., then we'll show you how it's done !
+

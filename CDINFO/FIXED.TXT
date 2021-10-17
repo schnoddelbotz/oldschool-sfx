@@ -1,0 +1,29 @@
+
+version 1.0
+
+* All raw to file writing is done in WAV format!!
+* Choose graphical/text interface.
+* More info about the drive and capabilities.
+* Some bugs solved
+* Nice pic added it graphical version.
+* ONLY VGA !!
+
+version 1.1 -.2
+
+* bug solved with status
+* bug solved wav file creation
+* adjusted some field names
+* better system error handling
+* perhaps solution for interleaved drives
+
+version 1.3
+
+* perhaps solution for sector not found problem
+* add debugging feature
+
+version 1.4
+
+* solution for 'general failure' with panasonic & creative players
+* no flicker in graphics scene
+* more than 40 tracks can be seen
+

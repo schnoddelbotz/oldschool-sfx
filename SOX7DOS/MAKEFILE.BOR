@@ -1,0 +1,52 @@
+
+# Sound Tools Makefile
+#       builds libst.a and sox
+
+SUFFIXES = .c .obj .a
+
+FSRC= raw.c voc.c au.c sf.c aiff.c hcom.c 8svx.c sndrtool.c wav.c \
+	smp.c sbdsp.c auto.c
+ESRC= copy.c avg.c pred.c stat.c vibro.c echo.c rate.c band.c lowp.c reverse.c
+PSRC= sox.c
+
+SOURCES   = $(PSRC) $(FSRC) $(ESRC) handlers.c libst.c misc.c getopt.c
+
+LIBOBJS   = $(FOBJ) $(EOBJ) handlers.o libst.o misc.o getopt.o
+SOUNDLIB  = 
+FOBJ= raw.obj voc.obj au.obj sf.obj aiff.obj hcom.obj 8svx.obj \
+	sndrtool.obj wav.obj smp.obj sbdsp.obj auto.obj
+EOBJ= copy.obj avg.obj pred.obj stat.obj vibro.obj echo.obj \
+	rate.obj band.obj lowp.obj reverse.obj
+LIBOBJS   = $(FOBJ) $(EOBJ) handlers.obj libst.obj misc.obj getopt.obj
+SOUNDLIB = libst
+
+# there must be a borland flag for ANSI C!
+
+CFLAGS    = -DDOS -D__STDC__=1  
+CC        = cc
+CC        = gcc -fpcc-struct-return
+CC        = c:\borlandc\bin\bcc -Ic:\borlandc\include -Lc:\borlandc\lib
+
+TLIB      = c:\borlandc\bin\tlib
+
+.c.obj:
+	$(CC) $(CFLAGS) -c -d -O -Z -G $*.c
+	$(TLIB) $(SOUNDLIB) -$* +$*
+
+all: sox
+
+sox: sox.obj $(SOUNDLIB)
+	$(CC) $(CFLAGS) sox.obj $(SOUNDLIB).lib 
+
+$(SOUNDLIB): $(LIBOBJS)
+
+sox.obj:                sox.c st.h
+	$(CC) $(CFLAGS) -c -d -O -Z -G $*.c
+
+$(LIBOBJS):     st.h
+
+clean:
+	rm -f *.o
+	rm -f *.raw
+	rm -f *.sf
+	rm -f core

@@ -1,0 +1,835 @@
+Title:          Standard MIDI Files - Part II... Coding Hints
+
+
+Last month I went through the current SMF standard looking at the overall 
+layout of the 'chunks', and the events which can be placed inside track 
+chunks. This month it's time to look deeper, ie tackle some of the routines
+which are used by SMF programs.
+
+There's several questions that need to be answered...
+
+   1: How do we access the file in the first place. Do we load the 
+      file into our own buffer, or open it for direct reading and 
+      let the system handle the buffer arrangements ?
+
+   2: How do we find out what type of SMF files we are dealing with ?
+
+      
+   3: How do we read through the events present ?
+      
+
+
+File access methods depend very much on what you intend doing. If you 
+going to read and interpret the data as a stream of bytes then C's 
+standard file handling routines will be fine. If you have ideas about 
+scanning a multi-chunk type 1 file and building pointer tables so the 
+events of many tracks can be 'played back' according to their global time 
+ordering, then you'll be needing fast random access to events and it's then
+best to have the file under your control in memory.
+
+Loading the complete file into memory SHOULD bring the C programmer a 
+another advantage - namely that structure definitions could be used for 
+chunks, chunk identifiers, headers etc., (much the same as the Amiga's IFF
+standard operates). Here's one of my headers that shows the sort of 
+definitions that could be set up...
+
+
+/* ----------------------------------------------------------------------- */
+/* Title:        Standard MIDI File General Header                         */
+/* Disk Ref:     smf.h                                                     */
+/* ----------------------------------------------------------------------- */
+
+/* Four character IDentifier builder */
+#define MakeID(a,b,c,d)  ( (LONG) (a)<<24L | (LONG) (b)<<16L | (c)<<8 | (d) )
+
+/* Standard MIDI File IDs. SMF files ALWAYS start with an ID_HEADER chunk 
+which are then followed by one or more ID_TRACK chunks. New chunk types may
+be added... so chunk readers must be prepared to skip over chunks any which
+they do not understand or need */
+
+#define  ID_HEADER MakeID('M','T','h','d')
+#define  ID_TRACK MakeID('M','T','r','k')
+
+/* ----------------------------------------------------------------------- */
+/* Chunks start with a type ID and a count of the data bytes that follow */
+
+typedef struct {
+      LONG  ckID;
+      LONG  ckSize;
+      }ChunkInfo;
+
+typedef struct {
+      LONG  ckID;
+      LONG  ckSize;
+      UBYTE ckData[ 1 /* don't forget that this is really ckSize */ ];
+      }Chunk;
+
+
+typedef struct {
+      LONG  ckID;
+      LONG  ckSize;
+      UWORD Format;
+      UWORD Tracks;
+      UWORD Division;
+      }HeaderChunk;
+
+
+/* ChunkPSize computes total physical size of a chunk from it's data size */
+ 
+#define ChunkPSize(dataSize)  (dataSize + sizeof(ChunkInfo))
+
+
+/* ----------------------------------------------------------------------- */
+
+
+This structure orientated approach is fine and leads to nice clean code 
+but to make maximum use of it you have to be prepared to do some work as 
+you read the file into memory. What work ? Track chunks have to be padded
+so that they become an even number of bytes long - if you don't the poor 
+old 68000 chip will go cranky as it starts seeing odd addresses during 
+structure-orientated chunk access. 
+
+I'm not going to deal with padded-read techniques because, to be honest, 
+it's not the way most people handle SMF files. I mention it in passing 
+because it just seems a shame that the SMF standard didn't specify pad 
+bytes for odd byte length chunks ! 
+
+If you arrange for your buffer to start on an even boundary then it is
+possible to access the header chunk via the structure orientated definitions 
+given in the smf.h header file. At the moment, since the header chunk is an 
+even number of bytes long you could handle a first track chunk in this way
+as well (so all type 0 files could be safely handled with this approach).
+
+For general multi-chunk analysis however any pointer is likely to need to 
+move through the buffer on a byte-by-byte basis so one generally useful
+solution is to declare the buffer pointer as say...
+
+          UBYTE *pointer;
+
+and then use casts for the structure-allowable fields, like this...
+
+          identity=((HeaderChunk *)pointer)->ckID; /* Get Chunk identity */
+
+          /* first check that the file loaded is actually a MIDI File */
+
+          if(identity!=ID_HEADER) {printf(ERROR_MESSAGE_2);}
+
+          else { do something with this MIDI file }
+
+
+The format and track count fields can be obtained in a similar fashion,
+for example...
+
+          format=((HeaderChunk *)pointer)->Format;
+
+          tracks=((HeaderChunk *)pointer)->Tracks;
+
+          printf("%s %d %s %d ", "This is a ",
+          
+          tracks," track SMF type ",format);
+
+
+We can use this sort of info to build a high-level chunk reading loop like 
+this..
+
+
+          for (i=0;i<tracks;i++)
+
+                      { 
+
+                       Do some preliminary setting up of any pointers
+                       which are to be used
+
+                       Analyse Track Chunk
+   
+                       } /* end of for-loop */
+
+
+In order to analyse a track chunk you've got to be able to skip through
+the various events. This cannot be done do without interpreting those 
+variable length items, such as the delta-times and size values for sysex
+events, so we need to have a look at this in more detail...
+
+
+
+Delta-Times and Variable Length Numbers 
+---------------------------------------
+
+We saw last month that the track chunks of standard MIDI files store 
+information about MIDI events and other related data. Each event in 
+the  file is preceded by a  'delta-time'  which represents the number 
+of clocks which should elapse between the previous event and the 
+start of a new event.
+
+Delta-times, just to remind you, are stored using 7 bits (bits 0 - 6) 
+per byte with the most significant bits coming first.  Bit 7  itself is 
+used only as a position indicator - all bytes except the last byte have 
+bit 7 set high, the last byte has bit 7 set low. 
+
+The format used for delta-time representation is the same as that 
+used for several other SMF fields, so the following decoding routines 
+therefore turn out to be of general use. To decode a variable length
+number you look at the first byte of the number (which may of course 
+also be the last byte) and extract the lower seven bits (bit 0 -> bit 6
+inclusive) of the byte. If bit 7 of the byte was set then you'll know 
+that  the next byte is also part of the number....  so you  shift the 
+first seven bits along, and bring in the next seven bits from the next 
+byte. You repeat this process until the byte being dealt with has bit 7 
+clear,  i.e.  until you're dealing with the last byte of the number.
+
+I'll tackle the code problems from the point of view of routines which 
+read from a buffer set up by the program itself, namely because that's
+what our example program does. 
+
+To give you an example of the type of code needed we'll assume 
+that you have loaded a Standard MIDI File into a buffer and that 
+buffer_p is a pointer which points to the start of the buffer, or 
+the start of one of the delta-times present in the buffer. First 
+here's some C code WITHOUT any of the usual C shortcuts, so you 
+can see exactly what needs to be done...
+
+
+time = *buffer_p;          /* get a byte */
+
+buffer_p = buffer_p+1;     /* increment the pointer */
+
+if(time & 0x80)            /* if bit 7 is set */
+
+   {
+
+   time=time &0x7F;      /* mask out bit 7 */
+
+   do
+
+      {
+
+      nextbyte = *buffer_p;    /* get next byte */
+
+      buffer_p = buffer_p+1;   /* increment pointer */
+
+      time = (time <<7) + (nextbyte & 0x7F); /* shift data and add new bits */
+
+      }while (nextbyte & 0x80);
+
+   }
+
+/* time variable now holds the decoded delta-time */
+
+
+If  we  shorten  this code by using a few standard  C  tricks  to 
+combine the reading,  incrementing and testing operations, we'll end 
+up with code which looks like this...
+
+
+if (( time = *buffer_p++) & 0x80)
+
+    {
+
+     time &= 0x7F;
+
+     do
+
+        {
+
+         nextbyte = *buffer_p++; 
+
+         time = (time<<7) + (nextbyte & 0x7F);
+
+         } while (nextbyte & 0x80);
+
+    }
+
+     /*  The variable time 'time' now contains the 
+         decoded delta-time in ULONG integer form */
+
+
+
+With 'time' and 'nextbyte' declared as ULONG (unsigned long ints) variables 
+such procedures  can  only handle integers up to four bytes in size. The 
+early SMF specs didn't specify an upper limit and, in theory at least, 
+it was possible to have delta-times which contained any number of bytes. 
+Nowadays the problem has disappeared - the standard specifies that a 
+maximum of four bytes only may be used to specify a delta-time !
+ 
+If you've forgotten why this variable length arrangement is used in 
+Standard MIDI Files here's the reason again... it's because most MIDI 
+events come close together, i.e. the delta-times between events are 
+small values (often numerically less than 128). By using a variable 
+length format it's possible to store most delta-times using only one 
+byte, yet when larger values are required more bytes can be used. If a 
+fixed length scheme had been  adopted the byte length would have had to 
+be 4 bytes for each delta-time in order to cope with the occasional high 
+value delta-time that might be required (2 bytes would not have been 
+sufficient and 3 bytes would have made life rather awkward for the 
+programmer). 
+
+The  above example is similar to the code originally suggested by 
+Opcode  systems and it is optimized for the analysis of single byte 
+delta-times. Using the standard resolution the delta-times are mainly 
+single byte values... but as the 'ticks-per-crotchet' resolution 
+increases, numerical delta-time values increase as well leading to 
+increased delta-time overall byte sizes. Standard MIDI Files allow for 
+the storage of data using higher  resolutions and it's possible that a 
+slightly re-arranged decoding  routine  would be more appropriate under  
+higher tick resolution conditions. Here's a sketch of an alternative 
+read routine  which should be more efficient for those files where the 
+delta-times consist mainly of two or more bytes...
+
+
+     do 
+          {  nextbyte = buffer_p++; 
+ 
+             time = ( time<<7 ) + ( nextbyte & 0x7F );
+    
+           }while(!(nextbyte &0x80));
+
+
+
+Which method have I used ? It's a pointer-based variation on the first 
+method we looked at. Here's the complete function code as you'll find it
+in the example program...
+
+
+ULONG ReadVarLen(void)
+
+{
+
+ULONG value; UBYTE c;
+
+value=(ULONG)*local_pointer++;
+
+if(value&0x80)
+
+   { 
+   
+   value&=0x7F;
+   
+   do {value=(value<<7)+((c=*local_pointer++)&0x7F);} while(c&0x80);
+
+   }
+
+return(value);
+
+}
+
+You wil also see a similar routine ReadChunkSize() which gets around the 
+problem of reading any chunk's chunksize value without using a structure 
+reference...
+
+ULONG ReadChunkSize(UBYTE *RCS_pointer)
+
+{
+
+ULONG value; UBYTE i;
+
+RCS_pointer+=4; /* skip over chunk identifier */
+
+value=*RCS_pointer++;
+
+for (i=0;i<3;i++) { value=(value<<8)+(*RCS_pointer++);}
+
+return(value);
+
+}
+
+
+Another almost identical routine can be used to read the chunk identities 
+of non word-aligned chunks buried inside the file...
+
+ULONG ReadChunkID(UBYTE *RCID_pointer)
+
+{
+
+ULONG value; UBYTE i;
+
+value=*RCID_pointer++;
+
+for (i=0;i<3;i++) { value=(value<<8)+(*RCID_pointer++);}
+
+return(value);
+
+}
+
+
+A Runable Example
+-----------------
+
+The following example is only a skeleton command-line SMF reader. If you
+give it a path/filename which corresponds to an SMF file it will load the 
+file and look at the header to see what type of SMF file it is, and then 
+loop through each chunk counting the various events it comes across. I've 
+opted for quite a large set of global variables - I'm aware of the 
+disadvantages of globals but in this particular case it really does help 
+avoid a lot of time consuming parameter passing. 
+
+As well as a high level chunk pointer there's a duplicate local pointer 
+set up - as events are recognized they are counted, and then the local 
+pointer is incremented by a value which results in skipping to the next 
+event (the sizes of Meta-events and Sysex events are calculated, MIDI-event 
+sizes are predefined). 
+
+The program handles all event types, can cope with running status and, on 
+most occasions will even recover from a badly formed event or bad chunk. 
+Once the header chunk has been read it should only find track chunks but,
+if it does suddenly come across an unknown ID it will skip that chunk and
+continue looking for the track chunks that the header said were supposed
+to be there. At the end of the day, if the file is OK, the program prints 
+a list giving the numbers of events it encountered. 
+
+
+
+/* ======================================================================= */
+/* Standard MIDI File - Example High Level Reader Code                     */
+/* Paul Overaa - September 90                                              */
+/* ----------------------------------------------------------------------- 
+
+Here's the basic idea behind the high level code...
+
+Specify include files, prototypes, defines, and globals to be used.
+
+First run-time job is to load the user specified file into the buffer.
+
+    If load NOT OK  { give an error message }
+              
+              else  { look to see whether it really is a MIDI file
+              
+                      If NOT a MIDI File { give an error message }
+              
+                           else {  
+                                
+                                   1: Get the header details
+                                
+                                   2: Loop analysing each chunk in turn
+      
+                                   3: Display some results
+                                 
+                                 }
+                    }
+  ------------------------------------------------------------------------ */
+
+/* includes */
+
+#include <stdio.h>
+#include <types.h>
+#include <ram:smf.h>
+
+/* prototypes */
+
+BOOL  LoadBuffer(TEXT *filename, UBYTE *buffer_p, LONG buffersize);
+ULONG ReadChunkSize(UBYTE *RCS_pointer);
+ULONG ReadChunkID(UBYTE *RCID_pointer);
+ULONG ReadVarLen(void);
+void  SysexEvent(void);
+void  MidiEvent(void);
+void  MetaEvent(void);
+void  AnalyseTrackChunk(void);
+
+/* defines */
+
+#define BUFFERSIZE  10000
+#define READ        "r"
+#define NOTE_OFF                0x80
+#define NOTE_OFF_SIZE              2
+#define NOTE_ON                 0x90
+#define NOTE_ON_SIZE               2
+#define PAT                     0xA0
+#define PAT_SIZE                   2
+#define CONTROL_CHANGE          0xB0
+#define CONTROL_CHANGE_SIZE        2
+#define PROGRAM_CHANGE          0xC0
+#define PROGRAM_CHANGE_SIZE        1
+#define CHANNEL_PRESSURE        0xD0
+#define CHANNEL_PRESSURE_SIZE      1
+#define PITCHBEND               0xE0
+#define PITCHBEND_SIZE             2
+
+/* some messages */
+
+#define NO_ERROR_MESSAGE "file which looks OK, here are some details:\n\n"
+#define ERROR_MESSAGE_1  "Cannot load this file\n"
+#define ERROR_MESSAGE_2  "This is NOT a Standard MIDI File\n"
+#define ERROR_MESSAGE_3  "file but it doesn't look right\n"
+#define ERROR_MESSAGE_4  "We've hit (and skipped over) an UNKNOWN CHUNK\n"
+
+/* some globals */
+
+BOOL    global_exit_flag, g_unrecognized_byte=FALSE;
+
+UBYTE   buffer[BUFFERSIZE], g_current_status, *g_pointer, *g_local_pointer; 
+
+ULONG   g_current_datasize, g_previous_datasize,
+        g_meta_event_count=0, g_sysex_event_count=0,
+        g_note_off_event_count=0, g_note_on_event_count=0, 
+        g_pat_event_count=0, g_control_change_event_count=0, 
+        g_program_change_event_count=0, g_channel_pressure_event_count=0, 
+        g_pitchbend_event_count=0;
+/* ----------------------------------------------------------------------- */
+
+main(int argc, char *argv[])
+
+{
+
+ULONG identity; 
+
+UWORD format, tracks; 
+
+UBYTE i;
+
+if (LoadBuffer(argv[1], buffer, BUFFERSIZE)==TRUE)
+
+         {printf(ERROR_MESSAGE_1);}
+
+    else { 
+
+          g_pointer=buffer;          
+
+          identity=((HeaderChunk *)g_pointer)->ckID; /* Get Chunk identity */
+
+          /* first check that the file loaded is actually a MIDI File */
+
+          if(identity!=ID_HEADER) {printf(ERROR_MESSAGE_2);}
+
+           else { /* This is a Standard MIDI File, so get header details */
+
+                 format=((HeaderChunk *)g_pointer)->Format;
+
+                 tracks=((HeaderChunk *)g_pointer)->Tracks;
+
+                 printf("%s %d %s %d ", "This is a ",
+                  tracks," track SMF type ",format);
+
+                 /* now deal with each new track chunk in turn  
+                    - at the moment the g_pointer is still at the 
+                    start of the buffer, ie at the start of the 
+                    HEADER chunk.... */
+ 
+                 for (i=0;i<tracks;i++)
+
+                      { 
+
+                       g_previous_datasize=ReadChunkSize(g_pointer); /* previous chunk */
+ 
+                       g_pointer+=g_previous_datasize+sizeof(ChunkInfo); /* skip to new chunk */
+  
+                       g_local_pointer=g_pointer; /* start of chunk data */
+       
+                       /* Must check that we've got a track chunk */
+                       
+                       identity=ReadChunkID(g_pointer);
+                       
+                       if(identity!=ID_TRACK) 
+                       
+                          {
+                                
+                           printf(ERROR_MESSAGE_4);
+                        
+                           i--; /* adjust track counter or we 
+                                   will lose a real track */
+                          
+                          }
+                        
+                        else
+                        
+                          { g_current_datasize=ReadChunkSize(g_pointer);
+
+                           g_local_pointer+=sizeof(ChunkInfo); /* start of data */
+
+                           AnalyseTrackChunk(); /* read events */
+                          
+                          }
+   
+                       } /* end of for-loop */
+
+                  if (g_unrecognized_byte) {printf(ERROR_MESSAGE_3);}
+
+                       else { /* Display some results */
+                        
+                             printf(NO_ERROR_MESSAGE);
+                             
+                             printf("Meta event count.............. %d\n", 
+                                     g_meta_event_count);
+                         
+                             printf("Sysex event count............. %d\n",
+                                     g_sysex_event_count);
+                              
+                             printf("Note Off event count.......... %d\n",
+                                     g_note_off_event_count);
+                                  
+                             printf("Note On event count........... %d\n",
+                                     g_note_on_event_count);
+          
+                             printf("Poly AT event count........... %d\n",
+                                     g_pat_event_count);
+                             
+                             printf("Control change event count.... %d\n",
+                                     g_control_change_event_count); 
+                            
+                             printf("Program change event count.... %d\n", 
+                                     g_program_change_event_count);
+                             
+                             printf("Channel pressure event count.. %d\n", 
+                                     g_channel_pressure_event_count);
+         
+                             printf("Pitchbend event count......... %d\n",
+                                     g_pitchbend_event_count);
+ 
+                            }
+
+                   } /* end of Standard MIDI File analysis */
+                
+                } /* end of successful file load */
+ 
+} /* END OF MAIN - AND ALSO THE 'LOGICAL END' OF THE PROGRAM */
+
+/* ----------------------------------------------------------------------- */
+
+BOOL LoadBuffer(TEXT *filename, UBYTE *buffer_p, LONG buffersize)
+
+{
+
+WORD c; LONG count=0; FILE *file_p;
+
+BOOL exit_flag=FALSE, error_flag=FALSE;
+
+if (file_p=fopen(filename, READ))
+
+      {
+
+       while(!exit_flag)
+  
+          {  
+    
+          c=getc(file_p); count++;
+      
+          if(c!=EOF) 
+          
+              {
+                
+               if (count<=buffersize) {*(UBYTE *)buffer_p++=c;}
+                
+                else {error_flag=TRUE;}
+              
+               }
+
+               else {exit_flag=TRUE;}
+ 
+           }
+
+       fclose(file_p); 
+
+       } /* end of file open OK */
+    
+ else {error_flag=TRUE;}
+           
+return(error_flag);
+
+}
+
+/* ----------------------------------------------------------------------- */
+
+void AnalyseTrackChunk(void)
+
+{
+
+/* This routine uses a global copy of the current chunk g_pointer. Why ? It's
+   so at the end of the analysis the real chunk pointer is still pointing
+   to the start of the chunk - in readiness for skipping to next chunk */
+
+ULONG time;
+
+UBYTE event_type;
+
+/* This loop will examine track data. If it comes across an event
+   that cannot be understood... it quits that the analysis of the
+   current track chunk */ 
+
+global_exit_flag=FALSE;
+
+do
+
+   {
+
+   time=ReadVarLen(); event_type=*g_local_pointer;
+
+   if (event_type<0x80)
+
+         { 
+
+          MidiEvent();
+
+          }
+   
+    else {
+      
+         g_local_pointer++; /* skip identifers for these events */
+     
+         switch(event_type)
+        
+                {
+                
+                case 0xF0: SysexEvent(); g_current_status=NULL; break;
+                      
+                case 0xF7: SysexEvent(); g_current_status=NULL; break;
+                                
+                case 0xFF: MetaEvent();  g_current_status=NULL; break;
+                
+                default:   g_current_status=event_type&0xF0; MidiEvent();
+
+                }
+
+         }
+
+   if (g_local_pointer>=g_pointer+g_current_datasize+sizeof(ChunkInfo))
+
+         {global_exit_flag=TRUE; }
+
+   }while(!global_exit_flag);
+
+}
+
+/* ----------------------------------------------------------------------- */
+
+void MetaEvent(void)
+
+{
+
+ULONG event_datasize, event_identifier;
+
+event_identifier=*g_local_pointer; 
+
+g_local_pointer++;
+
+g_meta_event_count++; 
+
+event_datasize=ReadVarLen();
+
+g_local_pointer+=event_datasize;
+
+}
+
+/* ----------------------------------------------------------------------- */
+
+void MidiEvent(void)
+
+{
+
+switch(g_current_status)
+
+        {
+  
+  
+        case NOTE_OFF:          g_local_pointer+=NOTE_OFF_SIZE;
+                                g_note_off_event_count++;
+                                break;
+
+        case NOTE_ON:           g_local_pointer+=NOTE_ON_SIZE;
+                                g_note_on_event_count++;
+                                break;
+
+        case PAT:               g_local_pointer+=PAT_SIZE;
+                                g_pat_event_count++;
+                                break;
+
+        case CONTROL_CHANGE:    g_local_pointer+=CONTROL_CHANGE_SIZE;
+                                g_control_change_event_count++;
+                                break;
+
+        case PROGRAM_CHANGE:    g_local_pointer+=PROGRAM_CHANGE_SIZE;
+                                g_program_change_event_count++;
+                                break;
+
+        case CHANNEL_PRESSURE:  g_local_pointer+=CHANNEL_PRESSURE_SIZE;
+                                g_channel_pressure_event_count++;
+                                break;
+
+        case PITCHBEND:         g_local_pointer+=PITCHBEND_SIZE;
+                                g_pitchbend_event_count++;
+                                break;
+        
+        default: g_unrecognized_byte=TRUE; global_exit_flag=TRUE;
+        
+        }
+
+}
+
+/* ----------------------------------------------------------------------- */
+
+void SysexEvent(void)
+
+{
+
+ULONG event_datasize;
+
+event_datasize=ReadVarLen();
+
+g_local_pointer+=event_datasize;
+
+g_sysex_event_count++;
+
+}
+
+/* ----------------------------------------------------------------------- */
+
+ULONG ReadVarLen(void)
+
+{
+
+ULONG value; UBYTE c;
+
+value=(ULONG)*g_local_pointer++;
+
+if(value&0x80)
+
+   { 
+   
+   value&=0x7F;
+   
+   do {value=(value<<7)+((c=*g_local_pointer++)&0x7F);} while(c&0x80);
+
+   }
+
+return(value);
+
+}
+
+/* ----------------------------------------------------------------------- */
+
+ULONG ReadChunkSize(UBYTE *RCS_pointer)
+
+{
+
+ULONG value; UBYTE i;
+
+RCS_pointer+=4; value=*RCS_pointer++;
+
+for (i=0;i<3;i++) { value=(value<<8)+(*RCS_pointer++);}
+
+return(value);
+
+}
+/* ----------------------------------------------------------------------- */
+
+ULONG ReadChunkID(UBYTE *RCID_pointer)
+
+{
+
+ULONG value; UBYTE i;
+
+value=*RCID_pointer++;
+
+for (i=0;i<3;i++) { value=(value<<8)+(*RCID_pointer++);}
+
+return(value);
+
+}
+
+/* ======================================================================= */
+
+
+
+
+
+
+
+
+

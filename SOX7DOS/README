@@ -1,0 +1,151 @@
+
+
+		ST: Sound Tools
+
+
+
+ST translates sound samples between different file formats,
+and performs various sound effects.
+
+This release understands "raw" files in various binary formats,
+Sound Blaster .VOC files, IRCAM SoundFile files, SUN Sparcstation 
+.au files, mutant DEC .au files, Apple/SGI AIFF files, 
+Macintosh HCOM files, Sounder files, and Soundtool (DOS) files.
+
+The sound effects include changing the sample rate, adding echo 
+delay lines, applying low- and band-pass filtering, and the 
+infamous Fender Vibro effect.
+
+History:
+This is the sixth release of the Sound Tools.  Patchlevel 8.
+
+This release includes many many bug fixes from helpful
+users.  It has a (fairly) clean DOS port via
+Turbo C, and Amiga, QNX, and VMS ports.  
+New are Turtle Beach SampleVision and the 
+Auto-Detect handlers.  You can now read and 
+write stereo .VOC files
+if you manually select stereo mode.
+
+There is a nice graphical front-end for the NeXT
+called GISO.  Check the comp.sys.next group
+or poke around the NeXT binary sites.  Also
+someone has done an OS/2 port.
+
+The DOS port requires 8.3 file names.  Ick.
+
+Caveats:
+SOX is intended as the Swiss Army knife of sound
+processing tools.  It doesn't do anything very well,
+but sooner or later it comes in very handy.
+SOX is really only useable day-to-day if you
+hide the wacky options with one-line shell scripts.
+
+Channel averaging doesn't work.  The software architecture
+of stereo & quad is bogus.
+
+The VMS and Amiga ports were done against old versions
+of SOX.  I digested the contributed fixes and files
+into altered source files.  There are, I'm sure, a 
+few little fixes which need to be done before this release
+compiles and runs on these two platforms.
+
+Installing:
+Use the DOS, Unix, or Amiga Makefile as appropriate.
+The Makefile needs one option set: -DSYSV if you're on a
+System V machine, or -DBSD if you're on a BSD-ish machine.
+See the INSTALL file for more detailed instructions.
+
+After compiling, run 'tests.sh'.  It should print nothing.  This
+indicates that data is copied correctly.  By reading the tests
+you may see how to make a sound sample file which you can play.
+'monkey.au' and 'monkey.voc' are a short lo-fi monkey screech
+in two supported file formats, to help you ensure that Sound 
+Tools works.  Note: 'tests.sh' works only under the Unix sh(1) 
+shell.  Use 'tests.com' under VMS.
+
+Then, run 'testall.sh'.  This copies monkey.voc into all other
+supported file formats, making files in /tmp.  Then, it
+translates those formats back into .voc format.  This
+ensures (slightly) that all of the readers & writers don't 
+core-dump.
+
+SOX uses file suffices to determine the nature of a sound sample file.
+If it finds the suffix in its list, it uses the appropriate read
+or write handler to deal with that file.  You may override the suffix
+by giving a different type via the '-t type' argument.  See the manual
+page for more information.  The 'tests.sh' script illustrates various
+sox usages.
+
+SOX has an auto-detect feature that attempts to figure out
+the nature of an unmarked sound sample.  It works very well.
+
+I hope to inspire the creation of a common base of sound processing
+tools for computer multimedia work, similar to the PBM toolkit for 
+image manipulation.
+
+Sound Tools may be used for any purpose.  Source
+distributions must include the copyright notices.  Binary
+distributions must include acknowledgements to the creators.
+The files I wrote are copyright Lance Norskog.
+The contributed files are copyright by their respective authors.
+
+When you have minor changes to contribute, it's OK to post
+them; if you have a major release, please send it to me.
+I'd like to coordinate the releases and do a peer review.
+Please document your changes.  I don't possess every kind
+of computer currently sold, and SOX is now beyond the phase
+where I can understand and test most of your contributions.
+Please make your diff files such that your changes are 
+set off with ifdefs, and document them. 
+
+Note: There will be absolutely no more hardware driver
+handlers in SOX.  Playing & recording sound samples is
+not SOX's job; translation and sound effects is it.
+
+Enjoy!
+
+	Creator & Maintainer:
+		Lance Norskog		thinman@netcom.com
+
+	Contributors:
+		Guido Van Rossum	guido@cwi.nl
+			AU, AIFF, AUTO, HCOM, reverse,
+			many bug fixes
+		Jef Poskanzer		jef@well.sf.ca.us
+			original code for u-law and delay line
+		Bill Neisius		bill%solaria@hac2arpa.hac.com 
+			DOS port, 8SVX, Sounder, Soundtool formats
+			Apollo fixes, stat with auto-picker
+		Rick Richardson		rick@digibd.com
+			WAV and SB driver handlers, fixes
+		David Champion		dgc3@midway.uchicago.edu
+			Amiga port 
+		Pace Willisson		pace@blitz.com
+			Fixes for ESIX
+		Leigh Smith		leigh@psychok.dialix.oz.au
+			SMP and comment movement support.
+		David Sanderson		dws@ssec.wisc.edu
+			AIX3.1 fixes
+		Glenn Lewis		glewis@pcocd2.intel.com
+			AIFF chunking fixes
+		Brian Campbell		brianc@quantum.qnx.com
+			QNX port and 16-bit fixes
+		Chris Adams		gt8741@prism.gatech.edu
+			DOS port fixes
+		John Kohl		jtkohl@kolvir.elcr.ca.us
+			BSD386 port, VOC stereo support
+		Ken Kubo		ken@hmcvax.claremont.edu
+			VMS port, VOC stereo support
+
+	Matthew Stier of Sun East contributed a version for
+	SUNos 4.1, but it included massive gratuitous code 
+	beautification and I couldn't use it.  This release 
+	compiles under whatever version of SUNos is on 
+	netcom2.netcom.com.
+		
+		
+
+		(your name could be here, too)
+
+

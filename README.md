@@ -1,3 +1,13 @@
+# WARNING BY RIAA and FBI 
+
+https://github.com/schnoddelbotz/oldschool-sfx/blob/main/TP/OLDHARRY/MOESI/MOESI.PAS#L18
+
+Is only one example of non-standard english language.
+You have been warned. This is an experiment, nothing for kids.
+For educational purposes only.
+
+For more details, see https://www.fbi.gov/#OSSEDU
+
 # oldschool-sfx
 
 XM MOD DOS Collection - Backup of some old Music and Software

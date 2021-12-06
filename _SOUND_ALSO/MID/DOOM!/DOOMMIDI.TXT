@@ -1,0 +1,11 @@
+Here is all of the music from the game DOOM in General MIDI format.
+
+Enjoy.
+
+Remember that all this music is the property of Id Software.  Do not use in
+your own demos/games without their permission.  This is merely for your
+personal listening pleasure.
+
+Extracted/Converted by Jeremy Blackman [ranma@eskimo.com]
+Conversion Routines by Joakim Erdfelt  [joakim.erdfelt@swbbs.com]
+       [with some small help on MIDI format from Jeremy Blackman]

@@ -1,0 +1,35 @@
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ The Aurora Editor v1.20  - main macro source                       ³
+//³                                                                    ³
+//³ Do not modify this file.                                           ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  // create profile object
+  objnew%  prf 173 a.
+
+  // configuration settings
+  #get (
+    = %n (pat "acfg.x" (qdskpat %b)).
+    if (dskloc n) n (pat "acfg.a" (qdskpat %b))
+  ).
+
+  // menu definitions
+  #get (
+    = %n (pat "amen.x" (qdskpat %b)).
+    if (dskloc n) n (pat "amen.a" (qdskpat %b))
+  ).
+
+  // macro library code
+  #get (
+    = %n (pat "alib.x" (qdskpat %b)).
+    if (dskloc n) n (pat "alib.a" (qdskpat %b))
+  ).
+
+  // keyboard and mouse definitions
+  #get (pat "akbd.a" (qdskpat %b)).
+
+
+  // text translation definitions
+  #get (pat "atrn.a" (qdskpat %b)).
+

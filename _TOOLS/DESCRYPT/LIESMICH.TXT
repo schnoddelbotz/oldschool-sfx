@@ -1,0 +1,899 @@
++----------------------------------------------------------+
+|                                                          |
+|               Der elektronische Daten-Tresor             |
+|                                                          |
++----------------------------------------------------------+
+
+
+
+1) AB SOFORT: DATENSCHUTZ IN EIGENER HAND
+
+Mit dem "elektronischen Daten-Tresor" schtzen Sie Ihre
+pers”nlichen PC-Dateien - ob auf Diskette, Festplatte oder
+unterwegs bei šbertragungen im Computernetz - mit der gesetzlich
+vorgeschriebenen Verschlsselungsmethode 'DES' (data encryption
+standard) der amerikanischen Wirtschaft.
+
+šberall bleiben Ihre PC-Dateien absolut unleserlich - ob Texte,
+Rechenbl„tter, Datenbankdaten, Grafiken etc. Jede Art von
+Datei bis zu 32 MByte Umfang wird von diesem Programm
+verschlsselt! Eine Entschlsselung ist nur mit demselben Codewort
+(Schlsselwort) m”glich, das Sie auch zur Verschlsselung benutzt
+hatten.
+
+ACHTUNG: Ihr Schlsselwort darf maximal acht Zeichen lang sein und
+kann aus allen Zeichen auf Ihrer Tastatur bestehen - nur nicht aus
+den ASCII-Zeichen von 0 (dez) bis 35 (dez) der ASCII-Tabelle.
+
+WARNUNG: Verschlsselte Dateien bleiben fr immer verloren, wenn
+Sie Ihren selbst vergebenes Codewort verloren haben. Merken Sie
+sich daher Ihre Codeworte so sorgf„ltig wie z.B. den Geheimcode
+fr Ihre EuroCheque-Karte!
+
+W„hlen Sie als Codewort beispielsweise "HeuTe", dann verwrfelt
+der DES-Algorithmus im "elektronischen Daten-Tresor" auf der Basis
+dieses Worts Ihre Datei derart, daá sie niemand rekonstruieren
+kann. Selbst gewiefte Code-Knacker brauchen mit
+H”chstleistungsrechnern wie CRAY in der Gr”áenordnung von sechs
+Jahren, um alle Codeworte durchzuprobieren und eine
+Entschlsselung zu versuchen. Bis dahin sind Informationen meist
+berholt oder Inhalte verj„hrt.
+
+BITTE BEACHTEN: Merken Sie sich nicht nur das Codewort, sondern
+auch seine exakte Schreibweise. Haben Sie z.B. "heute" in
+Kleinschreibung als Codewort gew„hlt, mssen Sie zum Entschlsseln
+unbedingt "heute" wieder exakt so, also in Kleinschreibung,
+eingeben.
+
+Das Programm fragt Sie am Ende einer Verschlsselung, ob es Ihre
+unverschlsselte Originaldatei l”schen soll. Eigentlich brauchen
+Sie sie nicht mehr, da sie jetzt "verschlsselt" vorliegt.
+Vergewissern Sie sich jedoch vor L”schung einer unverschlsselten
+Datei, ob Ihnen das Codewort auch sicher und richtig bekannt ist.
+
+HAFTUNGSAUSSCHLUSS: Weder die Rossipaul Verlagsgesellschaft,
+Mnchen, als deutscher Vertreiber, noch SAM1 Technolgies, Inc.,
+als Urheber bernehmen irgendeine Verantwortung fr Sch„den gleich
+welcher Art, die Ihnen durch den Gebrauch dieser Software
+entstehen k”nnten. Mit dem Kauf dieses Programms ist keine
+Garantie fr bestimmte Leistungen oder Einsatzzwecke verbunden.
+
+Sie finden am Schluá unseres "liesmich"-Textes Informationen
+ber die gesamte Dataware-Reihe und interessante weitere
+Titel, die alle im Buchhandel, im Computerfachhandel, in den
+Fachabteilungen der Warenh„user oder im Versandhandel
+erh„ltlich sind.
+
+HINWEIS: BUCH ZUR DISKETTE! Im Handel finden Sie auch ein kleines
+Handbuch mit interessanten Informationen zum Datenschutz und mit
+Hinweisen zum wirkungsvollen Einsatz des "elektronischen Daten-
+Tresor". Wer sich ber dieses High-Tech-Programm und ber seine
+US-erprobten Techniken der Verwaltung von Kryptodateien ber
+geeignete Verzeichnisse und Dateinamen genauer informieren m”chte,
+sollte nach diesem gleichnamigen Buch fragen.
+
+Lesen Sie bitte im folgenden die Angaben zur Installation, zum
+Start und zum Betrieb dieses Krypto-Programmes. Wir wnschen
+Ihnen viel Sicherheit mit dem "elektronischen Daten-Tresor"!
+
+
+2) INSTALLATION DES "ELEKTRONISCHEN DATEN-TRESORS"
+
+Beginnen Sie die Installation wie folgt:
+
+1. PC einschalten und Betriebssystemmeldungen abwarten.
+2. Originaldiskette in Laufwerk A: einlegen.
+3. Installationsbefehl eingeben:
+
+      A:INSTALL  <ENTER-Taste>
+
+Die Installationsprozedur stellt Ihnen einige Fragen, die nach
+Lesen der vorstehenden Erkl„rungen leicht zu beantworten sind:
+
+QUELL-/ZIELLAUFWERK: In aller Regel legen Sie die 5,25"-
+Diskette dieses Programms in das "Quell-Laufwerk A:" ein - dann
+geben Sie also A: ein - und lassen es sich auf "Ziel-Laufwerk
+C:" (=Ihre Festplatte) installieren - dann geben Sie hier also
+C: ein.
+
+Das Programm installiert auf Ihrer Festplatte C: ein
+Verzeichnis TRESOR, in dem alle fr den Betrieb notwendigen
+Dateien abgelegt werden. Es kann nach Wechsel in das Verzeichnis
+TRESOR durch Eingabe von START aufgerufen werden.
+
+Dazu geben Sie nach Einschalten des PC und nach Erscheinen des
+Promptzeichens C:\ folgendes ein:
+
+      CD TRESOR <ENTER-Taste>
+
+Ihr Bildschirm signalisiert Ihnen jetzt, daá Sie sich im
+Verzeichnis "Tresor" befinden:
+
+      C:\TRESOR
+
+Geben Sie nun ein:
+
+      START <ENTER-Taste>
+
+"Der elektronische Datentresor" pr„sentiert Ihnen nach dem
+Start-Aufruf sein "Haupt-Men", das aus vier Punkten besteht.
+Weiter unten finden Sie dazu alle notwendigen Angaben.
+
+Die Originaldiskette des Programms bewahren Sie am besten in
+Ihrem Disketten-Archiv auf.
+
+3) FšHRUNG DURCH DAS HAUPTMENš DES "ELEKTRONISCHEN DATENTRESORS"
+
+
+HAUPTMENš
+
+Nach dem Start meldet sich das Hauptmen mit einer eingeblendeten
+Information ber die per Programm voreingestellten, aber jederzeit
+„nderbaren Pfadeinstellungen (dazu n„here Informationen unter
+Punkt 5: UNTERMENš "Pfadvorgabe „ndern"); mit beliebiger
+Tasteneingabe verschwindet diese Einblendung, und die folgenden
+4 Haupt-Men-Punkte stehen Ihnen zur Wahl:
+
+
+1: Pfadvorgaben „ndern
+
+W„hlt man im Haupt-Men "1",
+dann kann man fr jeden der 3 Dateitypen - unbearbeitete,
+verschlsselte, entschlsselte Dateien (s.a. Beispiel unter
+Punkt 5) - eigene Pfade und Dateinamen-Zus„tze angeben
+oder einfach die Voreinstellungen des Programms belassen.
+
+Kurze Hinweise:
+   o fr "unbearbeitete Dateien" w„hlen Sie am besten den
+     Dateinamen-Zusatz desjenigen Programms, mit dem Sie diese
+     Datei erstellt haben. Zum Beispiel verlangt das Textprogramm
+     WORD den Zusatz *.txt.
+
+   o "verschlsselte Dateien" erhalten vom Programm automatisch
+     und unver„nderbar den Dateinamen-Zusatz .TCP. So werden
+     Verwechslungen von namensgleichen Klar-Text- und Krypto
+     -Text-Dateien vermieden. Sie k”nnen jedoch auáerhalb des
+     Programms jederzeit mit dem MS-DOS-Befehl "RENAME" Dateiname
+     und Dateinamen-Zusatz frei umtaufen.
+
+
+2: Verschlsseln
+
+W„hlt man im Haupt-Men "2",
+dann fragt das Programm zuerst nach einem Codewort, das Sie jetzt
+frei w„hlen und eintippen k”nnen.
+
+ACHTUNG: vergessen Sie nicht dieses Codewort, da es beim
+Entschlsseln wieder verlangt wird! Danach wechselt der
+"elektronische Tresor" gem„á Ihren Pfadangaben in das Verzeichnis
+"unbearbeitete Dateien" - also alles Klartexte - und l„át Sie die
+dortigen Dateinamen mittels Pfeiltasten durchbl„ttern.
+
+Durch Druck der <ENTER-Taste> wird die gerade auf Ihrem Bildschirm
+angezeigte Datei verschlsselt; am Ende der Verschlsselung k”nnen
+Sie w„hlen, ob Ihre Klartext-Datei (=Originaldatei) gel”scht d.h.
+durch šberschreiben mit Nullen unwiederbringlich zerst”rt werden
+soll.
+Der Name der Klartext-Datei wird dabei aus dem Verzeichnis
+gel”scht. Die verschlsselte Datei erh„lt den Dateinamen der
+Klartext-Datei, jedoch mit dem ge„nderten Dateinamen-Zusatz .TCP.
+Die verschlsselte Datei wird dann gem„á Ihren vorangegangenen
+Pfadangaben abgelegt - also z.B. auf die Diskette in einem
+Laufwerk oder auf Ihre Festplatte.
+Durch wiederholtes Durchlaufen der Schleife DATEI AUSWHLEN fr
+Verschlsselung und Ablegen der verschlsselte Datei k”nnen Sie
+alle Klartexte der Reihe nach in Kryptotexte verwandeln und die
+Originaldateien unwiderbringlich verschwinden lassen.
+
+Wird eine Verschlsselung abgebrochen, dann l”scht das Programm
+die bereits angelegte .TCP-Datei.
+
+Klartext-Dateien, die Sie verschlsseln wollen, drfen bis zu 32
+Megabyte groá sein; im verschlsselten Zustand sind sie um nur
+wenige Bytes gr”áer; nach der Entschlsselung haben die Dateien
+wieder exakt ihren Original-Byte-Umfang.
+
+
+3: Entschlsseln
+
+W„hlt man im Haupt-Men "3",
+dann werden Sie aufgefordert, das beim Verschlsseln gew„hlte
+Codewort einzugeben. Bitte achten Sie beim Eintippen auf die
+exakte Schreibweise. Der "elektronische Tresor" wechselt danach
+gem„á Ihren Pfadangaben in das Verzeichnis 'verschlsselte
+Dateien' - alles Kryptotexte mit .TCP-Zusatz - und l„át Sie die
+dortigen Dateinamen mittels Pfeiltasten durchbl„ttern.
+
+Durch Eingabe von <ENTER> wird eine gerade angezeigte Datei
+verschlsselt; Sie k”nnen anschlieáend die Krypotext-Datei l”schen
+lassen. Die entschlsselte Datei erh„lt den Dateinamen der
+Kryptotext-Datei, der Dateinamen-Zusatz wird jedoch in .RCP oder
+den von Ihnen gew„hlten Zusatz ge„ndert.
+Die entschlsselte Datei wird gem„á Ihren vorangegangenen
+Pfadangaben abgelegt.
+
+Durch wiederholtes Durchlaufen der Schleife DATEI AUSWHLEN fr
+Entschlsselung und entschlsselte Datei ab-legen k”nnen Sie alle
+Kryptotexte der Reihe nach in Klartexte verwandeln.
+Entschlsselte Dateien haben wieder exakt ihren Original-Byte-
+Umfang.
+
+
+4: Schlssel eingeben
+
+W„hlt man im Haupt-Men "4",
+dann erscheint eine Einblendung mit der Aufforderung "Schlssel
+eingeben:.....". Sie k”nnen bis zu 8 beliebige Zeichen eingeben -
+nicht jedoch die ASCII-Zeichen 0 (dez) bis 32 (dez) aus der ASCII-
+Tabelle - wobei zwischen Groá/Kleinschreibung unterschieden wird.
+Geben Sie keine regelm„áigen Zeichenfolgen oder leicht erratbare
+Namen ein.
+
+ACHTUNG: geben Sie (versehentlich) kein Codewort ein sondern
+drcken nur die <ENTER-Taste>, dann ist der aktive Schlssel NULL,
+also 8 ASCII-Nullen! Es wird nicht automatisch der alte Schlssel
+weiterbenutzt!
+
+Merken Sie sich das Codewort unbedingt!!!! Dies ist eine
+ernstzunehmende Aufforderung. Wenn Sie das Codewort vergessen,
+sind Ihre veschlsselten Daten
+unwiderbringlich verloren und durch keinerlei Programmkniffe
+wieder lesbar zu machen.
+
+
+ESC
+
+ESC im Haupt-Men beendet das Programm "elektronischer Daten-
+Tresor"; ESC in Unter-Mens dient zur Rckkehr zum vorangegangenen
+Men.
+
+
+F10
+
+F10 wechselt vorbergehend vom Programm "elektronischer Tresor" zu
+MS DOS, ohne jedoch das Programm zu beenden; nach Abschluá Ihrer
+Arbeiten in MS DOS bringt Sie die
+Eingabe von EXIT von MS DOS in den "elektronischen Daten-Tresor"
+zurck.
+
+
+4) ZUR DATEIEN-ORGANISATION DES "ELEKTRONISCHEN DATEN-TRESORS"
+
+Das Hauptmen des Programms zeigt Ihnen zwar selbstredend das
+™ffnen und Schlieáen des "elektronischen Daten-Tresor"; dennoch
+werden Sie die folgenden Hintergrundinformationen nicht missen
+wollen.
+
+4.1) DATEIEN-ORGANISATION.
+Das Programm arbeitet mit 3 Dateien-Gruppen, fr die es ber
+Pfadangaben zug„ngliche 3 Dateien-Pools anlegt:
+
+in der Gruppe(1) "unbearbeitete Dateien"
+stehen Ihre Klartexte, also Daten auf der Festplatte oder auf
+einer Diskette, z.B. in Laufwerk A, die Sie mit einem Textprogramm
+oder anderen Programmen erstellt hatten und jetzt verschlsseln
+wollen;
+
+In der Gruppe (2) "verschlsselte Dateien"
+stehen alle Kryptotexte, also vom Programm verschlsselte und
+unleserlich gemachte Klartexte;
+
+In der Gruppe (3) "entschlsselte Dateien"
+stehen alle vom Programm durch Entschlsselung wiedergewonnenen
+Klartexte. Die Pfade zu diesen 3 Gruppen k”nnen Sie bei jedem
+Programmlauf neu angeben.
+
+
+4.2) DATEINAMEN-ERGNZUNGEN
+Die klare Trennung unterschiedlicher Dateien in unterschiedliche
+Gruppen oder Dateien-Pools wird untersttzt durch "Erg„nzungen" an
+den Dateinamen; so kennzeichnet das Programm automatisch alle von
+ihm verschlsselten Dateien mit ".TCP" - Beispiel: "dateiname.TCP"
+- und alle von ihm entschlsselten Dateien mit ".RCP" - Beispiel:
+"dateiname.RCP".
+
+Den Dateinamen-Zusatz ".TCP" vergibt das Programm automatisch
+bei jeder Verschlsselung; er ist unver„nderlich. Den Zusatz
+".RCP" k”nnen Sie jedoch im Programm (mit dem Menpunkt
+"Pfadvorgabe „ndern = 1) ver„ndern.
+
+Wozu diese Trennung der Dateien in Dateien-Pools?
+Damit ernstgemeinter Datenschutz durch eine disziplinierte
+Dateienverwaltung sinvoll untersttzt wird!
+
+In die Dateiengruppe (1)
+geh”ren alle Klartexte, die Sie heute produziert haben und die
+unbedingt verschlsselt werden mssen; Sie beenden Ihre
+Verschlsselungen nicht eher, als bis die Gruppe (1) leer ist. Das
+Programm l”scht alle Klartexte nach der Verschlsselung durch
+šberschreiben! Kein Norton-Programm oder „hnliches
+gewinnt diese Dateien je zurck!
+
+In die Dateiengruppe (3)
+geh”ren alle entschlsselten Dateien; diese Dateien sollten Sie
+sich auf eine Diskette schreiben lassen, die Sie mit nach
+Hause nehmen und notfalls vernichten k”nnen. Meist will man diese
+Dateien nur kurz ansehen, wozu man sie z.B. von einem Textprogamm
+einlesen und auf dem Bildschirm darstellen l„át.
+
+In der Dateiengruppe (2)
+stehen alle verschlsselten Dateien; sie k”nnen berall stehen,
+da niemand mit ihnen etwas anfangen kann.
+
+4.3) CONFIG1.DAT-DATEIEN.
+W„hrend der Installation wird eine Datei CONFIG1.DAT angelegt, die
+alle Ihre Konfigurierungsangaben aufnimmt, u.a. auch Ihre
+Pfadangaben und Dateinamen-Zus„tze. Diese Datei muá im selben
+Verzeichnis stehen, in dem die Datei TRESOR.EXE steht. Fehlt die
+Datei CONFIG1.DAT bei Programmstart, dann legt das Programm
+automatisch eine neue an, allerdings mit den mitgelieferten
+Voreinstellungen und nicht mit Ihren Konfigurierungsvorgaben.
+Erweist sich CONFIG1.DAT als fehlerhaft, erscheint eine
+Fehlermeldung und das Programm kehrt zu DOS zurck.
+
+
+5) UNTERMENš "PFADVORGABE NDERN"
+
+Nach der Eingabe von START erscheint auf dem Bildschirm das
+Hauptmen, in das ein Informationsfeld ber die momentan benutzten
+Pfade zu Dateien eingeblendet ist, das Sie durch Bet„tigen einer
+beliebigen Taste ausblenden k”nnen. Die Einblendung informiert Sie
+lediglich ber "Pfadvorgaben", die das Programm beim erstmaligen
+Start automatisch installiert hat, die Sie aber w„hrend des
+Programmlaufs jederzeit wieder „ndern k”nnen.
+
+Diese Pfadvorgaben lauten wie folgt:
+
+a) Unbearbeitete Dateien
+     C:\TRESOR\VOMTRES\*.*
+
+Das entspricht der im Punkt 4.1) genannten Gruppe (1). VOMTRES
+heiát, die Dateien k”nnen "vom Tresor" geholt, also aus dem ver-
+in den entschlsselten Zustand gebracht werden.
+
+b) Verschlsselte Dateien
+     A:\*.TCP
+
+Das entspricht der im Punkt 4.1) genannten Gruppe (2).
+
+c) Entschlsselte Dateien
+     A:\*.RCP
+
+Das entspricht der im Punkt 4.1) genannten Gruppe (3).
+
+
+Hier ein Beispiel zur Bedeutung dieser Pfadvorgaben:
+
+Ihre zu verschlsselnden Dateien, z.B. ein in WORD geschriebener
+Brief "FINANZ.TXT", holt sich das Programm aus dem
+Unterverzeichnis "VOMTRES" im Verzeichniss "TRESOR". Hierzu mssen
+Sie diesen Brief entweder direkt im Unterverzeichnis "VOMTRES"
+abgelegt oder mit dem DOS-Befehl "COPY" aus einem anderen
+Verzeichnis, z.B. dem Directory "BRIEFE", in das Unterverzeichnis
+C:\TRESOR\VOMTRES hineinkopiert haben.
+
+Zum Verschlsseln
+holt sich das Programm die Datei, hier den Brief "FINANZ.TXT", aus
+dem Verzeichnis "VOMTRES", verschláelt sie gem„á dem eingegebenen
+Codewort und gibt die verschlsselte Datei "FINANZ.TCP" auf eine
+Diskette im Laufwerk A aus.
+
+Zum Entschlsseln
+mssen Sie in diesem Beispiel die Diskette mit der verschlsselten
+Datei, hier "FINANZ.TCP", in Laufwerk A legen. Die entschlsselte
+Datei, hier "FINANZ.RCP", wird dann wieder auf die Diskette im
+Laufwerk A zurckgeschrieben.
+
+Die vorgebenen Pfade zwingen Sie also, Ihre verschlsselten und
+wieder entschlsselten Dateien auf Disketten im Laufwerk A zu
+speichern.
+
+Allerdings k”nnen Sie jederzeit und sehr einfach Pfad-
+Voreinstellungen individuell „ndern. Dazu mssen Sie lediglich,
+wie im Hauptmen angegeben, die Taste mit der Zahl "1" drcken.
+Sie gelangen so in das Untermen "Pfadvorgaben „ndern". Hier ein
+Beispiel, wie Sie individuell Ihre eigenen Pfade legen k”nnen:
+
+Sie wollen z.B. Ihren Brief "FINANZ.TXT" aus dem Verzeichnis
+"BRIEFE" verschlsseln. Nach Aufruf des Untermens "1"
+(=Pfadvorgaben „ndern) legen Sie den voreingestellten Pfad von
+C:\TRESOR\VOMTRES\*.* fr "Unbearbeitete Dateien" um, indem Sie
+einfach schreiben: C:\BRIEFE\FINANZ.TXT.
+
+Geben Sie aber stattdessen C:\BRIEFE\*.TXT an, dann k”nnen Sie mit
+den Pfeiltasten alle im Verzeichnis "BRIEFE" vorhandenen Dateien
+durchbl„ttern und sich den Brief "FINANZ.TXT" fr die
+Verschlsselung heraussuchen.
+
+Am besten ist es, Sie „ndern oder ersetzen den voreingestellten
+Pfad A:\*.*  fr "Verschlsselte Dateien" in den Pfad
+C:\TRESOR\IMTRES\FINANZ.TCP. Dadurch holt sich das Programm Ihren
+Brief "FINANZ.TXT" zum Verschlsseln aus dem Verzeichnis "BRIEFE"
+und schreibt ihn nach der Verschlsselung in das Unterverzeichnis
+"IMTRES" (=im Tresor) unter der Bezeichnung "FINANZ.TCP". Der
+Brief "FINANZ.TXT" wird im Anschluá an die Verschlsselung im
+Ursprungsverzeichnis "BRIEFE" gel”scht. Das Unterverzeichnis
+IMTRES wie das Unterverzeichnis VOMTRES werden brigens
+automatisch bei der Installation des "elektronischen Daten-
+Tresors" im Verzeichnis "TRESOR" angelegt.
+
+Wenn Sie Ihren Brief wieder lesen und entschlsseln wollen, holt
+sich das Programm den Krypto-Text "FINANZ.TCP" aus dem Verzeichnis
+IMTRES. Wenn Sie dann die entschlsselte Datei z.B. auf eine
+Diskette in Laufwerk B: auslesen wollen, „ndern Sie den in der
+Gruppe "entschlsselte Dateien" vorgegebenen Pfad A:\*.RCP einfach
+in B:\*.TXT. Sie k”nnen aber auch die entschlsselte Datei wieder
+in ihr Ursprungverzeichnis "BRIEFE" hineinschreiben. Dazu mssen
+Sie eingeben:
+C:\BRIEFE\FINANZ.TXT oder die Kurzform: C:\BRIEFE\*.TXT.
+
+DATEINAMEN-ZUSTZE:
+
+Hier haben Sie fr nur zwei Gruppen oder Pools eine Wahl. Bei
+"Unbearbeitete Dateien" k”nnen Sie .* stehen lassen; dann werden
+alle Dateien in Pool (1) unabh„ngig von ihrem Zusatz gelesen; oder
+Sie filtern sich durch Eingane eines expliziten Zusatzes nur
+bestimmte Dateien heraus, z.B. mit .TXT alle WORD-Dateien.
+
+Bei "Entschlsselte Dateien" wird allen vom Programm
+entschlsselten Dateien der Zusatz ".RCP" (R=received) an den
+Dateinamen angeh„ngt, den Sie z.B. in ".ENT"
+(ENT = entschlsselt) oder .TXT oder anders „ndern k”nnen.
+
+
+6) BEFEHLSZEILENVARIANTE ZUM "DATENTRESOR"
+
+Zur Einbindung in Ihre eigenen Programme k”nnen Sie die beiden 
+Funktionen ESE (zum Verschlsseln) und ESD (zum Entschlsseln) aus 
+dem vorliegenden DATENTRESOR fr DM 49,- incl MWSt vom Verlag 
+beziehen.
+
+Sie erhalten folgende beiden komplement„ren Befehlszeilen-
+Programme auf 3,5"-Diskette:
+
+    ESE [laufwerk:][pfad]quell_datei [laufwerk:][zielpfad]
+        [/Kschlssel [/D] [/O] [/Exxx] [/C] [/S] [/T]
+
+    ESD [laufwerk:][pfad]quell_datei [laufwerk:][zielpfad]
+        [/Kschlssel [/O] [/Exxx] [/C] [/S] [/T]
+
+Ausfhrliche Erkl„rungen der Parameter mit Muster-Anwendungen 
+finden Sie in der liesmich-Datei dieser Diskette.
+
+Die Programme ESE und ESD arbeiten mit einem der gegenw„rtig 
+sichersten Krypto-Standards DES (=data encryption standard), der 
+in den USA von Staat und Wirtschaft, besonders Finanzwirtschaft, 
+intensiv u.a. auf PCs, PC-LAN-Netzen und bei ”ffentlichen 
+Datenfernbertragungen eingesetzt.
+
+Mit ESE und ESD k”nnen Sie alle Arten von Datei-Inhalten - Texte, 
+Graphiken, Kalkulationstabellen, Datenbanken usw - und alle Datei-
+Gr”áen bis 32MByte unentzifferbar und programmgesteuert ver- und 
+entschlsseln; Entschlsselungen sind nur mit Kenntnis des 
+Schlssels m”glich, dessen Zufallsentdeckung durch Variation aller 
+Schlssel-Codes auch auf Hochleistungssystemen, z.B. heutigen 
+CRAY-Rechnern, mehrere Jahre ben”tigt (typisch 5 Jahre). Der 
+Schlssel wird nach jedmaliger Benutzung im RAM Ihres Computers 
+durch šberschreiben zerst”rt, so daá er nicht mit RAM-
+Speicherauszgen rekonstruierbar ist.
+
+Bestellungen richten Sie bitte wie folgt an den Verlag:
+
+   Befehlszeilen-Variante DATENTRESOR
+   DM 49,- incl MWSt
+
+   Rossipaul-Verlag
+   Menzinger Straáe 37
+   8000 Mnchen 19
+
+
+7) COPYRIGHT-HINWEISE
+
+Diese Software ist urheberrechtlich geschtzt und genieát
+Urheberschutz in den USA und Deutschland.
+(c) copyright by SAM1 Technologies, Inc.
+Das ausschlieáliche Recht zur Vervielf„ltigung und Verbreitung
+sowie alle sonstigen Verwertungsrechte liegen beim Rossipaul-
+Verlag. Jede widerrechtliche Kopie und Nutzung der Diskette ist
+strafbar und wird verfolgt.
+(c) copyright by Rossipaul-Verlag, Mnchen
+
+
+Virengeprft:
+Die Produkte der Dataware-Reihe werden laufend mit den jeweils
+aktuellsten Virenprfprogrammen auf Virenbefall kontrolliert. Ein
+Befall mit bekannten Viren ist deshalb auszuschlieáen. Eine
+Haftung fr irgendwelche durch Viren verursachten Sch„den und
+Ausf„lle besteht von Seiten des Rossipaul-Verlages nicht.
+
+Keine Hotline:
+Bitte haben Sie Verst„ndnis dafr, daá wir fr unsere
+preisgnstigen Dataware-Disketten keinen telefonischen Hotline-
+Service einrichten k”nnen.
+
+Unsere gesamte Software wird unter gr”átm”glicher Sorgfalt
+hergestellt und programmiert. Trotzdem kann es immer wieder
+einmal geschehen, daá ein Programm aus den verschiedensten
+Grnden nicht lauff„hig oder voll lauff„hig ist.
+
+In diesem Fall bitten wir Sie, Ihre Reklamationen schriftlich
+oder per Fax bei uns einzureichen! Wir antworten Ihnen
+garantiert, auch wenn es manchmal aus Zeitgrnden etwas
+l„nger dauern kann.
+
+Die Verlagsadresse lautet:
+Dr. Lothar Rossipaul
+Verlagsgesellschaft mbH
+Postfach 38 01 64
+8000 Mnchen 38
+Fax: 089/179106-33
+
+Bitte beachten Sie die weitere Produktion unseres Verlages auf den
+folgenden Seiten...
+
+
+
+ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+º                                                                º
+º           Interessante Daten fr jeden PC Besitzer             º
+º                                                                º
+ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+
+Durch die zunehmende Verbreitung von Personal Computern in
+Betrieben und im privaten Bereich wird sich auch das
+"Konsumverhalten" zur Informationsgewinnung „ndern. Informationen,
+die man sich bisher ausschlieálich aus mehr oder weniger
+umfangreichen Printmedien heraussuchen muáte, kann man
+heute innerhalb von Sekunden von seinem Computer abrufen.
+Allerdings setzt dies voraus, daá der Computer entweder an
+eine externe Datenbank angeschlossen ist (z.B. ber Btx oder
+andere Online-Dienste) oder daá die notwendige Datenbasis auf dem
+eigenen Computer vorhanden ist.
+
+Dataware liefert den Computerbesitzern Daten auf Diskette, die sie
+in ihrem Aufgaben- und Wirkungsbereich st„ndig ben”tigen. Der
+"Informationskonsum" via Personal Computer hat viele Vorteile. Die
+Suche nach Informationen in Printmedien erfordert eine Menge Zeit
+fr die Selektion der gesuchten Daten. Als Hilfsmittel
+stehen allenfalls ein Inhalts- und ein Schlagwortverzeichnis zur
+Verfgung. Der Rest der Suche erfolgt im wahrsten Sinne
+"manuell", durch "Bl„ttern" und "mit dem Finger, der suchend ber
+die Seite f„hrt". Hier kann der Computer eine
+entscheidende Hilfestellung geben: Man gibt ein Suchwort ein und
+der Computer bernimmt die gesamte Selektion innerhalb von
+Sekunden, selbst bei einem groáen Datenbestand.
+Dazu ein Beispiel: Auf der Diskette "Die elektronische EDV-
+Bibliothek" befinden sich ber 3800 Buchtitel mit
+allen bibliographischen Daten. Wer ein Buch zu einem bestimmten
+Thema sucht, zum Beispiel zum Thema Textverarbeitung mit Word oder
+Programmieren mit Turbo Pascal, der tippt den Suchbegriff einfach
+in den Computer ein und erh„lt innerhalb von Sekunden ein
+Verzeichnis aller Bcher, deren Titel oder Untertitel das
+gewnschte Suchwort enth„lt. Ein vergleichbarer manueller
+Suchvorgang in einem Katalog wrde ungleich l„nger dauern.
+
+
+Folgende Dataware-Produkte sind lieferbar bzw. erscheinen in
+Krze:
+
+
+Das DATAWARE-Buch zur SET-Oberfl„che
+ISBN 3-87686-204-3
+
+Der elektronische Softwarefhrer
+ISBN 3-87686-329-5
+
+Der elektronische Einkommensteuerberater
+ISBN 3-87686-368-6
+
+Die elektronische Tabellensammlung fr Kaufleute
+ISBN 3-87686-405-4
+
+Der elektronische Bundesbahn-Fahrplan
+ISBN 3-87686-369-4
+
+Das elektronische Horoskop
+ISBN 3-87686-300-7
+
+Die elektronische Postauskunft
+ISBN 3-87686-306-6
+
+Das elektronische Formblatt
+ISBN 3-87686-305-8
+
+Der elektronische Gesch„ftsbrief
+ISBN 3-87686-409-7
+
+Der elektronische Privatbrief
+ISBN 3-87686-408-9
+
+Das elektronische Kreuzwortr„tsel-Lexikon
+ISBN 3-87686-312-0
+
+Die elektronische EDV-Bibliothek
+ISBN 3-87686-328-7
+
+Der elektronische KONZ
+ISBN 3-87686-381-3
+
+Das elektronische Word-Lexikon
+ISBN 3-87686-315-5
+
+Das elektronische MS-DOS-Lexikon
+ISBN 3-87686-406-2
+
+Das elektronische PC-Grundlagen-Lexikon
+ISBN 3-87686-317-1
+
+Das elektronische Works-Lexikon
+ISBN 3-87686-320-1
+
+Das elektronische Multiplan-Lexikon
+ISBN 3-87686-326-0
+
+Das elektronische Lotus-Lexikon
+ISBN 3-87686-325-2
+
+Das elektronische Turbo-Basic-Lexikon
+ISBN 3-87686-321-X
+
+Das elektronische Turbo C-Lexikon
+ISBN 3-87686-322-8
+
+Das elektronische GW Basic-Lexikon
+ISBN 3-87686-330-9
+
+Das elektronische Quick-Basic-Lexikon
+ISBN 3-87686-331-7
+
+Das elektronische C-Grundlagen-Lexikon
+ISBN 3-87686-332-5
+
+Das elektronische Quick C-Lexikon
+3-87686-333-3
+
+Das elektronische dBase-Lexikon
+ISBN 3-87686-3503
+
+Der elektronische Versicherungsberater
+ISBN 3-87686-416-X
+
+Das elektronische Computerlexikon
+ISBN 3-87686-345-7
+
+Der elektronische Gesch„ftsvertrag
+ISBN 3-87686-335-X
+
+Der elektronische Privatvertrag
+ISBN 3-87686-336-8
+
+Der elektronische Englischbrief
+ISBN 3-87686-337-6
+
+Der elektronische Franz”sischbrief
+ISBN 3-87686-338-4
+
+Der elektronische Italienischbrief
+ISBN 3-87686-339-2
+
+Der elektronische Spanischbrief
+ISBN 3-87686-340-6
+
+Die elektronische Stellenbewerbung
+ISBN 3-87686-342-2
+
+Das elektronische Testtraining
+ISBN 3-87686-343-0
+
+Der elektronische Biokalender
+ISBN 3-87686-347-3
+
+Das elektronische Wirtschafts-W”rterbuch
+ISBN 3-87686-348-1
+
+Die elektronischen "Bitteren Pillen"
+Der Bestseller unter den Medikamenten-Ratgebern
+ISBN 3-87686-319-8
+
+Der elektronische Atari-Softwarefhrer
+ISBN 3-87686-324-4
+
+Das elektronische Computer-Expertenlexikon
+ISBN 3-87686-346-5
+
+Die elektronische Einnahmen-šberschuá-Rechnung
+ISBN 3-87686-385-6
+
+Das Buch zur Diskette
+Die elektronische Einnahmen-šberschuá-Rechnung
+ISBN 3-87686-200-0
+
+Das elektronische Kassenbuch
+ISBN 3-87686-391-0
+
+Das Buch zur Diskette
+Das elektronische Kassenbuch
+ISBN 3-87686-202-7
+
+Der elektronische Terminplaner
+ISBN 3-87686-90-2
+
+Die elektronische Bankinformation
+ISBN 3-87686-352-X
+
+Der elektronische Liebesbrief
+ISBN 3-87686-358-9
+
+Der elektronische Beschwerdebrief
+ISBN 3-87686-373-2
+
+Die elektronische Musterrede
+ISBN 3-87686-367-8
+
+Die elektronische Hausapotheke
+auf hom”opathischer Basis
+ISBN 3-87686-378-3
+
+Der elektronische ™ko-Ratgeber
+ISBN 3-87686-379-1
+
+Das elektronische Astrologie-Lexikon
+ISBN 3-87686-361-9
+
+Das elektronische Volkslied
+ISBN 3-87686-392-9
+
+Die elektronische N„hrwerttabelle
+ISBN 3-87686-397-1
+
+Der elektronische IQ-Test
+ISBN 3-87686-351-1
+
+Die elektronische Briefmarkenverwaltung
+ISBN 3-87686-398-8
+
+Die elektronische Namenswahl
+ISBN 3-87686-357-0
+
+Das elektronische Tages-Horoskop
+ISBN 3-87686-380-5
+
+Klevers elektronische Kalorien-Kontrolle
+ISBN 3-87686-396-1
+
+Der elektronische Karteikasten
+ISBN 3-87686-366-X
+
+Der elektronische Zitatenschatz
+ISBN 3-87686-365-1
+
+Der elektronische Daten-Tresor
+ISBN 3-87686-370-8
+
+Das Buch zur Diskette
+Der elektronische Daten-Tresor
+ISBN 3-87686-201-9
+
+Der DATAWARE BTX-Decoder
+ISBN 3-87686-375-9
+
+Das Buch zur Diskette
+Der DATAWARE BTX-Decoder
+ISBN 3-87686-203-5
+
+Das elektronische Managementtraining
+ISBN 3-87686-349-X
+
+Das elektronische Software-Lexikon
+ISBN 3-87686-400-3
+
+Die elektronische Rechtschreibhilfe Jura
+fr Word-Anwender
+ISBN 3-87686-344-9
+
+Der elektronische Finanzplaner '92
+ISBN 3-87686-388-0
+
+Der elektronische Kulturkalender
+ISBN 3-87686-412-7
+
+Der elektronische Sportkalender
+ISBN 3-87686-411-9
+
+Die elektronische Immobilienfinanzierung
+ISBN 3-87686-387-2
+
+Das Buch zur Diskette
+Die elektronische Immobilienfinanzierung
+ISBN 3-87686-204-3
+
+Das elektronische Medizin-Lexikon
+ISBN 3-87686-377-5
+
+Der elektronische Viren-Lexikon
+ISBN 3-87686-401-1
+
+Die elektronische Vereinsverwaltung
+ISBN 3-87686-399-6
+
+Der elektronische Vokabeltrainer Englisch
+ISBN 3-87686-420-8
+
+Der elektronische Vokabeltrainer Franz”sisch
+ISBN 3-87686-421-6
+
+Der elektronische Vokabeltrainer Italienisch
+ISBN 3-87686-423-2
+
+Der elektronische Vokabeltrainer Spanisch
+ISBN 3-87686-422-4
+
+Der elektronische Vokabeltrainer Latein
+ISBN 3-87686-424-0
+
+Das elektronische W”rterbuch Englisch
+ISBN 3-87686-425-9
+
+Das elektronische W”rterbuch Franz”sisch
+ISBN 3-87686-426-7
+
+Das elektronische W”rterbuch Spanisch
+ISBN 3-87686-427-5
+
+Das elektronische W”rterbuch Italienisch
+ISBN 3-87686-428-3
+
+Das elektronische W”rterbuch Latein
+ISBN 3-87686-429-1
+
+Die elektronische Steuertabelle
+ISBN 3-87686-384-8
+
+Der elektronische Videofilm-Katalog
+ISBN 3-87686-413-5
+
+Das elektronische Cocktail-Lexikon
+ISBN 3-87686-359-7
+
+Der elektronische Tarot
+ISBN 3-87686-404-6
+
+
+Die elektronischen Excel-Tabellen
+ISBN 3-87686-403-8
+
+Das Buch zur Diskette
+Die elektronischen Excel-Tabellen
+ISBN 3-87686-206-X
+
+
+Die elektronischen Works-Tabellen
+ISBN 3-87686-402-X
+
+Buch zur Diskette
+Die elektronischen Works-Tabellen
+ISBN 3-87686-205-1
+
+
+Je Diskette nur DM/sFr 19,80 bis 39,80/”S 176,- bis 354,-.
+S„mtliche Dataware-Produkte sind im Buchhandel, in Computer-
+Fachgesch„ften, in den Fachabteilungen der Warenh„user oder im
+Versandhandel erh„ltlich.
+
+
+Die neue Reihe:
+DATAWARE-EDITION - Profi-Programme in 5,25-Zoll- und 3,5-Zoll-
+Disketten mit Begleitbuch. Preise zwischen DM 68,- und DM 98,-
+
+Dr. Thomas Graefe/Dr. Michael Groá
+EDV-Vertr„ge
+ISBN 3-87686-430-5
+
+Personal-Vertr„ge
+ISBN 3-87686-431-1
+
+Messe- und Kongreákalender international '92/93
+ISBN 3-87686-423-1
+
+

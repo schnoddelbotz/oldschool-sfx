@@ -1,0 +1,170 @@
+
+
+
+                 DRIVERS USAGE EXPLAINATION
+                 ==========================
+
+  With this E-LAN-2000 utility diskette,you will find the following
+files:
+                    2000.LAN
+                    2000SH.OBJ
+                    A2000.OBJ
+                    B2000.OBJ
+                    C2000.OBJ
+                    D2000.OBJ
+                    S2000.LAN
+                    README
+                    ELANCNFG.EXE
+                    FTP_TCP  <DIR>
+                    V3.00    <DIR>
+                    V3.1X    <DIR>
+                    V4.00    <DIR>
+                    DOSODI   <DIR>
+                    MSLANMAN DOS <DIR>
+                    MSLANMAN OS2 <DIR>
+                    WFW31    <DIR>
+                    WFW311   <DIR>
+                    PCNFS    <DIR>
+                    OS2NDIS  <DIR>
+                    OS2ODI   <DIR>
+                    E2000.INS
+
+The file ELANCNFG.EXE is a configuration file for E-LAN-2000 Rev.R1.
+You just have to run it and follow the menu options.
+
+The file E2000.INS is an auto-installation file for NetWare Client.
+
+The files in root directory 2000.LAN.....S2000.LAN are provided
+for the NOVELL NetWare ver 2.1X and  later.
+Please refer to the E-LAN-2000 user manuals and NOVELL NetWare
+installation manual for details during installation.
+
+The files in directory V3.00, V3.1X and V4.00 support for Novell Netware
+server ver 3.00, 3.1X and 4.0X, please read this file about more information
+refer to NetWare installation manual for details during installation.
+
+  Except for using the driver of E-LAN-2000, you can also
+use the NE2000 as lan driver if you are the user of NOVELL
+Netware ver 2.1X and later ver.
+
+  The files in DOSODI <dir> are drivers supporting NOVELL ODI specification.
+
+  The files in FTP_TCP <dir> are E-LAN-2000 LAN adapter packet
+drivers for FTP's PC/TCP network softwares. The readme file  under
+the FTP_TCP <dir>  will direct you the installation details.
+
+   The files in subdirectory MSLANMAN.DOS are drivers supporting MicroSoft LAN
+Manager and DOS NDIS 2.0.1 standard.
+
+   The files in subdirectory MSLANMAN.OS2 are drivers supporting MicroSoft LAN
+Manager and OS2 NDIS standard.
+
+  The files in subdirectory WFW31 are ShineNet LAN adapter NDIS drivers and
+OEMSETUP.INF which are used in installing NDIS drivers in Windows for
+Workgroups 3.1 environment.
+
+  The files in subdirectory WFW311 are ShineNet LAN adapter NDIS drivers and
+OEMSETUP.INF which are used in installing NDIS drivers in Windows for
+Workgroups 3.11 environment.
+
+  The files in PCNFS <dir> are drivers supporting PC-NFS
+  standard. The details of the usage are shown in readme file in the
+  correspondent directory.
+
+   The files in subdirectory OS2NDIS are drivers supporting IBM LAN Server and
+OS2 NDIS standard.
+
+   The files in subdirectory OS2ODI are drivers supporting OS/2 Requester for
+NetWare and OS2 ODI Spec.
+
+   The detail of the usage of these drivers are shown in the readme file
+in corresponding subdirectory.
+
+
+                 NetWare 386 DRIVERS USAGE EXPLAINATION
+                 ======================================
+
+This is the E-LAN-2000 Ethernet card Device Driver diskette.
+It contains the following files:
+
+      *  Software drivers for NetWare V3.00 server
+
+      *  Software drivers for NetWare V3.1x server
+
+      *  Software drivers for NetWare V4.00 server
+
+
+The following diagram shows the directory structure of this diskette
+about Netware 386:
+
+   <root> ÄÂÄÄÄ README
+           ³
+           ÃÄÄÄ V3.00 <DIR> ÄÄÄÄ E2000.LAN
+           ³
+           ÃÄÄÄ V3.1X <DIR> ÄÄÄÄ E2000.LAN
+           ³
+           ÀÄÄÄ V4.00 <DIR> ÄÄÄÄ E2000.LAN
+
+I.  For install your NOVELL Netware 386 on your server :
+
+    Please insert your Netware 386 Disk "SYSTEM-1", enter command
+
+                A:SERVER
+
+    Until you get the ":" server console prompt, then insert the DISK
+    include the "INSTALL" NLM module and enter
+
+                LOAD d:INSTALL
+
+    for execute install procedure.
+    Please refer to NOVELL NetWare 386 Installation Manual for details.
+
+II. Procedure for Load Driver:
+
+    Directory V3.00 contains E2000.LAN, an NLM module for  installing
+    NetWare 386 version 3.00 file servers.
+
+    Directory V3.1X contains E2000.LAN, an NLM module for  installing
+    NetWare 386 version 3.1X file servers, It can also be running on Netware
+    V3.10 and V3.11.
+
+    Follow the 386 NetWare  installation  procedure  until  you  get the ":"
+    server console prompt.  Enter  commands  listed  below  at  the  prompt  to
+    install LAN driver into your server:
+
+                 LOAD d:E2000.LAN  <CR>
+                 BIND IPX TO E2000 <CR>
+
+    The drive letter d: is the physical location where "E2000.LAN" is placed.
+    You will be prompted to select the proper LAN card configuration after  the
+    program is loaded.
+
+    If you want unload the driver from server, please enter :
+
+                UNLOAD E2000.LAN
+
+    More clear operation for Netware 386, please refer to your Netware 386
+    manual.
+
+III. Generate WorkStation Driver on your Netware 386 :
+
+    S2000.LAN and 2000SH.OBJ files  can  also  be  used  to create NetWare 386
+    version 3.x shell without any modification.
+
+    Please copy the file "2000SH.OBJ" in this disk, into the Disk "SHGEN-1"
+    of Netware V3.00 and V3.10, or into the Disk "WSGEN" of Netware V3.11 .
+
+    Then execute the file
+
+                SHGEN <CR> (for Netware v3.00) or
+                WSGEN <CR> (for Netware v3.11 and later)
+
+    You will be  prompted  to  insert  this  diskette (LAN_DRV_243) during
+    create for linking object file 2000SH.OBJ .
+
+    Please refer to NOVELL NetWare 386 Installation Manual for details about
+    your WorkStation installation.
+
+
+* NetWare is a registered trademark of Novell Inc.
+

@@ -1,0 +1,501 @@
+
+     UPDATE.DOC, ARJ 2.50                                     October 1995
+
+
+     This documents new or updated information since ARJ 2.41.
+
+
+     ** IMPORTANT NEWS ****************************************************
+ 
+        THIS VERSION OF ARJ IS AN OFFICIAL RELEASE.
+ 
+        The mailing address of ARJ Software has changed as of August 1993.
+
+        ARJ Software
+	Robert and Susan Jung
+        P.O. Box 249
+        Norwood MA 02062
+	USA
+
+        FAX: 617-769-4893
+
+        There is ARJ Internet mailing list and WEB site support
+        information added to the file ARJ.DOC.
+
+        Beginning with this version of ARJ, full functionality of certain
+        ARJ software features will NOT be available in the shareware
+        versions of ARJ (registered or not).  These features include the
+        multiple volume self-extractor, the ARJSFX embedded command line
+        feature, and the inhibit display messages option.  The full
+        featured versions will ONLY be available from ARJ Software and
+        its agents.  Registered ARJ users can upgrade to this version for
+        a small shipping/handling fee ($5).
+
+        See ARJDISP.DOC for information about a new feature for software
+        distributors using ARJ.
+
+        Check the WHATSNEW.DOC file for changes since ARJ 2.41a.
+
+        The new multiple volume self-extraction function is LIMITED in the
+        ARJ shareware version.  Only volumes of 360K or less in size can be
+        created AND only such volumes will be processed by the
+        self-extractor.  This feature is accessed through the "-je" option
+        along with the "-v" option.
+
+        The ARJ Security envelope scheme in 2.50 is the SAME as in 2.41.
+        In other words, ARJ-SECURE 2.50 is compatible with 2.41.  There is
+        no change in the envelope key files.  However, the 2.50 version
+        of this ARJ-SECURE is able to make an archive and "seal" it with
+        the same command line.  ARJ-SECURE users can upgrade to this
+        version for a small shipping/handling fee ($5).
+
+        ARJ can archive up to 32,000 files at one time when the new "-hm"
+        option is specified.  This option enables ARJ to use disk space
+        instead of memory space to manage the names of the files being
+        archived.
+
+        Please note that older versions of ARJ.EXE will NOT process the
+        new multiple volume self-extractor.  An error message will be
+        displayed.
+
+        A new option "-w" sets the ARJSFX module to skip the "Continue
+        extraction?" message.  This is a change from the former method to
+        inhibit the message.
+
+        The extraction messages of the large ARJSFX module have been
+        shortened in default mode.  A new "-k" option will display the
+        long form of the messages.
+
+        It is now possible for registered ARJ users to control whether
+        the ARJSFX module will display the overwrite, create directory,
+        and continue extraction prompts without requiring command line
+        options.  It is also possible to control the ARJSFXJR overwrite
+        behavior.
+
+        A diskette change test will detect the failure to swap diskettes.
+        This can cause a problem for those who put more than one volume
+        per diskette.  However, this diskette change test is limited to
+        three retries, so ARJ will eventually accept the non-change of
+        diskette.  The user can inhibit this change test with the new
+        "-vi" option.
+
+	Whenever archiving to diskettes, it is HIGHLY recommended that the
+	option "-jt" be used.  This helps spot BAD diskettes or BAD
+	diskette drives.  It is HIGHLY recommended that the "-jt" option
+        be used in a Windows or multi-tasking or network environment.
+
+	UNERASE or UNDELETE commands do not always recover a file
+	correctly.  This will result in damaged archives.  This is true
+	for all archive types.	You should always test an archive after
+	unerasing it.
+
+	If you use the software disk cache, HYPERDISK, see the KNOWN ARJ
+	ISSUES section in ARJ.DOC for important information.
+
+        CAUTION: To those who use the -t1 and/or -t1g options to save a few
+        extra bytes.  This option should only be used on TEXT FILES. Those
+        are files created by EDLIN, EDIT, QEDIT, BRIEF, NOTEPAD, and
+        others.  Text files typically contain only letters, numbers,
+        spaces, and punctuation marks.  WORD PROCESSOR format files ARE NOT
+        TEXT FILES!  MS WORD, Wordperfect, AMIPRO, WRITE, and similar files
+        ARE NOT TEXT FILES. Using the -t1 or -t1g on any other kind of file
+        probably will result in DATA LOSS!
+
+     **********************************************************************
+
+
+     USER PROMPTS
+
+	The ARJ user prompts have been improved to provide more
+	flexibility.  In addition to the normal yes and no responses, ARJ
+	also accepts the following responses: quit, always, skip, global,
+	and command.
+
+	"Global" sets ARJ to inhibit all subsequent user prompts by assuming
+	YES for all queries as if "-y" were specified.
+
+	The "Always" response has changed.  It now sets ARJ to assume YES
+	for subsequent queries of the same class.  For example, answering
+	YES to the overwrite query will assume YES for ALL subsequent
+	overwrite queries.
+
+	"Skip" sets ARJ to assume NO for ALL subsequent queries of the same
+	class.
+
+	Subsequent user prompt messages will still be output to the screen
+	after the "always" and "skip" responses but no user response will be
+	accepted.
+
+	"Command" prompts for one DOS command and then executes it.  ARJ
+	then returns to expect an answer to the current yes/no query.  You
+	should keep the query in mind as ARJ does NOT always redisplay
+	the full query message.
+
+
+     ARJ ERROR LEVELS
+
+	ARJ will now return a DOS errorlevel of 9 when trying to process a
+	file that is NOT an ARJ archive.
+
+	With the new option "-hl", ARJ will return a non-zero errorlevel
+	when a user specified filename from within an ARJ listfile cannot
+	be found on disk.  Ordinarily, ARJ returns no error for such a
+	situation.
+
+
+     ARJ ARCHIVE NAME WILDCARDING
+
+	ARJ allows the wildcarding of the archive parameter for ARJ
+	commands other than the add commands (a, f, j, m, u).  If the "-r"
+	option is specified, ARJ will scan through subdirectories looking
+	for ARJ archives to process.
+
+	This feature allows a user to delete a specific file from a series
+	of archives.
+
+	Example:  ARJ d *.ARJ bbs.ad
+
+	This feature could also be used to extract a series of archives.
+
+	Example:  ARJ e *.ARJ
+
+        The new "-hr" option allows ARJ to process multiple archives that
+        cause errors.
+
+
+     ARJ COMMAND LINE PROCESSING
+
+        For non-add type commands, ARJ will now always use the full
+        specified pathname for selecting files within an archive by
+        matching against the full specified pathname.
+
+        Example:  ARJ x archive d:\temp\ f:\data\1994\report.txt
+
+        ARJ will now accept an ARJ command line from a response file as in
+        "ARJ @command.rsp".  The "@" symbol indicates that the appended
+        name is the name of the response file.  In this case, the file is
+        command.rsp. The response file symbol cannot be changed.
+
+        The response file should contain the ARJ command line minus the
+        initial "ARJ".  The command line may be split over as many lines
+        as necessary.  The response file feature will NOT accept QUOTED
+        command line options.  Options with embedded blanks ("-vasTEST X")
+        will not be processed as expected.  When using the response file
+        feature, ARJ will accept only the "-+", and "-&" switch options on
+        the DOS command line along with the response file name.  All other
+        command options must be specified in the response file or in the
+        ARJ environment variable.
+
+
+     ARJSFX COMMAND LINE PROCESSING
+
+        All of the ARJ self-extractors feature a new option to embed any
+        command line options into the self-extracting archive itself.  This
+        helps reduce the need for extra programs or batch files.
+
+        To implement this feature, you would insert the required command
+        line as the first line of the ARJ archive comment.  The beginning
+        of the command line must be preceded by the two characters "))".
+        Only the first 80 characters of the embedded command line will
+        be processed.
+
+        Example:  )) C:\DIR\ -o -m
+
+        The non-shareware version of this software will not display the
+        customized command line demonstration message.
+
+        The larger ARJ self-extractor (-je) supports the new command line
+        option "-s" to allow the skipping of the ARJ-SECURITY envelope
+        verification test if an envelope exists.  ARJSFX also supports the
+        new "-o" option to force overwrites, the "-m" option to skip the
+        create directory prompt, and the "-w" option to skip the extract
+        prompt.  The new "-b" option prompts the user for the name of the
+        install directory.  The target directory on the command line is
+        used as the default install directory.  A new "-k" option will
+        display the long form of the file extraction messages.
+
+
+     ARJSFXJR COMMAND LINE PROCESSING
+
+	The small ARJ self-extractor (-je1) supports command line
+	options.
+
+	ARJSFXJR [-switch(es)] [drive:][target_dir\]
+
+	switches:
+	n: set ARJSFXJR to NOT count as an error the skipping of files
+	o: set ARJSFXJR to overwrite existing files
+
+	You can specify a target_directory or drive or both.  However,
+	you must specify the ending "\" or ":" symbol.
+
+	ARJSFXJR -o C:\SOFT\  -> self-extract into directory "C:\SOFT\"
+				 in overwrite mode.
+
+
+     ARJ COMMANDS
+
+     "d" command
+
+        *** The following information was left out of ARJ.DOC at 2.41 ***
+
+        If specify "*.*" as the filespec, ARJ will prompt for permission to
+	delete.  You can specify the "-y" or "-jyd" options to inhibit the
+	delete prompt.
+
+	If ARJ removes all files from an archive, it will delete the empty
+	archive.
+
+	The delete command normally only deletes non-backup files.  You
+	must specify the "-jg" option to select backup files, too.
+
+	You can specify the "-n" (new) option to delete the files in the
+	archive that DO NOT EXIST on the disk.	You can use the same "-n"
+	option with "ARJ l" to list the files that DO NOT EXIST on the
+        disk.  This is useful in synchronising an archive to a directory.
+
+	Examples:  ARJ d archive *.* -n
+                   ARJ l archive temp\ *.doc -n
+		   ARJ d archive temp\ *.doc -n
+
+
+     "f" and "u" commands
+
+        As of 2.42c, when updating archives with the -jv option selected,
+        ARJ will display a message for each file processed including
+        files that have not been updated.  A message indicating that
+        there has been "no change" will be displayed when no actual
+        update of a file took place.
+
+
+     ARJ SWITCHES
+
+     "-b4" switch
+
+        The "-b4" switch is used to set ARJ to NOT restore any file
+        attribute bits and to reset the archive bit of files being
+        extracted.  It is useful for easing the cleanup/deletion of
+        temporarily extracted archive files as in a virus scanning process.
+
+
+     "-b5" switch
+
+        This switch used with the "e" or "x" commands sets ARJ to not
+        restore any of the original file attributes bits.  However, the
+        archive bit will be left set.
+
+
+     "-f1" switch
+
+        This switch used with the "e" or "x" commands sets ARJ to only
+        extract OLDER files from the archive.
+
+
+     "-u1" switch
+
+        This switch used with the "e" and "x" commands causes ARJ to
+        extract OLDER and non-existing files.
+
+
+     "-u2" switch
+
+        This switch used with the "e" and "x" commands causes ARJ to
+        extract CHANGED (different date-time or different size) and
+        non-existing files.
+
+
+     "-v" switch
+
+	When the multiple volume ARJ files to be used are located on drives
+	with removable media (diskette drives, etc.), ARJ will ALWAYS
+	PROMPT for the next diskette even with the "-y" option specified.
+	However, you can suppress the next volume prompt with the "-jyv"
+	option.  At DOS versions before 3.0, only drives A and B are
+	considered removable.
+
+	After the pause to change diskettes, ARJ will check to make sure
+	that the diskette has been changed.  However, this check is limited
+        to 3 retries for the same volume.  This test can be inhibited with
+        the "i" modifier.
+
+        Example:  ARJ x a:archive -vi
+
+	ARJ will not allow the updating of multiple volume archives unless
+	the "-hu" option is specified.
+
+	The "r" modifier allows the reservation of disk space on the first
+	volume.  The number after the "r" specifies the space to reserve.
+	This is useful for software installation volumes built on the hard
+	disk.
+
+	Example:  ARJ a install -v360r50K   make first volume 50000 bytes
+					    smaller than 360K.
+
+	Example:  ARJ u archive -v360u
+
+	The "z" modifier works like the "s" modifier except that the system
+	command is NOT echoed to the screen.
+
+	The "-v" switch now accepts its modifiers in any order.  The "s"
+	and "z" modifiers must be last because any succeeding text is
+	considered the system command to execute.
+
+	Examples:  ARJ a volume -vavw	     beep, autosize, whole files
+		   ARJ a volume -vavsDIR     beep, autosize, execute DIR
+
+
+     "-je" switch
+
+        This switch will create a multiple volume self-extracting archive
+        when used with the "-v" switch.  This option combination requires
+        DOS 3.0 and above.
+
+        Example:  ARJ a a:install c:\software\*.* -je -va
+
+
+     "-jf" switch
+
+        It is now possible to extract a file stored with an absolute path
+        to another directory from an archive containing similar paths
+        differentiated only by drive letters.
+
+        Example: ARJ x archive d:\temp f:\data\1994\report.*
+
+
+     "-js" switch
+
+        The "-js" switch will recognize "." alone as a file extension
+        indicating no file extension as in "-js." and "-js..arc"
+
+
+     "-jv" switch
+
+        The "-jv switch will display a "no change" message when updating
+        an archive with files that are already up to date.
+
+
+     "-h#" switch
+
+        The "-h#" switch sets ARJ to append the current date string in
+        the form YYMMDD to the current archive name while keeping the
+        file extension the same.
+
+        The "-h#1" switch sets ARJ to append the current time string in
+        the form HHMMSS to the current archive name while keeping the
+        file extension the same.
+
+        The "-h#2" switch sets ARJ to append the current date-time
+        string in the form DHHMMSS to the current archive name while
+        keeping the file extension the same.
+
+        Examples:  ARJ a XX -h# *.c    creates archive name XX931209.ARJ
+                   ARJ a YY -h#1       creates archive name YY123000.ARJ
+                   ARJ a Y -h#2        creates archive name Y8123000.ARJ
+
+        This function does NO checking for exceeding the proper filename
+        length.
+
+
+     "-hm" switch
+
+        The "-hm" switch sets ARJ to transfer the list of filenames to be
+        archived from precious memory to file storage.  This allows a much
+        larger number of files to be processed (over 32,000).  This option
+        is ignored for all ARJ commands except "a", "f", "j", "m", "u".
+
+        Normally, this switch sets ARJ to wait until it is out of memory
+        storing filenames into a list before transferring that list to a
+        temporary file.  That temporary file is put in the current
+        directory or the special work directory if specified (-hm!F:\).
+        However, there may be a few cases where ARJ will run out of memory
+        doing other tasks while it is storing this list.  In these cases,
+        ARJ will abort.  The user can specify a numeric argument to this
+        switch to force ARJ to transfer the list to file storage sooner.
+        This argument specifies the maximum number of filename entries to
+        store in memory.  If the list exceeds that number, the entries are
+        transferred from memory to a temporary file.
+
+        The "-hm" work directory is specified by appending a "!" to the
+        "-hm" or "-hm5000" options and then appending the filename to the
+        option.  See below.
+
+        Examples:  ARJ a archive c:\*.* -r -hm
+                   ARJ a a:archive c:\*.* -r -va -hm5000!F:\
+                   ARJ a a:archive c:\*.* -r -hm!G:\temp\
+
+        This feature has at least two disadvantages.  The checking for
+        duplicate filename specifications may become disabled (ex: *.DOC
+        and MANUAL.* duplicates MANUAL.DOC).  Updating archives will become
+        slower.  Extra disk space is required for the temporary file list.
+        The use of a RAMDISK directory will provide the fastest operation.
+
+
+     "-hn" switch
+
+        The "-hn" switch sets the filespec that does NOT match any file.
+        The default filespec is "...".  However, on some systems like
+        NOVELL, there is a valid filespec "...".  Since ARJ sometimes needs
+        a filespec that is strictly a placeholder, this option should be
+        used to specify some name that does not exist on disk.
+
+        This option must be specified prior to any use of the non-matching
+        filespec.  Setting it via the ARJ_SW variable is an excellent
+        choice.
+
+        Example:  ARJ e -hn#### archive #### -zcomment.txt
+                  SET ARJ_SW=-hn####
+
+
+     "-ho" switch
+
+        The "-ho" switch used with the "e" or "x" extract commands allows
+        file extraction based upon a text search.  ARJ will prompt the
+        user for text strings to search unless the "-jq" option has been
+        specified.  See the "-jq" option in ARJ.DOC for detailed use
+        information.  ARJ will extract a file within an archive if the
+        file contains at least one occurrence of any of the specified
+        search strings.
+
+        Examples:  ARJ e archive -ho
+                   ARJ e archive -ho -jq+3+textstring
+
+
+     "-ho1" switch
+
+        The "-ho1" switch used with the "e" or "x" extract commands allows
+        file extraction based upon a text search.  ARJ will prompt the
+        user for text strings to search unless the "-jq" option has been
+        specified.  See the "-jq" option in ARJ.DOC for detailed use
+        information.  ARJ will extract a file within an archive if the
+        file contain NO occurrences of any of the specified search
+        strings.
+
+        Examples:  ARJ e archive -ho1
+
+
+     "-hr" switch
+
+        The "-hr" switch sets ARJ to attempt to continue processing
+        successive archives even when they contains errors.  This option is
+        intended for ARJ wildcard use such as in the "ARJ t *.ARJ -hr"
+        command.
+
+
+     "-hv" switch
+
+        The "-hv" switch is used to verify the ARJ version number and/or
+        whether the ARJ program is registered.  If the "-hv" option is
+        specified by itself or with an appended "R", an unregistered ARJ
+        will abort with an errorlevel of 1.  If a version number string
+        is appended to the "-hv" option, a lower version numbered ARJ
+        will abort with with an errorlevel of 1.
+
+        Examples:  ARJ a archive -hv         check if registered
+                   ARJ a archive -hvr        check if registered
+                   ARJ a archive -hv2.50     check for version 2.50 or greater
+                   ARJ a archive -hvr2.50    check if registered and version
+                                             2.50 or greater
+
+
+     end document
+

@@ -1,0 +1,31 @@
+                    McAfee VirusScan 2.2.11 for DOS
+
+
+Packing List and Validation Codes       PACKING.LST
+
+VirusScan Program                       SCAN.EXE
+Virus Detection Data                    SCAN.DAT
+Virus Clean Up Data                     CLEAN.DAT
+Virus Names Data                        NAMES.DAT
+
+Validate Program                        VALIDATE.EXE
+
+Registration Information,
+License Agreements,
+Listing of McAfee Authorized Agents,
+Free CompuServe Account Information     README.1ST
+
+New features in this release            WHATSNEW.TXT
+
+BBS Zip File Identification             FILE_ID.DIZ
+
+Validation codes for the programs and Virus Data Files included
+in this package:
+
+ 
+SCAN     EXE    208914  03-19-96   2:11a   CCD1   BCDD
+ 
+CLEAN    DAT     85255  03-19-96   2:11a   20A1   741F
+NAMES    DAT    214048  03-19-96   2:11a   72B1   96CE
+SCAN     DAT    217621  03-19-96   2:11a   84A0   FF70
+ 

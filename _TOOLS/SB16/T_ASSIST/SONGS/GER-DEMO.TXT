@@ -1,0 +1,44 @@
+[:lang German]
+[:nh]
+Diese Demonstration wird Ihnen einige Möglichkeiten des neuen Text-nach-Sprach Systems von Soundblaster 16 zeigen.
+
+Sind Sie bereit? Dann geht's los!
+
+[:phone arpa on]
+[:nk] [hah<500,32>-l<100,32>oo<1100,32>]
+[:nb] [hah<500,27>-l<100,27>oo<1100,27>]
+[:np] [hah<500,12>-l<100,12>oo<1100,12>]
+[:nh] [hah<500,8>-l<100,8>oo<1100,8>]
+[:nh]
+
+Das neue Text-nach-Sprach System von Soundblaster kann sprechen und auch singen.
+
+[:nb]
+[_<21,20>k<47,20>uu<196,20>-k<81,17>uu<196,17>k<112,17>_<21,17>].
+[_<21,5>k<47,20>uu<196,20>-k<81,17>uu<196,17>k<112,17>_<21,17>].
+[_<48,5>rx<56,15>uu<196,15>f<60,15>t<25,15>s<50,15>-au<196,13>s<62,13>-
+d<23,15>eh<196,15>m<81,15>_<48,15>v<54,13>ah<392,13>l<60,13>t<91,13>_<21,13>].
+[_<48,1>l<43,15>ah<196,15>-s<62,15>ax<196,15>t<56,15>-uh<196,17>n<39,17>s<43,17>-
+z<60,18>ih<392,18>-nx<39,15>ax<196,15>n<39,15>-t<41,17>ah<196,17>n<32,17>-
+t<28,17>s<56,17>ax<196,17>n<47,17>-q<45,18>uh<196,18>n<39,18>t<21,18>-
+sx<58,18>p<54,18>rx<23,20>ih<392,20>-nx<39,17>ax<196,17>n<45,17>-
+f<56,17>rx<25,20>yy<392,20>-l<65,17>ih<196,17>nx<47,17>-
+f<60,17>rx<25,20>yy<392,20>-l<65,17>ih<196,17>nx<52,17>-
+v<30,18>ih<196,18>r<32,18>t<58,18>-q<37,17>eh<196,17>s<70,17>-
+n<48,15>uu<196,15>n<72,15>_<48,15>b<60,13>ah<392,13>l<60,13>t<91,13>_<21,13>].
+[:nh]
+
+Jetzt hören Sie mal die neun zur Verfügung stehenden Stimmen:
+
+[:name paul] Hallo, mein Name ist Paul.
+[:name betty] Mein Name ist Betty.
+[:name harry] Und ich heisse Harry.
+[:name frank] Guten Tag, ich bin Frank.
+[:name dennis] Wie geht's Ihnen? Mein Name ist Dennis.
+[:name kit] Hallo, ich bin Kit der Kid!
+[:name ursula] Tag, mein Name ist Ursula.
+[:name rita] Hallo, ich bin Rita!
+[:name wendy] Und ich bin die Wendy.
+[:nh]
+
+So, das wäre es wohl im Moment. Gibt es noch irgendwelche Fragen? 

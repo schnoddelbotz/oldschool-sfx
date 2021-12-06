@@ -1,0 +1,16 @@
+
+
+ V8.05 * keine Fehlermeldung mehr, falls keine CD im Laufwerk liegt
+
+ V8.10 * Cache-Grî·en-Erkennung jetzt bis 512k
+       * Chipsatzdetail-Infos fÅr Intel TRI*ON, Neptun u.a.
+       * erkennt ca 160 neue PCI-Karten-Hersteller
+       * erkennt viel mehr VGA Chips, inclusive Matrox, Avance Logic, ARK
+
+ V8.11 * erkennt AMD 5k86 CPU und Takt
+       * erkennt Takt von Cyrix 6x86 richtig
+       * erkennt SiS 5511 Chipsatz und dessen L2-Cache Typ
+       * kein Absturz mehr bei Benchmark-Grafik auf schnellern Rechnern
+       * Vergleichsliste aktuallisiert
+
+

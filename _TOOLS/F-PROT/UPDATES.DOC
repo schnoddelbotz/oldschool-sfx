@@ -1,0 +1,184 @@
+       How to obtain updates to the shareware version over the net:
+
+If you have FTP access, you can always get the most up-to date version of
+F-PROT by anonymous FTP from a number of sites.  Our primary method of
+distribution is through Simtel and Garbo, and all "mirrors" of those sites
+should always carry an up-to-date version of F-PROT.
+
+The primary locations are
+
+   ftp://garbo.uwasa.fi/pc/virus/fp-xxx.zip
+   ftp://ftp.simtel.net/pub/simtelnet/msdos/virus/fp-xxx.zip
+
+   http://www.simtel.net/pub/simtelnet/msdos/virus/fp-xxx.zip
+
+xxx stands for the version number, for example 224 in version 2.24.
+
+The Simtel archive is mirrored on numerous sites, and in general you
+should use the one that is closest to you geographically.
+
+
+Country         Host                     Directory
+---------       ----------------------   -------------------
+Australia       ftp.bhp.com.au            /pub/simtelnet
+Australia       ftp.iniaccess.net.au      /pub/simtelnet
+Australia       ftp.tas.gov.au            /pub/simtelnet
+Austria         ftp.univie.ac.at          /mirror/simtelnet
+Belgium         ftp.linkline.be           /mirror/simtelnet
+Belgium         ftp.tornado.be            /pub/simtelnet
+Brazil          ftp.iis.com.br            /pub/simtelnet
+Brazil          ftp.unicamp.br            /pub/simtelnet
+Canada          ftp.crc.doc.ca            /systems/ibmpc/simtelnet
+Canada          ftp.direct.ca             /pub/simtelnet
+Chile           sunsite.dcc.uchile.cl     /pub/Mirror/simtelnet
+China           ftp.pku.edu.cn            /pub/simtelnet
+Czech Republic  ftp.eunet.cz              /pub/simtelnet
+Czech Republic  pub.vse.cz                /pub/simtelnet
+Czech Republic  ftp.zcu.cz                /pub/simtelnet
+Finland         ftp.funet.fi              /mirrors/ftp.simtel.net/pub/simtelnet
+France          ftp.grolier.fr            /pub/simtelnet
+France          ftp.ibp.fr                /pub/simtelnet
+Germany         ftp.rz.ruhr-uni-bochum.de /pub/simtelnet
+Germany         ftp.tu-chemnitz.de        /pub/simtelnet
+Germany         ftp.uni-heidelberg.de     /pub/simtelnet
+Germany         ftp.uni-magdeburg.de      /pub/mirrors/simtelnet
+Germany         ftp.uni-paderborn.de      /pub/simtelnet
+Germany         ftp.uni-trier.de          /pub/pc/mirrors/simtelnet
+Germany         ftp.rz.uni-wuerzburg.de   /pub/pc/simtelnet
+Greece          ftp.ntua.gr               /pub/pc/simtelnet
+Hong Kong       ftp.cs.cuhk.hk            /pub/simtelnet
+Hong Kong       ftp.hkstar.com            /pub/simtelnet
+Hong Kong       sunsite.ust.hk            /pub/simtelnet
+Italy           cis.utovrm.it             /simtelnet
+Italy           ftp.flashnet.it           /pub/simtelnet
+Italy           ftp.unina.it              /pub/simtelnet
+Italy           mcftp.mclink.it           /pub/simtelnet
+Japan           ftp.iij.ad.jp             /pub/simtelnet
+Japan           ftp.riken.go.jp           /pub/simtelnet
+Japan           ftp.saitama-u.ac.jp       /pub/simtelnet
+Japan           ftp.u-aizu.ac.jp          /pub/PC/simtelnet
+Japan           ring.aist.go.jp           /pub/simtelnet
+Japan           ring.asahi-net.or.jp      /pub/simtelnet
+Latvia          ftp.lanet.lv              /pub/mirror/simtelnet
+Malaysia        ftp.jaring.my             /pub/simtelnet
+Malaysia        ftp.mimos.my              /pub/simtelnet
+Mexico          ftp.gdl.iteso.mx          /pub/simtelnet
+Netherlands     ftp.euro.net              /d5/simtelnet
+Netherlands     ftp.nic.surfnet.nl        /mirror-archive/software/simtelnet
+New Zealand     ftp.vuw.ac.nz             /pub/simtelnet
+Norway          ftp.bitcon.no             /pub/simtelnet
+Poland          ftp.cyf-kr.edu.pl         /pub/mirror/Simtel.Net
+Poland          ftp.icm.edu.pl            /pub/simtelnet
+Poland          ftp.man.poznan.pl         /pub/simtelnet
+Portugal        ftp.ip.pt                 /pub/simtelnet
+Portugal        ftp.ua.pt                 /pub/simtelnet
+Romania         ftp.sorostm.ro            /pub/simtelnet
+Slovenia        ftp.arnes.si              /software/simtelnet
+South Africa    ftp.is.co.za              /pub/simtelnet
+South Africa    ftp.sun.ac.za             /pub/simtelnet
+South Korea     ftp.nuri.net              /pub/simtelnet
+South Korea     ftp.sogang.ac.kr          /pub/simtelnet
+Spain           ftp.rediris.es            /mirror/simtelnet
+Sweden          ftp.sunet.se              /pub/simtelnet
+Switzerland     ftp.switch.ch             /mirror/simtelnet
+Taiwan          ftp.ncu.edu.tw            /Packages/simtelnet
+Taiwan          nctuccca.edu.tw           /mirror/simtelnet
+Thailand        ftp.nectec.or.th          /pub/mirrors/simtelnet
+UK, Edinburgh   emwac.ed.ac.uk            /mirrors/simtelnet
+UK, London      ftp.demon.co.uk           /pub/simtelnet
+UK, Liverpool   ftp.mersinet.co.uk        /pub/simtelnet
+UK, Lancaster   micros.hensa.ac.uk        /pub/simtelnet
+UK, London      sunsite.doc.ic.ac.uk      /packages/simtelnet
+US, California  ftp.cdrom.com             /pub/simtelnet
+US, California  ftp.digital.com           /pub/micro/pc/simtelnet
+US, Illinois    uiarchive.cso.uiuc.edu    /pub/systems/pc/simtelnet
+US, Mass.       ftp.bu.edu                /pub/mirrors/simtelnet
+US, Michigan    oak.oakland.edu           /pub/simtelnet
+US, New York    ftp.rge.com               /pub/systems/simtelnet
+US, Oklahoma    ftp.ou.edu                /pub/simtelnet
+US, Oregon      ftp.orst.edu              /pub/simtelnet
+US, Utah        ftp.cyber-naut.com        /pub/simtelnet
+US, Virginia    mirrors.aol.com           /pub/simtelnet
+
+For people in remote corners of the world, without reliable FTP or WWW
+access, we offer the "F-PROT by E-mail" service.
+
+To use this service, you MUST be able to handle multiple-part uu-, xx-
+or mime-encoded mail messages.  Please do not waste your (and ours) time by
+using this service if you do not already have the software to decode such
+messages, and keep in mind that this service is intended for those who
+have no other alternative...that is, no FTP or WWW access.
+
+To use this service you send an E-mail message to f-prot-update@complex.is
+This is an automated mail server.  No human will see your message, and if
+it does not match the format described below, the mail server will just
+respond with a standard help message.
+
+For now the following commands are accepted by the mail server. 
+
+Please note that the commands must be in the body of the message, not in
+the subject line or the header.
+
+send-as: form
+send-part: part_num
+send-size: size_in_kilobytes
+send-version
+subscribe notice
+unsubscribe notice
+check notice
+
+The 'send-as' command signifies the encoding that should be used in sending
+the file by E-mail.  'form' must be one of: 'uue', 'xxe' or 'mime'.
+If the 'send-as' command is 'mime', F-PROT will be sent as a MIME message
+with Content-Type: message/partial.
+
+send-part: requests transmission of a specific part.  You should only use
+this command if you are requesting re-transmission of a corrupted part.
+
+send-size: requests that a specific size (in KB) is used for each part.
+The size must be between 20 and 60.  
+
+If the 'send-as' command is 'mime', F-PROT will be sent as a MIME message
+with Content-Type: message/partial.
+
+send-version is used to check which version is currently available.  Using
+"finger f-prot@complex.is" is a better method, however.
+
+Examples:
+
+To get an uuencoded copy of the current version of F-PROT, send a message
+containing the following in the body to 'f-prot-update@complex.is' :
+
+send-as: uue
+
+If for some reason, the 6th part of the transmission failed, you could
+send another message to 'f-prot-update@complex.is' containing the following
+in the body:
+
+send-as: uue
+send-part: 6
+
+To change the block size to about 20 Kilobytes, you could send a message
+to 'f-prot-update@complex.is' containing the following in the body:
+
+send-as: uue
+send-size: 20
+
+And if the 4th part of that transmission is lost, you could send the
+following message to 'f-prot-update@complex.is':
+
+send-as: uue
+send-size: 20
+send-part: 4
+
+subscribe notice:  Allows people to subscribe to a new version notice.
+Subscribers will then receive announcement in e-mail when new versions of
+F-PROT are available.
+
+unsubscribe notice:  Removes people from the new version notice list.
+
+check notice:  Sends back confirmation whether an address is subscribed or
+not.
+
+Comments about this service should be addressed to: f-prot-request@complex.is
+Suggestions for improvements are welcomed.

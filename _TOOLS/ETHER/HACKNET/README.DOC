@@ -1,0 +1,169 @@
+============================================================================
+
+			       NETWORK SPY 
+
+			 Version 1.00 - 10/17/91
+
+			 Sigma Software Research
+			     P.O. Box 231239
+			Montgomery, Alabama 36123-1239
+			   TEL: (205) 244-7230
+
+============================================================================
+
+
+Introduction
+------------
+This program is designed to work with most NetBIOS compatible networks.
+The program NETSPY allows you call another networked PC host and remotly
+monitor/control applications running on the host machine. Currently NETSPY
+does not provide support for graphics applications. However, most text mode
+applications are very responsive running remotly under NETSPY.
+
+If you like NETSPY and decide to use it on a regular basis, we request a $30
+shareware registration fee. Please send contributions to the above address
+to register  your copy.
+
+Free RCP Bonus!!!
+-----------------
+As an extra bonus we are including RCP/RCPS remote file copy utilities.
+These programs allow copying files files back and forth over the network
+without a file server. These utilities can be used with NETSPY to copy 
+files to and from remote host machines without a file server. See the
+notes at the end of the document describe the usage of RCP.
+
+
+Diskette Contents
+-----------------
+NETSPY.EXE	Network Spy program to monitor host machines with.
+NETSPYD.EXE	Network Spy Host Node Driver (memory resident TSR).
+NETSPYD.SYS	Network Spy Host Node Driver (loadable DOS device driver).
+RCP.EXE		Remote File Copy Utility program.
+RCPS.EXE	Remote File Copy Server Utility program.
+README.DOC	This document file
+
+
+Installing the NETSPYD Driver on Host Machines
+----------------------------------------------
+In order to use NETSPY you must copy one of the host drivers on each machine
+you intend to spy on in the network. The NETSPY host driver is supplied in
+two forms:
+
+	NETSPYD.EXE a memory resident TSR device driver.
+	NETSPYD.SYS a loadable CONFIG.SYS device driver.
+
+Typically the TSR form is required for most NetBIOS networks. You must make
+sure that NetBIOS is loaded before loading NETSPYD.EXE or NETSPYD.SYS! Most
+networks will require the TSR version NETSPYD.EXE (i.e. Lantastic, etc...)
+because the NetBIOS is implemented as a TSR itself. However, if your system's
+NetBIOS is a device driver or ROM resident you may use NETSPYD.SYS if you
+wish.
+
+The host driver listens in the background for calls from any NETSPY client
+and creates a remote session when called. YOU MUST ASSIGN A UNIQUE NETWORK
+HOST NAME FOR EACH HOST! This name may contain up to 15 characters and is 
+the name supplied to NETSPY.EXE when calling a particular node to spy on.
+Both NETSPY host device drivers accept the following command line syntax:
+
+	/N:{name}	Required host name (15 chars max, case insensitive)
+	/L		No logo flag; prevents load logo from displaying
+	/E		No eyes flag; prevents eyes from appearing on host
+	/Q		Quiet mode; same as /L and /E together
+
+  Remote Host Examples:
+
+	C:>NETSPYD /N:STEVE		(we can spy on STEVE now!!!)
+  or...
+	C:>NETSPYD /N:STEVE /Q		(put in the boss's AUTOEXEC.BAT!!!)
+
+
+Installing NETSPY on Administrator Machines
+-------------------------------------------
+After your have installed the host driver on the various network machines
+you plan to spy on, copy the file NETSPY.EXE to your system administrators
+disk in any convenient location. You may also place NETSPY on host machines
+or any other machine you want to give spy capability on.
+
+If you plan to have several people spying on various nodes, you must set
+the environment variable NETSPY to a unique spy client name. Like the HOST
+node name, this name should be unique for all nodes. This is the name of
+the spy person who is watching a host. If the name already exists, others
+will not be able to spy using the same name until the spy session for that
+name has closed. By default the spy name is set to "NETSPY" if not specified
+by the environment variable NETSPY. To set the spy name enter the following
+in your AUTOEXEC.BAT or at the DOS prompt type:
+
+	SET NETSPY=ADMIN-SPY1
+
+For initial installation you don't have worry about this. You just may have
+only one spy active at time if not set. Now we are ready to spy on someone.
+To create a spy session from the administrators machine, type the following
+at the command line:
+
+	C:>NETSPY STEVE
+
+After a few seconds, the screen should clear and appear just as is does
+on the host machine. At this point any keys you type will be directed to 
+the host machine (be carefull on other peoples machines - they may be 
+working!). If the /E or /Q option was not specified on the host, you will
+see a pair of eyes in the upper right hand corner of your screen indicating
+someone is spying. The exit NETSPY press LEFT-SHIFT plus ESC to exit back
+to your local machine.
+
+If no name is supplied to NETSPY you will be prompted for the remote host
+name. If the name does not exists the call will abort and an error message
+will be displayed. The only restrictions to spying are as follows:
+
+	1) You can't spy on yourself (mirror spying). In the
+	   above examples STEVE should not type NETSPY STEVE on
+	   his machine or a mirror condition will exist. 
+
+	2) Don't spy back on someone you know is spying on you. This
+	   will cause mirror spying also. You may spy on someone who
+	   is already spying on another person (chain spying).
+
+	3) Don't spy on someone running a graphics or multi-tasking type
+	   of program on their machine.
+
+
+Miscellaneous Notes
+-------------------
+* Be careful when spying on other machines. You may come in at any time on 
+  someone elses machine. Depending on the application they are running there
+  is always the possibilty of crashing a machine. Most text programs should
+  work with NETSPY.
+
+* You may want to only allow one spy at a time by not setting the NETSPY
+  environment variable to avoid "chain" and "mirror" spying conditions and
+  reduce network traffic. Too many spies will bog the network down.
+
+
+Using RCP Utilities
+-------------------
+The RCP programs are similar to the UNIX rcp programs. Under DOS, the host
+node must execute the RCP server RCPS to listen for calling clients. Set the
+environment variable RCPHOST to create a unique 15 character node name for 
+each active RCPS host. You may also specify the host name from the command
+line as follows:
+
+	C> rcps bobs-at
+
+RCP client may copy files to and from any RCPS host using the following
+syntax:
+
+	RCP [host:source] [host:destination]
+
+The syntax is similar to the DOS copy command except RCP requires a source
+and destination name. The follow commands illustrate some RCP usage examples:
+
+EXAMPLE 1: Copy all C files from BOBS-XT on C:\MSC\PROJECST to local drive
+
+	C> rcp bobs-xt:c:\msc\projects\*.c
+
+EXAMPLE 1: Copy all files from BOBS-XT current dir to local drive \TMP
+
+	C> rcp bobs-xt:*.* \tmp
+
+Unlike the UNIX RCP, this program does not allow copying between remote
+machines. You may only copy to and from a remote host to your local machine.
+

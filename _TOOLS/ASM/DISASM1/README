@@ -1,0 +1,19 @@
+DIS86  Interactive Disassembler version 2.16
+
+by James R. Van Zandt
+
+volume contents...
+
+README            1673 12-20-92  this file
+DIS86    EXE     77824 12-20-92  disassembler: executable file
+DIS86    DOC     43542 12-20-92  documentation
+OP16     ASM      9440 04-15-89  sample of most instruction codes,
+OP16     EXE      1411 04-15-89   object code (DON'T EXECUTE THIS!),
+OP16     DIS     21570 04-15-89    and disassembly
+OP32     ASM      6841 02-16-89  sample of 32 bit instruction codes,
+OP32     EXE       874 02-15-89   object code (DON'T EXECUTE THIS!),
+OP32     DIS     13715 02-16-89    and disassembly
+OPV20    ASM      3014 03-18-89  sample of V20 instruction codes,
+OPV20    EXE       771 03-18-89   object code (DON'T EXECUTE THIS!),
+OPV20    DIS      5695 03-18-89    and disassembly
+REGISTER DOC      3398 12-20-92  regitration form

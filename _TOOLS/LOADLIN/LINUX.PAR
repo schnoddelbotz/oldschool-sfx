@@ -1,0 +1,24 @@
+# params file for LOADLIN, generated for S.u.S.E Slackware
+
+C:\tools\loadlin\zimage  # file name of kernel image
+root=/dev/xxx        # root file system, this will be overwritten
+                     # by LINUX.BAT, when started with correct value
+ro                   # root-fs will be mounted readonly
+                     # (may be changed by LINUX.BAT)
+
+# here follow some kernel params you entered during setup
+
+
+# here may be your chosen keymap params
+
+
+# CD-dependent kernel_params
+aztcd=0
+sbpcd=0
+sonycd535=0
+mcd=0
+
+# may be a mem= param follows
+
+
+# end of params file

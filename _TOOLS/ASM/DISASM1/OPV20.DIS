@@ -1,0 +1,106 @@
+0000:0000      b8 00 4c            mov            ax,4c00
+0000:0003      cd 21               int            21
+0000:0005      00 00               add            [bx+si],al
+0000:0007      00 00               add            [bx+si],al
+0000:0009      00 00               add            [bx+si],al
+0000:000b      00 00               add            [bx+si],al
+0000:000d      00 00               add            [bx+si],al
+0000:000f      00 00               add            [bx+si],al
+0000:0011      00 00               add            [bx+si],al
+0000:0013      00 00               add            [bx+si],al
+0000:0015      00 00               add            [bx+si],al
+0000:0017      00 00               add            [bx+si],al
+0000:0019      00 00               add            [bx+si],al
+0000:001b      00 00               add            [bx+si],al
+0000:001d      00 00               add            [bx+si],al
+0000:001f      00 c3               add            bl,al
+0000:0021      c2 03 00            ret            0003
+0000:0024      90                  nop
+0000:0025      90                  nop
+0000:0026      90                  nop
+0000:0027      90                  nop
+0000:0028      90                  nop
+0000:0029      90                  nop
+0000:002a      90                  nop
+0000:002b      90                  nop
+0000:002c      90                  nop
+0000:002d      62 00               bound          ax,[bx+si]
+0000:002f      c8 21 2c 05         enter          2c21,05
+0000:0033      69 00 21 2c         imul           ax,[bx+si],2c21
+0000:0037      69 c0 21 2c         imul           ax,ax,2c21
+0000:003b      6b 00 21            imul           ax,[bx+si],21
+0000:003e      6b c0 21            imul           ax,ax,21
+0000:0041      6c                  insb
+0000:0042      f2                  repnz
+0000:0043      6c                  insb
+0000:0044      c9                  leave
+0000:0045      6e                  outsb
+0000:0046      f2                  repnz
+0000:0047      6e                  outsb
+0000:0048      61                  popa
+0000:0049      68 33 44            push           4433
+0000:004c      6a 33               push           33
+0000:004e      60                  pusha
+0000:004f      c0 00 03            rol       byte [bx+si],03
+0000:0052      c0 08 03            ror       byte [bx+si],03
+0000:0055      c0 10 03            rcl       byte [bx+si],03
+0000:0058      c0 18 03            rcr       byte [bx+si],03
+0000:005b      c0 20 03            shl       byte [bx+si],03
+0000:005e      c0 28 03            shr       byte [bx+si],03
+0000:0061      c0 38 03            sar       byte [bx+si],03
+0000:0064      90                  nop
+0000:0065      90                  nop
+0000:0066      90                  nop
+0000:0067      90                  nop
+0000:0068      90                  nop
+0000:0069      90                  nop
+0000:006a      90                  nop
+0000:006b      90                  nop
+0000:006c      90                  nop
+0000:006d      0f 20               add4s
+0000:006f      0f 12 c0            clr1           al,cl
+0000:0072      0f 12 00            clr1      byte [bx+si],cl
+0000:0075      0f 13 c0            clr1           ax,cl
+0000:0078      0f 13 00            clr1      word [bx+si],cl
+0000:007b      0f 1a c0 03         clr1           al,03
+0000:007f      0f 1a 00 03         clr1      byte [bx+si],03
+0000:0083      0f 1b c0 03         clr1           ax,03
+0000:0087      0f 1b 00 03         clr1      word [bx+si],03
+0000:008b      0f 26               cmp4s
+0000:008d      0f 33 c0            ext            al,al
+0000:0090      0f 3b c0 03         ext            al,03
+0000:0094      66 c0               fp02
+0000:0096      66 00               fp02
+0000:0098      0f 31 c0            ins            al,al
+0000:009b      0f 39 c0 03         ins            al,03
+0000:009f      0f 16 c0            not1           al,cl
+0000:00a2      0f 16 00            not1      byte [bx+si],cl
+0000:00a5      0f 17 c0            not1           ax,cl
+0000:00a8      0f 17 00            not1      word [bx+si],cl
+0000:00ab      0f 1e c0 03         not1           al,03
+0000:00af      0f 1e 00 03         not1      byte [bx+si],03
+0000:00b3      0f 1f c0 03         not1           ax,03
+0000:00b7      0f 1f 00 03         not1      word [bx+si],03
+0000:00bb      65                  repc
+0000:00bc      64                  repnc
+0000:00bd      0f 28 c0            rol4           al
+0000:00c0      0f 28 00            rol4           [bx+si]
+0000:00c3      0f 2a c0            ror4           al
+0000:00c6      0f 2a 00            ror4           [bx+si]
+0000:00c9      0f 14 c0            set1           al,cl
+0000:00cc      0f 14 00            set1      byte [bx+si],cl
+0000:00cf      0f 15 c0            set1           ax,cl
+0000:00d2      0f 15 00            set1      word [bx+si],cl
+0000:00d5      0f 1c c0 03         set1           al,03
+0000:00d9      0f 1c 00 03         set1      byte [bx+si],03
+0000:00dd      0f 1d c0 03         set1           ax,03
+0000:00e1      0f 1d 00 03         set1      word [bx+si],03
+0000:00e5      0f 22               sub4s
+0000:00e7      0f 10 c0            test1          al,cl
+0000:00ea      0f 10 00            test1     byte [bx+si],cl
+0000:00ed      0f 11 c0            test1          ax,cl
+0000:00f0      0f 11 00            test1     word [bx+si],cl
+0000:00f3      0f 18 c0 03         test1          al,03
+0000:00f7      0f 18 00 03         test1     byte [bx+si],03
+0000:00fb      0f 19 c0 03         test1          ax,03
+0000:00ff      0f 19 00 03         test1     word [bx+si],03

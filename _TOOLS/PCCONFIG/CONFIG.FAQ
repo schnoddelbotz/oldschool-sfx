@@ -1,0 +1,116 @@
+
+HÑufig gestellte Fragen (englisch: FAQ, frequently asked questions)
+und ihre Antworten im Zusammenhang mit CONFIG:
+
+
+F) Meine CPU hat irgendeinen POPAD-Fehler, ist der Rechner kaputt, mu·
+   ich ihn umtauschen?
+A) Der POPAD Befehl restauriert das EAX-Register unter bestimmten
+   Bedingungen nicht richtig. Der Fehler betrifft nur 80386er, ist
+   ca Mitte 1990 entdeckt worden und betrifft bis heute fast alle
+   Versionen der 386dx und 386sx von Intel und AMD. Die neusten Versionen
+   - zumindest von Intel - sind korrigiert. Dieser Fehler ist allerdings
+   den Softwareentwicklern mittlerweile bekannt und der Befehl wird dement-
+   sprechend nicht verwendet. Machen Sie sich keine Sorgen, mein 386er
+   hat ihn auch...
+
+F) Wieso wird mein Board-Chipsatz nicht erkannt?
+A) Ich habe keine Unterlagen Åber alle auf dem Markt befindlichen
+   ChipsÑtze. Es liegt mir leider nur eine Auswahl vor. Wird Ihr Chipsatz
+   nicht erkannt, obwohl er in der Anleitung erwÑhnt wird, so kînnen Sie
+   ihn in der .INI Datei beim Schalter CHIPSATZ direkt angeben um das
+   Chipsatz-Fenster in CONFIG zu aktivieren.
+
+F) Wieso hat meine VGA angeblich nur 256k Speicher? Ich wei· genau,
+   sie hat mehr!
+A) Das von IBM definierte Verfahren, die Speichergrî·e zu bestimmen
+   funktioniert nur bis 256k. Viele Hersteller von SVGA-Karten haben
+   eigene (verschiedene) Methoden die Speichergrî·en ihrer Karten zu
+   ermitteln. Leider habe ich nicht zu jeder beliebigen Karte Unterlagen,
+   so da· CONFIG nicht auf allen VGAs die Speichergrî·e korrekt bestimmen
+   kann.
+
+F) Bei meinem 66 Mhz Board funktioniert angeblich der Kurzzeittimer nicht?!?
+A) Auf einigen Boards funktioniert der Test nicht und liefert Falschmeldungen.
+   In diesem Fall den Test mittels des Schalters SKIPTIMERTEST in der .INI
+   Datei abschalten.
+
+F) Bei der Festplattenrotation stehen Fragezeichen, wieso?
+A) Moderne Festplatten haben einen eingebauten Hardware-Cache mit bis zu
+   256 KB Grî·e. Bei zu gro·en Caches kann die Umdrehungszahl nicht bestimmt
+   werden, weil nach einem Lesezugriff die komplette Spur im Cache steht
+   und beim erneuten Lesen nicht mehr von der Platte geholt wird.
+
+F) Im Memory-Fenster stehen Bereiche mit 8-Bit Zugriff, ich habe aber
+   einen 386/486er, wieso nur 8-Bit?
+A) Diese Speicherbereiche sind leer, sie enthalten NICHTS, kein ROM,
+   kein RAM, kein HI-DOS. Auf dieses NICHTS erfolgen Speicherzugriffe
+   nun einmal langsam und mit 8 Bit.
+
+F) Meine VGA-Karte hat angeblich einen 8-Bit-Bus, in Wirklichkeit hat
+   sie aber einen 16-Bit-Bus, ich hab's gesehen.
+A) Diese Karte kann sowohl in ATs mit 16 Bit, als auch in XTs mit 8 Bit
+   betrieben werden. Die Karte stellt sich selbst darauf ein. Viele
+   Ñltere Karten bewerkstelligen diese Bus-Erkennung nicht richtig und
+   'denken' auch in ATs, sie wÅrden in einem XT stecken. Wenn CONFIG
+   sagt: 8-Bit, dann wirds zu 95% stimmen. Die Geschwindigkeitswerte
+   dÅrften dies bestÑtigen. Karten mit 8-Bit Bus kommen nicht Åber
+   700 KB/s Durchsatz im Textmodus.
+
+F) Wieso werden im Fenster IRQs nicht die tatsÑchlich von zB den
+   Schnittstellen belegten IRQs angezeigt, sondern nur die Standard-
+   belegungen?
+A) Von der direkten Programmierung des Interrupt-Controllers lasse ich
+   aus Sicherheits- und KompatibilitÑtsgrÅnden die Finger.
+
+F) Der Festplattendurchsatz, den CONFIG angibt ist hîher, als von anderen
+   Testprogrammen ermittelt, wieso?
+A) CONFIG bestimmt den Durchsatz durch Lesezugriffe auf EINER Spur und
+   zwar mit zunehmender Sektorenanzahl, bis ein Maximalwert erreicht ist.
+   Auf Platten mit Hardware-Cache entspricht dieser Wert dann eher der
+   Geschwindigkeit Cache->Bus->Hauptspeicher, als der Geschwindigkeit
+   PlattenoberflÑche->Bus->Hauptspeicher. Bei alten MFM/RLL Platten ent-
+   spricht der Wert allerdings schon dem Durchsatz PlattenoberflÑche->
+   Bus->Hauptspeicher.
+   Der seit V6.40 implementierte Test 'Lineares Lesen' liefert auch auf
+   neuen Platten einen realistischen Wert der öbertragungsgeschwindigkeite
+   von der Platte in den Hauptspeicher.
+
+F) CONFIG stÅrzt beim Festplattenbenchmark mit einen Fehlercode ab und
+   ich lande wieder im DOS-Prompt. Wieso?
+A) Dieser Fehler tritt oft auf Vesa-Local-Bus Controllern auf, die
+   'zu schnell' eingestellt sind. Versuchen Sie sie langsamer zu jumpern
+   und vermutlich verschwinden damit auch sonstige 'seltsame' AbstÅrze.
+
+F) Wieso sind die Werte fÅr BIOS- & DOS-Zeichenausgabe viel grî·er, wenn
+   ich den Rechner ohne alle Treiber boote?
+A) Viele Treiber wie Maus, Screenblanker, Memorymanager klinken sich in
+   die Zeichenausgaberoutinen ein um diese zu Åberwachen oder um sie um neue
+   Funktionen zu erweitern. Hierdurch wird die Ausgabegeschwindigkeit
+   verringert. Weiterhin werden die Routinen unter UmstÑnden so ver-
+   grî·ert, da· sie nicht mehr komplett in den CPU-Cache passen.
+
+F) Kann CONFIG nicht auch die physikalischen Parameter von IDE-Platten
+   anzeigen und nicht nur die Translate-Werte?
+A) Nein.
+
+F) CONFIG stÅrzt sofort zu Beginn mit einem komischen Zeichen links oben
+   in der Bildschirmecke ab???
+A) Den Schalter VIDEOTEST auf NEIN setzen!
+
+F) Ich bin schon registrierter User, wieso lÑuft das Update bei mir nicht
+   mit den beiden fehlenden Fenster.
+A) Die Shareware-Version lÑ·t sich durch das .REG File nicht zur Voll-
+   version machen. Sehen Sie in der Anleitung unter UPDATES nach, wo
+   diese zu beziehen sind.
+
+F) Ich habe keine CD mit 600 MB fÅr den CD-ROM Benchmark!!!
+A) In der .INI Datei den Schalter MinCDsize Ñndern. Allerdings sind
+   bei kleineren CDs die Zugriffszeiten-Werte unrealistisch.
+
+F) Beim Festplattenbenchmark steigt das Programm aus, wieso?
+A) Haben Sie Hyperdisk 4.70 geladen? Dann schalten Sie ihn fÅr den
+   Test mit CTRL-ALT-D ab. Die V4.70 scheint fehlerhaft zu sein, da Ñltere
+   Versionen und andere Cacheprogramme ohne Probleme mit der Benchmark-
+   Routine von CONFIG zusammen laufen.
+

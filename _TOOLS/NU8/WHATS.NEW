@@ -1,0 +1,45 @@
+NEUE FUNKTIONEN IN DER VERSION 8.0 DER NORTON UTILITIES 
+=======================================================
+
+Vielen Dank, da· Sie sich fÅr die Norton Utilities entschieden
+haben. Wir haben in dieser Datei zusammengestellt, was in der
+Version 8.0 neu ist oder verbessert wurde. Die wichtigsten
+Neuerungen haben wir entsprechend hervorgehoben.
+
+Das NU 8 Team. 
+--------------
+
+* NEU: NORTON DISK DOCTOR FöR WINDOWS
+    Diagnose und Reparatur im Hintergrund fÅr dauerhaften Schutz
+
+* NEU: SPEED DISK FöR WINDOWS
+    Optimierung im Hintergrund fÅr dauerhaften Spitzenleistung
+    Intelligente Verarbeitung offener Dateien unter Windows
+
+* NEU: VERWALTUNG UND WIEDERHERSTELLUNG VON KONFIGURATIONSDATEIEN
+    FöR DOS UND WINDOWS
+               FILE COMPARE  - Direkter Dateivergleich in Windows
+               INI TRACKER   - öberwachung und Wiederherstellung von
+                               Konfigurationsdateien
+	       INI TUNER     - Anzeige und Aktualisierung von 
+                               Einstellungen in INI-Dateien                               
+               INI EDITOR    - Editor fÅr INI-Dateien
+               INI-RATGEBER  - AusfÅhrliche Hilfe bei der Konfiguration
+                               von INI-Dateien
+
+* NEU: SYSTEM WATCH FöR WINDOWS
+    öberwachung von Speicher, FestplattenkapazitÑt und anderen
+    wichtigen Ressourcen
+
+* ERWEITERT: NORTON DIAGNOSTICS
+    Interrupt-Statustest zur Feststellung von GerÑtekonflikten,
+    erweiterte Bildschirmtests und Joystick-Tests
+    
+* ERWEITERT: WIPEINFO
+    UnterstÅtzt jetzt komprimierte Laufwerke
+
+* ERWEITERT: FILE FIX
+    Anpassung an WordPerfect 6.0
+
+* ERWEITERT: SYSTEM INFORMATION
+    Jetzt mit Leistungs-Benchmark fÅr Pentium 

@@ -1,0 +1,149 @@
+
+    Geachte Gebruiker!
+
+     DOS  Navigator(tm)  1.42  is  Shareware,  d.w.z.  dat  het programma
+  gratis   te   copieeren   is.  Het  mag  op  allerlei  manieren  worden
+  verspreid, ook via Bulletin Boards.
+     Betaling  is  nodig  voor  registratie.  U  hebt  het  recht  om DOS
+  Navigator  1.42  voor  een  periode  van 30 dagen proberen. Indien u na
+  die   periode  nog  met  DOS  Navigator  wilt  blijven  werken,  bent u
+  verplicht  daarvoor  de  registratiekosten te betalen. Doet u dat niet,
+  dan  zult  u  het  programma  niet  langer  mogen gebruiken, met andere
+  woorden:  U  dient  DOS Navigator en alle bijbehorende bestanden van uw
+  systeem te verwijderen!
+
+     Wat  biedt  de  registratie?  U ontvangt een registratienummer en uw
+  gegevens  worden  opgeslagen  in  ons  klantenbestand.  In  het vervolg
+  kunt  u  eventuele  updates  zelf  downloaden via een bulletinboard, of
+  tegen  een  geringe  vergoeding  een  diskette  met  de nieuwste versie
+  bestellen   bij   MaSe  Software.  Bij  het  uitkomen  van  een  "Major
+  Update",  kunnen  er  kosten zijn verbonden aan het overstappen op deze
+  versie. Het is de auteur die deze beslissing neemt.
+
+     Verder  hebt  u  als  geregistreerd gebruiker het recht om eventuele
+  vragen,  waarop  het  antwoord  niet  is  terug te vinden in de on-line
+  helpfunctie,  door  te  geven  aan  uw registratiepunt. Een telefoontje
+  is  voor  een  geregistreerd  gebruiker  voldoende  om  het antwoord te
+  krijgen.  U  kunt  daarvoor  contact  zoeken  met RIT S.R.L., of met de
+  Nederlandse distributeur van DOS Navigator, MaSe Software.
+
+     Een   ongeregistreerde   versie   van  DOS  Navigator  1.42  zal  op
+  willekeurige   momenten   de   melding  geven,  dat  u  zich  nog  moet
+  registreren.  Die  is  niet om u te irriteren, maar uitsluitend bedoelt
+  als  herinnering  aan  het  feit dat u nog geen geregistreerd gebruiker
+  bent.  De  geregistreerde  versie  zal deze melding uiteraard niet meer
+  vertonen,  en  eventuele  extra functies zullen beschikbaar zijn. In de
+  documentatie  kunt  u  lezen  welke functies u extra tot uw beschikking
+  hebt als u geregistreerd gebruiker bent geworden.
+
+     Om  een  kopie  van  DOS  Navigator  1.42 te registreren, vult u het
+  registratieformulier   in   (REGISTER.FRM)  en   stuurt   dat   aan  de
+  dichstbijzijnde   distributeur   (MaSe  Software).  Het  formulier  kan
+  worden  verzonden  via  de PTT, via de fax, via FidoNet Netmail, of via
+  Internet. Zorg ervoor dat uw gegevens duidelijk leesbaar zijn.
+
+     Indien  u  uw  key  hebt  ontvangen,  dient  u deze te copieren naar
+  dezelfde  directory  waar  uw  DN  programma  staat. Eventueel moet het
+  bestand nog hernoemd worden naar DN.KEY.
+
+     Bij  het  opstarten  van  DN  zult  u  de  melding krijgen dat DN is
+  geregistreerd.   Het  bestand  DN.KEY  kunt  u  vervolgens  uit  de  DN
+  directory  weghalen.  Bewaar  het  echter  goed!!  U  kunt  het  in  de
+  toekomst  nog  nodig  hebben. Het hoeft echter niet aanwezig te blijven
+  nadat DN is geregistreerd en u bovenstaande procedure hebt doorlopen.
+
+        MaSe Software
+
+--------------------------- Registratie punten -------------------------
+    Holland:  MaSe Software
+              Koningspage 98
+              7361 ZX  Beekbergen
+              The Netherlands
+
+    Tel.prive     : +31-55-5062107  (na 18.30 uur)
+    Fax.office    : +31-55-5789126
+
+         FidoNet  :  2:283/312.12@fidonet.org
+         Semafoon :  Available, ask!
+           E-Mail :  mrsempel@bart.nl
+              WWW :  http://www.bart.nl/~mrsempel
+
+    Giro:   6933356 t.n.v. MaSe Software
+-------------------------------- Auteurs -------------------------------
+    Republic of Moldova: RIT S.R.L.
+                         str. Stefan cel Mare 180.
+                         Chishinau, 277004, Republic of Moldova.
+
+                          e-mail: sympad@cni.md
+                         FidoNet: 2:469/77  Stefan Tanurkov
+
+             Daytime voice Phone: +(373)-2-246530 (08:00-15:00 GMT)
+                             FAX: +(373)-2-246530 (24h)
+
+                     BBS-support: RIT Zeppelin BBS (2:469/38@fidonet.org)
+        BBS (US Robotics V.34, 28800):   +(373)-2-246888 (24h)
+        BBS (USR Courier HST DS, 21600): +(373)-2-246889 (24h)
+        BBS (ZyXEL 1496E+, 19200):       +(373)-2-246530 (16:00-07:00 GMT)
+
+------------------------------------------------------------------------
+    Sweden:  Mikael Winterkvist      Computer Security Center HQ
+                                                    Kartgatan 15
+                                               931 91 Skelleftea
+    Tel. (Voice)    +46-910-860 46
+    Tel. (Mobile)   +46-010-256 80 67
+    Tel. (MiniCall) +46-740-101336
+    Fax.office :    +46-910-52853
+
+    BBS       +46-910-52214  (Line-1)
+              +46-910-52853  (Line-2)
+
+          FidoNet  :  2:205/422
+            E-Mail :  mw@csc.ct.se
+                      mikael.winterkvist@csc.ct.se
+------------------------------------------------------------------------
+    Israel:  Maxim Glukhov
+
+    Tel.private: +972-2-767924
+    Fax.office : +972-2-353630; Attn to Maxim
+
+            E-mail :  maxim@cs.huji.ac.il
+------------------------------------------------------------------------
+    Israel:  Alex Bortman (Dr. Noonian Soong)
+
+    Tel.private: +972-3-5049846
+    Fax.office : +972-3-5599444, +972-3-5049846  Attn to Alex
+           BBS : +972-3-5049846 (20:00..05:00 GMT)
+
+            E-mail :  davidk@zeus.datasrv.co.il
+------------------------------------------------------------------------
+    Czech Republic:  Igor Bilyi                 369 Slusovice
+                                                 763 15, Czech Rep.
+
+    Tel.       : +42-67-523249 (067-523249) 08:00-18:00
+    Fax/BBS    : +42-67-523249 (067-523249) 18:00-08:00
+    Modem(Freq): +42-67-523250 (067-523250) 19:00-08:00
+
+          FidoNet :  2:421/45
+           E-Mail :  derby@leo1.zlin.vutbr.cz
+------------------------------------------------------------------------
+    Hungary: Serguei I. Koubouchine        SVV International Kft.
+
+    Tel. (Voice)    +(3652) 311733
+    Tel. (Mobile)   +(3620) 420540
+    Tel. (MiniCall) +46-740-101336
+    Fax.office :    +46-910-52853
+
+          FidoNet :  2:463/400 (Serguei I. Koubouchine)
+           E-Mail :  serg@svv.ternopil.ua
+                     serg@ssft.ternopil.ua
+------------------------------------------------------------------------
+    Russia:  Peter Suchkow
+              192238, St.Peterburg, P.O. box 12 (for Peter V. Suchkow)
+
+    Tel.office : +7-812-119-83-07
+                 +7-812-119-83-08
+    BBS suport : +7-812-245-97-84 (24h)
+
+            E-Mail:  - Internet  : spv@palantiri.spb.su
+                                   peter.suchkow@bmspb.bmsk.sprint.com
+                     - FidoNet   : 2:5030/151 Peter Suchkow

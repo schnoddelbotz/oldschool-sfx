@@ -1,0 +1,538 @@
+CONTROL.HLP, 10-Sep-92
+ 1
+
+
+
+
+
+	Sorry, there is no help available on this topic
+
+
+
+
+
+
+
+
+
+ Press ESC to continue:
+ 2
+		  Help on Commands in the SLAVES Menu
+
+ CONNECT/MANUAL CONNECT  should be used before any other commands
+			 except BROADCAST to establish connections
+			 with one or more slaves.  Use MANUAL
+			 CONNECT if using Novell's remote IPX.
+ MESSAGE		 sends a message to all connected slaves.
+ BROADCAST MESSAGE	 sends to all slaves on the network.
+ SHOW			 'shells out' to the MS-DOS command line
+			 and shows the control screen to all
+			 connected slaves.
+ BROADCAST SHOW 	 shows to all slaves on the network.
+
+
+ Press ESC to continue:
+ 3
+	    Help on Commands in the SELECTED SLAVE Menu
+
+   SELECT	  specifies which slave to use for the
+		  following commands (use CONNECT or MANUAL
+		  CONNECT first).
+   WATCH	  watches the screen of the selected slave;
+   CONTROL/SHARE  also take over the slave keyboard.
+   MESSAGE	  sends a message to the selected slave.
+   CHAT 	  initiates an on-screen conversation.
+   SHOW 	  'shells out' to the MS-DOS command line and
+		  sends the control screen to the selected slave.
+   REBOOT	  reboots the selected slave
+
+
+ Press ESC to continue:
+ 4
+	    Help on Commands in the CONFIGURE menu
+
+ You can specify any combination of the LEFT SHIFT, RIGHT SHIFT,
+ CTRL and ALT keys for use as 'hotkeys'.  These keys (shown by
+ ticks in the menu) access the popup menu when watching,
+ controlling, sharing or showing.  Choose a combination which does
+ not conflict with any TSR's running on the control or slave.
+
+ BIOS KEYBOARD	  should be used for 'protected mode' programs such
+		  as Lotus 123 release 3.  Use the LOW LEVEL
+		  KEYBOARD for Windows.
+ KEYBOARD LAYOUT  caters for different control keyboard layouts.
+ SELECT MODEM	  selects from the modems listed in CONTROL.MDM.
+
+ Press ESC to continue:
+ 5
+	     Help on Commands in the COMMUNICATIONS Menu
+
+ FILE TRANSFER	 copies files to or from the current slave.
+ DIAL		 dials a remote LAN; this requires NetSupport
+		 Remote NetBIOS (NBREMOTE) or NetSupport Remote IPX
+		 (IPREMOTE) to be loaded before CONTROL is run.
+ HANGUP 	 hangs up the phone if you are connected to a
+		 remote LAN.  At this point, you can elect to use
+		 the local LAN, if any.
+ DIAL DIRECTORY  Views/edits the dialling directory.
+
+
+
+
+ Press ESC to continue:
+ 6
+		  Help on Commands in the EXIT Menu
+
+ QUIT	  terminates the CONTROL program; connections are lost.
+ DOS	  'shells out' to the MS-DOS command line.  The CONTROL
+	  program remains in memory, all connections remain open
+	  and the popup menu can be accessed using the hotkeys set
+	  in the CONFIGURE menu.  You need to type 'exit' at the
+	  MS-DOS prompt before you can return to the main menu.
+
+
+
+
+
+
+
+ Press ESC to continue:
+ 7  Reserved
+ 8  Reserved
+ 9
+			Getting Started
+
+ Use the arrow keys to select an item from the menu,
+ then press F1 for help, or ENTER to action the command.
+
+ Use CONNECT or MANUAL CONNECT before using any other commands
+ to establish connections with one or more slaves on the network.
+
+ If you have connected to more than one slave, use SELECT
+ to specify which slave to access; then use the WATCH, CONTROL
+ or SHARE commands as appropriate.
+
+ For more help, highlight the command of interest and press F1.
+
+ Press ESC to continue:
+ 10
+	     Network Support Manager (NetSupport)
+	   The user friendly remote control utility
+		Copyright (c) 1992 PCI Ltd
+
+      ù End-user support		    ù On a LAN
+      ù Resource sharing		    ù By phone
+      ù Training			    ù Text
+      ù Demonstrations and Presentations    ù Graphics
+      ù File Transfer			    ù Dialling Directory
+
+ Compatible with Novell NetWare (R), and NetBIOS based networks.
+
+ Written by Paul Sanders.
+
+ Press ESC to continue:
+ 11
+	     Help on Finding Slaves on the Network
+
+ To find all slaves, leave the name blank and press ENTER.
+
+ If there are a lot of slaves on your network, enter the first
+ few letters of the slave name(s) that you want to find
+ (Control will list a maximum of 100).
+
+ The listbox then shows all matching slaves visible on the
+ network.  Slaves attached via a NetWare serial bridge will not
+ appear in this list (use MANUAL CONNECT instead).  The same
+ applies if you are working over a phone line using Novell's
+ remote IPX.
+
+ Press ESC to continue:
+ 12
+		 Help on CONNECT/DISCONNECT
+
+ The listbox shows slaves visible on the network (CONNECT) or
+ slaves currently connected (DISCONNECT).  Slaves attached via
+ a NetWare serial bridge will not appear in this list (use
+ MANUAL CONNECT instead).  The same applies if you are working
+ over a phone line using Novell's remote IPX.
+
+ Highlight the slave required using the arrow keys, then press
+ SPACE or ENTER; connected slaves are indicated by a tick (û).
+ When finished, press ESC or F10.
+
+ F3 connects to all slaves (up to 12); F4 breaks all connections.
+
+ Press ESC to continue:
+ 13
+		    Help on MANUAL CONNECT
+
+ Type in the name of the slave you wish to connect to.
+ Up to 12 connections can be established at any one time
+ (this number can be changed with the /S command line parameter).
+
+ When a connection is successful, the number of connections
+ displayed in the top right-hand corner of the screen is updated
+ and flashes for a few seconds.
+
+
+
+
+
+ Press ESC to continue:
+ 14
+			Help on PASSWORD
+
+ The bridge or selected slave requires a password before you can
+ access it.
+
+ Note that this password is encrypted with the CALCPSW program;
+ you must enter the non-encrypted form here.
+
+
+
+
+
+
+
+ Press ESC to continue:
+ 15
+			Help on SELECT
+
+ The listbox shows all slaves currently connected.  Use the arrow
+ keys to select the slave that you wish to access and press ENTER.
+
+
+
+
+
+
+
+
+
+
+ Press ESC to continue:
+ 16
+		      Help on SEND MESSAGE
+
+ Enter the message that you wish to send (up to 4 lines) and then
+ press F10.
+
+ Depending on the command chosen from the menu, the message will
+ be sent to the current slave, or to all slaves connected.
+
+ The message will remain on the slave screen(s) until the user
+ acknowledges it, or until another message is sent or CHAT is
+ invoked.  During this time, processing on the slave machine(s)
+ is suspended.	You can CONTROL a slave to acknowledge the message
+ remotely.
+
+ Press ESC to continue:
+ 17
+			Help on CHAT
+
+ This command displays keystrokes as they are typed on both the
+ control and slave screens.  While CHAT is active, other processing
+ is suspended.
+
+ Crtl+G sends a beep.  This can be useful for attracting the
+ attention of the remote party.
+
+
+
+
+
+
+ Press ESC to continue:
+ 18
+		     Help on POPUP MENU
+
+ You can do the following without returning to the main menu:
+   WATCH/CONTROL/SHARE	control or release the slave keyboard.
+   CHAT 		initiates an on-screen conversation.
+   SELECT SLAVE 	allows you to select a different slave.
+   PASTE FROM FILE	'keys in' the contents of a text file.
+   RETURN TO MENU	releases the slave and returns to the menu.
+   QUIT PROGRAM 	terminates the program and returns to DOS.
+   PRINTER CAPTURE	captures print output from slave in a file.
+   PRINT SCREEN 	prints the screen on the slave's printer
+   DOS			'shells out' to the MS-DOS command line
+			or returns to the interrupted program.
+
+ Press ESC to continue:
+ 19
+		    Help on KEYBOARD LAYOUT
+
+ Select the keyboard layout from the list provided that corresponds
+ to the keyboard on the control machine.
+
+ This affects the low-level keyboard only; if BIOS KEYBOARD is
+ selected, the correct keyboard driver must be loaded from DOS.
+
+
+ The type of keyboard on the slaves is immaterial.
+
+
+
+
+ Press ESC to continue:
+ 20
+		Help on Communications Commands
+
+ These commands are used to establish communication with a
+ remote LAN, or to select the local LAN.
+
+    DIAL DIRECTORY   use/edit the dialling directory.
+    DIAL MANUALLY    dial a number entered manually.
+    SERIAL LINK      direct or pre-dialled serial link.
+    LOCAL LAN	     the LAN that this machine is connected to.
+    SET BAUD RATE    set baud rate, parity etc.
+    SELECT MODEM     specify the type of your modem.
+    DOS 	     'shells out' to the MS-DOS command line.
+    QUIT PROGRAM     terminates Control.
+
+ Press ESC to continue:
+ 21
+		    Help on Dial Remote Lan
+
+ Enter the phone number to dial.  Spaces and hyphens may be
+ inserted for readability if desired.
+
+ To pause between digits (if using a PABX, for instance), insert
+ a comma (',') to wait for 4 seconds, or W to wait for a dial tone,
+ e.g.:
+    0,071 222 1234	or	0 W 071-222-1234
+
+ For pulse dialling, precede the number with a P.
+ For tone dialling, precede the number with a T.
+
+
+ Press ESC to continue:
+ 22
+		    Help on Set Baud Rate
+
+ Select the baud rate which corresponds to your modem.	Many
+ modern modems offer auto-baud detection.  In this case, use a
+ value greater than or equal to the data rate of the modem itself;
+ consult your modem namual for details.
+
+ If you experience unreliable communications, try reducing the
+ baud rate.  Some non-PS2 machines will not run reliably above
+ 9600 baud; most XT class machines are limited to 2400 baud.
+
+ If using a direct serial link, the baudrate of NBBRIDGE or
+ IPBRIDGE must be set to the same value as NBREMOTE or IPREMOTE.
+
+ Press ESC to continue:
+ 23
+		    Help on File Transfer
+
+ The lefthand box displays files in the current directory on the
+ control.  The righthand box shows the files on the current slave.
+
+ Press SPACE or ENTER to select or deselect the highlighted file.
+ Press TAB to switch between listboxes.
+
+ F2 - Enter wildcard pattern (and update list of files)
+ F3 - Select all files		    F4	- Deselect all files
+ F5 - See/change file information   F6	- View highlighted file
+ F7 - Rename highlighted file	    F8	- Change current directory
+ F9 - Delete selected files	    F10 - Copy selected files
+
+ Press ESC to continue:
+ 24
+		    Help on Change Directory
+
+ The listbox displays the directories in the current directory,
+ along with the available drive letters.
+
+ To change the current directory, move the highlight bar to the
+ desired drive or directory and press ENTER.  Then press ESC to
+ see the files in this directory.
+
+ Press F9 to delete the highlighted directory (it must be empty).
+ Press F10 to create a new directory in the highlighted directory.
+
+ '..' means the parent of the current directory.
+
+ Press ESC to continue:
+ 25
+		    Help on View File
+
+
+ Blah blah blah
+
+
+
+
+
+
+
+
+
+
+ Press ESC to continue:
+ 26
+		    Help on Wildcard Pattern
+
+ Enter a wildcard pattern to pick out only those files that match.
+    ? matches 1 character
+    * matches all remaining characters
+
+ Examples:
+    *.* 	matches all files
+    *.BAT	matches all files with extension .BAT
+    MONGOOSE.*	matches files called MONGOOSE with any extension
+    CH*.*	matches all files whose name starts with CH
+    P?T 	matches PAT, PET, PIT, POT, PUT
+
+
+ Press ESC to continue:
+ 27
+		    Help on Rename File
+
+
+ Enter the new name for the file.
+
+ You can include a directory name if you wish.
+
+
+
+
+
+
+
+
+ Press ESC to continue:
+ 28
+		    Help on Create Directory
+
+
+ Enter the name of the directory that you wish to create.
+
+ This will be created within the highlighted directory.
+
+
+
+
+
+
+
+
+ Press ESC to continue:
+ 29
+		Help on Modem Selection
+
+ Select the entry which corresponds to the modem that you are
+ using.  If in doubt, try the 'Hayes compatible' option.
+
+ If your modem is not in the list, you will need to add an entry
+ to the file CONTROL.MDM.  Consult your NetSupport and modem
+ manuals for details (brief notes are included in CONTROL.MDM).
+
+ You may also need to edit this file if your modem has some
+ unforseen 'quirk', or if you wish to control some special
+ feature (such as error correction).
+
+
+ Press ESC to continue:
+ 30
+	     Help on Using the Dialling Directory
+
+ Move the highlight bar to the entry required and press ENTER.
+ The number will then be dialled, unless you entered the dialing
+ directory from the main menu.	Alternatively:
+    F7	edits the current entry
+    F8	adds a new entry
+    F9	deletes the current entry
+    ESC returns to the communications menu
+
+ The directory is kept sorted by name.	It can hold 300 entries.
+ You can also edit the file CONTROL.DIR manually.  Entries are of
+ the form: NAME|NUMBER, e.g. Emergency|999.
+
+ Press ESC to continue:
+ 31
+		    Help on Paste from File
+
+ Enter the filename to paste from, and the speed at which to type
+ in the characters.  Reduce the speed if characters are missed.
+
+ While pasting, the following keys are active:
+   P   - pause (press any key to resume)
+   +   - paste faster
+   -   - paste slower
+   ESC - cancel
+
+ Pasting works faster with the BIOS keyboard than with the low
+ level keyboard.
+
+ Press ESC to continue:
+ 32
+		   Help on Printer Capture
+
+ Enter 'Y' at the 'Capture' prompt to capture printed output from
+ the current slave, 'N' to print at the slave.
+
+ You will then be prompted for the name of a file; use PRN (or
+ LPT1, LPT2 or LPT3) to print direct to the control's printer.
+
+
+
+
+
+
+
+ Press ESC to continue:
+ 33 Spare
+ 34 Spare
+ 35 Spare
+ 36 Spare
+ 37 Spare
+ 38 Spare
+ 39
+		    Usage Information
+
+ CONTROL controlname /1 /A /B /Cslave /Dphone-number /L /Gnn
+		     /Mmessage_file /Pprint_file /Snn
+
+    /1	 force monochrome operation
+    /A	 use alternate NetBIOS adapter (NetBIOS version only)
+    /B	 allow broadcast SHOW (see also next page)
+    /C	 slave to connect to (by-passing the main menu)
+    /D	 phone number to dial (default = serial link)
+    /G	 super VGA (800x600) video mode (hexadecimal, default = 6A)
+    /M	 send the message in message_file to the specified slave(s)
+
+
+ Press PgDn for more information, ESC to quit:
+		    Usage Information
+
+    /P	 capture print output to the specified file (default = PRN)
+    /S	 set max. no. of connected slaves (1..30, default = 12)
+
+
+ For the IPX version only (using Novell file servers as bridges):
+    /BA  allow broadcast SHOW to all NetWare LANs
+	 (/B broadcasts to your local LAN only)
+    /L	 send broadcast messages to your local NetWare LAN only
+	 (by default, messages are broadcast to all LANs)
+
+ Typing CONTROL ? displays this usage information
+
+ Press PgDn for examples, ESC to quit:
+		Usage Information - Examples
+
+    CONTROL BIGGLES ?B	- name BIGGLES, broadcast SHOW enabled
+    CONTROL ALGY /V29	- name ALGY, super VGA video mode = 29 hex
+    CONTROL /L		- broadcast msgs to local NetWare LAN only
+    CONTROL /PFRED	- capture slave printing to file FRED
+    CONTROL /S20	- allow upto 20 connected slaves
+    CONTROL /D999 /CABC - dial 999 and connect to slave ABC
+			  (NB or IPREMOTE must be loaded first)
+    CONTROL /CA*	- connect to the first available slave
+			  whose name starts with 'A'
+    CONTROL /C* /MMSg	- broadcast file MSG to all slaves
+    CONTROL /CA* /MMSG	- send MSG to all slaves starting with 'A'
+
+ Press ESC to continue:
+

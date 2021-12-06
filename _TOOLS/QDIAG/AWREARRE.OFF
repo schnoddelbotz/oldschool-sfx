@@ -1,0 +1,21 @@
+sp=0
+fill 0
+silent on,tur,msen 1,silent off
+getb 0 r0
+r0=r0+1
+com ----
+com bug fix for ASPI 5/27/94
+silent on,msel 1,msen 1,silent off
+com ----
+func msel
+cdb.1 0
+cdb.4=r0
+iorb.l=r0
+depb 0 0
+depb 4 0 0 0 0 0
+depb 12 01h
+depb 14 00h
+excdb
+
+
+

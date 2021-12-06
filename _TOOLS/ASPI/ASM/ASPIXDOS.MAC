@@ -1,0 +1,178 @@
+	MASM
+;*******************************************************************************
+;* Module-Name: ASPI4DOS Advanced SCSI Programming Interface for Dos           *
+;*-----------------------------------------------------------------------------*
+;* Version   Modification Date:     Author:           History:                 *
+;*   V1.0      15-July-1993         Ulf Rohbeck       First Creation           *
+;*   V1.01     18-August-1993       Ulf Rohbeck       ExecuteSCSI_IORequest    *
+;*                                                    without post_processing  *
+;*   V2.0      30-September-1993    Ulf Rohbeck       using for BP/TC          *
+;*   V2.01     27-December-1993     Ulf Rohbeck       @GetDeviceType           *
+;*   V2.02     27-February-1994     Ulf Rohbeck       ExtMac [PUSHSeg]         *
+;*   V2.11     09-June-1994         Ulf Rohbeck       GetDiskDriveInformation  *
+;*-----------------------------------------------------------------------------*
+;* Description: definition of macros for ASPI_DOS.LIB                          *
+;*******************************************************************************
+	INCLUDE	ExtMac.MAC
+;*******************************************************************************
+;*                   H o s t A d a p t e r I n q u i r e                       *
+;*-----------------------------------------------------------------------------*
+;*      @HostAdapterInquire     --                                             *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter: none                                                             *
+;*******************************************************************************
+@HostAdapterInquire  MACRO	none
+        ifnb    <none>
+	  display "**Warning** parameter are not supported to @HostAdapterInquire"
+        endif
+        CALL    HostAdapterInquire
+        ENDM
+;*******************************************************************************
+;*                   G e t I n s t H o s t A d a p t e r s                     *
+;*-----------------------------------------------------------------------------*
+;* ASM   : @GetInstHostAdapters  ptrInstHostAdap,ptrNumHostAdap                *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter input: none                                                       *
+;*-----------------------------------------------------------------------------*
+;* parameter output:                                                           *
+;* InstHostAdap: logical HostAdapterNumber                                     *
+;*		 B7..B0: 0: HostAdapter not installed                          *
+;*			 1: HostAdapter installed                              *
+;* NumHostAdap :         Number of installed HostAdapters                      *
+;*******************************************************************************
+@GetInstHostAdapters	MACRO	ptrInstHostAdap,ptrNumHostAdap
+       	ifb <ptrInstHostAdap>
+	  err "**Error** The ptrInstHostAdap parameter must be provided to @GetInstHostAdapters"
+	else
+	  PUSHSeg       <ptrInstHostAdap>
+          PUSHrm16	<Offset ptrInstHostAdap>
+        endif
+        ifb <ptrNumHostAdap>
+          err "**Error** The ptrNumHostAdap parameter must be provided to @GetInstHostAdapters"
+        else
+	  PUSHSeg       <ptrNumHostAdap>
+          PUSHrm16	<Offset ptrNumHostAdap>
+	endif
+	CALL	GetInstHostAdapters
+	ENDM
+;*******************************************************************************
+;*                            G e t D e v i c e T y p e                        *
+;*-----------------------------------------------------------------------------*
+;*      @GetDeviceType          --                                             *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter: none                                                             *
+;*******************************************************************************
+@GetDeviceType           MACRO	none
+	ifnb    <none>
+	  display "**Warning** parameter are not supported to @GetDeviceType"
+	endif
+	CALL    GetDeviceType
+	ENDM
+;*******************************************************************************
+;*                       E x e c u t e S C S I _ I O R e q ue s t              *
+;*-----------------------------------------------------------------------------*
+;*      ExecuteSCSI_IORequest                                                  *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter: none                                                             *
+;*******************************************************************************
+@ExecuteSCSI_IORequest  MACRO   none
+	ifnb <none>
+	  display "**Warning** parameter are not supported to @ExecuteSCSI_IORequest"
+        endif
+        CALL    ExecuteSCSI_IORequest
+	ENDM
+;*******************************************************************************
+;*                         A b o r t S C S I _ I O R e q u e s t               *
+;*-----------------------------------------------------------------------------*
+;*      @AbortSCSI_IORequest                                                   *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter: none                                                             *
+;*******************************************************************************
+@AbortSCSI_IORequest    MACRO	none
+	ifnb <none>
+          display "**Warning** parameter are not supported to @AbortSCSI_IORequest"
+        endif
+        CALL    AbortSCSI_IORequest
+        ENDM
+;*******************************************************************************
+;*                           R e s e t S C S I D e v i c e                     *
+;*-----------------------------------------------------------------------------*
+;*      @ResetSCSIDevice        none                                           *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter: none                                                             *
+;*******************************************************************************
+@ResetSCSIDevice  MACRO   none
+        ifnb    <none>
+          display "**Warning** parameter are not supported to @ResetSCSIDevice"
+        endif
+        CALL    ResetSCSIDevice
+        ENDM
+;*******************************************************************************
+;*                      S e t H o s t A d a p t e r P a r a m e t e r s        *
+;*-----------------------------------------------------------------------------*
+;*      SetHostAdapterParam     PtrParLST                                      *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter:                                                                  *
+;* PtrParLST: pointer to parameter list (Unique Parameters)                    *
+;*******************************************************************************
+@SetHostAdapterParam  MACRO   PtrParLST
+	ifb <PtrParLST>
+	  err "**Error** The PtrParLST parameter must be provided to @SetHostAdapterParameters"
+	else
+	  PUSHSeg       <PtrParLST>
+	  PUSHrm16	<Offset PtrParLST>
+	endif
+	CALL    SetHostAdapterParam
+	ENDM
+;*******************************************************************************
+;*                      G e t D i s k D r i v e I n f o r m a t i o n          *
+;*-----------------------------------------------------------------------------*
+;*      @GetDiskDriveInformation --                                            *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter:                                                                  *
+;*******************************************************************************
+@GetDiskDriveInformation	MACRO	none
+	ifnb    <none>
+	  display "**Warning** parameter are not supported to @GetDiskDriveInformation"
+	endif
+	CALL	GetDiskDriveInformation
+	ENDM
+;###############################################################################
+
+;*******************************************************************************
+;*                           I n i t S C S I M g r                             *
+;*-----------------------------------------------------------------------------*
+;*      @InitSCSIMgr             --                                            *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter: none                                                             *
+;*******************************************************************************
+@InitSCSIMgr   MACRO   none
+        ifnb    <none>
+          display "**Warning** parameter are not supported to @InitSCSIMgr"
+        endif
+	CALL    InitSCSIMgr
+        ENDM
+;*******************************************************************************
+;*                        A l l o c S R B E x e c u t e                        *
+;*-----------------------------------------------------------------------------*
+;*      @AllocSRBExecute         SegOpC,OfsOpC,OpCLEN                          *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter:                                                                  *
+;*   PtrOpC : pointer of Operation Code                                        *
+;*   OpCLEN : length  of Operation Code                                        *
+;*******************************************************************************
+@AllocSRBExecute  MACRO   PtrOpC,OpCLEN
+	ifb <SegOpC>
+	  err "**Error** The PtrOpC parameter must be provided to @AllocSRB_Execute"
+	else
+	  PUSHSeg       <PtrOpC>
+	  PUSHrm16	<Offset PtrOpC>
+	endif
+	ifb <OpCLEN>
+	  err "**Error** The OpCLEN parameter must be provided to @AllocSRB_Execute"
+	else
+	  PUSHrm8  <OpCLEN>
+	endif
+	CALL    AllocSRBExecute
+	ENDM
+;==============================================================================

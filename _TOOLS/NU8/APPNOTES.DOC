@@ -1,0 +1,1384 @@
+
+                                  Symantec
+
+                            NDOS Anwendungshinweise
+
+                          Version 8.0 - MÑrz 1994
+
+
+Copyright 1991 - 1993, Symantec Corporation. Alle Rechte vorbehalten.
+Copyright-Anteile 1988 - 1993 JP Software, Inc. Alle Rechte vorbehalten
+
+Bei den in diesem Text erwÑhnten Produktnamen kann es sich um 
+Warenzeichen oder eingetragene Warenzeichen der betreffenden Unternehmen 
+handeln, die hiermit anerkannt werden.
+   
+============================================================================
+
+
+Diese Datei enthÑlt Hinweise zur KompatibilitÑt zwischen NDOS und einer 
+Vielzahl anderer Softwareprodukte. Nutzen Sie diese Informationsquelle immer 
+dann, wenn Sie bei NDOS Fragen zum Einsatz anderer Produkte haben oder 
+aber Verdacht auf KompatibilitÑtsprobleme besteht. 
+
+Die Nennung eines Produktes in dieser Datei bedeutet NICHT, da· es 
+KompatibilitÑtsprobleme gibt, sondern ist nur ein Hinweis darauf, da· Sie
+hier Informationen finden, die Ihnen beim Einsatz des betreffenden Produktes
+in Verbindung mit NDOS von Nutzen sein kînnen.  
+
+Punkte, die in NDOS 8.0 geÑndert wurden, sind am linken Rand durch "8.0" 
+markiert. Die Åbrigen Punkte wurden in Version 8.0 nicht geÑndert.
+
+Die Seiten dieser Datei sind 58 Zeilen lang und enthalten FormularvorschÅbe 
+und Fu·zeilen. Diese Datei ist relativ umfangreich; es empfiehlt sich daher,
+zum Anzeigen ein Anzeigeprogramm wie NDOS LIST zu verwenden. Auf den meisten
+PC-Druckern kînnen Sie diese Datei mit dem Befehl 
+
+              copy appnotes.doc prn
+
+ausdrucken. Aufgrund des vorhandenen Formats wird ein Ausdrucken des 
+Programms mit einem Programm, das eigene Formatierungen durchfÅhrt, 
+wahrscheinlich nicht mîglich sein.
+
+
+
+
+
+
+
+
+                               Inhaltsverzeichnis 
+
+   EinfÅhrung  
+
+
+   Allgemeine Informationen 
+
+      Paralleler Einsatz von NDOS und COMMAND.COM
+
+      AusfÅhren von DOS-Befehlen Åber Interrupt 2E
+  
+      Auslagerung auf RAM-Disks
+
+      NDOS und andere Befehlszeilen-Editierprogramme 
+
+      NDOS und EXE-Dateikomprimierungsprogramme
+
+      NDOS.COM und exec()-Funktionen der Programmiersprache C
+
+      KompatibilitÑt zwischen MÑusen und NDOS HELP
+
+
+    Informationen zu bestimmten Produkten 
+
+      MS-DOS-Befehl APPEND
+
+      MS-DOS-Befehle DATE und TIME  
+
+      MS-DOS-Befehl FASTOPEN
+
+      MS-DOS-Befehl FORMAT /S (Version 4.0 und 5.0)
+
+      MS-DOS-Befehl SELECT (ab Version 4.0)
+
+      1DIR+ (Bourbaki) 
+
+      3COM Networks (3Com)
+
+      Alpha 4 (Alpha Software)
+
+      ANSI.SYS (diverse Hersteller) 
+
+      Bookshelf CD-ROM (Microsoft)
+
+      DESQview (Quarterdeck) 
+
+      DOORWAY BBS Software
+
+      DR-DOS (Digital Research) 
+
+      Epsilon (Lugaru Software)
+
+      FoxPro (Fox Software)
+
+      GeoWorks Ensemble (GEOS)
+
+      Hijaak (Inset Systems)
+
+      Kermit (Columbia University)
+
+      LOGIMENU (Logitech) 
+
+      Manifest (Quarterdeck)
+
+      NetWare (Novell)
+
+      Novell MENU (Novell)
+
+      Personal REXX (Quercus Systems)  
+
+      QEMM und QRAM (Quarterdeck)
+
+      RBase (MicroRim)
+
+      Software Carousel (SoftLogic Solutions)
+
+      TSRCOM Utilities (TurboPower Software)
+
+      UltraVision (Personics) 
+
+      Windows 3.0 und 3.1 (Microsoft) 
+
+      XyWrite (XyQuest) 
+
+      Programme, fÅr die der Pfad kÅrzer als 128 Zeichen sein mu·
+          Checkit (Touchstone); Computer Select CD-ROM (Ziff-Davis);
+          RenderMan (AutoDesk); VINES Network (Banyan); Windows 3.0
+          (Microsoft)
+
+
+
+
+
+EinfÅhrung
+------------
+
+Wir haben alles in unseren KrÑften stehende getan, damit die Informationen in
+dieser Datei mîglichst korrekt und aktuell sind. Dabei konnten wir uns auf 
+eigene Untersuchungen, GesprÑche mit Herstellern anderer Produkte und 
+Berichte unserer Kunden stÅtzen. Nun sind SoftwarekompatibilitÑtstests leider
+nicht immer zuverlÑssig. Abweichende Bedingungen zwischen Systemen oder 
+Softwareversionen kînnen frÅhere Testergebnisse nur allzu leicht wertlos 
+machen. Daher kînnen wir nicht garantieren, da· jede einzelne Aussage in 
+dieser Datei fÅr alle Systeme korrekt ist oder in Zukunft korrekt bleibt; 
+mîglicherweise mÅssen Sie durch eigene Tests herausfinden, wie gut ein 
+bestimmtes Produkt auf Ihrem System zusammen mit Ihrer eigenen Software 
+funktioniert.
+
+Falls Sie Fragen oder Probleme im Zusammenhang mit KompatibilitÑt haben, 
+sollten Sie als erstes Kapitel 7 im NDOS-Handbuch durchlesen. Dieses Kapitel
+enthÑlt allgemeine RatschlÑge zur Lîsung von KompatibilitÑtsproblemen und ist
+zur Lîsung solcher Probleme in jedem Falle zusammen mit dieser Datei zu Rate
+zu ziehen.
+
+Hilft Kapitel 7 nicht weiter, sehen Sie nach, ob Sie in der vorliegenden
+Datei unter "ALLGEMEINE INFORMATIONEN" oder unter "INFORMATIONEN ZU 
+BESTIMMTEN PRODUKTEN" Hinweise zum betreffenden Produkt finden. 
+Beachten Sie bitte, da· einige Produkte nicht oder nicht immer nach 
+Produktnamen, sondern auch nach Kategorie verzeichnet sind; lesen Sie das 
+Inhaltsverzeichnis sorgfÑltig durch, damit Sie wissen, wo ein bestimmtes 
+Produkt mîglicherweise beschrieben ist.
+
+Viele der unten aufgefÅhrten Punkte betreffen die Datei NDOS.INI. In
+Kapitel 6 des Handbuchs finden Sie eine ausfÅhrliche ErklÑrung zu NDOS.INI
+und die Anweisungen, die in dieser Datei verwendet werden kînnen.
+
+Praktisch alle Programme laufen problemlos mit NDOS. Eventuell vorhandene 
+KompatibilitÑtsprobleme mit NDOS lassen sich nach einer von drei Methoden 
+leicht diagnostizieren: Sie kînnen feststellen, ob Sie in dieser Datei
+spezifische Informationen finden, verschiedene NDOS-Auslagerungsmethoden
+ausprobieren und Interaktionen feststellen, indem Sie alle Treiber und
+TSR-Programme aus dem Arbeitsspeicher lîschen, die nicht unbedingt
+erforderlich sind, und sie dann nacheinander wieder laden. Diese Methoden
+und zugehîrige Verfahren sind in Kapitel 7 des Handbuchs beschrieben.
+
+Viele gebrÑuchliche Softwareprodukte werden in dieser Datei nicht behandelt. 
+Wird ein Programm hier nicht aufgefÅhrt, bedeutet das ganz einfach, da· 
+unseres Wissens fÅr die Zusammenarbeit dieses Programms mit NDOS keine 
+weiteren Informationen erforderlich oder nÅtzlich sind.
+
+Falls Sie eine Frage zu oder ein Problem mit der KompatibilitÑt zwischen
+NDOS und einem anderen Hard- oder Softwareprodukt haben, das in Kapitel 7
+und diesem Text nicht besprochen wird, bitten Sie Symantec oder Ihren 
+FachhÑndler um technische UnterstÅtzung.
+
+
+Allgemeine Informationen
+------------------------
+
+Paralleler Einsatz von NDOS und COMMAND.COM:
+
+In seltenen FÑllen kann es vorkommen, da· ein Programm unter NDOS nicht 
+lÑuft, aber unter COMMAND.COM einwandfrei funktioniert. Haben Sie 
+festgestellt, da· sich das Problem weder durch KonfigurationsÑnderungen noch 
+durch Entfernen oder Rekonfigurieren eines Drittprogramms lîsen lÑ·t,
+erfahren Sie in diesem Abschnitt, wie Sie NDOS und COMMAND.COM gemeinsam 
+einsetzen kînnen, um ein solches Problem zu diagnostizieren.
+
+Es gibt zwei Methoden, COMMAND.COM vor einem anderen Programm zu 
+laden. Die erste besteht darin, COMMAND.COM nur dann zu laden, wenn ein 
+bestimmtes Programm lÑuft. Dies lÑ·t sich mit folgendem Befehl erreichen
+(vorausgesetzt, COMMAND.COM befindet sich im Hauptverzeichnis von
+Laufwerk C:):
+
+          c:\befehl /c progname optionen
+
+Dabei sind "progname" der Programmname (gegebenenfalls mit Pfad) und
+"optionen" etwaige Parameter fÅr das Programm. Dieser Befehl startet
+COMMAND.COM, lÑdt und startet das Programm und kehrt nach Beendigung
+des Programms von COMMAND.COM zu NDOS zurÅck. Soweit dies zur AusfÅhrung
+eines bestimmten Programms erforderlich ist, kann er als Alias definiert
+werden:
+
+          alias progname `c:\befehl /c progname %&`
+
+"%&" bedeutet, da· dem Programm sÑmtliche Argumente der Befehlszeile 
+Åbergeben werden.
+
+Diese Methode kann es bei einem umfangreichen Programm erforderlich 
+machen, da· sich COMMAND.COM nach Beendigung des Programms selbst 
+nachladen mu·. Voraussetzung dafÅr ist die richtige Konfiguration von 
+COMSPEC. Falls bei dieser Methode Probleme wie z.B. Fehlermeldungen 
+"UnzulÑssiges COMMAND.COM" auftreten, benutzen Sie zum Starten des 
+betreffenden Programms eine Stapeldatei wie nachfolgend aufgefÅhrt
+(SETLOCAL und ENDLOCAL sorgen dafÅr, da· nach Beendigung des Programms der 
+ursprÅngliche COMSPEC-Wert wiederhergestellt wird). Ist Ihre Kopie von 
+COMMAND.COM nicht im Verzeichnis C:\ gespeichert, so mÅssen Sie die 
+folgende Datei entsprechend Ñndern:
+
+          setlocal
+          set comspec=C:\COMMAND.COM
+          c:\befehl /c progname %&
+          endlocal
+
+Die zweite Methode ist drastischer: Sie kînnen Ihr System unter 
+COMMAND.COM starten und starten anschlie·end NDOS. Diese 
+Vorgehensweise ist selten erforderlich und beansprucht fÅr den residenten
+Teil von COMMAND.COM zusÑtzlich 4 bis 5 KB Arbeitsspeicher.
+
+Mit den folgenden Schritten richten Sie Ihr System so ein, da· es mit 
+COMMAND.COM startet und als Teil des Startvorgangs automatisch auch 
+NDOS ausgefÅhrt wird:
+
+    (1) Definieren Sie die Anweisung SHELL= in CONFIG.SYS so, da·
+    COMMAND.COM startet, oder lassen Sie sie ganz weg. Mit anderen
+    Worten, gehen Sie genauso vor, als wÑre NDOS auf Ihrem System
+    gar nicht vorhanden.
+
+    (2) Teilen Sie Ihre Datei AUTOEXEC in zwei Teile: Teil 1, der
+    in AUTOEXEC.BAT verbleibt, sollte alle Befehle enthalten, die
+    COMMAND.COM ausfÅhren soll, bevor NDOS gestartet wird. Dazu kînnte
+    auch das Laden etwaiger TSR-Programme gehîren, sofern Sie diese
+    unter NDOS nicht einwandfrei laden kînnen. Teil 2, den Sie in
+    einer separaten Stapeldatei unterbringen mÅssen (als Namen empfehlen
+    wir NDAUTO.BAT, wobei Sie aber auch einen beliebigen anderen Namen
+    mit einer Erweiterung .BAT oder .BTM wÑhlen kînnen), sollte die
+    Befehle enthalten, die NDOS nach seinem Start ausfÅhren soll.
+
+    (3) Tragen Sie als letzte Zeile in die geÑnderte AUTOEXEC.BAT-
+    Datei folgende Zeile ein:
+
+          NDOS parameter dateiname
+
+    dabei sind "parameter" die entsprechenden NDOS-Parameter fÅr
+    Auslagerung, Umgebung und Protokollgrî·e usw. (NÑheres finden Sie im
+    Handbuch unter Installation) und "dateiname" der Name der neuen
+    Stapeldatei, die Sie fÅr Teil 2 Ihrer alten AUTOEXEC.BAT-Datei
+    erstellt haben. Die "parameter" dÅrfen KEIN /P enthalten, da NDOS
+    sonst AUTOEXEC erneut startet und sich somit endlos immer wieder 
+    selbst nachlÑdt!
+
+    (4) Vergewissern Sie sich, da· KSTACK.COM in die Datei AUTOEXEC.BAT
+    oder die NDOS-Startdatei geladen wird, wenn der NDOS-Befehl KEYSTACK
+    verwendet werden soll.
+          
+Auf diese Weise laden Sie COMMAND.COM, fÅhren die Befehle in AUTOEXEC 
+aus, laden NDOS, verarbeiten die Befehle in Ihrer neuen Stapeldatei und 
+erhalten anschlie·end die normale NDOS-Eingabeaufforderung.
+
+Einen Nachteil gibt es bei diesem zweiten Verfahren: Da NDOS ohne den 
+Parameter /P geladen wird, bringt der Befehl EXIT Sie zu COMMAND.COM 
+zurÅck, wenn Sie die Frage nach der primÑren Shell versehentlich mit 
+COMMAND.COM beantworten. Sie kînnen dies vermeiden, indem Sie /P trotz 
+der obigen Warnung benutzen und dann folgende Zeile an den Anfang von 
+AUTOEXEC.BAT setzen:
+
+           if "%@eval[2+2]"=="4" quit
+
+Diese Zeile testet die NDOS-Variablenfunktion %@EVAL, die unter NDOS eine 
+"4" abliefert und unter COMMAND.COM in der Zeile unverÑndert bleibt. Falls 
+%@EVAL keine "4" abliefert, beendet diese Anweisung die Stapeldatei, so da· 
+die oben beschriebene Endlosschleife nicht eintreten kann.
+
+
+AusfÅhren von DOS-Befehlen Åber Interrupt 2E:
+
+COMMAND.COM enthÑlt eine nicht dokumentierte Funktion, die es 
+Programmen erlaubt, DOS-Befehle dadurch auszufÅhren, da· Sie den Befehl 
+Åber das Software-Interrupt mit der HEX-Nummer 2E weitergeben. Nur sehr 
+wenige Programme machen von dieser Mîglichkeit Gebrauch, aber unter NDOS 
+wird sie fÅr alle Situationen, in denen dies erforderlich ist, vollstÑndig 
+unterstÅtzt und dokumentiert.
+
+Wenn Sie mit einem Programm arbeiten, das DOS-Befehle ausfÅhren soll und
+unter NDOS nicht einwandfrei funktioniert, lesen Sie zunÑchst Kapitel 7
+im NDOS-Handbuch, ÅberprÅfen Ihre COMSPEC-Einstellungen, und ÅberprÅfen
+Sie, ob genÅgend Speicher vorhanden ist, damit NDOS eine sekundÑre Shell
+ausfÅhren kann. Sind diese Einstellungen korrekt, kann es sein, da· Ihr
+Programm versucht, Befehle Åber INT 2E auszufÅhren.
+
+Wenn Sie glauben, da· dies der Fall ist, versuchen Sie, die Anweisung 
+FullINT2E in NDOS.INI auf "Yes" zu setzen:
+
+                    FullINT2E = Yes
+
+(Weitere Informationen zu NDOS.INI finden Sie in Kapitel 6 des Handbuchs.) 
+Die vollstÑndige UnterstÅtzung von INT 2E bleibt normalerweise deaktiviert, 
+weil damit NDOS weitere 100 Bytes Arbeitsspeicher belegen wÅrde, und 
+meistens wird es nicht benîtigt.
+
+Anhang C des ASCII-Handbuchs enthÑlt technische Daten zur INT 2E-
+Schnittstelle
+
+
+Auslagerung auf RAM-Disks:
+
+Ein Auslagern der primÑren Shell auf eine RAM-Disk setzt voraus, da· die 
+RAM-Disk in CONFIG.SYS Åber eine Anweisung DEVICE= komplett definiert ist 
+(die meisten RAM-Disks werden auf diese Weise konfiguriert). In 
+AUTOEXEC.BAT komplett oder teilweise definierte RAM-Disks (wie z.B. die 
+RAM-Disk/Cache-Kombination im PC Kwik Power Pak von Multisoft) kînnen 
+zum Auslagern der primÑren Shell nicht verwendet werden, da AUTOEXEC.BAT 
+beim Laden der Haupt-Shell noch nicht ausgefÅhrt worden ist und somit die 
+RAM-Disk zu diesem Zeitpunkt noch nicht existiert.
+
+
+NDOS und andere Befehlszeilen-Editierprogramme:
+
+Programme wie z. B. Anarkey (Moderne Software), PCED (Cove Software) und 
+ReDOS (Multisoft) dÅrften in Verbindung mit NDOS einwandfrei funktionieren. 
+Jedoch setzt der Ablauf dieser Programme die Funktion SETDOS /L1 voraus, 
+und diese schlie·t das Abrufen von Befehlen und das Editieren von 
+Befehlszeilen durch NDOS aus. In den meisten FÑllen kînnen Sie zwischen 
+NDOS und dem anderen Editor umschalten, indem Sie SETDOS /L jeweils in 
+den entgegengesetzten Zustand versetzen. 
+
+Solange Sie mit einem anderen Editor arbeiten, bleibt das NDOS-
+Befehlsprotokoll erhalten und kann mit HISTORY angezeigt, jedoch erst nach 
+AusfÅhrung eines SETDOS /L0 abgerufen werden. NDOS-Alias-Bezeichnungen, 
+ausfÅhrbare Erweiterungen und sonstige Funktionen sind unabhÑngig vom 
+SETDOS /L-Status aktiv. Alias-Bezeichnungen werden verarbeitet, sobald der 
+andere Editor seine Verarbeitung beendet hat. Soweit andere Programme 
+ebenfalls Alias-Bezeichnungen unterstÅtzen, mÅssen Sie sehr genau darauf 
+achten, da· keine Verwirrung entstehen kann, wenn ein Befehl sowohl durch 
+das andere Programm als auch durch NDOS expandiert wird!
+
+
+NDOS und EXE-Dateikomprimierungsprogramme
+
+Die Datei NDOS.COM sollte problemlos komprimierbar sein. HELPCFG wird 
+jedoch nicht in der Lage sein, die Farben des Hilfesystems zu Ñndern, wenn 
+das Programm NDOSHELP.EXE komprimiert wurde.
+
+
+NDOS.COM und exec()-Funktionen der Programmiersprache C
+
+Die meisten Implementierungen der Programmiersprache C enthalten eine 
+exec()-Funktion, die das C-Programm mit einem neuen Programm Åberlagert. 
+Diese exec()-Funktionen laden .COM- und .EXE-Dateien auf unterschiedliche 
+Weise. Einige exec()-Funktionen stellen aufgrund des Dateikopfes fest, welche 
+Dateiart sie ausfÅhren (diese Methode verwendet DOS normalerweise). Andere 
+Programme - einschlie·lich der in Borland++ und Lattice C verwendeten - 
+bestimmen die Methode fÅr das Laden anhand der Dateierweiterung. Diese 
+exec()-Funktionen, die mit der Dateierweiterung arbeiten, funktionieren nicht 
+korrekt, wenn sie versuchen, NDOS.COM zu starten, denn NDOS.COM ist 
+eigentlich eine EXE-Datei (dieselben Funktionen funktionieren nicht mit 
+Dateien, die eine andere Erweiterung besitzen, auch wenn diese Dateien von 
+DOS korrekt ausgefÅhrt werden). Die Lîsung fÅr dieses Problem besteht darin, 
+NDOS.COM in NDOS.EXE umzubenennen oder eine Kopie von NDOS.COM 
+anzufertigen und diese NDOS.EXE zu nennen.
+
+FÅr Benutzer von Borland C ist eine Mîglichkeit verfÅgbar, dieses Problem
+zu beheben (durch die Korrektur werden in der Laufzeitbibliothek in
+Borland C bestimmte Funktionen aktualisiert). Dieses Korrekturwerkzeug
+kînnen Sie aus dem Borland Support-Bereich von CompuServe herunterladen.
+
+
+KompatibilitÑt zwischen MÑusen und NDOS HELP:
+
+FÅr das NDOS-Hilfesystem ist es unabdingbar, da· Ihr Maustreiber korrekt 
+arbeitet. Funktioniert Ihre Maus in HELP nicht korrekt, oder gibt es Probleme 
+mit "MÑusedreck" (Zeichen, die der Mauszeiger zurÅcklÑ·t), vergewissern Sie 
+sich, da· Sie die aktuellste verfÅgbare Arbeitsversion Ihres Maustreibers 
+besitzen.
+
+Besitzer von seriellen Microsoft- und von PS/2-MÑusen stellen mîglicherweise 
+eine lÑngere Verzîgerung fest, wenn das Hilfesystem gestartet wird. Grund 
+hierfÅr ist die lange Initialisierungszeit, die diese MÑuse erfordern. Dies
+liegt am Maustreiber, und nicht am Hilfesystem.
+
+
+
+
+INFORMATIONEN ZU BESTIMMTEN PRODUKTEN
+-------------------------------------
+
+Dieser Teil ist alphabetisch nach Produkten gegliedert, wobei auch der Name 
+des jeweiligen Herstellers genannt wird. MS-DOS-Befehle erscheinen vor 
+anderen Softwareprodukten.
+
+Abschnitte mit zwei Sternen [**] hinter dem Produktnamen stammen von 
+Benutzern und wurden von Symantec nicht ÅberprÅft.
+
+
+MS-DOS-Befehl APPEND:
+
+Im Gegensatz zu den meisten anderen Befehlen in MS-DOS hat APPEND 
+sowohl einen externen als auch einen nicht dokumentierten internen Teil. Wenn 
+APPEND zum ersten Mal aufgerufen wird, wird sein externer Teil ausgefÅhrt 
+und als TSR (speicherresidentes Programm) in den Speicher geladen. 
+Nachfolgende Aufrufe von APPEND zur Korrektur des APPEND-Pfades 
+benutzen eine nicht dokumentierte interne Schnittstelle zwischen 
+COMMAND.COM und dem speicherresidenten Teil von APPEND.
+
+NDOS unterstÅtzt den internen Teil des APPEND-Befehls nicht. Dies bedeutet, 
+da· eine direkte énderung des APPEND-Pfades Åber NDOS nicht mîglich ist. 
+Trotzdem kînnen Sie APPEND in Verbindung mit NDOS benutzen.
+
+APPEND ist auf die Åbliche Weise zu starten, Åber AUTOEXEC bzw. eine 
+andere Stapeldatei oder aber Åber die Befehlszeile. Um jedoch den APPEND-
+Pfad zu Ñndern, nachdem APPEND zum erstenmal geladen wurde, mÅssen Sie 
+APPEND Åber COMMAND.COM starten, nicht Åber NDOS. Hierzu geben Sie 
+den folgenden Befehl ein (den Sie entsprechend modifizieren mÅssen, soweit 
+sich COMMAND.COM nicht im Verzeichnis C:\ befindet):
+
+          c:\befehl /c append [neue append Pfadliste]
+
+Sie kînnten auch einen NDOS-Alias definieren, der Ihnen diesen Befehl 
+abnimmt; z. B.:
+
+          alias app `c:\befehl /c append`
+
+Diesen Alias wÅrden Sie dann mit folgendem Befehl aufrufen:
+
+          app [neue Pfadliste]
+
+Sie kînnen auch den Parameter /X benutzen und damit bei zahlreichen NDOS-
+Befehlen die Suche nach NDOS-Verzeichnissen beeinflussen (Ñhnlich wie bei 
+COMMAND.COM). Beachten Sie bitte, da· dies APPEND zu einem 
+gefÑhrlichen Instrument macht: Wenn Sie ein Verzeichnis mit APPEND und dem 
+Parameter /X einbeziehen und anschlie·end (z.B.) *.BAK lîschen und sich im 
+aktuellen Verzeichnis aber keine solchen Dateien befinden, werden statt 
+dessen die .BAK-Dateien in dem mit APPEND einbezogenen Verzeichnis 
+gelîscht.
+
+
+Der APPEND-Parameter /E funktioniert mit NDOS nicht.
+
+!     VORSICHT: APPEND ist ein gefÑhrlicher Befehl. Er kann Programme zu 
+der irrigen Annahme "verleiten", da· sie auf eine bestimmte Datei zugreifen, 
+wÑhrend es in Wirklichkeit eine andere, gleichnamige Datei in einem anderen 
+Verzeichnis ist. Je nachdem, in welcher Situation dieses PhÑnomen auftaucht, 
+kann es erhebliche Komplikationen verursachen. Insbesondere kann dieses 
+Verhalten dazu fÅhren, da· NDOS Beschreibungen fÅr Dateien in einem 
+bestimmten Verzeichnis in der Beschreibungsdatei fÅr ein anderes Verzeichnis 
+speichert, da NDOS, wenn APPEND erst einmal lÑuft, nicht unterscheiden 
+kann, ob APPEND eine andere als die von ihm gewÅnschte Datei geîffnet hat.
+
+Wenn Sie APPEND benutzen mÅssen, damit bestimmte Anwendungen 
+funktionieren, empfehlen wir Ihnen UNBEDINGT, die oben beschriebenen 
+Alias-Bezeichnungen festzulegen und APPEND in AUTOEXEC.BAT mit einem 
+leeren Pfad zu laden. Definieren Sie dann zum Starten der jeweiligen 
+Anwendung einen eigenen Alias, der etwa so aussieht:
+
+     alias meinprog `app c:\meindat^d:\util\meinprog. exe^app ;`
+
+Dieser Alias richtet den APPEND-Pfad ein, startet die Anwendung und lîscht 
+den APPEND-Pfad. Bei dieser Vorgehensweise ist der Befehl APPEND weniger 
+riskant, da er nur bei ausdrÅcklichem Bedarf aktiviert wird.
+
+In MS-DOS Version 4.0 wird dieses Problem durch den neuen APPEND-
+Parameter /PATH:OFF etwas entschÑrft; insbesondere wird verhindert, da· 
+Beschreibungsdateien fÅr NDOS-Dateien einem falschen Verzeichnis 
+zugeordnet werden. Aus diesem Grund stellt NDOS den Parameter automatisch 
+ein, sobald es erkennt, da· Sie APPEND und eine DOS-Version ab 4.0 starten.
+
+
+MS-DOS-Befehle DATE und TIME:
+
+Die meisten PC-Systeme stellen Datum und Uhrzeit automatisch nach der 
+Systemuhr ein (die weiterlÑuft, wenn das System ausgeschaltet ist und nicht
+mit DOS-Datum und -Uhrzeit identisch ist), wenn der entsprechende DOS-Befehl 
+ausgefÅhrt wird. Normalerweise hat der Hardwarehersteller diese Funktion in 
+das System-BIOS integriert. Eine solche Implementierung ist mit NDOS 
+kompatibel, und durch die NDOS-Befehle DATE und TIME wird die Systemuhr 
+korrekt eingestellt.
+
+Eine sehr geringe Anzahl von Herstellern hat die mit ihren PC mitgelieferte 
+COMMAND.COM so geÑndert, da· sie diese Funktion ausfÅhrt. In solchen 
+FÑllen wird die Systemuhr durch die Befehle NDOS DATE und TIME, die nicht 
+Åber solche hardwarespezifischen VerÑnderungen verfÅgen, nicht eingestellt. 
+Wenn Sie es gewohnt sind, Datum und Uhrzeit der Systemuhr mit DOS-
+Befehlen einzustellen, und diese unter NDOS nicht funktionieren, ÅberprÅfen 
+Sie zuerst die Batterie der Uhr. Ist diese in Ordnung, starten Sie eine 
+sekundÑre Kopie von COMMAND.COM, um Datum und Uhrzeit einzustellen, 
+oder rufen Sie dazu das SETUP Ihres Systems oder ein anderes 
+Dienstprogramm auf.
+
+
+MS-DOS-Befehl FASTOPEN:
+
+Der MS-DOS-Befehl FASTOPEN arbeitet normalerweise problemlos mit NDOS, 
+doch umbenannte Verzeichnisse werden nicht korrekt erkannt. Auch bei 
+gelîschten Verzeichnissen kînnen Ñhnliche Probleme auftreten. Dies liegt an 
+FASTOPEN, und nicht an NDOS. Wenn Sie FASTOPEN verwenden und ein 
+Verzeichnis mit dem NDOS-Befehl REN umbenennen und anschlie·end einen 
+DIR-Befehl eingeben, wird mîglicherweise noch der alte Verzeichnisname 
+angezeigt, und nicht der neue. Gelegentlich bereitet auch der Zugriff auf 
+Dateien mit neuem Namen Schwierigkeiten. Normalerweise kînnen Sie dieses 
+Problem lîsen, indem Sie in NDOS.INI die Anweisung "DiskReset = Yes" 
+aufnehmen. Lîst "DiskReset = Yes" das Problem nicht, besteht die einzige uns 
+bekannte Lîsung darin, das System neu zu starten, nachdem ein Verzeichnis 
+umbenannt wurde.
+
+Wir meinen, da· ein Festplatten-Cache-Programm eine grî·ere 
+Leistungssteigerung bringt als FASTOPEN, sofern das System mit dem 
+erforderlichen Arbeitsspeicher ausgerÅstet ist.
+
+
+MS-DOS-Befehl FORMAT /S (Version 4.0 und 5.0):
+
+Mit dem Befehl FORMAT /S unter DOS 4 und DOS 5 wird NDOS.COM auf eine 
+neu formatierte Diskette kopiert und in COMMAND.COM umbenannt. Das ist 
+wahrscheinlich nicht erwÅnscht und stiftet bestenfalls Verwirrung. Weitere 
+Informationen hierzu finden Sie unter "NDOS und DOS" in Kapitel 7 des 
+Handbuchs.
+
+
+MS-DOS-Befehl SELECT (ab Version 4.0):
+
+In MS-DOS Version 4.0 wurde erstmals ein SELECT-Befehl eingefÅhrt. Dieser 
+externe Befehl steht in keinerlei Zusammenhang mit dem internen NDOS-
+Befehl SELECT. Falls Sie beide benutzen mÅssen, kînnen Sie Alias-
+Bezeichnungen definieren, damit die Befehlsnamen korrekt interpretiert werden. 
+Beispielsweise sorgen die beiden folgenden Alias-Bezeichnungen dafÅr, da· 
+SELECT den externen DOS 4.0-Befehl SELECT anspricht (von dem 
+vorausgesetzt wird, da· er sich in C:\DOS\SELECT.EXE befindet), SEL 
+dagegen den internen NDOS-Befehl SELECT:
+
+          alias select c:\dos\select. exe
+          alias sel *select
+
+
+1DIR+ (Bourbaki):
+
+Die folgenden Aussagen beruhen auf Tests mit 1DIR+ Version 3.02, die auch 
+mit Version 3.5 nachgeprÅft wurden.
+
+1DIR+ dÅrfte in seinem teilresidenten oder EMS-Modus unter NDOS 
+einwandfrei laufen, sofern die unten beschriebenen Voraussetzungen erfÅllt 
+sind. Im vollresidenten Modus gilt das gleiche, nur da· hier nach einmal 
+erfolgtem Start eine sichere RÅckkehr zu NDOS nicht gewÑhrleistet ist.
+
+Wenn Ihre Version des Programms 1DIR+ fÅr den vollresidenten Modus 
+konfiguriert wurde, kînnen Sie sie unter NDOS in den Speicher laden und dann 
+auf teilresidenten bzw. EMS-Modus umschalten. Hierzu geben Sie Åber das 
+Verzeichnis, in dem Sie 1DIR+ normalerweise starten, folgende Befehle ein:
+
+          setdos /l1
+          1dirplus
+
+Sobald 1DIR+ startet, gehen Sie zum MenÅ "Wonder"/"Setup" und schalten den 
+Modus auf teilresident oder EMS um. Um 1DIR+ zu beenden, drÅcken Sie Esc 
+und wÑhlen die Option "Exit/Save" (nicht "Save/Reset"). Das HauptmenÅ 
+verlassen Sie dann mit "Wonder"/"Exit". An dieser Stelle bleibt das System 
+wahrscheinlich hÑngen. Starten Sie Ihren Computer neu. Anschlie·end mÅ·ten 
+Sie in der Lage sein, 1DIR+ wie nachstehend beschrieben zu starten.
+
+Die o.g. Schritte sind nur einmal erforderlich, wenn Sie 1DIR+ installieren
+bzw. erneut installieren.
+
+Sobald 1DIR+ auf EMS- oder teilresidenten Modus eingestellt ist, kînnen Sie 
+das Programm mit folgendem Alias Åber NDOS starten:
+
+          alias 1dir `setdos /L1 ^ 1dirplus`
+
+Der Befehl SETDOS /L1 ist erforderlich, damit 1DIR+ Befehlszeilen an NDOS 
+Åbergeben kann.
+
+Wenn Sie mit 1DIR+ fertig sind, mÅssen Sie SETDOS /L0 ausfÅhren, um 
+wieder auf die normale Befehlszeilen-Editierung von NDOS umzuschalten. 
+Innerhalb des oben beschriebenen Alias ist dies NICHT mîglich, da 1DIR+ zu 
+NDOS zurÅckkehrt, um seine eigenen Aufgaben zu erfÅllen und ein Umschalten 
+auf den /L0-Modus erst dann sinnvoll ist, wenn 1DIR+ aus dem Speicher 
+entfernt ist. Sollten Sie nach Beendigung von 1DIR+ feststellen, da· die 
+Befehlszeilen-Editierung und Protokolldatei von NDOS nicht zur VerfÅgung 
+stehen, so liegt dies daran, da· Sie vergessen haben, den Befehl SETDOS /L0 
+auszufÅhren. Wenn Sie 1DIR+ regelmÑ·ig aufrufen und wieder verlassen, 
+kînnen Alias-Bezeichnungen wie z.B. die folgenden den Ablauf beschleunigen:
+
+          alias 1d `setdos /L1 ^ 1dirplus`
+          alias 1e setdos /L0
+
+7.0    Wenn Sie mit den zusammengesetzten Befehlen von 1DIRPLUS 
+Stapeldateien ausfÅhren, werden Sie vielleicht feststellen, da· INPUT-Befehle 
+der Stapeldatei nicht korrekt funktionieren, sofern ihnen nicht SETDOS /L0 
+vorangestellt wird. Vor dem Ende der Stapeldatei mu· auch SETDOS /L1 
+ausgefÅhrt werden, denn andernfalls wird 1DIRPLUS nach Abschlu· der 
+Stapeldatei nicht korrekt aktiviert. Beispiel:
+
+           setdos /l0
+           input Geben Sie bitte Ihren Namen ein:  %%name
+           setdos /l1
+
+
+3COM Networks (3Com):  [**]
+
+Einige Benutzer teilten uns mit, da· Netzwerksoftware von 3COM nicht korrekt 
+geladen wird, wenn NDOS.INI die Anweisung "UMBLoad = Yes" enthÑlt. Treten 
+bei einem 3Com-Netzwerk mit NDOS Probleme auf, versuchen Sie, die 
+UMBLoad und UMBEnvironment-Anweisungen aus der Datei NDOS.INI zu 
+lîschen.
+
+
+Alpha 4 (Alpha Software):  [**]
+
+Alpha 4 arbeitet nicht korrekt, wenn beim Starten zuviel Platz fÅr die
+Umgebung vorhanden ist. Mit den NDOS-Befehlen SETLOCAL, ENDLOCAL und UNSET 
+kînnen Sie den Umgebungsbereich verkleinern, bevor Sie Alpha 4 starten. 
+Einzelheiten zu diesem Verfahren finden Sie im Abschnitt 
+"SoftwarekompatibilitÑtsprobleme lîsen" in Kapitel 7 des NDOS-Handbuchs.
+
+
+ANSI.SYS (diverse Hersteller):
+
+Falls Sie beim Bildschirmrollen im 43- oder 50-Zeilen-Modus Probleme haben, 
+versuchen Sie es mit einer anderen ANSI-Version. Gute Ergebnisse konnten wir 
+mit dem kostenlosen Dienstprogramm ANSI.COM von PC Magazine erzielen, 
+sowie auch mit dem Programm ANSIUV.SYS, das mit der Erweiterungssoftware 
+UltraVision EGA / VGA von Personics vertrieben wird.
+
+7.0    Einige GerÑtetreiber fÅr die Anzeige verleiten NDOS unter UmstÑnden
+zu der irrigen Annahme, da· ein ANSI-Treiber vorhanden sei, wÑhrend dies 
+tatsÑchlich nicht der Fall ist. Wenn dies vorkommt, werden auf dem Bildschirm 
+ANSI-Zeichenfolgen wie "[2J" angezeigt, wenn Sie die Befehle CLS und COLOR
+eingeben. Um das Problem zu beheben, fÅgen Sie in NDOS.INI die Anweisung
+"ANSI = No" oder in AUTOEXEC.BAT den Befehl "SETDOS /A2" ein.
+
+
+Bookshelf CD-ROM (Microsoft):  [**]
+
+Microsoft Bookshelf verwendet die Umgebungsvariable CDPATH, die auch 
+NDOS verwendet (zu einem vîllig anderen Zweck). Wenn Sie mit MS Bookshelf 
+arbeiten und fÅr NDOS eine CDPATH-Variable einstellen wollen, geben Sie 
+statt dessen "_CDPATH" an. NDOS sucht dann zuerst nach _CDPATH. Wird 
+diese Variable gefunden, verwendet NDOS diese und ignoriert CDPATH.
+
+
+DESQview (Quarterdeck):
+
+In Kapitel 7 des Handbuchs finden Sie fast alle Informationen zu DESQview. 
+
+7.0    Wenn ein DESQview-Fenster mit der Option "Close" des DESQview-
+MenÅs geschlossen wird, ohne NDOS mit EXIT zu verlassen, "bereinigt" NDOS 
+7.0 automatisch seine Ressourcen (gibt die Shell-Nummer frei und lîscht die 
+Auslagerungsdatei von der Festplatte). Diese Funktion hat jedoch eine 
+Nebenwirkung: Die Option "Quit" des DESQview-MenÅs wird deaktiviert. (Die 
+Ursache hierfÅr liegt im Aufbau von DESQview und ist nicht auf NDOS 
+zurÅckzufÅhren.) In Version 8.0 kînnen Sie dieses Verhalten mit der 
+DVCleanup-Anweisung in NDOS.INI steuern. Ist DVCleanup auf "Yes" gesetzt 
+(Standardeinstellung), arbeitet NDOS so wie in Version 8.0. Ist DVCleanup auf 
+"No" gesetzt, wird dadurch der NDOS-Bereinigungscode fÅr das DESQview-
+Fenster deaktiviert, wodurch die Auswahl "Quit" des MenÅs aktiviert wird. 
+Danach wird NDOS jedoch nicht mehr seine Ressourcen bereinigen, wenn Sie 
+ein NDOS-Fenster nicht mit dem Befehl EXIT, sondern mit der Option "Close" 
+des MenÅs schlie·en.
+
+7.0    DESQview verfÅgt Åber die Mîglichkeit, Unterverzeichnissen logische 
+Laufwerke zuzuordnen, um den Zugriff auf hÑufig verwendete Verzeichnisse zu 
+vereinfachen oder Ñltere Anwendungsprogramme zu unterstÅtzen, die nicht mit 
+Unterverzeichnissen arbeiten kînnen. Diese Funktion ist dem DOS-Befehl 
+SUBST Ñhnlich. NDOS-Befehle wie DIR und COPY erzeugen bei logischen 
+Laufwerken unter DESQview mîglicherweise unerwartete Ergebnisse, denn 
+DESQview unterstÅtzt bestimmte Standardaufrufe von DOS nicht, die NDOS 
+verwendet, um feststellen, ob es sich bei dem eingegebenen Namen um den 
+Namen einer Datei oder eines Unterverzeichnisses handelt. Wenn Sie 
+bestimmte Dateinamen ohne Universalzeichen verwenden, funktionieren NDOS-
+Befehle im allgemeinen bei logischen DESQview-Laufwerken korrekt. Bei 
+"impliziten" Universalzeichen (z.B. wenn NDOS DIR A* als DIR A*.* 
+interpretiert), DateinamensergÑnzung und anderen Dateizugriffen mit 
+Universalzeichen kînnen jedoch Probleme auftreten. Uns sind keine UmstÑnde 
+bekannt, unter denen ein Datenverlust auftreten kann. Um sicherzugehen, 
+sollten Sie jedoch bei Befehlen wie COPY und MOVE fÅr logische DESQview-
+Laufwerke den Parameter /N angeben, um den Ablauf des Befehls zu 
+ÅberprÅfen, bevor die Dateien tatsÑchlich verÑndert werden.
+
+Unter NDOS kann die DESQView-Option "DOS Services" in ihrer 
+Standardkonfiguration nicht laufen. Um "DOS Services" NDOS-gerecht 
+anzupassen, mÅssen Sie zunÑchst im DESQView-Verzeichnis eine Stapeldatei 
+DOSSERV.BAT erstellen, die "DOS Services" unter COMMAND.COM startet 
+(wir gehen hier davon aus, da· sich DESQView im Verzeichnis C:\DV und 
+COMMAND.COM im Verzeichnis C:\ befinden; bei einem anders konfigurierten 
+System mÅssen Sie die nachstehenden Werte entsprechend Ñndern). Die 
+Stapeldatei hat folgenden Inhalt:
+
+                    set comspec=c:\command.com
+                    c:\dv\dosserv
+                    c:\command
+                    exit
+
+Anschlie·end nehmen Sie im DESQView-Bildschirm "Change a Program" 
+folgende énderungen fÅr "DOS Services" vor (die mit ** markierten EintrÑge 
+finden Sie auf der zweiten Bildschirmseite):
+
+                    *   Memory Allocation = mindestens 128 KB
+                    *   Program Name = C:\DV\DOSSERV.BAT (énderung des 
+                        frÅheren Wertes C:\DV\DOSSERV).
+                    **  Close on Exit to DOS = N
+                    **  System Memory = mindestens 10 KB 
+                    **  Allow Close Window = N
+
+Nach diesen énderungen mÅ·te es mîglich sein, das Fenster "DOS Services" 
+normal zu îffnen. Allerdings kînnen Sie es nicht mit einem Befehl "Close 
+Window" schlie·en. Statt dessen gehen Sie in das Fenster, in dem "DOS 
+Services" Ihnen die Eingabe eines DOS-Befehls erlaubt, und schlie·en Sie das 
+Fenster mit EXIT.
+
+
+DOORWAY BBS Software:
+
+7.0    DOORWAY verwendet in bestimmten Befehlszeilenargumenten das 
+Winkelzeichen [^]. Dieses Symbol interpretiert NDOS als Befehlstrennzeichen 
+und Åbergibt die Zeile nicht korrekt an DOORWAY. Dieses Problem kînnen Sie 
+lîsen, indem Sie das NDOS-Befehlstrennzeichen permanent (mit der 
+Anweisung CommandSep in NDOS.INI) oder vorÅbergehend (mit dem Befehl 
+SETDOS /C) Ñndern, oder indem Sie vor jedem Winkelzeichen in der 
+DOORWAY-Befehlszeile das NDOS-Escape-Zeichen (Strg-X) angeben.
+
+
+DR-DOS (Digital Research):
+
+NDOS dÅrfte als Befehlsprozessor (u. a. als primÑre Shell) unter DR-DOS 3.4, 
+5.0 oder 6.0 einwandfrei laufen. Die folgenden Informationen wurden in Tests 
+von NDOS unter DR-DOS 5.0 und 6.0 zusammengestellt.
+
+
+Interne Befehle im Vergleich zu externen Befehlen:
+
+Bei DR-DOS sind ASSIGN, JOIN und SUBST als interne Befehle angelegt (bei 
+MS-DOS/PC-DOS sind sie extern). NDOS unterstÅtzt alle internen MS-DOS-
+Befehle, ASSIGN, JOIN, MORE und SUBST werden jedoch nicht intern 
+unterstÅtzt. Wenn Sie diese internen DR-DOS-Befehle unter NDOS als 
+Befehlsprozessor ausfÅhren mîchten, mÅssen Sie Alias-Bezeichnungen 
+definieren, die die DR-DOS-Datei COMMAND.COM starten, um die Befehle 
+aufzurufen. Die folgenden NDOS-Alias-Bezeichnungen leisten dies (korrigieren 
+Sie sie entsprechend, falls COMMAND.COM sich nicht in C:\ befindet):
+
+                    alias assign `c:\command /c assign %&`
+                    alias join `c:\command /c join %&`
+                    alias more `c:\command /c more %&`
+                    alias subst `c:\command /c subst %&`
+
+In DR-DOS 6.0 wurden ASSIGN, JOIN und SUBST wieder zu externen Befehlen,
+so da· die entsprechenden Alias-Bezeichnungen nicht erforderlich sind.
+
+FÅr den Befehl MORE kann eine viel bessere Mîglichkeit eingestellt werden, 
+indem dafÅr der Alias NDOS LIST definiert wird:
+
+                    alias more list /s
+
+Damit erhalten Sie einen Bildschirm voller Grî·e, in dem Sie blÑttern kînnen, 
+statt der Anzeigen, die Sie mit MORE von DR-DOS (oder MS-DOS) erhalten 
+und in denen die Informationen nur seitenweise auflistet werden.
+
+
+HILOAD:
+
+NDOS unterstÅtzt die Funktion HILOAD von DR-DOS, wobei die 
+Befehlsbezeichnungen LOADHIGH oder LH von MS-DOS/PC-DOS verwendet 
+werden. Um unter DR-DOS ein TSR-Programm in den oberen Speicher zu 
+laden, geben Sie einfach den folgenden Befehl ein:
+
+                    LH [Programmname] [Optionen]
+
+Wenn Sie vollstÑndige KompatibilitÑt zu DR-DOS wÅnschen und dem Befehl die 
+Bezeichnung HILOAD geben mîchten, ordnen Sie ihm zuvor einfach einen 
+Alias zu:
+
+                    alias hiload lh
+
+Wie unter MS-DOS arbeiten LOADHIGH und LH erst korrekt, nachdem 
+Speicherverwaltungssoftware geladen wurde, die den oberen Speicher 
+unterstÅtzt. Da DR-DOS keine Fehlermeldungen an NDOS ausgibt, wenn eine 
+LOADHIGH-Operation fehlschlÑgt, kann NDOS diesen Zustand nicht melden. 
+Dies bedeutet, da· Sie mit dem DR-DOS-Programm MEM oder einem Ñhnlichen 
+Speicherzuordnungsprogramm feststellen mÅssen, ob das TSR-Programm 
+tatsÑchlich in den oberen Speicher geladen wurde.
+
+
+Dateikennwîrter:
+
+NDOS unterstÅtzt DR-DOS-Dateikennwîrter. Die Befehlssyntax fÅr den Zugriff 
+auf kennwortgeschÅtzte Dateien unterscheidet sich jedoch geringfÅgig von der 
+Syntax unter DR-DOS.
+
+Erstens ist das Trennzeichen, das Kennwîrter und Dateinamen voneinander 
+trennt, bei DR-DOS ein Semikolon [;], mit dem NDOS Teile einer "Inklusivliste" 
+voneinander trennt (NÑheres dazu im Handbuch). Daher ist eine geringfÅgig 
+abweichende Syntax erforderlich, wenn ein DR-DOS-Kennwort in einen internen 
+NDOS-Befehl eingeschlossen wird, in dem Universalzeichen mîglich sind: 
+ZWEI Semikolons sind zu setzen, um Kennwort und Dateinamen voneinander 
+zu trennen. In NDOS-Verzeichnisbefehlen wie MD und CD kînnen keine 
+Universalzeichen verwendet werden. Somit ist in diesen Befehlen vor einem 
+Kennwort ein einzelnes Semikolon zu setzen. In allen anderen DR-DOS-
+Befehlen, die Universalzeichen akzeptieren, mu· das doppelte Semikolon 
+gesetzt werden. In externen DR-DOS-Befehlen, die die Syntax 
+"Kennwort;Dateiname" akzeptieren, wird nur ein einzelnes Semikolon gesetzt.
+
+Zweitens versteckt DR-DOS kennwortgeschÅtzte Dateien. Dies bedeutet, da· 
+unter DR-DOS fÅr den Zugriff auf kennwortgeschÅtzte Dateien 
+Befehlsparameter verwendet werden mÅssen, die die Verarbeitung versteckter 
+Dateien ermîglichen (COPY /H, DEL /Z, DIR /A, MOVE /H und SELECT /A).
+
+Wenn Dateien mit NDOS kopiert oder bewegt werden, bleibt der 
+Kennwortschutz nicht automatisch erhalten. Versteckte Dateien bleiben jedoch 
+versteckt. Dies bedeutet, da· das Attribut "Hidden" manuell mit ATTRIB 
+entfernt werden mu·, nachdem eine kennwortgeschÅtzte Datei bewegt oder 
+kopiert wurde und an der neuen Position oder unter ihrem neuen Namen 
+sichtbar sein soll.
+
+Um beispielsweise die Datei ABFALL durch ein Kennwort zu schÅtzen, sie auf 
+Laufwerk A: zu kopieren und zu lîschen, geben Sie folgendes ein:
+
+                    password abfall/r:fred
+                    copy /h abfall;;fred a:
+                    del /z abfall;;fred
+
+Um den Kennwortschutz der Datei ABFALL aufzuheben, geben Sie folgendes 
+ein:
+
+                    password abfall;fred /n
+
+
+7.0    Set-Befehle der Datei CONFIG.SYS:
+
+Unter DR-DOS kînnen Sie in die Datei CONFIG.SYS Set-Befehle einfÅgen, um 
+Umgebungsvariablen einzustellen. NDOS ruft diese Informationen ab und 
+speichert sie so in der NDOS-Umgebung, wie dies auch bei COMMAND.COM 
+von DR-DOS der Fall ist. Auf Wunsch kînnen Sie diese Funktion deaktivieren, 
+indem Sie in NDOS.INI "DRSets = No" einstellen.
+
+
+SuperStor:
+
+Die mit DR-DOS ausgelieferte Version von SuperStor arbeitet problemlos mit 
+NDOS zusammen. NDOS.COM kann jedoch nicht auf einem komprimierten 
+Laufwerk gespeichert werden. In diesem Fall wÑre DR-DOS wÑhrend des 
+Startens nicht in der Lage, NDOS zu finden. Speichern Sie NDOS auf dem 
+nicht komprimierten Startlaufwerk.
+
+
+TASKMAX:
+
+NDOS arbeitet mit TASKMAX zusammen, sofern neue Tasks gemÑ· den 
+folgenden Anweisungen gestartet werden
+
+7.0    Den residenten Teil von NDOS kînnen Sie nicht in den oberen 
+Speicher laden, wenn in der Datei NDOS.INI "UMBLoad = YES" eingestellt ist 
+und TASKMAX lÑuft. TASKMAX bringt das System zum Absturz, wenn es 
+gestartet wird, wÑhrend NDOS sich im oberen Speicher befindet. In unseren 
+Versuchen hat sich herausgestellt, da· diese EinschrÑnkung nicht fÅr die 
+UMBEnvironment-Anweisung gilt, die anscheinend mit TASKMAX kompatibel 
+ist. Einige Benutzer teilten uns auch mit, da· "UMBLoad = Yes" in sekundÑren 
+Shells funktioniert, jedoch nicht in den primÑren Shell. Was genau geschieht, 
+ist von Ihrem System und von der DR-DOS-Konfiguration abhÑngig.
+
+Nachdem TASKMAX geladen wurde, lÑuft der primÑre Befehlsprozessor 
+weiterhin als Task 1. Eine Mîglichkeit, eine andere Task zu starten, besteht 
+darin, TASKMAX zu aktivieren und "Einfg" zu drÅcken. Dadurch wird ein 
+weiteres "Exemplar" des primÑren Befehlsprozessors gestartet, was zu 
+betrÑchtlichen Problemen mit NDOS fÅhren kann. Grund hierfÅr ist, da· jede 
+Task, die auf diese Weise gestartet wird, eine Kopie des primÑren 
+Befehlsprozessors ist, so da· alle Tasks denselben Auslagerungsbereich 
+verwenden.
+
+Damit werden Dinge wie Alias-Bezeichnungen, Protokoll und SETDOS-
+Einstellungen in andere Tasks Åbernommen. Wie sich diese öbernahme genau 
+auswirkt, richtet sich nach der Reihenfolge der Operationen und der Art der 
+verwendeten NDOS-Auslagerung. Die öbernahme mu· nicht notwendigerweise 
+zu einem Systemabsturz fÅhren, sie kann auch zu sehr seltsamen und 
+unerwÅnschten Ergebnissen fÅhren, besonders wenn in mehreren Tasks 
+gleichzeitig Stapeldateien verarbeitet werden. NDOS hat keine Mîglichkeit, 
+diesen Zustand zu erkennen oder zu verhindern. Es ist sehr zu empfehlen, 
+neue NDOS-Tasks NICHT mit "Einfg" zu starten, auch wenn das vorÅbergehend 
+scheinbar reibungslos auf dem System funktioniert.
+
+GlÅcklicherweise bietet TASKMAX eine andere Mîglichkeit, neue Tasks zu 
+starten: den Befehl TASKMAX /C. Wird aus Task 1 heraus ein Befehl wie:
+
+                    taskmax /c c:\ndos.com
+
+gegeben, wird eine sekundÑre Kopie von NDOS als neue Task gestartet. Diese 
+neue Kopie ist eine echte sekundÑre Shell (keine Kopie der primÑren Shell), 
+und sie wird nicht zu den beschriebenen unerwÅnschten Nebenwirkungen 
+fÅhren. Derselbe Ansatz empfiehlt sich, wenn eine Task gestartet wird, die 
+einen Befehlsprozessor erfordert. Um eine Task zu starten, die eine .BTM-
+oder .BAT-Datei startet, verwenden Sie einen Befehl wie den folgenden:
+
+                    taskmax /c c:\ndos.com /c startwp.bat
+
+Damit wird NDOS angewiesen, die angegebene Stapeldatei auszufÅhren und 
+danach automatisch zu beenden (und dabei die Task aus der Task-Liste zu 
+streichen).
+
+Wenn Sie bestimmte Tasks regelmÑ·ig mit dem beschriebenen Verfahren 
+starten, verwenden Sie eine Stapeldatei oder eine Gruppe von NDOS-Alias-
+Bezeichnungen, um den Vorgang zu automatisieren.
+
+7.0    Einige Benutzer teilten uns auch mit, da· es ihnen gelungen sei, die 
+KompatibilitÑt zwischen TASKMAX und NDOS zu verbessern, indem sie die 
+FullINT2E-Anweisung in NDOS.INI auf "Yes" setzten. Dieses Verfahren hat 
+Symantec zwar nicht ÅberprÅft, doch vielleicht mîchten Sie den Versuch auf 
+Ihrem System unternehmen.
+
+Epsilon (Lugaru Software):  [**]
+
+Epsilon kann NDOS als parallelen Proze· starten und Befehle an NDOS zur 
+AusfÅhrung Åbergeben. In diesem Modus kann es Eingabeanforderungen von 
+NDOS erkennen und NDOS mit den entsprechenden Tastenwerten versorgen - 
+jedoch nicht mit RÅckschritt und dergleichen, sondern nur mit echten Zeichen. 
+Dies bedeutet, da· die Eingabe-Editierung fÅr NDOS unsichtbar bleibt. Um 
+dieses Problem zu lîsen, kînnen Sie NDOS entweder als Shell (und nicht als 
+parallelen Proze·) starten oder aber fÅr die NDOS-Kopie, die unter Epsilon 
+laufen soll, einen Befehl SETDOS /L1 benutzen.
+
+Um die grî·ere FlexibilitÑt des Befehls SETDOS /L1 nutzen zu kînnen, 
+mÅssen Sie SETDOS /L1 mittels NSTART.BAT (oder .BTM) einrichten, bevor 
+Sie Epsilon starten. Jedesmal, wenn Epsilon eine sekundÑre Shell startet,
+stellt es die Umgebunsvariable EPSRUNS=Y ein. Mit dieser Variablen kînnen
+Sie NSTART so einstellen, da· es mit Epsilon zusammenarbeitet.
+
+Wenn Sie dann in NSTART die folgende Zeile eingeben, wird der Befehl 
+SETDOS /L1 in einer von Epsilon gestarteten sekundÑren Shell aufgerufen, 
+ansonsten jedoch ignoriert:
+
+          if "%epsi"=="YES" setdos /l1
+
+
+FoxPro (Fox Software):  [**]
+
+FoxPro arbeitet gut mit NDOS zusammen, es kînnen jedoch Probleme 
+auftreten, wenn NDOS oder die Hauptumgebung in den oberen Speicher (mit 
+einer UMB-Anweisung) geladen wurde. Wenn Sie KompatibilitÑtsprobleme 
+zwischen FoxPro und NDOS feststellen, versuchen Sie, eine eventuell 
+vorhandene Zeile "UMBEnvironment = Yes" aus NDOS.INI zu entfernen. Wird 
+dadurch keine Abhilfe geschaffen, versuchen Sie auch, die Zeile "UMBLoad = 
+Yes" zu entfernen.
+
+
+GeoWorks Ensemble (GEOS):
+
+NDOS ist kompatibel mit GeoWorks Ensemble. Um Åber den Bildschirm "DOS 
+Programs" Alias-Befehle oder BTM-Dateien auszufÅhren, mÅssen Sie eine neue 
+Programm-SchaltflÑche mit NDOS.COM als "primÑrem Dateinamen" und dem 
+Alias bzw. der BTM-Datei als "optionalen Befehlszeilen-Parametern" definieren. 
+Es kînnen dieselben Befehle wie in der DOS-Befehlszeile eingegeben werden.
+
+
+Hijaak (Inset Systems):
+
+Unter NDOS als Befehlsprozessor ist ein Laden des Resident Program 
+Managers (RPM) Åber das Hijaak-MenÅ nicht mîglich. Beim Versuch, RPM Åber 
+das MenÅ zu laden, wird Ihnen anschlie·end ein "Speicherfehler" gemeldet. 
+Dies liegt an dem internen Aufbau von Hijaak und ist kein NDOS-Fehler. 
+VorlÑufig kînnen Sie bei der NDOS-Eingabeaufforderung den Befehl 
+LOADRPM verwenden, so wie dies im Hijaak-Handbuch beschrieben wird. Mit 
+LOADRPM kînnen Sie RPM unter NDOS problemlos laden; das Problem tritt 
+nur beim Laden Åber das Hijaak-MenÅ auf.
+
+
+Kermit (Columbia University):  [**]
+
+Damit die DOS-Funktionen des DatenÅbertragungsprogramms Kermit, das von 
+der Columbia University vertrieben wird, korrekt arbeiten, mu· die Anweisung 
+"FullINT2E = Yes" in der Datei NDOS.INI eingestellt sein.
+
+
+LOGIMENU (Logitech):  [**]
+
+7.0    Wenn das Logitech-Programm LOGIMENU in Verbindung mit NDOS lÑuft, 
+hinterlÑ·t es bei jedem Entfernen eines MenÅs aus dem Arbeitsspeicher eine 
+offene Datei. Um dieses Problem zu umgehen, laden Sie das MenÅ von einer 
+Diskette oder RAM-Disk, und nicht von einer Festplatte. Im allgemeinen 
+mÅssen Sie jedoch LOGIMENU mit einem Produkt wie MARK oder RELEASE 
+(aus dem Freeware-Paket TSRCOM von TurboPower, das sich auf der NDOS- 
+Dienstprogrammdiskette befindet) laden und aus dem Speicher lîschen, 
+wodurch Dateien gelîscht werden, die von anderen Programmen offengelassen 
+wurden.
+
+
+Manifest (Quarterdeck):
+
+Normalerweise arbeitet Manifest reibungslos mit NDOS zusammen. Ist jedoch 
+in der NDOS-Hauptumgebung nur wenig Umgebungsbereich frei, erzeugt der 
+Bildschirm "Hints Detail" in Manifest mîglicherweise unerwartete Ergebnisse 
+oder bringt das System zum Absturz. Wenn dies geschieht, vergrî·ern Sie die 
+Umgebung bzw. entfernen Sie einige Umgebungsvariablen, wenn Sie Manifest 
+starten und beabsichtigen, den Bildschirm "Hints Detail" zu verwenden.
+
+
+NetWare (Novell):  [**]
+
+Die folgenden Aussagen beruhen auf Tests mit NetWare Version v2.12, v2.15, 
+v3.11-v3.2 sowie NetWare 386 und auf GesprÑchen mit der Technischen 
+UnterstÅtzung von Novell.
+
+KompatibilitÑtsprobleme zwischen NetWare und NDOS sind Ñu·erst selten. 
+Wenn sie auftreten, handelt es sich um einen Konflikt zwischen NDOS und der 
+NetWare Shell (NET3, NET4, NET5, NETX, EMSNETX usw.). Im Regelfall 
+bereiten neuere "NETX"-Versionen von Novell betrÑchtlich weniger Probleme als 
+Ñltere NET3- / NET4- / NET5-Versionen, und es empfiehlt sich, mîglichst diese 
+neueren Versionen mit NDOS zu verwenden.
+
+7.0    NDOS beinhaltet eine neue NDOS.INI-Anweisung: NetwareNames. In 
+NetWare-Systemen mu· immer "NetwareNames = Yes" eingestellt werden. 
+Dadurch werden in den residenten Teil von NDOS Zeichenfolgen 
+aufgenommen, nach denen NetWare sucht, wenn es geladen wird. Dadurch 
+werden Probleme mit zerstîrten Umgebungsvariablen wÑhrend des Anmeldens 
+vermieden. Indem "NetwareNames = Yes" eingestellt wurde, erhîht sich die 
+Speicherbelegung durch NDOS um 112 Bytes. VORSICHT: Ist fÅr 
+NetwareNames "Yes" eingestellt, und Sie starten von einem NetWare-Laufwerk 
+aus (was selten vorkommt), mÅssen die Variablen TEMPNDOS und TEMP fÅr 
+jeden Benutzer explizit mit SET auf das entsprechende Laufwerk und das 
+Verzeichnis eingestellt werden, um Konflikte in dem Verzeichnis zu vermeiden, 
+das fÅr Pipe-Dateien verwendet wird. (Wenn NetwareNames nicht verwendet 
+wird oder Sie von einem lokalen Laufwerk aus starten, stellen NDOS und 
+NetWare automatisch das korrekte Laufwerk und Verzeichnis fÅr Pipe-Dateien 
+ein.)
+
+Einige Versionen von NetWare geben gelegentlich die Meldung "Pipe not 
+found" aus, wenn sie unter NDOS geladen werden. Diese Meldung bezieht sich 
+auf NetWare-Funktionen im Zusammenhang mit COMMAND.COM und hat 
+nichts mit NDOS zu tun. Sie kann ignoriert werden.
+
+Mit dem NDOS-Befehl TRUENAME und der Variablen @TRUENAME werden 
+echte NetWare Server-Namen ausgegeben, wenn ein Dateiname vergeben 
+wurde, der sich auf ein NetWare Laufwerk bezieht. Der ausgegebene Name 
+wird jedoch nicht korrekt sein, wenn lediglich der Name des 
+Stammverzeichnisses als Parameter angegeben wird (z.B. TRUENAME K:\). 
+Grund hierfÅr ist, da· NetWare die Anforderung nach dem echten Namen nicht 
+erkennt, wenn nur der Name eines Stammverzeichnisses angegeben wird. Dies 
+ist kein Fehler von NDOS. Erforderlichenfalls kînnen Sie das Problem 
+umgehen, indem Sie an die Anforderung einfach einen "." anhÑngen 
+(TRUENAME K:\.).
+
+Wenn Sie in einer .BAT-Datei, die sich auf einem NetWare Laufwerk befindet, 
+eine NDOS-Eingabeumleitung verwenden, entstehen in einigen Systemen 
+mîglicherweise fehlerhafte Dateizuordnungen. Wenn dies auftritt, gerÑt eine 
+aus der Stapeldatei heraus gestartete Anwendung oder eine sekundÑre Shell 
+aus einer solchen Anwendung mîglicherweise in eine Endlosschleife, wenn sie 
+versucht, Zeilen aus der Stapeldatei zu lesen, statt auf eine Eingabe von der 
+Tastatur zu warten. Beispiel:
+
+                    copy /r *.* g: < YES
+                    wp
+                    rem  Wenn der Benutzer nun von WP die Shell aufruft,
+                    rem  gerÑt das System in eine Endlosschleife, indem 
+                    rem  es versucht, Zeilen aus der Stapeldatei oder
+                    rem  leere Zeilen an der Eingabeaufforderung zu lesen.
+
+Dieses Problem tritt auf, weil NetWare Dateizuordnungen nicht korrekt 
+vornimmt, wenn in einer Stapeldatei NDOS-Eingabeumleitung verwendet wird. 
+Wir arbeiten zusammen mit Novell an einer Lîsung dieses Problems. Sie haben 
+verschiedene Mîglichkeiten, es zu umgehen:
+
+              * éndern Sie die Stapeldatei in eine .BTM-Datei
+
+              * Stellen Sie die BTM-Datei mit dem Befehl LOADBTM an
+                einen beliebigen Punkt vor Beginn der Eingabeumleitung.
+
+              * Verschieben Sie die Datei auf ein Laufwerk, das kein 
+                 NetWare-Laufwerk ist.
+
+              * Berichte von Benutzern weisen darauf hin, da· eine Zeile
+                mit einer "Pseudo"-Ausgabeumleitung direkt vor der 
+                Eingabeumleitung das Problem verhindert. Beispiel:
+
+                    echo Dies ist Abfall > Abfall.dat
+                    copy /r *.* g: < YES
+                    wp
+                    del Abfall.dat
+
+Wenn Sie unter NetWare eine sekundÑre NDOS-Shell laden, kînnen Sie diese 
+auf ein Netzwerklaufwerk auslagern, sofern NDOS korrekt konfiguriert ist. 
+Hierzu mÅssen Sie berÅcksichtigen, da· NetWare bei jedem Verlassen eines 
+Anwendungsprogramms alle Dateien schlie·t - auch die NDOS-
+Auslagerungsdatei. In der Standardkonfiguration von NDOS wird ein 
+Auslagerungs-Suchfehler auftreten, sobald NDOS die Auslagerungsdatei 
+verwenden will. Wenn Sie jedoch in NDOS.INI "SwapReopen = Yes" einstellen, 
+wird NDOS seine Auslagerungsdatei jedesmal erneut îffnen, wenn ein solcher 
+Fehler auftritt, und die Auslagerung ist erfolgreich. Einzelheiten zu 
+SwapReopen finden Sie im Handbuch. Sie kînnen dieses Problem auch 
+vermeiden, indem Sie eine Auslagerung in EMS, XMS oder auf einer lokalen 
+Festplatten oder RAM-Disk vornehmen.
+
+Verwenden Sie den NDOS-Befehl UNSET unter NetWare mit Vorsicht. Wenn 
+NetWare geladen wird, erinnert es sich an die genaue Position der COMSPEC-
+Variablen in der Hauptumgebung und kann daher mîglicherweise 
+Schwierigkeiten haben, wenn Variablen wie COMSPEC und PATH entfernt und 
+in anderer Reihenfolge neu geladen werden.
+
+Die UMBLoad-Anweisung in NDOS.INI ist kompatibel mit NetWare. Die 
+UMBEnvironment-Anweisung ist kompatibel mit NetWare ab v3.11, jedoch nicht 
+mit frÅheren Versionen.
+
+
+Novell MENU (Novell):
+
+Das MENU-System, das Novell mit NetWare mitliefert, benutzt zur AusfÅhrung 
+von MenÅ-Optionen Interrupt 2E und setzt daher die Anweisung "FullINT2E = 
+Yes" in NDOS.INI voraus, um einwandfrei arbeiten zu kînnen. Nachdem die 
+UnterstÅtzung von INT 2E durch diese Anweisung aktiviert wurde, arbeitet 
+Novell MENU unter NDOS in der Regel einwandfrei.
+
+
+Personal REXX (Quercus Systems):  [**]
+
+Personal REXX arbeitet mit NDOS gut zusammen. Wenn Sie bestimmte 
+Funktionen von Personal REXX verwenden, sind jedoch einige Dinge zu 
+berÅcksichtigen.
+
+Der Personal REXX Batch Manager arbeitet unter NDOS nicht als 
+Befehlsprozessor. Der Batch Manager ermîglicht es, REXX-Programme von der 
+Befehlszeile aus zu starten, ohne das PrÑfix REXX oder RX anzugeben. Dies 
+erreicht der Batch Manager, indem er ein nicht dokumentiertes Merkmal von 
+COMMAND.COM verwendet. Mansfield Software erklÑrte, da· dies mit OEM-
+Versionen von DOS mîglicherweise nicht funktioniert, und empfiehlt, es in 
+solchen FÑllen zu unterlassen. Um das Problem zu umgehen, verwenden Sie 
+Erweiterungen fÅr ausfÅhrbare Dateien, um NDOS anzuweisen, .REX-Dateien 
+mit REXX.EXE auszufÅhren. Um dies einzustellen, fÅgen Sie eine Befehlszeile 
+Ñhnlich der folgenden in die Datei AUTOEXEC.BAT ein:
+
+                    set .rex=d:\path\rexx.exe
+
+wobei "d:\path" das Laufwerk und Verzeichnis angibt, in dem sich die Datei 
+REXX.EXE befindet. Nachdem diese ausfÅhrbare Erweiterung eingestellt 
+wurde, laufen REXX-Programme so, als wÑre der Batch Manager installiert. 
+Hierbei ist jedoch zu beachten, da· der Batch Manager versuchen wÅrde, 
+REXX-Programme vor .BAT-Programmen auszufÅhren, wogegen Dateien mit 
+von NDOS ausfÅhrbaren Erweiterungen nach .BTM- und .BAT-Dateien 
+ausgefÅhrt werden.
+
+Mit Personal REXX ist auch die Anweisung ADDRESS DOS mîglich, mit der 
+REXX Befehle an den DOS-Befehlsprozessor weiterleiten kann. Diese Funktion 
+ist Åber die nicht dokumentierte Schnittstelle INT 2E zum Befehlsprozessor 
+implementiert. Diese Schnittstelle kann unter NDOS mit der Anweisung 
+"FullINT2E=Yes" aktiviert werden. Wenn Sie "FullINT2E=Yes" angeben und im 
+Zusammenhang mit ADDRESS DOS Probleme auftreten, kînnen Sie mit Hilfe 
+von OPTIONS NEWCOM von Personal REXX oder mit Hilfe einer 
+Umgebungsvariablen "SET RXNEWCOM=YES" ADDRESS DOS zwingen, sich 
+in die Shell einer neuen Kopie von NDOS zu stellen. Beachten Sie, da· mit der 
+normalen Funktion ADDRESS DOS von Personal REXX die Umgebung 
+permanent geÑndert werden kann, was mit OPTIONS NEWCOM oder durch 
+Einstellung der Umgebungsvariablen nicht mîglich ist. Quercus Systems rÑt 
+davon ab, unter einer DOS-Version ab 4.00 die Lîsung Åber INT 2E zu 
+ergreifen. FÅr Personal REXX gilt die Standardeinstellung, da· INT 2E bei 
+diesen Versionen von DOS nicht verwendet wird.
+
+
+QEMM und QRAM (Quarterdeck):
+
+Die folgenden Aussagen beruhen auf Tests mit QEMM Version 5 und 6 sowie 
+auf Berichten von QRAM-Benutzern.
+
+Sowohl QEMM als auch QRAM sind mit NDOS kompatibel, und in beiden 
+FÑllen kînnen Sie den residenten NDOS-Code und die Hauptumgebung mit 
+den Anweisungen UMBLoad und UMBEnvironment in NDOS.INI in den oberen 
+DOS-Speicher laden. Damit diese Anweisungen bei QRAM funktionieren, mu· 
+ebenfalls QEXT geladen sein (dies ist das normale Verfahren beim Laden von 
+QRAM).
+
+7.0    Der Stealth-Modus von QEMM ist kompatibel mit NDOS, kann in einigen 
+Systemen jedoch die allgemeine StabilitÑt verringern. Wenn ungewîhnliche 
+Probleme auftreten oder das System abstÅrzt, wenn Stealth eingeschaltet ist, 
+schalten Sie diesen Modus ab, und beobachten Sie, ob die Probleme 
+ausbleiben (dieses Verfahren empfiehlt Quarterdeck in der Dokumentation zu 
+Stealth).
+
+QEMM ordnet XMS und EMS aus demselben Speicherbereich zu. Daher meldet 
+es immer genau die gleiche Menge freien XMS- und EMS-Speichers. Dies 
+kînnen Sie an den Werten fÅr freien EMS- bzw. freien XMS-Speicher erkennen, 
+die mit dem NDOS-Befehl MEMORY angezeigt werden - sie entsprechen genau 
+den Werten unter QEMM. Beachten Sie jedoch, wenn beide Werte 
+beispielsweise 512 KB lauten, da· Sie 512 KB freien Speicher zuordnen 
+kînnen, und nicht 1024!
+
+Wenn Sie einen Teil der DOS-Dateiverwaltungstabelle mit Hilfe von 
+FILES.COM in den oberen Speicher laden, mÅssen Sie, wie von Quarterdeck 
+empfohlen, in CONFIG.SYS mindestens FILES=8 beibehalten. Niedrigere 
+Werte kînnen dazu fÅhren, da· NDOS beim Starten abstÅrzt, insbesondere 
+wenn Sie mit Disk-Swapping arbeiten.
+
+Wenn Sie die QEMM-Funktion OPTIMIZE benutzen und Ihre Datei AUTOEXEC 
+NDOS-spezifische Befehle wie etwa GLOBAL, IFF, Alias-Bezeichnungen usw. 
+enthÑlt, erkennt OPTIMIZE diese nicht anhand der mit QEMM 6 mitgelieferten 
+Datei NDOS.CMD. Beachten Sie, da· diese Datei unter QEMM 6 insofern 
+unvollstÑndig ist, als sie die Befehle ELSE, ELSEIFF und ENDIFF nicht 
+beinhaltet. Wenn Sie diese Befehle in der Datei AUTOEXEC.BAT verwenden, 
+mÅssen Sie sie zur Datei NDOS.CMD hinzufÅgen. In Version 6.01 von QEMM 
+wurde dieser Fehler der Datei NDOS.CMD korrigiert. Um NDOS.CMD 
+verwenden zu kînnen, mu· sie in OPTIMIZE.EXC umbenannt werden, bevor 
+OPTIMIZE gestartet wird. Einzelheiten dazu finden Sie in der Dokumentation 
+zu QEMM.
+
+OPTIMIZE kann nicht berÅcksichtigen, da· NDOS mit "UMBLoad = Yes" 
+mîglicherweise in den oberen Speicher geladen wurde. Daher werden keine 
+optimalen Ergebnisse erzielt, wenn "UMBLoad = Yes" angegeben ist. (Dieses 
+Problem hat OPTIMIZE bei allen Programmen, die sich selbst in UMBs laden, 
+nicht nur mit NDOS.) Einige Benutzer teilten uns auch mit, da· OPTIMIZE auf 
+ihren Systemen instabil ist, wenn "MBLoad = Yes" angegeben ist.
+
+
+RBase (MicroRim):  [**]
+
+Wird RBase zusammen mit NDOS-Disk Swapping verwendet, schlie·t es beim 
+Beenden die NDOS-Auslagerungsdatei. Dies erzeugt die Meldung "NDOS 
+Unrecoverable error DS" und Ñhnliche Meldungen Åber schwerwiegende Fehler. 
+Dieses Problem kînnen Sie vermeiden, indem Sie die NDOS-Auslagerung in 
+EMS oder XMS verlagern, oder indem Sie in NDOS.INI "SwapReopen = Yes" 
+einstellen.
+
+
+Software Carousel (SoftLogic Solutions):
+
+Lesen Sie vor diesem Abschnitt bitte zunÑchst die Hinweise zu Multitasking-
+Systemen in Kapitel 7 des Handbuchs.
+
+Die nachstehenden Aussagen beruhen auf Tests mit Software Carousel Version 
+3 und GesprÑchen mit dem Technischen Support von SoftLogic. Unseren 
+Informationen zufolge treffen sie auf alle Software Carousel-Versionen zu.
+
+Software Carousel kann nicht einwandfrei laufen, wenn NDOS als primÑre Shell 
+geladen ist. Das Programm wurde unter der Voraussetzung geschrieben, da· 
+COMMAND.COM der Befehlsprozessor des Systems ist, und enthÑlt logische 
+Funktionen, die speziell auf COMMAND.COM und seiner Struktur aufbauen und 
+die im Speicher geladene Kopie von COMMAND.COM modifizieren. Damit ist 
+es unmîglich, ein korrekt funktionierendes Programm zu schreiben, das Sie 
+unter (d.h. vor) Software Carousel als alternativen Befehlsprozessor laden.
+
+NDOS kann innerhalb einer Software Carousel-Partition einwandfrei laufen, 
+wenn die folgende Anleitung befolgt wird.
+
+Wenn Sie NDOS in eine Carousel-Partition laden mîchten, behalten Sie beim 
+Laden von Carousel am besten die Einstellung COMSPEC gleich 
+COMMAND.COM bei. NDOS mu· dann wie jedes andere Programm in der 
+Carousel-Optionsdatei eingerichtet werden. Angenommen, Sie mîchten NDOS 
+in Partition 1 laden:
+
+          d:\pfad\NDOS.COM [Parameter] [Dateiname]
+
+dabei bedeuten:
+
+         d:\pfad        Laufwerk und Pfad, wo sich NDOS.COM befindet.
+
+         [Parameter]    Parameter der NDOS-Befehlszeile
+                        (/E, @ininame usw.; benutzen Sie hier NICHT den
+                        Parameter /P)
+
+         [Dateiname]    Name einer Stapeldatei, die beim Starten der
+                        Partition ausgefÅhrt werden soll
+
+Um fÅr verschiedene Software Carousel-Partitionen unterschiedliche Dateien 
+NDOS.INI zu verwenden, geben Sie im "Parameter"-Teil der Carousel-
+Konfiguration den Parameter "@ininame" an, um eine bestimmte Datei 
+aufzurufen. Um diese Initialisierung beispielsweise fÅr die WP-Partition zu 
+verwenden, stellen Sie fÅr die Parameter "@D:\WP\NDOSWP.INI" ein.
+
+Da NDOS unter Software Carousel nur in einer Partition und nicht als primÑrer 
+Befehlsprozessor geladen werden kann, ist NDOS-Disk Swapping in mehreren 
+Partitionen nur unter der Vorgabe zu verwenden, die im Handbuch unter den 
+allgemeinen Informationen zu Multitasking-Systemen aufgefÅhrt ist. Bitte
+lesen Sie den Hinweis sorgfÑltig. Um Namenskonflikte bei den Auslagerungs-
+dateien zu vermeiden, sollten Sie, wie in dem Hinweis erklÑrt, in NDOS.INI
+die Anweisung "UniqueSwapName" geben, wenn Sie Disk-Swapping verwenden.
+
+
+TSRCOM Utilities (TurboPower Software):
+
+TSRCOM Utilities mÅ·ten unter NDOS einwandfrei funktionieren, sofern Sie 
+TSRCOM ab Version 2.6 benutzen. Die aktuelle Version hei·t 3.4. Sie befindet 
+sich auf der NDOS-Dienstprogrammdiskette und kann bei zahlreichen Bulletin-
+Boards und Online-Systemen abgerufen werden.
+
+Wenn Sie Ihre TSR-Programme mit den TSRCOM-Funktionen MARK und 
+RELEASE verwalten, mu· die NDOS-Auslagerung (wie mit dem SWAPPING-
+Befehl eingestellt) bei RELEASE im selben Status erfolgen wie bei MARK (bzw. 
+FMARK). Dies ist ein typisches Konstruktionsmerkmal von MARK und RELEASE 
+(oder anderen vergleichbaren Produkten) und kein Fehler. Falls Sie diese Regel 
+mi·achten (und z.B. MARK in AUTOEXEC mit SWAPPING OFF und spÑter bei 
+der Eingabeaufforderung RELEASE mit SWAPPING ON ausfÅhren), kînnen 
+ungewohnte Fehlermeldungen auftreten, oder Ihr System stÅrzt mîglicherweise 
+ab. Die gleichen EinschrÑnkungen gelten fÅr MARKNET und RELNET.
+
+
+UltraVision (Personics):
+
+Das mit UltraVision mitgelieferte DE-Programm ist speziell fÅr COMMAND.COM 
+geschrieben und kann daher z.Z. bei NDOS nicht zur Einstellung von 
+Verzeichnis-Farben verwendet werden. Verwenden Sie statt dessen die 
+integrierte Farbeinstellung von NDOS.
+
+
+Windows 3.0 und 3.1 (Microsoft):
+
+7.0    Die meisten Angaben zu Windows 3.0 in Kapitel 7 des Handbuchs 
+wurden grÅndlich getestet und sind ohne weiteres auf Windows 3.1 
+anzuwenden. Die im Handbuch aufgefÅhrten Anweisungen zu Windows 3.0 
+gelten auch fÅr Windows 3.1. (Siehe auch den Hinweis zum Programm 
+"Anwendungen installieren" in Windows 3.0).
+
+Beachten Sie, da· beim Einrichten einer PIF-Datei fÅr ein NDOS-Fenster auf 
+den Befehl "NDOS MEMORY" die maximale Menge EMS-Speicher gemeldet 
+wird, den Windows in diesem Fenster theoretisch zur VerfÅgung stellen kann. 
+Da Windows Åber eine virtuelle Speicherfunktion verfÅgt, ist diese Zahl unter 
+UmstÑnden grî·er als die Grî·e des physikalischen RAM. Wenn Sie 
+beispielsweise in der PIF-Datei fÅr die EMS-Speichergrenze -1 angeben, meldet 
+Windows an NDOS eine Gesamtmenge des EMS-Speichers von 64 MB, denn 
+das ist die theoretische Obergrenze fÅr den virtuellen Memory Manager von 
+Windows. Da· Zahlen Åber den virtuellen Speicher einen öberschu· an 
+Speicher angeben, ist ein Merkmal von Windows und kein Fehler von NDOS.
+
+
+XyWrite (XyQuest):  [**]
+
+Mit der Funktion "shell to DOS" von XyWrite wird die COMMAND.COM auch 
+dann aufgerufen, wenn fÅr die Variable COMSPEC NDOS angegeben ist. Die 
+einzige uns bekannte Mîglichkeit, dies zu vermeiden, besteht darin, eine
+Kopie von NDOS.COM anzufertigen und diese COMMAND.COM zu nennen. Wenn 
+Sie das tun, mÅssen Sie sich vergewissern, da· sich die ursprÅngliche 
+COMMAND.COM in einem anderen Verzeichnis befindet, denn mîglicherweise 
+wird sie noch zu anderen Zwecken benîtigt. Einige Benutzer teilten uns mit, 
+da· das gleiche Problem auch bei Signature auftritt, einem neuen 
+Textverarbeitungsprogramm von XyQuest.
+
+
+Programme, fÅr die der Pfad kÅrzer als 128 Zeichen sein mu·:
+
+Die folgenden Programme enthalten Fehler, aufgrund derer sie nicht korrekt 
+ausgefÅhrt werden, wenn eine PATH-Anweisung mehr als 128 Zeichen lang ist. 
+Da Sie mit NDOS einen Pfad mit maximal 255 Zeichen erstellen kînnen, kann 
+man dies fÅr einen Konflikt zwischen dem betreffenden Programm und NDOS 
+halten. Ist Ihr Pfad lÑnger als 128 Zeichen, lesen Sie den Abschnitt 
+"SoftwarekompatibilitÑtsprobleme lîsen" in Kapitel 7 des Handbuchs. Dort 
+finden Sie eine Anleitung, wie eine Stapeldatei geschrieben wird, um die
+LÑnge der PATH-Anweisung zu verringern, wÑhrend eines dieser Programme lÑuft.
+
+7.0        Checkit (Touchstone):  [**]  Checkit Version 3 erfordert eine 
+           PfadlÑnge von weniger als 128 Zeichen.
+
+           Computer Select CD-ROM (Ziff-Davis):  [**]  Computer 
+           Select kann sein Hilfeprogramm nicht finden, wenn der Pfad 
+           mehr als 128 Zeichen lang ist
+
+           RenderMan (AutoDesk):  RenderMan bringt das System zum
+           Absturz, wenn der Pfad beim Starten lÑnger als 128 Zeichen
+           ist.
+
+           VINES Network (Banyan):  [**]  Die Installation von VINES
+           ist mîglicherweise nicht einwandfrei mîglich, wenn der Pfad
+           lÑnger als 128 Zeichen ist.
+
+7.0    Windows 3.0 (Microsoft):  Die Option "Anwendungen installieren" in 
+Windows 3.0, die Ihre Laufwerke nach Anwendungen absucht, um diese zu 
+Windows-Programmgruppen hinzuzufÅgen, funktioniert bei einer PfadlÑnge Åber 
+128 Zeichen nicht einwandfrei. In Windows 3.1 wurde dieses Problem behoben.

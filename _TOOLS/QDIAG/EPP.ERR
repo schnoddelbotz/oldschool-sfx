@@ -1,0 +1,225 @@
+****************************************************************************
+*
+*                   Copyright (C) 1993 Quantum Corporation
+*                            ALL RIGHTS RESERVED
+*
+*
+*       Project Name:   DIAGS and other PROCESS Applications
+*    Project Purpose:   Application Program to Drive Interface
+*
+*
+*        Module Name:   E-SERIES.ERR
+*     Module Purpose:   E-SERIES -- Error Code to English Translation
+*      PVCS $Logfile:   U:/RSC/DIAGS/FORMATS/VCS/ENCORE.FMV  $  
+*  Current $Revision:   1.0  $
+*     Revision $Date:   23 Jul 1992 11:17:00  $
+*   Revision $Author:   LANCEB  $
+*
+*
+*     Current Author:   Lance Beazley
+*         
+*
+* Version Released + to Documentation Control
+*                  |
+*    Date          |  Ver.    Name    Comments
+*    --------      |  ----    ----    ------------------------------------
+*    xx/xx/xx <----+->     
+*
+*#########################################################################*
+*### VERSION CONTROL REVISION LOG ########################################*
+*
+*   $Log:   U:/RSC/DIAGS/FORMATS/VCS/ENCORE.FMV  $
+* 
+*
+*
+*#########################################################################*
+*
+* Create date: 01/15/93
+*
+* E-Series Family Error Code data file for use with:
+*                                     
+*                              Program        Version
+*                            -------------   ---------
+*                               SCSIDIAG       3.00  (or later)
+*                               ATADIAG        3.10  (or later)
+*
+*
+* ERROR FILE RULES are as follows:
+*
+*    error <iec>,<key>,<code>,<qual>,<pkey> <english description>
+*
+* Where:
+*
+* 1. Comment lines start with an '*' in the first column. All other lines
+*    that do not start with the word 'error' are ignored as well.
+*
+* 2. Error code lines start with the word 'error' in the first column. Case
+*    is not significant. Following the key word 'error' are the drive's 
+*    internal error code <iec>, the corresponding SCSI <key>, <code> and 
+*    qualifier <qual>, the process control key <pkey> and an English 
+*    description of the error. All numbers are seperated by commas. There is 
+*    only white space between 'error' and the internal error code and between
+*    the process control key and the English description. The description 
+*    string may be an arbitrary length but most applications truncate it 
+*    around 40 characters. A new line or tab delimits the far end of the 
+*    string.
+*
+* 3. Error codes are not required to be in any order, however, most 
+*    applications perform a linear search through the error code list that
+*    is generated from this file so it can be faster if you put more common
+*    codes at the top.
+*
+*#########################################################################*
+
+
+
+  Key Word 'error'  (must start in first column)
+  |
+  |     Drive Internal Error Code  (AKA as AT Extended)
+  |     |
+  |     |   SCSI Sense Key
+  |     |   |
+  |     |   |  SCSI Sense Code
+  |     |   |  |
+  |     |   |  |  SCSI Sense Code Qualifier
+  |     |   |  |  |
+  |     |   |  |  |   Process Control Key
+  |     |   |  |  |   |
+  |     |   |  |  |   |   Error Code Description
+  |     |   |  |  |   |   |                           
+  |     |   |  |  |   |   |        10        20        30         40        50
+*-V-----V---V--V--V---V---V--------v---------v---------v----------v---------v
+error   0,  0,00,00,  0   No Error detected at Drive level
+error   1,  4,01,00,  0   No index signal
+error   2,  3,98,00,  0   Timeout in settling
+error   3,  4,03,00,  0   Write fault
+error   4,  1,96,00,  0   Recovered bump
+error   5, FF,FF,FF,  0   Unknown error code
+error   6,  1,19,00,  0   Reports ecc on the fly
+error   7,  1,06,00,  0   Recovered prediction update
+error   8,  3,11,00,  0   Uncorrectable data ECC error
+error   9,  1,17,00,  0   Error recovered with retries
+error   A,  4,99,00,  0   Bump retry counter expired
+error   B,  6,9A,00,  0   Target re-select while disconnected
+error   C,  3,13,00,  0   Data field sync timeout
+error   D,  1,13,00,  0   Recovered data field sync timeout
+error   E,  3,14,00,  0   No record found
+error   F,  1,14,00,  0   Recovered no record found
+error  10,  4,15,00,  0   Seek error
+error  11,  1,15,00,  0   Recovered seek error
+error  12,  3,16,00,  0   Data sync or marker not found
+error  13,  1,16,00,  0   Recovered data sync or marker not found
+error  14,  1,18,00,  0   Error recovered w/ ECC, 2 syndromes eq
+error  15, FF,FF,FF,  0   Unknown error code
+error  16,  3,19,00,  0   Bad defect list
+error  17,  5,1A,00,  0   Parameter overrun
+error  18,  4,1B,00,  0   Synchronous transfer error
+error  19,  3,1C,00,  0   No primary defect list found
+error  1A,  5,9B,00,  0   Invalid per or offset in sync msg
+error  1B,  B,4E,00,  0   Incorrect connect (652)
+error  1C,  5,20,00,  0   Invalid command
+error  1D,  5,21,00,  0   Invalid LBA
+error  1E,  5,22,00,  0   Invalid function
+error  1F,  5,24,00,  0   Invalid bits set in CDB
+error  20,  5,25,00,  0   Invalid LUN
+error  21,  5,26,00,  0   Invalid bits set in parameters
+error  22,  4,9D,00,  0   Motor never gets up to speed
+error  23,  6,29,00,  0   Reset occurred
+error  24,  6,2A,00,  0   Mode select parameters were changed
+error  25,  1,18,00,  0   Recovered data ECC error on last retry
+error  26,  2,04,00,  0   Recovered data ECC error on last retry (PER)
+error  27,  4,32,00,  0   Defect table is full, no more entries
+error  28,  4,40,00,  0   RAM error
+error  29,  B,40,00,  0   RAM parity error
+error  2A,  3,12,00,  0   AM mark not found for id field
+error  2B,  1,12,00,  0   Recovered am mark not found for id field
+error  2C,  4,43,00,  0   Message rejected
+error  2D,  4,87,00,  0   Logical assertion (firmware consistency
+error  2E,  B,45,00,  0   Initiator did not reselect in time
+error  2F,  4,9F,00,  0   Internal ROM checksum error
+error  30,  B,47,00,  0   SCSI parity error
+error  31,  B,48,00,  0   Initiator detected error
+error  32,  4,A0,00,  0   External PROM checksum error
+error  33,  3,80,00,  0   Error in writing a system sector
+error  34,  3,81,00,  0   Error in reading from a system sector
+error  35,  4,9E,00,  0   Motor drops out of legal speed range
+error  36,  1,9E,00,  0   Recovered motor out of speed
+error  37,  4,84,00,  0   Fail writing to sequencer format ram
+error  38,  4,85,00,  0   Reject of message not sent
+error  39,  4,86,00,  0   Unexpected sequencer error
+error  3A,  1,86,00,  0   Recovered unexpected sequencer error
+error  3B,  B,00,00,  0   Response for Abort message
+error  3C,  4,89,00,  0   Bad head amplifier
+error  3D,  4,8A,00,  0   head miscompare
+error  3E,  5,8A,00,  0   Invalid head specified
+error  3F,  5,8B,00,  0   Invalid cylinder specified
+error  40,  5,8C,00,  0   Double select by initiator
+error  41,  5,8D,00,  0   Bytes/block, bytes/sector gives remainder
+error  42,  6,8E,00,  0   Unexpected SIC interrupt occurred
+error  43,  2,B0,00,  0   Drive is recalibrating
+error  44,  2,B1,00,  0   Drive is spinning up
+error  45,  2,B2,00,  0   Drive has not been told to spin up
+error  46,  3,32,00,  0   No more alternate sectors available
+error  47,  5,8F,00,  0   Invalid sector specified
+error  48,  4,90,00,  0   Synchronous acknowledge error
+error  49,  4,91,00,  0   FIFO unload error
+error  4A,  4,92,00,  0   FIFO load error
+error  4B,  4,93,00,  0   FIFO predicted full error
+error  4C,  4,94,00,  0   Interface ASIC error
+error  4D,  3,95,00,  0   Sequencer timeout
+error  4E,  1,95,00,  0   Recovered Sequencer timeout
+error  4F,  4,96,00,  0   Bump timeout
+error  50,  1,96,00,  0   Recovered bump
+error  51,  E,1D,00,  0   Read Buffer comand miscompare
+error  52,  4,A1,00,  0   Sequencer rollover register failure
+error  53, FF,FF,FF,  0   Unknown error code
+error  54,  4,A2,00,  0   External RAM failure
+error  55,  3,A3,00,  0   Failure in reading sector in Reassign
+error  56,  5,AE,00,  0   Bad parameter(s) in mode page
+error  57, FF,FF,FF,  0   Unknown error code
+error  58,  3,14,00,  0   ID ECC error
+error  59,  1,14,00,  0   Recovered ID ECC error
+error  5A,  4,A7,00,  0   Offtrack timeout
+error  5B,  3,10,00,  0   ID CRC error, internal cont processing
+error  5C,  1,10,00,  0   Recovered ID CRC error,
+error  5D,  3,AA,00,  0   Reallocated uncorrectable data read
+error  5E,  1,AB,00,  0   Requested format not available for Read
+error  5F, FF,FF,FF,  0   Unknown error code
+error  60,  1,98,00,  0   Recovered settle timeout error
+error  61,  3,97,00,  0   Underrun error
+error  62,  1,97,00,  0   Recovered underrun error
+error  63,  2,B3,00,  0   Not ready - Failed to spin up
+error  64,  2,B4,00,  0   Not ready - Unable to calibrate
+error  65,  2,B5,00,  0   Not ready - DSP failed to report ready
+error  66,  4,61,00,  0   Recal Failure during DSP DAC Offset tune
+error  67,  4,62,00,  0   Recal Failure during initialization
+error  68,  4,63,00,  0   Recal Failure during NEC DAC Offset tune
+error  69,  4,64,00,  0   Recal Failure during PES Gain/Bias calib
+error  6A,  4,65,00,  0   Recal Failure during KT/J calibration
+error  6B,  4,66,00,  0   Recal Failure during Once Around calib
+error  6C,  4,67,00,  0   Recal Failure during Head Offset calib
+error  6D,  4,68,00,  0   Recal Failure during cleaning up calib
+error  6E,  4,0F,00,  0   Cannot Servo on one or more head at RECAL
+error  6F, FF,FF,FF,  0   Unknown error code
+error  70, FF,FF,FF,  0   Unknown error code
+error  71, FF,FF,FF,  0   Unknown error code
+error  72, FF,FF,FF,  0   Unknown error code
+error  73,  4,FF,00,  0   ID not found
+error  74,  4,FF,00,  0   Bad descriptor
+error  75,  3,14,00,  0   Bad Block Mark set for ID
+error  76,  4,FF,00,  0   Unsupported Flash manufacturer code
+error  77,  4,FF,00,  0   Unsupported Flash device code
+error  78,  4,FF,00,  0   Flash programmed too many times
+error  79,  4,FF,00,  0   Couldn't erase the flash
+error  7A,  4,FF,00,  0   Couldn't program the flash
+error  7B,  6,2F,00,  0   Commands cleared by another INITIATOR
+error  7C,  4,06,00,  0   Recalibrate failure
+error  7D,  1,06,00,  0   Recovered Recalibrate failure
+error  7E,  4,AA,00,  0   DSP has quit, or is unable to start up
+error  7F,  1,AA,00,  0   Recovered
+error  80,  4,02,00,  0   Seek timeout error
+error  81,  1,02,00,  0   Recovered Seek timeout error
+error  82,  4,A8,00,  0   Unsuccesful communication with DSP
+error  83,  1,A8,00,  0   Recovered
+error  84,  4,6A,00,  0   DSP failed to go ready at start up
+error  85,  1,17,00,  0   Recovered by microstepping

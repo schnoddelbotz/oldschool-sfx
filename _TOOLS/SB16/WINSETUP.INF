@@ -1,0 +1,44 @@
+[General]
+CardFeature=NNNNNJNN
+RestartWindows=No
+MiscEdits=No
+RemoveSBProVol=No
+AddSndblstSection=No
+Mixer=winappl\ctmixer.exe
+DisplayIntroDialog=No
+
+[Introduction]
+"Dieses Programm erstellt die Programmgruppe Sound Blaster 16."
+
+[End]
+"Programmgruppe wurde erstellt."
+
+[ConflictDrivers]
+
+[ConflictDevices]
+
+[Windows]
+
+[Windows.System]
+
+[Ini]
+
+[progman.groups]
+"Sound Blaster 16", sb16.grp
+
+[sb16.grp]
+"Creative Mixer", winappl\ctmixer.exe
+"Anleitungen Creative Mixer", winappl\ctmixer.hlp,C:\TOOLS\SB16\winappl\ctmixer.ico
+"Soundo'LE", winappl\soundole.exe
+"Anleitungen Soundo'LE", winappl\soundole.hlp,C:\TOOLS\SB16\winappl\soundole.ico
+"SB Configuration", winappl\ctconfig.exe
+"How to use SB Configuration", winappl\ctaudio.hlp,C:\TOOLS\SB16\winappl\ctaudio.ico
+"Creative MIDI", winappl\ctmidi.exe
+"Anleitungen Creative MIDI", winappl\ctmidi.hlp,C:\TOOLS\SB16\winappl\ctmidi.ico
+"Creative Wave", winappl\ctwav.exe
+"Anleitungen Creative Wave", winappl\ctwav.hlp,C:\TOOLS\SB16\winappl\ctwav.ico
+"Creative CD", winappl\ctcd.exe
+"Anleitungen Creative CD", winappl\ctcd.hlp,C:\TOOLS\SB16\winappl\ctcd.ico
+"Creative Remote", winappl\remote.exe
+"Anleitungen Creative Remote", winappl\remote.hlp,C:\TOOLS\SB16\winappl\remote.ico
+

@@ -1,0 +1,40 @@
+Begin Error Correction Test - Sat Feb 24 17:22:23 1996
+
+  PASSED - Error Correction Test.
+End Error Correction Test - Sat Feb 24 17:23:21 1996
+
+
+Begin Scanning Drive - Sat Feb 24 17:23:22 1996
+
+Firmware retry count = 8
+ECC is on
+
+Number Of Sectors = 128
+Beginning Logical Sector = 0
+Ending Logical Sector = 1057615 (10234fh)
+
+  Passed - Reading Drive.
+  Passed - Read/Write Of 128 Blocks At LBA 528807
+  Passed - Read/Write Of 128 Blocks At LBA 528935
+
+P A S S E D - 0 Errors Found.
+
+End Scanning Drive - Sat Feb 24 17:28:50 1996
+
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³   ÜÜÜÜÜÜÜÜ   ÜÜÜÜÜÜÜÜ   ÜÜÜÜÜÜÜÜ   ÜÜÜÜÜÜÜÜ   ³
+³   Û      Û   Û      Û   Û      ß   Û      ß   ³
+³   Û      Û   Û      Û   Û          Û          ³
+³   ÛÜÜÜÜÜÜÛ   ÛÜÜÜÜÜÜÛ   ÛÜÜÜÜÜÜÜ   ÛÜÜÜÜÜÜÜ   ³
+³   Û          Û      Û          Û          Û   ³
+³   Û          Û      Û          Û          Û   ³
+³   Û          Û      Û   ÛÜÜÜÜÜÜÛ   ÛÜÜÜÜÜÜÛ   ³
+³                                               ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+Passed Generic Quick Test.
+
+End Generic Quick Test - Sat Feb 24 17:28:51 1996
+

@@ -1,0 +1,670 @@
+
+
+
+
+
+
+
+
+
+    SSSSSSS       OOOOO     N         N       A       RRRRRRR        CCCCCC
+   S       S     O     O    NN        N      A A      R      RR     C      C
+  S         S   O       O   N N       N     A   A     R        R   C        C
+  S            O         O  N  N      N    A     A    R        R  C
+   SSS         O         O  N   N     N   A       A   R      RR   C
+      SSS      O         O  N    N    N  A         A  RRRRRRR     C
+         SSS   O         O  N     N   N  AAAAAAAAAAA  R   R       C
+            S  O         O  N      N  N  A         A  R    R      C
+  S         S   O       O   N       N N  A         A  R     R      C        C
+   S       S     O     O    N        NN  A         A  R      R      C      C
+    SSSSSSS       OOOOO     N         N  A         A  R       R      CCCCCC
+
+
+
+
+
+
+
+                SONARC: Digital Audio Compression, Version 2.1h
+                ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+
+
+
+                     (C) Copyright 1994 Speech Compression
+                              All Rights Reserved
+
+
+
+
+
+
+
+
+
+
+                            U S E R    M A N U A L
+
+
+
+                                   June 1994
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  i
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+                                   CONTENTS
+
+
+INTRODUCTION .......................................................... 1
+
+THE UTILITIES ......................................................... 2
+
+  SONARC.EXE .......................................................... 2
+
+  SONARCX.EXE ......................................................... 5
+
+LICENSING INFORMATION ................................................. 6
+
+OTHER LICENSABLE MODULES .............................................. 7
+
+  SONLIB.DLL .......................................................... 7
+
+  LINKABLE OBJECTS .................................................... 9
+
+POSTSCRIPT ........................................................... 11
+
+
+
+
+                               LEGAL MUMBO-JUMBO
+                                      AND
+                         ACKNOWLEDGMENT OF TRADEMARKS
+
+Even though Speech Compression has tested the Sonarc software and reviewed
+the documentation, SPEECH COMPRESSION MAKES NO WARRANTY OR REPRESENTATION,
+EITHER EXPRESSED OR IMPLIED, WITH RESPECT TO SONARC SOFTWARE, ITS QUALITY,
+PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.  AS A
+RESULT, THIS SOFTWARE IS PROVIDED "AS IS", AND YOU, THE USER, ARE ASSUMING
+THE ENTIRE RISK AS TO ITS QUALITY AND PERFORMANCE.
+
+IN NO EVENT WILL SPEECH COMPRESSION BE LIABLE FOR DIRECT, INDIRECT, SPECIAL,
+INCIDENTAL, OR CONSEQUENTIAL DAMAGES RESULTING FROM ANY DEFECT IN SONARC
+SOFTWARE OR ITS DOCUMENTATION, even if advised of the possibility of such
+damages.  In particular, Speech Compression shall have no liability for any
+programs or data used with Sonarc software, including the cost of recovering
+such programs or data.
+
+
+Sonarc, Sonarcx and ZipTalk are trademarks of Speech Compression.
+
+Microsoft and MS-DOS are registered trademarks and Windows is a trademark of
+Microsoft Corporation.
+
+BORLAND is a registered trademark of Borland International, Inc.
+
+PKZIP is a registered trademark of PKWARE Inc.
+
+All other brand and product names mentioned are trademarks or registered
+trademarks of their respective holders.
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  1
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+ 
+                                 INTRODUCTION
+
+Sonarc is a new compression technology specifically optimized for digital
+audio.  Think of Sonarc as the PKZIP(r) of digitized audio.  Unlike the older
+ADPCM techniques, Sonarc features variable-rate compression which can be
+reversed to precisely reconstruct the original, uncompressed signal.  You
+don't need to judge its quality by listening to the original and decompressed
+versions of the signal; just run MS-DOS's COMP or FC commands!
+
+What's the average amount of compression achievable with Sonarc?  Obviously,
+truly random sequences of numbers (white noise) will not compress at all
+losslessly.  On the other hand, there are 8-bit, 22 KHz sound-effects files
+in products on the market today for which Sonarc achieves an average of 3:1
+lossless compression (see below).  It all depends upon the quality of the
+recording and sampling and on the nature of the audio signal being processed.
+The grand average compression of all 8-bit, 11 KHz WAVE and VOC files that
+have been processed so far by Sonarc is about 55% (over 2:1).
+
+Sonarc was not intended to be a general-purpose data compression utility,
+like the other compressors to which it is compared below.  In fact, Sonarc
+does only a mediocre job of compression on files which contain non-audio data.
+The following comparison is not for the purpose of denigrating the other
+compression products, but simply to show how well Sonarc is adapted to the
+compression of audio data.  The four files used in this comparison are
+probably the most widely distributed audio files in the world, since they
+come with each copy of Microsoft's Windows v3.1.
+
+    File      Original size     LHA v2.13     PKZIP v2.04g   Sonarc v2.1h
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  CHIMES.WAV     15,920           8,680          8,690          4,170
+  CHORD.WAV      24,982           9,407          8,861          7,174
+  DING.WAV       11,598           4,704          4,630          2,184
+  TADA.WAV       27,804          18,388         18,566         11,528
+                 ÄÄÄÄÄÄ          ÄÄÄÄÄÄ         ÄÄÄÄÄÄ         ÄÄÄÄÄÄ
+                 80,304          41,179         40,747         25,056
+
+The command-line option -ex (Maximum Compression) was used with PKZIP.
+Sonarc used the command-line options -o0 and -x for maximum compression.
+
+The compressed file sizes reported for LHA and PKZIP are the internal file
+sizes and do not include the archive directory overhead.
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  2
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+                                 THE UTILITIES
+
+Compression and decompression are accomplished using the programs SONARC.EXE
+and SONARCX.EXE, respectively.
+
+Both programs use a simple command-line interface.  Typing SONARC or SONARCX
+alone at the DOS prompt will cause the program to display a little "help"
+screen, explaining the syntax of the command line parameters.
+
+Monaural and stereo, 8-bit and 16-bit files are supported in both WAVE and VOC
+formats.  Creative Labs' new v1.20 VOC files are fully supported.
+
+Neither utility uses extended or EMS memory.  Both use less than 256K of
+conventional memory.
+
+Both utilities run on 8086 processors; however, when processing 16-bit data,
+they "sense" whether they are executing on a '386 or better, and if so, will
+use the '386 instruction set for faster execution.
+
+SONARC.EXE (file-to-file compression program)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+The syntax for invoking SONARC is:
+
+        SONARC {-<option>} <input-file> [<output-file>]
+or
+        SONARC {-<option>} <wildcarded-name> [<dest-path>]
+
+If the input file has an extension, then it must be supplied.  If the input
+file is not in the current directory, then the path needed to reach it from
+the current directory is also required.
+
+The output file specification is optional.  If it is omitted, then the output
+file will be created in the current directory with a name which is formed by
+concatenating the root name in the input file with one of the extensions
+shown below.  If it is supplied, then a path can be specified to cause the
+output file to be written to a directory other than the current directory.
+If no extension is specified for the output file, the extension will be WV,
+VC, or SNC, depending on whether the input file is in WAVE, VOC, or another
+format, respectively.  (SONARC scans the beginning of the file for a WAVE or
+VOC header.  If it finds neither, it assumes the file is "raw", i.e., contains
+only audio samples; it then prepends its own header to the output file.)
+
+Alternatively, a wild-card specification (with source path, if needed) can be
+used.  If a destination path is supplied, the output files will be written to
+that path, otherwise to the current directory.  Any destination name or
+extension will be ignored.
+
+If the input file to Sonarc is a WAVE file, then the output file is also a
+WAVE file in a special, proprietary format which has been registered with
+Microsoft's Multimedia Product Management.
+
+Although the letter options are shown on the next page in upper case, they can
+be entered in either upper or lower case.  The option prefix character may be
+either a '-' or '/'.
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  3
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+The command-line options for SONARC.EXE are:
+
+        Q        quiet mode: no banners, no statistics, no warning for
+                 overwriting existing files.
+
+        D        delete the input file upon successful operation.
+
+        S[n]     (used with "raw" files) assume stereo (two interleaved
+                 tracks, or "n" interleaved tracks if the optional number "n"
+                 is specified).  The default is to assume that the "raw" file
+                 is monaural.
+
+        16       assume 16-bit samples, if the input file is "raw". 
+                 The default for "raw" files is to assume that they 
+                 are all 8-bit samples.  Options S and 16 may be 
+                 used together to compress "raw" 16-bit, stereo 
+                 files.
+
+        Fnum     set the frame size to num in the range 256-4096.  Sonarc
+                 divides the source into "frames" of so many samples each.
+                 The compressed file then consists of compressed "frames",
+                 each of which contains table data specific for that frame.
+                 If the frame size is too small, then the size of the table
+                 data will not be amortized over enough compressed samples
+                 and the compression ratio will suffer.  If the frame size is
+                 too big, then spectral changes within the frame will not be
+                 tracked accurately enough, and so the compression ratio will
+                 suffer for that reason.  Different files will have different
+                 "optimal" values for frame size.  This option overrides the
+                 default frame size of 2048.
+
+        Onum     set order to num in the range from 0 to 30.  "Order" is
+                 the number of previous samples to take into consideration
+                 when attempting to predict the next sample.  This option
+                 fixes the order to the number specified, except that a num
+                 of 0 causes the program to "search" for the best value of
+                 order for each frame.  This added searching will slow the
+                 compression process substantially, but generally yields more
+                 compression.  The default order is 10.
+
+        X        use floating-point calculations to analyze the signal more
+                 thoroughy than is otherwise done (the default is to use fixed-
+                 point integer arithmetic).  Setting this option will slow the
+                 compression process moderately, or immoderately if combined
+                 with the -o0 option described above.  The floating-point code
+                 uses a "sensing" library that uses a co-processor if detected
+                 at run-time.  A co-processor is not necessary, but is highly
+                 recommended nevertheless for the sake of compression speed.
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  4
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+Examples:
+
+    SONARC C:\WIN31\*.WAV
+        Compress all the .WAV files in the C:\WIN31 directory and write the
+        output to the current directory
+
+    SONARC /D ILBEBACK.WAV ..
+        Compress ilbeback.wav in the current directory to ilbeback.wv, in the
+        parent directory.  Erase ilbeback.wav if no errors occur.
+
+    sonarc -q *.voc d:
+        Compress all the .VOC files in the current directory and write the
+        corresponding .VC files to the current directory of the D: drive.
+        Suppress all screen output.
+
+    sonarc piano.sou pno
+        (assuming piano.sou is "raw":) Compress piano.sou to pno.snc
+
+    sonarc -s piano.sou pno.cmp
+        Compress piano.sou to pno.cmp; assume the samples are interleaved
+        stereo tracks
+
+    sonarc -16 piano.sou pno.
+        Compress piano.sou to pno; assume piano.sou is sampled at 16 bits
+
+    sonarc -x -o0 g145.wav
+        Compress g145.wav for maximum compression ratio, at the expense of
+        considerable extra time in compressing the file
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  5
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+SONARCX.EXE (file-to-file decompression program)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+The syntax for invoking SONARCX is:
+
+        SONARCX {-<option>} <input-file> [<output-file>]
+or
+        SONARCX {-<option>} <wildcarded-name> [<dest-path>]
+
+The input (compressed) file specification requires the file's extension, if
+any.  (This will be the extension specified for the output file during the
+execution of SONARC, or else WV, VC, or SNC, if no extension was specified.)
+
+If the input file is not in the current directory, then the path needed to
+reach the file from the current directory is also required.
+
+The output (decompressed) file specification is optional.  If it is omitted,
+then the output file will be created in the current directory with a name
+which is formed by concatenating the root name in the input file with one of
+extensions described below.  If it is supplied, then a path can be specified
+to cause the output file to be written to a directory other than the current
+directory.  If no extension is specified for the output file, the extension
+will be WAV, VOC, or the original file's extension in the case where the
+original file was not in either WAVE or VOC format.
+
+Alternatively, a wild-card specification (with source path, if needed) can
+be used for specifying the input (compressed) files.  If a destination path
+is supplied, then the output (decompressed) files will be written to that
+path, otherwise to the current directory.  Any destination name or extension
+will be ignored.
+
+Since Sonarc is a LOSSLESS compression technology, the decompressed and
+original files will differ only in their timestamps.  They will otherwise
+compare identically, using the FC or COMP commands in DOS.
+
+The command-line options for SONARCX.EXE are:
+
+        Q      quiet mode: no banners, no statistics, no warning for 
+               overwriting existing files.
+
+        D      delete the input file upon successful operation.
+
+Examples:
+
+    SONARCX *.WV
+        Decompress all the .WV files in the current directory and write the
+        reconstructed files to the current directory
+
+    sonarcx -q *.vc d:\
+        Decompress all the .VC files in the current directory and write the
+        corresponding .VOC files to the root directory of the D: drive.
+        Suppress all screen output.
+
+    sonarcx pno.snc piano
+        Decompress pno.snc to piano.sou (if "sou" was the extension on the
+        original file, stored in the pno.snc file header).
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  6
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+                             LICENSING INFORMATION
+
+What you may do with Sonarc depends on what classification you fall under.
+The archive referred to is the SNRC21.ZIP file from which this file was
+extracted.
+
+1. Shareware distributors, computer clubs and user groups:
+
+  Members of this category are permitted to distribute this archive along with
+  other shareware programs as long as the charge for the diskette containing
+  this archive does not exceed US$10.
+
+2. Bulletin-board services:
+
+  You may post this archive freely for the downloading convenience of your
+  customers.
+  
+  You may add a comment to the archive promoting your BBS.  Please inform me
+  if you do this.
+
+  You may use Sonarc to compress any sound files in your possession and offer
+  the Sonarc-compressed files for downloading by your customers as long as
+  doing so does not violate any copyrights.  Please inform me if you do this.
+
+3. All other organizations (for-profit, not-for-profit, or governmental):
+
+  After an evaluation period not to exceed 120 days, your organization must
+  either license the software from Speech Compression or destroy all copies
+  in its possession.
+
+  For its internal use only, the organization must obtain a Site License.
+  For use in distributed products, the organization must obtain a Distribution
+  License.  These are available from the contact address below.
+
+4. Individuals (not including fictitious persons, such as corporations):
+
+  You may use Sonarc in any way you want for as long as you want, as long as
+  it's not-for-profit.  This software is being distributed as shareware, i.e.,
+  "try before you buy."
+
+  You may make copies of this archive and distribute it freely or upload it
+  to BBS's.  You are required to keep the component files of this archive
+  together, unmodified.
+
+  You are cordially invited to send in a registration fee of $20 if you find
+  this software useful.  In exchange, you will receive one free upgrade of the
+  next version of Sonarc (v2.2 with a "lossy" algorithm) when it becomes
+  available.  You will also get the satisfaction of paying for value received.
+
+  Please send your check made out to "Speech Compression", along with your
+  name and address (if not already imprinted on the check), to:
+
+                             Speech Compression
+                             1910 W. Pawnee Lane
+                             Colbert, WA  99005-9401
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  7
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+                     OTHER LICENSABLE MODULES: SONLIB.DLL
+
+A DLL version of the SONARCX.EXE utility is also available for licensing.
+This DLL is useful for applications which install under Windows and use lots
+of WAVE files.  It is described in detail below.  It is available for
+licensing by contacting Speech Compression at the address on the previous
+page.
+
+The SONLIB.DLL library has just a single callable function at index 1.  The "C"
+calling interface is as follows:
+
+    extern int far pascal sonarcx(char* infyl,
+                                  char* outfyl,
+                                  int   EraseInputFile,
+                                  int   ShowNames);
+
+or, in Pascal,
+
+    function sonarcx(infyl, outfyl: pchar;
+                     EraseInputFile,
+                     ShowNames: Boolean): integer; far; external;
+
+The type "pchar" is a Borland extension to Pascal which is a pointer to a 
+C-style, null-terminated string.
+
+The first argument, infyl, may be wildcarded, in which case the second 
+argument, outfyl, should be the empty string '' or a destination path.  The
+third argument, EraseInputFile, has the same effect as the "-D" option in the
+SONARCX utility, that is, it causes the input file to be erased after
+successful completion.
+
+The fourth argument, ShowNames, has the inverse effect of the "-Q" option in
+SONARCX.  If false, no screen I/O occurs whatsoever.  If true, however, it
+writes the name of the file currently being decompressed in an area of the DLL
+caller's active window.
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  8
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+                 OTHER LICENSABLE MODULES: SONLIB.DLL (cont.)
+
+The function result is 0 if there were no errors detected.  The following are
+the error codes and conditions that may be returned:
+
+-17      16-bit file encounted by a DLL configured to process only 8-bits.
+-16      .WV file was produced by a later version of Sonarc than v2.1.
+-15      specify output file name different from input file name.
+-14      bad block type in .VC file.
+-13      corrupted VC format file header.
+-12      input file is not a Sonarc-compressed file.
+-11      input file is an uncompressed VOC file.
+-10      internal error: corrupted frame data.
+ -9      version mismatch: compressed VOC file is obsolete version.
+ -8      unknown chunk type in data list.
+ -7      internal error: mismatch in sample count.
+ -6      missing "fact" chunk.
+ -5      "fact" chunk has corrupted length field.
+ -3      WAVE file is already in uncompressed format.
+ -2      WAVE file already compressed using another vendor’s process.
+ -1      internal error: bad frame checksum (corrupted frame).
+  2      File not found.
+  3      Non-existent drive, sub-directory or badly formed file name.
+  5      Name is directory or existing read-only file.
+100      Attempt to read past end of file: probably corrupted sound file.
+101      Disk full.
+150      Disk is write-protected.
+152      Drive not ready.
+162      Hardware failure.
+
+Other error codes may be returned from DOS for various I/O operations.
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page  9
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+                  OTHER LICENSABLE MODULES: LINKABLE OBJECTS
+
+There are also assembly-coded buffer-to-buffer compression and decompression
+routines available which are highly optimized for both space and speed.  The
+interfaces for these routines are described in detail below.
+
+Organizations wishing to obtain copies of these linkable modules must contact
+Speech Compression at the address on page 6.
+
+The "C" declarations for the 8- and 16-bit compression routines are:
+
+    typedef unsigned char[max_buf_len]* p_bytary;
+
+    extern int far pascal cmp8(p_bytary p_input,
+                               int in_size,
+                               p_bytary p_output,
+                               int out_max,
+                               int order);
+
+    typedef int[max_buf_len]* p_intary;
+
+    extern int far pascal cmp16(p_intary p_input,
+                                int in_size,
+                                p_intary
+                                p_output,
+                                int out_max,
+                                int order);
+
+The corresponding Pascal declarations are:
+
+    type bytary = array [0..max_buf_len-1] of char;
+         p_bytary = ^bytary;
+
+    function cmp8(p_input: p_bytary;
+                  in_size: integer;
+                  p_output: p_bytary;
+                  out_max, order: integer;
+                 ): integer; far; external;
+
+    type intary = array [0..max_buf_len-1] of integer;
+         p_intary = ^intary;
+
+    function cmp16(p_input: p_intary;
+                   in_size: integer;
+                   p_output: p_intary;
+                   out_max, order: integer;
+                  ): integer; far; external;
+
+Both cmp8 and cmp16 take a buffer of order+in_size samples at p_input and
+compress the in_size samples beginning at p_input[order] into the output buffer
+at p_output, not to exceed out_max bytes.  Note that for cmp16, the size of the
+input buffer is 2*(order+in_size) bytes, since each sample is 2 bytes. Both
+p_input and p_output are far, i.e., 32-bit, segmented pointers.  The argument
+out_max is the size of the output buffer into which the compressed frame is
+copied.  Note that this is not the size of the compressed frame; that
+information is stored into the first 16-bit word of the frame itself.  The
+argument out_max is passed to the routine to prevent it from producing a frame
+larger than the output buffer whose address is passed in.
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page 10
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+The function result is returned in the AX register, where most "C" and Pascal
+compilers expect it.  The result value is zero for normal, error-free
+processing.
+
+Two error conditions are possible.  If insufficient stack space is allocated, a
+result of -2 is returned.  This occurs if the SP register is less than 
+approximately 2*order+184 at the time of the call to cmp8, or less than
+2*order+364 at the time of the call to cmp16.  (Note: This is a change from
+prior versions where enough stack space had to be allocated to copy the entire
+input buffer.)
+
+The second error condition occurs when the number of bytes of output buffer
+needed for the compressed input buffer exceeds the value of out_max, in which
+case a result value of -1 is returned.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+The "C" declarations for the 8- and 16-bit decompression routines are:
+
+    extern int far pascal dcmp8(p_bytary p_input,
+                                p_bytary p_output);
+
+    extern int far pascal dcmp16(p_intary p_input,
+                                 p_intary p_output);
+
+The corresponding Pascal declarations are:
+
+    function dcmp8(p_input,
+                   p_output: p_bytary
+                  ): integer; far; external;
+
+    function dcmp16(p_input,
+                    p_output: p_intary
+                   ): integer; far; external;
+
+Both dcmp8 and dcmp16 take a compressed frame at p_input and decompress it into
+the output buffer starting at p_output[order].  The decompression routine gets
+the order datum from the byte at offset 7 in the input v2.1 compressed frame
+(see the frame header description in the File and Frame Formats section).  As
+previously explained, the header of the compressed frame contains, at fixed
+offsets, the lengths needed by the caller and the decompression routine to
+figure out how much buffer space to allocate and use, respectively.
+
+As is the case for the compression routines, the function result is returned in
+the AX register.  The result value is zero for normal, error-free processing. 
+The only error condition, resulting in a returned value of -1, is if the
+checksum fails.  If this error occurs, it means that the input frame has been
+folded, spindled, and/or mutilated at some point following its creation by the
+compression routine.  Keep in mind that the entire frame must be passed to the
+decompression routine; partial frames cannot be decompressed.
+
+Note that stack overflow is not checked for in the decompression modules.
+However, the stack space required by these routines is guaranteed to be less
+than 50 bytes.
+
+The DS, SS, CS, BP, SI and DI registers are preserved by these routines.  No
+instructions unique to the '186, '286, '386, or '486 processors are used in the
+8-bit modules.  The 16-bit modules, however, make use of the '386 instruction
+family whenever they "sense" that they are running on a '386 or better.
+
+SONARC version 2.1h    Copyright 1994 Speech Compression              Page 11
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+                                  POSTSCRIPT
+
+I picked the d.b.a. "Speech Compression" in 1992, when I started working on a
+technology for PCs capable of compressing speech signals lossily at ratios of
+over 10:1.  Currently no compression is available for speech at such ratios
+(of any quality, that is) that does not require either huge run-time tables
+(>100 Kbytes), or some sort of special hardware support, such as a DSP chip.
+
+I got ZipTalk (as I called it) developed to the point where I could prove to
+myself that decompression of speech signals could be accomplished on an 8088
+processor running at 4.77 MHertz with processor to spare, using tables of
+probably not much more than 16K bytes.
+
+The compression side is a complex, but solved, problem since it piggy-backs
+off of linear-predictive analysis.  In fact, the whole trick is to transform
+frequency-domain parameters obtained through LPC techniques into a special
+format that I have discovered, which then permits real-time conversion back
+into time-domain signals.  (I can say it faster than I can develop it!)
+
+However, while waiting for some research documents to arrive by USnail, I was
+put in contact with a company which needed lossless audio compression, and I
+diverted my energy to the development of Sonarc.  (If you need Sonarc to be
+an acronym of something, and you don't like "SOuNd ARChival" then I suppose
+it could be "Some Outfit Nagged About Reversible Compression".)
+
+I've spent a considerable amount of time researching various ways of doing
+"lossy" audio compression.  Earlier versions of Sonarc featured a "lossy"
+parameter -Ln[n], which achieved higher compression ratios while keeping the
+total amplitude distortion in the decompressed signal less than n.[n]%.
+Unfortunately, the compression phase was extremely compute-intensive and
+generally required overnight runs to compress any significant amount of audio
+files.  I've never tried combining this "lossy" with the -x and -o0 options;
+I suspect there would be a measurable amount of proton decay before it could
+finish.  I only left it out of this shareware version because it is so slow,
+and I didn't want that sullying Sonarc's otherwise fine reputation.  I'm still
+developing the "lossy" algorithm, though, and I'll have a "lossy" solution in
+the v2.2.  Don't ask me when; it'll be ready when it's ready.
+
+I suppose, in retrospect, I might have called myself "Sound Compression" or
+some such (not being particularly imaginative in the naming department).  But
+I'm stuck with "Speech Compression", even though I now do general audio
+compression, and may later branch out into image compression as well.  (Most
+algorithms which process 1-D signals can, in principle, be extended to process
+2-D signals.)
+
+Send feedback to 76635,3652@compuserve.com.
+
+                             Richard P. Sprague
+
+

@@ -1,0 +1,7 @@
+@echo off
+rem
+rem TOUR1.BTM dient zur Erstellung einer Dummy-Datei fr das NDOS-Lehrprogramm
+rem
+echo Dies ist die Dummy-Datei 1 >! file1
+
+

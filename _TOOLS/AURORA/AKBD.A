@@ -1,0 +1,426 @@
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ The Aurora Editor v1.20  - Keyboard and Mouse definitions          ³
+//³                                                                    ³
+//³ Please keep a backup copy of this file.                            ³
+//³                                                                    ³
+//³ For a description of these keyboard and mouse definitions and how  ³
+//³ to change them, select the "Key/Mouse/Trans Config" item from the  ³
+//³ "Help" pull-down menu. Then then select "Defining the Keyboard"    ³
+//³ from the submenu.                                                  ³
+//³                                                                    ³
+//³ If you have made any changes, save this file and select "Restore   ³
+//³ Settings" from the "Set" pulldown menu. Exit and re-enter the      ³
+//³ editor for your changes to take effect.                            ³
+//³                                                                    ³
+//³ Key prefixes used:                                                 ³
+//³   "k_c_" =  <Ctrl> keys                                            ³
+//³   "k_a_" =  <Alt> keys                                             ³
+//³   "k_s_" =  <Shift> keys                                           ³
+//³                                                                    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+  // edit and file manager windows
+  obj  edit-fmgr (
+
+  fun
+
+    // Controls
+    ð            (wquit %p)                  ,// close window
+
+    // Menu activation
+    k_esc        (menb)                      ,// to last menu bar item
+    k_f10        (menb)                      ,// to last menu bar item
+    k_a_f10      (men)                       ,// last pull-down menu
+    k_f1         (menh)                      ,// help pull-down
+    k_a_t        (men2)                      ,// to last toolbar control
+
+    // Scroll
+    k_c_home     (cptop)                     ,// to page top
+    k_c_end      (cpbot)                     ,// to page bottom
+    k_c_pgup     (cmov @ 1)                  ,// to file top
+    k_c_pgdn     (cmov @ (qtexend))          ,// to file bottom
+    k_pad5       (ladj @ -1)                 ,// center cursor
+    k_c_f9       (ladj @ 1)                  ,// scroll to page top
+    k_c_f10      (ladj @ (qwinp @ %y1d))     ,// scroll to page bottom
+    k_c_up       (scry -1)                   ,// scroll up one line
+    k_c_down     (scry  1)                   ,// scroll down one line
+    k_c_-        (clast)                     ,// to last cursor position
+
+    // File
+    k_c_n        (newf)                      ,// new edit window
+    k_a_e        (askopen)                   ,// open prompt
+    k_a_z        (openlast)                  ,// open last window
+    k_a_-        (flis)                      ,// file list
+    k_a_q        (quit %p)                   ,// close window
+    k_a_x        (gquit %p)                  ,// close all windows
+    k_s_f1       (qref)                      ,// quick reference
+
+    // Window
+    k_a_w        (wlis)                      ,// window list
+    k_c_z        (wmax)                      ,// maximize window
+    k_c_a        (wnex)                      ,// next window
+    k_s_f3       (wtilev)                    ,// tile vertical
+    k_s_f4       (wtileh)                    ,// tile horizontal
+    k_s_f5       (wcasc)                     ,// cascade
+    k_c_k+q      (wquit %p)                  ,// close window
+
+    k_a_ins      (winsizt -2 -1 -2 -1  2)    ,// move window northwest
+    k_a_del      (winsizt  2  1  2  1  2)    ,// move window southeast
+
+    // Search
+    k_c_s        (askscan)                   ,// file scan prompt
+    k_c_b        (mloc @ %t)                 ,// find top of block
+    k_c_6        (bget)                      ,// to previous bookmark
+
+    // Print
+    k_c_p        (print)                     ,// print
+    k_a_p        (print %m)                  ,// print block
+
+    // Set
+    k_c_f1       (vfont %t)                  ,// toggle video mode
+    k_a_f2       (setres)                    ,// restore settings
+
+    // Macro
+    k_c_v        (askmcmd)                   ,// macro command prompt
+    k_a_f9       (askoscmd %ck)              ,// DOS command prompt
+    k_a_f8       (askoscap)                  ,// DOS capture prompt
+    k_f9         (osshell)                   ,// exit to DOS
+
+    // Other
+    k_a_f5       (opena %atrn)               ,// edit translation table
+
+    // Mouse
+    m_r_down_client    (men)                 ,// last menu pull-down
+    m_l_dbclick_bkgnd  (wlis)                .// window list
+
+  ).
+
+
+  // Prompts and Edit windows
+  obj  prompt (
+
+  fun
+
+    // Cursor
+    k_left       (left)                      ,// move cursor left
+    k_right      (right)                     ,// move cursor right
+    k_home       (chome)                     ,// to column one
+    k_end        (ceol)                      ,// to end of line
+
+    // Scroll
+    k_f7         (scrx (- (xpagsiz)))        ,// page left
+    k_f8         (scrx (xpagsiz))            ,// page right
+
+    // Editing
+    k_ins        (cmtog)                     ,// toggle insert mode
+    k_del        (delch)                     ,// delete character
+    k_backspace  (baksp)                     ,// delete left character
+    k_f6         (leol)                      ,// erase to end of line
+    k_a_f6       (leol %l)                   ,// erase to beginning of line
+    k_c_t        (wrddel CSet)               ,// delete right word
+    k_c_[        (lit)                       ,// enter literal character
+    k_a_=        (wasc)                      ,// display ascii chart
+
+    // Block
+    k_a_a        (mset %s)                   ,// mark character
+    k_a_b        (mset %r)                   ,// mark column
+    k_a_1        (wrdmrk CSet)               ,// mark word
+    k_a_2        (meol)                      ,// mark to end of line
+    k_a_u        (mdes)                      ,// unmark
+    k_a_c        (mcpyp. ceol)               ,// copy block to prompt
+
+    // Prompt history
+    k_up         (wrtv %p)                   ,// retrieve prev prompt
+    k_down       (wrtv %n)                   ,// retrieve next prompt
+
+    // Exit
+    k_esc        (quit)                      ,// quit prompt
+    k_a_q        (quit)                      ,// quit prompt
+
+    // non-function keys
+    k_chr        (txt (qarg 2))              ,// typeable keys
+
+
+    // Mouse
+
+    // mouse left button down                 // begin mouse mark
+    m_l_down_client (
+      arg  w x y r.
+      moubegmrk  x y MouMrkS.
+    ),
+
+    // mouse move
+    m_move_client (                           // extend mouse mark
+      arg  x y r.
+      moumovmrk  x y.
+    ),
+
+    // mouse left button up
+    m_l_up_client (                           // end mouse mark
+      arg  x y.
+      mouendmrk  x y
+    ).
+
+  ).
+
+
+  // edit windows only
+  obj  edit (
+
+  fun
+
+    // tool bar
+    <ð>            (wtool)                   ,// close tool bar
+    <?>            (hlp 18 6 %f)             ,// tool bar help
+    <*>            (fmgr)                    ,// display file manager
+    </>            (wcopy)                   ,// copy window
+    <Ä>            (wspl %h)                 ,// split window horz
+    <|>            (wspl %v)                 ,// split window vert
+    <o>            (askopen)                 ,// open prompt
+    <s>            (save)                    ,// save file
+    <F>            (askfind)                 ,// find prompt
+    <f>            (finl)                    ,// do last find/replace
+    <r>            (mrfl %b)                 ,// reflow block
+    <®>            (undo)                    ,// undo last change
+    <¯>            (undo %r)                 ,// redo last change
+    <>>            (mfld %f)                 ,// fold block
+    <<>            (lfld %u)                 ,// unfold line
+
+    // Cursor
+    k_up           (up)                      ,// move cursor up
+    k_down         (down)                    ,// move cursor down
+    k_enter        (enteredit)               ,// enter key
+    k_tab          (ctab)                    ,// tab right
+    k_s_tab        (ctab %l)                 ,// tab left
+    k_c_left       (cwrd %l CSet)            ,// find left word
+    k_c_right      (cwrd %r CSet)            ,// find right word
+
+    // File
+    k_a_i          (askopenins)              ,// open and insert prompt
+    k_c_]          (wrdlod CSetB)            ,// open file at cursor
+    k_a_n          (askname)                 ,// rename prompt
+    k_f3           (save)                    ,// save file
+    k_c_ins        (fpre)                    ,// next file
+    k_c_del        (fnex)                    ,// prev file
+    k_f4           (fmgr)                    ,// display file manager
+    k_a_q          (fquit %p)                ,// close file/window
+    k_c_x          (fquit %f)                ,// save & close file/window
+
+    // Window
+    k_c_c          (wcopy)                   ,// copy window
+    k_a_h          (wspl %h)                 ,// split window horizontal
+    k_a_v          (wspl %v)                 ,// split window vertical
+    k_c_f8         (wtool)                   ,// display tool bar
+    k_c_f7         (wsty)                    ,// change window style
+
+    // Block
+    k_a_l          (mset %l)                 ,// mark line
+    k_a_3          (mpgh %tb)                ,// mark paragraph
+    k_a_c          (mcpy)                    ,// copy block
+    k_a_o          (mmov %o)                 ,// overlay block
+    k_a_m          (mmov)                    ,// move block
+    k_c_m          (mmov %of)                ,// move block over
+    k_a_d          (mdel)                    ,// delete block
+    k_s_f7         (mshf -1)                 ,// unindent block
+    k_s_f8         (mshf 1)                  ,// indent block
+    k_c_k+f        (askmfill)                ,// fill block prompt
+    k_a_r          (mrfl %b)                 ,// reflow block
+    k_a_y          (mrfl %br)                ,// reflow & right just block
+    k_c_k+s        (msave)                   ,// save block
+    k_c_k+o        (msrt)                    ,// sort block
+    k_c_k+u        (mcase %u)                ,// change block to uppercase
+    k_c_k+c        (mjust %c)                ,// center block
+
+    // Search
+    k_f5           (askfind)                 ,// find prompt
+    k_c_f          (askfind)                 ,// find prompt
+    k_c_g          (askrpl)                  ,// replace prompt
+    k_c_l          (finl)                    ,// do last find/replace
+    k_c_2          (bset)                    ,// set quick bookmark
+    k_c_j          (askglin)                 ,// go to line prompt
+    k_a_7          (cfld)                    ,// go to next fold
+    k_a_f3         (finm)                    ,// find matching char
+    k_a_f7         (finc)                    ,// go to compiler error
+
+    // Fold
+    k_a_8          (lfld)                    ,// fold next line
+    k_a_9          (lfld %s)                 ,// unfold next line
+    k_a_0          (mflda %ua)               ,// unfold all
+    k_a_f          (mfld %f)                 ,// fold block
+    k_a_g          (lfld %u)                 ,// unfold line
+
+    // Edit
+    k_c_u          (undo)                    ,// undo last change
+    k_c_y          (undo %r)                 ,// redo last change
+    k_c_enter      (lins %a)                 ,// insert line
+    k_c_backspace  (ldel)                    ,// delete line
+    k_a_s          (lspl)                    ,// split line
+    k_a_j          (ljoin)                   ,// join line
+    k_a_4          (ldup)                    ,// duplicate line
+    k_a_5          (lswp)                    ,// swap line
+    k_a_6          (lcen)                    ,// center line
+    k_a_f1         (lcom)                    ,// comment/uncomment line
+    k_c_k+t        (stamp)                   ,// date/time stamp
+    k_c_k+x        (exptab TabWidth)         ,// expand tabs
+
+    // Clipboard
+    k_grey-        (clpcpy %d)               ,// cut
+    k_c_grey-      (clpcpy %ad)              ,// cut append
+    k_grey+        (clpcpy)                  ,// copy
+    k_c_grey+      (clpcpy %a)               ,// copy append
+    k_grey*        (clppst)                  ,// paste
+    k_c_grey*      (clppst %o)               ,// paste over
+    k_c_grey/      (clpclr)                  ,// clear clipboard
+
+    // Set
+    k_c_w          (wmwrap)                  ,// word wrap toggle
+    k_c_d          (wmdraw)                  ,// line draw toggle
+    k_a_f4         (wmtran)                  ,// text translate toggle
+
+    // non-function keys
+    k_chr          (txt (qarg 2))            ,// typeable keys
+
+    // Other
+    k_c_q+q        (askkrep)                 ,// repeat last key
+
+    // invoke a spell checker from within an edit window <F11>
+    // (replace "ss" with your favorite spell checker)
+    k_f11  (
+      save.                                   // save the current file
+      os (cat "ss " (qwinttl)) %ck.           // call spellchecker
+      refresh.                                // refresh current file
+    ),
+
+    // Mouse
+
+    // double-click in client area
+    m_l_dbclick_client (                      // begin mouse mark (dbl-click)
+      arg  w x y r.
+      moubegmrk  x y MouMrkD %d.
+    ),
+
+    // right button down
+    m_r_down_border (                         // display file manager
+      arg  w x y r.
+      if (eq r 11 12) (fmgr).
+    ).
+  ).
+
+
+  // file manager windows only
+  obj  fmgr (
+
+  fun
+
+    // Menu activation
+    k_tab          (men2)                    ,// to drive menu bar
+
+    // Cursor
+    k_left         (scrx -1)                 ,// scroll left one column
+    k_right        (scrx  1)                 ,// scroll right one column
+    k_home         (cmov 1)                  ,// scroll to column one
+    k_up           (up)                      ,// move cursor up
+    k_down         (down)                    ,// move cursor down
+
+    // File Manager commands (single character command codes)
+    k_chr (
+      arg  k c.
+      = %c (chc c %l).
+      if (eq c %o %e) (fopen c) (             // open file/directory
+      if (eq c %z)  (fopen %ze) (             // open maximized
+      if (eq c %b)  (fopen %b) (              // open binary file
+      if (eq c %y)  (fopen %be) (             // open binary in one window
+      if (eq c %k)  (fopenk) (                // open key macro file
+      if (eq c %m)  (fmov) (                  // move file
+      if (eq c %c)  (fcpy) (                  // copy file
+      if (eq c %d)  (fdel) (                  // delete file
+      if (eq c %n)  (fren) (                  // rename file
+      if (eq c %r)  (frun %c) (               // run program/batch file
+      if (eq c %p)  (fprt) (                  // print file
+      if (eq c %a)  (fatt) (                  // change file attributes
+      if (eq c %t)  (ftch) (                  // touch file
+      if (eq c " ") (fmtog) (                 // mark/unmark file
+
+      // spell checker (replace "ss" with your favorite spell checker)
+      if (eq c %s) (
+        os (cat "ss " (dn)) %ck.
+      )(
+
+      // image viewer (replace "picem" with your favorite viewer)
+      if (eq c %i) (
+        os (cat "picem " (dn)) %c.
+      )(
+
+      // unarchive .ZIP or .LZH files
+      if (eq c %u)  (
+        = %f (dn).
+        os (cat (if (fin f ".lzh" %i) "lha e " "pkunzip ") f) %ck.
+        refresh.
+      )(
+
+      // view .ZIP or .LZH archives
+      if (eq c %v) (
+        = %f (dn).
+        oscap (cat (if (fin f ".lzh" %i) "lha v " "pkunzip -v ") f).
+      )(
+
+      )))))))))))))))))).
+    ),
+
+    // File
+    k_c_backspace  (fpar)                    ,// parent directory
+
+    // Mark
+    k_a_m          (fmrk)                    ,// mark all files
+    k_a_u          (fumrk)                   ,// unmark all
+
+    // Command
+    k_enter        (fopen %1)                ,// open file (one only)
+    k_c_enter      (fopen %q)                ,// open file (close fmgr)
+    k_del          (fdel)                    ,// delete file
+
+    // Sort
+    k_a_n          (fsrt %n)                 ,// sort by name
+    k_a_s          (fsrt %s)                 ,// sort by size
+    k_a_d          (fsrt %d)                 ,// sort by date/time
+    k_a_o          (fsrt %o)                 ,// no sort (DOS order)
+
+    // Print
+    k_c_p          (print %d)                ,// print fmgr contents
+
+
+    // Mouse
+    m_l_dbclick_client (                      // double-click to open
+      fopen %1
+    ).
+
+  ).
+
+
+  // movable/sizable windows
+  obj  win (
+
+  fun
+    k_c_f5         (wkey)                    ,// move/size windows
+    k_c_f6         (wkey %p)                 .// pan video background
+
+  ).
+
+
+  // all windows
+  obj  mon (
+
+  fun
+    k_c_r          (krec)                    ,// record key macro toggle
+    k_c_e          (kplay)                   ,// play scrap key macro
+    k_c_i          (kdel)                    ,// erase scrap key macro
+
+    // define compound key prefixes
+    k_c_k          (keyx %k_c_k)             ,// define <Ctrl-K> prefix
+    k_c_o          (keyx %k_c_o)             ,// define <Ctrl-O> prefix
+    k_c_q          (keyx %k_c_q)             .// define <Ctrl-Q> prefix
+
+  ).
+

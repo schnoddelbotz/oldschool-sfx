@@ -1,0 +1,205 @@
+
+SOFTWARE LIEFERUMFANG
+=====================
+
+Die folgenden Dateien werden auf Ihrer Festplatte instaliert.
+
+Im Verzeichnis \SB16:
+
+   FILELIST.LST - Diese Datei
+   README  .COM - Programm zur Anzeige von README.TXT
+   README  .TXT - Datei mit den letzten Informationen, die im Handbuch
+                  nicht mehr aufgenommen werden konnten
+   CQA     .COM - Programm zur Anzeige der CQA.TXT Datei
+   CQA     .TXT - Textdatei mit Fragen und Antworten
+   DIAGNOSE.EXE - Diagnoseprogramm
+   MIXERSET.EXE - Mixerkcontrolle
+   MIXERSET.TXT - Mixerkcontrolle Hilfedatei
+   CTMIX   .CFG - Konfigurationsdatei fÅr MIXERSET.EXE
+   WINSETUP.EXE - Programm zum Einrichten der Sound Blaster Windows 3.1
+                  Treiber und Programme
+   WINSETUP.INF - Informationen zu WINSETUP
+   INSTALL .EXE - Sound Blaster 16 Installationsprogramm
+   INSTALL .PVL - Komprimierte Bibliothek fÅr INSTALL.EXE
+
+Im Unterverzeichnis \SB16\DRV:
+
+   AUXDRV  .DRV - Aux-Treiber fÅr LautstÑrkenkontrolle
+   CT-VOICE.DRV - Treiber fÅr Voice (memory Version)
+   CTVDSK  .DRV - Treiber fÅr Voice (disk Version)
+   CTWMEM  .DRV - Treiber fÅr Wave (memory Version)
+   CTWDSK  .DRV - Treiber fÅr Wave (disk Version)
+   CTMIDI  .DRV - Treiber fÅr MIDI (General MIDI) (memory version)
+   CTMMSYS .SYS - System-GerÑtetreiber fÅr SB16 Multimedia-
+                  Architektur
+   CTSB16  .SYS - Integrations-GerÑtetreiber fÅr SB16 Multimedia-
+                  Architektur
+
+Im Unterverzeichnis \SB16\SAMPLES:
+
+   *       .MID - Beispieldateien im Midi-Format
+   *       .WAV - Beispieldateien im Wave-Format
+
+Im Unterverzeichnis \SB16\T_ASSIST
+
+   TEXTASST.BIN - TextAssist BinÑrdatei
+
+   LSBTAB  .DAT - }
+   LSWTAB  .DAT - } TextAssist Datendateien
+   SUFFTAB .DAT - }
+   TAVOICE .DAT - }
+
+   PEOPLE  .DIC - } Beispiele fÅr
+   TECH    .DIC - } TextAssist-WîrterbÅcher
+
+   HOOK    .DLL - } DLLs fÅr TextAssist
+   OCLCTL  .DLL - }
+   GERMAN  .DLL - }
+
+   CTSW    .EXE - Text-zu-Sprache-Modul (nicht ausfÅhren)
+   TACONTRL.EXE - TextAssist Control Panel
+   TACONTRL.HLP - Hilfedatei fÅr TextAssist control panel
+   TADICT  .EXE - TextAssist Wîrterbuch
+   TADICT  .HLP - Hilfedatei fÅr TextAssist Wîrterbuch
+   TAREADER.EXE - Textleseprogramm
+   TAREADER.HLP - Hilfedatei fÅr Textleseprogramm
+   TEXTOLE .EXE - Text-zu-Sprache-Editor mit OLE-UnterstÅtzung
+   TEXTOLE .HLP - Hilfedatei fÅr Text-zu-Sprache-Editor
+   *       .ICO - Icon fÅr Hilfedatei
+
+Im Unterverzeichnis \SB16\T_ASSIST\SONGS:
+
+   *       .TXT - Beispieltextdatei
+
+Im Unterverzeichnis \SB16\WINAPPL:
+
+   REMOTE  .EXE - Creative Remote Steuerung
+   REMOTE  .HLP - Hilfedatei zur Creative Remote Steuerung
+   CTCD    .EXE - Creative CD Spieler
+   CTCD    .HLP - Hilfedatei zum Creative CD Spieler
+   CTWAV   .EXE - Creative Wave Spieler
+   CTWAV   .HLP - Hilfedatei zum Creative Wave Spieler
+   CTMIDI  .EXE - Creative Midi Spieler
+   CTMIDI  .HLP - Hilfedatei zum Creative Midi Spieler
+   CTMIXER .EXE - Mixerkcontrolle
+   CTMIXER .HLP - Mixerkcontrolle Hilfedatei
+   SOUNDOLE.EXE - Creative Wave OLE-Server
+   SOUNDOLE.HLP - Creative Wave OLE-Server Hilfedatei
+   CTWAVE  .EXE - Creative WaveStudio Programm
+   CTWHELP .HLP - Creative WaveStudio Hilfedatei
+   DEFAULT .BOB - Standard BOB-Einstellung fÅr das Control Panel
+   *       .ICO - Icon fÅr Hilfedatei
+
+Im Unterverzeichnis \SB16\WINDRV:
+
+   VSBPD   .386 - Windows Virtual Device Treiber
+   MIDIMAP .CFG - Windows MIDI Mapper Konfiguration.
+   SB16AUX .DRV - Aux-Treiber
+   SB16FM  .DRV - Voyetra / Sound Blaster SuperSAPI FM Driver
+   SB16SND .DRV - Wave und MIDI Treiber
+   OEMSETUP.INF - Windows Setup-Datei
+   CSPMAN  .DLL - DLL fÅr den Advanced Signal Processor
+   CTRES   .DLL - DLL fÅr die Creative Resourcen
+   CTCCW   .DLL - Custom Control-DLL von Creative
+   CTL3D   .DLL - 3D-Effekte Dynamic Link Library
+   BWCC    .DLL - Borland's Custom-Control DLL fÅr Windows
+   CTWFLT  .DLL - Filter-Manager fÅr Creative Wave
+   WFLT0001.DLL - Wave-Filter fÅr das Format PCM
+   WFLT0002.DLL - Wave-Filter fÅr das Format MS ADPCM
+   WFLT0006.DLL - Wave-Filter fÅr das Format CCITT A-Law
+   WFLT0007.DLL - Wave-Filter fÅr das Format CCITT u-Law
+   WFLT0011.DLL - Wave-Filter fÅr das Format IMA/DVI ADPCM
+   WFLT0200.DLL - Wave-Filter fÅr das Format Creative ADPCM
+   CTRCC   .DLL - Custom Control fÅr Creative Resourcen
+   CTREMOTE.DLL - DLL fÅr Remote Steuerung
+   CTREMOTE.INI - Initialisierungsdatei fÅr Remote Steuerung
+   WFM0006 .ACV - CODEC Modul fÅr CCITT A-Law
+   WFM0007 .ACV - CODEC Modul fÅr CCITT mu-Law
+   WFM0011 .ACV - CODEC Modul fÅr IMA/DVI ADPCM
+   WFM0200 .ACV - CODEC Modul fÅr Creative Technology ADPCM
+   CTSFRAME.DLL - } DLLs fÅr
+   TSKERNEL.DLL - } TextAssist
+   LANGRC  .DLL - }
+   TACONTRL.INI - Initialisierungsdatei fÅr TextAssist Control-Panel
+   TEXTOLE .INI - Initialisierungsdatei fÅr Texto'LE
+   MSMIXMGR.DLL - DLL fÅr Mixer-Manager
+
+
+FÅr Non Plug-and-Play Karten:
+-----------------------------
+Im Unterverzeichnis \SB16\WINAPPL:
+   CTCONFIG.EXE - Windows-Programm zur Konfigurierung des
+                  hardware-audio
+   CTAUDIO .HLP - Hilfedatei fÅr CTCONFIG.EXE
+   CTAUDIO .ICO - Icon fÅr Hilfedatei
+
+FÅr Non Plug-and-Play Karten mit einem Stromsteuerung:
+------------------------------------------------------
+Im Unterverzeichnis \SB16\WINAPPL:
+   CTPOWER .HLP - Hilfedatei fÅr Stromsteuerung
+
+FÅr Karten mit einem Advanced Signal Processorchip:
+---------------------------------------------------
+Im Unterverzeichnis \SB16\CSP:
+   WO0006  .CSP - Routine fÅr CCITT ALAW Wiedergabekompression
+   WO0007  .CSP - Routine fÅr CCITT uLAW Wiedergabekompression
+   WO0200  .CSP - Routine fÅr Creative ADPCM Wiedergabekompression
+   WI0006  .CSP - Routine fÅr CCITT ALAW Aufnahmekompression
+   WI0007  .CSP - Routine fÅr CCITT uLAW Aufnahmekompression
+   WI0200  .CSP - Routine fÅr Creative ADPCM Aufnahmekompression
+   WFM0001A.CSP - Routine fÅr PCM-Wave-Effekte fÅr Wiedergabe
+   WFM0006A.CSP - Routine fÅr CCITT ALaw fÅr Aufnahme und Wiedergabe
+   WFM0007A.CSP - Routine fÅr CCITT u-Law fÅr Aufnahme und Wiedergabe
+   WFM0011A.CSP - Routine fÅr IMA/DVI ADPCM fÅr Aufnahme und
+                  Wiedergabe
+   WFM0200A.CSP - Routine fÅr Creative ADPCM fÅr Aufnahme und
+                  Wiedergabe
+   WFM0202A.CSP - Routine fÅr Creative FastSpeech 8 fÅr Aufnahme und
+                  Wiedergabe
+   WFM0203A.CSP - Routine fÅr Creative FastSpeech 10 fÅr Aufnahme und
+                  Wiedergabe
+   WFM0201A.CSP - Routine fÅr TextAssist
+
+Im Unterverzeichnis \SB16\DRV:
+   CSP     .SYS - GerÑtetreiber fÅr Advanced Signal Processor
+
+Im Unterverzeichnis \SB16\WINDRV:
+   WFM0202 .ACV - CODEC Modul fÅr Creative Technology FastSpeech 8
+   WFM0203 .ACV - CODEC Modul fÅr Creative Technology FastSpeech 10
+   WFM0201 .ACV - Windows-Treiber fÅr TextAssist
+
+FÅr Karten mit einem Surround Sound Enhancement:
+------------------------------------------------
+Im Verzeichnis \SB16:
+   CT3DSE  .EXE - Dienstprogrammdatei fÅr 3D Stereo Enhancement
+
+FÅr Karten mit einem Stromsteuerung:
+------------------------------------
+Im Verzeichnis \SB16:
+   POWERSET.EXE - Dienstprogrammdatei fÅr Stromsteuerung
+
+FÅr Karten mit einem C16Schip:
+------------------------------
+Im Verzeichnis \SB16:
+   GAMEPORT.EXE - Dienstprogrammdatei fÅr Gameport-Steuerung
+
+
+Folgende Dateien werden in Ihr WINDOWS- bzw. WINDOWS\SYSTEM-Verzeichnis
+kopiert. Diese Dateien sollten nicht in beiden Verzeichnissen gleichzeitig
+vorhanden sein.
+
+   Folgende Dateien sollten sich in Ihrem WINDOWS-Verzeichnis befinden:
+
+      CTRES.DLL        CTCCW.DLL        BWCC.DLL         CTREMOTE.DLL
+      CTRCC.DLL        CTREMOTE.INI     CTSFRAME.DLL     TSKERNEL.DLL
+      TACONTRL.INI
+
+   Folgende Dateien sollten sich in Ihrem WINDOWS\SYSTEM-Verzeichnis
+   befinden:
+
+      VSBPD.386        SB16SND.DRV      SB16FM.DRV       SB16AUX.DRV
+      MIDIMAP.CFG      CSPMAN.DLL       WFM0006.ACV      WFM0007.ACV
+      WFM0011.ACV      WFM0200.ACV      WFM0202.ACV      WFM0203.ACV
+      CTL3D.DLL        CTWFLT.DLL       WFLT0001.DLL     WFLT0002.DLL
+      WFLT0006.DLL     WFLT0007.DLL     WFLT0011.DLL     WFLT0200.DLL
+      WFM0201.ACV      MSMIXMGR.DLL

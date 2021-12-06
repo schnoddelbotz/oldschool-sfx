@@ -1,0 +1,24 @@
+#File Find, Norton Commander 5.0, Copyright 1994 Symantec Corporation
+
+NCFF Verzeichnis Suchname [/F:"Suchtext" [/R] [/T]] 
+                          [/C] [/S] [/D] [/M:{H|S|R|A|D|N}...]
+                          [/A:Datum[,Zeit]] [/B:Datum[,Zeit]]
+                          [/G:Grî·e[{K|M}]] [/L:Grî·e[{K|M}]]
+
+  Verzeichnis     Zu durchsuchender Pfad
+  Suchname        Zu suchender Dateiname
+  /F              Zu suchender optionaler Text in Dateien
+  /R              RegulÑrer Ausdruck
+  /T              Text nur in Textdateien suchen
+  /D              Duplikate suchen
+  /C              Nur aktuelles Verzeichnis
+  /S              Dateien in Unterverzeichnissen einschlie·en
+  /M              Testet Dateien mit angegebenen Attributen:
+                  H  Versteckte Dateien         S  Systemdateien
+                  R  SchreibgeschÅtzte Dateien  A  Zu archivierende Dateien
+                  D  Verzeichnisse              N  Keine Attribute
+  /A              Testet Dateien mit Datum/Zeit nach dem angegebenen Wert
+  /B              Testet Dateien mit Datum/Zeit vor dem angegebenen Wert
+  /G              Testet Dateien, die grî·er als "Grî·e" sind
+  /L              Testet Dateien, die kleiner als "Grî·e" sind
+

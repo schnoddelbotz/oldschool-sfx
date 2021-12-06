@@ -1,0 +1,13 @@
+jpg: c:\gfx\pvlite !.! -k
+wav: c:\tools\play !.!
+voc: c:\tools\play !.!
+mid: d:\sound\cubic\cp !.!
+gif: pv !.!
+TXT: FST !.!
+gl: c:\gfx\gl\grasprt.exe !.!
+mpg: c:\gfx\mpeg\mpeg.exe !.!
+s3m: d:\sound\cubic\cp !.!
+xm: d:\sound\cubic\cp !.!
+mod: d:\sound\cubic\cp !.!
+dl_: expand !.! !.dll
+rar: rar !.!

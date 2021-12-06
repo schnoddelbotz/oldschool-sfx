@@ -1,0 +1,72 @@
+
+                  Das RAR-Archivier Programm - Version 1.55
+
+
+
+   Diese (und mehr!) Mîglichkeiten bietet RAR:
+
+
+ o RAR fÅhrt einen NEUEN und bisher einmaligen Pack-Algorhythmus ein.
+   Damit sind bessere Kompressionsraten mîglich als mit anderen PC-
+   Archivierungsprogrammen, insbesondere bei ausfÅhrbaren Dateien,
+   Objekt-Libraries, gro·en Textdateien etc.
+
+ o RAR bietet NEUE Mîglichkeiten und Besonderheiten wie ein interaktives
+   full-screen-Interface mit MausunterstÅtzung und moderner MenÅfÅhrung
+   wie auch die klassische Kommandozeilen-Bedienung.
+
+ o Mit RAR kînnen "solide" Archive erstellt werden, wodurch die Kompres-
+   sionsrate um 10 - 50 % gegenÅber herkîmmlichen Methoden gesteigert
+   werden kann (insbesondere beim Komprimieren einer gro·en Anzahl klei-
+   nerer Dateien).
+
+ o RAR ermîglicht dem Benutzer im full screen-Modus auch die Verwaltung
+   "fremder" Formate wie .ZIP, .ARJ und .LZH.
+   Die Umwandlung in selbstentpackende (SFX) Archive ist mîglich, Kommen-
+   tare kînnen gelîscht oder entfernt, das temporÑre Arbeitsverzeichnis
+   kann geÑndert werden etc.
+
+ o RAR erlaubt das Erstellen und éndern von SFX-Archiven auch durch
+   externe SFX-Module wie z.B. das Installations-SFX.
+
+ o Mit RAR kînnen Mehr-Volumen-Archive auch selbstentpackend erstellt
+   werden.
+
+ o RAR bietet eine Reihe von Servicefunktionen, wie Pa·wortabfrage oder
+   die Mîglichkeit, Kommentare zu Archiv oder Datei zu speichern.
+   BeschÑdigte Archive kînnen repariert werden. Archive kînnen gegen
+   VerÑnderung geschÅtzt ("verschlossen") werden.
+   Informationen zur AuthentizitÑt kînnen dem Archiv angefÅgt werden;
+   RAR speichert Informationen Åber die letzte Aktualisierung und den
+   Namen des Archivs. ZusÑtzliche Sicherheit ist somit gewÑhrleistet.
+
+ o RAR unterstÅtzt die ANSI esc-Sequenz in Kommentaren. Damit kînnen
+   farblich gestaltete oder mit anderen ANSI-spezifischen Merkmalen
+   versehene Kommentare auch ohne geladenen ANSI-Treiber dargestellt
+   werden.
+
+
+   Dieses Archiv enthÑlt die folgenden Dateien:
+
+   README       - diese Datei
+   RAR.EXE      - das RAR-Programm
+   RAR.DOC      - Handbuch
+   SFX.DOC      - SFX-Handbuch
+   WHATSNEW.DOC - Neuheiten in der aktuellen Version
+   OPTIONS.DOC  - alle Befehle (Kommandozeile / Tastaturbefehle)
+   TECHNOTE.DOC - Archivformate und  Anmerkungen zu den Komprimiermethoden
+   UNRAR104.EXE - unRAR mit SOURCE CODE
+   RCVT100.EXE  - RCVT-Konverter - Programm zur Archivumwandlung
+   IDOS.SFX     - Installations-SFX fÅr DOS
+   STANDARD.S   - Installation SFX "Standard"-Skript
+   OS2.SFX      - SFX fÅr OS/2
+   RAR_FAQ.TXT  - RAR Frequently Asked Questions (FAQ)
+                  (oft gestellte Fragen - und die Antworten darauf)
+   RAR_USE.TXT  - Konfiguration anderer Programme zum Gebrauch mit RAR
+   RAR_SITE.TXT - RAR Reg. & Support sites
+                  (wo kann ich mich registrieren lassen?)
+   LICENSE.TXT  - Lizenzbestimmungen
+   REGISTER.FRM - Formular fÅr die Registrierung
+   REGISTER.TXT - Information zur Registrierung
+   INTERNET.REG - Formular fÅr die Registrierung via Internet
+   INTERNET.TXT - Anleitung zur Registrierung via Internet

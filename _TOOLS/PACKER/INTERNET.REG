@@ -1,0 +1,176 @@
+
+                ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+                º Registrierung von RAR ber Internet º
+                ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+ Ab sofort k”nnen Sie sich auch ber das Internet als lizensierter Be-
+ nutzer von RAR registrieren lassen.
+
+ Die Bezahlung erfolgt dann ber Ihre Kreditkarte (akzeptiert werden
+ Access/Visa/Barclaycard/Mastercard), die Abrechnung erfolgt in US $.
+
+ Fllen Sie nur das Registrierformular (unten) aus folgen Sie Schritt
+ fr Schritt den nachstehenden Anweisungen.
+
+ Da es nicht ratsam ist, Informationen ber Kreditkarten ungeschtzt
+ durch das Internet zu schicken, schlagen wir vor, daá Sie zu Ihrer
+ eigenen Sicherheit die folgen Punkte beachten und nachvollziehen:
+
+   1. Senden Sie eine e-mail an "secure.rar@icon.sentinel.co.uk", wobei
+   die Nachricht selbst NUR aus dem Paáwort, das Sie verwenden wollen,
+   bestehen darf. Das Paáwort soll zwischen 5 und 8 Zeichen lang sein,
+   kann eine Kombination aus Groábuchstaben und Zahlen sein, darf aber
+   keine Leer- oder Interpunktionszeichen beinhalten.
+   Schicken Sie diese Nachricht sofort ab, bevor Sie die n„chsten
+   Schritte unternehmen. Dadurch wird gew„hrleistet, daá die Nachricht
+   mit Ihrem Paáwort nicht in der gleichen Session auf die Reise geschickt
+   wird wie die Nachricht, die Sie als n„chste verfassen werden.
+
+   2. Fllen Sie das Registrierformular aus und speichern Sie es als
+   reine Textdatei unter dem Dateinamen <Nachname>.<Initial> ab,
+   wobei <Nachname> fr die ersten 8 Buchstaben Ihres Nachnamens und
+   <Initial> fr Ihr(e) Initial(en) steht. Benutzen Sie bitte keine Um-
+   laute.
+
+   Sollten Sie also z.B. Jens Peter Mller heiáen, wrden Sie die Datei
+   MUELLER.JP nennen.
+
+
+   Jetzt k”nnen Sie mit der Paáwort-Option von RAR die Datei in ein RAR-
+   Archiv komprimieren. Benutzen Sie dazu die folgende Kommandozeile
+   sowie das von Ihnen gew„hlte Paáwort aus Schritt 1.
+
+
+         RAR A -M5 -P<Paáwort> <Nachname>.RAR <Nachname>.<Initial>
+
+   Damit haben Sie eine kurze, paáwortgeschtzte Datei erstellt, die Ihr
+   Registrierungsformular enth„lt.
+
+   Als letzten Schritt konvertieren Sie Ihre Registratrierungsdatei in
+   eine Textdatei, die Sie ber das Netz verschicken k”nnen.
+
+   Dazu sollten Sie UUENCODE benutzen. UUENCODE ist ein verbreitetes
+   Programm, das im Internet h„ufig benutzt wird. Sie erhalten es bei
+   den meisten ftp sites.
+
+   Die Datei, die Sie durch den Gebrauch von UUENCODE erhalten, importieren
+   Sie in eine e-mail-Nachricht, die Sie an
+   "priority.rar@icon.sentinel.co.uk" adressieren.
+
+   Vorausgesetzt, daá Ihre erste Nachricht mit dem Paáwort eingetroffen
+   ist, wird Ihre zweite Nachricht nun decodiert und bearbeitet.
+   Sollte eine der Nachrichten nicht eintreffen, werden Sie nach dem Ab-
+   lauf von 24 Stunden verst„ndigt.
+
+   Im Normalfall werden Ihre Nachrichten sofort nach dem Erhalt verarbeitet.
+   Innerhalb von 24 Stunden wird Ihr RAR Registration Code in der gleichen
+   Art und Weise an Sie zurckgeschickt, wie Sie Ihre Dateien verschickt
+   haben. Sie erhalten also ein UUENCODEiertes RAR-Archiv, das Sie decodie-
+   ren. Mit UNRAR und ihrem selbstgew„hlten Paáwort entpacken Sie die Datei.
+   Im RAR-Archiv befindet sich eine Textdatei mit den Details Ihrer RAR-
+   Registrierung und einer genauen Anleitung, wie Sie Ihren Code in RAR
+   installieren.
+
+
+
+   Vervollst„ndigen Sie nun bitte den ersten Teil der Registrierung
+   und schicken Sie Ihr Paáwort an "secure.rar@icon.sentinel.co.uk",
+   bevor Sie das folgende Registrierungsformular ausfllen:
+
+
+
+ ------------------------------ CUT  HERE --------------------------------
+
+                 ÄÄÄÍÍÍ RAR Registrationsformular ÍÍÍÄÄÄ
+
+  Bitte beachten: Mengenrabatte werden nur gew„hrt, wenn die Kopien an
+  EINEN Besteller ausgeliefert werden sollen.
+
+  Mit diesem Formular k”nnen Sie sich fr RAR DOS/Windows oder fr
+  RAR/OS/2 registrieren lassen.
+
+  Bitte geben Sie an, mit welchem Betriebssystem Sie arbeiten: ___________
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º          Name:                                                        º
+ ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+ º         Firma:                                                        º
+ ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+ º       Adresse:                                                        º
+ ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+ º     PLZ / Ort:                                                        º
+ ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+ º          Land:                                                        º
+ ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+ º      Phone:                       ³ Data Phone:                       º
+ ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
+ º   Internet:                       ³    FidoNet:                       º
+ ºÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄº
+ º  Preis- ³ Anz. der Kopien in ³    Stckpreis:    ³ gewnschte ³ Total º
+ º Staffel ³ dieser Preisstaffel³    US Dollars     ³ Anzahl:    ³  US$  º
+ ºÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    1    ³       1            ³         35        ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    2    ³     2 - 9          ³         27        ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    3    ³    10 - 24         ³         21        ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    4    ³    25 - 49         ³         16        ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    5    ³    50 - 99         ³         12        ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    6    ³   100 - 149        ³          9        ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    7    ³   150 - 199        ³          8        ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    8    ³  Site-Lizenz       ³       1500        ³            ³       º
+ º         ³  (Unlimited use)   ³                   ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    9    ³  FidoNet SysOp     ³         15        ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º    FidoNet-Node-Nummer: ___________________      ³°°°°°°°°°°°°³°°°°°°°º
+ ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º                                                  ³            ³       º
+ ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄº
+ º                                                   GESAMTSUMME:³       º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º  Benutzername fr die Registrierung                                   º
+ º  (AV-Code, der in Ihren Archiven erscheinen wird):                    º
+ º                                                                       º
+ º  ________________________________________________________________     º
+ º (bis zu 50 Zeichen, aus denen der Schlssel fr die AV generiert wird)º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º                       WIE M™CHTEN SIE BEZAHLEN?                       º
+ ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍ¹
+ º Kreditkarte:                 (Access/Mastercard/Visa/Barclaycard) º   º
+ ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄĞÄÄÄ¶
+ º Kartennummer:                                                         º
+ ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¶
+ º gltig bis:                                                           º
+ ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¶
+ º Name des Karteninhabers (falls nicht identisch mit Besteller):        º
+ º                                                                       º
+ º                                                                       º
+ º                                                                       º
+ º                                                                       º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º          Welche Arten von Daten komprimieren Sie mit RAR:             º
+ ÌÍÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹
+ º Texte     ³ Grafiken     ³ Datenbanken   ³ ausfhrbare Dateien        º
+ ÇÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¶
+ º Sonstiges                                                             º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º            Unter welchem Betriebssystem verwenden Sie RAR:            º
+ ÌÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹
+ º DOS   ³ OS/2   ³ Unix/Xenix   ³ Sonstiges                             º
+ ÈÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+

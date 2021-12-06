@@ -1,0 +1,38 @@
+@echo off
+rem
+rem TOUR2.BTM dient zur Erstellung von Dummy-Dateien fr das NDOS-Lehrprogramm 
+rem
+echo.
+echo Bitte warten ...
+echo.
+echo Dies ist die Dummy-Datei 1 >! file1
+echo Dies ist die Dummy-Datei 2 >! file2
+echo Dies ist die Dummy-Datei 3 >! file3
+echo.  >>! file3
+echo Der nachstehende Text veranschaulicht die Arbeitsweise des NDOS-Befehls>>! file3
+echo command. >>! file3
+echo.  >>! file3
+echo Die Norton Utilities >>! file3
+echo Der mit vielen Preisen ausgezeichnete Standard fr Datenwiederherstellung,>>! file3
+echo Datenschutz und Systemdiagnose >>! file3
+echo.  >>! file3
+echo Die Norton Utilities 8.0 bieten Ihnen alles, was Sie brauchen, >>! file3
+echo damit Ihr Computersystem verl„álich arbeit und optimale >>! file3
+echo Leistung erbringt. Die neuen Konfigurations-Utilities >>! file3
+echo fr Windows und die im Hintergrund arbeitenden Programme >>! file3
+echo speed Disk fr Windows und Norton Disk Doctor fr Windows >>! file3
+echo machen die Norton Utilities zu einer vollst„ndigen L”sung >>! file3
+echo fr alle Probleme im Zusammenhang mit Schutz und Rettung  >>! file3
+echo von Daten und Diagnose von Hardwarefunktionen. >>! file3
+echo.  >>! file3
+echo Die Norton Utilities bieten zus„tzlich zu ihren schon fast >>! file3
+echo legend„ren Rettungs- und Diagnosef„higkeiten jetzt die >>! file3
+echo M”glichkeit der Datentr„gerdiagnose und -reparatur sowie
+echo der Festplattenoptimierung im Hintergrundbetrieb unter >>! file3
+echo Windows. Daneben finden Sie zahlreiche Werkzeuge zur >>! file3
+echo zur Problembehebung und Optimierung wichtiger Windows- >> file3
+echo funktionen. Diese neuen Utilities und die bereits bew„hrte >> file3
+echo Untersttzung fr die h„ufigsten Formate fr komprimierte >>! file3
+echo Laufwerke bieten Ihnen ein H”chstmaá an Sicherheit fr >>! file3
+echo Ihre Systemumgebung. >>! file3
+echo Datei wurde erstellt

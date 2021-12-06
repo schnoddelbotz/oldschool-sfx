@@ -1,0 +1,84 @@
+
+    ARJSORT						    September 1991
+
+
+    ARJSORT.BAT is a batch file provided to give the user the facility to
+    sort the files in an ARJ archive.  ARJSORT allows sorting by file
+    attribute, CRC value, date-time modified, file extension, filename,
+    pathname, and compression ratio.  The sort order can be set for
+    ascending or descending order.
+
+    Usage:  ARJSORT archive [/order] [/r]
+	    Where /order is one of the following:
+
+		  /a = attribute       /o = ratio
+		  /c = crc	       /p = pathname
+		  /d = date/time       /s = size
+		  /e = extension       /t = time
+		  /f = filename
+
+	    [/r]everse, if specified, must be the last option.
+
+    ARJSORT has been designed to work at MS-DOS 3.3 and up.  The @ECHO
+    command in ARJSORT.BAT may cause problems with other versions of DOS.
+
+    ARJSORT uses the special ARJSORT.$$$ feature of the order command.	A
+    list file named ARJSORT.$$$ is expected to be in a special format by
+    the order command.	That format is produced by the ARJ v -jv1 command.
+
+    ARJSORT requires the MS-DOS SORT program to be available for ARJSORT to
+    work.  ARJSORT creates several temporary files named ARJSORT.$$?.
+    These temporary files will be deleted at the end of the program.
+
+    Please note that MS-DOS SORT cannot handle input files larger than 64K
+    bytes.  An input file over 64K in size can happen when sorting an ARJ
+    archive with a few hundred pathnames.  An insufficient memory error
+    message results when SORT encounters too large of an input file.
+
+    The shareware program QSORT by Ben Baker does not have this 64K size
+    limitation.  The QSORT document states that QSORT can directly replace
+    the MS-DOS SORT program.  You can modify ARJSORT.BAT to use the QSORT
+    program by replacing the command SORT with the command QSORT.  All
+    instances of the command SORT are capitalized.  There are two instances
+    of the word ARJSORT.  An easier way would be to delete the MS-DOS
+    SORT.EXE program and rename QSORT.EXE to SORT.EXE.
+
+
+    ARJSORT Examples:
+
+    ARJSORT archive	  - Sort files in ascending alphabetical pathname
+			    order.
+
+    ARJSORT archive /r	  - Sort files in descending pathname order.
+
+    ARJSORT archive /d	  - Sort files in chronological date-time modified
+			    order.
+
+    ARJSORT archive /d /r - Sort files in descending chronological
+			    date-time modified order.
+
+    ARJSORT archive /s	  - Sort files in ascending file size order.
+
+
+    At ARJ release 1.10, ARJSORT.COM (compiled version of ARJSORT.BAT) is
+    included with the ARJ software.  This program can be used in place of
+    the ARJSORT.BAT.  This COM version is better for use in DOS BATCH files
+    than ARJSORT.BAT.
+
+
+    HISTORY:
+
+    2.21 - Added -!! option to "ARJ o" command.
+	   Added -jp- option to stop paging.
+	   Added errorlevel testing for SORT.
+	   Tested QSORT with ARJSORT.
+
+    1.21 - Fixed deletion of temporary files.
+
+    1.20 - Improved ARJSORT.$$$ processing so that EDLIN is not needed.
+
+    1.10 - Added ARJSORT.COM.
+
+
+    end of document
+

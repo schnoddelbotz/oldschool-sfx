@@ -1,0 +1,262 @@
+
+==============================================================================
+
+          Manual for using NetCB
+
+==============================================================================
+
+-- Using NetCB
+
+NetCB uses IPX so if you manage to get Novell up and running without IPX (I
+still can't figure out how you do that), you can't chat.
+
+NetCB uses IPX because NetCB works 'connection-less'. No virtual circuit is
+build between the chatters, anybody can come into the chat and leave it as
+he/she likes without extra communication between the chatters.
+
+To join a running chat on a network, simply fire up NetCB, think of a funny
+name for yourself and on you go.
+
+To get the other users an idea of who's chatting along, messages are send in
+the chat when you join the chat, leave it or change your nickname or change
+channels.
+
+When you join in the chat, the message is :
+
+<Nickname> / <server>\<loginname> [n] is joining in with the chat.
+
+So if your logged in as GUEST on a server named FILEBASE on logical connection
+3 and you want to chat using the nickname Mr. Bean, a line is send in the chat
+looking like :
+
+Mr. Bean / FILEBASE\GUEST [3] is joining in with the chat.
+
+Because NetCB only uses IPX, it's not needed to be logged in. So you might also
+get something like :
+
+Mr. Bean / FILEBASE\<not logged in> [3] is joining in with the chat.
+
+Or, even not being attached to any server (only IPX loaded), it looks like :
+
+Mr. Bean / <not attaced>\-- [3] is joining in with the chat.
+
+When chatting, the bottom of the screen looks like :
+
+|                                                                             |
++- Mr. Bean on Channel 00 [Public Access] ------------------------------------+
+| _                                                                           |
++-----------------------------------------------------------------------------+
+
+At this line you get a flashing cursor. Type the line you want to sent. When
+you press [Enter], the line is sent to everyone on the network (broadcast).
+
+Everyone running NetCB sees it appear on his/her screen, if he/she is 'tuned'
+into the same channel.
+
+Channels are implemented just like C.B. channels. You can select a channel
+using the up/down cursor keys or Alt-C to select channel 0. The current channel
+and it's defined name are indicated in the line above the entry-line. Names
+are defined in the configuration file. There are 64 possible channels numbered
+from 0 to 63.
+
+The top half of the screen looks like :
+
+          --- 12:11 -- Traffic : 0   v --+
+                                         |
+
+The traffic value is the number of chat packets recieved in all channels in the
+last minute. This value is updated every second.
+Just right to the traffic indicator is an 'activity' indicator. Every time a
+packet is recieved for NetCB (all packets are checked for a 'signature' which
+consists of 'KH' and a 0x01) the activity indicator will turn right one step.
+
+Using F1 you get a window which shows the available keys. They are :
+
+Arrow keys to select channels (0..19)
+Alt-C to select channel 0
+Alt-W to get the userlist (private chat not implemented yet...:-(
+Alt-N to select a new nickname (the other users of the chat will get a warning
+      message..)
+Alt-T to get a scaled graph on the packets recieved in the last minute in every
+      channel. So if you get the strange idea 'where is everybody ?', you can
+      look in this window. This window can be scrolled to view all channels, it
+      starts around your own channel.
+Alt-I information on NetCB. It shows the short info, the credits for this
+      program and some info on you and the total number of packets recieved
+      since starting.
+
+When you press Alt-W, you get a window and a 'Building list...' line. To make
+sure every answer to the "who's there ?" packet is recieved, NetCB waits some
+time. After that you get a complete list of the users. The order in which
+they are shown is kinda random and will change every time you access this
+window. This is due to the fact that NetCB waits a short random time after
+it recieves a "who's there ?" packet to avoid a great number of network
+collisions.
+
+You can browse through the list and press [Enter] to get more info on the
+selected user.
+
+The time spend waiting for all replies to return is calculated as follows :
+
+3 * (longest single route in the network) + 5 ticks. Each tick is 1/18 of a
+second.
+
+This should be sufficient in most cases.
+
+-- Nickname protection
+
+NetCB now has nickname protection. When a nickname is entered, NetCB will
+transmit this fact to all stations. When someone else has the same nickname,
+it will reply. This reply will 'lock' the chat until a new nickname is entered.
+
+-- Command line options
+
+By populair demand ;-)
+
+Start NetCB like :
+
+NetCB [/c=<channel>] [/n=<nickname>] [/s]
+
+So to start on channel 12 with nickname "Big Boy", enter :
+
+NetCB /c=12 /n="Big Boy"
+
+When there are no spaces in the name, it's also allowed to type :
+
+NetCB /c=12 /n=Speedy
+
+/s means 'Stealthmode'. In this mode your loginname and servername will be
+hidden from the chat. I've been in situations where this is quite handy...
+
+-- Configuration
+
+When a configuration file NetCB.Ctl is found in the current directory, it will
+be used. The following items can be defined in this configuration file :
+
+LogName
+
+- When this item is enabled, the login name will be used as nickname, and you
+will not be asked for it when starting.
+
+FullName
+
+- When this item is enabled, the full name will be used as nickname.
+
+ChanName <channel> <name>
+
+- With this item you can give channels names. Channel 0 is hardcoded to be
+'Public Access'. Other channels can be named like :
+
+ChanName  1 Chat lovers
+ChanName  2 Blind Dates
+ChanName 13 TeleShopping
+
+StealtMode
+
+- This activates 'Stealthmode' in which loginname and servername will be hidden
+from the chat.
+
+-- Notes for system managers
+
+These are in the file SYSMANAG.
+
+-- Multiple Netware networks
+
+Well, this is the part you all have been waiting for (I've been saving the
+fanmail, and it's the most Frequently Asked Question on NetCB!).
+
+I've been digging around Netware a lot to find the optimum way to find the
+'All Reachable Networks' list. At first I looked into the possibilities of
+the diagnostics calls, but after a while I found out that they can be
+disabled, which would lead to a not-allways-running NetCB.
+After that I kept on looking around and got a little lucky since Novell
+decided to release the complete specifications of RIP (Routing Information
+Protocol). I don't know if my asking around has done something to do with
+the release, but you never know this sort of thing...
+
+This means you can chat 'campus-wide' or 'WAN-wide'. You'll chat with people
+who can be in totally different buildings, or even kilometres away, depending
+on the network topology.
+
+Anyone interested in an example 'Get network list using RIP' source can mail
+me. It took me so long to gather this information and I've got a whole pack
+of 'me too' messages, so I think there's interest for this information.
+
+-- Netware Lite
+
+NetCB also works with Netware Lite. The previous version had to work with it
+also but wasn't tested (and a test showed that it didn't work). This version
+can handle Netware Lite. You'll allways show up as 'not logged in' though.
+NetCB will issue a warning that there where no routers found. This is correct.
+
+-- Credits
+
+Thanks go to numerous people. Of course thanks goes to the system managers at
+my school who couldn't figure out what was going on on the network for about
+four weeks. Now they want to stop me from using it at school. Wait and see.
+
+Thanks also goes to the ones who tested it at my school. Famous names like
+'Sammy Suitcase', 'Slim', 'Me again', 'Elmer Fudd', 'Scatterbrain' and others
+helped me to test NetCB throroughly.
+
+Thanks to A.R.Goodman <A.R.Goodkin@ais.salford.ac.uk> who gave me an example
+source for getting the list of known network numbers.
+
+Thanks goes to Charles G. Rose for writing an excellent book about programming
+Netware : 'Programmers Guide to Netware'.
+
+I'd also like to thank the people at Salford University in England for
+betatesting NetCB. The've been great in testing this new version.
+
+-- What's with the Un-Greetings ?
+
+You'll probably wonder who the people are that are 'Un-Greeted'. Well, those
+are people who tried to forbid NetCB on the network that they where supposed
+to manage. I can't find any valid reason for why someone should forbid the
+usage of NetCB or it should be that that particular someone didn't like the
+idea of some student hanging around 'their' network and being able to program
+it better then they will ever be able to.
+
+-- Contacting the author
+
+I'm open to suggestions, remarks and so. I also would like to get an idea of
+the usage of NetCB, so you can contact me in the following ways :
+
+Internet : koos@kzdoos.hacktic.nl
+
+I don't have an IP link (yet) so trying 'ftp kzdoos.hacktic.nl' will not give
+much result. Any company wanting to sponsor an IP link for my BBS is VERY
+welcome (Or just wanting to sponsor my BBS).
+
+Fidonet : Koos van.den.hout at 2:500/101.11012.
+
+BBS : +31-3402-36647. It's my own BBS. Full Dutch and English menus available.
+Look at the local time here before yelling me..
+Baudrates : 300..14400 bps, V32(bis), v42(bis), MNP2-5.
+
+Snailmail :
++--------------------------------------+
+|                                      |
+|       Koos van den Hout              |
+|       Goudvink 12                    |
+|       3435 RJ Nieuwegein             |
+|       Netherlands.                   |
+|                                      |
++--------------------------------------+
+
+Please make sure I can get your country/state from your (E-)mail. I have a map
+showing all NetCB usage locations in the world and I'd like to keep it up to
+date.
+
+-- Donations
+
+So you'd like to donate an amount of money to me since you think this is a
+great thing ?
+Well, getting money from A to B when there are country borders in between
+costs more then the money's worth (unless you're making a big donation...).
+
+So I want to propose this : I really like coffee mugs. You know, what you
+drink your first coffee from in the morning. So, if you can get me a really
+nice coffee mug (with a company or university logo) for me, I'm also very
+pleased. Send'em to the above address (don't forget to pack them thoroughly).
+You will have my gratitude eternally.

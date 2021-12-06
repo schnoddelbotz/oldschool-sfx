@@ -1,0 +1,24 @@
+FormelEins ist ein mathematisches Kurvendiskussionsprogramm, das sich vor allem
+an Schler (und Lehrer) der gymnasialen Oberstufe sowie Studenten naturwissen-
+schaftlicher Fachbereiche wendet, jedoch auch von "bloá" Mathematikinteressier-
+ten genutzt werden kann. Das Programm hilft denen, die sich - im wahrsten Sinne
+des Wortes - ein Bild von einem Teilgebiet der Analysis machen wollen.
+
+Es k”nnen zehn Funktionsgleichungen … 255 Zeichen eingegeben werden, deren
+Graphen in einem frei w„hlbaren Koordinatensystem dargestellt und auch dis-
+kutiert werden k”nnen (Nullstellen, Monotonie, Extrema, Wendepunkte, ...).
+Neben den ersten drei Ableitungen sind fr Kurvenscharen zehn verschiedene
+Scharwerte vorgesehen.
+Mit der Maus lassen sich geeignete Ausschnitte der dargestellten Funktions-
+graphen w„hlen, sowie Vergr”áerungen und Verkleinerungen durchfhren.
+Ab Version 1.0 ist der Ausdruck der Graphen, sowie einer Wertetabelle (fr
+šbertragungen auf Millimeterpapier) und alle anderen Ergebnisse auf Epson-
+kompatiblen 24-Nadel-Druckern m”glich. Ab Version 1.1 auch auf andere Drucker.
+
+Sonstige Features:
+Fl„chenintegral nach Simpson'scher Regel, Taschenrechner, Extended Zahlen-
+format (ñ1.0Eñ4932), Vollbildanzeige, Speichern aller Daten, kontextsensi-
+tive Hilfefunktion, komfortable grafische Benutzeroberfl„che, ...
+
+Systemvoraussetzungen:
+PC-AT (ab 80286), NPU wird ggf. untersttzt, VGA-Grafikkarte, Maus (2-3 Tasten).

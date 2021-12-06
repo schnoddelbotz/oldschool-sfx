@@ -1,0 +1,1350 @@
+BOARD
+  ID          = "DPTBC01"
+  NAME        = "DPT ESDI Caching Hard Disk Controller (PM3011/7X)"
+  CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU1920"
+     NAME = "Oak Mozart Audio Controller"
+     CATEGORY = "OTH"
+
+BOARD
+     ID = "ICU19A0"
+     NAME = "Cardinal SnapPlus Video Capture Board with VGA"
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU02E0"
+     NAME        = "Eagle/Novell NE2100"
+     CATEGORY    = "NET"
+
+BOARD
+	ID = "ICU1930"
+	NAME = "Turtle Beach MultiSound 16-bit Multimedia Audio Card"
+	CATEGORY = "OTH"
+
+BOARD
+     ID = "ICU0180"
+     NAME = "Sound Blaster Multi-Media Adapter"
+     CATEGORY = "OTH"
+
+BOARD
+     ID = "ICU1140"
+     NAME = "Computer Electronik Infosys C5610"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU1680"
+     NAME        = "Micom NP600/A"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU06F0"
+     NAME        = "Cardinal MB2296SR 9600 Baud FAX/Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU05E0"
+     NAME        = "Promise Technology DC-2040 SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0310"
+     NAME        = "Proteon ProNET-4/16 Model p1390"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0330"
+     NAME        = "SMC PC330"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0320"
+     NAME        = "Racal-Datacom InterLan AT"
+     CATEGORY    = "NET"
+
+BOARD
+  ID        = "HWP18C0"
+  NAME      = "HP EtherTwist PC LAN Adapter NC/16 TP (J2405A)"
+  CATEGORY  = "NET"
+
+BOARD
+     ID          = "ICU03D0"
+     NAME        = "Thomas-Conrad TC6245"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU1710"
+     NAME        = "Novell RX-Net 810-114-001 (Rev. E,F and G)"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU0050"
+     NAME = "Western Digital WD1007A-WA2(WITH BIOS) Hard/Floppy Disk Controller"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU02A0"
+     NAME        = "D-Link DE-100"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU02F1"
+     NAME        = "Gateway Ethertwist 16 (National Chipset)"
+     CATEGORY    = "NET"
+
+BOARD
+	 ID = "ICU0091"
+	 NAME = "Adaptec AHA-1540/1542 SCSI Host Adapter"
+	 CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU02B0"
+     NAME        = "D-Link DE-200"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU02F0"
+     NAME        = "Gateway Ethertwist 16 (Fujitsu Chipset)"
+     CATEGORY    = "NET"
+
+BOARD
+  ID = "OLC0701"
+  NAME = "HP ISA 16/4 Token-Ring Network Adapter (D2378A)"
+  CATEGORY = "NET"
+
+BOARD
+     ID = "ICU0010"
+     NAME = "Intel SatisFAXtion Modem/400"
+     CATEGORY = "COM"
+
+BOARD
+     ID          = "ICU05B0"
+     NAME        = "Future Domain TMC-16xx SCSI Controller V4 with IRQ12"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU02C1"
+     NAME        = "Eagle/Novell NE1000 (950-054401)"
+     CATEGORY    = "NET"
+
+BOARD
+  ID = "ATI3010"
+  NAME = "ATI GRAPHICS ULTRA Video Accelerator Card"
+  CATEGORY = "VID"
+
+BOARD
+     ID = "ICU1910"
+     NAME = "OAK OTI-087 Graphics Card"
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU03C0"
+     NAME        = "Thomas-Conrad TC6045"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU0051"
+     NAME = "Western Digital WD1007A-WA2(WITHOUT BIOS) Hard/Floppy Disk Controller"
+     CATEGORY = "MSD"
+
+BOARD
+   ID	    	= "HWP1C00"
+   NAME	    	= "HP Serial/Parallel Interface Board (24540B)"
+   CATEGORY 	= "COM"
+
+BOARD
+     ID = "ISY0040"
+     NAME = "(SYSTEM) Hard Disk Controller"
+     CATEGORY = "MSD"
+
+BOARD  ;09/01/93 New
+ ID="ISAB704"
+ NAME="Iomega PC80/90 SCSI Adapter Boards"
+ CATEGORY="OTH"
+
+BOARD
+ ID="INT1000"
+ NAME="Intel EtherExpress 16 Family LAN Adapter"
+ CATEGORY="NET"
+
+BOARD
+	 ID          = "ICU1740"
+	 NAME        = "Western Digital WD8013E"
+	 CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU01D0"
+     NAME = "Media Vision Thunderboard Multi-Media Adapter"
+     CATEGORY = "OTH"
+
+BOARD
+     ID = "ICU1990"
+     NAME = "Cardinal Digital Sound Pro"
+     CATEGORY = "MFC"
+
+BOARD
+     ID          = "ICU1751"
+     NAME        = "3COM 3C509 EtherLink"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU1950"
+     NAME = "Gateway2000 16MV Sound Card "
+     CATEGORY = "MFC"
+
+BOARD
+     ID          = "ICU1331"
+     NAME        = "DPT PM2011 SmartCache Plus SCSI Host Bus Adapter"
+     CATEGORY    = "MSD"
+
+BOARD
+ID   = "DEC20A0"
+NAME = "Digital Ethernet Controller (DE203/DE204/DE205)" 
+CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU02C0"
+     NAME        = "Eagle/Novell NE1000 (810-160-00X)"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU1060"
+     NAME        = "Seagate ST05A"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU0190"
+     NAME = "Sound Blaster Pro Multi-Media Adapter"
+     CATEGORY = "OTH"
+
+BOARD
+     ID          = "ICU03A0"
+     NAME        = "Thomas-Conrad TC5045-2"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU1720"
+     NAME        = "PureLAN"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU0041"
+     NAME = "Western Digital WD1003V-MM2(WITHOUT FIRMWARE) Hard/Floppy Disk Controller"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU0710"
+     NAME        = "US Robotics Sportster 2400/PC Modem"
+     CATEGORY    = "COM"
+
+BOARD
+   ID       = "hwp1820"
+   NAME     = "HP EtherTwist Adapter Card/8 (27245-60002)"
+   CATEGORY = "NET"
+
+BOARD                   
+ ID="SMC8003"
+ NAME="SMC EtherCard PLUS Elite Family LAN Adapters"
+ CATEGORY="NET"
+
+BOARD
+     ID = "ICU1581"
+     NAME = "IBM Token-Ring PC Adapter II"
+     CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU1570"
+     NAME        = "Cabletron E2110"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU1980"
+     NAME = "Mitsumi CD-ROM (FX001D)"
+     CATEGORY = "OTH"
+
+BOARD
+ ID = "ICU01A3"
+ NAME = "Sound Blaster 16ASP Audio Card with CD-ROM Controllor"
+ CATEGORY = "MFC"
+
+BOARD
+     ID = "ICU0110"
+     NAME = "Paradise VGA Plus 16 Video Adapter "
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU05A0"
+     NAME        = "Future Domain TMC-16xx SCSI Controller V5 without IRQ12"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU00C0"
+     NAME = "3COM Etherlink 16 (3C507) Network Adapter"
+     CATEGORY = "NET"
+
+BOARD
+     ID = "ICU0850"
+     NAME = "SigmaDesigns Legend 24LX" 
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU03F0"
+     NAME        = "Tiara Lancard AT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0220"
+     NAME        = "Microfield Graphics V8 Video Controller"
+     CATEGORY    = "VID"
+
+BOARD
+     ID = "ICU0880"
+     NAME = "AIR AVIEW2V SVGA"
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ISY0010"
+     NAME = "(SYSTEM) VGA Board"
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ICU01E0"
+     NAME = "Pro Audio Spectrum 16 Multi-Media Adapter"
+     CATEGORY = "MFC"
+
+BOARD
+     ID          = "ICU1050"
+     NAME        = "Plus Development HARDCARD II"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0430"
+     NAME        = "Tiara Ethernet Lancard E2000"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0230"
+     NAME        = "Accton Ringpair-4/16 (TR1605)"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0460"
+     NAME        = "Tiara Lancard E * AT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU1560"
+     NAME        = "Alta EtherCombo-16 T/C"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU1580"
+     NAME = "IBM Token-Ring PC Adapter"
+     CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU0260"
+     NAME        = "CNet CN850E"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU03E0"
+     NAME        = "Tiara Lancard 2002/2003"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU1550"
+     NAME        = "Accton Etherpair-8(EN1801)"
+     CATEGORY    = "NET"
+
+BOARD                   
+ ID="SMC8013"
+ NAME="SMC EtherCard PLUS Elite16 Family LAN Adapters"
+ CATEGORY="NET"
+
+BOARD
+     ID          = "IBM5250"
+     NAME        = "IBM Enhanced 5250 Display Station Emulation Adapter"
+     CATEGORY    = "COM"
+
+BOARD
+  ID = "INT0703"
+  NAME = "Intel TokenExpress(tm) ISA/16s Network Adapter"
+  CATEGORY = "NET"
+
+BOARD
+     ID = "ICU1230"
+     NAME = "Procomp S-DCB"
+     CATEGORY = "MSD"
+
+BOARD
+  ID = "ATI4410"
+  NAME = "ATI GRAPHICS ULTRA PRO Video Accelerator Card"
+  CATEGORY = "VID"
+
+BOARD
+     ID = "ICU1100"
+     NAME = "Adaptec AHA-1520/1522 SCSI/Floppy Disk Controller"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU1030"
+     NAME        = "easyCACHE IDE/easyCACHEPro IDE"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0440"
+     NAME        = "Tiara Lancard A-286"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0520"
+     NAME        = "Zenith XT Lancard"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU04C0"
+     NAME        = "Zenith LAN10E-MAT/FAT/FL-AT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU0020"
+     NAME = "Intel SatisFAXtion Modem/100"
+     CATEGORY = "COM"
+
+BOARD
+     ID = "ICU0030"
+     NAME = "DigiBoard DigiChannel PC/4E Serial Adapter"
+     CATEGORY = "COM"
+
+BOARD
+     ID = "ICU0120"
+     NAME = "Paradise VGA 1024 Video Adapter "
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ICU0060"
+     NAME = "Archive SC402/VP402 QIC-02 Tape Controller"
+     CATEGORY = "MSD"
+
+BOARD
+     ID = "ICU0070"
+     NAME = "Wangtek PC-36 Tape Controller"
+     CATEGORY = "MSD"
+
+BOARD
+     ID = "ICU0080"
+     NAME = "Wangtek PC-02 Tape Controller"
+     CATEGORY = "MSD"
+
+BOARD
+     ID = "ICU1994"
+     NAME = "PC Logic Sonic 16"
+     CATEGORY = "MFC"
+
+BOARD
+ ID = "ICU01A4"
+ NAME = "JAZZ 16 Audio Card"
+ CATEGORY = "MFC"
+
+BOARD
+     ID          = "ICU0350"
+     NAME        = "SMC PC550"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0390"
+     NAME        = "SMC 3016"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU04E0"
+     NAME        = "Zenith LAN16TR-XT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0370"
+     NAME        = "SMC PC270E"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0380"
+     NAME        = "SMC 3008"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU00B0"
+     NAME = "3COM Etherlink II (3C503) Network Adapter"
+     CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU06E2"
+     NAME        = "Cardinal MVP144IF Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID = "ICU01B0"
+     NAME = "Gravis Ultra Sound Multi-Media Adapter"
+     CATEGORY = "OTH"
+
+BOARD
+     ID          = "ICU03B0"
+     NAME        = "Thomas-Conrad TC6042/TC6142/TC6242"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0400"
+     NAME        = "Tiara Lancard PC"
+     CATEGORY    = "NET"
+
+BOARD
+	 ID = "ICU1993"
+	 NAME = "Cardinal Digital Sound Pro Plus Wavetable Edition"
+	 CATEGORY = "MFC"
+
+BOARD
+     ID = "ICU00D0"
+     NAME = "SMC PC600WS Network Adapter"
+     CATEGORY = "NET"
+
+BOARD
+     ID = "ICU0150"
+     NAME = "Orchid Fahrenheit 1280 Video Adapter "
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU0610"
+     NAME        = "Ultrastor ULTRA15C IDE Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU0900"
+     NAME = "NDI Volante Warp Series Warp10LB and 24LB"
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU04F0"
+     NAME        = "Zenith LAN4TR-AT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU06E0"
+     NAME        = "Cardinal MVP96IF 9600 Baud FAX/Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU05F0"
+     NAME        = "Ultrastor ULTRA14F SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0450"
+     NAME        = "Tiara Lancard E"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0560"
+     NAME        = "DTC3150 SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0480"
+     NAME        = "Tiara Lancard E * PC"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU00E0"
+     NAME = "SMC PC130E Network Adapter"
+     CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU0490"
+     NAME        = "Tiara Lancard E * PC10BT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0360"
+     NAME        = "SMC PC650"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0420"
+     NAME        = "Tiara Ethernet Lancard * 2000"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU04D0"
+     NAME        = "Zenith LAN16TR-AT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0500"
+     NAME        = "Zenith LAN4TR-XT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0970"
+     NAME        = "CMS Enhancement Universal AT/XT Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0590"
+     NAME        = "Future Domain TMC-885/TMC-860 SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0530"
+     NAME        = "BOCA M1440I 14.4Kbps V.32bis Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU0510"
+     NAME        = "Zenith OfficeNIC"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0570"
+     NAME        = "Data Technology DTC3250 SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+	 ID          = "ICU1640"
+	 NAME        = "Katron 16TB"
+	 CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU04A0"
+     NAME        = "Tiara Lancard E * PC10TP"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU04B0"
+     NAME        = "Tiara Token Ring Lancard*16 AT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0640"
+     NAME        = "Intel EtherExpress TPE Hub Controller"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU1590"
+     NAME        = "InvisibleLAN Ethernet Combo/2000"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0470"
+     NAME        = "Tiara Lancard E * AT TP"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0680"
+     NAME        = "DFI DIO-500 Serial/Parallel I/O Card"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU0550"
+     NAME        = "Data Technology DTC3180A/DTC3280A SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU06E1"
+     NAME        = "Cardinal MVP144DSP Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU0620"
+     NAME        = "Longshine LCS-6624/6624G IDE Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+   ID = "NIC1601"
+   NAME = "Tulip NCC16/NCC16HUB"
+   CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU0690"
+     NAME        = "Practical Peripherals PM9600FX Modem/FAX"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU0740"
+     NAME        = "Racal InterLan NI5210-10BT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU05D0"
+     NAME        = "Promise Technology DC-2031 IDE Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0540"
+     NAME        = "Always Technology IN-2000 SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU06A0"
+     NAME        = "Practical Peripherals PM2400 Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID = "ISY0020"
+     NAME = "(SYSTEM) COM Ports"
+     CATEGORY = "OTH"
+
+BOARD
+     ID          = "ICU0410"
+     NAME        = "Tiara ARCNET Lancard AT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU05C0"
+     NAME        = "Promise Technology DC-2030 IDE Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU1181"
+     NAME        = "DPT PM2001 SmartConnex SCSI Host Bus Adapter"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU1630"
+     NAME        = "GVC NIC-2000BT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0660"
+     NAME        = "Zoom AFC FAX Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID = "ICU0890"
+     NAME = "NDI Volante Warp Series Warp10"
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU06B0"
+     NAME        = "Zoom VFP V.32bis FAX Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU0650"
+     NAME        = "US Robotics Sportster 9600/PC Modem w/V.42BIS"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU06C0"
+     NAME        = "Zoom VP V.32bis Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU0681"
+     NAME        = "DFI DIO-200 Serial/Parallel I/O Card"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU1020"
+     NAME        = "NCL538C"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0630"
+     NAME        = "Longshine LCS-6631/6631F SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU06E4"
+     NAME        = "Cardinal MVP24IF Soft V.42 Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID = "ICU0130"
+     NAME = "Orchid Prodesigner IIs Video Adapter"
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ICU01A0"
+     NAME = "Sound Blaster 16ASP Multi-Media Adapter"
+     CATEGORY = "OTH"
+
+BOARD
+     ID          = "ICU06E6"
+     NAME        = "PC Logic FAX144I"
+     CATEGORY    = "COM"
+
+BOARD
+     ID = "ICU01A1"
+     NAME = "Sound Blaster 16 Multi-Media Adapter"
+     CATEGORY = "OTH"
+
+BOARD
+     ID = "ICU1130"
+     NAME = "Bustek BT-542S/BT-542D"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU06D0"
+     NAME        = "Zoom AMC 2400 Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID = "ICU0910"
+     NAME = "Alpha Cyber Audio Multi-Media Adapter"
+     CATEGORY = "MFC"
+
+BOARD
+     ID = "ICU01A2"
+     NAME = "Sound Blaster 16 SCSI-2 Audio Card"
+     CATEGORY = "MFC"
+
+BOARD
+     ID = "ICU1992"
+     NAME = "Cardinal Digital Sound Pro Wavetable Edition"
+     CATEGORY = "MFC"
+
+BOARD
+     ID          = "ICU0720"
+     NAME        = "US Robotics Sportster 14,400/PC FAX/Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU1040"
+     NAME        = "Plus Development HARDCARD II XL"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU1940"
+     NAME = "Gateway2000 16BA,16AZ, & 16A Audio Card"
+     CATEGORY = "MFC"
+
+BOARD
+     ID = "ICU0200"
+     NAME = "Intel Above Board Plus 8 I/O"
+     CATEGORY = "MEM"
+
+BOARD
+     ID          = "ICU1200"
+     NAME        = "easyCACHE SCSI/easyCACHEPro SCSI"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0270"
+     NAME        = "CNet CN800E/880E"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0750"
+     NAME        = "Racal InterLan NI6510-UTP"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU1341"
+     NAME        = "DPT PM2021 SmartCache III SCSI Host Bus Adapter"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU1080"
+     NAME        = "Silicon ADP60"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU0920"
+     NAME = "Genoa SuperVGA 6000 Series"
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU1090"
+     NAME        = "Silicon ADP65"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU0860"
+     NAME = "Hercules Graphite Card"
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU1000"
+     NAME        = "NCL538/NCL539"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU1260"
+     NAME = "SMS OMTI-810/812/820/822"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU0580"
+     NAME        = "Future Domain TMC-850xx (8-bit) SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU1190"
+     NAME = "Quantum ISA-200S"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU0960"
+     NAME        = "Alpha Research S4251 ISA"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0600"
+     NAME        = "Ultrastor ULTRA12C/12F ESDI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU1250"
+     NAME = "Rancho RT10-AT"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU1600"
+     NAME        = "Kodiak ~16 10BT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU1150"
+     NAME = "Computer Electronik Infosys C5630"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU1010"
+     NAME        = "NCL538B"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0290"
+     NAME        = "Cogent E/Master I-AT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU06E7"
+     NAME        = "PC Logic FAX192I"
+     CATEGORY    = "COM"
+
+BOARD
+  ID          = "DPTA701"
+  NAME        = "DPT SCSI Host Bus Adapter (PM2011B1/9X)"
+  CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU1620"
+     NAME        = "IMC EtherNIC/8"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0231"
+     NAME        = "Accton MPX Ethernet Adapter (EN165x)" 
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0980"
+     NAME        = "Eastern IDC-747"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID          = "ICU0250"
+     NAME        = "CNet CN1000T"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU0280"
+     NAME        = "Cogent E/Master II-AT"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU0100"
+     NAME = "Western Digital WD8003E Network Adapter"
+     CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU06E3"
+     NAME        = "Cardinal MVP192I Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU02D0"
+     NAME        = "Eagle/Novell NE1500T"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU06E5"
+     NAME        = "PC Logic FAX144DM"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU0300"
+     NAME        = "Gateway Ethertwist PC/PC-WS(National Chipset)"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU06E8"
+     NAME        = "PC Logic 24I-SRF-Soft V.42"
+     CATEGORY    = "COM"
+
+BOARD
+     ID = "ICU1300"
+     NAME = "IBM Token-Ring 16/4 Adapter"
+     CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU0340"
+     NAME        = "SMC PC500"
+     CATEGORY    = "NET"
+
+BOARD
+  ID = "INT0701"
+  NAME = "Intel TokenExpress(tm) ISA 16/4 Network Adapter"
+  CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU0561"
+     NAME        = "DTC3150B SCSI Controller"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU0840"
+     NAME = "Cardinal VIDEO spectrum" 
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU1670"
+     NAME        = "Madge Smart AT Ringnode"
+     CATEGORY    = "NET"
+
+BOARD
+ ID = "ICU01A5"
+ NAME = "Premium 3-D SCSI2/Pro 3-D SCSI2"
+ CATEGORY = "MFC"
+
+BOARD
+     ID          = "ICU06F1"
+     NAME        = "Zoom/Voice FaxModem VFP 14.4V"
+     CATEGORY    = "COM"
+
+BOARD
+     ID = "ICU0730"
+     NAME = "Intel SatisFAXtion Modem/200"
+     CATEGORY = "COM"
+
+BOARD
+     ID = "ICU0760"
+     NAME = "Intel Smart Video Recorder"
+     CATEGORY = "OTH"
+
+BOARD
+     ID          = "ICU1660"
+     NAME        = "Madge Smart 16/4 PC Ringnode"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU1240"
+     NAME = "Procomp USA, Incorporated S-DCB"
+     CATEGORY = "MSD"
+
+BOARD
+     ID = "ICU0770"
+     NAME = "Diamond Stealth Pro Accelerator"
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ICU1360"
+     NAME = "SyQuest SQ08  IDE  Controller"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU0700"
+     NAME        = "Hayes Accura 2400B Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ICU1730"
+     NAME        = "Pure PDI515"
+     CATEGORY    = "NET"
+
+BOARD
+     ID          = "ICU1750"
+     NAME        = "3COM 3C501 EtherLink"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU0780"
+     NAME = "Diamond SpeedStar 24X VGA adapter"
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU1610"
+     NAME        = "Ansel NC2000 Rev. D"
+     CATEGORY    = "NET"
+
+BOARD
+	 ID          = "ICU1650"
+	 NAME        = "Longshine LCS-8634T (REV.A)"
+	 CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU0790"
+     NAME = "Video Seven WIN.PRO card"
+     CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU1700"
+     NAME        = "Novell RX-Net 810-114-001 (Rev. B,C and D)"
+     CATEGORY    = "NET"
+
+BOARD
+  ID = "ATI5810"
+  NAME = "ATI GRAPHICS PRO TURBO Video Accelerator Card"
+  CATEGORY = "VID"
+
+BOARD
+     ID          = "ICU1690"
+     NAME        = "Novell NE1000(Assembly #950-054401)"
+     CATEGORY    = "NET"
+
+BOARD  ;12/19 gha New - 08/30/93 tmt Added new IO Addrs. and IRQ sel.
+ ID="ISAB701"
+ NAME="Iomega PC2 SCSI Adapter Boards"
+ CATEGORY="OTH"
+
+BOARD
+     ID = "ICU0800"
+     NAME = "Video Seven WIN.VGA card"
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ICU1970"
+     NAME = "Sony CD-ROM"
+     CATEGORY = "OTH"
+
+BOARD
+     ID          = "ICU0240"
+     NAME        = "CNet CN600E/680E"
+     CATEGORY    = "NET"
+
+BOARD
+	 ID = "ICU1991"
+	 NAME = "Cardinal Digital Sound Pro Plus"
+	 CATEGORY = "MFC"
+
+BOARD
+     ID = "ICU1160"
+     NAME = "Computer Electronik Infosys C5635"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ICU19B0"
+     NAME        = "Gateway2000 Telepath 14.4 ISA Modem"
+     CATEGORY    = "COM"
+
+BOARD
+     ID          = "ARC0020"
+     NAME        = "Alta TokenCombo-16 S/U"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU0810"
+     NAME = "BOCA Super X Accelerator VGA"
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ICU1911"
+     NAME = "OAK OTI-107 Graphics Card"
+     CATEGORY = "VID"
+
+BOARD
+   ID       = "HWP18A0"
+   NAME     = "HP EtherTwist PC LAN Adapter/16 TL Plus (27252A)"
+   CATEGORY = "NET"
+
+BOARD
+     ID = "ICU0820"
+     NAME = "Metheus Premier 928"
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ICU01C0"
+     NAME = "Logitech Soundman 16 Multi-Media Adapter"
+     CATEGORY = "OTH"
+
+BOARD
+     ID = "ICU0870"
+     NAME = "Focus GUIVGA"
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ICU0830"
+     NAME = "GraphicsENGINE ULTRA Series"
+     CATEGORY = "VID"
+
+BOARD
+     ID = "ICU1951"
+     NAME = "Gateway2000 16MVL Sound Card "
+     CATEGORY = "MFC"
+
+BOARD
+     ID          = "ICU0950"
+     NAME        = "Acculogic sIDE-3/plus"
+     CATEGORY    = "MSD"
+
+BOARD
+     ID = "ICU1900"
+     NAME = "Generic PCMCIA to ISA Adapter with 82366SL"
+     CATEGORY = "OTH"
+
+BOARD
+  ID = "ATI1C10"
+  NAME = "ATI VGA Wonder XL24 Video Card"
+  CATEGORY = "VID"
+
+BOARD
+     ID = "ISY0060"
+     NAME = "(SYSTEM) LPT Ports"
+     CATEGORY = "OTH"
+
+BOARD
+     ID = "ISY0070"
+     NAME = "(SYSTEM) IRQ9 Cascaded Interrupt"
+     CATEGORY = "OTH"
+
+BOARD
+     ID = "ISY0100"
+     NAME = "(SYSTEM) Mother Board Devices"
+     CATEGORY = "OTH"
+
+BOARD
+     ID = "ICU1120"
+     NAME = "Bustek BT-542B"
+     CATEGORY = "MSD"
+
+BOARD
+   ID = "NIC1602"
+   NAME = "T.C.I. NCC16/NCC16HUB"
+   CATEGORY = "NET"
+
+BOARD
+     ID          = "ICU19d0"
+     NAME        = "NE 2000plus Ethernet Adapter Card"
+     CATEGORY    = "NET"
+
+BOARD
+     ID = "ICU01F0"
+     NAME = "Microsoft Windows Sound System Multi-Media Adapter"
+     CATEGORY = "OTH"
+
+BOARD
+     ID          = "ICU00A1"
+     NAME        = "DPT PM2011B1 SmartCache Plus SCSI Host Bus Adapter"
+     CATEGORY    = "MSD"
+
+BOARD
+  ID = "OEM5120"
+  NAME = "Token ring Network 16/4 Adapter II"
+  CATEGORY = "NET"
+
+BOARD
+     ID = "ISY0030"
+     NAME = "(SYSTEM) Mother Board PS-2 style Mouse"
+     CATEGORY = "PTR"
+
+BOARD
+     ID = "ISY0050"
+     NAME = "(SYSTEM) Floppy Drive Controller"
+     CATEGORY = "MSD"
+
+BOARD
+   ID       = "HWP1832"
+   NAME     = "HP EtherTwist PC LAN Adapter/16 TP Plus (27247B)"
+   CATEGORY = "NET"
+
+BOARD
+     ID = "ICU0040"
+     NAME = "Western Digital WD1003V-MM2(WITH FIRMWARE) Hard/Floppy Disk Controller"
+     CATEGORY = "MSD"
+
+BOARD
+     ID          = "ARC0010"
+     NAME        = "Alta EtherTPI/Combo"
+     CATEGORY    = "NET"
+
+BOARD
+	 ID = "ICU1995"
+	 NAME = "PC Logic Sonic Wave"
+	 CATEGORY = "MFC"
+
+BOARD						
+   ID	    	= "HWP1400"
+   NAME	    	= "HP Dual Serial Interface Board (24541B)"
+   CATEGORY 	= "COM"
+
+BOARD
+     ID = "ICU19C0"
+     NAME = "MIO-400KF Card"
+     CATEGORY = "MFC"
+
+BOARD  ;09/10/93 tmt NEW
+ ID="ISAB703"
+ NAME="Iomega PC1600 SCSI Adapter Board"
+ CATEGORY="OTH"
+
+BOARD                   
+ ID="SMC8115"
+ NAME="SMC TokenCard Elite Family LAN Adapters"
+ CATEGORY="NET"
+
+BOARD                   
+ ID="SMC8216"
+ NAME="SMC EtherCard Elite16 ULTRA Family LAN Adapters"
+ CATEGORY="NET"
+
+BOARD                   
+ ID="SMC8416"
+ NAME="SMC EtherEZ LAN Adapter"
+ CATEGORY="NET"
+
+BOARD
+    ID   = "KTC0201"
+    NAME = "Kingston EtheRx KNE21xx Series Adapter"
+    CATEGORY = "NET"
+
+BOARD
+     ID = "ICU1310"
+     NAME = "Thomas TC-4045"
+     CATEGORY = "NET"
+
+BOARD
+  ID = "IIN0B01"
+  NAME = "Intel TokenExpress(tm) ISA/8 Network Adapter"
+  CATEGORY = "NET"
+
+BOARD
+     ID = "ICU1952"
+     NAME = "LMSI CD_ROM Card "
+     CATEGORY = "MFC"
+
+BOARD
+     ID = "ICU1960"
+     NAME = "Intel 82091AA (AIP) Evaluation Board"
+     CATEGORY = "OTH"
+
+BOARD
+ID = "ICU01E1"
+NAME = "Pro AudioStudio 16 Sound card"
+CATEGORY = "MFC"
+
+BOARD
+     ID = "ICU0211"
+     NAME = "Microsoft Bus Mouse"
+     CATEGORY = "PTR"
+
+BOARD
+     ID = "ICU0210"
+     NAME = "Logitech Bus Mouse"
+     CATEGORY = "PTR"
+
+BOARD
+	ID = "ISY0200"
+	NAME = "(SYSTEM GENERIC)Sound Blaster compatible card"
+	CATEGORY = "OTH"
+

@@ -1,0 +1,35 @@
+FormelEins - Evolution  (JR)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(Deutsches DOS-Shareware-Kurvendiskussions-Programm)
+
+
+
+Version   Datum/Verbesserungen
+-------   ---------------------------------------------------------------------
+
+  0.99    (??.04.1992)
+          "First Release"!
+          [Druckerausgabe noch nicht implementiert; Schwierigkeiten bei
+           Potenzfunktionen (x^y) mit negativen Basen (xÛ0)].
+
+  1.0     (12.05.1992)
+          "Sweet little bugs removed"; Druckerausgabe fÅr Epson-LQ.
+
+  1.01    (27.05.1992)
+          Grafik-Druckertreiber war bisher falsch eingelinkt (=> "Fehler:
+          BGI-Drucker-Treiber nicht gefunden!"); jetzt endlich Grafikdruck
+          auf Epson-LQ-Druckern (oder kompatiblen) mîglich.
+
+  1.02    (11.06.1992)
+          Anpassungsfehler der Grafikausgabe auf A4-Papier "hoffentlich"
+          beseitigt.
+
+  1.1     (10.04.1994)
+          Endlich bin ich dazu gekommen (fast) alle Druckerfamilien (Epson,
+          NEC, IBM, HP) zu unterstÅtzen und zwar im Grafik- und Textdruck;
+          Shareware-Countdown von 20 auf 5 Sekunden verkÅrzt (!). 
+           
+
+
+Systemanforderungen:  PC-AT (ab 80286), MS-DOS, VGA-Grafikkarte, Maus (2/3).
+

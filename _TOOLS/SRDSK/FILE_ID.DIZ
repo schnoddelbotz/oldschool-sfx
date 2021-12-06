@@ -1,0 +1,8 @@
+ReSizeable RAMDisk 2.03.
+Copyright (c) 1993 Marko Kohtala. Released 
+Apr 22nd, 1993. SRDISK is a virtual disk 
+device driver and controller capable of using 
+over 32M of XMS and EMS memory. The disk can 
+be disabled and it's size can be changed 
+without rebooting. Lots of other usefull 
+features.

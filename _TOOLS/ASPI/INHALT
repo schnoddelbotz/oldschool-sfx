@@ -1,0 +1,63 @@
+Auflistung der Verzeichnispfade fr Datentr„ger ASPIxDOS   
+Datentr„gernummer: 4453-4D90
+
+A:\ASPIXDOS
+³   INHALT
+³   ASPI_KOR.TXT
+³   
+ÃÄÄÄASM
+³       ASPIXDOS.DEF
+³       ASPIXDOS.INC
+³       EXTMAC.MAC
+³       ASPIXDOS.MAC
+³       ASPIXDOS.ASM
+³       
+ÃÄÄÄC
+³   ³   ASPIXDOS.H
+³   ³   
+³   ÀÄÄÄEXAMPLE
+³           EXAMPLE.PRJ
+³           EXAMPLE.C
+³           
+ÃÄÄÄDEMO
+³       SHOWSCSI.EXE
+³       SHOWSCSI.PAS
+³       
+ÃÄÄÄDOC
+³       ASPIXDOS.DOC
+³       DOKUMENT.DOT
+³       ASPI_S.DS4
+³       
+ÃÄÄÄPAS
+³       ASPIXDOS.OBJ
+³       ASPIXDOS.TPU
+³       ASPIXDOS.PAS
+³       
+ÃÄÄÄWIN
+³       ASPI-WIN.TXT
+³       
+ÀÄÄÄLIB
+    ÃÄÄÄSMALL
+    ³       ASPIXDOS.OBJ
+    ³       ASPIXDOS.LIB
+    ³       
+    ÃÄÄÄTINY
+    ³       ASPIXDOS.OBJ
+    ³       ASPIXDOS.LIB
+    ³       
+    ÃÄÄÄMEDIUM
+    ³       ASPIXDOS.OBJ
+    ³       ASPIXDOS.LIB
+    ³       
+    ÃÄÄÄLARGE
+    ³       ASPIXDOS.OBJ
+    ³       ASPIXDOS.LIB
+    ³       
+    ÃÄÄÄHUGE
+    ³       ASPIXDOS.OBJ
+    ³       ASPIXDOS.LIB
+    ³       
+    ÀÄÄÄCOMPACT
+            ASPIXDOS.OBJ
+            ASPIXDOS.LIB
+            

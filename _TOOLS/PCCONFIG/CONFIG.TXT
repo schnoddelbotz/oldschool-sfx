@@ -1,0 +1,767 @@
+
+  PC-CONFIG
+  =========
+  System-Info und Benchmark-Programm fÅr PCs und Kompatible.
+
+  (c) by Holin Datentechnik, PF 1147, 65432 Flîrsheim, Germany
+         Telefon  06145 941-888
+         Fax               -889
+         Internet 100441.1366@compuserve.com
+                  http://ourworld.compuserve.com/homepages/holin
+
+
+
+    CONFIG-Highlights:
+    ------------------
+
+     1) unterscheidet ISA, EISA, MCA, VLB und PCI Mainboards
+     2) eingebauter CD-ROM Benchmark
+     3) detailierte ASPI Informationen Åber angeschlossene SCSI GerÑte
+     4) erkennt Prozessor-Cache und dessen Grî·e (8-512 KB)
+     5) unterscheidet DX und SX CPUs, Cyrix486, 5x86, 6x86 & NexGen
+     6) erkennt Hersteller und Chipsatz der VGA-Karte und ggf BIOS-Version
+     7) identifiziert die einzelnen Steckkarten in PCI & MCA Rechnern
+     8) erkennt eine Reihe von Festplatten-Cache-Programmen
+     9) zeigt HI-DOS-Speicher unter DOS5, 386MAX, QEMM386 und MOVE'EM an
+    10) ermittelt verschieden schnelle Speicherbereiche im ersten Megabyte
+        und im Extended Memory
+    11) testet auf Hardware-Shadow-RAM von MAIN-BIOS und VGA-BIOS
+    12) zeigt physikalische Parameter von ESDI-Festplatten an
+*   13) zeigt Name, Cachegrî·e, Controllerversion von AT-Bus-Platten an
+*   14) ermittelt Bildschirmwiederholfrequenz auf VGA-Karten
+
+*   Nur in der registrierten Version
+
+
+| Dies Zeichen am Rand bedeutet: énderung gegenÅber der letzten Version.
+
+
+  Copyright und Lizenzvereinbarung:
+  =================================
+  CONFIG ist (c) copyright by Michael Holin
+                 Kiesstrasse 6
+                 65439 Flîrsheim
+  
+
+  Der Anwender des vorliegenden Softwareprodukts erkennt an, da· dieses
+  Programm sowie dessen Dokumentation dem Urheberrecht, Copyright-, Eigentums-
+  und weiteren Schutzrechten unterliegt, und da· er zu keinem Zeitpunkt mit
+  dem Erwerb oder der Nutzung des Programms eines der vorbezeichneten Rechte
+  erwirbt, vielmehr lediglich das Recht zur unausschlie·lichen privaten Nutzung
+  des Produkts.
+  Das Programm, sowie Teile des Programms oder der Programmdokumentation
+  dÅrfen au·er zur Erstellung von Sicherheitskopien nicht vervielfÑltigt oder
+  kopiert werden. Der KÑufer darf das Programm nur fÅr seine eigenen Zwecke
+  und nur auf "einem" Computer zur gleichen Zeit nutzen und es Dritten weder
+  entgeltlich noch unentgeltlich Åberlassen.
+
+  Das Programm, sowie die Dokumentation, dÅrfen ohne schriftliche Erlaubnis
+  des Autors nicht verÑndert, erweitert, an andere Systeme angepa·t oder in
+  andere Sprachen Åbersetzt werden. Mit Einsatz und Nutzung des Programms
+  erkennt der Anwender diese Lizenz- und Nutzungsbedingungen an.
+
+  Ohne die CONFIG.REG Datei, die sich im selben Verzeichnis wie CONFIG.EXE
+  befinden mu·, ist die Vollversion nicht lauffÑhig. Bewahren Sie diese
+  CONFIG.REG Datei gut auf, auch zukÅnftige Versionen von CONFIG werden auf
+  sie zurÅckgreifen. Die Weitergabe an Dritte ist untersagt!
+
+
+  Preise:
+  =======
+  Studentenversion     :  22 DM /  15 US$
+  Private Version      :  29 DM /  20 US$
+  Kommerzielle Version :  99 DM /  70 US$
+
+  Die Studentenversion erhalten SchÅler, Studenten, Schulen, Jugendzentren,
+  gemeinnÅtzige Vereine bei Einsendung einer entsprechenden Bescheinigung.
+  Diese Preise gelten bei Vorkasse! Bei Nachnahme addieren Sie bitte DM 9,-
+  Versand ins Ausland nur gegen Vorkasse oder bei Bezahlung mit Kreditkarte.
+
+  Sie kînnen ebenfalls Åber COMPUSERVE GO SWREG Forum registrieren.
+  Nummer 3878 steht fÅr die deutsche Version, Nummer 3879 fÅr die englische.
+
+
+  Systemanforderungen:
+  ====================
+  IBM AT oder Kompatibler 80286 mit min. 400 KB freiem RAM
+  MS-DOS ab V2.0, besser ab V3.0
+  CGA, MDA, EGA, VGA-kompatible Grafikkarte
+
+
+  Garantievereinbarung:
+  =====================
+  Programm und Anleitung werden Ihnen Åberlassen "wie besehen", das hei·t, der
+  Autor Åbernimmt keine Haftung fÅr die Eignung der Software oder der Doku-
+  mentation zu irgendeinem besonderen Zweck. Insbesondere haftet er nicht
+  fÅr SchÑden oder FolgeschÑden, die direkt, indirekt, absichtlich oder unab-
+  sichtlich durch den Einsatz des Programms oder der Dokumentation entstehen.
+  Das Programm, die Dokumentation und die Preise kînnen jederzeit ohne
+  vorherige AnkÅndigung geÑndert, erweitert oder erhîht werden.
+
+
+  Updates:
+  ========
+  Neue Versionen, die kleinere Fehler beheben, kînnen Sie online aus dem
+  Internet holen bei http://ourworld.compuserve.com/homepages/holin
+
+  Die Versionsnummern werden sich natÅrlich im Laufe der Zeit Ñndern.
+  Es wird nicht garantiert, da· dieser Service jahrelangen Bestand hat.
+  Wer kein Modem hat, kann ein Update fÅr DM 18,- zzgl. DM 2,- Versandkosten
+  beim Autor direkt bestellen.
+
+
+
+  Umfang:
+  =======
+  CONFIG.EXE      - Das Programm
+  CONFIG.TXT      - Dieser Text
+  CONFIG.INI      - Die Konfigurations-Datei mit den Schaltern. Hier kînnen
+                    Sie mit einem Editor énderungen vornehmen.
+  CONFIG.HIS      - EnthÑlt eine Beschreibung der einzelnen CONFIG-Versionen
+  CONFIG.FAQ      - HÑufig gestellt Fragen und ihre Antworten
+  CONFIG.REG      - EnthÑlt Ihren Namen und den dazugehîrigen Code. Bitte
+                    gut aufbewahren. Die Weitergabe an Dritte ist verboten!
+  CONFIG.1ST      - Text, der beim ersten Start von CONFIG angezeigt wird,
+                    wird anschlie·end selbststÑndig gelîscht.
+  CONFIG.MCA      - EnthÑlt Informationen Åber Microchannel-Karten.
+  CONFIG.VGL      - Datei mit eigener Vergleichsliste, editierbar mit
+                    ASCII-Editor.
+  CONFIG.XXX      - Eine Hardcopy des Bildschirms (mit F4 erzeugt).
+
+
+  Kurze Beschreibung:
+  ===================
+  PC-CONFIG ist in erster Linie ein Programm, das Ihnen alle Innereien
+  Ihres Rechners auflistet, ohne da· Sie eine Schraube am GerÑt îffnen
+  mÅssen, um hineinzusehen. Einige Programme dieser Art (nennen wir sie
+  Rechnertest-Programme oder Hardware-Diagnoseprogramme) gibt es
+  mittlerweile auf dem internationalen,
+  kommerziellen Markt, doch wenn Sie ein deutsches Programm suchen,
+  was diesen Zweck erfÅllen soll, dann werden Sie CONFIG in die ganz enge
+  Wahl ziehen. Hauptanwender von PC-CONFIG sind interessierte Laien und Profis,
+  die Åber die Hardware-Ausstattung ihrer Rechner immer genau im Bild sein
+  wollen, sei es, weil sie beabsichtigen, sich einen neuen Rechner
+  zu kaufen, und die schon im Laden ÅberprÅfen wollen, ob "wirklich das drin
+  ist, was draufsteht", oder weil sie hÑufig die Hardwarezusammenstellung
+  ihrer Rechner Ñndern und wissen wollen, ob auch wirklich alles zusammen
+  lÑuft.
+
+
+  Installation
+  ============
+  Kopieren Sie alle CONFIG-Files aus dem Hauptverzeichnis Ihrer Diskette
+  oder CD in ein Verzeichnis auf Ihrer Festplatte. Starten Sie das Programm
+  durch Eingabe von CONFIG und der Enter-Taste. Das Programm ist nicht
+  kopiergeschÅtzt. Sie kînnen es auch von Diskette starten.
+
+
+Das Fenster HARDWARE
+====================
+Maschine:
+  Hier wird das BIOS des Rechners nach einem Hinweis auf den mîglichen
+  Computer-Hersteller durchsucht (z.B. Commodore, Unitron...), und der
+  Rechner wird generell klassifiziert (XT, AT, AT 386). Ferner wird auf
+  Chips & Technologies-, G2-, OPTI, SIS, UMC, FOREX, ETEQ, ELITE, Contac,
+  Symphony und Shasta ChipssÑtze getestet (siehe weiter unten: Probleme).
+BIOS:
+  Hier wird der im BIOS gefundene Copyright-String ausgegeben. Unter Um-
+  stÑnden liegt das Copyright des Rechner-BIOS nicht beim Computer-Her-
+  steller. Das liegt daran, da· viele Hersteller lizensierte BIOS-Versionen
+  verwenden. So sind z.B. Unitron-Computer mit einem Phoenix-BIOS ausge-
+  stattet.
+BIOS-Datum:
+  Hier kann das Alter des BIOS (und damit des Rechners) abgelesen werden.
+  Au·erdem wird (auf ATs die jÅnger als 1987 sind) getestet, ob das BIOS
+  ins Shadow-RAM kopiert wurde. Sollten Speicherzugriffe aufs BIOS genau so
+  schnell ausgefÅhrt werden wie Speicherzugriffe aufs RAM, dann wird davon
+  ausgegangen, da· Shadow-RAM vorliegt. Wenn bei 386ern der Zugriff auf das
+  ROM 32-Bit-breit erfolgt, wird Shadow-RAM angenommen.
+BIOS-Extension:
+  Die Adressen von BIOS-Erweiterungen wie VGA-ROM, SCSI-Festplatten-ROM
+  werden angezeigt.
+Bus System:
+  Ist der Rechner mit dem Standard Bus (ISA = Industrial Standard Architec-
+  ture), mit dem EISA-Bus (Extended ISA), IBMs Microchannel (MCA), einem
+  VESA-Local-Bus oder mit einem PCI-Bus ausgestattet?
+  Die VESA-Local-Bus-Erkennung funktioniert z.Z. nur, wenn der Rechner
+  mit voller Geschwindigkeit lÑuft und eine VLB-VGA installiert ist.
+Prozessor:
+  Die CPU des Rechners wird identifiziert. Bei 80386 & 80486 Prozessoren
+  wird angegeben, ob sie im REAL- oder VIRTUAL-Mode lÑuft (viele Memory-
+  Manager wie 386MAX schalten die CPU in den VIRTUAL-Mode). Die Taktfrequenz
+  der CPU wird angezeigt und die Anzahl der Warte-Zyklen bei Speicherzu-
+  griffen (nur bei 8- und 16-Bit CPUs).
+  Unter anderem werden folgende CPUs erkannt:
+  AMD:
+     80486DX/4  ein 486er intern 3-fach getaktet, mit 8k Cache
+     5x86 P75:  ein Chip mit 486er Pinout, extern mit 33, intern mit 133 MHz
+                getacktet, 16k Cache
+|    5k86:      ein Chip im Pentium Layout, mit 16k Daten und 8k Code Cache
+                onboard.
+  Intel:
+     80386SL:   eine 386SX Version mit statischem Kern, d.h., sein Takt kann
+                bis auf 0 MHz reduziert werden und der Stromverbrauch ist dann
+                nahezu gleich Null.
+     RapidCAD:  ein 2-teiliger Chip, pinkompatibel zu 386DX und 387DX,
+                allerdings mit 486er Strukturen
+     80486DX:   der normale 486er mit internem Copro und 8k Cache
+     80486SX:   die entsprechende Version ohne mathematischen Copro
+     80486SL:   Stromsparversion des 486SX, Ñhnlich dem 386SL
+     80486DX/2: ein 486er mit interner Taktverdopplung
+     80486SX/J: ein 80486SX mit nur 16 Bit Datenbus
+     80486DX/4: ein 486er intern 3-fach getaktet, mit 16k Cache
+     Pentium:   der normale Pentium, zZ mit 60,66,75,90,100,120,150,166 MHz
+                Die Versionen mit 60 und 66 MHz (Modeltyp 1) laufen mit
+                einer Betriebsstannung von 5V, die anderen (Modeltyp 2)
+                laufen mit 3.3V oder 2.9V
+     PentiumPro:neuste Generation von CPUs, jetzt mit 256 oder 512k L2-Cache
+                auf dem Chip. zZ mit 150,180,200 MHz
+
+  Cyrix:
+     Cx486DLC:  ein 386DX-pinkompatibler Chip mit 1k int. Cache
+     Cx486SLC:  ein 386SX-pinkompatibler Chip mit 1k int. Cache
+     Cx486S:    ein 486SX-pinkompatibler Chip mit 2k int. Cache
+     Cx486DX:   ein 486DX-pinkompatibler Chip mit 8k int. Cache und Copro
+     Cx486DX/2: ein dem 80486DX/2 entsprechender Chip
+     Cx486DX/4: ein dem 80486DX/4 entsprechender Chip mit WriteBack Features
+     Cx5x86:    ein Chip mit 486er Pinout, intern jedoch stark optimiert mit
+                16k Cache. zZ 100 & 120 MHz Versionen
+     Cx6x86:    ein Chip mit Pentium-Pinout
+  IBM:
+     486SLC:    ein 486SX-kompatibler Chip mit nur 16 Bit Datenbus, aber
+                mit 16k internem Cache
+     486BL:     der 'Blue-Lightning' von IBM, mit interner Taktverdopplung
+                oder Verdreifachung, nur 16 Bit Datenbus.
+  NexGen:
+     586:       ein Prozessor der 5ten Generation, wie der Pentium
+                mit 32k internem Cache, z.Z. allerdings ohne eingebauten
+                mathematischen Coprozessor.
+
+  Texas Instruments:
+     TI486SXL:  ein dem Cx486DLC entsprechender Chip mit 8k int. Cache
+  UMC:
+     UMC U5S:   ein 486SX-pinkompatibler Chip, etwas schneller als dieser
+     UMC U5D:   ein 486DX-pinkompatibler Chip, etwas schneller als dieser
+
+  Seit ca. Mitte 93 liefert Intel 80486er mit einigen internen Erweiterungen,
+  beispielsweise Stromspar-Mechanismen aus. Diese Chips (auch 486-S genannt)
+  unterstÅtzen wie der Pentium das CPUID-Commando. Auf solch einem Chip
+  gibt CONFIG in einer 2ten Zeile eine Chip-Model-Nummer und einen
+  Revisions-Level an. Der CPUID Befehl wird z.Z. von CPUs von AMD und Cyrix
+  nicht unterstÅtzt. Der Revisionslevel von Cyrix-CPUs kann auf andere
+  Art ermittelt werden.
+
+RAM-Zugriff:
+  Hier wird getestet, ob der Rechner
+  a) standardmÑ·ig,
+  b) per Page-Mode, also innerhalb einer kleinen Page schnell (ohne Waits)
+     und au·erhalb der Page langsamer (mit Waits) lÑuft. Dies ermîglicht die
+     Benutzung von billigen (langsamen) RAMs bei hohen Taktfrequenzen.
+  c) Åber einen Prozessor-Cache (nur 80386 & 80486)
+  auf seinen Speicher zugreift. First- und Second-Level Cache werden
+  unterschieden. Sollte der Rechner im Virtuellen Modus laufen, so ist
+  diese Unterscheidung nicht immer 100% sicher.
+L2-Level-Typ:
+  Auf einigen Mainboard kann die Art des Second-Level-Cache ermittelt werden.
+  Hier werden unterschieden: Dual-Bank-Pipeline-Burst, Pipeline-Burst,
+  Synchron-Burst und Asynchon- Cache-Arten.
+Hauptspeicher:
+  Die gesamte und noch freie Menge an Hauptspeicher wird dargestellt.
+Extended Mem:
+  Der Speicher Åber 1 MB (nur auf ATs vorhanden). Die noch freie Menge wird
+  Åber einen XMS-Treiber bestimmt (falls vorhanden) und sonst Åber INT 15h.
+Expanded Mem:
+  Speichererweiterung nach LIM (in XTs oder ATs). Diese Art der Speicher-
+  erweiterung wird von vielen Programmen genutzt, und die meisten Memory-
+  Manager fÅr 80386er wandeln aus diesem Grund softwaremÑ·ig Extended-Mem in
+  Expanded-Mem um. In diesem Fall ist die Menge an Expanded Mem in der Menge
+  an Extended Mem enthalten.
+Grafikkarte 1:
+  Hier werden erkannt: CGA, MGA, Hercules, EGA, VGA.
+  Bei EGA und VGA-Karten wird wie oben das BIOS nach einem mîglichen Hinweis
+  auf den Hersteller durchsucht. Bei VGA-Karten wird per Speicherzugriff
+  getestet, ob die Karte 8- oder 16-Bit-Zugriffe erlaubt. Dies spiegelt
+  sich in der Regel sofort in der Geschwindigkeit der Karte wieder. So
+  erlauben selbst die VGA-Karten der schnellsten IBM-PS/2 Modelle wegen
+  des 8-Bit-Busses nur einen Video-RAM-Durchsatz von max. 500 kB/s. Eine
+  16-Bit VGA mit TSENG ET4000-Chip kommt auf Åber 2000 kB/s.
+VGA-Chipset:
+  Das Chipset einer evt. vorhandenen Super-VGA-Karte wird zu identifizieren
+  versucht. Folgende ChipsÑtze sollten erkannt werden:
+  ATI, NCR, Trident, Video 7, Genoa, Paradise, Chips & Technologies, Above,
+  OAK Technology, Tseng, ZyMOS, Cirrus, Ahead, Yamaha, S3, Matrox, ARK
+EGA/VGA-BIOS:
+  Hier werden weitere Angaben zum BIOS der Grafikkarte gemacht (nur auf ATI,
+  TRIDENT, AHEAD, TSENG, GEMINI und einigen OAK Grafikkarten).
+Grafikkarte 2:
+  Sollten Sie neben Ihrer CGA/EGA/VGA noch eine Monochrom-Karte betreiben,
+  so wird dies hier angezeigt.
+Coprozessor:
+  Hier werden Intel 8087, 80287, 80387 und softwaremÑ·ige
+  Coprozessor-Emulationen erkannt. Chips von Cyrix, IIT und ULSI werden
+  ebenfalls unterschieden. Mein Dank geht an Norbert Juffa fÅr die freund-
+  liche öberlassung seiner Assembler-Routienen aus dem Program COMPTEST
+  fÅr eine detailierte Unterscheidung der einzelnen Chip-Typen.
+Gameadapter:
+  Hier wird versucht, einen vorhandenen Joystickport zu erkennen. Leider ist
+  diese Erkennung nicht standardisiert und andere Rechnertest-Programme
+  mîgen zu anderen Ergebnissen kommen. Generell kann man davon ausgehen:
+  wenn CONFIG sagt, Gameadapter vorhanden, dann ist auch einer vorhanden,
+  wenn CONFIG sagt, Gameadapter nicht vorhanden, dann ist 'wahrscheinlich'
+  auch keiner vorhanden.
+Laufwerke:
+  Die Anzahl an Diskettenlaufwerken und ggf. auch die Art der Laufwerke.
+Ports:
+  Die Anzahl an parallelen und seriellen Schnittstellen.
+HD:
+  Die Grî·e und Parameter der Festplatten werden angezeigt. Aufgrunddieser
+  unterschiedlichen Definitionsweise von 'Megabyte' kann die Festplatten-
+  grî·e wie folgt berechnet werden: in Millionen Bytes, also nach der Formel
+  Kîpfe*Sektoren*Spuren*512-Bytes-pro-Sektor, oder in Megabytes, wobei ein
+  Megabyte=1024*1024 Bytes sein soll. Variante 1 wird von den Festplatten-
+  herstellern verwendet. Diese sagen also: unsere Conner CFA540A hat
+  540 MB (wobei 1 MB=1000*1000 Bytes ist). Das BIOS Ihres Computers definiert
+  1 MB allerdings als 1024*1024 Bytes, so da· hier gesagt wird: die CFA540A
+  hat 504 MB. Sie kînnen selbst entscheiden, nach welcher Formel CONFIG
+  rechnen soll: tragen Sie den Wert von einem Kilobyte in der CONFIG.INI
+  Datei ein (1000 oder 1024 Bytes).
+
+
+Das Fenster HARDWARE 2      Nur in der registrierten Version
+======================
+Hier wird getestet, ob das Rechner-BIOS eine 'Erweiterte Tastatur', also
+eine, die die Funktionstasten F11 und F12 hat, unterstÅtzt, und ob eine solche
+Tastatur angeschlossen ist.
+
+SCSI-Controller BIOS:
+  Hier wird der Hersteller des SCSI-Controllers genannt und die Startadresse
+  des Controller-ROMs angezeigt, sofern dies aktiviert ist.
+PCMCIA-BIOS:
+  Besitzt der Rechner BIOS-Routinen, um von PCMCIA Steckkarten zu booten?
+  Dies sind scheckkartengrosse Erweiterungskarten, die hauptsÑchlich in
+  Laptops eingesetzt werden.
+UART-Chips:
+  Hier werden die Bausteine der seriellen Schnittstellen bestimmt (8250,
+  16450, 16550, 16550A) und die aktuellen Parameter werden angezeigt.
+Modem auf Port:
+  Ist ein HAYES-Compatibles Modem angeschlossen, und wenn ja, auf welchem
+  Port? Manche Modems werden erst nach vorhergehender Initialisierung
+  erkannt. Wenn dies gewÅnscht wird, den Schalter INITMODEM in der CONFIG.INI
+  Datei auf AN stellen.
+Soundkarten:
+  Hier wird nach Soundblaster, Adlib und Roland Karten gesucht. Sollte dieser
+  Test mit anderer Hardware (z.B. Netzwerkkarten) kollidieren, dann im .INI
+  File abschalten. Soundkarten mit Aztech-Chipsatz werden differenziert
+  erkannt.
+CD-ROM:
+  Ist ein CD-ROM Laufwerk angeschlossen? Welche Treiber-Version wird
+  verwandt?
+AT-Bus-Platte:
+  Falls vorhanden, werden hier Name, Cachegrî·e, Controllerversion und
+  Seriennummer der AT-Bus-Platte angezeigt. Weiterhin werden die Bestandteile
+  der sogenannten 'Enhanced IDE-FÑhigkeit' aufgelistet. Folgende drei
+  Punkte mÅssen erfÅllt sein:
+  LBA: Erlaubt die Platte eine 'Logische Block-Adressierung'? Dies ist
+       wichtig, um die 540 MB-Grenze zu Åberwinden.
+  DMA: Kann die Platte Daten per 'Direkt Memory Access' abgeben?
+  Adv.PIO: UnterstÅtzt die Platte den 'Advanced PIO Mode 3', d.h., kînnen
+  Kommandos und Daten mit Cyklus-Zeiten von 180 Nano-Sekunden
+  von der Platte verarbeitet werden? Langsamere Platte unterstÅtzen
+  mit PIO Mode 2 (300 ns) oder PIO Mode 1 (600 ns).
+  Diese Tests kînnen auf einigen Nicht-AT-Bus-Controllern zu Problemen
+  fÅhren, in diesem Fall mittels Schalter ATBUS-INFO=nein abschalten.
+
+
+Das Fenster ASPI-Info
+=====================
+  Hier werden Ihre angeschlossenen SCSI GerÑte aufgelistet, sofern Sie
+  einen ASPI-Treiber geladen haben. Dieser stellt ein standardisiertes
+  Verfahren bereit, um SCSI GerÑte der verschiedenesten Hersteller anzu-
+  sprechen.  ASPI bedeutet: Adaptec Advanced SCSI Programming Interface.
+  PC-CONFIG kann so CD-ROM-Laufwerke, Streamer, Festplatten, die Hersteller-
+  namen, die GerÑtebezeichnung und den Revisionsstand der Hardware abfragen.
+
+
+Das Fenster PCI-Info
+====================
+  Ist Ihr Rechner mit Intels PCI Bus Architecture ausgerÅstet, so werden
+  hier die PCI-Komponenten der Hauptplatine und PCI-Steckkarten aufgelistet.
+  CONFIG unterscheidet Grafik-Karten, Multimedia-Karten, Controller fÅr
+  Massenspeicher, PCMCIA-Erweiterungen etc. Etwa 360 Hersteller von
+  PCI-Komponenten kînnen anhand ihrer Hersteller-ID erkannt werden.
+  Hier kann im Einzelfall genau der Revisionsstand der Hauptplatine und,
+  oder weiterer Steckkarten ÅberprÅft werden.
+
+
+Das Fenster SOFTWARE
+====================
+DOS-Version:
+  Hier wird die aktuelle DOS-Version angezeigt. DR-DOS sollte erkannt werden.
+  In den meisten FÑllen sollte auch die Sprache angezeigt werden (Deutsch,
+  Englisch oder Franzîsisch). Ab DOS 5 wird erkannt, ob es sich im Extended
+  Memory (HMA) befindet. Sollte CONFIG in der DOS-Box von OS/2 gestartet
+  werden, so wird dies ebenfalls erkannt. Die DOS-Box von Windows 95
+  meldet DOS 7 als Versionsnummer.
+Netzwerk:
+  Ist ein MS-NetBIOS-Compatibles Netzwerk installiert? In diesem Fall wird
+  auch der Netzwerk-Name des Rechners angegeben. Novell-Netzwerke werden
+  ebenfalls erkannt.
+Maus vorhanden:
+  Hier werden erkannt: Microsoft, Genius, Logitech, Agiler, Reis-Ware,
+  Unitron, und Truedox Maustreiber.
+  Viele Hersteller von MÑusen streben mittlerweile eine hohe KompatibilitÑt
+  zum Microsoft-Original an, so da· auch deren Treiber als Mircosoft-Treiber
+  identifiziert werden. Wird nach dem Maus-Treiber noch ein Programm geladen,
+  was den Maus-Interrupt Ñndert (z.B. Bildschirm-Schoner), so kann der Her-
+  steller des Maustreibers nicht erkannt werden.
+  Maus-Typ:
+  Sollte der Maustreiber die Funktion 36 unterstÅtzen, wird hier die Art
+  der Maus angegeben (serielle-, Bus-, Inport-, HP-Maus) und die Versions-
+  nummer des Treibers.
+EMS Treiber:
+  Die vom Treiber unterstÅtzte EMS-Version und ggf. der Hersteller des
+  Treibers (z.B. Compaq, Toshiba...) und die Adresse der Pageframe werden
+  benannt.
+XMS Treiber:
+  Ebenso die vom Treiber unterstÅtzte XMS-Version und die interne
+  Treiber-Versions-Nummer.
+DPMI Server:
+  Hier wird die Versionsnummer des 'DOS Protected Mode Interfaces' ange-
+  zeigt. Windows, OS/2 und manche Memory-Manager stellen so etwas zur
+  VerfÅgung.
+DPMS Server:
+  Es wird getestet, ob ein 'DOS Protected Mode Services' Treiber geladen ist.
+  Dieser wird z.Zt bei Novell DOS 7 und Stacker 4.0 mit ausgeliefert.
+APM-Funktionen:
+  Sind Advanced Power Managment Funktionen vorhanden? Hierbei handelt es sich
+  um Routinen zur Reduzierung des Stromverbrauchs, hauptsÑchlich auf Laptops
+  vorhanden.
+VESA-PM:
+  Ein anderer Standard zur Reduzierung des Stromverbrauchs. Ist ein ent-
+  sprechender Treiber installiert, und welche Versionsnummer besitzt er?
+Festpl. Cache:
+  Hier werden erkannt:
+  Norton-Cache (V5 & V6), Smartdrive, IBMCACHE, Compaq-Cache, QCACHE,
+  HyperCache, PC-Cache, NWCache
+  Der Test auf diese Programme kann mittels des Parameters HDCacheTest
+  in der .INI Datei abgeschaltet werden, falls es zu Problemen kommen sollte.
+Fossil-Treiber:
+  Dies ist eine softwaremÑ·ige Erweiterung der seriellen BIOS-Funktionen.
+  Ein solcher Treiber kann beim Betrieb eines High-Speed-Modems und
+  entsprechender Modem-Software nîtig sein.
+4DOS:
+  Hier wird der Shareware-COMMAND.COM-Ersatz 4DOS und dessen Versionsnummer
+  erkannt, ebenso die von Peter Norton vertriebene Version NDOS.
+RAM-Disk, BPS:
+  Hier werden erkannt:
+  VDISK (PC-DOS und DR-DOS), RAMDRIVE (MS-DOS), 386DISK (386MAX), MFT-DISK,
+  XPANDISK, NJRAM-Disk, SRDisk, xDISK, TurboDisk
+EPP Printer BIOS:
+  Hierbei handelt es sich um Software-Routinen zur Ansteuerung eines schnellen
+  Drucker-Ports nach den 'Enhanced Printer Port' Spezifikationen. Ein EPP
+  verfÅgt Ñhnlich wie ein 16550 bei den seriellen Schnittstellen Åber einen
+  eingebauten Pufferspeicher (FIFO), der eine hîhere und sichere
+  DatenÅbertragungsrate ermîglicht.
+Memory-Manager:
+  Hier werden erkannt:
+  Windows, DesqView, 386MAX, QEMM386, Move'em, EMM386
+
+
+Das Fenster BENCHMARK
+=====================
+Relative Geschw. zum IBM-PC:
+  Die relative CPU-Geschwindigkeit zum IBM-PC wird anhand einer Schleife mit
+  hÑufig vorkommenden Maschinenbefehlen wie AND, MOV, NOT, SHR und durch
+  Zugriff auf verschiedene Speichersegmente ermittelt. Dieser Wert ist daher
+  direkt abhÑngig von CPU-Typ, Taktfrequenz und Wait-States und bietet einen
+  guten Anhaltspunkt, um die reine Rechengeschwindigkeit einzuschÑtzen.
+  Diese Schleife ist recht klein und pa·t aus diesem Grund komplett in
+  einen evt. vorhandenen CPU-Cache. öber die Aussagekraft eines solchen
+  Wertes kann man daher immer streiten.
+Dhrystones & Whetstones:
+  Dies sind aus der Unix-Welt bekannte Benchmarks, der hier in Pascal-
+  Versionen implementiert wurden. Die Werte von Pascal- und C-Versionen
+  sind compilerabhÑngig und daher nicht unbedingt direkt miteinander
+  vergleichbar, je grî·er die Werte, desto besser. Die Testroutienen passen
+  komplett in einen 8 KB CPU-Cache. Dhrystones gibt ein Ma· fÅr die
+  Integer-Rechenleistung der CPU an, Whetstones ist ein Ma· fÅr die
+  Rechenleistung des mathematischen Coprozessors. Beide Tests sind in den
+  70er und 80er Jahren hÑufig geÑndert und verbessert worden und liegen in
+  vielen unterschiedlichen Programmiersprachen vor. Die hier verwendeten
+  Pascal-Versionen sind dieselben, die Norbert Juffa in seinem Testprogramm
+  CTEST257 verwendet. Die hier ermittelten Werte sind allerdings mit denen
+  von CTEST nicht vergleichbar, da Juffa fÅr sein Programm eine eigene
+  RUN-TIME-LIBRARY verwendet.
+VideoRAM-Durchsatz, Scroll, VideoWaits:
+  Der Video-RAM-Durchsatz gibt die ungefÑhre Menge von Zeichen an, die direkt
+  in den Bildschirm geschrieben werden kann. Dieser Wert und die Zeit, die
+  benîtigt wird, den Bildschirminhalt eine Zeile nach oben zu scrollen,
+  hÑngt hauptsÑchlich von der Geschw. der Grafikkarte, aber auch von der der
+  CPU ab. Die Anzahl der VideoWaits hÑngt ebenfalls von der Geschw. der CPU
+  ab, sie dient aber nur als Anhaltswert beim Vergleich mit anderen Grafik-
+  Karten. Dieser Wert kann nicht als absolut angesehen werden. Bei einer VGA-
+  Karte kînnen z.B. je nach eingestelltem Modus sehr unterschiedliche Werte
+  herauskommen. Es gilt allerdings die Regel: je weniger Waits, desto
+  schneller die Karte!
+EMS-Geschwindigkeit:
+  Hier wird die Zeit gemessen, um eine (!) EMS-Seite in die Page-Frame ein-
+  zublenden. Der ermittelte Wert wird mit der Dauer dieser Anforderung auf
+  einem 16 MHz NEAT-Rechner verglichen (100%). Andere Hardware-EMS kommen
+  in der Regel auf ca 90-110%, 386-Software-EMS (z.B. 386MAX) kommen auf
+  70% und 286-EMS-Emulatoren auf 2%-5%
+
+RAM-Disk-Geschwindigkeit:
+  Hier wird auf der RAM-Disk eine Sekunde lang ein File erzeugt, mit
+  Daten beschrieben, geschlossen, die Daten werden wieder gelesen, das File
+  wird wieder gelîscht usw... Daraus wird der Durchsatz der RAM-Disk berechnet.
+  Lassen Sie Ihre RAM- Disk einmal im Extended und einmal im Expanded Mem
+  laufen und vergleichen Sie die Werte!
+  Das RAM-Disk-Laufwerk wird, wenn mîglich, automatisch erkannt, kann aber
+  sonst auch in der .INI-Datei angegeben werden.
+DOS-Disk-Geschwindigkeit:
+  Hier wird auf einem beliebigen Laufwerk vier Sekunden lang ein File
+  erzeugt, mit Daten beschrieben, geschlossen, die Daten werden wieder
+  gelesen, das File wird wieder gelîscht und so fort...
+  Daraus wird der Durchsatz dieser DOS-Disk berechnet. Hier kann man
+  deutlich den Einflu· von Cache-Programmen feststellen. WÑhlen Sie das
+  Laufwerk durch Eintrag in der .INI-Datei! Wird dort kein Laufwerk ange-
+  geben, so wird das aktuelle Laufwerk getestet.
+Plattentests:
+  Der Datendurchsatz der Festplatte wird anhand der AusfÅhrungsdauer von
+  absoluten Lesezugriffen mittels BIOS-Routinen bestimmt. Da Festplatten-
+  Cache-Programme diesen Wert und den daraus errechneten Interleave-Faktor
+  stark beeinflussen, ist eine objektive AbschÑtzung dieser Werte nur ohne
+  solche Programme mîglich. CONFIG testet daher den Durchsatz nicht, wenn
+  ein Cache entdeckt wurde. Der Test kann allerdings mittels des Parameters
+  FORCEHDTEST=JA trotzdem erzwungen werden.
+  Die Festplatten-Rotationsgeschwindigkeit lÑ·t sich ebenfalls nur bestimmen,
+  wenn kein Cache-Programm geladen ist, und wenn die Platte keinen internen
+  Hardware-Cache hat, der grî·er als 32 KB ist. Die durchschnittliche
+  Zugriffszeit der Platte wird durch 100 zufÑllige
+  Positionierungen Åber der gesamten OberflÑche bestimmt und kann so von
+  Fall zu Fall um 5 ms schwanken.
+  Einige SCSI und EIDE Controller scheinen das Kommando 'Positioniere-
+  Kopf' vom Festplatteninterrupt zu ignorieren. In diesem Fall werden Zu-
+  griffszeiten von 0ms angezeigt. Sie kînnen in diesem Fall in der .INI
+  Datei den Schalter MoveHeadOnly auf NEIN setzen, so da· anstelle dieses
+  Kommandos die Variante 'Positioniere-Kopf-und-lese-Daten' verwendet wird.
+  Da in diesem Fall allerdings auch die Zeit fÅr das Datenlesen mitgemessen
+  wird, sind die so ermittelten Zugriffszeiten nicht unbedingt mit den auf
+  andere Weise ermittelten Daten vergleichbar.
+  Der Test kann durch DrÅcken der SHIFT- oder CAPS-LOCK-Taste Åbersprungen
+  werden.
+
+
+Das Fenster Mem-Timing
+======================
+  Hier wird angezeigt, wie schnell auf die verschiedenen Speicherbereiche
+  zugegriffen werden kann. Auf den Hauptspeicher (die ersten 640k) wird mit
+  einem Faktor von 1.0 zugegriffen. Jetzt kann man abschÑtzen, wie schnell
+  z.B. auf das VGA-BIOS bei C000h zugeriffen werden kann, beispielsweise mit
+  Faktor 2.3. Das hei·t, Speicherzugriffe dauern hier 2.3 mal so lange wie
+  Zugriffe auf den Hauptspeicher. Au·erdem wird der Speicherdurchsatz von
+  CPU-Cache (falls vorhanden) und vom Hauptspeicher bestimmt.
+  Die gemessenen Werte werden in KB/s angezeigt.
+  Hier lÑ·t sich die QualitÑt des Cache-Controllers ablesen und ebenso
+  der Einflu· von Waitstates beim Hauptspeicherzugriff.
+  Vergleichswerte vom 386/40 Forex-Chipsatz: Cache: 38000 KB, Mem: 21000 KB
+                      486/33 UMC-Chipsatz:   Cache: 26000 KB, Mem: 10800 KB
+
+
+Das Fenster VGA-Timing      Nur in der registrierten Version
+======================
+  Die wichtigsten Text- und Grafik-Modi der VGA-Karte werden eingeschaltet
+  und die Bildwiederholungsfrequenz wird gemessen. Bei jeder Modusumschaltung
+  sollte der PC-Speaker einmal knacken. Der Test dauert ca. 30 Sekunden.
+  Standard-VGA-Karten laufen im Textmodus mit 70 Hz und in den Grafik-Modi
+  mit 60 Hz. Dabei ist bei hellem Bildschirmhintergrund u.U. ein Flimmern
+  zu spÅren. Moderne Grafik-Karten schaffen auch in den Grafikmodi 70 Hz,
+  oder sind sogar fÅr jeden Modus frei konfigurierbar.
+  Da es eine Vielzahl von Grafikkarten gibt und ein Modus auf der einen
+  Karte nicht unbedingt demselben Modus auf einer anderen Karte entspricht,
+  kann es hier von Fall zu Fall zum Rechnerabsturz kommen. Sie kînnen in
+  diesem daher die Anzahl der zu testenden Modi durch Eintrag eines
+  Maximalwertes in der .INI Datei beschrÑnken.
+
+
+Das Fenster  Logische Laufwerke
+==============================
+  Alle verfÅgbaren Laufwerksbuchstaben werden aufgelistet, die Laufwerks-
+  namen werden angezeigt, ebenso der maximale und der noch verfÅgbare
+  Speicherplatz.
+
+
+Das Fenster  CDROM-Benchmark
+===========================
+  Legen Sie bitte eine Daten-CD mit mindestens 600 MB in das oder die
+  CDROM-Laufwerke ein. CONFIG bestimmt den maximalen Datendurchsatz,
+  die maximale und die durchschnittliche Zugriffszeit der Laufwerke.
+  Ein geladenes CDROM Cache-Programm kann die Messergebnisse genau wie
+  bei den Festplattentests beeinflussen. Smartdrive und neuere PC-CACHE-
+  Versionen werden von CONFIG wÑhrend des Tests abgeschaltet.
+
+  Falls Sie keine CD mit 600 MB besitzen, so kînnen Sie diesen
+  Wert in der .INI Datei reduzieren. Bei kleineren CDs bekommen Sie dann
+  allerdings keine realistischen Werte bei der Bestimmung der Laufwerks-
+  zugriffszeiten.
+
+  Sie kînnen auch eine lange Audio-CD benutzen, um die Zugriffszeiten zu
+  bestimmen, nur versagt in diesem Fall der Test auf dem Datendurchsatz.
+
+
+
+Demo-Mode und Auto-Protokoll / Kommerzielle Version
+===================================================
+FÅr den HÑndler interessant ist der DEMO-MODE, in dem CONFIG eine angegebene
+Zeit lang immer wieder die Fenster HARDWARE, HARDWARE2, SOFTWARE, BENCHMARK,
+VERGLEICH und INFO anzeigt. Optional kann eine eigene Liste von Vergleichs-
+rechnern angezeigt werden, da vergleichende Werbung mit Rechnern anderer
+Hersteller leider verboten ist. Das ganze eignet sich ideal fÅr die PrÑsen-
+tation im Schaufenster.
+Anschalten lÑ·t sich der DEMO-Mode durch Eintragung in die .INI Datei.
+Wie lange die Demo laufen soll, kann ebenfalls in der .INI Datei
+angegeben werden.
+
+Zum Testen von Rechnern ist es hÑufig erwÅnscht, von allen wichtigen Bild-
+schirmen eine Hardcopy zu erzeugen. Wird in der .INI Datei der Schalter
+AUTOLOG auf JA gestellen, so durchlÑuft CONFIG alle beim Schalter
+PROTOKOLL angegebenen Bildschirme selbststÑndig und schreibt die Ergebnisse
+in die Datei CONFIG.XXX. Folgende Fenster kînnen protokolliert werden:
+Hardware 1&2, Software, Benchmark, Chips, Mem-Timing, VGA-Timing, Treiber,
+IRQs, Hinweis.
+
+Das Protokollieren kann auch unabhÑnging von der .INI Datei durch einen
+Kommandozeilenparameter gestartet werden. Rufen Sie CONFIG einfach mit
+dem Parameter p gefolgt von den gewÅnschten Fenstern auf, und die
+entsprechenden Ausgaben werden in der CONFIG.XXX Datei protokolliert.
+Beispiel: CONFIG phsm
+p steht fÅr Protokoll, hsm fÅr die Fenster Hardware, Software, Mem-Timing.
+
+Wenn Sie die Ausgabe nicht in die Datei CONFIG.XXX wÅnschen, kînnen Sie
+als zweiten Parameter den gewÅnschten Filenamen angeben.
+Beispiel: CONFIG phsw prn
+Jetzt wird die Ausgabe sofort auf dem Drucker protokolliert.
+
+Demo-Mode und Auto-Protokoll sind Bestandteil der kommerziellen Version
+und laufen erst nach Eintrag eines weiteren SchlÅssels ins .REG-File.
+
+Sie kînnen dies Feature jederzeit fÅr DM 100,- nachtrÑglich bestellen.
+
+
+EinschrÑnkungen: 
+================
+- Der CD-ROM Benchmark stÅrzt auf einigen CD-ROM der Herstellers Toshiba ab.
+- Unter Windows im 386-Mode und anderen Multitaskern kînnen keine
+  Kurzzeitmessungen und damit keine Benchmarks u.Ñ. ausgefÅhrt werden.
+- Unter DR-DOS 6.0 EMM386 kommt es zu Privilegverletzungen bei der
+  Geschwindigkeitsbestimmung des Extended Memory, daher den Schalter
+  TESTEXTMEM auf NEIN stellen.
+- PC-Cache V5.x wird als Multisoft QCache erkannt.
+- Probleme bei mehr als EINEM durchgehenden StÅck HI-DOS.
+- Einige Computer schalten ihre Taktfrequenz herunter solange ein Disketten-
+  laufwerk lÑuft. Normalerweise merkt CONFIG, ob es von Diskette gestartet
+  wurde und wartet gfs. bis das Laufwerk steht. Bei manchen Compaq-Rechnern
+  funktioniert diese Erkennung aber nicht, und daher stimmt in
+  diesem Fall der fÅr die Taktfrequenz angegebene Wert nicht. DrÅcken Sie
+  deshalb 'R' fÅr Restart!
+- Es kommt zu Problemen, wenn ALLE residente Software ins HI-DOS geladen wird.
+- Findet keine unter QEMM hochgeladenen RAMDisks.
+- Auf manchen Rechnern (zB IBM XT/286) gibt es Probleme beim Bestimmen
+  der Festplatten-Zugriffszeit
+
+
+Was tun bei Problemen?
+======================
+CONFIG ist sehr hardwarenah programmiert. AbstÅrze sind daher nicht auszu-
+schlie·en. Problematisch ist in einigen FÑllen die Erkennung des Board-
+Chipsatzes. Dieser Test kann durch Druck der Scroll-Lock-Taste Åbersprungen
+werden oder durch Setzen des Schalters TESTBOARD in der CONFIG.INI-Datei.
+Sollte CONFIG trotzdem noch abstÅrzen, bevor die Fenster auf dem Bildschirm
+erscheinen, dann CONFIG mit dem Parameter 'log' starten. In diesem Fall
+wird eine Datei CONFIG.LOG auf dem aktuellen Laufwerk erzeugt in welcher
+alle Tests protokolliert werden. Der Test, der als letzter aufgefÅhrt wird,
+ist der, der zum Abstutz fÅhrte. Eventuell lÑ·t sich das Problem durch
+Setzen eines Schalters in der .INI Datei umgehen. Schalten Sie bitte zuvor
+jedoch den Schreibcache eventueller Cacheprogramme ab.
+
+Sollten Sie Fehler oder sonstige Ungereimtheiten feststellen, dann kînnen
+Sie den aktuellen Bildschirminhalt durch Druck von F10 in eine Datei ab-
+speichern. Schicken Sie mir diesen Ausdruck kommentiert zu. Bitte
+unbedingt angeben: CONFIG Versionsnummer und Datum der CONFIG.EXE-Datei.
+
+
+
+Fehler des 80386-Prozessors:
+============================
+M.E. Wissens hat INTEL bei der Produktion des 80386-Prozessors mindestens
+vier Fehlfunktionen Åbersehen:
+
+a) frÅhe Versionen konnten vom Protected Mode nicht in den Real Mode
+   zurÅckschalten,
+b) frÅhe Versionen fÅhrten die 32-Bit-Multiplikation nicht korrekt aus,
+c) frÅhe Versionen erhîhten das EDI Register nach einem STOSB-Befehl nicht
+   korrekt von 0000FFFFh auf 00010000h sondern auf 00000000h!,
+d) der POPAD-Befehl restauriert das EAX-Register unter bestimmten
+   Bedingungen nicht richtig.
+
+WÑhrend die Fehler a) - c) in neueren Versionen der Prozessoren beseitigt
+wurden (sie betreffen nur die 16 MHz Version), so ist der Fehler d) erst
+ca. Mitte 1990 entdeckt worden und betrifft bis heute (Jan.91) fast alle
+Versionen der 386dx und 386sx von Intel und AMD. Die neuesten Versionen
+- zumindest von Intel - sind korrigiert. Dieser Fehler ist allerdings
+den Softwareentwicklern mittlerweile bekannt, und der Befehl wird dement-
+sprechend nicht mehr verwendet.
+CONFIG testet auf die Fehler b) bis d).
+
+
+Fehler im Pentium
+=================
+Ende Oktober 1994 wurde von einem Mathematik-Professor eine Rechen-
+ungenauigkeit des Flie·komma-Divisions-Befehls im Pentium entdeckt.
+
+Rechnen Sie eine Division 4195835/3145727, so bekommen Sie auf Ihrem
+Taschenrechner als Ergebnis 1.333820449...
+ein Pentium rechnet         1.333739068...
+
+Dieser Fehler tritt nur beim FDIV-Befehl auf (Flie·komma-Division), nicht
+beim normalen DIV-Befehl. Es sind nur 'einige' Zahlenpaare betroffen,
+ca. 8000 sind bisher gefunden worden. FÅr die Åberwiegende Anzahl von
+Trillionen Zahlenpaaren rechnet der Befehl richtig. Ein weiteres Paar
+ist z.B. 5505001/294911.
+
+Intel liefert laut eigener Aussage seit Sommer 1994 korrigierte CPUs aus
+und tauscht fehlerhafte CPUs kostenlos um. Intel hat fÅr Deutschland eine
+Service-Telefonnummer fÅr Endkunden eingerichtet: 0130/818921
+(Angabe ohne GewÑhr). Bitte rufen Sie in dieser
+Angelegenheit nicht den Autor von PC-CONFIG an. Weitere Informationen erhalten
+Sie in nahezu allen Januar-1995-Ausgaben diverser Computermagazine.
+
+
+Literatur:
+==========
+CONFIG basiert auf verschiedenen Quellen, darunter:
+
+ 1 - PC Intern Systemprogrammierung, Michael Tischer, Data Becker Verlag
+ 2 - PC-Referenz fÅr Programmierer, Thom Hogan, Systhema Verlag
+ 3 - verschiedene Ausgaben des c't Magazins, Heise Verlag
+ 4 - NEAT-P9 System Board Technical Reference Manual
+ 5 - Programmers Technical Referenz for MS-DOS and the IBM PC, Dave Williams
+ 6 - The Interrupt List, Ralf Brown ua
+ 7 - INFOPLUS.PAS, Andrew Rossman & Steve Grant
+ 8 - die HIMEM-Spezifikationen von Microsoft
+ 9 - dem Sourcecode von FRACTINT
+10 - The IBM PS2 Technical Reference Manual
+
+die Publikationen 5-9 sind als Public Domain in der SIMTEL20 PD-Sammlung
+erhÑltlich.
+
+
+
+FÅr die Fortentwicklung von CONFIG gilt mein Dank:
+
+Thomas Kreiling, Mario Leinker, Peter Kruse, Guido Falkemeier, Thomas Haukap,
+Ibrahim Tertemiz, Mathias Helm, JÅrgen Schlegelmilch, Kai Kluwe, Olaf Rathje,
+Michael Schulz, Karsten Wiborg, Frank SÑmer, Ulrich Schlechte, Michael Kohl,
+Dirk Schmidt, Marc Zimmermann, JÅrgen Fitschen, Hans Ullrich Siehl,
+Arnd Burghardt, Ingo Schoenewolf, Mike Sassenberg, Dirk Lindloff, Matthias
+Copray, Dietmar Modes, Norbert Juffa, Sven Ritter. Christian Ludluff

@@ -1,0 +1,357 @@
+                        [HiewHelp 5.01]
+
+ * Activate: Alt-H
+ * English edition: M.Korneff
+
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                  Edit searching string                      บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+[FindEdit]
+ F2      - Direct - toggle direction forward/backward
+ F4      - Area   - search: into FULL file/into BLOCK
+ F7      - Asm    - call assembler
+ Enter            - enter string
+ Escape           - cancel
+ Tab              - toggle hex/ascii edit
+  Up              - toggle hex/ascii edit
+  Down            - toggle hex/ascii edit
+ Home             - top of line
+ End              - end of line
+ Left             - move left on 1 character
+ Right            - move right on 1 character
+ PgUp             - clear string
+  PgDown          - clear string
+ Insert           - toggle insert mode
+ Backspace        - delete previous character
+ Del              - delete character under cursor
+ CtrlEnd          - truncate string at cursor
+  Alt-X           - truncate string at cursor
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                       Edit string                           บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[StringEdit]
+ Enter            - enter string
+ Escape           - cancel
+ Home             - top of line
+ End              - end of line
+ Left             - left on 1 character
+ Right            - right on 1 character
+ PgUp             - clear string
+  PgDown          - clear string
+ Insert           - toggle insert mode
+ Backspace        - delete previous character
+ Del              - delete character under cursor
+ CtrlEnd          - truncate string at cursor
+  Alt-X           - truncate string at cursor
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                       Text view                             บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[Text]
+ Enter            - switch mode to HEX
+ Escape           - quit without save timestamp
+ Alt-P            - Save screen into file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Function  keys ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ F1      - Info   - information ( path, size of heap, etc )
+ F2      - Wrap   - wrap/unwrap long line
+ F4      - Mode   - select view mode
+ F6      - LnFeed - select character(s) "Line Feed"
+ F7      - Search - search string
+ F9      - Files  - filemanager for **argv
+ F10     - Quit   - quit with saving timestamp
+ CtrlF3  - Replac - search & replace
+ CtrlF4  - ReRead - re-read file in buffer
+ CtrlF6  - Tab    - tab on/off
+ CtrlF7  - NextSr - search next
+  CtrlEnter       - search next
+  ShiftF7         - search next
+ CtrlF8  - PrvFil - previous file from **argv
+ CtrlF9  - NxtFil - next file from **argv
+ CtrlF10 - SavSta - save current state (position,search,etc...)
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Cursors movement ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ Home             - top of line
+ End              - end of line
+ Right            - right on 1 character
+ Left             - left on 1 character
+ Ctrlright        - right on 20 characters
+ CtrlLeft         - left on 20 characters
+ CtrlHome         - top of file
+ CtrlEnd          - end of file
+ Down             - down 1 line
+  CtrlPgDown      - down 1 line
+ Up               - up 1 line
+  CtrlPgUp        - up 1 line
+ PgDown           - down 24 lines
+ PgUp             - up 24 lines
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Bookmarks ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ +                - store current state
+ -                - restore state
+ Alt-1...Alt-8    - restore N-th state
+ Alt-Minus        - delete current state
+ Alt-0            - clearing all bookmarks
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                        Hex view                             บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[Hex]
+ Enter            - switch mode to CODE
+ Escape           - quit without saving timestamp
+ Alt-P            - Save screen into file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Functions keys ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ F1      - Info   - information ( path, size of heap, etc )
+ F2      - PutBlk - write block ( if marked )
+ F3      - Edit   - edit
+ F4      - Mode   - select view mode
+ F5      - Goto   - goto new offset
+ F7      - Search - search string
+ F8      - Header - show/edit EXE-header
+ F9      - Files  - filemanager for **argv
+ F10     - Quit   - quit with saving timestamp of file
+ CtrlF2  - GetBlk - read block ( if marked )
+ CtrlF3  - Replac - search & replace
+ CtrlF4  - ReRead - re-read file in buffer
+ CtrlF5  - Base   - new base
+ CtrlF7  - NextSr - search next
+  CtrlEnter       - search next
+  ShiftF7         - search next
+ CtrlF8  - PrvFil - previous file from **argv
+ CtrlF9  - NxtFil - next file from **argv
+ CtrlF10 - SavSta - save current state (position,search,etc...)
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Cursors movement ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ Home             - allign on 16 bytes
+ Right            - right on 1 character
+ Left             - left on 1 character
+ Ctrlright        - screen right
+ CtrlLeft         - screen left
+ CtrlHome         - top of file
+ CtrlEnd          - end of file
+ Down             - down 1 line
+ Up               - up 1 line
+ PgDown           - down 24 lines
+ PgUp             - up 24 lines
+ CtrlPgDown       - screen up
+ CtrlPgUp         - screen down
+ Insert           - add bytes to the file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Block ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ *                - mark/unmark block
+ [                - top block
+ ]                - bottom top block
+ F2      - PutBlk - write block ( if marked )
+ CtrlF2  - GetBlk - read block ( if marked )
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Bookmarks ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ +                - store current state
+ -                - restore state
+ Alt-1...Alt-8    - restore N-th state
+ Alt-Minus        - delete current state
+ Alt-0            - clearing all bookmarks
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                         Hex edit                            บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[HexEdit]
+ Tab              - switch hex/ascii edit
+ Escape           - quit without save
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Functions keys ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ F1      - Info   - information ( path, size of heap, etc )
+ F3      - Undo   - restore original byte under cursor
+ F4      - Byte   - bit edit byte under cursor
+ F5      - Word   - bit edit word under cursor
+ F6      - Dword  - bit edit double word under cursor
+ F7      - Crypt  - crypt/deCrypt
+ F8      - SetCry - initialize crypto
+ F9      - Update - save changes
+ F10     - Trunc  - truncate file at cursor
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Cursors movement ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ Home             - top of line
+ End              - end of line
+ Right            - right on 1 character
+ Left             - left on 1 character
+ CtrlHome         - top of edit buffer
+ CtrlEnd          - end of edit buffer
+ Down             - down 1 line
+ Up               - up 1 line
+ Backspace        - restore original previous byte
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                         Bits edit                           บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[BitsEdit]
+ Escape           - quit without saving
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Functions keys ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ F2      - Not    - invert current bit
+ F3      - Undo   - restore original bit under cursor
+ F9      - Update - save changes
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Cursors movement ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ Home             - first bit
+ End              - last bit
+ Right            - right on 1 bit
+ Left             - left on 1 bit
+ Backspace        - restore original previous bit
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                         Code view                           บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[Code]
+ Enter            - switch mode to TEXT
+ Escape           - quit without saving timestamp
+ Alt-P            - Save screen into file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Functions keys ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ F1      - Info   - information ( path, size of heap, etc )
+ F2      - PutBlk - write block ( if marked )
+ F3      - Edit   - edit
+ F4      - Mode   - select view mode
+ F5      - Goto   - goto new offset
+ F6      - Refer  - find reference on current position
+ F7      - Search - search string
+ F8      - Header - show/edit EXE-header
+ F9      - Files  - filemanager for **argv
+ F10     - Quit   - quit with saving timestamp
+ CtrlF1  - 16/32  - size of operand/adress
+ CtrlF2  - GetBlk - read block ( if marked )
+ CtrlF3  - Replac - search & replace
+ CtrlF4  - ReRead - re-reading file in buffer
+ CtrlF5  - Base   - new base
+ CtrlF6  - NextRf - next reference
+ CtrlF7  - NextSr - search next
+  CtrlEnter       - search next
+  ShiftF7         - search next
+ CtrlF8  - PrvFil - previous file from **argv
+ CtrlF9  - NxtFil - next file from **argv
+ CtrlF10 - SavSta - save current state (position,search,etc...)
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Cursors movement ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ Right            - right on 1 character
+ Left             - left on 1 character
+ CtrlHome         - top of file
+ CtrlEnd          - end of file
+ Down             - down 1 line
+ Up               - up 1 line
+ PgDown           - down 24 lines
+ PgUp             - up 24 lines
+ CtrlPgDown       - screen up
+ CtrlPgUp         - screen down
+ Insert           - add bytes to file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Jumps/calls ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ 1-9,A-Z          - jump to target
+ 0                - return to previous position
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Block ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ *                - mark/unmark block
+ [                - top block
+ ]                - bottom top block
+ F2      - PutBlk - write block ( if marked )
+ CtrlF2  - GetBlk - read block ( if marked )
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Bookmarks ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ +                - store current state
+ -                - restore state
+ Alt-1...Alt-8    - restore N-th state
+ Alt-Minus        - delete current state
+ Alt-0            - clearing all bookmarks
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                         Code edit                           บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[CodeEdit]
+ Escape           - quit without save
+ Enter            - call assembler
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Functions keys ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ F1      - Info   - information ( path, size of heap, etc )
+ F2      - Asm    - call assembler
+ F3      - Undo   - restore original byte under cursor
+ F7      - Crypt  - crypt/deCrypt
+ F8      - SetCry - initialize crypto
+ F9      - Update - save changes
+ F10     - Trunc  - truncate file at cursor
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Cursors movement ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ Right            - right on 1 character
+ Left             - left on 1 character
+ CtrlHome         - top of edit buffer
+ CtrlEnd          - end of edit buffer
+ Down             - down 1 line
+ Up               - up 1 line
+ Backspace        - restore original previons byte
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                        Header view                          บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[Header]
+ Escape           - quit
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Functions keys ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ F1      - Info   - information ( path, size of heap, etc )
+ F3      - Edit   - edit header
+ F4      - Image  - goto on top image of EXE-file
+ F5      - Entry  - goto on entry point
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                       Header edit                           บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[HeaderEdit]
+ Escape           - quit without saving
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Functions keys ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ F2      - Pages  - calculate pages value ( +2,+4 in header )
+ F3      - Undo   - restore original value under cursor
+ F9      - Update - save changes
+  Enter           - save changes
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Cursors movement ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ Right            - right on 1 byte
+ Left             - left on 1 byte
+ Tab              - Next field
+  Down            - Next field
+ Backtab          - previous field
+  Up              - previous field
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                  Input/change base offset                   บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[Base]
+ Enter            - select new base
+ Escape           - cancel
+ Home             - first line
+  PgUp            - first line
+ End              - last line
+  PgDown          - last line
+ Down             - down on 1 line
+ Up               - up on 1 line
+ Any character       - edit current base
+
+ NOTE: if first character is '*', current base = current offset
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                          Crypt                              บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+;
+[Crypt]
+ Escape           - quit
+ Enter            - edit crypt command
+ Insert           - insert crypt command after current
+ Del              - delete current crypt command
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Functions keys ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ F1      - Info   - information ( path, size of heap, etc )
+ F2      - Size   - set size of crypt: byte or word
+ F3      - Direct - set direction of crypt: forward or backward
+ F4      - Clear  - clearing of crypt programm and register
+ F5      - ClrReg - clearing of crypt register
+ F7      - Exit   - exit from initialize
+ F9      - Store  - store crypt program in file
+ F10     - Load   - load crypt program from file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ Cursors movement ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ Plus             - crypt IP (marked as ">") down
+ Minus            - crypt IP (marked as ">") up
+ Home             - top of crypt programm
+ End              - end of crypt programm
+ Down             - down 1 line
+ Up               - up 1 line
+;
+;ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+;บ                       Last section                          บ
+;ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+[End]              *** End of helpfile ***

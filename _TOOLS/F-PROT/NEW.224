@@ -1,0 +1,315 @@
+Version 2.24a
+
+This version fixes a major error in F-PROT, which was discovered the day
+after it was released.  The error had to do with floppy disk boot sector
+virus detection, where a number of boot sector viruses (some of which have
+been detected since version 1.0) were suddenly not reported at all.
+
+This one should never have slipped through our quality control, but it
+somehow did - we will take the steps necessary to prevent a fiasco like
+this from happening again.
+
+We also made a few other minor changes: corrected some typos in the DOC
+files, fixed a Tentacle_II false alarm, and added detection and removal of
+one new Word macro virus.
+
+We also decided to include VIRLIST.LIS in a .ZIP file, so that the primary
+.ZIP file would fit on a single diskette when unpacked.
+
+--------------------------------------------------------------------------------
+Version 2.24 - major changes:
+
+	If you expected to find here a big note saying that we added
+	detection and removal of Hare and Laroux, which have generated
+	considerable media attention recently, you were partially right.
+	We did indeed add this - However, we do not consider those viruses
+	to be the major threat that some other anti-virus companies and the
+	media claim them to be, and we consider the importance of those
+	viruses to have been hyped way out of proportion.
+
+	The F-MACRO.EXE program which was included with version 2.23 has
+	been replaced with a new program, named F-MACROW.EXE, which is a
+	Windows application, specifically written to detect and disinfect
+	Microsoft Word and Excel macro viruses.  This program can detect and
+	disinfect over 50 macro viruses and Trojans, including the recently
+	reported Laroux Excel virus.  Please see F-MACROW.DOC for further
+	information.
+
+Version 2.24 - the following problems were found and corrected:
+
+        The disinfection of the Quandary virus from the hard disk didn't
+        work - F-PROT was complaining that the original MBR could not
+        be found. Fixed.
+
+        The DelCMOS viruses were not detected in memory. Fixed.
+
+Version 2.24 - the following false alarms were fixed:
+
+	RD16.COM : Possibly a new variant of Chips
+
+Version 2.24 - minor improvements and changes:
+
+   You can now ask the F-PROT mail server to send you an E-mail
+   notification whenever a new version of F-PROT is released - see
+   UPDATES.DOC for details.
+
+Version 2.24 - new viruses:
+
+   The following 31 viruses are now identified, but can not be removed as
+   they overwrite or corrupt infected files.  Some of them were detected by
+   earlier versions of F-PROT, but not identified accurately.
+
+	_180
+	Bugsb.282
+	Cascade.1701.AX (A damaged variant, which corrupts the original file)
+	Danish_Tiny (164 and 282) ("buggy" variants)
+	Leprosy.651
+	Measles.212
+	Nuts.360
+	Syskill.290
+        Trivial (29.G, 31.E, 32.D, 32.E, 32.F, 32.G, 34.D, 35.B, 35.C,
+		36.E, 37.D, 37.E, 37.F, 38.C 44.F, 44.G, 60, 78.B, 88.B
+		and 320)
+	Vorbis (155 and 166)
+
+   The following 377 new viruses can now be removed.  Many of them were
+   detected by earlier versions, but are now identified accurately. In
+   addition, we added detection and disinfection of various Word macro
+   viruses.
+
+	_366
+	_497
+        _514
+	_600
+        _699
+        _768
+	_948
+        _1097
+	_1259
+	_1522
+	_2124
+	Aaa.807
+        Adi_Pop (470 and 485)
+        Alho.676
+	AntiCad (3000 and 3012.G)
+	AOS (813, 823, 831, 839, 845 and 855)
+	Arcv.746
+	Ash.743.M
+	Babyly.674
+        BadSize.369
+	Beer (3225, 3434, 3441, 3522, 3612 and 3774)
+	Best_Wishes.981
+	Bishkek.319
+        Blazer.1000
+	Bootexe.451.B
+        BR.1180
+	BW (304, 309, 323, 382, 384, 395, 399, 400, 402, 405.A, 405.B,
+		412, 414, 488, 493, 550, 551, 552, 558, 559, 562, 567.A,
+		567.B, 572, 573, 575, 577.A, 577.B, 577.C, 579, 649 and
+		653.B)
+	Bytewarr.1155
+        Caco.3310
+	Carioca.951.C
+        Cascade (1701.AT, 1701.AV, 1701.AW, 1701.AY, 1701.AZ and 1704.AE)
+	Checkbox.936
+	Civil_IV (533 and 837)
+        Claire.821
+	Cliff.1313
+        CMOS_Death
+	Cmosmess (3622 and 3710)
+	Creeper.478
+	Croatia_II.560
+	Cuareim.800
+	Currar.1171
+	Danish_Tiny.282
+	Dark_Apocalyse.1023
+	Dark_Avenger.1800.AD
+	Dayton.792
+        Dear.524
+        Delta.1163
+	Diamond.1096
+	Diw (386, 389, 393, 428, 480, 488, 512, 555, 565, 597 and 600)
+	Dolong.1380
+        Drepo.2461
+	Dutch_tiny.98
+        DVA (437, 443, 445, 490, 640, 749 and 753)
+	Eastern_Digital.1700
+        Epsilon (513 and 1498)
+	Equals.2221
+	Fax_Free.1024.Pisello.C
+	Flip.2153.K
+	Gerli.593
+	Ginger.2848
+	Glitch,469
+	Glupak.847.C
+	Gotcha (613 and 623)
+	Hare (7610, 7750 and 7786)
+	Hera.1208
+	HLLP (5062, 5176 and 6917)
+        IBVV.742
+	Icelandic (642.D, 642.E and 1618.G)
+	Indonesia.2456
+	Insert.260
+	Intruder (459, 879, 956, 1347 and 2028)
+        IR&MJ
+        IVP (335, 336, 475, 495.B, 582, 648, 674.B, 693.B, 737 and 744)
+	Jerusalem (1349, 1808.Frere.N, 1808.Null.C, 1808.New11, 
+		1808.Sumsdos.AW and 2012)
+        Jorgito.730
+	Jovial.503
+	JTTP.3423
+	June_24.570
+	Keeper.776
+	Khiznjak.507
+        Kobrin.492
+	Laroux (Excel)
+        Leech.1024 (C and D)
+        Leo
+        Little (159 and 268)
+	Little_Boy.944
+	Lovebuzz.591
+	Lupus.866
+	Macav.1000
+        Mango.470
+	Marcia.4651
+        Markt.1548
+	Matador.832
+        Mathiew (2667 and 3044)
+        Michael.1458
+	Mirea.703
+	Mrei.313
+	Natas (4826 and 4926)
+	Nazgul.209
+	Necropolis.1963.E
+	Nightking.1568
+        Oktubre.1784
+        Oolong.1380
+        Ornate
+        Parity_Boot (C and D)
+        Peligro.1206
+	Pepper.528
+        Power_Off.798
+	Probe.2140
+	Proto-T.690
+        PS-MPC (272, 294, 356.B, 358.B, 365, 424.B, 431, 432.B, 433.A, 433.B, 
+		434, 440, 444.C, 446.C, 446.D, 446.E, 447, 448.A, 448.B, 466,
+		475.D, 479, 490.B, 504.B, 509.B, 512, 513.C, 513.D, 513.E,
+		518, 520.E, 522.B, 526.C, 528.C, 528.D, 533.B, 534.B, 536.B,
+		539, 555.B, 568.B, 580, 591.E, 591.F, 592.R, 592.S, 592.T,
+		592.U, 592.V, 592.W, 592.X, 592.Y, 592.Z, 592.AA, 592.AB,
+		592.AC, 592.AD, 592.AE, 592.AF, 593.H, 593.I, 593.J, 593.K,
+		593.L, 596.E, 596.F, 597.W, 597.X, 597.Y, 597.Z, 597.AA,
+		597.AB, 597.AC, 597.AD, 597.AE, 597.AF, 598.P, 598.Q, 598.R,
+		598.S, 600.C, 601.B, 602.F, 602.G, 604, 611.U, 618, 640.B,
+		641.B, 653 and 658)
+	Rabbit.B
+	Retaliator.1529
+	Riot (1409 and 1435)
+        Romania.856
+	Rose
+	Salieri.1745
+	Salman.2000
+	Sentinel.4638
+	Sepultura
+	SillyC (90, 115, 147, 155.B, 165, 187, 191, 200, 202, 212, 213, 215.C,
+		224, 226.B, 228 and 335)
+        SillyComp.219
+	SilliCR.59
+	Sineda.1208
+	Skater.819
+	Stdemo.803
+	Suriv_1 (897.I, 897.J and 942)
+	Swiss_Boot.C
+	Tai-Pan.513
+        Timish.2132
+	Topper.1024.B
+	Tsc.714
+        Tucuman.828
+	Tula.1540
+	Tula_II.1656
+        Ufro
+	Umbrella.3173
+	Vacsina.1212.B
+	VCC (269.B, 313.A, 313.B, 313.C, 313.D, 350.A, 350.B, 350.C, 350.D,
+		350.E, 350.F, 350.G, 350.H, 389 and 392)
+        VCL (523, 596 and 758)
+	White_Lion.942
+	Viaggio.1051
+	Vienna (481, 502, 636, 637.B, 639 and 1278)
+	Vota.591
+        Voyage.1134
+        WereWolf_III.1168
+	X-ray.2050
+	Xuxa.1984
+	Yankee_Doodle.1672
+	Yosha.975
+	Zarina.590
+        Zibbert.1268
+
+   The following 73 new viruses are now detected and identified but can not
+   yet be removed.
+
+	_699
+	_1587
+	_1730
+	AOS (794, 802, 812, 820, 826, 832, 844, 851 and 860)
+	Bladder.1015
+	BW (548, 630, 634, 637, 640, 641, 642, 648.A, 648.B and 649.B)
+	DBCE.3403
+	Doubleheart.645
+        Edwin
+	Enjoy.1667
+	Father_Mac (784, 794, 833, 1437, 1446, 1495, 1508, 1531, 1534,
+		1579 and 1622)
+	Gosha.1831
+	Httm.580
+        INT_12
+	IVP (667, 683.B and 814
+	Kvapavka.879
+	Lyubasha.381
+	Majkl (1432 and 1503)
+	Mathiew (2667 and 3044)
+	Moonlite.343
+	Ninja.1195
+	NRLG (818 and 844)
+	Number_of_the_Beast.512.AD
+	Ornate
+	Prdevil.716
+	Ratboy.463
+	Seat.2419
+	Shff.4509
+	Skvernuk.599
+	Small_comp.100.C
+	Topper.1024
+	Ufo.1468
+	VCC.424
+	Veronika.1549.B
+	Voyager.508
+	Walhala.1283
+	Wildy (399, 402 and 421)
+	Xute.1182
+	Zub.792
+
+   The following 1 new virus is now detected, but not identified.
+   F-PROT will just report the family name with a (?) or report the
+   virus as "New or modified variant", as it is not yet able to determine
+   which variant it is dealing with.  Disinfection of this virus is not
+   yet possible.
+
+	Tentacle_II
+
+   The following 13 viruses which were identified by earlier versions can
+   now be removed.
+
+        Caco.2965
+        Dementia.4207
+        Hate.971
+        Legozz.1000
+        Pojer (1919, 1935, 1941 and 1949)
+        Screaming_Fist (625, 650 and 724)
+	Werewolf (1500.A and 1500.B)
+
+   The following viruses have been renamed:
+
+        _1315 -> Zibbert.1315
+        _2965 -> Caco.2965

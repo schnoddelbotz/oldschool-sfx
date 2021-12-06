@@ -1,0 +1,479 @@
+com Version 1.4 changes made 09/21/94 by RLM:
+com   Changed Scan to exit when 3 defects have been found.
+com   Changed Scan from 256 to 128 blocks due to DIAG buffer size limitation.
+com   Added win on.
+com   Updated DIAG from 0.94xx6 to 1.01.
+com Version 1.5 changes made 09/26/94 by RLM:
+com   Removed test for target ID 6.
+com   Removed grown defect check.
+
+r20=0
+com r13 r14 r15 r30 used by time.tim
+cls
+varinit
+pauseflg=off
+silent off
+
+top:
+flush,log.sw off
+r22=1,r23=0,r24=1,r25=1,r26=1,r27=1,r50=1,r29=1,r35=1,r36=1
+
+genertop:
+win off
+r55=0 com _ErrorCode
+flush,log.sw off
+cls
+echo
+echo
+echo
+echo
+echo
+echo             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+echo             ³ 09/26/94      Generic Quick Test     Version 1.5 ³
+echo             ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+echo             ³              0 = PERFORM TEST                    ³
+echo             ³             44 = View Fail Codes                 ³
+echo             ³             55 = View GENERIC.LOG File           ³
+echo             ³             66 = Clear GENERIC.LOG File          ³
+echo             ³             77 = View GENERQIK.LOG               ³
+echo             ³             78 = View GENERALL.LOG               ³
+echo             ³             88 = DOS Shell                       ³
+echo             ³             99 = DIAG Prompt                     ³ 
+echo             ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+echo
+echo                                Enter Selection: |,silent on,r8=99,r8\,silent off
+
+if r8 eq 0 [goto generper]
+if r8 eq 44 [ dos br generrws.doc ]
+if r8 eq 44 [ goto genertop ]
+if r8 eq 55 [ dos br a:generic.log ]
+if r8 eq 55 [ goto genertop ]
+if r8 eq 66 [ goto glogedit ]
+if r8 eq 77 [ dos br a:generqik.log ]
+if r8 eq 77 [ goto genertop ]
+if r8 eq 78 [ dos br a:generall.log ]
+if r8 eq 78 [ goto genertop ]
+if r8 eq 88 [ dos,goto genertop ]
+if r8 eq 99 [ flush,log.sw off,goto endpgm ]
+echo %r8 Is An Invalid Entry!,echo,pause,goto genertop]
+
+glogedit:
+cls
+echo  1 = Clear Existing GENERIC.LOG Logfile,, Leaving Only Column Headings.
+echo 55 = View GENERIC.LOG Logfile
+echo 99 = Exit
+echo Enter Selection <Default=99>: |,silent on,r57=99,r57\,silent off
+if r57 eq 55 [ dos br a:generic.log ]
+if r57 eq 55 [ goto glogedit ]
+if r57 eq 99 [goto endalog]
+if ((r57 lt 1) || (r57 gt 1)) [echo %r57 Is An Invalid Entry!,echo,pause,goto glogedit]
+
+if r57 eq 1 [ goto gdelfile ]
+
+gdelfile:
+echo Are You Sure You Want To Clear GENERIC.LOG Logfile?
+echo (0=No,, 1=Yes) <Default=0>: |,silent on,r57=0,r57\,silent off
+if r57 eq 0 [goto glogedit]
+dos copy generic.hdr a:generic.log
+dos br a:generic.log
+goto glogedit
+
+endalog:
+goto genertop
+
+
+generper:
+cls,win on
+echo Generic Quick Test...
+echo
+echo Connect Power And SCSI Cable To Drive,, Then Power Up Drive.
+echo,pause
+r52=0
+logfile a:generqik.log
+log.sw on
+cls
+echo Begin Generic Quick Test - |,stamp
+echo
+
+grdychk:
+reset
+silent on,wait 100,id,reqs,silent off
+if status [r55=1000,r52=1,echo ERROR - Target ID Not Found,, Check Power And SCSI Cable Connections.,echo,pause,goto gdone]
+r59=0
+
+gturloop:
+silent on,reqs,reset,wait 1000,tur,tur,silent off
+r62=reqs.key*256+reqs.cod
+if ((status) && (r59 lt 20)) [r59=r59+1,echo %r59 Of 20 Attempts - Waiting For Drive To Come Ready,, Status=%status^,, Sense=%r62^,goto gturloop]
+if status [r55=1010,r52=1,echo ERROR - Drive Not Ready., echo,pause,goto gdone]
+
+inq,if status [r55=1020,r52=1,echo ERROR - Inquiry Command Failed.,echo,pause,goto gdone]
+
+silent on,rcap,silent off
+if status [r55=1030,r52=1,echo ERROR - Read Capacity Failed.,echo,pause,goto gdone]
+timeout 60000
+autoreqs off
+silent on,rcap,reqs,silent off
+echo PASSED - Drive Is Ready.
+echo
+
+com Check For QUANTUM Drive.
+buf 1,fill 0
+silent on,inq,silent off
+if status [r55=1020,echo Error - Could NOT Execute INQUIRY Command,goto gdone]
+getb 8 r54,if r54 ne 51h [r55=1040,r52=1,echo Error - Drive Is Not QUANTUM,goto gdone]
+getb 9 r54,if r54 ne 55h [r55=1040,r52=1,echo Error - Drive Is Not QUANTUM,goto gdone]
+getb 10 r54,if r54 ne 41h [r55=1040,r52=1,echo Error - Drive Is Not QUANTUM,goto gdone]
+getb 11 r54,if r54 ne 4Eh [r55=1040,r52=1,echo Error - Drive Is Not QUANTUM,goto gdone]
+getb 12 r54,if r54 ne 54h [r55=1040,r52=1,echo Error - Drive Is Not QUANTUM,goto gdone]
+getb 13 r54,if r54 ne 55h [r55=1040,r52=1,echo Error - Drive Is Not QUANTUM,goto gdone]
+getb 14 r54,if r54 ne 4Dh [r55=1040,r52=1,echo Error - Drive Is Not QUANTUM,goto gdone]
+
+com *** Begin Bypass Check For Target ID 6.
+goto generchk
+com ***
+com 
+com gchkid:
+com if r25 eq 0 [goto generchk]
+com reset,silent on,wait 100,id,silent off
+com if targ.id eq 6 [echo PASSED - Target ID Is Set To %targ.id] else [r55=1050,r52=1,echo FAILED - Target ID Is Set To %targ.id,, Should Be Set To 6.,goto gdone] 
+com echo
+com *** End Bypass Check For Target ID 6.
+
+generchk:
+silent on,msen 20h,silent off
+if status eq 0 [r55=1060,r52=1,echo Failed - Drive Is NOT Generic. Mode Select Page 20h Found!,goto gdone]
+silent on,msen 30h,silent off
+if status eq 0 [r55=1060,r52=1,echo Failed - Drive Is NOT Generic. Mode Selcet Page 30h Found!,goto gdone] else [echo PASSED - Drive Is Generic.]
+echo
+
+com *** Begin Bypass Grown Defect Check.
+goto astrtstp
+com ***
+com 
+com gchkdef:
+com if r27 eq 0 [goto astrtstp]
+com r2=Drive Capacity r3=Total Grown Defects r4=Allowable Defects
+com silent on,rcap,silent off
+com r2=maxlba+1*512
+com silent on,rdgdef,silent off
+com getb 3 r3
+com r3=r3/8
+com 
+com if r2 lt 200000000 [r4=r2/10000000]
+com if r2 gt 199999999 [r4=r2-200000000/50000000+20]
+com if r3 gt r4 [r55=2000,r52=1,echo FAILED - Too Many Grown Defects!  Maximum Allowed=%r4,, Found=%r3!,goto gdone] else [echo PASSED - Grown Defects Check.  Maximum Allowed=%r4,, Found=%r3]
+com echo
+com *** End Bypass Grown Defect Check.
+
+astrtstp:
+if r50 eq 0 [goto awrcbuf]
+echo Stop Command Time -> |,stop,if status [r55=3000,r52=1,echo,echo Drive Failure!!!,echo,pause,goto gdone],r30=time,bat time.tim
+echo Start Command Time -> |,start,if status [r55=3010,r52=1,echo,echo Drive Failure!!!,echo,pause,goto gdone],r30=time,bat time.tim
+echo
+
+awrcbuf:
+if r29 eq 0 [goto aecc]
+nb=1,lba=0,wrb.l=512,rdb.l=512,cmp.e=100
+r9=0
+
+abuf00h:
+buf 1,fill 00h,wrb,if status [r55=4000,r52=1,echo FAILED - Write Buffer Command With Data Pattern 00h,goto gdone]
+buf 2,fill 0ffh,rdb,if status [r55=4010,r52=1,echo FAILED - Read Buffer Command With Data Pattern 00h,goto gdone]
+cmp 4 511
+if cmp.stat [r55=4020,r52=1,echo FAILED - Miscompare During Write Buffer/Read Buffer/Compare With Data Pattern 00h,goto gdone]
+r9=r9+1
+if r9 lt 99 [goto abuf00h]
+echo Passed - Write Buffer/Read Buffer/Compare With Data Pattern 00h
+r9=0
+
+abufffh:
+buf 1,fill 0ffh,depb 0 00h 00h 00h 00h,wrb,if status [r55=4030,r52=1,echo FAILED - Write Buffer Command With Data Pattern FFh,goto gdone]
+buf 2,fill 00h,rdb,if status [r55=4040,r52=1,echo FAILED - Read Buffer Command With Data Pattern FFh,goto gdone]
+cmp 4 511
+if cmp.stat [r55=4050,r52=1,echo FAILED - Miscompare During Write Buffer/Read Buffer/Compare With Data Pattern FFh,goto gdone]
+r9=r9+1
+if r9 lt 99 [goto abufffh]
+echo Passed - Write Buffer/Read Buffer/Compare With Data Pattern FFh
+r9=0
+
+abufrand:
+buf 1,rand r34 0 0ffh,fill r34,depb 0 00h 00h 00h 00h,wrb,if status [r55=4060,r52=1,echo FAILED - Write Buffer Command With Random Data Pattern,goto gdone]
+buf 2,fill 00h,rdb,if status [r55=4070,r52=1,echo FAILED - Read Buffer Command With Random Data Pattern,goto gdone]
+cmp 4 511
+if cmp.stat [r55=4080,r52=1,echo FAILED - Miscompare During Write Buffer/Read Buffer/Compare With Random Data Pattern,goto gdone]
+r9=r9+1
+if r9 lt 99 [goto abufrand]
+echo Passed - Write Buffer/Read Buffer/Compare With Random Data Patterns
+r9=0
+echo
+
+aecc:
+if r35 eq 0 [goto ascan]
+r6=1,r60=2,bat ecc.qik
+if r14 gt 0 [r55=5000,r52=1,goto gdone]
+echo
+
+ascan:
+if r36 eq 0 [goto gdone]
+
+rdxonly:
+log.sw on
+silent on,varinit,reset,wait 1000,tur,rcap,r41=maxlba,silent off
+if status [r55=1010,r52=1,echo,echo Failed Scan - Drive Not Ready!,echo,pause,goto gdone]
+log.sw off
+
+com next two lines used when grdxget options commented out
+r44=128,r42=1,r28=8,r45=0,r40=0,nb=r44,lba=0
+
+ardxget:
+log.sw on
+
+echo Begin Scanning Drive - |,stamp
+bat awrearre.off
+bat retry.utl
+r46=0,r39=0,r47=0,r48=0,r49=0
+retry
+ecc
+buf 1
+echo
+echo Number Of Sectors = %nb
+echo Beginning Logical Sector = %lba
+echo Ending Logical Sector = %maxlba (%maxlba^)
+echo
+
+ardxloop:
+r46=r46+1
+
+com echo Begin Loop %r46 Of %r42 - |,stamp
+ardxns:
+if lba eq maxlba [goto gdonerdx]
+if lba+nb gt maxlba [nb=maxlba-lba]
+silent on,r47=lba,r48=nb,rd,silent off
+if status [r55=6000,r52=1,goto ardxsecs]
+
+com silent on,r47=lba,r48=nb,wrx,silent off
+com if status [r52=1,r39=r39+1,echo   Failed Write Within 256 Blocks Beginning At LBA %lba]
+
+lba=r47+r48
+nb=r44
+com r7=maxlba-lba
+com r57=r7*100/maxlba
+com r57=100-r57
+com if r7 gt 0 [echo     %r57%% Done - |,stamp]
+goto ardxns
+
+ardxsecs:
+echo   Failed Read At LBA %reqs.lba
+r39=r39+1
+if r39 ge 3 [echo   Three Defects Found,, Exiting Scan...,goto aendrdx]
+silent on,nb=r44-((bytes/512)+1),silent off
+lba=reqs.lba+1
+goto ardxns
+
+gdonerdx:
+nb=1
+lba=maxlba
+silent on,rdx,silent off,if status [r55=6000,r52=1,r39=r39+1,echo   Failed Read At LBA %reqs.lba]
+if r39 eq 0 [echo   Passed - Reading Drive.] else [echo   Failed - Reading Drive.]
+
+lba=maxlba/2
+nb=128
+silent on,rdx,silent off,if status [r55=6000,r52=1,r39=r39+1,echo   Failed Read At LBA %reqs.lba,goto aendrdx]
+silent on,wrx,silent off,if status [r52=1,r39=r39+1,echo   Failed Write At LBA %reqs.lba] else [echo   Passed - Read/Write Of 128 Blocks At LBA %lba]
+if ((status) && (r55 ne 6000)) [r55=6010]
+if ((status) && (r55 eq 6000)) [r55=6020]
+lba=lba+nb
+silent on,rdx,silent off,if status [r52=1,r39=r39+1,echo   Failed Read At LBA %reqs.lba,goto aendrdx]
+if ((status) && (r55 ne 6010)) [r55=6000]
+if ((status) && (r55 eq 6010)) [r55=6020]
+silent on,wrx,silent off,if status [r52=1,r39=r39+1,echo   Failed Write At LBA %reqs.lba] else [echo   Passed - Read/Write Of 128 Blocks At LBA %lba]
+if ((status) && (r55 ne 6000)) [r55=6010]
+if ((status) && (r55 eq 6000)) [r55=6020]
+
+aendrdx:
+echo
+if r39 eq 0 [echo P A S S E D - 0 Errors Found.] else [r52=1,echo F A I L E D - %r39 Errors Found.]
+echo,echo End Scanning Drive - |,stamp,flush
+echo
+nb=1,lba=0
+silent on,reset,wait 500,tur,silent off
+goto gdone
+
+gdone:
+log.sw on
+if r52 eq 0 [goto passmsg] else [goto failmsg]
+passmsg:
+echo
+echo ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+echo ³   ÜÜÜÜÜÜÜÜ   ÜÜÜÜÜÜÜÜ   ÜÜÜÜÜÜÜÜ   ÜÜÜÜÜÜÜÜ   ³
+echo ³   Û      Û   Û      Û   Û      ß   Û      ß   ³
+echo ³   Û      Û   Û      Û   Û          Û          ³
+echo ³   ÛÜÜÜÜÜÜÛ   ÛÜÜÜÜÜÜÛ   ÛÜÜÜÜÜÜÜ   ÛÜÜÜÜÜÜÜ   ³
+echo ³   Û          Û      Û          Û          Û   ³
+echo ³   Û          Û      Û          Û          Û   ³
+echo ³   Û          Û      Û   ÛÜÜÜÜÜÜÛ   ÛÜÜÜÜÜÜÛ   ³
+echo ³                                               ³
+echo ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+echo
+echo Passed Generic Quick Test.
+goto donemsg
+
+failmsg:
+echo
+echo ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+echo ³    ÜÜÜÜÜÜÜÜ   ÜÜÜÜÜÜÜÜ     ÜÜÜ      Ü         ³
+echo ³    Û          Û      Û      Û       Û         ³
+echo ³    Û          Û      Û      Û       Û         ³
+echo ³    ÛÜÜÜÜÜÜ    ÛÜÜÜÜÜÜÛ      Û       Û         ³
+echo ³    Û          Û      Û      Û       Û         ³
+echo ³    Û          Û      Û      Û       Û         ³
+echo ³    Û          Û      Û     ÜÛÜ      ÛÜÜÜÜÜÜÜ  ³
+echo ³                                               ³
+echo ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+echo
+echo Failed Generic Quick Test.
+goto donemsg
+
+donemsg:
+echo,echo End Generic Quick Test - |,stamp
+flush,fclose,log.sw off
+goto generlog
+
+generlog:
+log.sw off
+if r20 ne 0 [goto ar20ne0]
+
+generclr:
+dos generclr.bat
+r20=1
+
+ar20ne0:
+logfile a:generlog.tmp
+
+alog:
+log.sw off
+echo
+silent on,inq,silent off
+if status eq 0 [goto snfound]
+echo Unable To Read Serial Number From The Drive.
+
+snerror:
+echo
+echo Example: If Serial Number Is 123456789012 Then Enter 123456
+echo Enter The 6 Leftmost Numbers Of Drive Serial Number: |,silent on,r53=0,r53\,silent off
+echo
+echo Example: If Serial Number Is 123456789012 Then Enter 789012
+echo Enter The 6 Rightmost Numbers Of Drive Serial Number: |,silent on,r54=0,r54\,silent off
+echo
+com echo Enter Error Code (4 Digits): |,silent on,r55=0,r55\,silent off
+com if r55 gt 9999 [ echo Invalid Entry,, More Than 4 Digits Entered.,echo,pause,goto snerror]
+
+echo
+echo                               Fail  Sense   Grown    Log         Log
+echo  Model   F/W   Serial Number  Code  Code    Defects  Day      Date/Time
+echo -------  ----  -------------  ----  ------  -------  --- --------------------
+log.sw on
+if r55 eq 0 [echo                %r53%r54   0000|] else [echo                %r53%r54   %r55|]
+r56=stat.2*256+stat.12
+if r56 eq 629h [r56=0]
+if r56 eq 0 [echo    000h            |] else [echo    %r56^            |]
+stamp
+goto acopylog
+
+snfound:
+echo
+com echo Enter Fail Code (4 Digits): |,silent on,r55=0,r55\,silent off
+com if r55 gt 9999 [ echo Invalid Entry,, More Than 4 Digits Entered.,echo,pause,goto snfound]
+echo
+echo                               Fail  Sense   Grown    Log         Log
+echo  Model   F/W   Serial Number  Code  Code    Defects  Day      Date/Time
+echo -------  ----  -------------  ----  ------  -------  --- --------------------
+
+log.sw on
+
+buf 1,fill 0
+silent on,inq,silent off
+if status [echo Error - Could NOT Execute Inquiry Command,goto getreqs]
+r53=16
+amodloop:
+getb r53 r54
+bat ascii.utl
+r53=r53+1
+if r53 lt 23 [goto amodloop] else [echo   |]
+
+buf 1,fill 0
+silent on,inq,silent off
+if status [echo Error - Could Execute Inquiry Command,goto acopylog]
+r53=32
+afwloop:
+getb r53 r54
+bat ascii.utl
+r53=r53+1
+if r53 lt 36 [goto afwloop] else [echo   |]
+
+agetsn:
+buf 1,fill 0
+silent on,inq,silent off
+if status [echo Error - Could NOT Execute Inquiry Command,goto acopylog]
+r53=44
+asnloop:
+getb r53 r54
+bat ascii.utl
+r53=r53+1
+if r53 lt 56 [goto asnloop]
+
+getreqs:
+if r55 eq 0 [echo    0000|] else [echo    %r55|]
+
+r56=stat.2*256+stat.12
+if r56 eq 629h [r56=0]
+if r56 eq 0 [echo    000h|] else [echo    %r56^|]
+
+silent on,tur,rdgdef,silent off
+if status [echo Error - Could NOT Read Grown Defect List,goto acopylog]
+getb 3 r3
+r3=r3/8
+echo       %r3     |
+stamp
+
+acopylog:
+flush,fclose,log.sw off
+com echo,pause
+dos copy a:generic.log+a:generlog.tmp a:generic.log
+dos copy a:generall.log+a:generqik.log a:generall.log
+flush,fclose
+com dos br a:generic.log
+
+echo
+echo Attempting To Stop Drive Motor...Standby...
+silent on,stop,silent off
+if status eq 0 [goto passstop] else [goto failstop]
+
+passstop:
+if time lt 10000000 [wait 12000] 
+echo
+echo Drive Motor Stopped...
+echo
+echo Drive May Safely Be Removed Now...
+echo,pause
+goto genertop
+
+failstop:
+echo
+echo Drive Motor Could NOT Be Stopped.
+echo
+echo Disconnect Power From Drive...
+echo,pause,echo
+echo Waiting 20 Seconds For Drive To Spin Down...Standby...
+wait 20000,echo
+echo Remove SCSI Cable...
+echo,pause
+echo
+echo Test Is Completed. Drive May Safely Be Removed Now. 
+echo,pause
+goto genertop
+
+endpgm:
+
+

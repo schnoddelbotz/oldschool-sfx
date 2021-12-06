@@ -1,0 +1,50 @@
+                        Heuristic analysis
+
+Scanning for viruses by using search strings is not the ultimate solution
+to the virus problem.  If using an up-to-date scanner (or better yet, two
+scanners from different companies), one can be fairly certain that all
+known viruses will be detected.  The scanners may or may not detect new
+variants which have been created by modifying older viruses, but if a new
+virus is written entirely from scratch, it will probably not be detected by
+any existing search string.
+
+The virus may be detected by a generic monitoring program when it
+activates - perhaps when trying to perform some suspicious action, such as
+reformatting the hard disk.  It may also be detected by a checksuming
+program, which detects changes to files or boot sectors, after they have
+been infected.  Nevertheless, it is preferable to try to detect the
+presence of the virus without actually running a virus-infected program.
+
+The heuristic analysis is basically a small expert-system, which has a set
+of rules describing viruses, and attempts to apply them to the programs it
+analyses.  It is still only in an experimental stage and is not flawless -
+some viruses cannot yet be detected in this way, and an occasional false
+alarm is to be expected.
+
+Currently a few programs are known to cause a false positive, including:
+
+  Any program protected with the HyperLOCK encryptor ... not surprising, 
+  considering that it claims that "Attemping to reverse engineer this
+  software may result in data loss".
+
+  Any program protected with the PROTECT encryptor.
+
+  A few heavily "armored" programs, that use multiple layers of
+  anti-debugging techniques.  XTG.EXE (Xtree Gold) is one example.
+
+  RXINTMGR.COM
+
+  Some files belonging to Central-Point's PC-Tools.   
+
+In addition, if the heuristics report a non-executable file as suspicious,
+it is almost certainly a false alarm - the heuristics are only intended to
+analyse executable files, and will not produce meaningful results if used
+on a data files.  You should NEVER use heuristics with "All files" selected,
+and doing so will produce a warning message.
+
+Experienced users may wish to run the heuristic scan with the /PARANOID
+switch on - HOWEVER, THIS WILL SIGNIFICANTLY INCREASE THE RISK OF FALSE
+ALARMS, so use it with care.
+
+We are not interested in receiving copies of false alarms that are only
+reported with /PARANOID, so don't waste your time sending them to us.

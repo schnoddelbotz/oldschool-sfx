@@ -1,0 +1,35 @@
+; Keyboard layout file for NetSupport Control
+;
+; Format of this file is:
+;   keyboard layout name
+;   special key mappings
+; repeated as often as desired
+;
+; Special key mappings take the form:
+;   scancode=character scancode=character ...
+; where scancode is a hexadecimal number
+;   (if >= 80 hex, the SHIFTED key is mapped)
+
+UK enhanced (102 key) keyboard
+83=" 84=œ A8=@ 29=` A9=ª 2B=# AB=~ 56=\ D6=|
+UK standard (83 key) keyboard
+83=" 84=œ A8=@ 29=# A9=~ 2B=\ AB=| 56=\ D6=|
+UK switchable XT/AT keyboard
+83=" 84=œ A8=@ 29=\ A9=| 2B=# AB=~ 56=\ D6=|
+US enhanced (102 key) keyboard
+83=@ 84=# A8=" 29=` A9=~ 2B=\ AB=| 56=\ D6=|
+US standard (83 key) keyboard
+83=@ 84=# A8=" 29=` A9=~ 2B=\ AB=| 56=\ D6=|
+German enhanced (102 key) keyboard
+83=" 84= A8=Ž 29=# A9=^ 2B=+ AB=* 56=\ D6=|
+German standard (83 key) keyboard
+83=" 84= A8=Ž 29=# A9=^ 2B=+ AB=* 56=\ D6=|
+French enhanced (102 key) keyboard
+83=2 84=3 A8=% 29=æ A9=œ 2B=$ AB=* 56=\ D6=|
+French standard (83 key) keyboard
+83=2 84=3 A8=% 29=æ A9=œ 2B=$ AB=* 56=\ D6=|
+Swedish/Finnish enhanced (102 key) keyboard
+83=" 84=# A8=Ž 29=< A9=> 2B=' AB=* 56=\ D6=|
+Swedish/Finnish standard (83 key) keyboard
+83=" 84=œ A8=Ž 29=< A9=> 2B=' AB=* 56=\ D6=|
+

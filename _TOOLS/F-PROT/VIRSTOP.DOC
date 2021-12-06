@@ -1,0 +1,138 @@
+                              VIRSTOP
+
+Note for Windows '95 users: VIRSTOP is not designed to be run under
+   Windows '95, and will only work partially in that environment - it
+   is not able to check boot sectors on access.  Also, you may need to
+   use the /NOTRACE switch (see below) to be able to run VIRSTOP at all.
+   Note that the Win '95 version of VIRSTOP (in F-PROT Professional)
+   does not have those problems.
+
+Note for all Windows users:  Virstop may cause compatibility problems when
+   run under Windows.  In most cases, switching to the VIRSTOP2 program
+   will fix those problems.
+
+The primary purpose of the VIRSTOP.EXE program is to prevent the execution
+of programs infected with known viruses.
+
+VIRSTOP installs itself in RAM as a standard TSR and intercepts the
+so-called "Load-and-execute" function.  This means that whenever an attempt
+is made to run a program VIRSTOP gets a chance to examine it first.
+
+VIRSTOP uses a simple but fast search to check for viruses, but it does
+not make an accurate identification - F-PROT.EXE is necessary for that
+purpose.
+
+IMPORTANT! ...  VIRSTOP does not detect the same number of viruses as
+F-PROT.  In particular, VIRSTOP does not detect most polymorphic viruses. 
+It is therefore recommended that VIRSTOP only be used as one component of
+the virus protection - do not rely on it alone.
+
+If VIRSTOP finds a virus, it will abort the execution of the program,
+display a message and return an error.  For example, if you attempt to run
+a program infected with the Cascade virus, with VIRSTOP active in memory,
+you might see something like this:
+
+        This program is infected with the Cascade virus.
+        Cannot execute A:\INF-PROG.COM
+
+VIRSTOP has a secondary function as well - it attempts to check for any
+active boot sector virus when it is run. 
+
+The recommended way to load VIRSTOP is to load it from the CONFIG.SYS
+file, with a command such as:
+
+                    DEVICE=C:\F-PROT\VIRSTOP.EXE
+
+Or, if you are using DOS 5 (or 6), you can instead use
+
+                    DEVICEHIGH=C:\F-PROT\VIRSTOP.EXE
+
+Virstop may also be run from AUTOEXEC.BAT, but loading it this way is
+safer, as otherwise a companion-type infector or a virus that had infected
+COMMAND.COM might be executed before VIRSTOP.
+
+IMPORTANT! - If any memory managers, such ar 386MAX, HIMEM or QEMM are
+used, they must be loaded before VIRSTOP.
+
+In order to test if VIRSTOP is properly installed, the program F-TEST is
+provided.  It is NOT a virus, but it is detected by VIRSTOP the same way as
+a virus-infected program.
+
+If VIRSTOP is not installed or not active, F-TEST will display a message
+saying so when run and return a code of 1, which can be checked with the
+ERRORLEVEL command. If VIRSTOP is active and working, it will display a
+message to that effect.
+
+If you are using software that takes over the "load-and-execute" function,
+in particular Novell Netware and PC-NFS, F-TEST may say that VIRSTOP is
+not active.  To make VIRSTOP work properly under those circumstances, you
+must either...
+
+    Load VIRSTOP from AUTOEXEC.BAT (after the network software is loaded),
+    instead of CONFIG.SYS.
+
+or
+
+    Put a command like the following in AUTOEXEC.BAT, after you load
+    the network software:
+
+        C:\F-PROT\VIRSTOP /REHOOK
+
+VIRSTOP.EXE includes one additional feature - it is designed to be able to
+detect if it has been infected by a "stealth" virus.  It is also often (but
+not always) able to detect attempts to run "stealth"-virus infected
+programs, even though the virus is active in memory.
+
+VIRSTOP supports the following command-line switches:
+
+        /DISK:X - do not store search strings in memory, but read them
+        in from disk when necessary.  This reduces the memory requirements
+        down to around 3500 bytes.  The :X indicates which drive to use for
+        store the two "swap" files, _VIRSTOP.TMP (which stores the part
+        of memory overwritten by VIRSTOP) and _VIRSTOP.SWP, which is a
+        copy of VIRSTOP.EXE, allowing the original copy to be updated
+        while VIRSTOP is running.
+
+        Notes:
+                If the drive letter is not specified, it defaults to C:
+
+                The drive should be a fast, local drive - not a network
+                drive.  RAMdisks are ideal.
+
+                /DISK can now be used if you run VIRSTOP from a diskette
+                which is later removed, as the original file is not
+                accessed, just the _VIRSTOP.SWP copy.
+
+                If this switch is used, and VIRSTOP is loaded from CONFIG.SYS,
+                it is critical that the full path name is given.
+
+                DO NOT USE /DISK IF YOU USE DEVICEHIGH= TO LOAD VIRSTOP
+                (LOADHI seems to work OK, though).
+
+        /OLD - do not complain, even if the program has "expired".  Use of
+        this switch is not recommended.
+
+        /REHOOK   Re-hook INT 21h, if VIRSTOP was loaded before Netware or
+        another similar program that takes over the "load-and-execute"        
+        function.
+
+        /NOTRACE  Using this swith makes VIRSTOP work properly on machines
+        that are using old (and not 100% Intel-compatible) versions of the
+        Cyrix 486SLC processor.  It will also fix some compatibility
+        problems with the 386MAX and BlueMax memory managers. However,
+        this switch should not be used unless necessary, as it makes
+        VIRSTOP ineffective against stealth viruses that are run before
+        VIRSTOP is loaded.
+
+        /NOMEM    Do not perform a memory scan when starting.
+
+        /FREEZE   Stop the computer when a virus is found.
+
+        /[NO]COPY [Do not] check files when they are accessed/copied.
+                  The default is /NOCOPY
+
+        /[NO]BOOT [Do not] check boot sectors when a diskette is accessed.
+                  The default is /BOOT.
+
+        /[NO]WARM [Do not] check the diskette in drive A: when the user
+                  presses Ctrl-Alt-Del.  The default is /NOWARM

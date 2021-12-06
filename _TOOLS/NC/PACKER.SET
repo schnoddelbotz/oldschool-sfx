@@ -1,0 +1,191 @@
+#
+#       Konfigurationsdatei der Komprimierung in NC 5.0
+#
+#       Autor : Anthony O'Dowd
+#       Datum : Januar 1993
+#
+############################################################################
+#
+# Diese Datei hat folgendes Format :-
+#
+#      <1> Geben Sie zu Beginn der Befehlszeile eines Komprimierungs- 
+#          programms einen Doppelpunkt (:) gefolgt von einem beschreibenden
+#          Text ein. Dieser Text wird im Norton Commander angezeigt, wenn
+#          die jeweilige Komprimierungsmethode ausgewÑhlt wird.	Zusammen-
+#          genommen dÅrfen diese Zeichenketten eine LÑnge von maximal 128
+#          Zeichen nicht Åberschreiten.
+#		   
+#      <2> Verwenden Sie zur Definition der Eigenschaften eines Komprimier-
+#          ungsprogramms eine von einem Doppelpunkt (:) gefolgte zweistellige
+#          Zahl. Diese Zahl ist wichtig, da dadurch der Befehlstyp definiert 
+#          wird, den das Komprimierungsprogramm unterstÅtzt.
+#
+#          Diese Zahlen haben folgende Bedeutung :-
+#
+#       00:    Definition der Dateierweiterung
+#       01:    Befehl zum HinzufÅgen einer Datei zu einer komprimierten Datei
+#       02:    Befehl zum HinzufÅgen einer Datei zu einer komprimierten Datei,
+#              wobei der volle Pfad der Datei mitgespeichert wird.
+#       03:    Befehl zum Extrahieren einer Datei aus einer komprimierten
+#              Datei.
+#       04:    Befehl zum Extrahieren einer Datei aus einer komprimierten
+#              Datei, wobei der volle Pfad der Datei erhalten bleibt.
+#       05:    Befehl zum Verschieben einer Datei in eine komprimierte Datei.
+#       06:    Befehl zum Verschieben einer Datei in eine komprimierte Datei,
+#              wobei der volle Pfad der Datei mitgespeichert wird.
+#       07:    Befehl zum Lîschen einer Datei aus einer komprimierten Datei.
+#       08:    Befehl zur Anweisung des Komprimierungsprogramms, da· die fÅr
+#              den Dateityp beste Komprimierung verwendet werden soll.
+#       09:    Befehl zur Erstellung der kleinsten von dem Programm unter-
+#              stÅtzten Komprimierungsdatei.
+#       10:    Befehl zur Verwendung der schnellsten von dem Programm unter-
+#              stÅtzten Komprimierungsmethode.
+#       11:     Dies kann die Werte 0, 1, 2, oder 3 annehmen und wird zur
+#               Definition zusÑtzlicher Charakteristika des Komprimierungs- 
+#               programms verwendet. 
+#               Die zusÑtzlichen Charakteristika umfassen folgendes:
+#               (a) Das Komprimierungsprogramm unterstÅtzt mîglicherweise 
+#                   eine Response-Datei. Dies ist eine Textdatei, die eine
+#                   Liste der zu komprimierenden oder dekomprimierenden
+#                   Dateien enthÑlt.
+#               (b) Sie mîchten mîglicherweise die Ausgabe des Komprimie-
+#                   rungsprogramms sehen. Dazu ist es nîtig, die Commander-
+#                   Fenster vom Bildschirm zu entfernen und stattdessen die 
+#                   Åbliche DOS-Ausgabe anzeigen zu lassen.
+#                Die Werte dieses Feldes haben folgende Bedeutung:
+#                0: Response-Datei WIRD NICHT unterstÅtzt, und die Ausgabe 
+#                   ERSCHEINT NICHT auf dem Bildschirm.
+#                1: Response-Datei WIRD unterstÅtzt, aber die Ausgabe ER-
+#                   SCHEINT NICHT auf dem Bildschirm.
+#                2: Response-Datei WIRD NICHT unterstÅtzt, aber die Ausgabe
+#                   ERSCHEINT auf dem Bildschirm.
+#                3: Response-Datei WIRD unterstÅtzt, und die Ausgabe ER-
+#                   SCHEINT auf dem Bildschirm. 
+#       12:     Wenn das vorhergehende Feld (11) 1 oder 3 aufweist, also
+#               eine Response-Datei unterstÅtzt wird, wird hier das Zeichen
+#               definiert, das der Response-Datei vorangehen mu·.
+#       13:    Definiert die Zuordnung der Komprimierungsfehlercodes zu den
+#              vom Commander verwendeten Fehlercodes. Dies dient der Fehler-
+#              prÅfung und der Erstellung von Fehlerberichten.
+#       14:    Wenn vorhanden und gleich 1, kann der Inhalt einer komprimier-
+#              ten Datei mit F3 angezeigt werden. Es mu· mîglich sein, eine
+#              einzelne Datei in der komprimierten Datei ins angegebene Ziel
+#              zu dekomprimieren.
+#
+#                      Der Commander verwendet folgende Fehlercodes :-
+#
+#               0.... Kein Fehler
+#               7.....Verwendetes Komprimierungsprogramm in Packer.set nicht
+#                     definiert.
+#               8.....Befehl fÅr das Komprimierungsprogramm nicht definiert.
+#               9.....Nicht genug Speicher fÅr das Komprimierungsprogramm.
+#              10.....Kann das Komprimierungsprogramm nicht starten. (Es mu·
+#                     sich im Commander-Pfad befinden.)
+#              11.....Kann Command.com zum Aufruf des Komprimierungsprogramms
+#                     nicht finden.
+#              12.....Kann das Komprimierungsprogramm nicht finden. (Es mu·
+#                     sich im Commander-Pfad befinden.)
+#              13.....Kann die Datei PACKER.SET nicht finden.
+#              14.....Kann die Antwortdatei nicht finden.
+#              15.....In der Befehlszeile sind zu wenig Parameter angegeben.
+#
+############################################################################
+#
+:PKZIP 1.x/2.x
+00:ZIP
+01:pkzip -u -wHS
+02:pkzip -u -P -wHS
+03:pkunzip -o
+04:pkunzip -o -d
+05:pkzip -mu -wHS
+06:pkzip -mu -P -wHS
+07:pkzip -d
+08:-es
+09:-ex
+10:-ex
+11:01
+12:@
+14:1
+#
+# Legt die Zuordnung der PKZIP-Fehlercodes zu den vom
+# Commander verwendeten Fehlercodes fest.
+#
+13:14,3;1,1;16,4;13,2;11,6
+:ARJ
+00:ARJ
+01:arj u -y 
+02:arj u -y 
+03:arj e -y -e 
+04:arj x -y 
+05:arj m -y -d -e 
+06:arj m -y -d 
+07:arj d -y 
+08:-m4 
+09:-m1 
+10:-m1
+11:01
+12:!
+13:6,1;1,2;5,3;7,4;96,1
+14:1
+:ARC
+00:ARC
+01:arc a
+02:arc a
+03:arc eow
+04:arc xow
+05:arc muw
+06:arc muwz
+07:arc dw
+08:
+09:
+10:
+11:00
+12:@
+13:255,5
+:PAK
+00:PAK
+01:pak u
+02:pak u
+03:pak e -wa
+04:pak e -i -wa
+05:pak m -wa
+06:pak m -wa -i
+07:pak d -wa
+08:/C 
+09:/CR
+10:/S
+11:01
+12:@
+13:1;6
+:ZOO
+00:ZOO
+01:zoo -add
+02:zoo -add 
+03:zoo -extract 
+04:zoo -extract
+05:zoo -move
+06:zoo -move
+07:zoo -delete
+08: 
+09:
+10:
+11:00
+12:@
+13:1;6
+:LHARC
+00:LZH
+01:lharc u -am
+02:lharc a -apm
+03:lharc e -wm 
+04:lharc e -wm 
+05:lharc m -am
+06:lharc m -am 
+07:lharc d -mm 
+08:
+09:
+10:
+11:00
+12:
+13:11,4;1,0;6,0
+14:1
+

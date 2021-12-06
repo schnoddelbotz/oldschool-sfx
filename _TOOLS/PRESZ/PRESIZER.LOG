@@ -1,0 +1,265 @@
+
+
+Starting PRESIZER...
+Found the following physical drives:
+------------------------------
+Disk ID: 0x80 Cylinders: 255 Heads: 255 Sectors: 63
+------------------------------
+Found the following partitions:
+------------------------------
+Partition Info:
+Bootable: yes
+Physical drive number: 80
+Starting at Cylinder: 0   Head: 1   Sector: 1
+Ending at Cylinder: 127   Head: 254   Sector: 63
+System ID byte: 6 (BigDOS (>32MB))
+Relative starting sector: 63
+Number of sectors: 2056257
+Sector containing partition information: 0
+Offset of information block in sector: 1BE
+FAT Partition Boot Sector Info
+
+OEM ID string: MSDOS5.0
+Extended boot record signature: 29
+File System ID: FAT16    (16 bit FAT)
+Media descriptor byte: F8
+Serial number: 266515FE
+Label: 1ST-PART   
+Physical drive number: 80
+Bytes per sector: 512
+Sectors per cluster: 32
+Sectors per track: 63
+Sides: 255
+Sectors per FAT: 251
+Number of FAT copies: 2
+Maximum root directory entries: 512
+Reserved sectors: 1
+Hidden sectors: 63
+Total sectors in partition: 2056257
+Total clusters in partition: 64241
+Maximum size allowed for this partition: 1048591K
+Partition starting sector: 63
+------------------------------
+Partition Info:
+Bootable: no
+Physical drive number: 80
+Starting at Cylinder: 128   Head: 1   Sector: 1
+Ending at Cylinder: 254   Head: 254   Sector: 63
+System ID byte: 6 (BigDOS (>32MB))
+Relative starting sector: 63
+Number of sectors: 2040192
+Sector containing partition information: 2056320
+Offset of information block in sector: 1BE
+FAT Partition Boot Sector Info
+
+OEM ID string: MSDOS5.0
+Extended boot record signature: 29
+File System ID: FAT16    (16 bit FAT)
+Media descriptor byte: F8
+Serial number: 05371604
+Label: 2ND-PART   
+Physical drive number: 80
+Bytes per sector: 512
+Sectors per cluster: 32
+Sectors per track: 63
+Sides: 255
+Sectors per FAT: 249
+Number of FAT copies: 2
+Maximum root directory entries: 512
+Reserved sectors: 1
+Hidden sectors: 63
+Total sectors in partition: 2040192
+Total clusters in partition: 63739
+Maximum size allowed for this partition: 1048591K
+Partition starting sector: 2056383
+------------------------------
+Partition Info:
+Bootable: no
+Physical drive number: 80
+Starting at Cylinder: 128   Head: 0   Sector: 1
+Ending at Cylinder: 254   Head: 254   Sector: 63
+System ID byte: 5 (Extended Partition)
+Relative starting sector: 2056320
+Number of sectors: 2040255
+Sector containing partition information: 0
+Offset of information block in sector: 1CE
+------------------------------
+Closing PRESIZER...
+******************************
+
+
+Starting PRESIZER...
+Found the following physical drives:
+------------------------------
+Disk ID: 0x80 Cylinders: 255 Heads: 255 Sectors: 63
+------------------------------
+Found the following partitions:
+------------------------------
+Partition Info:
+Bootable: yes
+Physical drive number: 80
+Starting at Cylinder: 0   Head: 1   Sector: 1
+Ending at Cylinder: 127   Head: 254   Sector: 63
+System ID byte: 6 (BigDOS (>32MB))
+Relative starting sector: 63
+Number of sectors: 2056257
+Sector containing partition information: 0
+Offset of information block in sector: 1BE
+FAT Partition Boot Sector Info
+
+OEM ID string: MSDOS5.0
+Extended boot record signature: 29
+File System ID: FAT16    (16 bit FAT)
+Media descriptor byte: F8
+Serial number: 266515FE
+Label: 1ST-PART   
+Physical drive number: 80
+Bytes per sector: 512
+Sectors per cluster: 32
+Sectors per track: 63
+Sides: 255
+Sectors per FAT: 251
+Number of FAT copies: 2
+Maximum root directory entries: 512
+Reserved sectors: 1
+Hidden sectors: 63
+Total sectors in partition: 2056257
+Total clusters in partition: 64241
+Maximum size allowed for this partition: 1048591K
+Partition starting sector: 63
+------------------------------
+Partition Info:
+Bootable: no
+Physical drive number: 80
+Starting at Cylinder: 128   Head: 1   Sector: 1
+Ending at Cylinder: 254   Head: 254   Sector: 63
+System ID byte: 6 (BigDOS (>32MB))
+Relative starting sector: 63
+Number of sectors: 2040192
+Sector containing partition information: 2056320
+Offset of information block in sector: 1BE
+FAT Partition Boot Sector Info
+
+OEM ID string: MSDOS5.0
+Extended boot record signature: 29
+File System ID: FAT16    (16 bit FAT)
+Media descriptor byte: F8
+Serial number: 05371604
+Label: 2ND-PART   
+Physical drive number: 80
+Bytes per sector: 512
+Sectors per cluster: 32
+Sectors per track: 63
+Sides: 255
+Sectors per FAT: 249
+Number of FAT copies: 2
+Maximum root directory entries: 512
+Reserved sectors: 1
+Hidden sectors: 63
+Total sectors in partition: 2040192
+Total clusters in partition: 63739
+Maximum size allowed for this partition: 1048591K
+Partition starting sector: 2056383
+------------------------------
+Partition Info:
+Bootable: no
+Physical drive number: 80
+Starting at Cylinder: 128   Head: 0   Sector: 1
+Ending at Cylinder: 254   Head: 254   Sector: 63
+System ID byte: 5 (Extended Partition)
+Relative starting sector: 2056320
+Number of sectors: 2040255
+Sector containing partition information: 0
+Offset of information block in sector: 1CE
+------------------------------
+Closing PRESIZER...
+******************************
+
+
+Starting PRESIZER...
+Found the following physical drives:
+------------------------------
+Disk ID: 0x80 Cylinders: 255 Heads: 255 Sectors: 63
+------------------------------
+Found the following partitions:
+------------------------------
+Partition Info:
+Bootable: yes
+Physical drive number: 80
+Starting at Cylinder: 0   Head: 1   Sector: 1
+Ending at Cylinder: 127   Head: 254   Sector: 63
+System ID byte: 6 (BigDOS (>32MB))
+Relative starting sector: 63
+Number of sectors: 2056257
+Sector containing partition information: 0
+Offset of information block in sector: 1BE
+FAT Partition Boot Sector Info
+
+OEM ID string: MSDOS5.0
+Extended boot record signature: 29
+File System ID: FAT16    (16 bit FAT)
+Media descriptor byte: F8
+Serial number: 266515FE
+Label: 1ST-PART   
+Physical drive number: 80
+Bytes per sector: 512
+Sectors per cluster: 32
+Sectors per track: 63
+Sides: 255
+Sectors per FAT: 251
+Number of FAT copies: 2
+Maximum root directory entries: 512
+Reserved sectors: 1
+Hidden sectors: 63
+Total sectors in partition: 2056257
+Total clusters in partition: 64241
+Maximum size allowed for this partition: 1048591K
+Partition starting sector: 63
+------------------------------
+Partition Info:
+Bootable: no
+Physical drive number: 80
+Starting at Cylinder: 128   Head: 1   Sector: 1
+Ending at Cylinder: 254   Head: 254   Sector: 63
+System ID byte: 6 (BigDOS (>32MB))
+Relative starting sector: 63
+Number of sectors: 2040192
+Sector containing partition information: 2056320
+Offset of information block in sector: 1BE
+FAT Partition Boot Sector Info
+
+OEM ID string: MSDOS5.0
+Extended boot record signature: 29
+File System ID: FAT16    (16 bit FAT)
+Media descriptor byte: F8
+Serial number: 05371604
+Label: 2ND-PART   
+Physical drive number: 80
+Bytes per sector: 512
+Sectors per cluster: 32
+Sectors per track: 63
+Sides: 255
+Sectors per FAT: 249
+Number of FAT copies: 2
+Maximum root directory entries: 512
+Reserved sectors: 1
+Hidden sectors: 63
+Total sectors in partition: 2040192
+Total clusters in partition: 63739
+Maximum size allowed for this partition: 1048591K
+Partition starting sector: 2056383
+------------------------------
+Partition Info:
+Bootable: no
+Physical drive number: 80
+Starting at Cylinder: 128   Head: 0   Sector: 1
+Ending at Cylinder: 254   Head: 254   Sector: 63
+System ID byte: 5 (Extended Partition)
+Relative starting sector: 2056320
+Number of sectors: 2040255
+Sector containing partition information: 0
+Offset of information block in sector: 1CE
+------------------------------
+User command 4 at main menu
+Closing PRESIZER...
+******************************

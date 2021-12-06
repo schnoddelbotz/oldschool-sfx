@@ -1,0 +1,67 @@
+Lernout & Hauspie Speech Products
+Text-to-Speech Department
+18 November 1994
+Lyrics of German songs delivered to Creative Labs, for use with German DLL
+
+
+ger-sng1  "schön und lieblich"
+
+           Schön und lieblich ist einer Stimme Melodie.
+           Und die zweite verschönert und verbessert sie.
+           Aber die dritte gibt erst die rechte Harmonie.
+
+ger-sng2  "kuckuck"
+
+           Kuckuck, Kuckuck,
+           ruft aus dem Wald!
+           Lasset und singen, tanzen und springen!
+           Frühling, Frühling wird es nun bald.
+
+ger-sng3  "röslein auf der heiden"
+
+           Sah ein Knab' ein Röslein stehn, Röslein auf der Heiden.
+           War so jung und morgenschön, lief er schnell, es nah zu sehe
+           Sah's mit vielen Freuden.
+           Röslein, Röslein, Röslein rot,
+           Röslein auf der Heiden.
+
+ger-sng4  "lasst uns froh und munter sein"
+
+           Laßt uns froh und munter sein
+           und uns in dem Herrn freun!
+           Lustig, lustig, traleralera,
+           bald ist Niklausabend da,
+           bald ist Niklausabend da.
+
+ger-sng5  "ein jäger aus kurpfalz"
+
+           Ein Jäger aus Kurpfalz,
+           der reitet durch den grünen Wald,
+           er schiesst das Wild daher,
+           gleich wie es ihm gefällt.
+           Juja, juja!
+           Gar lustig ist die Jägerei,
+           allhier auf grüner Heid,
+           allhier auf grüner Heid.
+
+ger-sng6  "winter ade"
+
+           Winter, ade!
+           Scheiden tut weh.
+           Aber dein Scheiden macht,
+           daß mir das Herze lacht.
+           Winter, ade!
+           Scheiden tut weh.
+
+ger-sng7  "mein hahn ist tod"
+
+           Mein Hahn ist tod,
+           mein Hahn ist tod.
+           Mein Hahn ist tod,
+           mein Hahn ist tod.
+           Er wird nicht mehr singen,
+           kokodi, kokoda.
+           Er wird nicht mehr singen,
+           kokodi, kokoda.
+           Kokokokodikodikoda,
+           kokokokodikodikoda.

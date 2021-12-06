@@ -1,0 +1,4457 @@
+
+
+
+  T h e   A u r o r a   M a c r o   L a n g u a g e   G u i d e
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+
+
+
+
+
+
+
+  The Aurora Macro Language Guide
+
+  Version 1.20, January 1994
+
+  Copyright (c) 1993-1994 Aurora Terra, Inc.
+
+  ALL RIGHTS RESERVED.
+
+
+
+
+
+
+  Aurora Terra, Inc.
+  P.O. Box 34275
+  Bethesda, MD. 20827-0275  USA
+  301-468-2255  (Voice)
+  301-230-1214  (BBS 14,400 V.32bis)
+
+
+
+  The Aurora Editor is Copyright (c) 1993-1994 by Aurora Terra, Inc.
+  The Aurora Editor/386 is Copyright (c) 1993-1994 by Aurora Terra, Inc.
+  The Aurora Macro Language is Copyright (c) 1993-1994 by Aurora Terra, Inc.
+
+  No parts of The Aurora Editor software or this document may be copied
+  in part or in whole, except as provided by the License in the
+  following pages.
+
+  This version of The Aurora Editor is NOT public domain or free
+  software, but is distributed as "shareware" for evaluation purposes
+  only. Please refer to the license information in the following pages.
+
+  The Aurora Editor is a trademark of Aurora Terra, Inc.
+  The Aurora Editor/386 is a trademark of Aurora Terra, Inc.
+  The Aurora Macro Language is a trademark of Aurora Terra, Inc.
+
+  Other product names found throughout this document are trademarks of
+  various companies.
+                                                  Table of Contents   ii
+
+
+  Table of Contents
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  I-1  Introduction..................................................iii
+
+  1-1  The Aurora Macro Language.......................................1
+  1-2  Macro Language Sentences........................................2
+  1-3  Comments........................................................3
+  1-4  Evaluating Arguments............................................3
+  1-5  Function Call Series............................................4
+  1-6  Variables.......................................................5
+  1-7  Native Functions................................................6
+  1-8  Defining Functions..............................................8
+  1-9  Control Functions..............................................10
+  1-10  Logical Functions.............................................11
+  1-11  Objects.......................................................12
+  1-12  Handling Events...............................................14
+  1-13  The Interpreter and Compiler..................................16
+
+  2-1  Native Function List...........................................17
+
+  3-1  Native Functions - In Detail...................................24
+  3-2  Definition Functions...........................................25
+  3-3  Conditional Functions..........................................26
+  3-4  Logical Functions..............................................27
+  3-5  Bitwise Logical Functions......................................27
+  3-6  Control Functions..............................................28
+  3-7  Arithmetic Functions...........................................28
+  3-8  String Functions...............................................29
+  3-9  Evaluation and Compilation Functions...........................32
+  3-10  Miscellaneous Functions.......................................33
+  3-11  Object Functions..............................................34
+  3-12  Disk Functions................................................36
+  3-13  System Functions..............................................41
+  3-14  Timer Functions...............................................44
+  3-15  Keyboard Functions............................................45
+  3-16  Mouse Functions...............................................47
+  3-17  Queue Functions...............................................48
+  3-18  Video Functions...............................................50
+  3-19  Text Buffer Functions.........................................53
+  3-20  Mark Functions................................................61
+  3-21  Window Functions..............................................70
+
+  A-1  The Aurora Macro Language and The Aurora Editor................85
+
+                                                       Introduction  iii
+
+
+  Warranty Disclaimer
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Aurora Terra makes no warranty of any kind, either express or implied,
+  including but not limited to implied warranties of merchantability and
+  fitness for a particular purpose, with respect to this software and
+  accompanying documentation.
+
+  IN NO EVENT SHALL AURORA TERRA BE LIABLE FOR ANY DAMAGES RESULTING
+  FROM THE USE OF THIS SOFTWARE, INCLUDING BUT NOT LIMITED TO, DAMAGES
+  FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS
+  INFORMATION, INCIDENTAL OR CONSEQUENTIAL DAMAGES, OR OTHER FINANCIAL
+  LOSS ARISING OUT OF THE USE OF OR INABILITY TO USE THIS PROGRAM, EVEN
+  IF AURORA TERRA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+
+  I-1  Introduction
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  This is The Aurora Macro Language Guide. It describes all of the
+  features and native functions of The Aurora Macro Language. Prior
+  knowledge of another programming language such as C or Pascal may be
+  helpful in understanding this document.
+
+  For information on how to install, configure, and use The Aurora
+  Editor, see "The Aurora Editor Users Guide".
+
+  It is not necessary to understand all the details of the Aurora Macro
+  Language to use The Aurora Editor. However, experienced users may find
+  the macro language to be very useful for writing new editor functions,
+  or in configuring detailed aspects of the editor. Knowledge of the
+  macro language may also help you to better understand the keyboard
+  definition (AKBD.A), menu definition (AMEN.A), configuration (ACFG.A),
+  and text translation definition (ATRN.A) files for The Aurora Editor.
+
+  This document describes macro language "native" functions which are
+  built in to The Aurora Macro Language. The Aurora Editor also uses
+  many "library functions" which are built up from native functions and
+  are contained in the file ALIB.X. Library functions are documented in
+  The Aurora Editor Users Guide (A.DOC), and summarized in The Aurora
+  Editor Quick Reference (AREF.DOC).
+                                           The Aurora Macro Language   1
+
+
+  1-1  The Aurora Macro Language
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  The Aurora Macro Language is a flexible, interpreted language, which
+  is simple in syntax, yet rich in function. A primary design goal was
+  to keep the macro language interpreter and compiler small enough so
+  they would fit in the same .EXE file as the rest of the editor. This
+  allows the editor to execute macro language expressions interactively
+  within an editor session, and greatly enhances the overall flexibility
+  of the editor. Both the interpreter and compiler are accessible as
+  native functions within the macro language itself.
+
+  The Aurora Macro Language may appear somewhat similar to LISP in
+  syntax, but the resemblance ends there. The Aurora Macro Language is
+  primarily a "string-oriented" language with "the string" as the only
+  visible data type. All functions and data are viewed as character
+  strings and can be manipulated as character strings. Since there is
+  only one data type, no variable declarations are required.
+
+  The Aurora Macro language is also "object-oriented". Functions and
+  data can be encapsulated into "objects", and object hierarchies can be
+  created with "inheritance" and "multiple inheritance". Inheritance
+  hierarchies can also be dynamically altered.
+
+
+  1-2  Macro Language Sentences
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Each program in written in The Aurora Macro Language is really just a
+  string composed of a series of macro language "sentences". Each
+  sentence is composed of a series of "words" separated by spaces, and
+  each sentence is usually terminated by a period. The first word in
+  each sentence is the name of a function to execute, and any words that
+  follow are arguments to the function. For example:
+
+    abc 1 2 3.
+    xyz "foo" "bar" x.
+
+  In the above example, two sentences are evaluated. The arguments "1",
+  "2", and "3" are passed to the function "abc", and the strings "foo",
+  "bar", and the variable "x" are passed to the function "xyz".
+
+  Function names can be up to 255 characters in length and may contain
+  any characters. You can use "native" (built-in) functions, or define
+  your own functions.
+                                            Macro Language Sentences   2
+
+
+  A function can have up to 100 arguments, or no arguments at all.
+  Arguments to a function may be integers from -2147483647 to
+  +2147483647, strings enclosed in double quotes, variables, or even
+  other sentences.
+
+  Hex integers can be specified by adding an "h" at the end of the
+  integer. A leading zero is required if the hex integer begins with an
+  alphabetic character. For example, "1h", "3CH", and "0FFFFh" are valid
+  hex integers.
+
+  Strings may be up to 16000 characters in length, and variable names
+  may be up to 255 characters in length.
+
+  If an argument to a function is another sentence, it must be enclosed
+  in parentheses:
+
+    abc 1 (xyz "foo" "bar" x) 3.
+
+  In the above example, the arguments "foo", "bar", and the value of the
+  variable "x" are passed to the function "xyz". The result of
+  evaluating "xyz" becomes the second argument to the function "abc".
+  Note that a terminating period is not required for the sentence
+  beginning with "xyz" since it is already terminated by a right
+  parenthesis.
+
+  An argument may also be composed of more than one sentence. In this
+  case, the value of the argument is the value of the last sentence:
+
+    abc 1 (alpha "foo" "bar". beta. gamma 5 6) 3.
+
+  In the above example, the value of the second argument to "abc" is the
+  result of evaluating the sentence "gamma 5 6".
+
+  A sentence may be spread out over more than one line and spaces may be
+  inserted anywhere in the sentence, as long as the words in the
+  sentence are not split. The above example could also be written as:
+
+    abc 1 (
+      alpha "foo" "bar".
+      beta.
+      gamma 5 6
+    )  3.
+                                                            Comments   3
+
+
+  1-3  Comments
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Single line and multi-line comments can be inserted anywhere within a
+  macro language program. In a single line comment, any characters
+  located between two slashes (//) and the end of the line are ignored
+  (except if they are contained within a double quoted string). For
+  example:
+
+    abc 1 2 3.           // this is a single line comment
+    xyz "foo" "bar" x.   // this is another single line comment
+
+  Multi-line comments can span any number of lines. For multi-line
+  comments, any characters located between the comment delimiters "/*"
+  and "*/" are ignored. For example:
+
+    abc 1 2 3.
+       /* this is a
+          multi-line comment */
+    xyz "foo" "bar" x.
+
+
+  1-4  Evaluating Arguments
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  When the interpreter evaluates a macro language sentence, each
+  argument in the sentence is evaluated from first to last. The
+  resulting values for each argument are passed to the function (the
+  first "word" in the sentence) and the function is evaluated. For
+  example:
+
+    abc 1 "foo" x (xyz 5 6).
+
+  In the above macro language sentence, the first argument evaluates
+  to "1", the second argument evaluates to "foo", the third argument
+  evaluates to value of the variable "x", and the fourth argument
+  evaluates to the value of the sentence "xyz 5 6".
+
+  You can prevent the evaluation of an argument by prefixing it with
+  the "literal" operator (%). For example:
+
+    abc 1 "foo" %x (xyz 5 6).
+
+  The difference between the above example and the previous example is
+  that the third argument is now the string "x", not the variable "x" (x
+  is not evaluated). As you can see from the above example, using the
+  literal operator (%) can also be a convenient way to specify string
+  arguments (that contain no blanks), without enclosing the string in
+  double quotes.
+                                                Evaluating Arguments   4
+
+
+  If all of the function arguments are prefixed with the literal (%)
+  operator, you can remove the literal operator from the arguments and
+  attach it to the end of the function name. For example:
+
+    xyz %foo %bar %x.
+
+      is equivalent to:
+
+    xyz% foo bar x.
+
+  In both the examples above, the strings "foo", "bar", and "x" are
+  passed to the function "xyz". Note that some native functions in the
+  macro language (such as the "fun" function) do not normally evaluate
+  their arguments. These functions automatically assume that all
+  arguments are "literal", without having to use the literal operator.
+
+  The inverse of the literal operator is the "evaluation" operator (@).
+  This operator forces evaluation of an argument, even when the function
+  name is suffixed with the literal operator (%). For example:
+
+    xyz% foo bar @x.
+
+  In the example above, the third argument evaluates to the value of the
+  variable "x", not the string "x". The first and second arguments still
+  evaluate to the strings "foo" and "bar".
+
+  Both the literal operator (%) and the evaluation operator (@) can be
+  used to specify "null" arguments (strings of zero length) when they
+  are specified by themselves. For example:
+
+    xyz @ % %foobar.
+
+  In the example above, the first and second arguments are "null"
+  strings, and the third argument is the string "foobar".
+
+
+  1-5  Function Call Series
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  In many programming languages, the situation often arises where the
+  same function is called many times in series, each time with different
+  arguments. The Aurora Macro Language provides a convenient way to
+  handle this situation: just specify the function name once and then
+  specify each set of arguments separated by commas. For example:
+
+    abc 1 2 3.
+    abc 4 5 6.
+    abc 7 8 9.
+                                                Function Call Series   5
+
+
+      is equivalent to:
+
+    abc 1 2 3, 4 5 6, 7 8 9.
+
+
+  1-6  Variables
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  The Aurora Macro Language allows you to assign values to variables
+  which are local to a function definition, or that reside in a macro
+  language "object" (see the "Defining Functions" and "Objects" sections
+  below for a description of function definitions and objects).
+
+  Variables local to a function are referred to as "local" variables,
+  whereas variables that reside in an object are referred to as "object"
+  variables. There is no need to define either of these variables. Both
+  variable types are defined the first time a variable assignment is
+  made.
+
+  The native function "=" is used to assign a value to a local variable.
+  For example:
+
+    = %x 3.    // local variable x is assigned a value of "3"
+
+  Note that in the example above, the argument "x" must be preceded by
+  the literal operator (%), otherwise the VALUE of the variable "x"
+  (instead of the variable "x") would be assigned the value "3".
+  The above example could also have been written as:
+
+    = "x" 3.   // local variable x is assigned a value of "3"
+
+  Local variable assignments exist until they are re-assigned or until
+  the function in which they are contained returns.
+
+  To assign a value to a "object" variable, use the "set" native
+  function. The assignment will be made in the "default" object, unless
+  an object name is explicitly specified between two slash (/)
+  characters. For example:
+
+    set %x 3.          // object variable x in the "default" object is
+                       //   assigned the value "3"
+    set %/aurora/x 3.  // object variable x in the object "aurora" is
+                       //   assigned the value "3"
+
+  Object variable assignments exist until they are re-assigned or until
+  the object in which they are located is destroyed. Since object
+  variable assignments can remain in effect across function calls, they
+  are considered to be "global" variables.
+                                                           Variables   6
+
+
+  These are more examples of variable assignments:
+
+    =% x foobar.            // assigns "foobar" to local variable x
+    = %i x.                 // assigns the value of x to local var i
+    = %i (abc 3 x).         // assigns the value of the expression
+                            //   "abc 3 x" to local variable i
+
+    set% x foobar.          // assigns "foobar" to object variable x
+                            //   (in the default object)
+    set %x y.               // assigns the value of y to object var x
+    set %x (xyz).           // assigns the value of the function
+                            //   "xyz" to object variable x
+    set (xyz) %x.           // assigns "x" to the variable name which
+                            //   is the value of function "xyz"
+    set %/aurora/x y.       // assigns the value of y to object var x
+                            //   in the object "aurora"
+
+  When a reference is made to a variable which has never been assigned a
+  value (a "non-existent" variable), the value of that variable is
+  always the "null" string (a string of length zero).
+
+  Note that when variables are referenced, local variables have higher
+  precedence than object variables. For example:
+
+    = %x 4.
+    set %x 5.
+    abc x.
+
+  In the example above, the value "4" will be passed to the function
+  "abc". The argument "x" to function "abc" refers to the local variable
+  "x", not the object variable "x".
+
+
+  1-7  Native Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  The Aurora Macro Language has hundreds "native" functions, which are
+  pre-defined or "built-in". A few commonly used native functions may be
+  used in later examples and are worth mentioning briefly here:
+
+
+  Conditional:
+
+    eq     returns "1" if all of its arguments are equal, otherwise
+           it returns the null string.
+
+    ne     returns "1" if all of its arguments are not equal,
+           otherwise it returns the null string.
+                                                    Native Functions   7
+
+
+    >      returns "1" if each of its arguments is numerically
+           greater than the argument which follows, otherwise it
+           returns the null string.
+
+    <      returns "1" if each of its arguments is numerically less
+           than the argument which follows, otherwise it returns the
+           null string.
+
+
+  Arithmetic:
+
+    +      returns the numeric sum of all of its arguments.
+
+    -      if only one argument is specified, it returns the numeric
+           negative of the argument, otherwise it returns the value of
+           the first argument minus all the arguments which follow.
+
+    *      returns the numeric product of all of its arguments.
+
+    /      returns the value of the first argument divided by all the
+           arguments which follow.
+
+
+  String:
+
+    cat    concatenates all of its arguments and returns the result.
+
+    sub    returns the substring of its first argument taken from the
+           position of the second argument and extending for the
+           length of the third argument.
+
+    fin    searches for the second argument inside the first argument
+           and returns the position if found, otherwise it returns
+           null.
+
+
+  Other:
+
+    beep   beeps the PC speaker at the frequency of the first argument
+           for the duration of the second argument.
+
+
+  Library:
+
+    say    displays a message on the window title bar (this function is
+           documented in "The Aurora Editor Users Guide").
+                                                  Defining Functions   8
+
+
+  1-8  Defining Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  The Aurora Macro Language has many native functions which are
+  pre-defined when a macro language program is evaluated. No further
+  definitions are required to use native functions.
+
+  To create your own functions, you must first define them with the
+  native function "fun". For example:
+
+    fun  hello (
+      say "hello".
+      beep 300 300.
+    ).
+
+  In the example above, the function "hello" is defined. Note that the
+  native function "fun" automatically assumes that both its arguments
+  are literal. The literal operator (%) is not required. Also note that
+  the definition of "hello" is a macro language "sentence", and
+  therefore requires a terminating period.
+
+  Arguments passed to user-defined functions can be accessed with the
+  the "arg" and "qarg" native functions. The "arg" native function maps
+  any arguments passed to the function to local variables within the
+  function. For example:
+
+    fun  hello (
+      arg s f.
+      say s.
+      beep f 300.
+    ).
+
+  In the example above, the local variables "s" and "f" are mapped to
+  the first two arguments passed to "hello". The variables "s" and "f"
+  can then be used in any expression within the function. This does not
+  mean that exactly two arguments must always be passed to "hello". Any
+  number of arguments may be passed to any function. If only one
+  argument were passed to the function "hello" in the example above, the
+  value of the local variable "f" would be the null string. If three
+  arguments were passed to "hello", the third argument would not be
+  accessible as a local variable.
+
+  The "qarg" native function allows you access function arguments by the
+  order in which they where passed. The "qarg" function takes one
+  argument: the relative position of the argument being passed to the
+  function. The following example is equivalent to the previous example:
+                                                  Defining Functions   9
+
+
+    fun  hello (
+      say (qarg 1).
+      beep (qarg 2) 300.
+    ).
+
+  Note that "qarg 0" will return total number of arguments passed to the
+  function.
+
+  Remember that you can call any function with any number of arguments
+  at any time. The number of arguments is always determined by the
+  function call, not the function.
+
+  It is also possible to call non-existent or undefined functions.
+  Calling an undefined function will always return the value of the last
+  argument passed to the undefined function. Calling a defined function
+  returns the value of the last sentence in the function. For example:
+
+    fun  abc (
+      arg x y.
+      dothis 1 x.
+      dothat 2 y.
+      hello x y.
+    ).
+
+    abc "hello world" 300.
+
+  In the example above, the function "abc" is defined and then called
+  with the arguments "hello world" and "300". The return value of the
+  call to "abc" would be the result of evaluating the last sentence
+  "hello x y". If the function "hello" is not defined, the return value
+  of "abc" would be "300".
+
+  It is also possible to call the "null" function by using the literal
+  operator (%) or the evaluation operator (@) as the function name.
+  Since the null function is not defined, it always returns the value of
+  the last argument passed to it. This can be useful for returning
+  variables or constant values from a function. For example:
+
+    fun  xyz (
+      = %x 3.
+      % x.
+    ).
+
+    set %y (xyz).
+
+  In the example above, the function "xyz" is defined and then called
+  with no arguments. The function "xyz" assigns "3" to the local
+  variable "x" and then returns the value of "x" (3). The object
+  variable "y" is then assigned a value of "3".
+                                                  Control Functions   10
+
+
+  1-9  Control Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  There are several native functions which can be used to control the
+  flow of execution of a macro language program. Note that no special
+  syntax is required to use control functions. They are treated just
+  like any other function. The difference between control functions and
+  other functions is that not all of the arguments to a control function
+  are always evaluated.
+
+  Perhaps the most commonly-used control function is the "if" function.
+  The first argument of the "if" function is always evaluated. If the
+  first argument does not evaluate to zero or null, then the second
+  argument is evaluated, otherwise the third argument is evaluated. The
+  return value of the "if" function is the value of the second or third
+  argument, depending on which one is evaluated. For example:
+
+    if x (abc) (xyz).
+
+  In the example above, if the variable x is "0" or null, then the
+  function "xyz" is evaluated, otherwise the function "abc" is
+  evaluated.
+
+  "Conditional" native functions such as "eq" are often used with the
+  "if" function. For example:
+
+    if (eq s "yes") (
+      = %x 1.
+      beep 700 200.
+    )(
+      = %x 2.
+      beep 200 200.
+    ).
+
+  In the example above, if the variable "s" is equal to "yes", the value
+  "1" is assigned to local variable "x" and a high-pitched beep is
+  heard. If "s" is not equal to "yes", the value "2" is assigned to "x"
+  and low-pitched beep is heard.
+
+  The "if" function can be used anywhere that any other function can be
+  used. For example:
+
+    = %x (if (eq s "no") "nope" "yup").
+
+  In the example above, if "s" is equal to "no", then the value "nope"
+  is assigned to "x", otherwise the value "yup" is assigned to "x".
+                                                  Control Functions   11
+
+
+  The "while" and "dowhile" functions are control functions which can be
+  used to perform looping operations. The "while" function will evaluate
+  its first and second arguments repeatedly while its first argument
+  is "true" (non-null and non-zero). For example:
+
+    = %x 1000.
+    while x (
+      beep x 200.
+      = %x (- x 100).
+    ).
+
+  In the example above, the PC speaker will beep 10 times, each time
+  with decreasing frequency.
+
+  The "dowhile" function is similar to the "while" function, except that
+  the first and second arguments are evaluated repeatedly until the
+  second argument evaluates to "false" (null or zero). The following
+  example is equivalent to the previous example:
+
+    = %x 1000.
+    dowhile (
+      beep x 200.
+      = %x (- x 100).
+    ) x.
+
+
+  1-10  Logical Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  The logical functions test the logical values of their arguments to
+  return either "1" (true) or null (false). Like the control functions
+  (see above), not all of the arguments to a logical function are always
+  evaluated.
+
+  The following logical functions are available:
+
+    and    returns "1" if all its arguments evaluate to "true"
+           (non-null and non-zero). If an argument does not evaluate
+           to "true", then no more arguments are evaluated.
+
+    or     returns "1" if at least one of its arguments evaluate to
+           "true". No more arguments are evaluated after the first
+           "true" argument is found.
+
+    !      returns "1" if all of its arguments evaluate to "false",
+           otherwise it returns null. All arguments are evaluated.
+
+  The following example demonstrates the use of logical functions:
+                                                  Logical Functions   12
+
+
+    if (and ((eq x 3) (or y z))) (beep 400 400).
+
+  In the example above, a beep is heard only if the variable "x" is "3",
+  and at least one of the variables "y" or "z" are true (non-null and
+  non-zero).
+
+
+
+  1-11  Objects
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  In The Aurora Macro Language, an object is a user-defined group of
+  function definitions and variable assignments. Each object has a name
+  (up to 255 characters). By default, all object variables and functions
+  are placed in the pre-defined object "a". The object "a" is
+  automatically created by the interpreter whenever a macro language
+  program is evaluated.
+
+  To create a new object, you must use the native function "objnew". For
+  example:
+
+    objnew% aurora 17.
+
+  In the example above, a new object called "aurora" will be created.
+  The object "aurora" will have an estimated size of 17 function
+  definitions and/or variable settings (this size estimate is used by
+  the interpreter to create an optimized internal index).
+
+  To add functions or variable assignments to the object you created,
+  use the "obj" native function:
+
+    obj  aurora  (
+
+      set %x 1.        // assign 1 to variable x in object "aurora"
+      set %y 2.        // assign 2 to variable y in object "aurora"
+
+      fun  abc (       // define function "abc" in object "aurora"
+        say "abc".
+      ).
+
+      fun  xyz (       // define function "xyz" in object "aurora"
+        say "xyz".
+      ).
+
+    ).
+
+  In the example above, any variable assignments or function definitions
+  within the scope of the "obj" sentence will be added to the object
+  "aurora" (the default object is "aurora" inside the obj sentence).
+  Variable assignments or functions definitions made outside the scope
+  of the "obj" sentence would be added to the default object "a".
+                                                            Objects   13
+
+
+  Like the "fun" native function, the "obj" native function assumes that
+  all its arguments are literal. The literal operator (%) is not
+  required.
+
+  An object can "inherit" the functions and variable assignments of
+  other objects by grouping them together in "inheritance paths". When a
+  reference to function or variable is made, and it is not found in the
+  current "default" object, then the object's inheritance path is
+  searched until the reference is found. This mechanism works similar to
+  the way the DOS "PATH" environment variable is searched when executing
+  DOS programs, except that it is also possible to create hierarchal
+  search paths.
+
+  The searching of inheritance paths is performed automatically by the
+  macro language interpreter and is transparent to any function call or
+  variable reference. Note that "native" functions are always accessible
+  from within any object.
+
+  The inheritance path or "ancestry" of an object can be defined when
+  the object is created with the "objnew" command. For example:
+
+    objnew% aurora 17 obj1 obj2.
+
+  In the example above, the object "aurora" is created and assigned the
+  inheritance path "obj1 obj2". When a reference to a function or
+  variable in the object "aurora" fails, the objects "obj1" and "obj2"
+  are searched for the reference (in the order they are specified). In
+  this way the object "aurora" is said to "inherit" the functions and
+  object variables of "obj1" and "obj2". Using inheritance, the object
+  "aurora" appears to contain all of the functions and variables of
+  "obj1" and "obj2". Note that the objects "obj1" and "obj2" may also
+  have inheritance paths. In this way, hierarchal inheritance paths can
+  be established.
+
+  Consider the following example:
+
+    objnew% obj1 1, obj2 1.
+    objnew% aurora 3 obj1 obj2.
+
+    obj  obj1 (
+      set% s hello.
+    ).
+
+    obj  obj2 (
+      fun  hello (
+        arg x y.
+        say x.
+        beep y 300.
+      ).
+    ).
+                                                            Objects   14
+
+
+    obj  aurora (
+      hello s 400.
+    ).
+
+  In the example above, the function "hello" is called with the
+  arguments "s" and "400". Since there is no function "hello" in the
+  object "aurora", the inheritance path for "aurora" is searched and
+  "hello" is found in "obj2". Also, since object "aurora" has no
+  variable "s", the inheritance path is searched and "s" is found in
+  "obj1".
+
+  Object inheritance paths can also be changed dynamically via the
+  "objpar" native function. For example:
+
+    objpar% aurora obj3 obj4.
+
+  In the example above, the inheritance path for the object "aurora" is
+  changed to "obj3 obj4".
+
+
+  Functions and variables in other objects can be referenced directly by
+  specifying the object name between slash (/) characters immediately
+  before the function name or variable name. For example:
+
+    abc 1 2 /aurora/x.     // variable x in object "aurora"
+
+    /obj2/xyz "foobar".    // function "xyz" in object "obj2"
+
+
+
+  1-12  Handling Events
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Event Handling is a built-in feature of The Aurora Macro Language.
+  When an external or internal event occurs (a keystroke, mouse event,
+  or timer event), it is posted to the interpreter event queue. The next
+  time the interpreter is idle, it will read the event from the event
+  queue, translate it into a pre-defined function name (with arguments
+  if applicable), and attempt to call the function. If the user has
+  properly defined a function with the same pre-defined function name,
+  the user's function will be called automatically by the interpreter.
+
+  When the interpreter calls the user's function, it will always look
+  for the function in the current "event object" (the event object is
+  not necessarily the same object as the default object). Only one
+  object can be the event object at any given time. When a macro
+  language program is initially evaluated, the event object is the
+  default object "a", but that can be changed at any time by the program
+  (see below).
+                                                    Handling Events   15
+
+
+  If the function is not found in the event object, the interpreter will
+  search the event object's inheritance path for the event function. In
+  this way, an object inherits the event-handling capabilities of its
+  ancestor objects.
+
+  It is often useful to change the entire behavior of the keyboard and
+  mouse simply by making another object the event object. For example,
+  when you switch from a File Manager window to an Edit window, The
+  Aurora Editor simply changes current event object, and a whole
+  different set of keyboard functions and mouse functions become active.
+
+  To change the current event object, use the native function "objeve":
+
+    objeve %aurora2.
+
+  In the example above, the object "aurora2" becomes the current event
+  object.
+
+
+  You can place your own user-generated events in the interpreter event
+  queue using the native function "que". For example:
+
+    que% xyz 1 3.
+
+  In the example above, the function call "xyz 1 3" is placed on the
+  interpreter event queue. The next time the interpreter is idle, it
+  will read "xyz 1 3" from the event queue and evaluate it in the
+  current event object, just like a keyboard or mouse event.
+
+  User-generated events can also be directed to an explicitly specified
+  object (other than the event object), by using the native function
+  "queobj". For example:
+
+    queobj% aurora xyz 1 3.
+
+  In the example above, "xyz 1 3" is placed on the interpreter event
+  queue. However, when the interpreter later reads "xyz 1 3" from the
+  event queue, it will force the evaluation of "xyz 1 3" to occur in the
+  object "aurora", not in the current event object.
+
+  The native functions "send" and "sendobj" work just like "que" and
+  "queobj" above, except that the interpreter event queue is bypassed.
+  The functions specified in "send" and "sendobj" are always called
+  immediately. For example:
+
+    send% xyz 1 3.
+    sendobj% aurora abc 5 7.
+                                                    Handling Events   16
+
+
+  In the examples above, "xyz 1 3" is evaluated immediately in the
+  current event object, and "abc 5 7" is evaluated immediately in the
+  object "aurora".
+
+
+  1-13  The Interpreter and Compiler
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  The Aurora Macro Language contains native functions for compiling and
+  evaluating macro language code.
+
+  To evaluate a string of macro language source code from within a macro
+  language program, use the "evl" function. For example:
+
+    = %x "+ 4 5 6".
+    = %y (evl x).
+
+  In the example above, the local variable "x" is assigned a string
+  which is a macro language expression. In the next sentence, the "evl"
+  function evaluates the value of "x" and assigns the result (15) to
+  "y".
+
+  Since there are many native functions for manipulating strings, you
+  can actually construct code dynamically and execute it from within a
+  running macro language program using the "evl" function.
+
+  To evaluate macro language code in a file on disk, use the native
+  function "objdsk". For example:
+
+    objdsk %aurora "test.a" 3 4.
+
+  In the example above, the contents of the file "test.a" are evaluated
+  and passed the arguments "3" and "4", with "aurora" as the default
+  object. The "objdsk" command will evaluate both macro language source
+  and compiled files (compiled files will execute faster).
+
+  To compile a macro language source file on disk, use the native
+  function "comf". For example:
+
+    comf "test.a" "test.x".
+
+  In the example above, the file "test.a" is compiled and the result is
+  placed in the file "test.x".
+
+  You can use any filenames you wish for source and compiled files. The
+  convention is to use the file extension ".A" for macro language source
+  files, and ".X" for compiled macro language files.
+                                               Native Function List   17
+
+
+  2-1  Native Function List
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  The following section summarizes all available native macro language
+  functions by category. Each native function is followed by a brief one
+  line description.
+
+
+  Definition Functions:
+
+    =     - assign a value to a local variable
+    set   - assign a value to an object variable
+    ren   - rename an object variable or function
+    uns   - remove an object variable or function from an object
+
+    fun   - define a function
+    arg   - map function arguments to local variables
+    qarg  - access function arguments by ordinal number
+
+
+  Conditional Functions:
+
+    eq   - test strings for equality
+    eqi  - test strings for equality (ignoring case)
+    ne   - test strings for inequality
+    ==   - test integers for equality
+    !=   - test integers for inequality
+    <    - test if each argument is less than the next
+    >    - test if each argument is greater than the next
+    <=   - test if each argument is less than or equal to the next
+    >=   - test if each argument is greater than or equal to the next
+
+
+  Logical Functions:
+
+    and  - test if all arguments are true
+    or   - test if one argument is true
+    !    - test if no arguments are true
+
+
+  Bitwise Functions:
+
+    &    - return the "bitwise and" of two strings
+    |    - return the "bitwise or" of two strings
+    ^    - return the "bitwise exclusive or" of two strings
+                                               Native Function List   18
+
+
+  Control Flow Functions:
+
+    if       - if-then-else structure
+    while    - loop while first argument is true
+    dowhile  - loop while second argument is true
+
+
+  Arithmetic Functions:
+
+    +    - add all arguments together
+    -    - subtract arguments from first argument
+    *    - multiply all arguments together
+    /    - divide first argument by other arguments
+    mod  - return modulus of first argument divided by second argument
+
+
+  String Functions:
+
+    cat  - concatenates all arguments
+    sub  - get a substring of the first argument
+    fin  - search for a string in another string, with optional replace
+    siz  - return the total size (in bytes) of arguments
+    dup  - duplicate a string any number of times
+    wrd  - set the character set to define a "word"
+    idx  - search for the first of a group of characters in a string
+    vfy  - verify that a string is composed of specified characters
+    chc  - change the case of a string
+
+    byte - convert an integer to a 1-byte string
+    word - convert an integer to a 2-byte string
+    long - convert an integer to a 4-byte string
+    hex  - convert a hex string to a normal string
+    toh  - convert a normal string to a hex string
+
+
+  Evaluation and Compilation Functions:
+
+    evl  - evaluate a string as macro language code
+    evla - evaluate a string as if it were a function argument
+    comf - compile a macro language source file
+    #get - include a macro language source or compiled file
+    var  - evaluate a string as if it were a variable
+    prs  - parse a string for input to evl or evla.
+                                               Native Function List   19
+
+
+  Miscellaneous Functions:
+
+    asc  - return the ascii integer value of a character
+    pat  - expand a filename to fully qualified name
+    exe  - execute a DOS program
+    wait - delay for a specified number of milliseconds
+    beep - beep the PC speaker
+
+
+  Object Functions:
+
+    obj     - add functions and variables to an object
+    objnew  - create a new object and establish object ancestry
+    objdes  - destroy an object
+    objsav  - save an object
+    objnam  - rename an object
+    objeve  - change the current event object
+    objpar  - change the ancestry of an object
+    objdsk  - evaluate macro language source or compiled code in a file
+
+    qobj    - test for the existence of an object
+    qobjsiz - return the size of an object (variables and functions)
+    qobjexe - return the current object
+    qobjeve - return the current event object
+    qobjanc - test for the ancestry of an object
+
+
+  Disk and File Functions:
+
+    dskdel  - delete a file
+    dskren  - rename a file
+    dskloc  - search for a file in multiple directories
+    dskfin  - search for a string in a file
+    dskcpy  - copy a file
+    dskcur  - change the current disk drive and/or path
+    dskdir  - create a directory
+    dsktch  - touch a file
+    dskatt  - change file attributes
+    dskopn  - open a file for reading or writing
+    dskcls  - close a file
+    dskrea  - read characters from a file
+    dskwri  - write characters to a file
+    dskpos  - change the current position in an open file
+
+    qdskatt - test if a file has specified attributes
+    qdskpat - return the current drive/path or boot path
+    qdskdrv - return available disk drives
+    qdskcap - return disk drive capacity (total and used)
+
+
+  System Functions:
+
+    sysmem  - define maximum XMS/EMS memory
+                                               Native Function List   20
+
+
+    sysswp  - define swap files
+    sysprt  - define printer settings
+    syssnd  - enable or disable sound
+
+    qsysver - return the current version of The Aurora Editor
+    qsysos  - return the current version of the operating system (DOS)
+    qsyspgm - return the name of The Aurora Editor .EXE file
+    qsysvar - return the value of an environment variable
+
+
+  Timer Functions:
+
+    timdes  - destroy a timer
+    timint  - create a interval timer
+    timalm  - create an alarm timer
+
+    qtim    - return the current time
+
+
+  Keyboard Functions:
+
+    kbdenh  - enable/disable enhanced keyboard
+    kbdrpt  - define keyboard event reporting mode
+    kbdclr  - clear keyboard buffer
+
+    qkbdshf - return keyboard shift status
+    qkbdchr - wait for a character to be entered and return it
+
+
+  Mouse Functions:
+
+    mouini  - open and initialize the mouse
+    moutrm  - close the mouse
+    mousen  - adjust mouse sensitivity
+    mourpt  - define mouse event reporting mode
+    moupos  - set the mouse position
+    mouvis  - show/hide the mouse
+
+    qmoupos - return the mouse x or y position
+
+
+  Queue Functions:
+
+    que       - post an event to the event queue
+    send      - send event directly to the event object (bypass queue)
+    queobj    - post an event to an object
+    sendobj   - send an event directly to any object (bypass queue)
+    quedis    - read and dispatch the next event from the event queue
+    quesiz    - set the size of the event queue
+    quequi    - force quedis to return null
+                                               Native Function List   21
+
+
+  Video Functions Functions:
+
+    vidcsz    - set the visible cursor size
+    vidbli    - set the video blink mode
+    vidfon    - set the video mode
+    vidorg    - set the mapping of the virtual to physical screen
+    vidpri    - print a string on the screen
+    vidbor    - set the color of the screen overscan border
+    vidoff    - turn video off
+    vidon     - turn video on
+
+    qvidmon   - test for monochrome
+    qvidp     - return video info (mapping, size, and blink mode)
+
+
+  Text Buffer Functions:
+
+    texdra   - redraw all windows displaying the specified text buffer
+    texcre   - create a new text buffer
+    texmen   - create a menu text buffer
+    texdes   - destroy a text buffer
+    texloa   - create a text buffer from a file or directory on disk
+    texnam   - rename a text buffer
+    textop   - make a text buffer the current default text buffer
+    texdty   - set or clear the text buffer dirty flag
+    texdlm   - set text buffer line delimiter or binary line length
+    texusz   - set text buffer undo/redo stack size
+
+    texovl   - overlay a string at an [x,y] position in a text buffer
+    texinsx  - insert a string at an [x,y] position in a text buffer
+    texdelx  - delete a string at an [x,y] position in a text buffer
+    texinsy  - insert one or more strings as lines in a text buffer
+    texdely  - delete one or more lines in a text buffer
+
+    qtex     - test for the existence of a text buffer
+    qtexlin  - return a portion of a line in a text buffer
+    qtexend  - return the number of lines in text buffer
+    qtexpre  - return the previous text buffer in the text buffer list
+    qtexdty  - return the value of the dirty flag
+    qtextru  - return the value of the truncate flag
+    qtexlen  - return the length of a line
+    qtexbeg  - return the position of the first non-blank char in a line
+    qtexfld  - return info about a text fold
+    qtextop  - return the default text buffer
+    qtexmrk  - return info about marks associated with a text buffer
+
+    qtexbin  - return text buffer binary line length
+    qtexmen  - return info about a menu text buffer
+    qtexdir  - return info about a directory listing from texloa
+                                               Native Function List   22
+
+
+    undbeg   - start saving undo/redo information for a text buffer
+    undend   - stop saving undo/redo information for a text buffer
+    und      - undo or redo last text buffer change
+
+
+  Mark Functions:
+
+    mrkset  - create a new mark or modify an existing mark
+    mrkdes  - destroy a mark
+    mrknam  - rename a mark
+    mrktop  - make a cursor mark the default mark
+    mrkcol  - change the color of a mark
+
+    mrkdel  - delete the text within a mark
+    mrkins  - copy the text within a mark at a new location
+    mrkmov  - move the text within a mark to a new location
+    mrkovl  - overlay the text within a mark at a new location
+
+    mrkshf  - shift the text within a mark left or right
+
+    mrkfil  - fill a mark with a character
+    mrkcas  - change the case of the text within a mark
+    mrkjus  - justify the text within a mark (left, right, center)
+    mrksrt  - sort the text within a mark
+    mrktab  - expand the tab characters within a mark
+
+    mrkrfl  - reflow the text within a mark
+    mrksav  - save or print the text within a mark
+    mrkfin  - search for and optionally replace text within a mark
+    mrkrel  - relocate a mark to a new position or text buffer
+    mrkfld  - create new text folds or remove existing text folds
+
+    qmrk    - test for the existence of a mark
+    qmrkpre - return the previous mark in the text buffer mark list
+    qmrktex - return the text buffer name associated with a mark
+    qmrkp   - return the mark coordinates, width, or height
+    qmrkcol - return the column position of a mark (cursor marks)
+    qmrklin - return the first line number of a mark (cursor marks)
+    qmrkins - return the insert/overlay state of a mark (cursor marks)
+    qmrktyp - return the type of mark
+    qmrkbuf - return the contents of a column mark
+    qmrkwin - return the window associated with a cursor mark
+
+
+  Window Functions:
+
+    windra  - redraw specified portion of a window
+    winset  - create, hide, or show a window
+                                               Native Function List   23
+
+
+    windes  - destroy a window
+    winnam  - rename a window
+    winttl  - change a window title
+    wineot  - change the window end-of-text line
+    winmen  - set the menu bar for a window
+    winmeh  - highlight a menu bar item for a window
+    wintic  - set the title bar controls for a window
+    winmrk  - set the cursor mark for a window
+    winpar  - set the window parent
+    winnex  - alter the placement of the window in the window list
+    winpre  - alter the placement of the window in the window list
+    winvib  - create a local video buffer for a window
+
+    wincol  - set the window colors
+    winbor  - set the window borders
+    winfra  - set the window frame components
+    winshd  - set the window shadow
+    winsh2  - set the window shadow for dialog controls
+
+    winscr  - scroll the contents of a window
+    winadj  - scroll the contents of a window without moving cursor
+    winbar  - set a window scroll bar thumb position
+    winsiz  - resize a window
+    winmov  - move a window
+    wintil  - tile windows on the screen
+
+    qwin    - test for the existence of a window
+    qwinmrk - return the cursor mark name associated with a window
+    qwintex - return the name of the text buffer displayed in a window
+    qwinx   - return the left-most column number displayed in a window
+    qwiny   - return the top-most line number number displayed in a window
+    qwintop - return the top window
+    qwinbot - return the bottom window
+    qwinpre - return the previous window in the window list
+    qwinnex - return the next window in the window list
+    qwinchi - return the first/last child window of a specified window
+    qwinttl - return a window title string
+    qwinpar - return the parent window of a specified window
+    qwintit - return a window title or title highlight position
+    qwincol - return the color of a window component
+    qwinbor - return window border info
+    qwinp   - return the window coordinates, height, or width
+    qwinfra - return info about the window frame components
+    qwinrgn - return the window regions at specified coordinates
+    qwinbar - return the position of a scroll bar thumb
+    qwincnt - return the number of windows or child windows
+    qwinmen - return window menu bar info
+    qwintic - return window title bar control info
+                                          Native Functions - Detail   24
+
+
+  3-1  Native Functions - In Detail
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  The following sections describe each of the macro language native
+  functions in detail. The functions are listed in the following format:
+
+    functionname  [arg 1]  [arg 2]  [arg 3] ...
+
+  The function name is listed first, followed by its arguments in
+  brackets. The argument and return value "types" are not given, since
+  they are always character strings.
+
+  The "..." indicates that a variable number of arguments (similar to
+  the previous arguments) may follow. Note that function arguments are
+  always optional in The Aurora Macro Language. In many cases, the
+  function will supply a default value if an argument is not specified,
+  or a null value is specified.
+
+  Many functions take an [options] character string as an argument. An
+  option is just a one character code that tells the function to do
+  something in a specific way. Each function may have its own set of
+  options, each with their own meaning. In many cases, multiple options
+  can be specified in the [options] character string. For example:
+
+    fin s "b" %ir.   // the options "i" and "r" are passed to the
+                     // function "fin"
+
+  Some native function names may include a 3-character prefix (such as
+  "obj", "tex", mrk", etc.) which indicates the "group" of related
+  functions that the function belongs to. For example, "objnew" is an
+  "object" function, "mrkset" is "mark" function, and "texcre" is a
+  "text buffer" function. Within these function groups, functions whose
+  only purpose is to return information are also prefixed by a "q"
+  (query). For example, "qtexend" returns the number of lines in a text
+  buffer.
+
+  In functions which test for "true" or "false" (such as "if" or "and"),
+  a value of null or "0" is false. Any other value is true.
+
+  Remember, the following section describes "low-level" native
+  functions. Many other "library" functions are available in The Aurora
+  Editor (see "The Aurora Editor User's Guide"). Library functions are
+  "built up" from native functions in The Aurora Macro Language, and are
+  easier to use for most "high-level" editing operations.
+                                               Definition Functions   25
+
+
+  3-2  Definition Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  =  [var name]  [value].
+
+    Assigns the value [value] to the local variable [var name]. The
+    local variable is defined only within the current function
+    definition. Returns 1 if success or null if failure.
+
+
+  set  [obj var name]  [value].
+
+    Assigns the value [value] to the object variable [obj var name]. The
+    assignment remains in effect until another assignment is made to the
+    same variable name, or the variable is destroyed or renamed with the
+    "uns" or "ren" functions (see below). The variable will also be
+    destroyed if the object containing the variable is destroyed.
+    Returns 1 if success or null if failure.
+
+
+  ren  [obj var name]  [new obj var name].
+
+    Renames the object variable [obj var name] to [new obj var name].
+    Only the name of the variable changes, not the value. Returns 1 if
+    success or null if failure.
+
+
+  uns  [obj var name].
+
+    Destroys or "un-sets" the object variable [obj var name]. Both the
+    variable name and value are removed from the object in which they
+    are contained. Returns 1 if success or null if failure.
+
+
+  fun  [function name]  [function body]  [arg 1]  [arg 2] ...
+
+    Defines the function [function name] by assigning the macro language
+    expression [function body] to the function [function name].
+
+    [arg 1], [arg 2], etc. arg seldom used. They tell the macro language
+    compiler which arguments are to be compiled whenever they are
+    encountered in a call to [function name]. This can speed up
+    performance when an argument to a [function name] is a string
+    containing a macro language expression which is to be evaluated
+    within [function name]. [arg 1], [arg 2], etc. are integers
+    specifying the relative position of the argument to be compiled.
+
+    This function returns 1 if success or null if failure.
+                                               Definition Functions   26
+
+
+  arg  [var name 1]  [var name 2] ...
+
+    Names the arguments passed to the function in which it is contained.
+    After this call, the arguments can be accessed by name.
+
+
+  qarg  [argument number n].
+
+    Returns the "nth" argument passed to the function in which it is
+    contained. If n is zero or null, the number of arguments passed to
+    the function is returned.
+
+
+
+  3-3  Conditional Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  eq  [string 1]  [string 2] ...
+
+    Returns 1 if [string 1] is equal to any one of the arguments which
+    follow it, otherwise it returns null.
+
+
+  eqi  [string 1]  [string 2] ...
+
+    Returns 1 if [string 1] is equal (ignoring case) to any one of the
+    arguments which follow it, otherwise it returns null.
+
+
+  ne  [string 1]  [string 2] ...
+
+    Returns 1 if [string 1] is not equal to any of the arguments which
+    follow it, otherwise it returns null.
+
+
+  ==  [string 1]  [string 2] ...
+
+    Returns 1 if [string 1] is numerically equal to any one of the
+    arguments which follow it, otherwise it returns null.
+
+
+  !=  [string 1]  [string 2] ...
+
+    Returns 1 if [string 1] is not numerically equal to any one of the
+    arguments which follow it, otherwise it returns null.
+
+
+  <  [string 1]  [string 2] ...
+
+    Returns 1 if each argument is numerically less than the next
+    argument, otherwise it returns null.
+                                              Conditional Functions   27
+
+
+  >  [string 1]  [string 2] ...
+
+    Returns 1 if each argument is numerically greater than the next
+    argument, otherwise it returns null.
+
+
+  <=  [string 1]  [string 2] ...
+
+    Returns 1 if each argument is numerically less than or equal to the
+    next argument, otherwise it returns null.
+
+
+  >=  [string 1]  [string 2] ...
+
+    Returns 1 if each argument is numerically greater than or equal to
+    the next argument, otherwise it returns null.
+
+
+
+  3-4  Logical Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  and  [string 1]  [string 2] ...
+
+    Evaluates all arguments until an argument returns "0" or null, in
+    which case it returns null, otherwise it returns 1.
+
+
+  or  [string 1]  [string 2] ...
+
+    Evaluates all arguments until an argument does not return "0" or
+    null, in which case it returns 1, otherwise it returns null.
+
+
+  !  [string 1]  [string 2] ...
+
+    Returns 1 if all arguments are either "0" or null, otherwise it
+    returns null.
+
+
+
+  3-5  Bitwise Logical Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  &  [string 1]  [string 2].
+
+    Returns [string 1] "and-ed bitwise" with [string 2].
+                                          Bitwise Logical Functions   28
+
+
+  |  [string 1]  [string 2].
+
+    Returns [string 1] "or-ed bitwise" with [string 2].
+
+
+  ^  [string 1]  [string 2].
+
+    Returns [string 1] "xor-ed bitwise" with [string 2].
+
+
+
+  3-6  Control Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  if  [condition]  [then body]  [else body].
+
+    Evaluates the expression [condition]. If it is not "0" or null, then
+    the expression [then body] is evaluated, otherwise the expression
+    [else body] is evaluated. Returns the value of the evaluated
+    expression.
+
+
+  while  [condition]  [while body].
+
+    Evaluates the expression [while body] while the expression
+    [condition] does not evaluate to "0" or null. [condition] is
+    evaluated before the first evaluation of [while body]. Returns null.
+
+
+  dowhile  [while body]  [condition].
+
+    Evaluates the expression [while body] while the expression
+    [condition] does not evaluate to "0" or null. [condition] is
+    evaluated after the first evaluation of [while body]. Returns null.
+
+
+
+  3-7  Arithmetic Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  +  [integer 1]  [integer 2] ...
+
+    Returns the numeric sum of all arguments.
+
+
+  -  [integer 1]  [integer 2] ...
+
+    If only one argument is specified, this function returns the numeric
+    negative of the argument, otherwise it returns the result of
+    subtracting all arguments after the first argument, from the first
+    argument.
+                                               Arithmetic Functions   29
+
+
+  *  [integer 1]  [integer 2] ...
+
+    Returns the numeric product of all arguments.
+
+
+  /  [integer 1]  [integer 2] ...
+
+    Returns the result of dividing the first argument by all arguments
+    after the first argument.
+
+
+  mod  [integer 1]  [integer 2]
+
+    Returns the modulus of dividing the first argument by the second
+    argument.
+
+
+  3-8  String Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  cat  [string 1]  [string 2] ...
+
+    Returns the concatenated string of all arguments. For example:
+
+      cat "abc" "123" %xyz.        // returns "abc123xyz"
+      cat "var" (+ 1 2).           // returns "var3"
+
+
+  sub  [string]  [position]  [length].
+
+    Returns the substring of [string] starting at character position
+    [position] and extending for a length of [length] characters. If
+    [length] is zero or not specified, then the length used is the
+    length from position to the end of [string]. For example:
+
+      sub "Aurora" 3.             // returns "rora"
+      sub "Aurora" 3 2.           // returns "ro"
+
+
+  fin  [string]  [search string]  [options]  [replace string].
+
+    Searches for [search string] within [string]. Any combination of the
+    following [options] may be specified:
+
+      i - case insensitive search
+      r - search in "reverse", starting from the end of the string
+      w - search for "whole words" only
+
+    If [replace string] is not specified, this function returns the
+    character position where [search string] was found in [string]
+    (returns "0" if not found).
+                                                   String Functions   30
+
+
+    If [replace string] is specified, this function returns a string
+    where every occurrence of [search string] has been replaced with
+    [replace string].
+
+    Examples:
+
+      fin "Aurora" %r.            // returns "3"
+      fin "Aurora" %R %ri.        // returns "5"
+      fin "Aurora" %r @ %XYZ.     // returns "AuXYZoXYZa"
+      fin "Aurora" %k.            // returns "0"
+
+
+  siz  [string 1]  [string 2] ...
+
+    Returns the sum of the string lengths of all of its arguments.
+    For example:
+
+      siz "Aurora".               // returns "6"
+      siz "xyz" %abc %Z.          // returns "7"
+
+
+  dup  [size]  [fill string].
+
+    Returns a string of length [size]. If [fill string] is specified,
+    the string is filled by duplicating [fill string] enough times to
+    fill the string. For example:
+
+      dup 10 "abc".    returns "abcabcabca"
+
+    If [fill string] is not specified, the contents of the return string
+    are undefined. Returns null if failure.
+
+
+  wrd  [char set].
+
+    Sets the default character set for defining a "word" for the "whole
+    words" only search option. The "whole words" only search option is
+    used by the "fin" and "mrkfin" functions. [char set] is a string
+    composed of all the characters in the character set. Character
+    ranges can be indicated with a hyphen (-). For example:
+
+      wrd "abcA-Z0".
+
+    The example above sets the default character set to the characters
+    a, b, c, 0, and the characters A through Z.
+
+
+  idx  [string 1]  [string 2].
+
+    Returns the position in [string 1] of the first character contained
+    in [string 2]. Returns null if none are found. For example:
+                                                   String Functions   31
+
+
+      idx "abcde" %b.             // returns "2"
+      idx "abcde" %tdv.           // returns "4"
+      idx "abcde" %xyz.           // returns null
+
+
+  vfy  [string 1]  [string 2].
+
+    Returns the position in [string 1] of the first character not
+    contained in [string 2]. Character ranges such as "a-zA-Z0-9" can be
+    specified for [string 2]. Returns null if all characters in [string
+    1] are contained in [string 2]. For example:
+
+      vfy "Aurora" "auro".        // returns null
+      vfy "Aurora" "aur".         // returns "4"
+      vfy "Aurora" %a.            // returns "2"
+
+
+  chc  [string]  [options].
+
+    Changes the case of [string] and returns the result. The following
+    [options] may be specified:
+
+      l - change all characters to lower case
+      u - change all characters to upper case
+
+    If no options are specified, "u" is assumed. If options "u" and "l"
+    are both specified, the case of each character in the string is
+    toggled or "flipped". For example:
+
+      chc "Aurora".               // returns "AURORA"
+      chc "Aurora" %l.            // returns "aurora"
+      chc "Aurora" %ul.           // returns "aURORA"
+
+
+  byte  [integer 1]  [integer 2] ...
+
+    Converts each integer argument to a string of length 1 (a 1-byte
+    binary number) and returns the concatenated result. For example:
+
+      byte 32 32 20h.
+
+    The example above returns a string of 3 blanks.
+
+
+  word  [integer 1]  [integer 2] ...
+
+    Converts each integer argument to a string of length 2 (a 2-byte
+    binary number) and returns the concatenated result.
+
+
+  long  [integer 1]  [integer 2] ...
+
+    Converts each integer argument to a string of length 4 (a 4-byte
+    binary number) and returns the concatenated result.
+                               Evaluation and Compilation Functions   32
+
+
+  hex  [string 1]  [string 2] ...
+
+    Converts every two hex characters in each argument string to 1
+    character and returns the concatenated result. For example:
+
+      hex "202020" "2020".
+
+    The example above returns a string of 5 blanks.
+
+
+  toh  [string 1]  [string 2] ...
+
+    Converts every character in each argument string to 2 hex characters
+    and returns the concatenated result. For example:
+
+      toh "ABC" "12".
+
+    The example above returns the string "4142433132".
+
+
+  3-9  Evaluation and Compilation Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+  evl   [expression]  [reps].
+  evla  [expression]  [reps].
+
+    These functions evaluate [expression] for [reps] number of times.
+    [reps] defaults to "1" if not specified. These functions return the
+    result of the last evaluation of [expression].
+
+    The function "evla" evaluates [expression] as if it were an argument
+    to a function, whereas "evl" evaluates [expression] as a macro
+    language sentence.
+
+    Note that [expression] is not "parsed" before it is evaluated. If
+    [expression] must be parsed, use the "prs" function first. For
+    example:
+
+      = %e "beep    100    100".
+      evl (prs e).
+
+    The example above parses the value of the variable "e", evaluates it
+    as a macro language sentence, and beeps the PC speaker.
+
+
+  comf  [source file]  [compiled file].
+
+    Compiles the macro language source code in the file [source file]
+    and places the compiled code in the file [compiled file]. If
+    [compiled file] already exists, then it is overwritten. Returns 1 if
+    success, or null if failure.
+                               Evaluation and Compilation Functions   33
+
+
+  #get  [source or compiled file].
+
+    Includes the specified macro language source or compiled file into
+    the current macro source code when it is evaluated or compiled.
+
+
+  var  [string].
+
+    Evaluates [string] as a variable and returns the value of the
+    variable. For example:
+
+      var (cat "xy" "z").
+
+    The example above returns the value of the variable "xyz".
+
+
+  prs  [expression].
+
+    Parses the macro language expression [expression] and returns the
+    result. Parsing will remove comments and insignificant spaces from
+    the expression.
+
+    Parsing is normally done automatically by the "objdsk" function when
+    source code is loaded and executed, or by the "comf" function when
+    source code is compiled. However, if a string is constructed and
+    evaluated while a macro language program is executing, it should
+    first be parsed before being evaluated by the "evl" function. For
+    example:
+
+      prs "beep  100     100. // beep the speaker".
+
+    The example above returns the string "beep 100 100", which can be
+    then be evaluated by the "evl" function.
+
+
+  3-10  Miscellaneous Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  asc  [string].
+
+    Returns the integer ascii value of the first character in [string].
+    For example:
+
+      asc "A".                         // returns "65"
+
+
+  pat  [filename]  [filename2/path].
+
+    Expands [filename] to a fully qualified filename if it is not fully
+    qualified or ambiguous. The second argument [filename2/path] is used
+    as the "template" to construct the fully qualified name. If
+    [filename2/path] is not specified, then the current drive and
+    directory are used as the template. For example:
+
+      pat "xyz.c" "d:\a\*.*".         // returns "d:\a\xyz.c".
+                                            Miscellaneous Functions   34
+
+
+  exe  [command]  [options]  [memory].
+
+    Executes the DOS command [command]. The string [command] is the DOS
+    program name (.EXE or .COM file) and parameters exactly as you would
+    type them on the DOS command line. The following [options] may be
+    specified:
+
+      k  - prompts the user to return when the command is completed
+      c  - clears the screen before the command begins and restores
+           the screen after the command is completed
+
+
+    [memory] specifies the amount of memory (in k) to request from DOS
+    for the program. If [memory] is -1, then the maximum available
+    memory will be used. The interpreter may swap to XMS memory, EMS
+    memory, or disk to satisfy this request.
+
+    Note: If option "k" is specified, then option "c" is used
+    internally, whether or not it is specified in the function call.
+
+
+  wait  [milliseconds].
+
+    Delays execution for the time period specified by [milliseconds].
+
+
+  beep  [frequency]  [duration].
+
+    "Beeps" the PC speaker for the specified frequency and duration. If
+    [duration] is omitted or zero, the speaker sounds at the specified
+    frequency until "beep" is called again with no arguments.
+    [frequency] is in herz and [duration] is in milliseconds.
+
+
+  3-11  Object Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Object functions are used to manipulate and return information about
+  macro language objects. Objects can be used to logically group
+  together related functions and variables. There are functions for
+  creating and destroying objects, setting and querying an object's
+  ancestry, and changing the current "event" handling object. Also, the
+  "objdsk" function can evaluate macro code in a file on disk. Object
+  function names use the prefix "obj".
+
+
+  objnew  [obj name]  [estimated size]  [obj 1]  [obj 2] ...
+
+    Creates a new object [obj name], and optionally establishes the
+    ancestry of the object. [estimated size] is the estimated number of
+    variables and functions which you believe the object may contain,
+    and is used to optimize internal tables. [obj 1], [obj 2], etc are
+    optional "ancestor" objects from which [obj name] may "inherit"
+    functions and variable assignments. Returns 1 if success or null if
+    failure.
+                                                   Object Functions   35
+
+
+  obj  [obj name]  [obj body].
+
+    Adds functions and variables to the object [obj name]. When [obj
+    body] is evaluated, any function definitions or object variable
+    assignments within [obj body] are added to the object [obj name].
+
+
+  objdes  [obj name].
+
+    Destroys the object [obj name]. The object [obj name] is also
+    removed from the inheritance path of other objects, if applicable.
+
+
+  objsav  [obj name]  [filename]  [options].
+
+    Saves the object [obj name] in the file [filename] as a compiled
+    sequence of "set" function calls. The "objdsk" function can be used
+    to reload the object from disk. The following options may be
+    specified:
+
+      a - append to the end of [filename]
+
+    Returns 1 if success or null if failure.
+
+
+  objnam  [obj name]  [new obj name].
+
+    Renames the object [obj name] to [new obj name]. Returns 1 if
+    success or null if failure.
+
+
+  objeve  [obj name].
+
+    Makes the object [obj name] the current "event" object. The event
+    object is where the interpreter looks for event handler functions
+    when dispatching events from the internal event queue.
+
+
+  objpar  [obj name]  [obj 1]  [obj 2] ...
+
+    Changes the "inheritance path" or ancestry of the object [obj name]
+    to [obj 1], [obj 2], etc.
+
+
+  objdsk  [obj name]  [filename]  [arg 1]  [arg 2] ...
+
+    Evaluates the macro language source or compiled code in [filename],
+    with the object [obj name] as the default object. [arg 1], [arg 2],
+    etc. are arguments passed to the macro code in [filename]. This
+    function returns the value of the last sentence evaluated in
+    [filename].
+                                                   Object Functions   36
+
+
+  qobj  [obj name].
+
+    Returns 1 if the object [obj name] exists, otherwise it returns
+    null.
+
+
+  qobjsiz  [obj name].
+
+    Returns the number of functions and variables in the object [obj
+    name].
+
+
+  qobjexe.
+
+    Returns the name of the currently executing or "default" object.
+
+
+  qobjeve.
+
+    Returns the name of the current "event" object.
+
+
+  qobjanc  [obj name]  [obj 2].
+
+    Returns 1 if the object [obj name] has the object [obj 2] as an
+    ancestor object in its inheritance path, or if [obj name] equals
+    [obj 2], otherwise it returns null.
+
+
+  3-12  Disk Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Disk functions are used to manipulate files on disk, and to return
+  path and drive information. Disk function names use the prefix "dsk".
+
+
+  dskdel  [filename]  [options].
+
+    Deletes the file [filename] and returns 1 if success, or null if
+    failure. Empty directories can also be deleted if option "d" is
+    specified.
+
+
+  dskren  [filename]  [new filename].
+
+    Renames the file [filename] to [new filename]. Returns 1 if success,
+    or null if failure.
+
+
+  dskloc  [filename]  [path].
+
+    Searches the path string [path] for the file [filename]. [path] can
+    be a sequence of paths separated by semicolons (;) (as in the DOS
+    "PATH" environment string). This function returns the fully
+    qualified filename if found, otherwise it returns null.
+                                                     Disk Functions   37
+
+
+  dskfin  [filename]  [string]  [options].
+
+    Searches for the string [string] in the file [filename]. The
+    following search [options] can be specified:
+
+      i - case insensitive search
+      w - search for "whole words" only
+
+    This function returns the position in the file where the string was
+    found ("1" is the first position), or null if not found. If the
+    search was interrupted via <Ctrl-Break>, this function returns -1.
+
+
+  dskcpy  [source filename]  [dest filename]  [options].
+
+    Copies the file [source filename] to [dest filename]. The following
+    [options] may be specified:
+
+      a - append the source file to the destination file
+      k - the destination file will keep the source file date/time
+
+    This function returns non-zero if successful, otherwise it returns
+    null.
+
+
+  dskcur  [path]  [options].
+
+    Sets the current drive or the current path for the specified drive.
+    The following [options] can be specified:
+
+      d - set the current drive
+      p - set the current path
+
+    For example:
+
+      dskcur "d:" %d.       // set current drive to "d:"
+      dskcur "c:\xyz" %p.   // set current directory for "c:" to "xyz"
+      dskcur "c:\xyz" %dp.  // set current drive and directory
+
+    Returns 1 if success or null if failure.
+
+
+  dskdir  [path].
+
+    Creates the new directory specified by [path]. All elements of the
+    path must exist (except the last element). Returns 1 if success or
+    null if failure.
+                                                     Disk Functions   38
+
+
+  dsktch  [filename].
+
+    "Touches" the file [filename] by setting the file's date and time to
+    the current date and time. Returns 1 if success or null if failure.
+
+
+  dskatt  [filename]  [attributes].
+
+    Changes the attributes of the file [filename] to [attributes]. The
+    attributes of a directory can also be changed. [attributes] may be
+    any combination of the following:
+
+      r - read only
+      h - hidden
+      s - system
+      a - archive
+
+    Returns 1 if success or null if failure.
+
+
+  dskopn  [filename]  [options].
+
+    Opens the file [filename] for reading and writing, and returns a
+    "file handle" for use by the "dskrea", "dskwri", "dskpos", and
+    "dskcls" functions (see below). The "current position" in the open
+    file is at the first character in the file. The following [options]
+    can be specified:
+
+      c - create a new file or truncate the file if it already exists
+      r - open the file for reading only
+      w - open the file for reading and writing
+
+    This function returns null if failure.
+
+
+  dskcls  [file handle].
+
+    Closes the file opened by the "dskopn" function above.
+
+
+  dskrea  [file handle]  [length].
+
+    Reads data from the current position in the open file specified by
+    [file handle]. [length] specifies the number of characters to read,
+    and may not exceed 16000. The current position in the file is
+    advanced by the amount of characters actually read.
+                                                     Disk Functions   39
+
+
+    This function returns a string composed of the data read from the
+    file, or null if failure. The amount of characters actually read
+    from the file can be determined by using the "siz" function with the
+    return string.
+
+
+  dskwri  [file handle]  [string]  [options].
+
+    Writes the string [string] at the current position in the open file
+    specified by [file handle]. The current position in the file is
+    advanced by the amount of characters actually written. If [option]
+    "k" is specified, the file's date and time are not modified.
+
+    This function returns the amount of characters written, or null if
+    failure.
+
+
+  dskpos  [file handle]  [offset]  [options].
+
+    Changes the current position in the open file specified by [file
+    handle]. The new position depends on the value of [offset] and
+    [options]. The following [options] may be specified:
+
+      a - [offset] specifies an absolute position in the file ("1" is
+          the first position).
+      c - [offset] specifies an offset from the current position.
+      e - [offset] specifies an offset from the end of the file.
+
+    If no [options] are specified, then "a" is assumed. This function
+    returns the new absolute position in the file ("1" is the first
+    position).
+
+
+  qdskatt  [filename]  [attributes]
+
+    Tests whether or not [filename] has the specified attributes. Any
+    combination of the following [attributes] can be specified:
+
+      a - archive
+      d - directory
+      h - hidden
+      r - read only
+      s - system
+      v - volume
+
+    This function returns a non-null value if the specified attributes
+    are present, or null if none are present.
+                                                     Disk Functions   40
+
+
+  qdskpat  [options].
+
+    Returns the fully qualified boot path or the current path. The
+    following [options] may be specified:
+
+      b - return the boot path where the interpreter was invoked
+      c - return the current path
+
+    If no options are specified, the default is "c".
+
+
+  qdskdrv  [options].
+
+    Returns a string consisting of all available disk drive letters.
+    The following [options] may be specified:
+
+      t - include network information. "1" after the drive letter
+          indicates a local drive, "2" indicates a network drive.
+
+    For example, for a computer system with 3 logical hard drives, 2
+    floppies, and network drives F and G:
+
+      qdskdrv.      // returns "ABCDEFG"
+      qdskdrv %t.   // returns "A1B1C1D1E1F2G2"
+
+
+  qdskcap  [drive]  [options].
+
+    Returns the total or free amount of disk space available on disk
+    drive [drive], in bytes. The following options may be specified.
+
+      c - return the total capacity of the drive
+      f - return the free space on the drive
+
+    If no drive is specified, the current drive is assumed. If no
+    options are specified, the default is "c".
+                                                   System Functions   41
+
+
+  3-13  System Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  System functions are used to control and provide information about the
+  interpreter's operating environment. There are functions to control
+  the interpreter's use of memory and printer devices, and functions to
+  return information such as environment strings and version numbers.
+  System function names use the prefix "sys".
+
+
+  sysmem  [options]  [limit].
+
+    Allows the use of XMS or EMS memory. [limit] is the maximum amount
+    of XMS or EMS to use, in k (a value 0 or -1 indicates that the
+    maximum available amount should be used). One of the following
+    [options] may be specified:
+
+      e - use EMS memory
+      x - use XMS memory
+
+    To use both XMS and EMS memory, this function must be called twice.
+    Note that an XMS or EMS driver must be installed before this
+    function can be called successfully. This function returns a
+    non-zero value if success, otherwise it returns null.
+
+  sysswp  [swap file 1]  [swap file 2]  [swap file 3].
+
+    Sets the swap files names for the interpreter to use in low memory
+    situations. The interpreter will use [swap file 2] only when there
+    is no more room on the drive containing [swap file 1], and [swap
+    file 3] only when there is no more room on the drive containing
+    [swap file 2]. All swap files should be on different drives. Returns
+    non-zero if success or null if failure.
+
+    EMS and XMS memory (if available) will be used before the swap
+    files.
+
+
+  sysprt  [id]  [options]  [page size]  [left margin]  [top margin]
+          [right margin]  [bottom margin]  [line spacing]  [copies].
+
+    Sets the current printer settings. The following printer settings
+    can be specified:
+
+    - [id]
+
+      not used (reserved for future use).
+                                                   System Functions   42
+
+
+    - [page size]
+
+      Specifies the "Lines per Page" of printed output. This includes
+      the [top margin] and [bottom margin]. After the specified lines
+      per page have been printed, a formfeed character (ascii 12) will
+      be sent to the printer and a new page will be started.
+
+      If PrtPag is zero, printing will be continuous (no formfeed
+      characters will be sent to the printer). [top margin], [bottom
+      margin], and the "page number" option will be ignored.
+
+    - [line spacing]
+
+      Specifies the number of lines to advance after printing each line
+      of output. A value of 1 generates single-spaced output, 2
+      generates double-spaced output, and so on.
+
+    - [copies]
+
+      Specifies the number of copies to print.
+
+    - [top margin]
+
+      Specifies the number of blank lines to precede the printed output
+      at the top of each page. This value is included in [page size].
+      [top margin] is ignored if [page size] is set to zero.
+
+    - [bottom margin]
+
+      Specifies the number of blank lines to follow the printed output
+      at the bottom of each page. This value is included in [page size].
+      [bottom margin] is ignored if [page size] is set to zero.
+
+    - [left margin]
+
+      Specifies the number of blank columns to precede the printed
+      output on each line.
+
+    - [right margin]
+
+      Specifies the column position at which to truncate each printed
+      line. This column position is relative to column zero of the
+      printed output, NOT the file being printed. If zero is specified,
+      lines are not truncated.
+
+    - [options]
+
+      The following [options] can be specified:
+                                                   System Functions   43
+
+
+      h - prints a "header" at the top of each page. The header is
+          specified in the "mrksav" function when printing. This option
+          is ignored if [page size] is zero.
+
+      f - prints a "footer" at the top of each page. The footer is
+          specified in the "mrksav" function when printing. This option
+          is ignored if [page size] is zero.
+
+      s - adds a separator line after the header line and before the
+          footer line.
+
+      p - prints a right-justified page number on the header and footer
+          lines. If neither a header or footer was specified, a blank
+          header line is assumed. This option is ignored if [page size]
+          is zero.
+
+      l - prints a line number at the beginning of each line.
+
+      e - sends a formfeed character to the printer when printing is
+          completed.
+
+
+  syssnd  [0/1].
+
+    Enables (1) or disables (0) sound from the PC speaker.
+
+
+  qsysver.
+
+    Returns the current version of The Aurora Editor.
+
+
+  qsysos  [options].
+
+    Returns the operating system name or the operating system version.
+    The following [options] may be specified:
+
+      v - return major OS version
+      m - return minor OS version
+
+    If no options are specified, the operation system name ("DOS") is
+    returned.
+
+
+  qsyspgm.
+
+    Returns the name of The Aurora Editor .EXE file that is currently
+    executing, without path information or the .EXE extension. For
+    example:
+
+      qsyspgm.           // returns "A" or "A3"
+                                                   System Functions   44
+
+
+  qsysvar  [var name].
+
+    Returns the environment string for the specified environment
+    variable [var name]. [var name] must be in upper case. For example:
+
+      qsysvar "PATH".   // returns the DOS PATH string
+
+    This function returns null if the environment variable is not found.
+
+
+  3-14  Timer Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Timer functions are used to create and destroy system "timers". Timers
+  are used to automatically call user-defined functions at a specified
+  time and date, or at periodic intervals. The "qtim" function also
+  returns date and time information. Timer function names use the prefix
+  "tim".
+
+
+  timint  [timerid]  [interval]  [obj]  [fun]  [arg 1]  [arg 2] ...
+
+    Sets an interval timer to call the function [fun] in the object
+    [obj] with arguments [arg 1], [arg 2], etc. The function is called
+    for every time interval (in milliseconds) specified by [interval].
+
+    If [obj] is null, then the current "event" object is used. The
+    [timerid] can be 0-9, and uniquely identifies the timer. Note that
+    the first call to [fun] will occur after the specified time
+    interval, not after the call. For example:
+
+      timint 3 1000 @ %timer3.
+
+    The example above sets timer 3 to call the function "timer3" every
+    second.
+
+    This function returns 1 if success or null if failure.
+
+
+  timalm  [timerid]  [year(YYYY)]  [month(MM)]  [day(DD)]
+          [dayofweek (0-6)]  [hour(HH)]  [min(mm)]  [sec(ss)]
+          [obj]  [fun]  [arg 1]  [arg 2] ...
+
+    Sets an "alarm" timer to call the function [fun] in the object [obj]
+    with arguments [arg 1], [arg 2], etc. The function is called at the
+    specified time and date.
+
+    If [obj] is null, then the current "event" object is used. The
+    [timerid] can be 0-9, and uniquely identifies the timer.
+
+    "-1" may be specified as a "wildcard" for any of the date or time
+    parameters. For example:
+                                                    Timer Functions   45
+
+
+      timalm  2 -1 3 -1 -1 11 0 0 @ "march".
+
+    The example above sets timer 2 to call the function "march" in the
+    current event object at 11 o'clock for every day in the month of
+    march.
+
+    This function returns 1 if success or null if failure.
+
+
+  timdes  [timerid].
+
+    Stops and destroys the timer [timerid]. This function destroys both
+    interval and alarm timers. Returns 1 if success or null if failure.
+
+
+  qtim.
+
+    Returns the date and time as a character string of length 17, with
+    the following format:
+
+      "YYYYMMDDWhhmmssuu"
+
+      YYYY - year
+      MM   - month (1-12)
+      DD   - day (1-31)
+      W    - day of the week (0-6, 0=sunday)
+      hh   - hour (0-23)
+      mm   - minutes (0-59)
+      ss   - seconds (0-59)
+      uu   - hundredths of a second (0-99)
+
+
+
+  3-15  Keyboard Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Keyboard functions are used to control and return information about
+  the keyboard. Keyboard function names use the prefix "kbd".
+
+
+  kbdenh  [0/1].
+
+    Turns checking for the enhanced keyboard ON (1) or OFF (0). "kbdenh
+    1" enables the enhanced keyboard keys if the enhanced keyboard is
+    detected. "kbdenh 0" disables the enhanced keyboard keys.
+
+
+  kbdrpt  [report mode].
+
+    Determines how the interpreter calls keyboard event handler
+    functions.
+                                                 Keyboard Functions   46
+
+
+    If [report mode] is "1" and a key is typed in, the interpreter
+    attempts to call the user function "key" in the current event object
+    with the following arguments:
+
+      key name - name of the key ("k_s_f1", "k_a_y", etc.)
+      key code - a 2 byte code identifying the key
+      key char - the character typed in (if not a function key)
+
+    If [report mode] is "2" and a key is typed in, the interpreter
+    attempts to call a user function in the current event object with
+    the same name as the "key name" argument above, with the following
+    arguments:
+
+      key code - a 2 byte code identifying the key
+      key char - the character typed in (if not a function key)
+
+    The default keyboard reporting mode is "2". This function returns 1
+    if successful or null if failure.
+
+
+  kbdclr.
+
+    Removes all keystrokes from the keyboard buffer.
+
+
+  qkbdshf  [mask].
+
+     Returns the current shift key state of the keyboard "and-ed
+     bitwise" with the integer specified by [mask]. The following table
+     lists each bit position and its corresponding shift key:
+
+       01h - right shift key is down    10h - scroll lock is ON
+       02h - left shift key is down     20h - num lock is ON
+       04h - ctrl key is down           40h - caps lock is ON
+       08h - alt key is down            80h - insert state is ON
+
+     For example, the value of "qkbdshf 3" is non-zero if either shift
+     key is currently pressed down.
+
+
+  qkbdchr  [options]  [keycode].
+
+    This function waits for a key from the keyboard or translates
+    [keycode] if [keycode] is specified. The following options can be
+    specified:
+
+      n - returns the function name assigned to [keycode].
+      c - returns a keycode (no change if [keycode] is specified).
+      h - returns "1" if a key has been pressed, otherwise it returns
+          null. The key remains in the keyboard buffer.
+
+                                                 Keyboard Functions   47
+
+
+  3-16  Mouse Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Mouse functions are used to control and return information about the
+  mouse. Mouse function names use the prefix "mou".
+
+
+  mouini.
+
+    Initializes the mouse and returns the mouse driver version (or null
+    if failure). This function also displays the mouse pointer at the
+    center of the screen, and enables the interpreter event queue to
+    receive mouse events.
+
+    In order for this function to return successfully, a DOS mouse
+    driver (such as "mouse.com" or "mouse.sys") must be installed before
+    the interpreter is invoked.
+
+
+  moutrm.
+
+    Deactivates the mouse driver and removes the mouse pointer from the
+    screen. No more mouse events will be received by the interpreter
+    event queue. Returns 1 if success or null if failure.
+
+
+  mousen  [horz]  [vert]  [double speed].
+
+    Sets the mouse sensitivity by setting the horizontal mickey-to-pixel
+    [horz] and vertical mickey-to-pixel [vert] ratios, and by setting
+    the double speed threshold [double speed]. The default value of
+    these settings after calling "mouini" are:
+
+      Horz mickey-to-pixel ratio:   8
+      Vert mickey-to-pixel ratio:  16
+      Double speed threshold:      64
+
+    Returns 1 if success or null if failure.
+
+
+  mourpt  [report mode].
+
+    Determines how the interpreter calls mouse event handler functions.
+                                                 Keyboard Functions   48
+
+
+    If [report mode] is "1" and a mouse event is read from the event
+    queue, the interpreter attempts to call the user function "mouse" in
+    the current event object with the following arguments:
+
+      mouse event name - name of the mouse event ("m_l_down", etc.)
+      mouse x position - x position of mouse (virtual coordinates)
+      mouse y position - y position of mouse (virtual coordinates)
+
+    If [report mode] is "2" and a mouse event is read from the event
+    queue, the interpreter attempts to call a user function in the
+    current event object with the same name as the "mouse event name"
+    above, with the following arguments:
+
+      mouse x position - x position of mouse (virtual coordinates)
+      mouse y position - y position of mouse (virtual coordinates)
+
+    The default mouse reporting mode is "2". This function returns 1 if
+    successful or null if failure.
+
+
+  moupos  [x position]  [y position].
+
+    Sets the position of the mouse cursor on the physical screen (0,0 is
+    the upper left corner). Returns 1 if success or null if failure.
+
+
+  mouvis  [0/1].
+
+    Shows (1) or hides (0) the mouse cursor.
+
+
+  qmoupos  [options].
+
+    Returns the current mouse position on the physical screen (0,0 is
+    the upper left corner). The following options may be specified:
+
+      x - return the x position of the mouse
+      y - return the y position of the mouse
+
+    If no options are specified, the default is "x".
+
+
+
+  3-17  Queue Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Queue functions are used to control and return information about the
+  interpreter event queue. Queue function names generally use the prefix
+  "que".
+                                                    Queue Functions   49
+
+
+  que  [fun]  [arg 1]  [arg 2] ...
+
+    Places the function [fun] and its arguments [arg 1], [arg 2],
+    etc. on the interpreter event queue. The next time the interpreter
+    is idle, it will read the event queue and attempt to call [fun] in
+    the current event object. Returns 1 if success or null if failure.
+
+
+  send  [fun]  [arg 1]  [arg 2] ...
+
+    This function is similar to the "que" function above, except that
+    the interpreter event queue is bypassed. The function [fun] in the
+    current event object is called immediately. This function returns
+    the result of evaluating [fun].
+
+
+  queobj  [obj]  [fun]  [arg 1]  [arg 2] ...
+
+    This function works similar to the "que" function above, except that
+    the interpreter attempts to call the function [fun] in the object
+    [obj], not in the current event object.
+
+
+  sendobj  [obj]  [fun]  [arg 1]  [arg 2] ...
+
+    This function is similar to the "queobj" function above, except that
+    the interpreter event queue is bypassed. The function [fun] in the
+    object [obj] is called immediately. This function returns the result
+    of executing the function [fun].
+
+
+  quedis.
+
+    This function reads the next event from the queue and "dispatches"
+    it by calling the user event handler function associated with the
+    event. If there is no event on the event queue, it will wait for an
+    event to appear in the queue. This function returns when the user
+    event handler function returns.
+
+    If the function "quequi" (see below) is called in the user event
+    handler, this function returns "0", otherwise it returns "1". This
+    feature can be used to implement a dispatch loop which is not
+    terminated until the "quequi" function is called. For example:
+
+      while (quedis).
+
+    The loop above will continue to dispatch events from the event queue
+    until a user function calls "quequi".
+                                                    Queue Functions   50
+
+
+  quequi.
+
+    Forces the "quedis" function (see above) to return null.
+
+
+  quesiz  [size].
+
+    Sets the interpreter event queue size to [size] events. The default
+    size is 20 when the interpreter is invoked. Returns 1 if successful
+    or null if failure.
+
+
+
+  3-18  Video Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Video functions are used to control and return information about the
+  video device. Video function names use the prefix "vid".
+
+
+  vidcsz  [start]  [end].
+
+    Sets the physical cursor size on the screen. [start] and [end]
+    indicate the distance of the top and bottom of the cursor from the
+    top of the character cell, on a scale of 0 to 100. For example,
+    "vidcsz 0 100" sets the cursor size to the entire character cell.
+
+    Specifying -1 for both [start] and [end] hides the cursor.
+
+
+  vidbli  [0/1].
+
+    Turns the video blink mode ON (1), or OFF (0). The video blink mode
+    determines whether or not color attributes above 127 blink on and
+    off. The video blink mode is OFF by default.
+
+
+  vidfon  [columns]  [rows]  [back attr]  [back fill]  [options].
+
+    Changes the video mode and/or sets the background color attribute
+    and background fill string. You can do either operation separately
+    or together.
+
+    If [option] "c" is specified, the screen is captured and restored
+    when exiting the interpreter.
+
+    When changing the video mode, both [columns] and [rows] must be
+    non-zero. [columns] may be 40 or 80 and [rows] may be 12, 14, 21,
+    25, 28, 43, or 50. If [columns] or [rows] are zero or null, the
+    video mode is not changed.
+                                                    Video Functions   51
+
+
+    To change the background attribute or fill string, specify the
+    background color attribute [back attr] and fill string [back fill].
+    If [back attr] is not specified, a value of 0 (black) is used. If
+    [back fill] is not specified, a blank (ascii 32) is used. If neither
+    are specified, the current background remains unchanged.
+
+    Note: the string [back fill] can be a maximum of 50 chars long.
+
+    This function returns 1 if successful or null if failure.
+
+
+  vidorg  [x]  [y]  [options].
+
+    Changes the mapping of the physical video device (the screen) to the
+    virtual video device (the virtual screen is 64k x 64k characters).
+    [x] and [y] specify the left and top positions of the physical
+    device within the virtual device. The following [options] may be
+    specified:
+
+      r - [x] and [y] specify a mapping relative to the current mapping
+      a - [x] and [y] specify an absolute mapping. In this case, [x] and
+          [y] are referred to as "virtual coordinates".
+
+    For example, "vidorg 12000 17896 %a" maps the top left corner of the
+    screen to (12000, 17896) on the virtual screen.
+
+    If no [options] are specified, the default option is "r".
+
+    When the editor is invoked, the default mapping is (16000,16000).
+    This function returns 1 if success or null if failure.
+
+
+  vidpri  [string]  [x]  [y]  [attr]  [options]
+
+    Prints the string [string] on the screen background at position [x],
+    [y] using the color attribute [attr]. The following [options] may be
+    specified:
+
+      a - [x] and [y] are in absolute virtual screen coordinates.
+      d - [x] and [y] are in physical device coordinates, with (0,0)
+          as the left and top.
+
+    If no [options] are specified, the default is "d". This function
+    returns 1 if successful or null if failure.
+
+
+  vidbor  [attr].
+
+    Sets the screen overscan border color to [attr].
+                                                    Video Functions   52
+
+
+  vidoff.
+
+    Turns off the video device. All screen updates are deferred until
+    the function "vidon" is called.
+
+
+  vidon.
+
+    Turns on the video device.
+
+
+  qvidmon.
+
+    Returns 1 if the video device is in monochrome mode, otherwise it
+    returns null.
+
+
+  qvidp  [options].
+
+    Returns the video parameter specified in [options]. One of the
+    following [options] may be specified:
+
+      l - returns the left virtual coordinate of the physical screen
+      t - returns the top virtual coordinate of the physical screen
+      r - returns the right virtual coordinate of the physical screen
+      b - returns the bottom virtual coordinate of the physical screen
+      x - returns the width of the screen
+      y - returns the height of the screen
+      k - returns the video blink mode (0=off, 1=on)
+                                              Text Buffer Functions   53
+
+
+  3-19  Text Buffer Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Text buffer functions are used to control and return information about
+  text buffers. A text buffer is a group of one or more lines of text
+  and is used for editing files. There are many functions for creating,
+  modifying, and destroying text buffers. Text buffer function names
+  generally use the prefix "tex".
+
+  Any number of text buffers can be created. Text buffers are organized
+  into a global "text buffer list". The "default" text buffer is always
+  at the top of the list.
+
+  Text buffers are identified by a "text buffer name". Specifying a null
+  text buffer name for any of the text buffer functions indicates that
+  the "default" text buffer should be used.
+
+  Note that changes made to a text buffer with these functions are not
+  automatically displayed in any windows which might be associated with
+  the text buffer. You must use the "windra" or "texdra" functions to
+  update the window (see "Window Functions").
+
+
+  texcre  [text buffer]  [line 1]  [line 2] ...
+
+    Creates a new text buffer with the name [text buffer]. The new text
+    buffer becomes the default text buffer. The arguments [line 1],
+    [line 2], etc are the initial lines to be placed in the text buffer.
+    If no initial lines are specified, the text buffer is created with
+    one blank line.
+
+    Returns 1 if successful or 0 if failure.
+
+
+  texmen  [text buffer]  [line 1]  [line 2] ...
+
+    Creates a new menu text buffer with the name [text buffer]. The new
+    text buffer becomes the default text buffer. The arguments [line 1],
+    [line 2], etc are the initial lines to place on the menu (see the
+    section "Defining Menus" in The Aurora Editor Users Guide).
+
+    Returns 1 if successful or 0 if failure.
+
+
+  texdes  [text buffer].
+
+    Destroys [text buffer] and all marks and windows associated with
+    [text buffer]. The previous text buffer becomes the default text
+    buffer. Returns 1 if successful or 0 if failure.
+                                              Text Buffer Functions   54
+
+
+  texloa  [text buffer]  [filename]  [options]  [line number]
+          [delimiter]  [trunc length].
+
+    Creates a new text buffer from the file [filename], or inserts the
+    file [filename] into an existing text buffer. If [filename] contains
+    wildcards or specifies a directory, then a directory listing is
+    loaded. The "qtexdir" function can be used to return information
+    about the directory listing.
+
+    If [text buffer] does not exist, then a new text buffer with the
+    name [text buffer] is created, and the file [filename] is loaded
+    into it. The new text buffer becomes the default text buffer.
+
+    If [text buffer] is an existing text buffer, then the file
+    [filename] is inserted into [text buffer] after the line [line
+    number]. If [line number] is 0 then it is inserted before the first
+    line. If [line number] is -1 then it is inserted after the last
+    line.
+
+    The following [options] may be specified:
+
+      b - the [delimiter] argument specifies a 1-byte line delimiter
+      w - the [delimiter] argument specifies a 2-byte line delimiter
+      h - include hidden files when loading a directory listing
+      d - include subdirectories when loading a directory listing
+      k - convert file sizes to 1K increments when loading a directory
+          listing
+      a - ignore the argument [filename] and load an internal ascii
+          chart
+
+    If options "b" or "w" are specified then [delimiter] specifies a
+    byte or word line delimiter used to define the end of each line
+    when loading the file.
+
+    If options "b" or "w" are not specified and [delimiter] is zero,
+    then the line delimiter defaults to "0D0Ah" (carriage return -
+    linefeed).
+
+    If options "b" or "w" are not specified and [delimiter] is greater
+    than zero, then [delimiter] specifies the binary line length, and
+    the file is loaded in "binary mode".
+
+    [trunc length] specifies the maximum line length that can be loaded
+    before wrapping to the next line. The maximum line length can not
+    exceed 16000. If [trunclength] is zero or not specified, then a
+    maximum line length of 16000 is assumed.
+
+    This function returns 1 if a file was loaded, 2 if a directory
+    listing was loaded, or null if failure.
+                                              Text Buffer Functions   55
+
+
+  texnam  [text buffer]  [new text buffer].
+
+    Renames the text buffer [text buffer] to [new text buffer]. Returns
+    1 if success or null if failure.
+
+
+  texdra  [text buffer]  [line number].
+
+    Draws the client area of all windows which currently display the
+    text buffer [text buffer].
+
+    If [line number] is specified, only the specified line number is
+    drawn (this is faster than drawing all lines of the text buffer). If
+    [line number] is -1, the line drawn is the line at the default
+    cursor mark for the text buffer.
+
+    Returns 1 if successful or 0 if failure.
+
+
+  textop  [text buffer].
+
+    Makes the text buffer [text buffer] the default text buffer by
+    moving it to the top of the text buffer list. The default text
+    buffer can be easily referenced in any text buffer function by
+    specifying "null" for the [text buffer] argument.
+
+
+  texdty  [text buffer]  [options].
+
+    Sets or clears the dirty flag for the text buffer [text buffer]. The
+    dirty flag is set automatically by any function which modifies the
+    text buffer, and can be retrieved with the "qtexdty" function (see
+    below). The following options can be specified:
+
+      c - clear the dirty flag
+      s - set the dirty flag
+
+    If no options are specified, the default is "s".
+
+
+  texdlm  [text buffer]  [delimiter]  [options].
+
+    Sets the default byte or word line delimiter associated with the
+    text buffer [text buffer]. The following options can be specified:
+
+      b - [delimiter] is a 1-byte delimiter.
+      w - [delimiter] is a 2-byte delimiter.
+
+    If no [options] are specified and [delimiter] is non-zero, then
+    [text buffer] will have no delimiter.
+                                              Text Buffer Functions   56
+
+
+  texusz  [text buffer]  [size].
+
+    Sets the size of the undo/redo stack associated with the text buffer
+    [text buffer]. The default size is zero.
+
+
+  texovl  [text buffer]  [x]  [y]  [string].
+
+    Overlays the string [string] at column [x], line [y] of the text
+    buffer [text buffer]. If [x] or [y] are null, then the column and
+    line of the default cursor mark are assumed. Returns 1 if success or
+    null if failure.
+
+
+  texinsx  [text buffer]  [x]  [y]  [string].
+
+    Inserts the string [string] horizontally at column [x], line [y] of
+    the text buffer [text buffer]. If [x] or [y] are null, then the
+    column and line of the default cursor mark are assumed. Returns 1 if
+    success or null if failure.
+
+
+  texinsy  [text buffer]  [x]  [y]  [string]  [reps].
+
+    Inserts the string [string] vertically at column [x] after line [y]
+    of the text buffer [text buffer]. If [x] or [y] are null, then the
+    column and line of the default cursor mark are assumed. [reps]
+    indicates the number of lines to be inserted (if 0 or null is
+    specified, one line is inserted). Returns 1 if success or null
+    if failure.
+
+
+  texdelx   [text buffer]  [x]  [y]  [length].
+
+    Deletes the 1-line text segment of length [length] at column [x],
+    line [y] of the text buffer [text buffer]. If [x] or [y] are null,
+    then the column and line of the default cursor mark are assumed.
+    Returns 1 if success or null if failure.
+
+
+  texdely  [text buffer]  [y]  [reps].
+
+    Deletes [reps] number of lines starting with line [y] in the text
+    buffer [text buffer]. If [reps] is null or zero, then one line is
+    deleted. If [y] is null then the line number of the default cursor
+    mark is assumed. Returns 1 if success or null if failure.
+                                              Text Buffer Functions   57
+
+
+  qtex  [text buffer].
+
+    Returns 1 if the text buffer [text buffer] exists, or null if it
+    does not exist.
+
+
+  qtexlin  [text buffer]  [line number]  [a]  [b].
+
+    Returns a copy of the line [line number] from column [a] through
+    column [b] in the text buffer [text buffer]. If [line number] is
+    null or zero, then the line number of the default cursor mark is
+    assumed. If [a] is null or zero, then "1" is used for [a]. If [b] is
+    null or zero, then the line length used for [b]. This function
+    returns null if failure.
+
+
+  qtexend  [text buffer].
+
+    Returns the number of lines in the text buffer [text buffer].
+
+
+  qtexpre  [text buffer].
+
+    Returns the previous text buffer before [text buffer] in the text
+    buffer list. Returns null if [text buffer] is the last text buffer
+    in the list.
+
+
+  qtexdty  [text buffer].
+
+    Returns 1 if the text buffer [text buffer] has been modified, or
+    null if it has not been modified.
+
+
+  qtextru  [text buffer].
+
+    Returns 1 if the text buffer [text buffer] has been truncated during
+    execution of the function "texloa". This can occur by interrupting
+    "texloa" with <Ctrl-Break>, or when the system is out of space. This
+    function returns null if [text buffer] has not been truncated.
+
+
+  qtexbeg  [text buffer]  [line number].
+
+    Returns the column position of the first non-blank character of line
+    [line number] in the text buffer [text buffer]. If [line number] is
+    zero or null, the line number of the default cursor mark is assumed.
+                                              Text Buffer Functions   58
+
+
+  qtexlen  [text buffer]  [line number].
+
+    Returns the length of line [line number] in the text buffer [text
+    buffer]. If [line number] is zero or null, the line number of the
+    default cursor mark is assumed.
+
+
+  qtexfld  [text buffer]  [line number]  [rel]  [options].
+
+    If [rel] is not specified, this function returns the number of lines
+    in the text fold beginning or ending at the line [line number].
+
+    If [rel] is specified, the value of [rel] may be a positive or
+    negative integer. The following [options] may also be specified:
+
+      a - returns the line number that is the "apparent" distance of
+          [rel] lines away from [line number]. The "apparent" distance
+          is the visible distance on the screen (text folds count as one
+          line).
+      v - returns the "apparent" line number that is the actual distance
+          of [rel] lines away from [line number].
+      r - this option can be specified with options "a" or "v". It
+          indicates the relative distance away from [line number] is to
+          be returned, not a line number.
+
+    If no [options] are specified, the default is "a".
+
+    If [line number] is zero or null, the line number of the default
+    cursor mark is assumed.
+
+
+  qtextop.
+
+    Returns the default text buffer at the "top" of the text buffer
+    list.
+
+
+  qtexmrk  [text buffer]  [options].
+
+    Returns the default mark or cursor mark at the "top" of the mark
+    list associated with the text buffer [text buffer]. The following
+    [options] may be specified:
+
+      c - returns the first cursor mark on the mark list
+      m - returns the first non-cursor mark on the mark list
+
+    If no options are specified, then the first mark on the mark list is
+    returned (cursor mark or non-cursor mark).
+                                              Text Buffer Functions   59
+
+
+    Note: if there are any cursor marks associated with the text buffer,
+    the interpreter always places them "ahead" of non-cursor marks on
+    the mark list, so that calling this function with no [options] will
+    always return a cursor mark.
+
+
+  qtexbin  [text buffer].
+
+    Returns the binary line length associated with the text buffer [text
+    buffer]. If [text buffer] was not loaded in "binary mode", then this
+    function returns null.
+
+
+  qtexmen  [text buffer]  [line number]  [options].
+
+    Returns information about the menu text buffer [text buffer] created
+    with the "texmen" function. If [line number] is null or zero, the
+    line number of the default cursor mark is assumed. The following
+    [options] may be specified:
+
+      c - return the position of the highlight character at [line
+          number]
+      w - return the menu width
+      n - return the menu item description at [line number]
+      f - return the macro code for the menu item at [line number]
+      y - return last cursor position on the menu text buffer
+
+    (see also "Defining Menus" in The Aurora Editor Users Guide).
+
+
+  qtexdir  [options].
+
+    Returns information about the most recently loaded directory listing
+    loaded with the "texloa" function. The following options may be
+    specified:
+
+      d - return the number of subdirectories in the directory listing
+      f - return the number of files in the directory listing
+      s - return the sum of all the file sizes in the directory listing
+
+
+  undbeg.
+
+    Marks the beginning of a series of "tex" and "mrk" function calls
+    which are considered to be one "undoable/redoable" operation. The
+    current cursor mark position, and window size and position (if
+    applicable) will be saved with the "undoable" operation.
+                                              Text Buffer Functions   60
+
+
+    The "undend" function (see below) marks the end of the "undoable"
+    series of function calls.
+
+
+  undend.
+
+    Marks the end of a series of "tex" and "mrk" function calls started
+    by the "undbeg" function (see above) which are to be considered as
+    one "undoable" operation. All of the information required to "undo"
+    the function calls between "undbeg" and "undend" is pushed onto an
+    internal undo/redo stack.
+
+
+  und  [text buffer]  [options].
+
+    Restores the most recent changes made to the text buffer [text
+    buffer] that were recorded with the "undbeg" and "undend" functions
+    (see above). The following options may be specified:
+
+      u - restores the most recent modification to the text buffer
+      r - reverses the effects of the last "und %u" function call
+
+    If no [options] are specified, the default is "u". This function
+    returns 1 if success or null if failure.
+                                                     Mark Functions   61
+
+
+  3-20  Mark Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Mark functions are used to control and return information about
+  "marks". A mark defines an area of text within a specific text buffer,
+  or specifies a "cursor" position in a text buffer. There are many
+  functions for creating, modifying, and destroying marks. Mark function
+  names use the prefix "mrk".
+
+  Any number of marks can be associated with a text buffer. Marks are
+  organized into a "mark list" attached to the text buffer. The
+  "default" mark is at the top of the list.
+
+  Marks are identified by a "mark name". Specifying a null mark name for
+  any of the mark functions indicates that the default mark should be
+  used.
+
+  Using the mark functions, operations on text buffers can be restricted
+  to the areas of text defined by the marks. "Cursor marks" are a
+  special type of mark used to specify movable cursor positions within a
+  text buffer. A Window can be attached to a text buffer via cursor
+  marks (see "Window Functions").
+
+  Note that changes made to a text buffer with these functions are not
+  automatically displayed in any windows associated with the text
+  buffer. You must use the "windra" or "texdra" functions to update the
+  window (see "Text Buffer Functions" and "Window Functions").
+
+
+  mrkset  [mark]  [options]  [text buffer]  [l]  [t]  [r]  [b]
+          [s]  [e].
+
+    Creates a new mark with the name [mark] for the text buffer [text
+    buffer], or modifies the mark if it already exists. If a new
+    "cursor" mark is created, it becomes the default mark for the text
+    buffer. Cursor marks are always placed ahead of non-cursor marks on
+    text buffer's mark list.
+
+    [l], [t], [r], [b] are the left, top, right, and bottom coordinates
+    of the mark, relative to the top-left corner of the text buffer. [s]
+    and [e] are the start and end positions on the first and last lines
+    of the mark. [s] and [e] are currently used only by the "mrkfin"
+    function.
+
+    If [l] or [t] are null or zero, then the column and line of the
+    default cursor mark in the text buffer are used. If [r] or [b] are
+    null or zero, then [l] and [t] are used. If [s] or [e] are null or
+    zero, then the left and right boundaries of the resulting mark are
+    used.
+                                                     Mark Functions   62
+
+
+    The following [options] can be specified:
+
+      c - the mark is a "cursor" mark, used to mark a movable position
+          in a text buffer. The cursor mark becomes the default mark for
+          the text buffer
+      i - places the mark in "insert" mode if it is a cursor mark. If
+          this option is not specified, the cursor mark is placed in
+          "overlay" mode.
+      r - the mark is a rectangular or "column" mark. If this option is
+          not specified, the mark is a "line" mark.
+      h - the mark is "hidden"
+
+    This function returns 1 if success or null if failure.
+
+
+  mrkdes  [mark].
+
+    Destroys the mark [mark]. If [mark] was the default mark, then the
+    previous mark in the mark list becomes the default mark. Returns 1
+    if success or null if failure.
+
+
+  mrknam  [mark]  [new mark].
+
+    Renames the mark [mark] to [new mark]. Returns 1 if success or null
+    if failure.
+
+
+  mrktop  [mark].
+
+    Makes the cursor mark [mark] the default mark by moving it to the
+    top of the mark list. A non-cursor mark can only be made the default
+    mark if no cursor mark exists for the text buffer.
+
+
+  mrkcol  [mark]  [attr].
+
+    Changes the display color for the mark [mark] to [attr]. If this
+    function is not called, then the mark color is determined by the
+    "wincol" function (see "Window Functions"). This call allows marks
+    to have different colors. Returns 1 if success or null if failure.
+
+
+  mrkdel  [mark].
+
+    Deletes the text inside the mark [mark], and the mark itself. For
+    "line" marks, this function deletes all lines in the mark. For
+    rectangular or "column" marks, this function deletes all columns in
+    the mark and shifts all columns to the right into the vacated area.
+
+    Returns 1 if success or null if failure.
+                                                     Mark Functions   63
+
+
+  mrkins  [mark]  [text buffer]  [x]  [y].
+
+    Copies the text inside the mark [mark] to column [x] line [y] in the
+    text buffer [text buffer].
+
+    If [text buffer] is not specified, then the text buffer associated
+    with [mark] is assumed. If [x] or [y] is not specified, then the
+    column and line of the default cursor mark for the text buffer are
+    assumed.
+
+    For "line" marks, the new text is inserted vertically into [text
+    buffer] after line [y]. For rectangular or "column" marks the new
+    text is inserted horizontally into [text buffer] at column [x], line
+    [y].
+
+    Returns 1 if success or null if failure.
+
+
+  mrkmov  [mark]  [text buffer]  [x]  [y].
+
+    Moves the text inside the mark [mark] to column [x] line [y] in the
+    text buffer [text buffer]. The mark itself is moved along with the
+    text.
+
+    If [text buffer] is not specified, then the text buffer associated
+    with [mark] is assumed. If [x] or [y] is not specified, then the
+    column and line of the default cursor mark for the text buffer are
+    assumed.
+
+    For "line" marks, the text is moved vertically into [text buffer]
+    after line [y]. For rectangular or "column" marks the text is moved
+    horizontally into [text buffer] at column [x], line [y].
+
+    Returns 1 if success or null if failure.
+
+
+  mrkovl  [mark]  [text buffer]  [x]  [y].
+
+    Overlays the text inside the mark [mark] at column [x] line [y] in
+    the text buffer [text buffer].
+
+    If [text buffer] is not specified, then the text buffer associated
+    with [mark] is assumed. If [x] or [y] is not specified, then the
+    column and line of the default cursor mark for the text buffer are
+    assumed.
+
+    Returns 1 if success or null if failure.
+                                                     Mark Functions   64
+
+
+  mrkshf  [mark]  [shift]  [fill character].
+
+    Shifts the text in the mark [mark] left or right by [shift] columns
+    and fills the vacated columns with [fill character]. If the value of
+    [shift] is negative, then the text is shifted left, otherwise the
+    text is shifted right. If [fill character] is null then blanks are
+    used. Returns 1 if success or null if failure.
+
+
+  mrkfil  [mark]  [fillchar]  [a]  [b].
+
+    Fills the text within the mark [mark] with the character [fill
+    character]. If the mark is a "line" mark, then [a] and [b] are used
+    as the left and right columns for the fill. [a] and [b] are ignored
+    for "column" marks.
+
+    Returns 1 if success or null if failure.
+
+
+  mrkcas  [mark]  [options]  [a]  [b].
+
+    Changes the case of the text within the mark [mark]. If the mark is
+    a "line" mark, then [a] and [b] are used as the left and right
+    columns for the case change. [a] and [b] are ignored for "column"
+    marks. The following [options] can be specified:
+
+      l - change the text to lower case
+      u - change the text to upper case
+
+    Specifying both options "l" and "u" will toggle the case of each
+    character in the text. If no [options] are specified, the default is
+    "u".
+
+    This function returns 1 if success or null if failure.
+
+
+  mrkjus  [mark]  [options]  [a]  [b].
+
+    Right justifies, centers, or left justifies the text within the mark
+    [mark]. If the mark is a "line" mark, then [a] and [b] are used as
+    the left and right columns for the justification. [a] and [b] are
+    ignored for "column" marks. The following [options] can be
+    specified:
+
+      l - left justifies the text in the mark
+      c - centers the text in the mark
+      r - right justifies the text in the mark
+
+    If no [options] are specified, the default is "l". This function
+    returns 1 if success or null if failure.
+                                                     Mark Functions   65
+
+
+  mrksrt  [mark]  [options].
+
+    Sorts the lines in the mark [mark]. All portions of each line are
+    included in the sort, even if the mark is a "column" mark. The
+    portion of each line within the mark is the sort key. The following
+    options may be specified:
+
+      a - ascending sort
+      d - descending sort
+      i - ignore case when sorting
+
+    If no [options] are specified, then the default is "a". This
+    function returns 1 if success or null if failure.
+
+
+  mrktab  [mark]  [tab width].
+
+    Expands any tab characters (ascii 9) in the mark [mark]. If the mark
+    is a "column" mark, the left and right edges the mark are ignored.
+    [tab width] determines how much each tab character is expanded. [tab
+    width] may be 2, 4 or 8.
+
+    Returns 1 if success or null if failure.
+
+
+  mrkrfl  [mark]  [text buffer]  [l]  [t]  [r]  [options]  [indent].
+
+    Reflows the lines in the mark [mark]. All the text within each line
+    is reflowed, even if the mark is a "column" mark. The reflowed text
+    is inserted into the text buffer [text buffer] after line [t]. The
+    original text within the mark remains unchanged. The reflowed text
+    is formatted to fit between columns [l] and [r] in [text buffer].
+    [indent] specifies the number of columns to indent the first line of
+    the reflowed text.
+
+    If [text buffer] has been loaded in "binary mode", it cannot be
+    reflowed.
+
+    If [text buffer] is not specified, then the text buffer of the
+    default cursor mark is assumed. If [l], [t], or [r] are not
+    specified, then the column and line of the default cursor mark are
+    assumed.
+
+    The following [options] may be specified:
+
+      b - blank lines are preserved.
+      r - justifies the reflowed text on both the left and right
+          boundaries.
+
+    This function returns the number of lines inserted in [text buffer],
+    or null if failure.
+                                                     Mark Functions   66
+
+
+  mrksav  [mark]  [filename]  [options]  [delimiter]  [header]  [prtini].
+
+    Saves the text within mark [mark] to the file [filename]. Specifying
+    a filename such as PRN, LPT1, LPT2, etc. prints the text within the
+    mark. The following [options] may be specified:
+
+      a - the text is appended to [filename]
+      b - the argument [delimiter] specifies a byte delimiter to be
+          saved after each line.
+      w - the argument [delimiter] specifies a word delimiter to be
+          saved after each line.
+      f - each line is saved without a delimiter.
+      p - specifies that the saved file is to be formatted for printing
+          using the print settings specified with the "sysprt" function,
+          called before this function.
+      i - specifies that only the string [prtini] is to be saved. The
+          text within the mark is ignored. This can be used to send an
+          initialization string to the printer.
+      z - saves an end-of-file (ascii 26) character at the end of
+          [filename]. If option "p" is specified, then a formfeed
+          character (ascii 12) is sent to the printer when printing is
+          completed.
+
+    If [delimiter] is not specified, the delimiter associated with the
+    mark's text buffer is used (text buffers loaded in binary mode have
+    no delimiter).
+
+    When option "p" is specified, the argument [header] can be used to
+    print a header and/or footer string. The "sysprt" function must be
+    called before this function and must specify the header or footer
+    options.
+
+    This function returns 1 if success or null if failure.
+
+
+  mrkfin  [mark]  [search string]  [replace string]  [options]
+          [cursor mark].
+
+    Searches the text within the mark [mark] for [search string]. If
+    [replace string] is specified, then [search string] is replaced with
+    [replace string]. If the cursor mark [cursor mark] is specified and
+    the search string is found, then the cursor mark is moved to the
+    location where the search string was found.
+
+    The following [options] may be specified:
+
+      i - ignore case during the search
+      r - search in "reverse" from the bottom to the top of the mark
+                                                     Mark Functions   67
+
+
+      a - replace all occurrences of [search string] with [replace
+          string]
+      w - search for "whole words" only
+      x - search for the first character which also occurs in the search
+          string
+      y - search for the first character which does not occur in the
+          search string
+      z - force replace, even if the replace string is null
+
+    If [replace string] or option "z" was specified, the number of
+    replacements is returned, otherwise the column where the search
+    string was found is returned. If nothing was found then null is
+    returned.
+
+
+  mrkrel  [mark]  [x]  [y]  [options]  [text buffer].
+
+    Relocates the mark [mark] to a new location in the text buffer [text
+    buffer]. If no text buffer is specified, then the text buffer
+    associated with [mark] is assumed. The following [options] may be
+    specified:
+
+      a - [x] and [y] specify an absolute column and line position in
+          the text buffer
+      r - [x] and [y] specify a relative offset from the current left
+          and top coordinates of [mark].
+
+    If no [options] are specified, then "r" is assumed. This function
+    returns 1 if success or null if failure.
+
+
+  mrkfld  [mark]  [options].
+
+    Folds or unfolds the lines of text contained within the mark [mark].
+    The following [options] may be specified:
+
+      f - creates a new text fold containing all lines within the mark.
+      u - removes text folds contained within the mark. If option "a" is
+          not specified, only "top-level" text folds are removed.
+      a - removes all text folds contained within the mark when
+          specified with the option "u".
+
+    If options "u" and "f" are both specified, existing text folds are
+    removed before the new text fold is created.
+
+    If no [options] are specified, then "f" is assumed. This function
+    returns 1 if success or null if failure.
+                                                     Mark Functions   68
+
+
+  qmrk  [mark].
+
+    Returns 1 if the mark [mark] exists, or null if it does not exist.
+
+
+  qmrkpre  [mark]  [options].
+
+    Returns a previous mark before [mark] in the mark list. The
+    following [options] may be specified:
+
+      c - return the previous cursor mark before [mark]
+      m - return the previous non-cursor mark before [mark]
+
+    If no [options] are specified, then the previous mark (cursor or
+    non-cursor) is returned. This function returns null if no previous
+    mark is found.
+
+
+  qmrktex  [mark].
+
+    Returns the text buffer in which the mark [mark] is located.
+
+
+  qmrkp    [mark]  [options].
+
+    Returns a coordinate of the mark [mark], or the width or height of
+    the mark [mark]. The following [options] may be specified:
+
+      l - returns the left-most column of the mark
+      t - returns the top line number of the mark
+      r - returns the right-most column of the mark
+      b - returns the bottom line number of the mark
+
+      x - returns the width of the mark
+      y - returns the height of the mark
+
+
+  qmrkcol  [mark].
+
+    Returns the column position of the cursor mark [mark].
+
+
+  qmrklin  [mark].
+
+    Returns the line number of the cursor mark [mark].
+                                                     Mark Functions   69
+
+
+  qmrkins  [mark].
+
+    Returns the "insert mode" of the cursor mark [mark]. Returns "i" if
+    the cursor mark is in insert mode, or "o" if the cursor mark is in
+    overlay mode.
+
+
+  qmrktyp  [mark].
+
+    Returns "l" if [mark] is a "line" mark, or "r" if [mark] is a
+    rectangular or "column" mark.
+
+
+  qmrkbuf  [mark].
+
+    Returns a string composed of the text within the "column" mark
+    [mark]. This function is ignored for "line" marks.
+
+    This function will return null if the area of the column mark
+    exceeds 16000.
+
+
+  qmrkwin  [mark].
+
+    Returns the window name associated with the cursor mark [mark].
+                                                   Window Functions   70
+
+
+  3-21  Window Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Window functions are used to control and return information about
+  windows. A window is a rectangular area of the screen which can used
+  to display text buffers and marks, or to display other "child"
+  windows. Window function names use the prefix "win".
+
+  Any number of windows can be created. Windows are organized into a
+  global "window list". The "default" window is at the top of the list.
+
+  Windows are identified by a "window name". Specifying a null window
+  name for any of the window functions indicates that the default window
+  should be used.
+
+  To display a text buffer in a window, the window must be attached to a
+  cursor mark associated with the text buffer. Since a text buffer may
+  have any number of cursor marks, any number of windows can used to
+  display different areas of the same text buffer.
+
+  Note that most window functions will not actually update windows on
+  the screen, unless the function description explicitly specifies that
+  they do. In this case, you must use the "windra" or "texdra" functions
+  to update the window (see also "Text Buffer Functions").
+
+
+  winset  [window]  [options].
+
+    Creates a new window with the name [window], or hides/shows an
+    existing window. The following [options] may be specified:
+
+      h - hide the window
+      d - show the window
+
+    Windows can be created as "hidden". For example:
+
+      winset "abc" %h.   // creates the hidden window "abc"
+
+    If no [options] are specified, the default is "d". This function
+    returns 1 if success of null if failure.
+
+
+  windes  [window].
+
+    Destroys the window [window] and removes it from the screen. Returns
+    1 if success or null if failure.
+                                                   Window Functions   71
+
+
+  winnam  [window]  [new window].
+
+    Renames the window [window] to [new window]. Returns 1 if success or
+    null if failure.
+
+
+  winttl  [window]  [title]  [options]  [title id].
+
+    Sets a window title to the string [title] for the window [window].
+    Each window can have up to 5 titles. The argument [title id]
+    specifies which title is being set. [title id] can be 1 - 5 (if the
+    title id is zero, null, or not specified, then "1" is assumed). Any
+    combination of the following [options] can be specified:
+
+      n - sets the title on north title bar.
+      s - sets the title on south title bar.
+      e - sets the title on east title bar.
+      w - sets the title on west title bar.
+
+      l - the title is left-justified in the title bar.
+      c - the title is centered in the title bar.
+      r - the title is right-justified in the title bar.
+
+      d - draws the window title bar containing the title immediately
+          after setting the title. "windra" is not needed.
+
+      x - sets the title to the "default status line". The default
+          status line has the following format:
+
+             [HH]  C XXXXX L YYYYY of TTTTT
+
+          The status line displays information about the text buffer
+          associated with the window (if any). [HH] is the hex value of
+          the character at the cursor, XXXXX and YYYYY are the column
+          and line positions of the cursor mark, and TTTTT is the total
+          number of lines in the text buffer.
+
+      h - checks for the highlight character "&". Specifying "&" before
+          a character in the title indicates that it is to be
+          highlighted when displayed. The "&" character itself is not
+          displayed.
+
+      1 - the title is not padded with any spaces (left or right).
+          Normally the title is padded with one space if it is left of
+          right justified.
+
+      z - hides the title. This can be used to specify a title for the
+          end-of-text line (see the "wineot" function).
+
+    This function returns 1 if success or null if failure.
+                                                   Window Functions   72
+
+
+  wineot  [window]  [title id].
+
+    Sets the "end-of-text" line for the window [window] to the window
+    title [title id] which was previously set with the "winttl" function
+    (see above). The title should be hidden with option "z" when calling
+    the winttl function.
+
+    If [title id] is -1, then the following default end-of-text line is
+    used: "ðððððð End of Text ðððððð".
+
+
+  winmen  [window]  [menu bar id]  [item 1]  [item 2] ...
+
+    Defines a menu bar for the window [window]. Up to five menu bars can
+    be defined for one window. [item 1], [item 2], etc. are the items to
+    be placed on the menu bar. [menu bar id] specifies which of the five
+    menu bars is being defined, and can be any of the following values:
+
+      0 - the primary menu bar at the top of the window, under the
+          north title bar (if any)
+      1 - menu bar 1 underneath the primary menu bar
+      2 - menu bar 2 underneath menu bar 1
+      3 - menu bar 3 at the bottom of the window, above the south
+          title bar (if any)
+      4 - vertical menu bar 4 at the left edge of the client area
+
+    Each menu bar item may contain one ampersand character (&) which is
+    not displayed, but indicates that the character following it is to
+    be highlighted when displayed.
+
+    This function returns 1 if success or null if failure.
+
+
+  winmeh  [window]  [menu bar id]  [item number].
+
+    Highlights or un-highlights the menu bar item [item number] on
+    menu bar [menu bar id] on the window [window]. There can only be one
+    highlighted item per menu bar. [item number] is the relative
+    position of the menu bar item from the beginning of the menu bar (1
+    for first item, 2 for the second, and so on).
+
+    If [item number] is null or zero, then the highlight is removed from
+    any currently highlighted item in the menu bar.
+
+    This function returns the offset (in character positions) of the
+    specified menu item from the beginning of the menu bar, or null if
+    failure.
+                                                   Window Functions   73
+
+
+  wintic  [window]  [char]  [attr]  [char]  [attr] ...
+
+    Defines one-character title bar icon controls for the window
+    [window]. [char] specifies the character to be displayed for each
+    control and [attr] specifies the color attribute of each control. If
+    [attr] is null, then the default window control color is used.
+
+    Controls are normally left-justified on the title bar. If any
+    control is preceded by an (@) character, then that control and any
+    controls following it will be right justified on the title bar. For
+    example:
+
+      wintic @ "ð" @ "@" @ "".
+
+    In the example above, title bar controls are defined for the default
+    window using the default control colors. The control "ð" is left
+    justified, while the controls "" and "" are right justified.
+
+    This function returns 1 if success or null if failure.
+
+
+  windra  [window]  [options]  [line number].
+
+    Draws the window components specified by [options]. [line number] is
+    ignored for all options except the "l" and "a" options. Any
+    combination of the following [options] may be specified:
+
+      b - draws the window border
+      p - draws the primary menu bar only
+      m - draws all window menu bars
+      w - draws the west title bar
+      n - draws the north title bar
+      e - draws the east title bar
+      s - draws the south title bar
+      h - draws the horizontal scroll bar
+      v - draws the vertical scroll bar
+      l - draws the line [line number] in the window. If this option is
+          specified and [line number] is null or zero, then the line
+          number of the default cursor mark is assumed.
+      t - draws the client area of the window
+      a - draws the client area of all windows with the same text buffer
+          as [window]. If [line number] is specified, then only
+          the specified line is drawn.
+      c - draws the cursor
+      u - draws the cursor and updates the client area if needed
+      f - draws the frame (every part of the window except the client
+          area)
+                                                   Window Functions   74
+
+
+    This function returns 1 if success or null if failure. If option "c"
+    is specified, and the client area needs updating, then 2 is
+    returned.
+
+
+  winmrk  [window]  [mark].
+
+    Associates the cursor mark [mark] with the window [window]. Only one
+    cursor mark may be associated with a window at one time. The window
+    will display the text buffer associated with the cursor mark.
+    Windows that are not associated with a text buffer (such as message
+    boxes or dialog box windows) do not need to use this call. This
+    function returns 1 if success or null if failure.
+
+
+  winpar  [parent]  [child].
+
+    Makes the window [parent] the "parent" window of the window [child].
+
+
+  winnex  [window 1]  [window 2].
+
+    Changes the order of the windows on the screen by placing [window 2]
+    on top of [window 1].
+
+
+  winpre  [window 1]  [window 2].
+
+    Changes the order of the windows on the screen by placing [window 1]
+    on top of [window 2].
+
+
+  winvib  [window].
+
+    Creates a local video buffer for the window [window]. This is only
+    needed for windows that have child windows (such as dialog boxes).
+    Creating a local video buffer for the parent window will eliminate
+    screen flicker when moving the window. Returns 1 if success or null
+    if failure.
+
+
+  wincol  [window]  [element]  [attr]  [element]  [attr] ...
+
+    Sets the colors of specific window elements for the window [window].
+    [element] is a one character code specifying a part of the window,
+    and can be one of the following:
+                                                   Window Functions   75
+
+
+      b - border
+      e - border corner
+      0 - north title bar
+      1 - south title bar
+      c - window title bar controls (default color)
+      m - menus
+      i - menu character highlight
+      x - menu bar item highlight
+      d - menu disable
+      s - scroll bars
+      z - end-of-text line
+      t - text or client area
+      h - mark (default color)
+      f - text folds
+
+    [attr] is the color attribute (0-255). Using negative values from -1
+    to -6 for [attr] have a special meaning:
+
+      -1 - do not change the current value of this attribute
+      -2 - use the default value for this attribute
+      -3 - increment the value of this attribute
+      -4 - decrement the value of this attribute
+      -5 - increment the background color for this attribute
+      -6 - decrement the background color for this attribute
+
+
+  winbor  [window]  [x]  [y]  [xo]  [yo]  [options].
+
+    Sets the border for the window [window]. [x] is the thickness for
+    the left and right borders. [y] is the thickness for the top and
+    bottom borders. [xo] and [yo] are the amount of horizontal and
+    vertical overlap on the border corners. The following [options] are
+    available:
+
+      i - 3D inward effect
+      o - 3D outward effect
+      s - changes the size of other parts of the window to accommodate
+          the new border sizes. If this option is not specified, the
+          entire window may grow or shrink.
+
+    For the following [options], the borders are drawn using the text
+    graphics characters. [x], [y], [xo], and [yo] are ignored, the
+    horizontal and vertical border thickness is always 1, and there is
+    no overlap on the border corners:
+
+      1 - single line
+      2 - double horizontal
+      3 - double vertical
+      4 - double line
+      5 - solid
+      6 - blank
+                                                   Window Functions   76
+
+
+  winfra  [window]  [options]  [west title width]  [east title width]
+          [west menu width]  [control location].
+
+    Defines the window frame components to be displayed for the window
+    [window]. [options] determine which window frame components are
+    displayed. You can choose any combination of the following options:
+
+      b - borders
+      m - primary menu
+      w - west title bar
+      n - north title bar
+      e - east title bar
+      s - south title bar
+      h - horizontal scroll bar
+      v - vertical scroll bar
+      1 - menu bar 1
+      2 - menu bar 2
+      3 - menu bar 3 (south)
+      4 - menu bar 4 (west)
+      z - south title controls
+      > - place north title bar in the window border
+
+      + - add specified options to existing window
+      - - remove specified options from existing window
+
+
+    The following arguments to "winfra" can also be specified:
+
+      [west title width] - the width of the west title (if present)
+      [east title width] - the width of the east title (if present)
+      [west menu width]  - the width of the west menu bar (if present)
+      [control location] - the location of the window title bar controls
+                           (n=north title bar, s=south title bar)
+
+
+  winshd  [window]  [bot]  [right]  [bot indent]  [right indent].
+
+    Adds or removes the shadow on the right and bottom sides of the
+    window [window]. [bot] and [right] specify the shadow thickness on
+    the bottom and right borders. If [bot] and [right] are zero or null,
+    the shadow is removed. [bot lead] and [right lead] specify the
+    amount of indentation for the bottom and right shadows. Returns 1 if
+    success or null if failure.
+
+
+  winsh2  [window]  [attr]  [bot indent]  [right indent]
+
+    Adds or removes a one-half width shadow on the right and bottom
+    sides of the window [window]. This function is intended for use with
+                                                   Window Functions   77
+
+
+    stationary windows on a blank background (such as dialog box
+    controls). [attr] is the shadow color. [bot lead] and [right lead]
+    specify the amount of indentation for the bottom and right shadows.
+    Returns 1 if success or null if failure.
+
+
+  winscr  [window]  [x]  [y]  [options]  [reps].
+
+    Scrolls the text buffer displayed in the window [window] to the
+    position [x], [y]. The following [options] can be specified:
+
+      r - [x] and [y] are relative to the current position (default)
+      a - [x] and [y] designate the absolute column and line number
+          to scroll to.
+      d - the window contents are redrawn immediately after each scroll.
+          There is no need to call "windra" or "texdra".
+      c - the window cursor mark (if any) is moved to same extent that
+          the window is scrolled.
+      p - [y] is ignored and the window is scrolled up or down by the
+          window height minus one line. If [y] is less than zero, the
+          window is scrolled up. If [y] is greater than zero, the window
+          is scrolled down.
+
+    Note that this function will only redraw the window contents if the
+    "d" option is specified. If the "d" option is not specified, use the
+    "windra" and "texdra" functions to redraw.
+
+    [reps] specifies the amount of scroll "repetitions" to occur (the
+    default is 1). A value of [reps] greater than 1 used with the "d"
+    option can provide for a "smooth scroll" effect.
+
+    This function returns 1 if success or null if failure.
+
+
+  winadj  [window]  [x]  [y].
+
+    Scrolls the window [window] relative to the position of the cursor
+    mark associated with the window. The cursor mark is not moved. The
+    window is scrolled so that the cursor is [x] columns away from the
+    left edge of the client area and [y] lines away from the top edge of
+    the client area.
+
+    If zero is specified for [x] or [y], the window is not scrolled in
+    that dimension. If -1 is specified for [x] or [y], the window view
+    is adjusted so that the cursor is placed in the center of the window
+    for the specified dimension.
+
+    Note that this call will not automatically redraw the text buffer in
+    the window. Use the "windra" or "texdra" function to redraw the
+    window.
+                                                   Window Functions   78
+
+
+    This function returns 1 if success or null if failure.
+
+
+  winbar  [window]  [value]  [limit]  [options].
+
+    Sets the thumb position on the horizontal or vertical scroll bars
+    for the window [window]. If option "v" is not specified, then
+    [limit] specifies the scroll bar range and [value] is the thumb
+    position to set within that range. The following options may be
+    specified:
+
+      x - sets the thumb position on the horizontal scroll bar
+      y - sets the thumb position on the vertical scroll bar
+      d - draws the scroll bar immediately after setting the thumb.
+          If this option is not specified, then "windra" must be used.
+      v - [value] and [limit] specify the virtual x and y coordinates
+          on the screen where the thumb should be set. The coordinates
+          must be inside the scroll bar thumb ranges. This option can be
+          used to allow the mouse to drag the scroll bar thumb.
+
+    This function returns 1 if success or null if failure.
+
+
+  winsiz  [window]  [l]  [t]  [r]  [b]  [reps]  [options]  [rel window].
+
+    Changes the size and position of the window [window]. [l], [t], [r],
+    and [t] specify the new window coordinates. The following [options]
+    can be specified:
+
+      r - coordinates are relative to the current window position
+      a - coordinates are absolute (relative the "origin" - see below)
+      c - coordinates specify the size of the client area, not the
+          whole area of the window
+      s - scrolls the window to keep the cursor mark visible, if
+          necessary
+
+    If option "a" is specified, the following options may also be
+    specified:
+
+      d - origin is at the top left corner of the screen
+      w - origin is at the top left corner of the window [rel window]
+      1 - origin is at the top left corner of the client area of the
+          window [rel window]
+      z - origin is at the virtual coordinates 0, 0
+
+    If option "r" is specified, [reps] specifies the number of sizing
+    repetitions (the default is 1).
+                                                   Window Functions   79
+
+
+    When a window is resized, all parts of the window are automatically
+    redrawn ("windra" or "texdra" are not required). This function
+    returns 1 if successful or null if failure.
+
+
+  winmov  [window]  [l]  [t]  [reps]  [options]  [rel window].
+
+    Moves the window [window] to the coordinates [l], [t]. This call is
+    nearly identical to the function "winsiz" (see above), except that
+    only the position of the window can be changed, not its relative
+    size.
+
+
+  wintil  [window]  [options]  [split thresh]  [limit].
+
+    Tiles all windows on the screen, or "splits" the window [window]
+    into tiles. [limit] specifies the maximum number of tiles. If
+    [limit] is null or zero, then all windows will be tiled.
+
+    [split thresh] specifies the number of splits that can occur in one
+    direction before the next split occurs in a perpendicular direction.
+    If [split thresh] is null or zero, then the default is 2.
+
+    The following [options] may be specified:
+
+      h - favor horizontal splits
+      v - favor vertical splits
+      l - tile only the window [window], and any windows which display
+          the same text buffer as [window].
+      b - reverse the tiling order by starting with the window on the
+          bottom
+
+    This function returns 1 if success or null if failure.
+
+
+  qwin  [window].
+
+    Returns 1 if the window [window] exists or null if it does not
+    exist.
+
+
+  qwinmrk  [window].
+
+    Returns the cursor mark associated with the window [window], or null
+    if failure.
+
+
+  qwintex  [window].
+
+    Returns the text buffer associated with the window [window], or null
+    if failure.
+                                                   Window Functions   80
+
+
+  qwinx  [window]  [virtual x-coordinate].
+
+    If [virtual x-coordinate] is specified:
+      Returns the visible column number in the window [window] at the
+      specified virtual x-coordinate, or null if failure.
+
+    otherwise:
+      Returns the left-most column number shown in the window [window].
+
+
+  qwiny  [window]  [virtual y-coordinate].
+
+    If [virtual y-coordinate] is specified:
+      Returns the visible line number in the window [window] at the
+      specified virtual y-coordinate, or null if failure.
+
+    otherwise:
+      Returns the top-most line number shown in the window [window].
+
+
+  qwinbot.
+
+    Returns the bottom-most window on the screen.
+
+
+  qwintop  [options].
+
+    Returns the top-most window on the screen. If no options are
+    specified, the top-most "parent-less" window is returned. If option
+    "z" is specified, the top-most window is returned, whether or not
+    the window has a parent window (this is the "default" window at the
+    top of the window list).
+
+
+  qwinpre  [window]  [options].
+
+    Returns the previous window in the window list before the window
+    [window]. If option "z" is specified, then a child window may be
+    returned, otherwise the closest window before [window] at the same
+    level as [window] is returned. Returns null if failure.
+
+
+  qwinnex  [window]  [options].
+
+    Returns the next window in the window list after the window
+    [window]. If option "z" is specified, then a child window may be
+    returned, otherwise the closest window after [window] at the same
+    level as [window] is returned. Returns null if failure.
+                                                   Window Functions   81
+
+
+  qwinpar  [window].
+
+    Returns the parent window of [window] or null if failure.
+
+
+  qwinchi  [window]  [options].
+
+    Returns a child window of the window [window]. The following
+    [options] may be specified:
+
+      b - returns the bottom-most child window
+      t - returns the top-most child window
+
+    This function returns null if [window] has no child windows.
+
+
+  qwinttl  [window]  [title id]  [options].
+
+    Returns the title string specified by [title id] for the window
+    [window]. if option "h" is specified, then this function returns the
+    highlighted position within the title string (if any).
+
+
+  qwincol  [window]  [element].
+
+    Returns the numeric color attribute of the element [element] for the
+    window [window]. See the function "wincol" for a list of one
+    character element codes.
+
+
+  qwinbor  [window]  [options].
+
+    Returns the border thickness or border type for the window [window].
+    One of the following [options] can be specified:
+
+      x - returns the width of the left and right borders
+      y - returns the height of the top and bottom borders
+      t - returns the border type (see the "winbor" function)
+
+
+  qwinp  [window]  [options].
+
+    Returns the virtual coordinates, width, or height of [window]
+    [options] can be any of the following:
+
+      0 - returns a main window coordinate
+      1 - returns a client window coordinate
+                                                   Window Functions   82
+
+
+      l - returns the left coordinate of the window
+      t - returns the top coordinate of the window
+      r - returns the right coordinate of the window
+      b - returns the bottom coordinate of the window
+
+      x - returns the width of the window (the width of the client area
+          if option "1" is specified)
+      y - returns the height of the window (the height of the client
+          area if option "1" is specified)
+      d - returns the height or width of the "visible" portion of the
+          the window on the screen, when used with the "x" or "y"
+          options above
+
+
+  qwinfra  [window]  [component].
+
+    Tests for the presence of the frame component [component] in the
+    window [window]. See the function "winfra" for a list of one
+    character component codes. This function returns a non-zero value if
+    the specified [component] is present, otherwise null is returned.
+
+
+  qwinrgn  [window]  [x]  [y].
+
+    Returns an integer code identifying the region of the window
+    [window] containing the virtual coordinates [x] and [y]. This
+    function is useful for determining the window region on which a
+    mouse click occurred. The following table shows the integer codes
+    and the corresponding window regions.
+                                                   Window Functions   83
+
+
+      code         region
+      ÄÄÄÄ         ÄÄÄÄÄÄ
+
+        0          [x], [y] are not in the window
+        1          client area
+
+        2          north border
+        3          east border
+
+        4          south border
+        5          west border
+        6          northwest border corner
+        7          northeast border corner
+        8          southeast border corner
+        9          southwest border corner
+
+       11          north title bar
+       12          south title bar
+       13          west title
+       14          east title
+
+       19          vertical & horizontal scroll bar intersection
+
+       21          vert scroll bar up arrow
+       22          vert scroll bar down arrow
+       23          vert scroll bar page-up bar
+       24          vert scroll bar page-down bar
+       25          vert scroll bar thumb
+
+       31          horz scroll bar left arrow
+       32          horz scroll bar right arrow
+       33          horz scroll bar page-left bar
+       34          horz scroll bar page-right bar
+       35          horz scroll bar thumb
+
+       51 - 100    window title bar controls from left to right
+
+       101- 200    primary menu bar items from left to right
+       201- 300    menu bar 1 items from left to right
+       301- 400    menu bar 2 items from left to right
+       401- 500    menu bar 3 items from left to right
+       501- 600    menu bar 4 items from top to bottom
+
+
+  qwinbar  [window]  [limit]  [options].
+
+    Returns the current position of the scroll bar thumb in the range
+    0 - [limit] for the window [window]. The following [options] can be
+    specified:
+                                                   Window Functions   84
+
+
+      x - horizontal scroll bar
+      y - vertical scroll bar
+
+    If no [options] are specified, the default is "y".
+
+
+  qwincnt  [window].
+
+    Returns the number of child windows for the parent window [window].
+    If [window] is null, this function returns the total number of
+    "parent-less" windows in the window list.
+
+
+  qwinmen  [window]  [menu bar id]  [options]  [item].
+
+    Returns information about the menu bar [menu bar id] on the window
+    [window]. [item] is an integer specifying the relative position of a
+    menu bar item from the beginning of the menu bar. If [item] is not
+    specified, the currently highlighted menu bar item (if any) is
+    assumed. The following [options] may be specified:
+
+      s - returns the menu bar item string for [item]
+      o - returns the offset (in columns) of [item] from the beginning
+          of the menu bar
+      c - returns the highlighted character for [item]
+      n - returns the total number of menu bar items
+
+
+  qwintic  [window]  [n].
+
+    This function returns the "[n]th" one-character title bar control
+    that was specified with the "wintic" function. For the left-most
+    title bar control, n is "1".
+                    The Aurora Macro Language and The Aurora Editor   85
+
+
+  A-1  The Aurora Macro Language and The Aurora Editor
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  This section describes some aspects of The Aurora Editor from the
+  point of view of The Aurora Macro Language.
+
+
+  The Aurora Editor is itself a compiled macro language program
+  contained in the file A.X. The programs A.EXE and A3.EXE are macro
+  language interpreters which execute A.X.
+
+  The main macro source file for A.X is the file A.A. The file A.A does
+  very little except to include ACFG.A (configuration settings), AMEN.A
+  (menu definitions), ALIB.X, (compiled editor library functions),
+  AKBD.A (keyboard and mouse definitions), and ATRN.A (text translation
+  definitions). When A.A is compiled, all of the above files are
+  combined and A.X is generated.
+
+  When The Aurora Editor is initially started from the DOS command line,
+  A.X is executed and the following things happen:
+
+  - The configuration settings (in ACFG.A) are placed in the object
+    "prf" via the "set" native function.
+
+  - The editor menus (in AMEN.A) are created via the "winmen" and
+    "texmen" native functions.
+
+  - All editor library functions are included from the file ALIB.X.
+    Library functions are the editor commands described in The Aurora
+    Editor Users Guide.
+
+  - The keyboard and mouse definition functions (in AKBD.A) are added to
+    event handler objects such as "edit", "fmgr", "prompt", etc.
+
+  - The text translation table (in ATRN.A) is created.
+
+  - The history file (A.HIS) and saved key macros are loaded (if
+    configured).
+
+  - Edit windows and/or File Manager windows are created, depending
+    on what was entered on the DOS command line or remembered from
+    a previous edit session.
+
+
+  It is important to keep the following things in mind when writing your
+  own macro commands for The Aurora Editor:
+
+  1) The top-most window displayed on the screen is always the "default"
+     window, and can be referenced with a null window name in any of the
+     "win" native functions.
+                    The Aurora Macro Language and The Aurora Editor   86
+
+
+     Likewise, the text buffer and cursor mark displayed in the top-most
+     window are the "default" text buffer and the "default" mark. They
+     can also be referenced with null text buffer and null mark names in
+     the "tex" and "mrk" native functions.
+
+  2) The file name displayed in an Edit window is the first title (title
+     id "1") for the window, and can be accessed with the "qwinttl"
+     function.
+
+  2) When the user creates a marked block for use with the "block"
+     functions (such as copy, move, delete, etc.), that mark can be
+     referenced with the mark name "*". This mark cannot be referenced
+     with a null mark name, since that would refer to the cursor mark.
+
+  3) The Aurora Editor uses timer id's 6, 7, 8, and 9. This leaves timer
+     id's 0 through 5 available.
+
+  4) The Aurora Editor creates the following "event" objects:
+
+       "edit"   - edit windows
+       "fmgr"   - file manager windows
+       "menu"   - menu windows
+       "prompt" - prompt windows and edit fields
+
+     The Aurora Editor sets the current event object based on the window
+     type of the top-most window. For example, if the top-most window is
+     a File Manager window, then the current event object is "fmgr".
+
+     Other objects used created by The Aurora Editor are:
+
+       "a"          - all windows
+       "mon"        - all windows
+       "win"        - movable or sizable windows
+       "edit-fmgr"  - edit and file manger windows
+       "dlg"        - dialog boxes
+       "trn"        - text translation object (default)
+

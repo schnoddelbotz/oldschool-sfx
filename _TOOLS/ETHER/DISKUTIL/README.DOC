@@ -1,0 +1,98 @@
+
+							     JANUARY 1993
+     ETHER-16 Series Ethernet Card Setup/Diagnostic program
+     =======================================================
+
+The E16SD.EXE program (Setup/Diagnostic) lets you configure the ETHER-16
+hardware settings, and test the state and cable connection of the card.
+
+To run the program, insert the ETHER-16 driver program diskette in drive
+'A' and do the following:
+
+	> cd \UTILITY	     --change directory to UTILITY
+	> E16SD 	     --run the E16SD.EXE program
+
+	or
+
+	> cd \UTILITY	     --change directory to UTILITY
+	> E16SD /I	     --run the E16SD.EXE with parameter /I
+			       if the data in your EEPROM has been corrupted
+			       or you cannot configure your card through
+			       normal procedure.
+
+	or
+
+	> cd \UTILITY	     --change directory to UTILITY
+	> E16SD /D	     --run the E16SD.EXE with parameter /D
+			       this parameter lets you setup the ETHER-16 by
+			       reading E16SD.DAT file. This way, you can
+			       quickly configure your card without going
+			       through the menus.
+
+Sample of E16SD.DAT
+===================
+
+Connector Type	 UTP
+I/O Base Address 0x300
+Interrupt Number 3
+ROM Size	 8K
+ROM Address	 0xd000
+
+
+NOTE 1: The keywords must appear in the exact format as listed in the parameter
+	file table.
+
+	Only those keywords persent in the E16SD.DAT file will be written to the
+	ETHER-16 NIC.
+
+NOTE 2: If there no entries for 'ROM Size' and 'ROM Address', Boot ROM will be
+	disabled.
+
+	      ETHER-16 Series Adapter parameter file table
+	 +----------------+----------------------------------+
+	 | KEYWORDS	  |  AVAILABLE SELECTIONS	     |
+	 +----------------+----------------------------------+
+	 | Connector Type |  BNC, UTP			     |
+	 +----------------+----------------------------------+
+	 | IRQ		  |  3, 4, 5, 9, 10, 11, 14, 15      |
+	 +----------------+----------------------------------+
+	 | I/O Base	  |  300H, 320H, 340H, 360H	     |
+	 | Address	  |				     |
+	 +----------------+----------------------------------+
+	 | ROM Size	  |  8K 			     |
+	 +----------------+----------------------------------+
+	 | ROM Address	  |  C000 C800 D000 D800	     |
+	 |		  |  C200 CA00 D200 DA00	     |
+	 |		  |  C400 CC00 D400 DC00	     |
+	 |		  |  C600 CE00 D600 DE00	     |
+	 |		  |				     |
+	 |		  |  DC00 (Ethernet II packet type)  |
+	 |		  |				     |
+	 +----------------+----------------------------------+
+
+
+Menu Options
+============
+
+1.  E16SD lets you configure the hardware settings of ETHER-16.
+    You have the option to view/change :
+
+		   . Connector Type
+		   . I/O Base Address
+		   . Interrupt Number
+		   . Remote Boot
+
+2. E16SD /I
+   If the data in your EEPROM has been corrupted or you cannot
+   configure your card through normal procedure.
+
+		   . Node ID
+		   . Bus Mode
+		   . Card Type
+		   . I/O Base Address
+		   . Interrupt Number
+		   . Remote Boot
+
+
+3.  DIAGNOSTIC lets you diagnose the state and cable connections of ETHER-16.
+

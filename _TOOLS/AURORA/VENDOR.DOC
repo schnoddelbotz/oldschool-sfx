@@ -1,0 +1,130 @@
+
+
+            ****  The Aurora Editor v1.20, January 1994  ****
+                (c) Copyright 1993-1994 Aurora Terra, Inc.
+                           All Rights Reserved.
+
+
+  This file contains important information for anyone who wishes to
+  distribute The Aurora Editor. Please read this file if you are a
+  commercial vendor, a BBS operator, or a user group librarian. If you
+  have any questions, please contact Aurora Terra at 301-468-2255, or
+  on Compuserve at 71702,1025 (internet:71702.1025@compuserve.com).
+
+  This version of The Aurora Editor is not public domain or free
+  software, but is distributed as "shareware" for evaluation purposes
+  only. Refer also to the license information in the file A.DOC.
+
+  As the sole copyright holder of The Aurora Editor, Aurora Terra
+  reserves all rights to the program. However, the shareware version of
+  The Aurora Editor may be freely distributed by commercial vendors,
+  user groups, BBS operators, or individuals, with the following
+  restrictions:
+
+  - The Aurora Editor must be distributed in unmodified form in its
+    entirety, including all file names, program code, documentation, and
+    any related files. No other programs or files may be included. The
+    files may be distributed in a compressed or library format.
+
+  - The Aurora Editor may not be included in combination with any other
+    software or hardware product as an enticement or for any other
+    reason, without special permission from Aurora Terra.
+
+  - No fee or payment may be charged or accepted for The Aurora Editor,
+    other than a small disk distribution fee.
+
+  - The Aurora Editor cannot be rented or leased.
+
+  - The Aurora Editor may not be packaged or distributed with any of its
+    supporting documentation pre-printed for the end-user.
+
+  - The Aurora Editor may not be described in catalogs or promotional
+    material as "public domain" or "free" software.
+
+  - Any advertising and/or packaging must explain the shareware concept
+    and the obligations associated with continued use of shareware.
+
+  Commercial vendors who wish to distribute The Aurora Editor should
+  contact Aurora Terra to ensure that they have the latest version.
+
+
+
+  Suggested Catalog Descriptions:
+  -------------------------------
+
+  The following are program descriptions of varying lengths:
+
+
+  Suggested one-line description:
+  ------------------------------
+    Aurora v1.20 - advanced text editor, 1 Gigabyte VM, Macros, more!
+
+  Suggested short description:
+  ----------------------------
+    Aurora v1.20 - advanced text editor, Superb windowing, 1 Gig VM,
+    Macros, Undo/Redo, File Manager, Text folding, Binary edit, more!
+
+  Suggested medium description:
+  -----------------------------
+    Aurora v1.20, advanced high performance text editor, Superb windowing,
+    Full Mouse support, huge 1 Gigabyte virtual mem uses XMS/EMS/disk,
+    Unlimited Undo/Redo, Object oriented macro language, Multi-instance
+    File Manager, 386 version, Text folding, binary edit, 16K max line
+    length, Bookmarks, File scan, Blocks, Clipboards, Help, & more!
+
+  Suggested long description:
+  ---------------------------
+    The Aurora Editor v1.20 is a beautiful high performance text editor
+    with a superb windowing environment, full mouse support, a huge fast
+    1 Gigabyte paged virtual memory using XMS, EMS, or disk, and a
+    sophisticated object oriented macro language. Also includes a multi
+    instance programmable file manager, unlimited undo/redo, a 386
+    version, user definable menus, keyboard, and toolbar, text folding,
+    binary edit, 16K max line length, shrinks to 1.2k on dos shell,
+    compiler error locate, bookmarks, file scan, clipboards, blocks,
+    online help, and more! New in v1.20: text translation as-you-type.
+
+
+  Suggested Filename:
+  -------------------
+
+    It is recommended that all files distributed with The Aurora Editor
+    version 1.20 be archived under the name AUROR120.* or AURORA.*,
+    where "*" stands for ZIP, ARC, LZH, EXE, etc.
+
+
+  A Note to BBS Operators:
+  ------------------------
+
+  These are some suggested keywords to use when posting The Aurora Editor:
+    AURORA EDIT TEXT EDITOR WORD PROCESSOR FILE MACRO OBJECT UNDO FOLD
+    MOUSE VIRTUAL WINDOWS SHAREWARE
+
+
+  Disk Contents:
+  --------------
+
+  If you did not obtain your copy of The Aurora Editor directly from us,
+  please check to see that the files listed below are present. If any
+  files are missing, please contact Aurora Terra to obtain the latest
+  distribution disk.
+
+       A.EXE         - The Aurora Editor
+       A3.EXE        - The Aurora Editor/386
+       A.X           - Compiled macro code for The Aurora Editor
+       ALIB.X        - Compiled macro library code
+       A.A           - Main macro source
+       ACFG.A        - Configuration settings
+       AKBD.A        - Keyboard and mouse definitions
+       AMEN.A        - Menu definitions
+       ATRN.A        - Text translation definitions
+
+       A.DOC         - User's Guide
+       AML.DOC       - Macro Language Guide
+       AREF.DOC      - Quick Reference
+       READ.ME       - Introduction and updates
+
+       ORDERFRM.DOC  - Ordering information and order form
+       VENDOR.DOC    - Vendor and distribution information
+       FILE_ID.DIZ   - BBS description file
+

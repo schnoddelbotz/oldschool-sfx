@@ -1,0 +1,74 @@
+
+                         F-PROT introduction
+
+The F-PROT anti-virus package consists of several files, which are:
+
+        F-PROT.EXE    the main program
+        SIGN.DEF      virus search strings
+        *.TX0         language files for various languages
+
+	(the files above are essential, and must be present if
+	you are for example running F-PROT from a floppy disk).
+
+        VIRSTOP.EXE   the virus-intercepting program.
+	VIRSTOP2.EXE  a new (experimental) version.
+        VIR-HELP.*    virus information in various languages
+        *.DOC         information about viruses and the package
+        F-TEST.COM    used to test if VIRSTOP is properly installed
+        FILE_ID.DIZ   a BBS description file
+        VIRLIST.LIS   a list of the viruses F-PROT detects
+        *.ASC         PGP signature files
+
+	F-MACROW.EXE  the Windows macro virus scanner
+        MACRO.DEF     database for the macro scanner
+        CTL3DV2.DLL   necessary for the macro scanner
+
+The function of VIRSTOP.EXE is to intercept known viruses - it will
+prevent the execution of any program infected with any of the viruses
+it recognizes. See VIRSTOP.DOC for a description of this program.
+
+The other program, F-PROT.EXE provides virus scanning, disinfection and
+information.  To run it, just give the command
+
+                        F-PROT <enter>
+
+If F-PROT.EXE is run from a diskette it might appear rather slow, but then
+it is safe from being infected by a virus - provided the diskette is write-
+protected, of course.
+
+F-PROT first performs a self-test, to see if it has been infected with a
+virus, and then it loads the search strings into memory.  The next step is
+to search for viruses in memory, but this can be disabled with the /NOMEM
+command-line switch, if you are absolutely sure no virus is present.
+
+You will then be greeted by a screen which shows the available functions:
+
+                        Scan
+                        Configure
+                        Viruses
+                        Program
+                        Quit
+
+As a detailed description of some of the functions is provided in separate
+.DOC files, they are only described briefly here.
+
+Scan (see SCAN.DOC): Searches for viruses, using a large (and growing) set
+of virus search strings.  The user can select where to search, and choose
+between three different search modes.
+
+Configure (see INSTALL.DOC):  This option very limited configuration of
+the program, but is due for a re-design in the near future.
+
+Viruses: When this function is selected, a new menu appears with a couple
+of virus-related functions.  One is 'Information', which provides information
+on viruses - a description of their size, behaviour, origin and other
+facts which may be of interest.  The second option allows the user to enter
+a search string for a new virus.  This should only be necessary between the
+discovery of a totally new virus and the arrival of an updated version of
+F-PROT.
+        
+Program: Answers to some common questions, such as how to obtain updates
+and how to contact the author.  Also an attempt to answer the persistent
+question of how many viruses F-PROT will detect.
+
+Quit: Exit from the program

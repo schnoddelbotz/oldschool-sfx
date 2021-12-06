@@ -1,0 +1,43 @@
+/reencodedict 16 dict def
+/ReEncodeFont {
+reencodedict begin /newcodes exch def /newfontname exch def /basefontname exch def
+/basefontdict basefontname findfont def
+/newfont basefontdict maxlength dict def
+basefontdict { exch dup /FID ne { dup /Encoding eq { exch dup length array copy newfont 3 1 roll put }
+{ exch newfont 3 1 roll put } ifelse } { pop pop } ifelse } forall
+newfont /FontName newfontname put
+128 1 255 { newfont /Encoding get exch /.notdef put } for
+newcodes aload pop newcodes length 2 idiv { newfont /Encoding get 3 1 roll put } repeat
+newfontname newfont definefont pop
+end
+} def
+
+/CodePage860 [ 7/bullet 16/grave 17/acute 18/circumflex 19/tilde 20/macron
+21/breve 22/dotaccent 23/dieresis 24/ring 25/cedilla 26/hungarumlat
+27/ogonek 28/caron
+
+128/Ccedilla 129/udieresis 130/eacute 131/acircumflex 132/atilde 133/agrave
+134/Aacute 135/ccedilla 136/ecircumflex 137/Ecircumflex 138/egrave 139/Igrave
+140/Ocircumflex 141/i 142/Atilde 143/Acircumflex
+
+144/Eacute 145/Agrave 146/Egrave 147/ocircumflex 148/otilde 149/ograve
+150/Uacute 151/ugrave 152/Igrave 153/Otilde 154/Udieresis 155/cent
+156/sterling 157/Ugrave 159/Oacute
+
+160/aacute 161/i 162/oacute 163/uacute 164/ntilde 165/Ntilde 166/ordfeminine
+167/ordmasculine 168/questiondown 169/Ograve 170/logicalnot 173/exclamdown
+174/guillemotleft 175/guillemotright
+
+179/bar 180/plus 181/plus 182/plus 183/plus 184/plus 185/plus 186/bar 187/plus
+188/plus 189/plus 190/plus 191/plus
+
+192/plus 193/plus 194/plus 195/plus 196/hyphen 197/plus 198/plus 199/plus
+200/plus 201/plus 202/plus 203/plus 204/plus 205/hyphen 206/plus 207/plus
+
+208/plus 209/plus 210/plus 211/plus 212/plus 213/plus 214/plus 215/plus
+216/plus 217/plus 218/plus
+
+225/germandbls
+
+248/ring 249/periodcentered
+] def

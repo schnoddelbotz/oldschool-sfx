@@ -1,0 +1,152 @@
+@echo off
+cls
+echo %@upper[%0]:
+text
+
+     Diese Datei enth„lt mehrere Beispiele fr Stapeldateien. Wir 
+     empfehlen Ihnen, sich diese Dateien in Verbindung mit Ihrer NDOS-
+     Dokumentation anzusehen. Der Inhalt dieser Dateien kann mit den
+     den Befehlen PRINT oder LIST ausgegeben und beliebig ge„ndert
+     werden. Die einzelnen Dateien sind durch eine aus Bindestrichen
+     ("-") bestehende Zeile voneinander getrennt, damit Sie die jeweils
+     gewnschte Datei leichter auffinden k”nnen.
+
+     Dieser Abschnitt umfaát folgende Dateien:
+
+       STATUS.BTM    - Enth„lt eine Kurzbeschreibung Ihres Systems.
+       NMENU.BTM     - Enth„lt ein sehr einfaches Mensystem.
+       ONCEADAY.BTM  - Fhrt einen Befehl aus, wenn der Rechner an
+                       einem Tag erstmals gestartet wird. 
+
+endtext
+pause
+
+: ---------------------------------------------------------------------
+rem STATUS.BTM
+rem
+rem      Dieses Beispiel fr eine Stapeldatei verwendet einige interne 
+rem      NDOS-Variablenfunktionen zur Beschreibung Ihrer aktuellen 
+rem      Systemkonfiguration.
+cls
+echo.^echo.
+echo Systemstatus:
+echo.
+echo Datum: %_dow %_date
+echo Uhrzeit: %_time
+echo NDOS-Version: %_nver
+echo OS: %_dos
+echo DOS-Version: %_dosver
+echos `CPU: `
+iff %_cpu == 86 then
+  echo 8088/8086
+elseiff %_cpu == 186 then
+  echo 80188/80186
+elseiff %_cpu == 200 then
+  echo V20/V30
+elseiff %_cpu == 286 then
+  echo 80286
+elseiff %_cpu == 386 then
+  echo 80386
+elseiff %_cpu == 486 then
+  echo 80486
+endiff
+if %_ndp ne 0 echo %_ndp Numerischer Koprozessor ermittelt
+echo Bildschirmadapter: %_video
+echo Bildschirmtyp: %_monitor
+quit
+
+
+: ---------------------------------------------------------------------
+: NMENU.BTM
+:      Diese Beispieldatei erstellt ein einfaches "Men", das Sie 
+:      zum Aufrufen h„ufig verwendeter Programme einsetzen k”nnen.
+:
+:      Beachten Sie, daá anstelle der REM-Anweisungen Kennungen des
+:      Typs "Do-Nothing" verwendet werden, bei denen Kommentarzeilen
+:      am Anfang durch einen ":" gekennzeichnet sind.
+:
+@echo off
+:      Als erstes werden mehrere Alias-Namen definiert, die im
+:      Laufe dieser Stapeldatei mehrmals benutzt werden. Zuvor werden 
+:      jedoch mit Hilfe des Befehls SETLOCAL die vorhandenen Alias-
+:      Namen gespeichert.
+setlocal
+alias in `pushd %1 ^ %2& ^ popd`
+alias choice `elseiff "%userchoice" == "%1" then`
+:
+:       Zu Beginn den Bildschirm l”schen 
+cls
+:dispmenu
+:       Den Cursor auf dem Bildschirm positionieren
+screen 8 0
+:       Die Menoptionen anzeigen
+text
+
+ Gewnschte Option eingeben:
+
+      0. EXIT
+      1. Textverarbeitung
+      2. Tabellenkalkulation
+      3. Datenfernbertragung
+
+endtext
+:      Benutzer zur Eingabe eines Wertes fr die Umgebungsvariable CHOICE auffordern
+inkey Auswahl? %%userchoice
+:      Will der Benutzer das Men verlassen?
+iff "%userchoice" == "0" then ^ quit
+:      Die gltigen Optionen prfen
+:      Jede Zeile entspricht einer Menoption
+:      Die Parameter geben ein Unterverzeichnis sowie das auszufhrende 
+:      Programm in diesem Unterverzeichnis an
+  choice 1 ^ in c:\briefe    c:\ws\ws.exe
+  choice 2 ^ in d:\finanz    c:\quattro\q.exe
+  choice 3 ^ in c:\fern      c:\fern\fern.exe
+else
+:      Der Benutzer hat eine ungltige Option eingegeben
+  scrput 23 0 leu wei auf rot Ungltige Option, Eingabe wiederholen
+endiff
+:      Zum Anfang zurckgehen
+goto dispmenu
+
+
+: ---------------------------------------------------------------------
+: ONCEADAY.BTM
+@echo off
+:
+:       In dieser Stapeldatei ist ein Befehl spezifiziert, der t„glich 
+:       beim erstmaligen Aufrufen nach 6:00 morgens ausgefhrt wird.
+:       Beispiel:
+:
+:               ONCEADAY NDD C:	/Q
+:
+:       Beachten Sie, daá anstelle der REM-Anweisungen Kennungen des 
+:       Typs "Do-Nothing" verwendet werden, bei denen Kommentarzeilen
+:       am Anfang durch einen ":" gekennzeichnet sind.
+:
+:       Zuerst wird die Umgebungsvariable LASTDATE zurckgesetzt, nachdem 
+:       eventuell bereits vorhandene, aktuelle Werte mit dem Befehl 
+:       SETLOCAL gespeichert wurden.
+setlocal
+set lastdate=0
+:       Ist bereits eine Datei namens ONCEADAY.DAT im Hauptverzeichnis
+:       des Startlaufwerks vorhanden?
+iff exist %_boot:\onceaday.dat then
+:       Wenn ja, LASTDATE auf den Inhalt der ersten Zeile setzen
+  set lastdate=%@line[%_boot:\onceaday.dat,0]
+endiff
+:       Ist das Datum in der Datei h”her als das aktuelle Tagesdatum?
+:       (die Funktion @DATE wandelt ein Datum in eine Ganzzahl um)
+iff %@date[%_date] gt %lastdate then
+:       Wenn ja, ist es sp„ter als 6:00? (willkrlich gew„hlte Zeit)
+  iff %time[%_time] gt %@time[06:00] then
+:       Ja! Den als Argument an diese Stapeldatei bergebenen Befehl 
+:       aufrufen, dann folgendes anzeigen
+    call %&
+:       Nach Ausfhrung des Befehls das Tagesdatum in Ganzzahl-Format 
+:       in die Datei ONCEADAY.DAT bertragen
+    echo %@date[%_today] >! %_boot:\onceaday.dat
+  endiff
+endiff
+:
+
+

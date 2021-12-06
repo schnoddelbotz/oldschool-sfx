@@ -1,0 +1,187 @@
+****************************************************************************
+*
+*                   Copyright (C) 1993 Quantum Corporation
+*                            ALL RIGHTS RESERVED
+*
+*
+*       Project Name:   DIAGS and other PROCESS Applications
+*    Project Purpose:   Application Program to Drive Interface
+*
+*
+*        Module Name:   E-SERIES.ERR
+*     Module Purpose:   E-SERIES -- Error Code to English Translation
+*      PVCS $Logfile:   U:/RSC/DIAGS/FORMATS/VCS/ENCORE.FMV  $
+*  Current $Revision:   1.0  $
+*     Revision $Date:   19 MAY 1994 $
+*   Revision $Author:   LANCEB  $
+*
+*
+*     Current Author:   Lance Beazley
+*
+*
+* Version Released + to Documentation Control
+*                  |
+*    Date          |  Ver.    Name    Comments
+*    --------      |  ----    ----    ------------------------------------
+*    xx/xx/xx <----+->
+*
+*#########################################################################*
+*### VERSION CONTROL REVISION LOG ########################################*
+*
+*   $Log:   U:/RSC/DIAGS/FORMATS/VCS/ENCORE.FMV  $
+*
+*
+*
+*#########################################################################*
+*
+* Create date: 01/15/93
+*
+* E-Series Family Error Code data file for use with:
+*
+*                              Program        Version
+*                            -------------   ---------
+*                               SCSIDIAG       3.00  (or later)
+*                               ATADIAG        3.10  (or later)
+*
+*
+* ERROR FILE RULES are as follows:
+*
+*    error <iec>,<key>,<code>,<qual>,<pkey> <english description>
+*
+* Where:
+*
+* 1. Comment lines start with an '*' in the first column. All other lines
+*    that do not start with the word 'error' are ignored as well.
+*
+* 2. Error code lines start with the word 'error' in the first column. Case
+*    is not significant. Following the key word 'error' are the drive's
+*    internal error code <iec>, the corresponding SCSI <key>, <code> and
+*    qualifier <qual>, the process control key <pkey> and an English
+*    description of the error. All numbers are seperated by commas. There is
+*    only white space between 'error' and the internal error code and between
+*    the process control key and the English description. The description
+*    string may be an arbitrary length but most applications truncate it
+*    around 40 characters. A new line or tab delimits the far end of the
+*    string.
+*
+* 3. Error codes are not required to be in any order, however, most
+*    applications perform a linear search through the error code list that
+*    is generated from this file so it can be faster if you put more common
+*    codes at the top.
+*
+*#########################################################################*
+
+
+
+  Key Word 'error'  (must start in first column)
+  |
+  |     Drive Internal Error Code  (AKA as AT Extended)
+  |     |
+  |     |   SCSI Sense Key
+  |     |   |
+  |     |   |  SCSI Sense Code
+  |     |   |  |
+  |     |   |  |  SCSI Sense Code Qualifier
+  |     |   |  |  |
+  |     |   |  |  |   Process Control Key
+  |     |   |  |  |   |
+  |     |   |  |  |   |   Error Code Description
+  |     |   |  |  |   |   |
+  |     |   |  |  |   |   |        10        20        30         40        50
+*-V-----V---V--V--V---V---V--------v---------v---------v----------v---------v
+error   0, 0,00,00,  0   No error.
+error   1, 1,17,02,  0   recovered by microstepping
+error   2, 1,18,00,  0   Error recovered w/ ECC, 2 syndromes eq
+error   3, 1,18,01,  0   Recovered data ECC error on last retry.
+error   4, 1,AB,00,  0   Requested format not available for Rddef
+error   5, 2,04,00,  0   Drive not ready
+error   6, 2,04,02,  0   Drive has not been told to spin up.
+error   7, 2,04,80,  0   Drive is recalibrating.
+error   8, 2,04,81,  0   Drive is spinning up.
+error   9, 3,0C,02,  0   Write error auto reallocation failed.
+error   A, 1,0C,01,  0   Write error recovered with auto reallocation.
+error   B, 3,10,00,  0   ID CRC error, internal cont. processing
+error   C, 1,10,00,  0   recovered ID CRC error.
+error   D, 3,11,00,  0   Uncorrectable data ECC error.
+error   E, 1,17,01,  0   Error recovered with retries.
+error   F, 3,11,04,  0   Uncorrectable read error, auto reallocate failed
+error  10, 1,18,02,  0   Recovered data auto reallocated.
+error  11, 3,11,0C,  0   Uncorrectable read error, recommend rewrite data
+error  12, 1,17,01,  0   Error recovered with retries.
+error  13, 3,12,00,  0   am mark not found for id field
+error  14, 1,12,00,  0   recovered am mark not found for id field
+error  15, 3,13,00,  0   Data field sync timeout.
+error  16, 1,13,00,  0   Recovered data field sync timeout.
+error  17, 3,14,01,  0   No record found.
+error  18, 1,14,01,  0   Recovered no record found.
+error  19, 3,95,00,  0   Sequencer timeout.
+error  1A, 1,95,00,  0   Recovered Sequencer timeout.
+error  1B, 3,97,00,  0   Underrun error.
+error  1C, 1,97,00,  0   Recovered underrun error.
+error  1D, 3,0C,00,  0   Write error
+error  1E, 3,14,01,  0   No record found
+error  1F, 3,19,00,  0   Bad defect list.
+error  20, 3,31,00,  0   For SUN: Drive format did not complete
+error  21, 3,32,00,  0   No more alternate sectors available.
+error  22, 3,80,00,  0   Error in writing a system sector.
+error  23, 3,81,00,  0   Error in reading from a system sector.
+error  24, 3,98,00,  0   Timeout in settling.
+error  25, 3,A3,00,  0   Failure in reading sector in Reassign
+error  26, 3,AA,00,  0   Reallocated uncorrectable data read.
+error  27, 4,02,00,  0   Seek timeout error.
+error  28, 1,02,00,  0   recovered Seek timeout error.
+error  29, 4,03,00,  0   Write fault.
+error  2A, 1,03,00,  0   Recovered Write Fault (Bump)
+error  2B, 4,06,80,  0   Unsuccesful communication with DSP
+error  2C, 1,06,80,  0   recovered
+error  2D, 4,06,81,  0   DSP has quit, or is unable to start up
+error  2E, 1,06,81,  0   recovered
+error  2F, 4,15,00,  0   Seek error.
+error  30, 1,15,00,  0   Recovered seek error.
+error  31, 4,86,00,  0   Unexpected sequencer error.
+error  32, 1,86,00,  0   Recovered unexpected sequencer error.
+error  33, 4,06,90,  0   Recal Failure during DSP DAC Offset tune
+error  34, 4,06,91,  0   DSP stopped oper. during initialization
+error  35, 4,06,92,  0   Recal Failure during NEC DAC Offset tune
+error  36, 4,06,93,  0   Recal Failure during PES Gain/Bias calib
+error  37, 4,06,94,  0   Recal Failure during KT/J calibration
+error  38, 4,06,95,  0   DSP failed to startup after reset
+error  39, 4,06,96,  0   Cannot Servo on one or more head at RECAL
+error  3A, 4,06,97,  0   DSP not ready on seek after short recal
+error  3B, 4,06,98,  0   Failed to spin up
+error  3C, 4,06,99,  0   Fatal servo error
+error  3D, 4,32,00,  0   Defect table is full, no more entries
+error  3E, 4,40,80,  0   External SRAM failure
+error  3F, 4,40,81,  0   External RAM failure.
+error  40, 4,6A,00,  0   DSP failed to go ready at start up
+error  41, 4,84,00,  0   Fail writing to sequencer format ram
+error  42, 4,85,00,  0   Reject of message not sent
+error  43, 4,44,00,  0   Logical assertion (firmware consistency)
+error  44, 4,88,00,  0   stack overflow (firmware consistency)
+error  45, 4,8A,00,  0   head miscompare
+error  46, 4,90,00,  0   Synchronous acknowledge error.
+error  47, 4,91,00,  0   FIFO unload error.
+error  48, 4,92,00,  0   FIFO load error.
+error  49, 4,9D,00,  0   Motor never gets up to speed.
+error  4A, 4,A1,00,  0   Sequencer rollover register failure.
+error  4B, 5,1A,00,  0   Parameter overrun.
+error  4C, 5,20,00,  0   Invalid command.
+error  4D, 5,21,00,  0   Invalid LBA.
+error  4E, 5,24,00,  0   Invalid bits set in CDB.
+error  4F, 5,25,00,  0   Invalid LUN.
+error  50, 5,26,00,  0   Invalid bits set in parameters.
+error  51, 5,3D,00,  0   invalid bits set in identify message
+error  52, 5,8A,00,  0   Invalid head specified.
+error  53, 5,8B,00,  0   Invalid cylinder specified.
+error  54, 5,8F,00,  0   Invalid sector specified.
+error  55, 5,AE,00,  0   Bad parameter(s) in mode page.
+error  56, 6,2F,00,  0   commands cleared by another initiator
+error  57, 6,29,00,  0   Reset occurred.
+error  58, 6,2A,00,  0   Mode select parameters were changed.
+error  59, 6,3F,02,  0   operating definition changed
+error  5A, B,00,06,  0   Response for Abort message.
+error  5B, B,40,00,  0   RAM parity error.
+error  5C, B,43,00,  0   Message rejected.
+error  5D, B,47,00,  0   SCSI parity error.
+error  5E, B,48,00,  0   Initiator detected error.
+error  5F, B,4E,00,  0   incorrect connect.                                   

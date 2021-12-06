@@ -1,0 +1,460 @@
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ The Aurora Editor v1.20  - Menu definitions                        ³
+//³                                                                    ³
+//³ Please keep a backup copy of this file.                            ³
+//³                                                                    ³
+//³ For a description of these menu definitions and how to change      ³
+//³ them, select the "Key/Mouse/Trans Config" item from the "Help"     ³
+//³ pull-down menu. Then then select "Defining Menus" from the         ³
+//³ submenu.                                                           ³
+//³                                                                    ³
+//³ If you have changed any menu definitions, save this file and       ³
+//³ select "Restore Settings" from the "Set" pulldown menu. Exit and   ³
+//³ and re-enter the editor for your changes to take effect.           ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+  // edit window menu bar and tool bar
+  fun  EditMen (
+    winmen @ @ %&File %&Window %&Block %&Search %F&old %&Edit %&Clip
+               %&Print %Se&t %M&acro %&Help.
+    winmen @ 1 %<&&ğ> %<&&?> %<&&*> %<&&/> %<&&Ä> %<&&|> %<&&o> %<&&s>
+               %<&&F> %<&&f> %<&&r> %<&&®> %<&&¯> %<&&>> %<&&<>.
+  ).
+
+  // file manager window menu bar
+  fun  FmgrMen (
+    winmen @ @ %&File %&Window %&Mark %&Command %&Sort %&Print %Se&t
+               %M&acro %&Help.
+  ).
+
+
+
+  // pull-down menus for edit windows
+  texmen
+
+  %editFile
+    " &New                Ctrl-N|newf"
+    " &Open..              Alt-E|askopen"
+    " Open and &Insert..   Alt-I|askopenins"
+    " Open &Binary..|askopenb"
+    " Open Las&t           Alt-Z|openlast"
+    " &Rename..            Alt-N|askname"
+    " &Save                   F3|save"
+    " Sa&ve As..|asksaveas"
+    "Ä"
+    " &File Manager..         F4|fmgr"
+    " Ne&xt             Ctrl-Del|fnex"
+    " &Prev             Ctrl-Ins|fpre"
+    " &List..            Alt-(-)|flis"
+    "Ä"
+    " &Close               Alt-Q|quit %p"
+    " Close &All           Alt-X|gquit %p"
+    " Sav&e and Close     Ctrl-X|quit %f"
+    " Save an&d Close All       |gquit %f"
+    "Ä"
+    " Abo&ut..|about"
+  ,
+
+  %editWindow
+    " &Restore|wres"
+    " &Move/Size      Ctrl-F5|wkey"
+    " P&an            Ctrl-F6|wkey %p"
+    " M&inimize|wmin"
+    " Ma&ximize        Ctrl-Z|wmax"
+    " &Next            Ctrl-A|wnex"
+    " &Prev|wpre"
+    " &List..           Alt-W|wlis"
+    "Ä"
+    " &Copy            Ctrl-C|wcopy"
+    " Split Hor&z       Alt-H|wspl %h"
+    " Split Ver&t       Alt-V|wspl %v"
+    "Ä"
+    " Ca&scade       Shift-F5|wcasc"
+    " Tile &Horz     Shift-F4|wtileh"
+    " Tile &Vert     Shift-F3|wtilev"
+    "Ä"
+    " Tool &Bar       Ctrl-F8|wtool"
+    " St&yle Toggle   Ctrl-F7|wsty"
+    " Pr&ompt Toggle|wppt"
+  ,
+
+  %editMark
+    " Mark &Line        Alt-L|mset %l"
+    " Mark &Column      Alt-B|mset %r"
+    " Mark C&haracter   Alt-A|mset %s"
+    " Mark &Word        Alt-1|wrdmrk Cset"
+    " Mark to &EOL      Alt-2|meol"
+    " Mark &Paragraph   Alt-3|mpgh %tb"
+    "Ä"
+    " &Unmark           Alt-U|mdes"
+  ,
+
+  %editBlock
+    " Mar&k..              |mens %editMark"
+    " &Copy            Alt-C|mcpy"
+    " &Overlay         Alt-O|mmov %o"
+    " &Move            Alt-M|mmov"
+    " Mo&ve Over      Ctrl-M|mmov %of"
+    " &Delete          Alt-D|mdel"
+    " &Indent       Shift-F8|mshf 1"
+    " Uninden&t     Shift-F7|mshf -1"
+    "Ä"
+    " &Fill         Ctrl-K-F|askmfill"
+    " &Reflow          Alt-R|mrfl %b"
+    " Reflow R&Just    Alt-Y|mrfl %br"
+    " S&ave..       Ctrl-K-S|msave"
+    " &Sort         Ctrl-K-O|msrt"
+    " Lo&wercase|mcase %l"
+    " U&ppercase    Ctrl-K-U|mcase %u"
+    "Ä"
+    " &Left Justify|mjust"
+    " Ri&ght Justify|mjust %r"
+    " Ce&nter       Ctrl-K-C|mjust %c"
+  ,
+
+  %editSearch
+    " &Find..           F5 or Ctrl-F|askfind"
+    " Re&place..              Ctrl-G|askrpl"
+    " &Repeat Last Find/Repl  Ctrl-L|finl"
+    " &Scan Files..           Ctrl-S|askscan"
+    "Ä"
+    " &Quick Bookmark         Ctrl-2|bset"
+    " Pre&v Bookmark          Ctrl-6|bget"
+    " Place &Bookmark..|askbset"
+    " &Go to Bookmark..|askbget"
+    "Ä"
+    " Go to &Line..           Ctrl-J|askglin"
+    " Go to &Column..|askgcol"
+    " Go to Bloc&k Start      Ctrl-B|mloc @ %t"
+    " Go to Block En&d|mloc @ %b"
+    " Go to Ne&xt Fold         Alt-7|cfld"
+    " G&o to Prev Fold|cfld %r"
+    "Ä"
+    " Find &Matching Char     Alt-F3|finm"
+    " Go to Compiler &Error   Alt-F7|finc %m"
+  ,
+
+  %editFold
+    " &Fold Next Line     Alt-8|lfld %b"
+    " Fold &Prev Line|lfld %t"
+    "Ä"
+    " Fold &Block         Alt-F|mfld %f"
+    " Fold Bloc&k Flat|mfld %uaf"
+    "Ä"
+    " &Unfold Line        Alt-G|lfld %u"
+    " Unfold &Line Flat|lfld %ua"
+    " Unfold Ne&xt Line   Alt-9|lfld %bs"
+    " Unfold Pre&v Line|lfld %ts"
+    "Ä"
+    " Unfold Blo&ck|mfld %u"
+    " Unfold Block Fla&t|mfld %ua"
+    " Unfold &All         Alt-0|mflda %ua"
+  ,
+
+  %editEdit
+    " &Undo               Ctrl-U|undo"
+    " &Redo               Ctrl-Y|undo %r"
+    "Ä"
+    " &Insert Line    Ctrl-Enter|lins %a"
+    " &Delete Line    Ctrl-Baksp|ldel"
+    " &Split Line          Alt-S|lspl"
+    " &Join Line           Alt-J|ljoin"
+    "Ä"
+    " &Erase to End           F6|leol"
+    " Delete Right &Word  Ctrl-T|wrddel CSet"
+    " Du&plicate Line      Alt-4|ldup"
+    " Sw&ap Lines          Alt-5|lswp"
+    " Ce&nter Line         Alt-6|lcen"
+    "Ä"
+    " &Comment Line       Alt-F1|lcom"
+    " Enter &Literal..    Ctrl-[|lit"
+    " Ascii C&hart..       Alt-=|wasc"
+    " Date/&Time Stamp  Ctrl-K-T|stamp"
+    " E&xpand Tabs      Ctrl-K-X|exptab"
+  ,
+
+  %editClip
+    " Cu&t               Grey-|clpcpy %d"
+    " Cut &Append   Ctrl-Grey-|clpcpy %ad"
+    " &Copy              Grey+|clpcpy"
+    " Cop&y Append  Ctrl-Grey+|clpcpy %a"
+    "Ä"
+    " &Paste             Grey*|clppst"
+    " Paste &Over   Ctrl-Grey*|clppst %o"
+    "Ä"
+    " C&lear        Ctrl-Grey/|clpclr"
+    " Clip&board..|*askclp"
+  ,
+
+  %editPrint
+    " &Print           Ctrl-P|print"
+    " Print &Block      Alt-P|print %m"
+    " Print &Formfeed|prtstr (byte 12)"
+    " Print &Settings..|*askprtset"
+  .
+
+  texmen
+
+  %Fonts
+    " 80 cols x 1&4 rows|*vfont 80 14"
+    " 80 cols x 2&1 rows|*vfont 80 21"
+    " 80 cols x 2&5 rows|*vfont 80 25"
+    " 80 cols x 2&8 rows|*vfont 80 28"
+    " 80 cols x 4&3 rows|*vfont 80 43"
+    " 80 cols x 5&0 rows|*vfont 80 50"
+    "Ä"
+    " 40 cols x &25 rows|*vfont 40 25"
+  ,
+
+  // Note: do not change the first 8 lines of this menu
+  // (except for key definitions)
+  %editSet
+    " &Word Wrap          Ctrl-W|wmwrap"
+    " &AutoIndent|wmautoi"
+    " &Variable Tabs|wmvtab"
+    " &Smart Tabs|wmsmtab"
+    " &Match Character|wmmat"
+    " &Backup|wmbak"
+    " &Translate          Alt-F4|wmtran"
+    " Line &Draw          Ctrl-D|wmdraw"
+    " Line St&yle..            |mens %LineStyle"
+    "Ä"
+    " Word &Processing..       |mens %WordP"
+    " Default File E&xtensions..|*askdefx"
+    " Bi&nary Line Length..|*askbin"
+    " Line De&limiter..|*askdlm"
+    "Ä"
+    " V&ideo Mode..            |mens %Fonts"
+    " Video To&ggle      Ctrl-F1|*vfont %t"
+    "Ä"
+    " Save &Current Settings|setsav"
+    " &Restore Settings   Alt-F2|setres"
+  ,
+
+  %WordP
+    " &Tab Width..|*asktabw"
+    " &Variable Tab Stops..|*asktabv"
+    "Ä"
+    " &Left Margin..|*asklmrg"
+    " &Right Margin..|*askrmrg"
+    " &Paragraph Indent..|*askind"
+  ,
+
+  // Note: do not change this menu (except for key definitions)
+  %LineStyle
+    " &Single|sdraws 0"
+    " Double &Horizontal|sdraws 1"
+    " Double &Vertical|sdraws 2"
+    " &Double|sdraws 3"
+    " &Eraser|sdraws 4"
+  ,
+
+  %editMacro
+    " &Record Toggle    Ctrl-R|krec"
+    " &Play             Ctrl-E|kplay"
+    " &Erase            Ctrl-I|kdel"
+    " Era&se All|kdel %a"
+    " Ope&n..|askkopen"
+    " Sa&ve..|askksav"
+    " &Assign to Key..|kcat"
+    "Ä"
+    " &Configuration..|opena %acfg"
+    " &Keys..|opena %akbd"
+    " &Menus..|opena %amen"
+    "Ä"
+    " Macro Comman&d..  Ctrl-V|askmcmd"
+    " R&un Macro..|askmrun"
+    " &Include Macro..|askminc"
+    " Compi&le Macro..|askmcom"
+    "Ä"
+    " &OS Command..     Alt-F9|*askoscmd %ck"
+    " OS Cap&ture..     Alt-F8|askoscap"
+    " OS S&hell             F9|*osshell"
+  ,
+
+  %editHelp
+    " Ordering &Information|hlp %I 1"
+    " &Getting Started|hlp 1 1"
+    " &Windows..                |mens %h2"
+    " &Menus|hlp 3 1"
+    " The Status &Line|hlp 4 1"
+    " &File Commands..          |mens %h5"
+    " &Editing..                |mens %h6"
+    " &OS Commands|hlp 7 1"
+    " Using Marked &Blocks|hlp 8 1"
+    " The &Clipboard|hlp 9 1"
+    " Folding Te&xt|hlp 10 1"
+    " &Search and Replace|hlp 11 1"
+    " &Printing|hlp 12 1"
+    " Setti&ngs..               |mens %h13"
+    " &Key Macros|hlp 14 1"
+    " Ot&her Commands|hlp 15 1"
+    " &The File Manager..       |mens %h16"
+    " Config&uration..          |mens %h17"
+    " Ke&y/Menu/Trans Config..  |mens %h18"
+    " &Appendix..               |mens %hA"
+    " &Quick Reference   Shift-F1|qref"
+  .
+
+  // help submenus
+  texmen
+
+  %h2
+    " &Windows|hlp 2 1"
+    " &Learning to use|hlp 2 2"
+    " &Panning the Screen|hlp 2 3"
+    " Window &Styles|hlp 2 4"
+    " &Video Modes|hlp 2 5"
+    " P&rompts|hlp 2 6"
+  ,
+
+  %h5
+    " &Create and Loading|hlp 5 1"
+    " &Saving and Discarding|hlp 5 2"
+    " &Other File Commands|hlp 5 3"
+  ,
+
+  %h6
+    " &Finding your way around|hlp 6 1"
+    " &Scrolling|hlp 6 2"
+    " &Modifying Text|hlp 6 3"
+    " &Undo and Redo|hlp 6 4"
+  ,
+
+  %h13
+    " &Window Settings|hlp 13 1"
+    " &Global Settings|hlp 13 2"
+  ,
+
+  %h16
+    " &The File Manager|hlp 16 1"
+    " &Creating a Window|hlp 16 2"
+    " Changing the &Directory|hlp 16 3"
+    " &File Manager Commands|hlp 16 4"
+    " &Marking Files|hlp 16 5"
+    " &Sorting|hlp 16 6"
+  ,
+
+  %h17
+    " Config&uration|hlp 17 1"
+    " &Video|hlp 17 2"
+    " &Mouse|hlp 17 3"
+    " Word Processin&g|hlp 17 4"
+    " &Default File Ext|hlp 17 5"
+    " &Open options|hlp 17 6"
+    " &Save options|hlp 17 7"
+    " &Editing Preferences|hlp 17 8"
+    " &Window Preferences|hlp 17 9"
+    " &Print Settings|hlp 17 10"
+    " Des&ktop Options|hlp 17 11"
+    " Memor&y Options|hlp 17 12"
+    " O&ther Options|hlp 17 13"
+    " C&haracter Sets|hlp 17 14"
+    " Te&xt Translation|hlp 17 15"
+    " Con&firmations|hlp 17 16"
+    " &Colors|hlp 17 17"
+    " &Borders|hlp 17 18"
+  ,
+
+  %h18
+    " &Defining the Keyboard|hlp 18 1"
+    " &Key Function Names|hlp 18 2"
+    " Defining &Compound Keys|hlp 18 3"
+    " &Mouse Function Names|hlp 18 4"
+    " De&fining Menus|hlp 18 5"
+    " The Tool&bar|hlp 18 6"
+    " Te&xt Translation|hlp 18 7"
+  ,
+
+  %hA
+    " &Command Line Options|hlp %A 1"
+    " &Performance Tips|hlp %B 1"
+  .
+
+
+  // pull-down menus for file manager windows
+  texmen
+
+  %fmgrFile
+    " &New              Ctrl-N|newf"
+    " &Open..            Alt-E|askopen"
+    " Open &Binary..|askopenb"
+    " Open Las&t         Alt-Z|openlast"
+    " &Parent       Ctrl-Baksp|fpar"
+    " R&efresh|refresh"
+    "Ä"
+    " &Close             Alt-Q|quit %p"
+    " Close &All         Alt-X|gquit %p"
+    "Ä"
+    " Abo&ut..|about"
+  ,
+
+  %fmgrWindow
+    " &Restore|wres"
+    " &Move/Size     Ctrl-F5|wkey"
+    " P&an           Ctrl-F6|wkey %p"
+    " M&inimize|wmin"
+    " Ma&ximize       Ctrl-Z|wmax"
+    " &Next           Ctrl-A|wnex"
+    " &Prev|wpre"
+    " &List..          Alt-W|wlis"
+    "Ä"
+    " Ca&scade      Shift-F5|wcasc"
+    " Tile &Horz    Shift-F4|wtileh"
+    " Tile &Vert    Shift-F3|wtilev"
+    "Ä"
+    " Pr&ompt Toggle|wppt"
+  ,
+
+  %fmgrMark
+    " Mark &Toggle   Space|fmtog"
+    "Ä"
+    " &Mark All      Alt-M|fmrk"
+    " &Unmark All    Alt-U|fumrk"
+  ,
+
+  %fmgrCommand
+    " &Open         Enter,e,o,z|fopen"
+    " Open &Binary          b,y|fopen %b"
+    " Open &Key Macro         k|fopenk"
+    "Ä"
+    " &Move..                 m|fmov"
+    " &Copy..                 c|fcpy"
+    " &Delete             Del,d|fdel"
+    " Re&name..               n|fren"
+    "Ä"
+    " &Run                    r|frun %c"
+    " &Print                  p|fprt"
+    "Ä"
+    " &Attributes..           a|fatt"
+    " &Touch                  t|ftch"
+    "Ä"
+    " Cr&eate Directory..|fcred"
+    " &Scan Files..      Ctrl-S|askscan"
+  ,
+
+  %fmgrSort
+    " &Name        Alt-N|fsrt %n"
+    " &Size        Alt-S|fsrt %s"
+    " &Date-Time   Alt-D|fsrt %d"
+    " &OS Default  Alt-O|fsrt %o"
+  ,
+
+  %fmgrSet
+    " File E&xtensions..|*askdefx"
+    " Bi&nary Line Length..|*askbin"
+    " L&ine Delimiter..|*askdlm"
+    "Ä"
+    " &Video Mode..            |mens %Fonts"
+    " Video To&ggle      Ctrl-F1|*vfont %t"
+    "Ä"
+    " Save &Current Settings|compile %p"
+  ,
+
+  %fmgrPrint
+    " &Print           Ctrl-P|print %d"
+    " Print &Formfeed|prtstr (byte 12)"
+    " Print &Settings..|*askprtset"
+  .

@@ -1,0 +1,188 @@
+***      *      ***
+*  *    * *    *
+*   *   * *   *           Digital Audio Copy
+*   *  *   *  *              Version 1.0
+*   *  *****  *     (w) 1994 by Christoph Schmelnik
+*  *  *     *  *
+***   *     *   ***
+
+
+Dieses Programm darf frei kopiert werden, insofern an dem Programm und der
+Dokumentation keine nderungen vorgenommen werden. Es ist sogar ausdrcklich
+erwnscht dieses Programm weiterzuverbreiten, sei es in Mailboxen oder sogar
+auf CDROM Sammlungen.
+Der Quelltext zu diesem Programm ist auch erh„ltlich, muá aber fr eine kleine
+Gebhr von 10 DM bei mir angefordert werden. Dafr gibt es dann auch die
+Version 1.1, die dann auch in der Lage ist einzelne Abschnitte eines Tracks
+von der CD zu Kopieren. Siehe auch unter 2.Registrieren.
+
+DER AUTOR (Christoph Schmelnik) šBERNIMMT KEINERLEI HAFTUNG FšR SCHDEN ALLER
+ART, DIE DURCH DIESES PROGRAMM AN HARD- ODER SOFTWARE ENTSTEHEN. ES WIRD
+EBENFALLS KEINE HAFTUNG FšR SCHDEN DIE DURCH ILLEGALES KOPIEREN VON
+MUSIKSTšCKEN MIT HILFE DIESES PROGRAMMS ENTSTEHEN šBERNOMMEN.
+
+
+šbersicht:
+
+1.  Das Programm
+
+1.1 Funktionsbersicht
+
+1.2 Systemanforderungen
+
+1.3 Installation
+
+1.4 Aufruf
+
+1.5 Allgemeine Hinweise
+
+2.  Registrieren
+
+
+
+1.  Das Programm
+
+Dieses Programm entstand aus dem Wunsch heraus, die CD-Audio Tracks Digital
+von der CD Lesen zu koennen, ohne ber den Umweg Digital-Analog- und Analog-
+Digital-Wandler zu gehen.
+Die ersten Versuche schlugen Fehl und die erh„ltlichen Shareware Programme
+liefen nur mit SCSI Laufwerken.
+So behauptet auch die Zeitschrift c't in ihrer aktuellen Ausgabe (9/94), daá
+es mit Laufwerken, die keine Einheitliche Schnittstelle (sprich alle nicht
+SCSI Laufwerke) besitzen, Probleme gibt an die n”tige Dokumentation zu kommen,
+um ein solches Programm realisieren zu koennen.
+Dies ist schlichtweg falsch, da dieses Programm nur Befehle des MSCDEX
+benutzt, und das Problem trotzdem l”st.
+Allerdings gibt es wie immer Einschr„nkungen, doch dazu mehr im n„chsten
+Abschnitt:
+
+
+1.1 Funktionsbersicht
+
+-Digitales auslesen eines CD-Tracks direkt von der CD
+-Speicherung der Daten als Wave Datei
+-Konvertierung der Audiodaten aus 44kHz-16 Bit-Stereo in
+ -11kHz oder 22kHz SampleFrequenz
+ -8 Bit Sampleaufl”sung
+ -Mono
+
+
+1.2 Systemanforderungen
+
+-PC mit 80286 Prozessor oder besser
+-300kB freier Arbeitsspeicher
+-CDROM Laufwerk das den RAW Modus untersttzt (Ein Betriebsmodus der die Daten
+ direkt von der CD liest)
+-Festplatte mit sehr viel Speicherplatz
+-DOS (what ever you like - aber h”her als 3.2 sollte es schon sein)
+-installierter CDROM Treiber
+-installierter MSCDEX oder vergleichbare CDROM Erweiterung fr DOS.
+
+Leider untersttzen nicht alle auf dem Markt befindlichen CD-Laufwerke den
+fr dieses Programm n”tigen RAW Modus. Zum feststellen, ob das CDROM
+Laufwerk diesen Modus untersttzt kann man beliebige CDROM Info Programme,
+wie z.B. das Programm CDR von Jrgen Vetter, benutzen. Allerdings gibt DAC
+auch einen Hinweis aus, wenn es vermutet, daá das CDROM nicht den RAW Mode
+untersttzt.
+Die K„ufer von Mitsumi Laufwerken drften allerdings die paar Mark, die sie
+gegenber anderen Laufwerken wie Panasonic (Matsushita) oder Sony gespart
+haben, sp„testens jetzt bereuen, da die Mitsumi Laufwerke den RAW Modus nicht
+untersttzen.
+
+
+1.3 Installation
+
+Die Installation ist sehr simpel. Einfach die Datei DAC.EXE in ein Verzeichnis
+nach Wahl kopieren. Das Programm kann dann immer von dort aus aufgerufen
+werden. Das Programm darf auch im Suchpfad stehen und die Ausfhrung wird
+dadurch nicht beeinflusst.
+Zus„tzlich muá die CDROM Erweiterung fr DOS (z.B. MSCDEX) und der
+entsprechende CDROM Treiber (z.B. CDMKE43.SYS fr Panasonic/Matsushita)
+installiert sein.
+
+WICHTIG !
+Es darf kein Cache Programm wie Smartdrive fr das CDROM aktiv sein!
+Mehr dazu unter 1.5.
+
+
+1.4 Aufruf
+
+Das Programm wird aufgerufen mit :
+
+DAC <Dateiname> T=x B=x F=x K=x
+
+Beschreibung der Parameter
+<Dateiname> : Name der Ausgabedatei ohne Endung (Das .WAV wird automatisch
+              angeh„ngt) Der Dateiname muá angegeben werden.
+T : Tracknummer - Dies ist die Nummer des Tracks auf der CD, der auf die
+    Festplatte kopiert werden soll. Dieser Parameter muá angegeben werden.
+B : Bits pro Sample - Zul„ssige Werte sind 8 oder 16. Voreingestellt ist 16.
+F : Sample Frequenz - Zul„ssige Werte sind 1,2 oder 4 fr 11kHz, 22kHz
+    oder 44kHz. Standart ist hier 44kHz
+K : Kan„le - Zul„ssige Werte sind 1 oder 2 fr Mono oder Stereo.
+    Hier ist Stereo voreingestellt.
+
+Die Voreinstellung fr das Kopieren ist also eine verlustfreie Kopie von der
+CD.
+
+Der Parameter <Dateiname> muá an erster Stelle stehen. Die Reihenfolge der
+anderen Parameter ist egal.
+
+
+1.5 Allgemeine Hinweise
+
+Als aller erstes muá darauf hingewiesen werden, daá kein Cache Programm fr
+das CDROM Laufwerk aktiv sein darf. Dies fhrt zu Fehlern beim Lesen im RAW
+Modus des CD-Laufwerks. Dies wird aber von DAC berprft und mitgeteilt.
+Wenn man auf den Cache aus den unterschiedlichsten Grnden nicht verzichten
+will (z.B. weil man zwischendurch mit einer Daten CD arbeiten will), kann
+man den Cache auch nur fr die Zeit des kopierens deaktivieren (bei Smartdrive
+mit SMARTDRV <CDROM-Laufwerksbuchstabe>- ). Es ist allerdings m”glich, daá
+man dann erst einmal die CD neu einlegen muá (oder einfach die Schublade
+”ffnen und wieder schliessen).
+
+Nun ich moechte mich dann auch herzlich bei Juergen Vetter bedanken, der mir
+mit seiner CD Unit und seinen Fragen oft Denkanst”áe gegeben hat. Allerdings
+habe darauf verzichtet seine Unit fr dieses Programm zu benutzen, da das
+alles viel zu umst„ndlich zu handhaben gewesen waere und das Programm sich
+nur unn”tig aufgebl„ht h„tte.
+
+Da dies meines Wissens nach das einzige Programm ist, daá frei kopierbar ist
+und trotzdem die M”glichkeit zum kopieren von Audiotracks mit recht vielen
+Optionen ist, sollte jeder auch einmal in den n„chsten Abschnitt schauen.
+
+
+2.  Registrieren
+
+Nun warum Registrieren, wenn das Programm frei kopierbar ist?
+Ganz einfach: Jeder der sich registrieren l„át bekommt von mir den
+dokumentierten Quelltext und eine Version mit der sich auch Teilbereiche
+von Tracks kopieren lassen. Des weiteren ist es jedem registrierten Anwender
+erlaubt die Routinen frei in seinen eigenen Programmen zu benutzen. Der
+einzige Wunsch meinerseits ist, daá meine Leistung in dem Programm oder
+Dokumentation entsprechend gewrdigt wird.
+
+Was kostet das ganze?
+10 DM - also eigentlich eine ganz humane Geschichte, die sich jeder leisten
+        k”nnen sollte.
+
+Einfach in Bar an meine Postadresse (s.u.) schicken, oder auf mein Konto
+berweisen und mir eine Nachricht zukommen lassen. (am besten via E-Mail)
+Dafr bekommt man dann den dokumentierten Pascal Quelltext der erweiterten
+Version.
+
+Adresse:
+Christoph Schmelnik
+Stolzingweg 29
+45307 Essen
+
+Email:
+Fido: 2:2448/2010.4
+Internet: christoph@sunshine.gun.de
+
+Bankverbindung:
+BLZ: 360 501 05
+Knr: 59 73 946
+
+Bei šberweisungen bitte als Verwendungszweck angeben:
+DAC Registrierung + Adresse

@@ -1,0 +1,192 @@
+                Virus scanning - how, why and when ?
+
+F-PROT is able to find practically all known viruses, by a method known as
+"scanning".  This involves searching for a virus pattern, or a "search
+string", a sequence of bytes which is very unlikely to be found anywhere
+but in this particular virus.
+
+The search strings are stored in a file named SIGN.DEF, which must be
+present in the current directory or the same directory as F-PROT.EXE.  The
+number of search strings contained in this file is not an indication of the
+number of viruses F-PROT is able to detect, however - as most new viruses
+are created by making small changes to older viruses, the same search
+string can often be used to detect many different viruses.
+
+                      Secure Scan or Heuristic Analysis ?
+
+F-PROT can use two different methods when scanning for viruses.  The first
+method ("Secure Scan") uses two different search strings for each virus. 
+It will also search in a large block of data - usually (but not always)
+located either at the beginning or the end of the file.  This improves the
+chances of detecting any virus which might have been created by modifying
+an older one - any change might cause a search string to be located at a
+different position within the virus, or it might even corrupt the string
+itself, but the chances of a single change invalidating both of the
+strings are very low.
+
+The second method first does a "Secure Scan", and then attempts to analyse
+the file, using a set of rules, instead of a database of search strings. 
+It is still only experimental, but its purpose is to detect suspicious
+code.  It is not foolproof - it will not detect all viruses and may easily
+produce false alarms, so it should be used with care - not recommended for
+the casual user.  However - unlike the other method, it is not limited
+to existing viruses or variants of them - it is equally effective against
+new viruses.  For further information on this method see ANALYSE.DOC
+
+When you select "Scan" from the initial menu, a new menu will appear,
+where you can select what to scan for and where to scan.
+
+To change the setup you simply use the arrow keys to move to the option you
+want to change and press Enter.  A window will then appear showing the
+available possibilities, and you select one of them.
+
+The first option, "Method" is uses to select which search method to use,
+with "Secure" as the default.
+
+The second option, "Search" is used to select on which drives and
+directories F-PROT should search for viruses.  The possibilities are
+"Hard disk", "Diskette drive" and "Network", which should be self-explanatory,
+and finally "User-specified".  The last possibility applies if you only
+want to scan a single directory, or perhaps just a single file.  If a
+directory is specified, all subdirectories below it will be searched as
+well.  The difference between selecting "Diskette drive A:" and selecting
+"User-specified", and entering "A:" is that in the former case it is
+assumed you might want to scan multiple diskettes, so after scanning each 
+diskette a report is given and you are prompted for the next diskette.
+One note: If "Network" is selected, all network drives from C: to Z: will
+be searched, so if several drive letters have been mapped to the same
+physical directory, the same files might be scanned several times.  The
+default is to search the hard disk.
+
+The third option, "Action" is used to specify what action should be taken
+when a virus is found.  The default operation is just to list the names of
+any infected files, but F-PROT can also disinfect almost all viruses.  If
+you want disinfection, it can either be fully automatic, or F-PROT can
+prompt you before it attempts to disinfect any given file. Sometimes
+an infection cannot be removed, for example if the virus just overwrites
+and destroys any file it infects, or in the case of a "first-generation"
+sample.
+
+A "first-generation" sample is the author's original copy of the virus,
+and can only exist if the file has been obtained directly or indirectly
+from him.  Such samples are generally not found in the "real world", only
+in large virus collections.
+
+In those cases the only effective disinfection is to delete the file.  It
+is always safer to delete infected programs than to disinfect, so F-PROT
+offers deletion as well - any infected file will first be overwritten
+several times (just to make sure) and then deleted.  You can select
+automatic deletion or have F-PROT prompt you before it deletes a file. 
+Finally, an infected file can be renamed, and given the extension
+.VOM or .VXE, so it will not be executed by accident, but you will still have
+it around to study.
+
+The fourth option, "Targets" is used to select the types of viruses to
+search for.  Normally one would like to search for all known viruses, but
+in certain circumstances you might want to exclude boot sector viruses or
+program viruses.  For example, if you are cleaning up after an attack by
+a specific boot sector virus, you might not want to search for program
+viruses on every single diskette.  You can also instruct F-PROT to search
+for special user-defined search strings, but this will slow the scanning
+down considerably.
+
+The fifth option, "Files" is used to select in which files F-PROT should
+search for viruses.  Most viruses will only infect normal executable
+files, (.EXE, .COM and possibly .APP and .PGM files) although some may
+infect overlay files (.OV?) and device driver files (.SYS) as well.  The
+default operation of F-PROT is just to scan those types of files, but it is
+also possible to select "All files" - this is advisable if you are cleaning
+up after a virus attack - just to make sure the virus is not hiding in some
+obscure overlay file.  However, as this is quite time-consuming, it is not
+recommended, unless you have actually found a virus when scanning just the
+regular executable files.  It is also possible to specify a set of file
+extensions - for example adding .BIN to the default list.
+
+If any of the options are changed from their default values, F-PROT will
+ask if the changed values should be saved when you exit from the program.
+If so, a file named SETUP.F2 will be created.  This does not work if the
+program is run from a write-protected diskette, however.
+
+                         Starting the virus scan
+
+When you have selected the correct options, you may start the scanning by
+selecting "Begin Scan" at the top of the menu, either by moving the cursor
+there, or just by pressing "B".
+
+The small window at the bottom will display the name of the last file
+scanned.
+
+The scanning can be aborted at any time simply by pressing the ESC key.
+
+When the scanning is finished, a summary is displayed.  If no viruses or
+suspicious programs were found, it simply says so, but otherwise a
+detailed listing is produced when ENTER is pressed.  This listing can be
+saved to a disk or sent to the printer.
+
+This report may say that a file has been packed by a program such as 
+KVETCH, PGMPAK, SHRINK or CRUNCH and can not be scanned.  This is
+generally not a cause for alarm, although a virus can be hidden in a
+program by infecting it, and then running one of those file-packing
+programs, which create a program which will unpack itself in memory when
+executed.  Some virus writers use this method to distribute their viruses,
+but generally this only works for the first generation - second (and
+later) generation samples of the same virus will not be packed.  F-PROT
+can scan inside most PKLITE, LZEXE, ICE, DIET and EXEPACK compressed files,
+and support for the remaining compression program will be added in the near
+future, if necessary.  Please keep in mind that if a file is infected after
+compression, the virus is always detected normally.  Finally, F-PROT will
+not scan inside self-unpacking archives, or .ZIP, .ARJ or similar files.
+We will add this feature in the future, but currently you have to unpack
+those files and scan the individual files.
+
+
+                          A note on disinfection
+
+When a file has been disinfected it has usually been restored to its
+original state before infection.  In many cases the disinfected program
+will have 1-16 additional garbage bytes at the end.  Those bytes are added
+by viruses, in order to make the length of the program a multiple of 16
+bytes, before infection.  As the number of those extra bytes cannot be
+determined, they cannot be removed.  Normally they will not have any effect,
+unless the program checks its current length.  In those cases it will
+report an incorrect length after disinfection, and will have to be restored
+from a backup.
+
+                        Skipping the memory scan
+
+Normally F-PROT will search the memory for viruses, and refuse to
+operate if any search strings are found in memory.  However, a false alarm
+is possible, for example if an infected file has just been copied, and
+portions of it are in an unused disk buffer.   A false positive can also
+happen if you have run another, incompatible anti-virus program before,
+that does not encrypt its search strings.  Most anti-virus programs are
+well-behaved in this respect, and only MSAV and CPAV cause this problem
+regularly.
+
+To skip the memory scan, run the program with the /NOMEM command-line
+switch.  
+
+                          Testing the scanner
+
+The correct operation of F-PROT can be tested with a special test 
+file. This is a dummy file which is detected by F-PROT exactly like 
+if it were a virus. This file is known as EICAR Standard Anti-virus
+Test file, and it is also detected by several other anti-virus products 
+in a similar manner.  (EICAR is the European Institute of Computer
+Anti-virus Research).  
+
+Naturally, the file is not a virus. When executed, EICAR.COM will
+display the text 'EICAR-STANDARD-ANTIVIRUS-TEST-FILE' and exit.
+ 
+We do not include the EICAR test file with the package to avoid alarming
+anyone running F-PROT or another scanner on the package, but to create the
+EICAR test file, use any text editor to create a file with the following
+single line in it:
+ 
+X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
+ 
+Save the file to any name with COM extension, for example EICAR.COM.
+Make sure you save the file in standard MS-DOS ASCII format.  The file
+should be 68 bytes long, but might be 70 bytes if the editor puts a
+CR/LF at the end.  Now you can use this file to test what happens
+when F-PROT enconters a "real" virus.

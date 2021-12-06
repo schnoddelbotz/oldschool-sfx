@@ -1,0 +1,15 @@
+
+[disks]
+    1 =. ,"Audio Software Drivers",disk1
+
+[Installable.Drivers]
+SB16FM      = 1:sb16fm.drv,  "MIDI",      "Voyetra / Sound Blaster SuperSAPI FM Driver", 1:vsbpd.386,,
+SB16Aux      = 1:sb16aux.drv,  "AUX,mixer",	    "Creative Sound Blaster 16 Auxiliary Audio", 1:vsbpd.386,,
+SB16WaveMidi   = 1:sb16snd.drv,  "Wave,MIDI", "Creative Sound Blaster 16 Wave and MIDI", 1:vsbpd.386,,
+
+
+[SB16FM]
+1:midimap.cfg
+
+[SB16WaveMidi]
+1:cspman.dll

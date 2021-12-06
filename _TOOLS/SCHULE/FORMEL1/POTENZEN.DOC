@@ -1,0 +1,55 @@
+An alle Freunde der Potenzen mit negativen Basen !
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Leider habe ich es bis zu dieser Version noch nicht fertiggebracht, Ihren
+Wunsch nach Potenzfunktionen mit negativen Basen zufrieden zu stellen.
+Der Ausdruck x^y, wobei xó0 ist, kann leider noch nicht richtig ausge-
+wertet werden und wird daher auch nicht gezeichnet.
+
+Das Problem ist, daá ich, um eine m”glichst hohe Effizienz auf allen 
+Rechner (ab 80286) zu erreichen, die Funktionen direkt in ein internes 
+Assembler-Programm bersetze, das wiederum mit Hilfe von Interrupts den 
+CoProzessor bzw. dessen Emulator (falls keiner vorhanden ist) ansteuert.
+Fr das oben beschriebene Problem ben”tige ich jedoch folgende Fallunter-
+scheidung:  
+             a)  x > 0   =>  x^y ğ EXP(y*LN(x))        
+             b)  x = 0   =>  x^y = 0
+             c)  x < 0   =>  x^y ğ (-1)^y*EXP(y*LN(ABS(X))) 
+
+Fall a) ist bereits mit der obenstehenden Relation implementiert.
+Fall b) ben”tigt eine Vergleichsoperation (auf Null) - CoPro-Interrupt !?
+Fall c) Ben”tigt zudem eine Operation bzw. Funktion, die feststellt, ob
+        der verwendete Exponent (y) gerade oder ungerade ist.
+
+Die Zahlen liegen n„mlich im Extended-Format (10 Byte) auf dem Stack !
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! WER MIR BEI DER L™SUNG WEITERHELFEN KANN, WENDE SICH BITTE SOFORT AN MICH !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Bis zur endgltigen L”sung sollten Anwender, die trotzdem nicht auf diesen
+Sonderfall der Potenzfunktion verzichten k”nnen oder wollen, einen der 
+folgenden "Tricks" benutzen, um trotzdem zu einer L”sung zu kommen.
+
+        1)  (-3)^5 ğ (-3)*(-3)*(-3)*(-3)*(-3)
+                   ğ -(3^5)
+            (-3)^4 ğ (-3)*(-3)*(-3)*(-3)
+                   ğ 3^4
+
+        2)  x^5 ğ x*x*x*x*x         falls x<0
+                ğ -(ABS(x)^5)
+
+        3)  x^(2*n) ğ SQR(x)                  fr n=1           Exponent
+                    ğ SQR(SQR(x))             fr n=2          ist immer 
+                    ğ SQR(SQR(...(SQR(x))))   fr n=beliebig      gerade
+
+        4)  fr den Fall, daá der Exponent (y) variabel ist oder die Basis
+            (x) sowohl positive als auch negative Werte annehmen kann und der
+            Exponent ungerade ist, ist mir leider keine L”sung bekannt bzw.
+            f„llt mir auf Anhieb keine ein.
+
+
+DAS SOLLTE SIE JEDOCH NICHT DARAN HINDERN, SICH BEI MIR REGISTRIEREN ZU LASSEN,
+DA SIE, NACHDEM ICH DIESES PROBLEM GEL™ST HABE, EIN UPDATE DIESE PROGRAMMES
+GEGEN EINEN GERINGEN UNKOSTENBEITRAG ERHALTEN K™NNEN. 
+

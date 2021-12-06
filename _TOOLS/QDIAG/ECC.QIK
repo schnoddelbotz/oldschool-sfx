@@ -1,0 +1,259 @@
+readychk:
+varinit
+silent on,reset,id,tur,rcap,posterr=on,retry=8,silent off
+if status [echo Drive Not Ready!!!,echo,goto exitpgm]
+
+top:
+tag off
+r11=0,r12=0,r13=0,r14=0,r15=0,r16=0,r17=0,r18=0
+
+log.sw on
+
+scsiall:
+silent r6,rcap,posterr=on,retry=8,dissuper,silent off
+if status [echo,echo Drive NOT Ready!,echo,goto endpgm]
+r5=0
+
+echo Begin Error Correction Test - |,stamp
+lba=1000,nb=1
+
+testfly:
+ecc off
+silent r6,fill 0,wr,rdl,depb 0 01h,wrl,rd,silent off
+if status [echo,echo Note: Drive Does NOT Support ECC-On-The-Fly.,echo       Testing Will NOT Be Done With ECC OFF.,echo,r18=1]
+wr
+
+repeatl:
+if r18 eq 0 [r31=0,ecc off,r17=0] else [r31=1,ecc on,r17=1]
+
+r10=1
+r5=r5+1
+
+bothloop:
+com echo Begin Testing Bit Level ECC |
+com if r31 eq 0 [echo With ECC OFF - |]
+com if r31 eq 1 [echo With ECC ON - |]
+com stamp
+r22=1
+
+bitloop:
+buf 1,fill 0,wr
+if status [echo,echo Fail - Drive Problem.,echo,goto endpgm]
+silent r6,echo Original Bytes:,dmp 0 15,silent off
+rdl
+if status [echo,echo Fail - Drive Problem.,echo,goto endpgm]
+silent r6,wrfile eccbuf,silent off
+if r22 eq 1 [depb 0 01h]
+if r22 eq 2 [depb 0 03h]
+if r22 eq 3 [depb 0 07h]
+if r22 eq 4 [depb 0 0fh]
+if r22 eq 5 [depb 0 1fh]
+if r22 eq 6 [depb 0 3fh]
+if r22 eq 7 [depb 0 7fh]
+if r22 eq 8 [depb 0 0ffh]
+if r22 eq 9 [depb 0 0ffh 01h]
+if r22 eq 10 [depb 0 0ffh 03h]
+if r22 eq 11 [depb 0 0ffh 07h]
+if r22 eq 12 [depb 0 0ffh 0fh]
+if r22 eq 13 [depb 0 0ffh 1fh]
+if r22 eq 14 [depb 0 0ffh 3fh]
+if r22 eq 15 [depb 0 0ffh 7fh]
+if r22 eq 16 [depb 0 0ffh 0ffh]
+if r22 eq 17 [depb 0 0ffh 0ffh 01h]
+if r22 eq 18 [depb 0 0ffh 0ffh 03h]
+if r22 eq 19 [depb 0 0ffh 0ffh 07h]
+if r22 eq 20 [depb 0 0ffh 0ffh 0fh]
+if r22 eq 21 [depb 0 0ffh 0ffh 1fh]
+if r22 eq 22 [depb 0 0ffh 0ffh 3fh]
+if r22 eq 23 [depb 0 0ffh 0ffh 7fh]
+if r22 eq 24 [depb 0 0ffh 0ffh 0ffh]
+if r22 eq 25 [depb 0 0ffh 0ffh 0ffh 01h]
+if r22 eq 26 [depb 0 0ffh 0ffh 0ffh 03h]
+if r22 eq 27 [depb 0 0ffh 0ffh 0ffh 07h]
+if r22 eq 28 [depb 0 0ffh 0ffh 0ffh 0fh]
+if r22 eq 29 [depb 0 0ffh 0ffh 0ffh 1fh]
+if r22 eq 30 [depb 0 0ffh 0ffh 0ffh 3fh]
+if r22 eq 31 [depb 0 0ffh 0ffh 0ffh 7fh]
+if r22 eq 32 [depb 0 0ffh 0ffh 0ffh 0ffh]
+if r22 eq 33 [depb 0 0ffh 0ffh 0ffh 0ffh 01h]
+if r22 eq 34 [depb 0 0ffh 0ffh 0ffh 0ffh 03h]
+if r22 eq 35 [depb 0 0ffh 0ffh 0ffh 0ffh 07h]
+if r22 eq 36 [depb 0 0ffh 0ffh 0ffh 0ffh 0fh]
+if r22 eq 37 [depb 0 0ffh 0ffh 0ffh 0ffh 1fh]
+if r22 eq 38 [depb 0 0ffh 0ffh 0ffh 0ffh 3fh]
+if r22 eq 39 [depb 0 0ffh 0ffh 0ffh 0ffh 7fh]
+if r22 eq 40 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh]
+if r22 eq 41 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh 01h]
+if r22 eq 42 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh 03h]
+if r22 eq 43 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh 07h]
+if r22 eq 44 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh 0fh]
+if r22 eq 45 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh 1fh]
+if r22 eq 46 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh 3fh]
+if r22 eq 47 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh 7fh]
+if r22 eq 48 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh 0ffh]
+	   									 
+noecc:
+wrl
+if status [echo,echo Fail - Drive Problem.,echo,goto endpgm]
+silent r6,echo Modified Bytes:,dmp 0 15,silent off
+com reqs in next line is used to zero stat.2 and stat.12
+silent r6,buf 2,reqs,fill 0,rd,silent off
+r33=stat.2*256+stat.12
+silent r6,echo Corrected Bytes:,dmp 0 15,silent off
+buf 1,silent r6,rdfile eccbuf,silent off
+silent r6,cmp,silent off
+r32=0
+
+if r22 eq 1 [goto onebit]
+if r22 gt 1 [goto multbit]
+
+onebit:
+if (r33 eq 311h || cmp.stat) [echo   E R R O R - %r22 Bit NOT Corrected. |,r14=r14+1,r32=1]
+goto bitdone
+
+multbit:
+if (r33 eq 311h || cmp.stat) [echo   E R R O R - %r22 Bits NOT Corrected. |,r14=r14+1,r32=1]
+goto bitdone
+
+bitdone:
+if r32 eq 0 [goto bitpass]
+r15=0,r16=0
+if r33 eq 0 [r15=1,echo With ECC-On-The-Fly. |]
+if ((r33 eq 118h) || (r33 eq 111h)) [r16=1,echo With ECC. |]
+if r17 eq 0 [echo ECC Is OFF. |]
+if r17 eq 1 [echo ECC Is ON. |]
+echo Read Status = %r33^,silent on,reqs,silent off
+bitpass:
+wr
+
+r22=r22+1
+if r22 eq 18 [r22=r22+1]
+if ((r31 eq 0) && (r22 eq 25)) [goto bitend]
+if r22 le 48 [goto bitloop] else [goto bitend]
+bitend:
+com echo End Testing Bit Level ECC |
+com if r31 eq 0 [echo With ECC OFF - |]
+com if r31 eq 1 [echo With ECC ON - |]
+com stamp
+
+com echo,echo Begin Testing Byte Level ECC |
+com if r31 eq 0 [echo With ECC OFF - |]
+com if r31 eq 1 [echo With ECC ON - |]
+com stamp
+loop1:
+buf 1,filinc,wr
+if status [echo,echo Fail - Drive Problem.,echo,goto endpgm]
+silent r6,echo Original Bytes:,dmp 0 15,silent off
+rdl
+if status [echo,echo Fail - Drive Problem.,echo,goto endpgm]
+silent r6,wrfile eccbuf,silent off
+if r10 eq 1 [depb 0 0ffh]
+if r10 eq 2 [depb 0 0ffh 0ffh]
+if r10 eq 3 [depb 0 0ffh 0ffh 0ffh]
+if r10 eq 4 [depb 0 0ffh 0ffh 0ffh 0ffh]
+if r10 eq 5 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh]
+if r10 eq 6 [depb 0 0ffh 0ffh 0ffh 0ffh 0ffh 0ffh]
+
+if r10 eq 7 [depb 0 0ffh 01h 02h 0ffh]
+if r10 eq 8 [depb 0 00h 0ffh 02h 03h 0ffh]
+if r10 eq 9 [depb 0 00h 001h 0ffh 03h 04h 0ffh]
+if r10 eq 10 [depb 0 0ffh 0ffh 02h 0ffh 0ffh]
+if r10 eq 11 [depb 0 00h 0ffh 0ffh 03h 0ffh 0ffh]
+if r10 eq 12 [depb 0 0ffh 01h 0ffh 0ffh 04h 0ffh]
+											 
+wrl
+if status [echo,echo Fail - Drive Problem.,echo,goto endpgm]
+silent r6,echo Modified Bytes:,dmp 0 15,silent off
+com reqs in next line is used to zero stat.2 and stat.12
+silent r6,buf 2,reqs,fill 0,rd,silent off
+r33=stat.2*256+stat.12
+silent r6,echo Corrected Bytes:,dmp 0 15,silent off
+buf 1,silent r6,rdfile eccbuf,silent off
+silent r6,cmp,silent off
+r32=0
+
+if r10 eq 1 [goto onebyte]
+if ((r10 gt 1) && (r10 lt 7)) [goto multbyte]
+if ((r10 gt 6) && (r10 lt 13)) [goto interlea]
+
+onebyte:
+if (r33 eq 311h || cmp.stat) [echo   E R R O R - %r10 Byte NOT Corrected. |,r14=r14+1,r32=1]
+goto msgdone
+
+multbyte:
+if (r33 eq 311h || cmp.stat) [echo   E R R O R - %r10 Bytes NOT Corrected. |,r14=r14+1,r32=1]
+goto msgdone
+
+interlea:
+if (r33 eq 311h || cmp.stat) [goto notcorr] else [goto correct]
+
+notcorr:
+if r10 eq 7 [echo   E R R O R - 2 Bytes In Interleave 1 NOT Corrected. |,r14=r14+1,r32=1 ]
+if r10 eq 8 [echo   E R R O R - 2 Bytes In Interleave 2 NOT Corrected. |,r14=r14+1,r32=1 ]
+if r10 eq 9 [echo   E R R O R - 2 Bytes In Interleave 3 NOT Corrected. |,r14=r14+1,r32=1 ]
+if r10 eq 10 [echo   E R R O R - Bytes In Interleaves d1 d2 d4 d5 NOT Corrected. |,r14=r14+1,r32=1 ]
+if r10 eq 11 [echo   E R R O R - Bytes In Interleaves d2 d3 d5 d6 NOT Corrected. |,r14=r14+1,r32=1 ]
+if r10 eq 12 [echo   E R R O R - Bytes In Interleaves d1 d3 d4 d6 NOT Corrected. |,r14=r14+1,r32=1 ]
+goto msgdone
+
+correct:
+com r32=1
+com if r10 eq 7 [echo 2 Bytes In Interleave 1 Corrected |]
+com if r10 eq 8 [echo 2 Bytes In Interleave 2 Corrected |]
+com if r10 eq 9 [echo 2 Bytes In Interleave 3 Corrected |]
+com if r10 eq 10 [echo Bytes In Interleaves d1 d2 d4 d5 Corrected |]
+com if r10 eq 11 [echo Bytes In Interleaves d2 d3 d5 d6 Corrected |]
+com if r10 eq 12 [echo Bytes In Interleaves d1 d3 d4 d6 Corrected |]
+goto msgdone
+
+msgdone:
+if r32 eq 0 [goto bytepass]
+r15=0,r16=0
+if r33 eq 0 [r15=1,echo With ECC-On-The-Fly. |]
+if ((r33 eq 118h) || (r33 eq 111h)) [r16=1,echo With ECC. |]
+if r17 eq 0 [echo ECC Is OFF. |]
+if r17 eq 1 [echo ECC Is ON. |]
+echo Read Status = %r33^,silent on,reqs,silent off
+bytepass:
+wr
+
+r10=r10+1
+if ((r10 eq 4) && (r31 eq 0)) [goto eccon] else [goto chkloop]
+eccon:
+com echo End Testing Byte Level ECC |
+com if r31 eq 0 [echo With ECC OFF - |]
+com if r31 eq 1 [echo With ECC ON - |]
+com stamp
+com echo
+r10=1,r31=1,ecc on,r17=1
+goto bothloop
+
+chkloop:
+if r10 le 12 [goto loop1] else [goto done]
+
+done:
+com echo End Testing Byte Level ECC |
+com if r31 eq 0 [echo With ECC OFF - |]
+com if r31 eq 1 [echo With ECC ON - |]
+com stamp
+com echo
+
+if r14 eq 0 [echo   PASSED - Error Correction Test.]
+if r14 gt 0 [echo   FAILED - Error Correction Test.  Total Errors = %r14]
+
+echo End Error Correction Test - |,stamp
+
+if r60 eq 2 [flush,goto exitpgm]
+com if r4 eq 1 [ echo 1 Of 1 ECC Test Loops Done.,goto endpgm ] 
+com if r5 lt r4 [ echo %r5 Of %r4 ECC Test Loops Done.,echo] else [echo %r5 Of %r4 ECC Test Loops Done.,goto endpgm]
+com if ((r5 lt r4) && (r60 eq 0)) [goto repeatl]
+com if ((r5 lt r4) && (r60 eq 1)) [echo %r58 Of %r57 Test Loops Done For All SCSI Regression Tests.,goto repeatl]
+
+endpgm:
+flush
+if r60 eq 0 [ fclose,log.sw off,echo,pause,goto getsel ]
+
+exitpgm:
+if ((status ne 0) && (r60 eq 2)) [r52=1]
+
+

@@ -1,0 +1,1761 @@
+McAfee Readme.1st 
+  
+TABLE OF CONTENTS 
+  
+1.0 Product License Information  
+2.0 Personal Single Use Registration Form  
+3.0 Where To Find Us  
+	3.1 Home Office Information  
+	3.2 Electronic Access  
+	3.3 International Agent Listing  
+4.0 File Naming Conventions For VirusScan  
+5.0 Using The Validate Feature  
+6.0 Support On CompuServe Plus An Introductory Membership Form  
+
+  
+ 
+ 
+1.0 PRODUCT LICENSE INFORMATION  
+
+To register your McAfee Product please refer to registration section
+below in this file.
+
+PLEASE FEEL FREE TO (i) UPLOAD THIS SOFTWARE TO ANY ELECTRONIC
+BULLETIN BOARD, (ii) DEMONSTRATE THE SOFTWARE AND ITS
+CAPABILITIES OR (iii) GIVE COPIES TO POTENTIAL USERS, SO THAT
+OTHERS MAY HAVE THE OPPORTUNITY TO OBTAIN A COPY FOR USE IN
+ACCORDANCE WITH THE LICENSE TERMS CONTAINED IN THIS FILE.  
+
+
+NOTICE TO USERS: CAREFULLY READ THE FOLLOWING LEGAL AGREEMENT.
+USE OF THE SOFTWARE PROVIDED WITH THIS AGREEMENT (THE "SOFTWARE")
+CONSTITUTES YOUR ACCEPTANCE OF THESE TERMS. IF YOU DO NOT AGREE
+TO THE TERMS OF THIS AGREEMENT, PROMPTLY REMOVE THE SOFTWARE
+TOGETHER WITH ALL COPIES FROM YOUR COMPUTER.  USER'S USE OF THIS
+SOFTWARE IS CONDITIONED UPON COMPLIANCE BY USER WITH THE TERMS OF
+THIS AGREEMENT. THE SOFTWARE MAY BE EVALUATED FOR THIRTY  DAYS
+ON A ROYALTY FREE BASIS. CONTINUED USE AFTER EVALUATION IS CONDITIONED
+UPON PAYMENT BY USER OF THE REGISTRATION FEE SPECIFIED IN THE FILE:
+REGISTER.TXT FROM MCAFEE, INC. ("MCAFEE").
+
+1. LICENSE GRANT. McAfee grants to you a non-exclusive, non-transferable
+   right to use the SOFTWARE on file servers connected to a maximum
+   number of user computers, or on a maximum number of user computers,
+   not exceeding the number of user computers specified on the packaging
+   for this product. This license to use the SOFTWARE is conditioned
+   upon your compliance with the terms of this Agreement. You agree you
+   will only copy the SOFTWARE into any machine-readable or printed form
+   as necessary to use it in accordance with this license or for backup
+   purposes in support of your use of the SOFTWARE. This license
+   is effective until terminated. You may terminate it at any point by
+   destroying the SOFTWARE together with all copies of the SOFTWARE.
+   Also, McAfee has the option to terminate if you fail to comply with
+   any term or condition of this Agreement. You agree upon such
+   termination to destroy the SOFTWARE together with all copies of
+   the SOFTWARE.
+
+2. COPYRIGHT. The SOFTWARE is protected by United States copyright law
+   and international treaty provisions. You acknowledge that no title to
+   the intellectual property in the SOFTWARE is transferred to you. You
+   further acknowledge that title and full ownership rights to the
+   SOFTWARE will remain the exclusive property of McAfee or its
+   suppliers, and you will not acquire any rights to the SOFTWARE
+   except as expressly set forth in this license. You agree that any
+   copies of the SOFTWARE will contain the same proprietary notices
+   which appear on and in the SOFTWARE.
+
+3. REVERSE ENGINEERING. You agree that you will not attempt to reverse
+   compile, modify, translate, or disassemble the SOFTWARE in whole or
+   in part.
+
+4. LIMITED WARRANTY. McAfee warrants that the SOFTWARE will perform
+   substantially in accordance with the accompanying written materials
+   for a period of thirty (30) days from the date of purchase. Any
+   implied warranties relating to the SOFTWARE are limited to thirty
+   (30) days.
+
+5. CUSTOMER REMEDIES. If the SOFTWARE does not conform to the limited
+   warranty in Section 4 above ("Limited Warranty"), McAfee's entire
+   liability and your sole remedy shall be, at McAfee's option, either
+   to (a) correct the error or (b) help you work around or avoid the
+   error. The Limited Warranty is void if failure of the SOFTWARE has
+   resulted from accident, abuse, or misapplication. Any replacement
+   SOFTWARE will be warranted for the remainder of the original Limited
+   Warranty period.
+
+6. NO OTHER WARRANTIES. McAFEE DOES NOT WARRANT THAT THE SOFTWARE IS
+   ERROR FREE. EXCEPT FOR THE EXPRESS LIMITED WARRANTY IN SECTION 4
+   ("LIMITED WARRANTY"), McAFEE DISCLAIMS ALL OTHER WARRANTIES WITH
+   RESPECT TO THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT
+   NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+   A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS.
+   SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES
+   OR LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY MAY LAST, OR THE
+   EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES,
+   SO THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
+   THIS WARRANTY GIVES YOU SPECIFIC LEGAL RIGHTS AND YOU MAY ALSO
+   HAVE OTHER RIGHTS WHICH VARY FROM JURISDICTION TO JURISDICTION.
+
+7. SEVERABILITY. In the event of invalidity of any provision of this
+   license, the parties agree that such invalidity shall not affect the
+   validity of the remaining portions of this license.
+
+8. NO LIABILITY FOR CONSEQUENTIAL DAMAGES. IN NO EVENT SHALL McAFEE OR
+   ITS SUPPLIERS BE LIABLE TO YOU FOR ANY CONSEQUENTIAL, SPECIAL,
+   INCIDENTAL OR INDIRECT DAMAGES OF ANY KIND ARISING OUT OF THE
+   DELIVERY, PERFORMANCE OR USE OF THE SOFTWARE, EVEN IF McAFEE HAS
+   BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO EVENT
+   WILL McAFEE'S LIABILITY FOR ANY CLAIM, WHETHER IN CONTRACT,
+   TORT OR ANY OTHER THEORY OF LIABILITY, EXCEED THE LICENSE FEE
+   PAID BY YOU, IF ANY.
+
+9. GOVERNING LAW. This license will be governed by the laws of the
+   State of California as they are applied to agreements between
+   California residents entered into and to be performed entirely
+   within California. The United Nations Convention on Contracts
+   for the International Sale of Goods is specifically disclaimed.
+
+10.ENTIRE AGREEMENT. This is the entire agreement between you and
+   McAfee which supersedes any prior agreement or understanding,
+   whether written or oral, relating to the subject matter of this
+   license.
+
+U.S. GOVERNMENT RESTRICTED RIGHTS
+If this product is acquired under the terms of a (i) Civilian Agency
+Contract - use, reproduction or disclosure is subject to
+FAR 52.227-19(a) through (d) and restrictions set forth in the
+accompanying end user agreement; and (ii) DoD Contract - use,
+duplication or disclosure by the Government is subject to the
+terms of this license unless superseded by 252.227-7013(c)(1)(ii).
+Contractor/Manufacturer: McAfee Associates, 2710 Walsh Avenue,
+Santa Clara, California 95051-0963.
+
+Should you have any questions concerning this license agreement,
+or if you desire to contact McAfee for any reason, please call
+(408) 988-3832, fax (408) 970-9727, or write: McAfee Associates,
+2710 Walsh Avenue, Santa Clara, California 95051-0963.
+
+
+  
+ 
+2.0 USE OF McAfee SOFTWARE PROGRAMS  
+  
+     Complete the form below to register your McAfee software programs
+     for personal use on a single computer.
+
+    ______________________________________________________________
+
+
+   McAFEE REGISTRATION FORM for Single Users ONLY
+
+     PROGRAM:                          # COPIES            AMOUNT
+
+     VirusScan for DOS ($65)           _________         $________
+
+     VirusScan for OS/2 ($65)          _________         $________
+
+     VirusScan for Windows 3.X ($65)   _________         $________
+            
+     VirusScan for Windows 95 ($65)    _________         $________
+	
+     VirusScan for Windows NT ($65)    _________         $________
+
+     VirusScan for the Macintosh ($65) _________         $________
+     
+     WebScan ($65)                     _________         $________
+
+     BootShield ($35)                  _________         $________
+                     
+     NetRemote ($65)                   _________         $________
+     
+     ImageStor/FileStor ($65)          _________         $________
+
+     VirusScan MANUAL ($25)            _________         $________
+     
+     NetRemote MANUAL ($35)            _________         $________     
+
+     UPDATE SERVICE ($60)*             _________         $________
+
+     SALES TAX-   California residents add 7.25%         $________
+        (Santa Clara County residents add 7.75%)
+                  New Jersey residents add 6.00%
+                  Texas residents add 8.25%      
+
+TOTAL         . . . . . . . . . . . . . . . . . . . .    $________
+
+PAYMENT INFORMATION:
+
+CHARGE:
+
+MasterCard ___ Visa ___  American Express ___ Expiration Date__________
+
+Card Number:_____________________________________________________
+
+Card Issued To:__________________________________________________
+
+Signature:_______________________________________________________
+                                                                      
+MAILING ADDRESS:
+
+Name:____________________________________________________________
+
+Address:_________________________________________________________
+
+City/State/Province:_____________________________________________
+
+Country/Postal Code:_____________________________________________
+
+Telephone (Voice/FAX/Modem):_____________________________________
+
+Internet Email Address:__________________________________________
+
+Send or FAX (408)970-9727 completed Registration Forms to:
+
+       McAfee 
+       2710 Walsh Avenue
+       Santa Clara, California
+       95051-0963  USA
+
+     If you are interested in licensing our BrightWorks, SiteMeter,
+     SiteExpress, NetTools, Saber LAN Workstation, NetShield,
+     LAN Inventory, LAN Support Center, or ServerStor products,
+     please contact a McAfee territory representative at:
+     (408) 988-3832 or FAX (408) 970-9727.
+
+
+  *   Customers who subscribe to Maintenance (UPDATE SERVICE) will
+be entitled to receive all enhancements to the Licensed Software, 
+online documentation updates as well as new versions of the software
+when they are made commercially available for the term of the 
+Maintenance Agreement (2 years). Upgrades to software and documentation 
+are available through the McAfee BBS, Internet, America Online, CompuServe
+and The Microsoft Network only and will not be mailed to users.
+
+**   Initial disks are available upon purchase of the Update Service only.
+Disks are shipped U.S. Mail First Class in the United States and Airmail
+to foreign countries.  Future upgrades to software and documentation are
+available through the McAfee BBS, Internet, America Online, CompuServe
+and The Microsoft Network only and will not be mailed to users.
+
+_________________________________________________________________
+
+3.0 WHERE TO FIND US  
+  
+3.1 HOME OFFICE  
+
+McAfee   
+2710 Walsh Avenue  
+Santa Clara, California  
+95051-0963 USA  
+    
+For questions, orders and problems call
+(M-F, 6:00AM - 5:00PM PST):               (408) 988-3832  Business
+
+For Faxes (24 hour, Group III FAX):       (408) 970-9727  FAX
+
+3.2 ELECTRONIC ACCESS  
+
+Bulletin Board System (24 hour US Robotics HST DS):  (408) 988-4004 
+
+Internet Email:  support@mcafee.com
+Internet FTP:  ftp.mcafee.com
+WWW:  http://www.mcafee.com
+America Online:  MCAFEE
+CompuServe:  GO MCAFEE
+The Microsoft Network:  GO MCAFEE
+  
+3.3 INTERNATIONAL AGENT LISTING (as of December 22, 1995)
+
+	 In  order  to  provide the global  community  with  anti-virus
+coverage  in a timely manner, McAfee Associates has established  an
+Agents  program  to provide service, sales and support  for  McAfee
+Associates  products  around  the world.  If you do  not  see  your
+country  listed,  please  contact  McAfee  Associates  directly.  A
+listing  of United States Agents, separated by geographical region,
+has been added to the end of this file.
+
+
+INTERNATIONAL AGENTS
+====================
+
+ALBANIA
+Ultimobyte Editrice, s.r.l.
+Address:      Via A. Zezon, 10
+	      20124 Milano, ITALY
+Contact:      Ilir Ciko
+Telephone:    +355 (44) 25369
+Fax:          +39 (2) 66 983 233
+BBS:          +39 (2) 66 980 344
+Compuserve:   100013,1552              
+Internet:     100013.1552@compuserve.com
+
+ARGENTINA
+RAN Ingenieria de Sistemas
+Address:      Sarmiento 1371-OF. 707
+	      Buenos Aires-1041
+Contact:      Roberto Tursi
+Telephone:    +54 (1) 374-8022/375-0451
+Fax:          +54 (1) 334-7802
+
+AUSTRALIA
+Computerware for Micros
+Telephone:    (008) 882-875 National Toll Free
+Fax:          +61 (08) 363-1974 National
+BBS:          +61 (08) 362-4293 National
+     
+     SYDNEY -  HOME OFFICE
+Address:      1st Floor, 88 George Street
+	      The Rocks, N.S.W.  2000
+Contact:      John Hillam
+Sales/Support:John Valentine
+Telephone:    +61 (02) 252-3546
+Fax:          +61 (02) 252-3353
+BBS:          +61 (02) 252-3034
+			       
+     ADELAIDE BRANCH
+Contact:      Graham Miller
+Telephone:    +61 (08) 362-8200
+Fax:          +61 (08) 363-1974
+BBS:          +61 (08) 362-4293
+
+     MELBOURNE BRANCH
+Contact:      Peter Brooks
+Telephone:    +61 (03) 686-8211
+Fax:          +61 (03) 686-8243
+BBS:          +61 (03) 686-8244
+     BRISBANE BRANCH
+Contact:      Gerald Penaflor
+Telephone:    +61 (1-800) 882-875
+Fax:          +61 (02) 252-3353
+BBS:          +61 (07) 807-7244
+     PERTH BRANCH
+Contact:      Sheryl Martin
+Telephone:    +61 (08) 362-8200
+Fax:          +61 (08) 363-1974
+BBS:          +61 (09) 300-3080
+     CANBERRA BRANCH
+Contact:      John Valentine
+Telephone:    +61 (1-800) 882-875
+FAX:          +61 (02) 252-3353
+BBS:          +61 (06) 254-8199
+     TOWNSVILLE BRANCH
+BBS:          +61 (077) 79-1546
+
+
+AUSTRALIA
+Doctor Disk
+Toll-Free:    (008) 999 755 (outside of Perth Metro Area)
+e-mail:       sales@drdisk.omen.com.au
+	      support@drdisk.omen.com.au
+
+     SYDNEY OFFICE (HEAD OFFICE)
+Contact:      Derek Conibear
+Address:      Level 7, 418A Elizabeth Street
+	      Surry Hills  NSW 2010
+Telephone:    +61 (02) 281-2099
+Fax:          +61 (02) 281-9740
+BBS:          +61 (02) 281-4015
+
+     MELBOURNE OFFICE
+Contact:      David Purdon
+Address:      213 - 217 Clarendon St.
+	      South Melbourne  VIC 3205
+Telephone:    +61 (03) 690-9100
+Fax:          +61 (03) 696-4884
+
+     CANBERRA OFFICE
+Contact:      Roger Hagelaar
+Address:      Unit 6, 9-11 Napier Close
+	      Deakin  ACT 2600
+Telephone:    +61 (06) 282-1599
+FAX:          +61 (06) 282-1172
+
+     BRISBANE OFFICE
+Contact:      Richard Windsor
+Address:      1st Floor, 37 Mein St.
+	      Spring Hill  QLD 4000
+Telephone:    +61 (07) 831-0151
+Fax:          +61 (07) 831-0149
+
+     PERTH OFFICE
+Contact:      Barry Dowell
+Address:      77 Bulwer St.
+	      Perth  WA 6000
+Telephone:    +61 (09) 328-2011
+Fax:          +61 (09) 328-9661
+BBS:          +61 (09) 227-7459
+
+     ADELAIDE OFFICE
+Contact:      Natalie Drummond
+Address:      77 Pirie Street
+	      Adelaide  SA 5000
+Telephone:    +61 (08) 223-5788
+Fax:          +61 (08) 223-6679
+
+
+AUSTRIA
+ComIn -Claudia Strasser (formerly Terramar)
+Address:      Hofmuhlgasse 21/21
+	      A-1060 Wien
+Contact:      Ronald Schmutzer
+Telephone:    +43 (1) 596-4048
+Fax:          +43 (1) 596-4023
+BBS:          +43 (1) 596-4021 (3 lines)
+
+BAHRAIN
+Deena International Commercial Agency
+Address:      P.O. Box 5168
+	      Al Zahra Bldg., 1st Floor
+	      SH Issa Al Kabeer Rd.
+	      Manama
+Contact:      Ehab Al-Maskati
+Telephone:    +973 261 247
+Fax:          +973 230 418
+Telex:        8613 DICA BN
+Cable:        DICANTER
+
+BELGIUM
+Impakt nv
+Address:      Ham 64
+	      B-9000 Gent
+Contact:      Frank Lateur
+Telephone:    +32 (92) 25 35 49
+Fax:          +32 (92) 33 00 78
+BBS:          +32 (92) 23 40 16
+
+BERMUDA
+Applied Computer Technologies
+Address:      P.O. Box HM 2091
+	      Hamilton, HM HX
+Contact:      Craig Clark
+Sales:        (809) 295-1616
+	Fax:  (809) 292-7967  
+Tech.Support: (809) 292-4776
+	Fax:  (809) 292-5361
+BBS:          (809) 292-1774 [US Robotics Courier v.Everything](3 lines)
+E-mail:       act@ibl.bm             
+
+BRAZIL
+COMPUSUL Consultoria e Comercio de Informatica Ltda.
+Address:      Rua Unapitinga, 81
+	      04613-070 - Sao Paulo, SP
+Contact:      Andre Pitkowski
+Telephone:    +55 (11) 530-6822
+Fax:          +55 (11) 531-7598
+BBS:          +55 (11) 536-9583 [1200-14,400 bps, v.32/v.32bis]
+Internet mail: compusul@ax.apc.org
+Internet:      andpitko@embratel.net.br
+Internet Site: www.compusul.com
+
+CHILE
+Rigg S.A.
+Address:      Avda. Salvador 1068
+	      P.O. Box 10.295
+	      Santiago
+Contact:      Ricardo Gutierrez
+Telephone:    +56 (2) 225-0222
+Fax:          +56 (2) 225-0240
+BBS:          +56 (2) 204-8602 [v.32bis/v.34 28.8kb - 4 lines]
+Internet:     rgutierr@rigg.cl
+
+
+CHINA
+* See Taiwan
+
+
+COLOMBIA
+Antivirus Ltda.
+Address:      Carrera 7 No. 72 64
+	      Officina 2-22
+	      Santafe de Bogota
+Contact:      Juan Colmenares
+Telephone:    +57 (1) 255 9910
+	      +57 (1) 310 7291
+Cellular:     +57 (1) 93-331-2348
+Fax:          +57 (1) 255 9910
+Internet:     jmcolmen@itec5.telecom-co.net
+
+CYPRUS
+NetU Consultants
+Address:      PO Box 8709
+	      Nicosia
+Contact:      Andreas Hadjioannou
+	      or Pannikos Akritas
+Telephone:    +357 (2) 360080
+Fax:          +357 (2) 361026
+
+CZECH REPUBLIC
+AEC Ltd.
+Address:      Bayerova 30
+	      602 00 Brno
+Contact:      Jiri Mrnustik, MSc.
+Telephone:    +42 (5) 41235466
+FAX:          +42 (5) 41235038
+BBS:          +42 (5) 41210571
+Internet:     support@aec.anet.cz
+
+DENMARK
+Danadata A/S
+Address:      Graham Bells Vej 7
+	      8200 Aarhus N
+Contact:      Steen Pedersen
+Telephone:    +45 (70) 10 80 80
+Fax:          +45 (86) 78 31 38
+Sales:        +45 (44) 80 77 41
+BBS:          +45 (86) 78 31 34 [1200-28800bps/24 hours]
+Internet:     mcafee@danadata.dk
+WWW:          www.danadata.dk/mcafee
+FTP Server:   ftp.danadata.dk/pub/McAfee/mcafee
+
+FAROES ISLANDS
+Adaptive Design
+Address:      FR-690 Oyndarfjorour
+Contact:      Kaj Heri Joensen
+Telephone:    +298 44872
+Fax:          +298 44873
+Cellular:     +298 88872
+Internet:     adap.khj@login.dknet.dk
+
+
+FIJI AND SURROUNDING ISLANDS
+South Seas Computing
+Address:      GPO Box 1001
+	      Suva
+	      Fiji Island
+Contact:      David Campbell
+Telephone:    +679 386455
+Fax:          +679 370875
+
+FINLAND
+SAFECO OY
+Address:      Kirvuntie 22
+	      02140 Espoo
+Contact:      Hannu Ohrling
+Telephone:    +358 (0) 512 1100
+Fax:          +358 (0) 515 151
+BBS:          +358 (9)0 512 2483
+MCI Mail:     540-0324
+
+FRANCE
+McAfee-France
+Address:        50 rue de Londres
+		75008 Paris
+Contact:        Patrick Le Granche
+Telephone:      +33 1 44 90 87 37
+Fax:            +33 1 45 22 75 54
+BBS:            +33 1 45 22 76 01
+Minitel:        3616 SOS Virus
+
+GERMANY
+McAFEE-Germany
+Address:        Industriestrasse 1
+		D-82110 Germering
+Contact:        Michael Struss
+Tel:            +49 (0)8 9894356-0
+Fax:            +49 (0)8 9894356-99
+
+GERMANY
+R. Bucker EDV - Beratung
+Datentechnick GmbH
+Address:      Nordhemmer Str. 94
+	      D-32479 Hille 1
+Contact:      z.H. Frau Rosmarie Buecker 
+Telephone:   +49 (0) 5703-2829
+	     +49 (0) 5703-3610
+Fax:         +49 (0) 5703-3648
+BBS:         +49 (0) 5703-817
+(nur ISDN)   +49 (0) 5703 91 00 00
+	     (Channel Bundling moglich)
+Compuserve:  100024,1341
+
+GHANA
+Network Computer Systems
+Address:      Private Mail Bag
+	      OSU, Accra
+Contact:      Andy Bulley
+	      William Tevie
+Telephone:    +233 (21) 220622,225472,300340
+Fax:          +233 (21) 772279
+Internet:     bulley@ncs.com.gh
+Telex:        3047/48 BTH25 GH
+
+GIBRALTAR
+Interactive Systems Ltd.
+Address:      PO Box 397
+	      2a International House
+	      Bell Lane
+Contact:      Jim Watt
+Telephone:    +350 73285
+Fax:          +350 73385
+BBS:          73301
+Internet:     jimwatt@bix.com
+
+GREECE
+TopNet Computers Ltd
+Address:      15 Mpakopoulou St.
+	      154 51 Neo Psixiko
+	      Athens
+Contact:      Dimitrios Georgiadis
+Telephone:    +30 (1) 647 6066
+	      +30 (1) 647 5378
+Fax:          +30 (1) 672 6629
+
+HONG KONG
+Skynet Consultants Company
+Address:      Unit A - 23F, 
+	      Empire Land Commercial Centre
+	      81-85 Lockhart Road
+	      Wanchai
+Contact:      Isabel Chan
+Telephone:    +852 2520-2608  
+Fax:          +852 2529-2618
+Internet:  sky-info@skynet.com.hk
+BBS:+8522592968     
+
+HONG KONG
+MCSB Systems (HK) Ltd.
+Address:      Room 1504 Kodak House
+	      Phase 2  321 Java Road
+	      North Point
+Contact:      Koh Mui Tong
+Telephone:    +852 2564 4328
+Fax:          +852 2597 4645
+
+			 
+HUNGARY
+Pik-SYS Company Ltd.
+Address:      Szentmiklosi u.18
+	      H-1213 Budapest
+Contact:      Maria Pistar
+Telephone:    +36 (1) 276-0864
+Fax:          +36 (1) 276-5714
+Compurserve:  100263,461
+
+ICELAND
+Gagnanbankinn Villa (formerly Tolvur og Fjarskipti)
+Address:      Dugguvogi 2
+	      104 Reykjavik
+Contact:      Jim Hayward or Ari Thor Johannesson
+Telephone:    +354 58809900 (Ari Thor Jahannesson)
+	      +354 587 9999 (ATJ)
+	      +354 421 6984 (Jim Hayward)
+Fax:          +354 4216 986
+BBS:          +354 9025151
+	      +354 4216986
+BBS NUA:      X.25 NUA 271011991000
+
+INDIA
+Foremost Systems P. Ltd.
+Address:      2G, Kashmir Emporium Bldg.
+	      P.m. Road
+	      Bombay 400 001
+Contact:      Mr. Siddharth Mehta
+Telephone:    +91 (22) 266 2602
+Fax:          +91 (22) 495 0341
+Telex:        011-82579 (Attn: Sid Mehta)
+
+INDONESIA
+P.T. Yakin Aman
+Address:      #15-16, Block FX-1
+	      Jalan Kelapa Gading Boulevard
+	      Jakarta 14240
+Contact:      M.A. Sunardi
+Telephone:    +62 21 453-0072
+	      +62-21-453-2729
+	      +62-21-453-2880
+Fax:          +62 21 453-2731
+BBS:          +62-21-624-4286
+Internet:     Sunardi@jaknet.org
+
+
+INDONESIA
+PT Asiasoft Nusantara
+Address:      Jalan Satria Raya
+	      No1B Grogol
+	      Jakarta 11460
+Contact:      Mr. Santino Widjaja
+Telephone:    +62 21 566-7005
+Fax:          +62 21 566-7006
+BBS:          +65 741-8707
+
+
+INDONESIA
+MSCB International Pte. Ltd.
+Address:      MidPlaza II Building, 14th Floor
+	      JI. Jend. Sudirman Kav. 10-11
+	      Jakarta 10220
+Contact:      Benny Agus
+Telephone:    +62 21 570-7689
+Fax:          +62 21 570-7707
+
+
+IRELAND
+Systemhouse Technology Group Ltd
+Address:      South County Business Park
+	      Leopardstown Road
+	      Dublin 2
+Contact:      Dermot Williams or Stephen Kearon
+Telephone:    +353 (1) 294 0440
+Fax:          +353 (1) 294 0441
+Fax-on-demand:+353 (1) 678 9012
+BBS:          +353 (1) 294 0446 [4 lines v.32bis/v.42bis/ZyXEL 16.8/19.2Kbs]
+CompuServe:   100020,2206
+Internet:     dermot@systemhouse.ie
+	      stephen@systemhouse.ie
+
+ISRAEL
+Chief Data Recovery Company
+Address:      15 Ha'banim Street
+	      PO Box 499
+	      Nes-Ziona  70400
+Contact:      Danny Ruff
+Telephone:    +972 (8) 400 070
+Fax:          +972 (8) 403 295
+BBS:          +972 (3) 966 7562 [v.32bis/v.42bis/14400bps]
+	      +972 (3) 967 3919 [v.32bis/v.42bis/14400bps]
+	      +972 (3) 967 3499 [v.32bis/v.42bis/14400bps]
+	      +972 (3) 967 3256 [MNP5/2400bps]
+
+ITALY
+Ultimobyte Editrice, SRL
+Address:      Via Achille Zezon, 10
+	      20124 Milano
+Contact:      Adalberto Fontana
+Telephone:    +39 (2) 6698-3133
+Fax:          +39 (2) 6698-3233
+BBS:          +39 (2) 6698-0344
+CompuServe:   100013,1552
+
+JAMAICA
+Eagle Information Systems Ltd. (formally W.T.G APTEC Systems Ltd.)
+Address:      2-6 Trafford Place
+	      Kingston 5
+		Jamaica W.I.
+Contact:      Arnold McDonald
+Telephone:    (809) 960-2359/60, 960-2362
+Fax:          (809) 968-1755
+
+JAPAN
+McAfee Japan Representative Office
+Address:      101 9-1-14 Seijo Setagaya
+	      Toyko 157
+Contact:      Yutaka Matsuura
+Tel:          +81 (3) 5490-1816
+Fax:          +81 (3) 5490-1816
+Internet:     mcafeej@po.iijnet.or.jp
+
+JAPAN - Master Sales Agent
+Nippon System Development (NSD)
+Address:          2-7-1 Nishi-shinjuku
+		  Shinjuki-ku
+		  Tokyo 163
+Contact:          Ryoji Udo
+Tel:              +81-3-3342-1411
+Fax:              +81-3-3342-0451
+		  +81-3-3342-2987
+
+JAPAN - Master Sales Agent (OEM)
+Sumitomo Metal Industries, Ltd.
+Address:          Mita Nittodai Building
+		  3-11-36 Mita Minato-Ku
+		  Tokyo 108
+Contact:          Hideaki Terazawa
+Tel:              81-3-5476-9816
+Fax:              81-3-5476-9886
+Internet:         hyper@mit.sumikin.co.jp
+
+
+KOREA 
+Hycom Datacommunications,Inc.
+Address:          Kumwon Building
+		  943-12 Daechi-3 Dong, Kangnam Ku
+		  Seoul, South Korea  135-283
+Contact:          Ryan H. Kim
+Tel:              +82-2-554-1445
+Fax:              +82-2-555-4294
+Internet:         sales@hynix.hycom.co.kr
+
+
+KUWAIT
+AL BAYAN Consulting Group
+Address:      P.O. Box 23641
+	      Safat-Kuwait
+Contact:      Ashraf S. El-Farra
+Telephone:    +965 243 1399
+	      +965 245 7345
+	      +965 245 7354
+Fax:          +965 243 1398
+
+MALAYSIA
+Asiasoft (M) Sdn Bhd
+Address:      70 Jalan SS21/39 Damansara Utama
+	      47400 Pataling Jaya
+	      Selangor
+Contact:      Mr. S.H. Lim
+Telephone:    +60 3 717-3417
+Fax:          +60 3 717-3376
+
+MALAYSIA
+MCSB Systems (M) Berhad
+Address:      Ground Floor, Wisma Mirama
+	      Jalan Wisma Putra
+	      50460 Kuala Lumpur
+Contact:      Tee Lian Hock
+Telephone:    +60 3 241 7400
+Fax:          +60 3 248 8010
+
+MAURITIUS
+J. Kalachand & Co. Ltd.
+Address:      Stage II Building
+	      DBM Industrial Estate
+	      Plaine Lauzun
+Contact:      Sanjeet Sobnack
+Telephone:    +230 212-6313
+Fax:          +230 212-8244
+
+MEXICO
+McAfee Associates, Mexico, S.A. de C.V.
+Address:      Av. Nuevo Leon No.253, Desp. 501
+	      Col. Escandon, C.P. 11800, Mexico D.F.
+Contact:      Patricia De la Mora (Sales)
+	      Carlos Soto (Technical Support)
+Telephone:    +52 (5) 515-0015
+Fax:          +52 (5) 273-1019
+BBS:          +52 (5) 988-4004 [1200-9600 bps]
+Internet:     delamora@mail.internet.com.mx
+
+NETHERLANDS, THE
+McAfee Nederland B.V.
+Address:      Burgemeester van Lanschotlaan 2
+	      5262 AG  Vught
+	      PO Box 192
+	      5260 AD  Vught
+Contact:      Anja Vink
+Telephone:    +31 (73) 656 3319
+Fax:          +31 (73) 657 0647
+BBS:          +31 (73) 657 0626 [28,800bps]
+Technical Support Contact: Richard van Eckendonk
+Telephone: +31 (73) 656 9774
+Internet:  rvanecke@knoware.nl
+
+
+NETHERLANDS ANTILLES
+Micro Computer Consultants
+Address:      Fokkerweg 30
+	      Muskus Building
+	      Willemstad Curaco
+Contact:      Lillian Copini
+Telephone:    +599 (9) 61 31 61
+Fax:          +599 (9) 61 61 19
+
+NEW ZEALAND
+Computer Software Library of NZ, Ltd.
+Address:      PO Box 162
+	      Timaru
+Contact:      Bill Strauss
+Telephone:    +64 (3) 615-9333
+Fax:          +64 (3) 615-9303
+BBS:          +64 (3) 615-9313
+Mobile Phone: +64 (25) 32-8443
+Help Line:    0800 - 508 - 333 (Toll free within NZ)
+
+NORWAY
+COMMA
+Address:      Olaf Helsetsv. 5
+	      Postboks 6448 Etterstad
+	      0605 Oslo
+Contact:      Halvard Flo
+Telephone:    +47 (22) 627500
+Fax:          +47 (22) 627501
+
+NORWAY
+SCANDINAVIAN COMMUNICATIONS SYSTEMS
+Address:      Ostensjovn 39
+	      Oslo, Norway  NO611
+Contact:      Hans-Petter Hansen
+Telephone:    +47 (2) 265-8180
+Fax:          +47 (2) 265-4770
+Internet:     hans.hansen@scs.no
+
+PAKISTAN
+SBS Computers
+Address:      7-10 Hina Palace
+	      Civil Lines, Hoshang Road
+	      Karachi-75530, Pakistan
+Contact:      Shahbaz Yousuf
+Telephone:    +922 1 567 5070
+Fax:          +922 1 568 5079
+
+PERU
+Cibertec Data SA
+Address:      Av. Pardo Y Aliaga 668
+	      Lima 27
+	      Peru
+Contact:      Jorge Tupac-Yupanqui
+Telephone:    +51 (14) 210700/216226/215548
+Fax:          +51 (14) 210722
+
+PAPUA NEW GUINEA
+Computers and Communications
+Address:          Tamara Road, Six Mile,
+	      (P O Box 1023)
+	      Port Moresby
+Contact:      Scott Braiding
+Telephone:    +675-25-7466
+Fax:          +675-25-8772
+CompuServe:   72711,1766
+
+PHILIPPINES and GUAM
+Mannasoft Technology Corporation
+Address:      Suite 105 Mid-Land Mansion
+	      839 Pasay Road, Makati
+	      Metro Manila
+Contact:      Hans C. Dee
+Telephone:    +63 2 87 63 19
+	      +63 2 813 41 62
+	      +63 2 813 41 63
+Pager Service:+63 2 869 11 11 (ask to leave message for #22 24 25)
+FAX:          +63 2 812 93 10 (request FAX during business hours)
+
+
+POLAND
+Sol-serwis Sp. z.o.o, Komputerowe Systemy
+Address:         90-051 Lodz
+		 Al. Pilsudskiego 8
+		 Poland
+Contact:         Pawel Hajdan
+Telephone:       +48-42-366310
+Fax:             +48-42-370656
+
+Warsaw Branch Office:
+Address:         00-020 Warszawa
+		 Ul. Chmielna 8
+Tel/Fax:         +48-22-276416
+
+
+PORTUGAL
+FOBIS NORTE - informatica e gestao, Lda.
+Address:      Rua da Paz, 66 - 1 sala 16
+	      P. 4000 Porto
+Contact:      Luis Van Zeller
+Telephone:    +351 (2) 600 5062
+Fax:          +351 (2) 609 7112
+
+FOBIS NORTE - informatica e gestao, Lda.
+Address:      Rua D. Antonio Caetano de Souza, 17
+	      P. 1500 Lisboa
+Contact:      Vitor Proenca
+Telephone     +351 (1) 716 39 09/10/13
+Fax:          +351 (1) 716 39 06
+
+ROMANIA
+A.I. Ltd.
+Address:      Strada Academiei 18-20, Etaj 1,
+	      Sector 1, Bucuresti, Romania
+Contact:      Angelo Morassi
+Telephone:    +40 (1) 613 8080-135
+Fax:          +40 (1) 613 8080-135
+BBS:          +40 (1) 631 5571 - [v.32/V.32bis,v.42bis, 14,400bps]
+
+RUSSIA
+Windamere Consulting Group Ltd.
+Office Address: Suite 4, 4A Malyi Mogiltsevski Pereulok   
+		Moscow 121002, Russia
+Postal Address: 666 Fifth Avenue, Suite 572           
+		New York NY 10103
+		U.S.A.
+Contact:        Max Beggs
+Telephone:      International  7-503-956-0441 (4 lines)
+		Domestic         095-956-0441
+Fax:            International  7-503-956-9133
+		Domestic         095-956-9133
+Internet:       mbeggs@maev.msk.su
+
+SAUDI ARABIA
+Gulf Stars Computer Systems
+Address:      PO Box 52908
+	      Riyadh  11573
+Contact:      Fadi Kanafani
+Telephone:    +966 (1) 462-8222
+Fax:          +966 (1) 465-3156
+Telex:        407602 GSCS SJ
+
+SINGAPORE
+Asiasoft (S) PTE. LTD.
+Address:      No. 8, Aljunied Avenue 3, Oakwell Bldg.
+	      Singapore 1438
+Contact:      Andy Choy
+Telephone:    +65 742 6000
+Fax:          +65 742 7000
+Internet:     aasiasoft@singnet.com.sg
+BBS:          +65 741 8707
+
+SINGAPORE
+MCSB Systems (S) Pte Ltd
+Address:      5 Little Road
+	      #05-01 Cemtex Industrial Building
+	      Singapore 1953
+Contact:      Low Loong Shiew
+Telephone:    +65 382-7600
+Fax:          +65 382-5700
+
+SOUTH AFRICA
+Dynamic Solutions cc
+Address:      P.O. Box 4397
+	      Cape Town  8000
+Contact:      Oliver Steudler
+Telephone:    +27 21 24 9504
+Fax:          +27 21 26 1911
+BBS:          +27 21 24 2208
+Internet:     oliver@cybernet.za
+
+SOUTH AFRICA
+International Data Security (Pty) Ltd.
+Address:      Suite 10, 196B Loop St.
+	      Pietermaritzburg
+	      Natal  3201
+Box:          Po Box 3425
+	      Pietermaritzburg
+	      Natal 3200
+Contact:      Gavin Nesbitt
+Telephone:    +27 (0331) 427 134
+	      +27 (0331) 427 135
+	      +27 (0331) 941 563
+	      +27 (0331) 941 564
+Fax:          +27 (0331) 425 505
+BBS:          +27 (0331) 455 710 [300-14,400 bps USR Courier v.32/v.42bis]
+CompuServe:   100075,471
+
+SPAIN
+SATINFO - Central (formerly DATAMON, SA)
+Address:      Napoles, 335
+	      08025 Barcelona
+Contact:      Carmen M. Mestres
+Telephone:    +34 (3) 459 01 00
+Fax:          +34 (3) 207 39 59
+
+SPAIN
+SATINFO - Microservice (formerly DATAMON, SA)
+Address:      Infanta Mercedes, 83
+	      28020 Madrid
+Contact:      Diego Saez
+Telephone:    +34 (1) 571 52 00
+Fax:          +34 (1) 571 19 11
+
+
+SWEDEN
+Virus Help Centre - MAIN Office
+Address:      Box 244
+	      S 811 23 Sandviken
+Contact:      Mikael Larsson
+Telephone:    +46 (26) 275740
+Fax:          +46 (26) 275720
+Mobile Phone: +46 (10) 295 5551
+BBS:          +46 (26) 275710 [1200-14.400 bps]
++46 (26) 275715 [1200-14.400 bps]
+Fidonet:      2:205/204 or 2:205/234
+VirNet:       9:461/101 or 9:461/111
+Internet:     mikael@vhc.se
+
+Virus Help Centre - GAVLE Office
+Address:      Box 1237
+S 801 37 Gavle
+Contact:      Ola Larsson
+Phone:        +46 (26) 100518
+Mobile Phone: +46 (10) 295 5552
+Fidonet:      2:205/212
+VirNet:       9:461/112
+Internet:     ola@dragon.vhc.se
+
+
+SWEDEN
+Data Construction AB
+Address:      Oxholmsgraend 7
+	      S-127 22 Skarholmen
+Contact:      Ola Elverskog
+	      Ann-Christin Carlsson
+Telephone:    +46 (8) 680-7000
+Fax:          +46 (8) 710-7610
+BBS:          +46 (8) 740-5870 (4 lines, 2.400-28.000 baud)
+Internet:     oelversk@eiknes.se
+WWW Server:   www.eiknes.se
+FTP Server:   ftp.eiknes.se
+
+
+SWITZERLAND
+bw digitronik ag (formerly DASIKON AG)
+Address:      Strickstrasse 15
+	      CH-8610 Uster
+Contact:      Paul Hasen
+Telephone:    +41 (1) 940-4410
+Tech Support: +41 (1) 157-6015 (TOLL NUMBER)
+Fax:          +41 (1) 940-3959
+BBS:          +41 (1) 940-4434
+	      +41 (1) 940-4435
+Internet:     hasen@bwdigitronik.ch
+
+TAIWAN - Distributor for Provan Tech. Corp.
+Zero One Technology Company, Ltd.
+Address:        4th Floor, 111
+		Chung Shan N. Rd., Sec.2
+		Taipei, 10450
+Contact:        Peter Lin
+Telephone:      +886-2-565-2323
+Fax:            +886-2-571-4698
+
+
+TAIWAN - Master Agent for Taiwan and China
+Provan Technology
+Address:      B1 32 Don-Men Street
+	      Panchiao 22047
+	      Taiwan
+Contact:      Jeff Kao
+Telephone:    +886 (2) 960-3032
+Fax:          +886 (2) 969-2011
+
+
+THAILAND
+Data Express Company, Ltd.
+Address:      637 Charoenrat Road, Khlongsan
+	      Bangkok 10600
+Contact:      Somboon Jaroonthamboon, Napaporn Pratomwong
+Telephone     +66 (2) 437 5231 / 437 5207
+Fax:          +66 (2) 438 4770
+BBS:            +66 (2) 437 2085
+
+
+THAILAND
+Connectivity Peripherals Company, Ltd.
+Address:      1777/100 Charansanitwong 65 Bangplad
+	      Bangkok 10700 Thailand
+Contact:      Poonpat Kantavara
+Telephone:    + 662-424-3743 / 435-5749
+	      + 661-481-4057
+Fax:          + 662-424-3743
+
+
+THAILAND
+Oakwell Corporation Thailand Co. Ltd.
+Address:      305/15 Pichai Road
+	      Dusit, Bangkok  10300
+Contact:      Ms. Suporn
+Telephone     +66 (2) 241 5269
+Fax:          +66 (2) 243 2362
+
+TRINIDAD & TOBAGO
+Opus Networx
+Address:      P.O. Box 972
+	      Port of Spain, Trinidad & Tobago
+	      West Indies
+Contact:      Peter Wimbourne
+Tel:          (809) 625-5949
+Fax:          (809) 625-5950
+BBS:          (809) 628-5023
+Internet:     sysop@opus-networx.com
+
+UNITED ARAB EMIRATES
+Al Bawardi Computers
+Address:      Flat 301, 3rd Floor, Grandstore Bldg.
+	      Hamdan St. PO BOX 4118
+	      Abu Dhabi
+Contact:      Fadi Darwish
+Telephone:    +971 (2) 346 999
+Fax:          +971 (2) 213 581
+
+
+UNITED KINGDOM
+McAfee-UK
+Address:      Hayley House
+	      London Road
+	      Bracknell RG12 2TH
+Contact:      Paul Slattery
+Telephone:    +44 (0)13 44 304 730
+Fax:          +44 (0)13 44 306 902
+
+
+URUGUAY
+Datamatic
+Address:      25 de Mayo 635 Piso 6
+	      Montevideo 11100
+Contact:          Juan Camps
+Telephone:    +598 2 96 18 42
+Fax:          +598 2 96 27 71
+Internet:     datamati@chasque.apc.org
+
+
+VENEZUELA
+Antivirus C.A.
+Address:      Avenida Principal de la Castellana
+	      Torre Banco de Lara
+	      Mezzanina Oficina D-1
+	      Caracas,  Venezuela
+Contact:      Ana Maria Pacheco
+Telephone:    +58-2-262-1361
+	      +58-2-262-2001
+	      +58-2-266-8280
+Fax:          +58-2-261-3169
+Internet:     antiviru@ccs.internet.ve
+Cellular:     (014) 364336
+
+
+VIETNAM ** see Asiasoft under Singapore **
+	** see Data Express Company, Ltd. under Thailand **
+
+ZAMBIA
+KBM Software Plaza
+Address:      16th Floor
+	      Sindeco House,  Cairo Road
+	      Lusaka,  Zambia
+Contact:      (Mrs.) Kasonde B. Shakalima
+Telephone:    +260 (1) 221 647
+Fax:          +260 (1) 222 026
+
+
+International Distributors
+==========================
+MALAYSIA
+MCSB Sales and Distribution (M) Sdn. Bhd.
+Address:      Ground Floor, Wisma Mirama
+	      Jalan Wisma Putra
+	      50460 Kuala Lumpur
+Contact:      Mr. K.L. Wan
+	      Mr. Hee Yew Han - Tech. Support 
+Telephone:    +60 3 241 6922
+Fax:          +60 3 248 9892
+Internet:     none@mcsbsd.po.my
+	      yhhee@mcsbsd.po.my
+
+
+SINGAPORE
+Ingram Micro Inc.
+Address:      143 Cecil Street
+	      #07-03/04 GB Building
+	      Singapore 0106
+Contact:      Mr. William Tan
+	      Mr. Teo Koon Hock - Tech. Support
+Telephone:    +65-226-5338
+Fax:          +65-226-5337
+Internet:     teokh@singnet.com.sg
+
+
+THAILAND
+Data Express Company, Ltd.
+Address:      637 Charoenrat Road, Khlongsan
+	      Bangkok 10600
+Contact:      Somboon Jaroonthamboon, Napaporn Pratomwong
+Telephone     +66 (2) 437 5231 / 437 5207
+Fax:          +66 (2) 438 4770
+BBS:          +66 (2) 437 2085
+
+
+THAILAND
+Connectivity Peripherals Company, Ltd.
+Address:      1777/100 Charansanitwong 65 Bangplad
+	      Bangkok 10700 Thailand
+Contact:      Poonpat Kantavara
+Telephone:    + 662-424-3743 / 435-5749
+	      + 661-481-4057
+Fax:          + 662-424-3743
+
+////////////////////////////////
+
+
+II.     CANADA
+
+Fifth Dimension
+Address:      2500 Don Reid Drive
+	      Ottawa, Ontario, Canada K1H 8P5
+Telephone:    613-737-7333
+Fax:          613-739-9721
+
+Schultz Computer
+Address:      1794 Courtwood Crescent
+	      Ottawa, Ontario, Canada K2C 0B5
+	      John Schultz
+Telephone:    613-727-0589
+Fax:          613-727-1264
+
+Logicorp Data Systems
+Address:      11044 82nd Avenue, Ste 301
+	      Edmonton, Alberta, Canada T6G 0T2
+	      Ken Fisher
+Telephone:    403-433-2830
+Fax:          403-439-2134
+
+
+Concise Systems Corporation
+Address:      1925 Bowen Road, Ste 25
+	      Nanaimi, B.C., Canada V9S 1H1
+	      Janeane McGannon
+Telephone:    604-756-1604
+Fax:          604-756-0123
+
+
+
+III.    UNITED STATES 
+
+	      Northeast
+
+Vaccivirus
+Address:      84 Hammond St
+	      Waltham, MA 02154
+	      Roger Aucoin
+Telephone:    617-893-8282
+Fax:          617-893-3770
+
+
+International Security Technology, Inc.
+Address:      99 Park Avenue
+	      11th Floor
+	      New York, NY  10016
+Contact:      Robert V. Jacobson
+Telephone:    212-557-0900
+Fax:          212-808-5206
+
+Micro Strategies, Inc.
+Address:      104 Broadway
+	      Denville, NJ  07834-0930
+Contact:      Mike Michalowicz
+Telephone:    201-625-7721
+Fax:          201-625-5130
+
+
+	      Federal Government
+
+R3, Inc
+Address:      2215 Christy Place
+	      Herndon, VA 22070
+	      Ed Russell
+Telephone:    703-729-1785
+
+Computer Supply Co. of Virginia
+Address:      137 Laskin Road, Ste B
+	      Virginia Beach, VA 23451
+	      Jeff Batten
+Telephone:    804-422-6343
+Fax:          804-428-3858
+
+EDS
+Address:      13600 EDS Drive
+	      Herndon, VA 22021
+	      Mary Ann Wangemann
+Telephone:    703-742-2835
+Fax:          703-742-2674
+
+Falcon Microsystems Inc
+Address:      1100 Mercantile Lane
+	      Landover, MD 20785
+	      Charles Nelson
+Telephone:    703-341-0153
+Fax:          301-386-8581
+
+Base Technologies
+Address:      7927 Jones Branch Drive, 300 West
+	      McLean, VA 22102
+	      Rich Lichvar
+Telephone:    703-848-2400
+Fax:          703-848-0804
+
+Wang
+Address:      7500 Old Georgetown Road
+	      Bethesda, MD 20814
+	      Bill Repine/Bill Clark
+Telephone:    301-657-5587
+Fax:          301-657-5771
+
+Synex Technology
+Address:      6701 Democracy Blvd
+	      Bethesda, MD 20817
+	      Jerry Sella
+Telephone:    301-670-0919
+Fax:          301-977-0177
+
+
+	      Southeast
+
+TSD Systems
+Address     525 S. County Road 427 
+	Suite 125
+	Longwood, FL 32750
+ Telephone:     407-331-9130
+  Fax           407-331-8130
+     President: James Daly III
+     VP: Hewie Poplock
+     Sec: Sherry Berry
+     
+Insight International
+Address:     4651 Bancroft Ct.
+	Marietta, GA 30062
+Telephone:      404-642-6064
+     President: Steve Bachman
+     
+Micro-Computer Analysts, Inc. (MCA)
+Address:     128 Southland Drive
+	Lexington, KY 40503
+ Telephone:     606-275-1228
+    Fax:                606-275-1242
+     President: Eric Lake
+     Sec: Shirley Lakes
+     Purchasing: Craig Lakes
+     Sales: Richard Makkay
+     
+Advanced Information Systems
+Address:     111 Executive Center Drive
+     Columbia, SC 29210
+ Telephone:     803-772-0090
+ Fax:           803-772-8219
+     President: Craig Scott
+     Sec: Nancy Scott
+     Sales: Cynthia Brown
+     
+ALI Computers Inc.
+Address:     PO Box 10517
+     Blacksburg, VA 
+Telephone:      703-552-6108
+Fax:            703-552-6126
+     Manager: Lesa Myers
+     Sales: Ginger Sibold
+
+W.L.S Services
+Address:      3099 Leon Road, Suite 5
+	      Jacksonville, FL  32246
+Contact:      Tom Meadows or Walt Lanz
+Telephone:    (904) 641-3262
+Fax:          (904) 641-3287
+
+
+	      Central
+
+Dave Shook
+Address:      744 Fox Hunt Trail
+	      Deerfield, IL 60015
+Telephone:    708-940-0843
+Fax:          708-940-0854
+
+
+	      Southwest
+
+Creative Business Concepts
+Address:      1 Technology Drive, Ste B-123
+	      Irvine, CA 92718
+	      Rick Shafer
+Telephone:    714-727-3104
+Fax:          714-727-3132
+
+Genoa Group
+Address:      7334 South Alton Way, Unit H
+	      Englewood, CO 80112
+	      Ted Smith
+Telephone:    303-770-5747
+Fax:          303-741-2449
+
+M.S. Business Center
+Address:      6161 El Cajon Blvd., Ste. B-15
+	      San Diego, CA 92115
+	      Eugene Moore
+Telephone:    619-583-4960
+Fax:          619-583-9375
+
+Typetronics Business Systems
+Address:      5717 North 7th Street
+	      Phoenix, AZ 85014
+	      Roger Smith
+Telephone:    602-274-7253
+Fax:          602-274-7636
+
+Ramcom Technology
+Address:      PO Box 3491
+	      Flagstaff, AZ 86003
+	      Ron Moore
+Telephone:    602-774-2584
+Fax:          602-774-2584
+
+Paragon Computer Services
+Address:      539 Telegraph Canyon Road, Ste-919
+	      Chula Vista, CA 91910
+	      Bob Currie
+Telephone:    619-482-9317
+Fax:          619-482-4929
+
+Computer Technology Associates
+Address:      1901 East 37th St. Ste 202
+	      Odessa, TX 79762
+	      John Minor
+Telephone:    915-368-5208
+Fax:          915-368-4108
+
+Joseph Head Cooper Consulting
+Address:      321 West Craig Place
+	      San Antonio, TX 78212
+	      Joe Cooper
+Telephone:    210-736-2383
+Fax:          210-737-3333
+
+Kortek Industries
+Address:      2000 Bering Dr. Ste 400
+	      Houston, TX 77057
+	      John Heaney
+Telephone:    713-783-0024
+Fax:          713-783-7649
+
+emann
+Telephone:    703-742-2835
+Fax:          703-742-2674
+
+ 
+4.0 FILE NAMING CONVENTIONS FOR VirusScan  
+  
+Beginning with VirusScan Version 2.0.0, McAfee will be using a new method of
+naming the .ZIP files which contain our programs.  The filename will note the
+antivirus products' stock-keeping unit (SKU), its release status, major  
+version number, and minor version number (if any).  
+  
+The new method of naming .ZIP files for electronic distribution of our  
+software is as follows:  
+  
+{3 char. name} + {1 char status} + {3 char. major ver} + {1 char. minor ver}
+  
+The following chart gives some examples of what these can be:  
+  
+SKU            RELEASE STATUS    MAJOR VER #     MINOR VER #  
+  
+SCN=Scan (DOS) A = alpha test    200=2.0.0       E=Evaluation copy  
+						 L=License copy    
+   
+WSC=Scan (Win) B = beta test     201=2.0.1       I=Installable  
+						 version  
+	  
+NSH=NETShield  R = release       and so forth    and so forth  
+		   candidate.  
+  
+VSH=VShield    - = production  
+		   release      
+  
+Examples:  
+  
+Listed below are some sample filenames with an explanation of their  
+meaning:  
+  
+SCNA200E.ZIP    VirusScan for DOS Alpha-Test version 2.0.0 electronically-
+		distributed version.  
+  
+OSCB201I.ZIP    VirusScan for OS/2 Beta-Test version 2.0.1 with Install  
+		version.  
+  
+WSC-202R.ZIP    VirusScan for Windows Production version 2.0.2 retail version.
+  
+  
+ 
+ 
+5.0 USING THE VALIDATE FEATURE  
+				VALIDATE Version 2.0.1  
+			QUICK COMMAND REFERENCE GUIDE  
+	  Copyright 1993-1995 by McAfee, Inc.  All Rights Reserved.  
+
+
+                            LICENSE AGREEMENT
+
+
+McAfee, Inc. assumes no responsibility for damages or lost data
+caused by the use or misuse of this program, including if used
+in accordance with the program documentation. Use of Validate means
+you comply with this Agreement.
+
+--------------------------------------------------------------------
+
+Before you install a McAfee product that you've downloaded from an
+online service, you'll want to verify that the files you
+downloaded are exactly the same as when we posted them online.
+We recommend you perform this task for maximum anti-virus
+protection. Read the following paragraphs to learn how to
+validate your file.
+
+
+Included in the files you downloaded is the Validate program
+(version 2.0.1). Validate is a file-authentication program that
+you can use to check program files for signs of tampering.
+Validate uses two methods of generating Cyclic Redundancy Checks
+(CRC's), and then displays the information so you can compare
+these statistics against the "known value" for the program files.
+The dual CRC checking provides a high degree of security.
+The known value you use for validation is usually provided by the
+author of the program, or you may receive it from a trusted
+information database.  You can find the statistics for this
+McAfee product in the file PACKING.LST.
+
+To confirm that a program file has not been tampered with, run the
+Validate program and then record the validation data produced.
+Compare this data against the file statistics the program author has
+specified. If the information matches, most likely the program
+has not been modified since the files where placed online.
+
+To run VALIDATE, enter the following command:
+
+     VALIDATE <path spec>
+
+where <pathspec> is the name of a directory and file. (The
+wildcard characters, "*" and "?", can be used when specifying
+<pathspec>.)
+
+The VALIDATE program displays the following information:
+
+     <name of directory>
+     name of file (starting at row 1)
+     extension of file (starting at row 10)
+     size of file (starting at row 15)
+     date of file (starting at row 25)
+     time of file (starting at row 35)
+     check method 1 (starting at row 44)
+     check method 2 (starting at row 51)
+     SAMPLE   TXT  12345678  01-01-80  12:01a   1A2B   3C4D
+     <number> file(s) have been validated.
+  
+  
+6.0 SUPPORT ON COMPUSERVE  
+  
+McAfee now offers an on-line service through CompuServe that  
+not only gives you access to our information and staff members, but also  
+allows you to communicate with thousands of our other users on  
+CompuServe as well.  On CompuServe you can enjoy:  
+  
+*    Quick responses to your questions about McAfee software,  
+	 directly from us!  Find out progress on upgrades, updates, new  
+	 features, and disk replacement.  
+  
+*    Around-the-clock technical support for all of McAfee  
+	 anti-viral software.  Find out how to best use our software with  
+	 your system.  Learn solutions for common problems.  
+  
+*    Access to updates.  Download the latest versions of McAfee, Inc.  
+	 software.  
+  
+*    Access to public domain, user-written, and shareware programs  
+	 available for downloading.  All virus-free.  
+  
+*    An avenue for learning.  Learn how others utilize McAfee  
+	 anti-viral software to fit their needs.  Keep up to date on the  
+	 latest third-party products available for McAfee  
+	 anti-viral software.  
+  
+Not only can you get support for McAfee software on CompuServe,   
+you can also access CompuServe's many other services.  These  
+include support for computer hardware and software products from over  
+200 companies, news, weather, sports, travel services, reference  
+database, and business information.  
+  
+If you are already a CompuServe member, you can access this service by  
+typing GO MCAFEE at any CompuServe prompt.  
+  
+  
+FREE COMPUSERVE INTRODUCTORY MEMBERSHIP  
+  
+As a McAfee customer, you're entitled to a free introductory  
+membership on CompuServe, which includes a private User ID and  
+password, a US$15.00 introductory usage credit, and a free subscription  
+to COMPUSERVE Magazine.  
+  
+To receive your free CompuServe Introductory Membership, complete and  
+return this form.  Or call one of the telephone numbers below and ask  
+for Representative 309.  
+  
+NORTH AMERICA  
+United States and Canada               (800) 848-8199   *  
+					   (614) 457-0802  
+  
+	  OVERSEAS TELEPHONE NUMBERS TO ACCESS COMPUSERVE THROUGH A GATEWAY  
+		(Do not contact for CompuServe Membership)  
+  
+SOUTH AMERICA  
+Argentina                               +54 (01) 322-1864, 5934  
+Brazil                                  +55 (11) 2842433  
+(outside of Brazil)                     +55 (11) 1081212  
+Chile                                   +56 (02) 696-8807  
+Venezuela                               +58 (02) 793-2984, 2384, 6894  
+  
+EUROPE  
+Germany                                 0130 37 32      *  
+					+49 (89) 66550 111  
+Belgium                                 +352 405637  
+Switzerland                             155 31 79       *  
+United Kingdom                          0800 289 378    *  
+					+44 (272) 255 111  
+  
+PACIFIC RIM  
+Australia                               008 02 5240     *  
+					+61 (02) 411 8603  
+Japan (via NIFTY-Serve)                 0120 22 1200    *  
+					+81 (03) 3221-7363  
+Korea                                   +82 (02) 7966104  
+					080-022-7400    *  
+New Zealand                             0800 44 6113    *  
+Taiwan                                  +886 (02) 515-0330  
+  
+*Indicates a telephone number that is toll-free within the country  
+indicated.  
+  
+----------------------------------------------------------------------  
+CUT THE FORM AT THE LINE ABOVE, ANSWER ALL THE QUESTIONS BELOW, AND  
+THEN MAIL TO COMPUSERVE AT THE ADDRESS AT THE BOTTOM OF THE FORM.  
+  
+  
+___ YES!  Please send me a free CompuServe Introductory Membership from  
+	Representative 309, the McAfee Virus Help Forum.  
+  
+  
+NAME _________________________________________________________________  
+  
+COMPANY NAME _________________________________________________________  
+  
+ADDRESS1 _____________________________________________________________  
+  
+ADDRESS2 _____________________________________________________________  
+  
+CITY _____________________________ STATE/PROVINCE ____________________  
+  
+ZIP/POSTAL CODE ______________________________________________________  
+  
+COUNTRY ______________________________________________________________  
+  
+McAFEE, INC. PROGRAM(S)__________________________________________  
+  
+This offer is limited to first-time members only.  Only one Introductory  
+Membership will be given to a customer.  
+  
+MAIL TO:  
+  
+(UNITED STATES and CANADA)             (UNITED KINGDOM)  
+COMPUSERVE                             COMPUSERVE  
+5000 Arlington Centre Blvd.            FREEPOST (BS6971)  
+P.O. Box 20212                         P.O. Box 676  
+Columbus, OH  43220-9988               Bristol BS99 1NZ  
+USA                                    UNITED KINGDOM  
+  
+(GERMANY)                              (AUSTRALIA and NEW ZEALAND)  
+COMPUSERVE                             COMPUSERVE PACIFIC  
+Jahstrasse 2                           Fujitsu Australia Ltd  
+Postfach 1169                          475 Victoria Avenue  
+D-8025 Unterhaching/Muenchen           Chatswood, NSW 2067  
+DEUTSCHLAND                            AUSTRALIA  
+  
+(JAPAN)                                (KOREA)  
+NIFTY Corporation                      POS-Serve  
+Kojimachi Koyo Bldg.                   PC Communication Department  
+1-20 Kojimachi                         POSDATA CO., Ltd.  
+Chiyoda-ku                             10/F, Daejan Jedang Bldg.  
+Tokyo 102                              7-23, Shinchun-dong, Songpa-ku  
+JAPAN                                  Seoul, KOREA  
+  
+(TAIWAN)                               (ARGENTINA)  
+Taiwan Telecom Network Services Co Ltd CompuServe S.A. Argentina  
+15/F, 120 Chien-kuo N. Road            Florida 671 E.P. 1005  
+Section 2, Taipei                      Buenos Aires  
+TAIWAN R.O.C                           ARGENTINA  
+  
+(CHILE)                                (VENEZUELA)  
+Chilepac                               CompuServe C.A. Venezuela  
+Gerencia Red de Datos                  Plaza Venezuela - Torres Capriles  
+Morande 147                            Pis 4, Oficina 401  
+Santiago                               Caracas  
+CHILE                                  VENEZUELA  
+  
+

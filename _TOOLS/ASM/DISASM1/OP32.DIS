@@ -1,0 +1,243 @@
+0000:0000      b8 00 4c cd 21      mov            eax,21cd4c00
+0000:0005      00 00               add            [eax],al
+0000:0007      00 00               add            [eax],al
+0000:0009      00 00               add            [eax],al
+0000:000b      00 00               add            [eax],al
+0000:000d      00 00               add            [eax],al
+0000:000f      00 90 90 90 90   
+               90                  add            [90909090+eax],dl
+0000:0015      90                  nop
+0000:0016      90                  nop
+0000:0017      90                  nop
+;
+;	s-i-b byte instructions
+;
+	db	0,0ch,0c0h                     ; add  [eax+8*eax],cl               
+	db	0,4ch,0c0h,33h	             ; add  [eax+8*eax+33],cl            
+	db	0,8ch,0c0h,11h,22h,33h,44h     ; add  [eax+8*eax+44332211],cl      
+	db	0,8ch,80h,11h,22h,33h,44h      ; add  [eax+4*eax+44332211],cl      
+	db	0,8ch,40h,11h,22h,33h,44h      ; add  [eax+2*eax+44332211],cl      
+	db	0,8ch,44h,11h,22h,33h,44h      ; add  ss:[esp+2*eax+44332211],cl   
+	db	26h,0,8ch,44h,11h,22h,33h,44h  ; add  es:[esp+2*eax+44332211],cl   
+0000:0018      00 0c c0            add            [eax+8*eax],cl
+0000:001b      00 4c c0 33         add            [eax+8*eax+33],cl
+0000:001f      00 8c c0 11 22   
+               33 44               add            [eax+8*eax+44332211],cl
+0000:0026      00 8c 80 11 22   
+               33 44               add            [eax+4*eax+44332211],cl
+0000:002d      00 8c 40 11 22   
+               33 44               add            [eax+2*eax+44332211],cl
+0000:0034      00 8c 44 11 22   
+               33 44               add            ss:[esp+2*eax+44332211],cl
+0000:003b      26 00 8c 44 11   
+               22 33 44            add            es:[esp+2*eax+44332211],cl
+
+0000:0043      8b 18               mov            ebx,[eax]
+0000:0045      8b 19               mov            ebx,[ecx]
+0000:0047      8b 1a               mov            ebx,[edx]
+0000:0049      8b 1b               mov            ebx,[ebx]
+0000:004b      8b 1c 00            mov            ebx,[eax+eax]
+0000:004e      8b 1d 11 22 33   
+               44                  mov            ebx,[44332211]
+0000:0054      8b 1e               mov            ebx,[esi]
+0000:0056      8b 1f               mov            ebx,[edi]
+;
+;                                               mod   reg   r/m
+;                                                00   011  VARIES
+	db	8bh,00011000b                   ; mov  ebx,[eax]
+	db	8bh,00011001b                   ; mov  ebx,[ecx]
+	db	8bh,00011010b                   ; mov  ebx,[edx]
+	db	8bh,00011011b                   ; mov  ebx,[ebx]
+	db	8bh,00011100b,0                 ; mov  ebx,[eax+eax]
+	db	8bh,00011101b,11h,22h,33h,44h   ; mov  ebx,[d32]
+	db	8bh,00011110b                   ; mov  ebx,[esi]
+	db	8bh,00011111b                   ; mov  ebx,[edi]
+
+0000:0043      8b 18               mov            ebx,[eax]
+0000:0045      8b 19               mov            ebx,[ecx]
+0000:0047      8b 1a               mov            ebx,[edx]
+0000:0049      8b 1b               mov            ebx,[ebx]
+0000:004b      8b 1c 00            mov            ebx,[eax+eax]
+0000:004e      8b 1d 11 22 33   
+               44                  mov            ebx,[44332211]
+0000:0054      8b 1e               mov            ebx,[esi]
+0000:0056      8b 1f               mov            ebx,[edi]
+
+
+;                                               mod   reg    r/m
+;                                                01   011   VARIES
+	db	8bh,01011000b,11h               ; mov  ebx,[eax+11]
+	db	8bh,01011001b,11h               ; mov  ebx,[ecx+11]
+	db	8bh,01011010b,11h               ; mov  ebx,[edx+11]
+	db	8bh,01011011b,11h               ; mov  ebx,[ebx+11]
+	db	8bh,01011100b,0,11h             ; mov  ebx,[eax+eax+11]
+	db	8bh,01011101b,11h               ; mov  ebx,ss:[ebp+11]
+	db	8bh,01011110b,11h               ; mov  ebx,[esi+11]
+	db	8bh,01011111b,11h               ; mov  ebx,[edi+11]
+0000:0058      8b 58 11            mov            ebx,[11+eax]
+0000:005b      8b 59 11            mov            ebx,[11+ecx]
+0000:005e      8b 5a 11            mov            ebx,[11+edx]
+0000:0061      8b 5b 11            mov            ebx,[11+ebx]
+0000:0064      8b 5c 00 11         mov            ebx,[eax+eax+11]
+0000:0068      8b 5d 11            mov            ebx,ss:[11+ebp]
+0000:006b      8b 5e 11            mov            ebx,[11+esi]
+0000:006e      8b 5f 11            mov            ebx,[11+edi]
+
+;                                               mod   reg    r/m
+;                                                10   011   VARIES
+	db	8bh,10011000b,11h,22h,33h,44h   ; mov  ebx,[eax+44332211]
+	db	8bh,10011001b,11h,22h,33h,44h   ; mov  ebx,[ecx+44332211]
+	db	8bh,10011010b,11h,22h,33h,44h   ; mov  ebx,[edx+44332211]
+	db	8bh,10011011b,11h,22h,33h,44h   ; mov  ebx,[ebx+44332211]
+	db	8bh,10011100b,0,11h,22h,33h,44h ; mov  ebx,[eax+eax+44332211]
+	db	8bh,10011101b,11h,22h,33h,44h   ; mov  ebx,ss:[ebp+44332211]
+	db	8bh,10011110b,11h,22h,33h,44h   ; mov  ebx,[esi+44332211]
+	db	8bh,10011111b,11h,22h,33h,44h   ; mov  ebx,[edi+44332211]
+
+0000:0071      8b 98 11 22 33   
+               44                  mov            ebx,[44332211+eax]
+0000:0077      8b 99 11 22 33   
+               44                  mov            ebx,[44332211+ecx]
+0000:007d      8b 9a 11 22 33   
+               44                  mov            ebx,[44332211+edx]
+0000:0083      8b 9b 11 22 33   
+               44                  mov            ebx,[44332211+ebx]
+0000:0089      8b 9c 00 11 22   
+               33 44               mov            ebx,[eax+eax+44332211]
+0000:0090      8b 9d 11 22 33   
+               44                  mov            ebx,ss:[44332211+ebp]
+0000:0096      8b 9e 11 22 33   
+               44                  mov            ebx,[44332211+esi]
+0000:009c      8b 9f 11 22 33   
+               44                  mov            ebx,[44332211+edi]
+
+;                                               mod   reg    r/m
+;                                                11   011   VARIES
+	db	8bh,11011000b                   ; mov  ebx,eax
+	db	8bh,11011001b                   ; mov  ebx,ecx
+	db	8bh,11011010b                   ; mov  ebx,edx
+	db	8bh,11011011b                   ; mov  ebx,ebx
+	db	8bh,11011100b                   ; mov  ebx,esp
+	db	8bh,11011101b                   ; mov  ebx,ebp
+	db	8bh,11011110b                   ; mov  ebx,esi
+	db	8bh,11011111b                   ; mov  ebx,edi
+
+0000:00a2      8b d8               mov            ebx,eax
+0000:00a4      8b d9               mov            ebx,ecx
+0000:00a6      8b da               mov            ebx,edx
+0000:00a8      8b db               mov            ebx,ebx
+0000:00aa      8b dc               mov            ebx,esp
+0000:00ac      8b dd               mov            ebx,ebp
+0000:00ae      8b de               mov            ebx,esi
+0000:00b0      8b df               mov            ebx,edi
+
+;                                            mod   reg     ss    index    base
+;                                             00   011   VARIES   000     000
+	db	8bh,00011100b,00000000b         ;  mov  ebx,[eax+1*eax]
+	db	8bh,00011100b,01000000b         ;  mov  ebx,[eax+2*eax]
+	db	8bh,00011100b,10000000b         ;  mov  ebx,[eax+4*eax]
+	db	8bh,00011100b,11000000b         ;  mov  ebx,[eax+8*eax]
+0000:00b2      8b 1c 00            mov            ebx,[eax+eax]
+0000:00b5      8b 1c 40            mov            ebx,[ecx+2*eax]
+0000:00b8      8b 1c 80            mov            ebx,[edx+4*eax]
+0000:00bb      8b 1c c0            mov            ebx,[ebx+8*eax]
+
+
+;                                            mod   reg     ss    index    base
+;                                             00   011    11   VARIES     000
+	db	8bh,00011100b,11000000b         ;  mov  ebx,[eax+8*eax]
+	db	8bh,00011100b,11001000b         ;  mov  ebx,[eax+8*ecx]
+	db	8bh,00011100b,11010000b         ;  mov  ebx,[eax+8*edx]
+	db	8bh,00011100b,11011000b         ;  mov  ebx,[eax+8*ebx]
+	db	8bh,00011100b,00100000b         ;  mov  ebx,[eax]
+	db	8bh,00011100b,11101000b         ;  mov  ebx,[eax+8*ebp]
+	db	8bh,00011100b,11110000b         ;  mov  ebx,[eax+8*esi]
+	db	8bh,00011100b,11111000b         ;  mov  ebx,[eax+8*edi]
+0000:00be      8b 1c c0            mov            ebx,[eax+8*eax]
+0000:00c1      8b 1c c8            mov            ebx,[eax+8*ecx]
+0000:00c4      8b 1c d0            mov            ebx,[eax+8*edx]
+0000:00c7      8b 1c d8            mov            ebx,[eax+8*ebx]
+0000:00ca      8b 1c e0            mov            ebx,[eax]
+0000:00cd      8b 1c e8            mov            ebx,[eax+8*ebp]
+0000:00d0      8b 1c f0            mov            ebx,[eax+8*esi]
+0000:00d3      8b 1c f8            mov            ebx,[eax+8*edi]
+
+;                                            mod   reg    ss    index    base
+;                                             00   011    11      111   VARIES
+	db	8bh,00011100b,11111000b         ;  mov  ebx,[eax+8*edi]
+	db	8bh,00011100b,11111001b         ;  mov  ebx,[ecx+8*edi]
+	db	8bh,00011100b,11111010b         ;  mov  ebx,[edx+8*edi]
+	db	8bh,00011100b,11111011b         ;  mov  ebx,[ebx+8*edi]
+	db	8bh,00011100b,11111100b         ;  mov  ebx,[esp+8*edi]
+	db	8bh,00011100b,11111101b,11h,22h,33h,44h  
+                                          ;  mov  ebx,[44332211+8*edi]
+	db	8bh,00011100b,11111110b         ;  mov  ebx,[esi+8*edi]
+	db	8bh,00011100b,11111111b         ;  mov  ebx,[edi+8*edi]
+0000:00d6      8b 1c f8            mov            ebx,[eax+8*edi]
+0000:00d9      8b 1c f9            mov            ebx,[ecx+8*edi]
+0000:00dc      8b 1c fa            mov            ebx,[edx+8*edi]
+0000:00df      8b 1c fb            mov            ebx,[ebx+8*edi]
+0000:00e2      8b 1c fc            mov            ebx,ss:[esp+8*edi]
+0000:00e5      8b 1c fd 11 22   
+               33 44               mov            ebx,[44332211+8*edi]
+0000:00ec      8b 1c fe            mov            ebx,[esi+8*edi]
+0000:00ef      8b 1c ff            mov            ebx,[edi+8*edi]
+
+;                                            mod   reg     ss    index    base
+;                                             01   011    11      111   VARIES
+	db	8bh,01011100b,11111000b,11h     ;  mov  ebx,[eax+8*edi+11]
+	db	8bh,01011100b,11111001b,11h     ;  mov  ebx,[ecx+8*edi+11]
+	db	8bh,01011100b,11111010b,11h     ;  mov  ebx,[edx+8*edi+11]
+	db	8bh,01011100b,11111011b,11h     ;  mov  ebx,[ebx+8*edi+11]
+	db	8bh,01011100b,11111100b,11h     ;  mov  ebx,ss:[esp+8*edi+11]
+	db	8bh,01011100b,11111101b,11h     ;  mov  ebx,[ebp+8*edi+11]
+	db	8bh,01011100b,11111110b,11h     ;  mov  ebx,[esi+8*edi+11]
+	db	8bh,01011100b,11111111b,11h     ;  mov  ebx,[edi+8*edi+11]
+0000:00f2      8b 5c f8 11         mov            ebx,[eax+8*edi+11]
+0000:00f6      8b 5c f9 11         mov            ebx,[ecx+8*edi+11]
+0000:00fa      8b 5c fa 11         mov            ebx,[edx+8*edi+11]
+0000:00fe      8b 5c fb 11         mov            ebx,[ebx+8*edi+11]
+0000:0102      8b 5c fc 11         mov            ebx,ss:[esp+8*edi+11]
+0000:0106      8b 5c fd 11         mov            ebx,[ebp+8*edi+11]
+0000:010a      8b 5c fe 11         mov            ebx,[esi+8*edi+11]
+0000:010e      8b 5c ff 11         mov            ebx,[edi+8*edi+11]
+
+;                                            mod   reg     ss    index    base
+;                                             10   011    11      111   VARIES
+    db  8bh,10011100b,11111000b,11h,22h,33h,44h ;  mov  ebx,[eax+8*edi+d32]
+    db  8bh,10011100b,11111001b,11h,22h,33h,44h ;  mov  ebx,[ecx+8*edi+d32]
+    db  8bh,10011100b,11111010b,11h,22h,33h,44h ;  mov  ebx,[edx+8*edi+d32]
+    db  8bh,10011100b,11111011b,11h,22h,33h,44h ;  mov  ebx,[ebx+8*edi+d32]
+    db  8bh,10011100b,11111100b,11h,22h,33h,44h ;  mov  ebx,ss:[esp+8*edi+d32]
+    db  8bh,10011100b,11111101b,11h,22h,33h,44h ;  mov  ebx,[ebp+8*edi+d32]
+    db  8bh,10011100b,11111110b,11h,22h,33h,44h ;  mov  ebx,[esi+8*edi+d32]
+    db  8bh,10011100b,11111111b,11h,22h,33h,44h ;  mov  ebx,[edi+8*edi+d32]
+
+0000:0112      8b 9c f8 11 22   
+               33 44               mov            ebx,[eax+8*edi+44332211]
+0000:0119      8b 9c f9 11 22   
+               33 44               mov            ebx,[ecx+8*edi+44332211]
+0000:0120      8b 9c fa 11 22   
+               33 44               mov            ebx,[edx+8*edi+44332211]
+0000:0127      8b 9c fb 11 22   
+               33 44               mov            ebx,[ebx+8*edi+44332211]
+0000:012e      8b 9c fc 11 22   
+               33 44               mov            ebx,ss:[esp+8*edi+44332211]
+0000:0135      8b 9c fd 11 22   
+               33 44               mov            ebx,[ebp+8*edi+44332211]
+0000:013c      8b 9c fe 11 22   
+               33 44               mov            ebx,[esi+8*edi+44332211]
+0000:0143      8b 9c ff 11 22   
+               33 44               mov            ebx,[edi+8*edi+44332211]
+
+0000:014a      64 c6 07 23         mov       byte fs:[edi],23
+0000:014e      65 c6 07 23         mov       byte gs:[edi],23
+0000:0152      66 81 d1 14 05      adc            cx,0514
+0000:0157      90                  nop
+0000:0158      00 90 00 66 15   
+               14                  add            [14156600+eax],dl
+0000:015e      05 90 00 90 00      add            eax,00900090
+0000:0163      67 77 1f            ja             0185
+0000:0166      90                  nop
+0000:0167      00 90 00 00 00   
+               00                  add            [00000000+eax],dl

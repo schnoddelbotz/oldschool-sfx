@@ -1,0 +1,716 @@
+[windows]
+spooler=yes
+load=
+run=
+Beep=yes
+NullPort=None
+BorderWidth=3
+CursorBlinkRate=530
+DoubleClickSpeed=564
+Programs=com exe bat pif
+Documents=
+DeviceNotSelectedTimeout=15
+TransmissionRetryTimeout=45
+KeyboardDelay=0
+KeyboardSpeed=31
+ScreenSaveActive=1
+ScreenSaveTimeOut=600
+DosPrint=yes
+MouseThreshold1=2
+MouseThreshold2=0
+MouseSpeed=1
+CoolSwitch=1
+device=HP DeskJet 600 Printer,DESKJETC,LPT1:
+
+[Desktop]
+Pattern=(Kein)
+Wallpaper=water.bmp
+GridGranularity=0
+IconSpacing=80
+TileWallpaper=1
+
+[Extensions]
+crd=cardfile.exe ^.crd
+trm=terminal.exe ^.trm
+txt=notepad.exe ^.txt
+ini=notepad.exe ^.ini
+pcx=C:\WINAPPS\COREL5\PROGRAMS\corelpnt.exe ^.pcx
+bmp=C:\WINAPPS\COREL5\PROGRAMS\corelpnt.exe ^.bmp
+wri=write.exe ^.wri
+rec=recorder.exe ^.rec
+hlp=winhelp.exe ^.hlp
+mmf=msmail.exe /f ^.mmf
+cdr=C:\WINAPPS\COREL5\PROGRAMS\coreldrw.exe ^.cdr
+cpt=C:\WINAPPS\COREL5\PROGRAMS\corelpnt.exe ^.cpt
+tif=C:\WINAPPS\COREL5\PROGRAMS\corelpnt.exe ^.tif
+gif=C:\WINAPPS\COREL5\PROGRAMS\corelpnt.exe ^.gif
+cmv=C:\WINAPPS\COREL5\PROGRAMS\corelmov.exe ^.cmv
+mwf=C:\WINAPPS\COREL5\PROGRAMS\corelmov.exe ^.mwf
+sam=C:\WINAPPS\AMIPRO\amipro.exe ^.sam
+TBK=C:\WINDOWS\asym\runtime\TBLOAD.EXE ^.TBK
+cvp=C:\COMM\WINFAX\wfcover.exe ^.cvp
+fxs=C:\COMM\WINFAX\wfview.exe ^.fxs
+fxd=C:\COMM\WINFAX\wfview.exe ^.fxd
+fxr=C:\COMM\WINFAX\wfview.exe ^.fxr
+fxm=C:\COMM\WINFAX\wfview.exe ^.fxm
+awp=C:\COMM\WINFAX\wfxawkey.exe ^.awp
+aws=C:\COMM\WINFAX\wfxawsig.exe ^.aws
+JPG=c:\winapps\picpub4\pp40.exe ^.JPG
+mpg=mplayer.exe /play /close ^.MPG
+vbs=C:\WINAPPS\XING\XMPLAYER\XMPLAYER.EXE ^.
+mpv=C:\WINAPPS\XING\XMPLAYER\XMPLAYER.EXE ^.
+fm!=d:\temp\fontmons\fmonster.exe ^.fm!
+pfm=d:\temp\fontmons\fmonster.exe ^.pfm
+ttf=d:\temp\fontmons\fmonster.exe ^.ttf
+dat=mplayer.exe /play /close ^.DAT
+m1v=mplayer.exe /play /close ^.M1V
+mpe=mplayer.exe /play /close ^.MPE
+mov=C:\WINDOWS\PLAYER.EXE ^.mov
+pic=C:\WINDOWS\VIEWER.EXE ^.pic
+CGM=C:\WINAPPS\PSP\PSP.EXE ^.CGM
+CLP=C:\WINAPPS\PSP\PSP.EXE ^.CLP
+CUT=C:\WINAPPS\PSP\PSP.EXE ^.CUT
+DIB=C:\WINAPPS\PSP\PSP.EXE ^.DIB
+DRW=C:\WINAPPS\PSP\PSP.EXE ^.DRW
+DXF=C:\WINAPPS\PSP\PSP.EXE ^.DXF
+GEM=C:\WINAPPS\PSP\PSP.EXE ^.GEM
+HGL=C:\WINAPPS\PSP\PSP.EXE ^.HGL
+IFF=C:\WINAPPS\PSP\PSP.EXE ^.IFF
+IMG=C:\WINAPPS\PSP\PSP.EXE ^.IMG
+JIF=C:\WINAPPS\PSP\PSP.EXE ^.JIF
+LBM=C:\WINAPPS\PSP\PSP.EXE ^.LBM
+MAC=C:\WINAPPS\PSP\PSP.EXE ^.MAC
+MSP=C:\WINAPPS\PSP\PSP.EXE ^.MSP
+PBM=C:\WINAPPS\PSP\PSP.EXE ^.PBM
+PCD=C:\WINAPPS\PSP\PSP.EXE ^.PCD
+PGM=C:\WINAPPS\PSP\PSP.EXE ^.PGM
+PPM=C:\WINAPPS\PSP\PSP.EXE ^.PPM
+PSD=C:\WINAPPS\PSP\PSP.EXE ^.PSD
+RAS=C:\WINAPPS\PSP\PSP.EXE ^.RAS
+RAW=C:\WINAPPS\PSP\PSP.EXE ^.RAW
+RLE=C:\WINAPPS\PSP\PSP.EXE ^.RLE
+TGA=C:\WINAPPS\PSP\PSP.EXE ^.TGA
+WMF=C:\WINAPPS\PSP\PSP.EXE ^.WMF
+WPG=C:\WINAPPS\PSP\PSP.EXE ^.WPG
+
+[intl]
+sLanguage=deu
+sCountry=Deutschland
+iCountry=49
+iDate=1
+iTime=1
+iTLZero=1
+iCurrency=3
+iCurrDigits=2
+iNegCurr=8
+iLzero=1
+iDigits=2
+iMeasure=0
+s1159=
+s2359=
+sCurrency=DM
+sThousand=.
+sDecimal=,
+sDate=.
+sTime=:
+sList=;
+sShortDate=dd.MM.yyyy
+sLongDate=dddd, d. MMMM yyyy
+
+[ports]
+; A line with [filename].PRN followed by an equal sign causes
+; [filename] to appear in the Control Panel's Printer Configuration dialog
+; box. A printer connected to [filename] directs its output into this file.
+LPT1:=
+LPT2:=
+LPT3:=
+COM1:=9600,n,8,1,x
+COM2:=19200,n,8,1,x
+COM3:=9600,n,8,1,x
+COM4:=9600,n,8,1,x
+EPT:=
+FILE:=
+LPT1.DOS=
+LPT2.DOS=
+CURRENT.SFF=
+FaxModem=FaxModem
+
+[FontSubstitutes]
+Helv=MS Sans Serif
+Tms Rmn=MS Serif
+Times=Times New Roman
+Helvetica=Arial
+
+[TrueType]
+TTEnable=1
+TTOnly=0
+
+[mci extensions]
+wav=waveaudio
+mid=sequencer
+rmi=sequencer
+avi=AVIVideo
+cmv=CorelMOVE
+mwf=CorelMOVE
+mpg=MpegVideo
+mpv=MpegVideo
+dat=MpegVideo
+vbs=MpegVideo
+m1v=MpegVideo
+mpe=MpegVideo
+mov=QTWVideo
+pic=QTWVideo
+jpg=QTWVideo
+
+[Compatibility]
+NOTSHELL=0x0001
+WPWINFIL=0x0006
+CCMAIL=0x0008
+AMIPRO=0x0010
+REM=0x8022
+PIXIE=0x0040
+CP=0x0040
+JW=0x42080
+TURBOTAX=0x00080000
+TME=0x0100
+VB=0x0200
+WIN2WRS=0x1210
+PACKRAT=0x0800
+VISION=0x0040
+MCOURIER=0x0800
+_BNOTES=0x24000
+MILESV3=0x1000
+PM4=0x2000
+DESIGNER=0x2000
+PLANNER=0x2000
+DRAW=0x2000
+WINSIM=0x2000
+CHARISMA=0x2000
+PR2=0x2000
+PLUS=0x1000
+ED=0x00010000
+APORIA=0x0100
+EXCEL=0x1000
+GUIDE=0x1000
+NETSET2=0x0100
+W4GL=0x4000
+W4GLR=0x4000
+EUPHORIA=0x237934c3
+
+[Microsoft Word 2.0]
+HPDSKJET=+1
+
+[winsetup]
+source_disk_path=E:\JAN\WIN311
+
+[fonts]
+Modern (Plotter)=MODERN.FON
+Script (Plotter)=SCRIPT.FON
+Roman (Plotter)=ROMAN.FON
+small Fonts (VGA-Auflösung)=SMALLE.FON
+Symbol 8,10,12,14,18,24 (VGA-Auflösung)=SYMBOLE.FON
+MS Serif 8,10,12,14,18,24 (VGA-Auflösung)=SERIFE.FON
+Courier 10,12,15 (VGA-Auflösung)=COURE.FON
+MS Sans Serif 8,10,12,14,18,24 (VGA-Aufl.)=SSERIFE.FON
+Arial Standard (TrueType)=ARIAL.FOT
+Arial Fett (TrueType)=ARIALBD.FOT
+Arial Fett Kursiv (TrueType)=ARIALBI.FOT
+Arial Kursiv (TrueType)=ARIALI.FOT
+Courier New Standard (TrueType)=COUR.FOT
+Courier New Fett (TrueType)=COURBD.FOT
+Courier New Fett Kursiv (TrueType)=COURBI.FOT
+Courier New Kursiv (TrueType)=COURI.FOT
+Symbol Standard (TrueType)=SYMBOL.FOT
+Times New Roman Standard (TrueType)=TIMES.FOT
+Times New Roman Fett (TrueType)=TIMESBD.FOT
+Times New Roman Fett Kursiv (TrueType)=TIMESBI.FOT
+Times New Roman Kursiv (TrueType)=TIMESI.FOT
+WingDings (TrueType)=WINGDING.FOT
+Arial MT Black (TrueType)=ARIBL0.FOT
+Poster Bodoni ATT Bold (TrueType)=CGPOSTER.FOT
+Gill Sans MT Shadow (TrueType)=GILSHAD.FOT
+Graphite Light ATT (TrueType)=GRAPHLT.FOT
+Lucida Casual Italic (TrueType)=LUCASIT.FOT
+Lucida Casual (TrueType)=LUCASR.FOT
+Milestones Regular (TrueType)=MILES.FOT
+Phyllis ATT Italic (TrueType)=PHYLLIS.FOT
+Signet Roundhand ATT Italic (TrueType)=SIGNETRO.FOT
+=COMBULL.FOT
+LotusWPSet=LOWP____.FOT
+LotusLineDraw (TrueType)=LOTUS1.FOT
+Btx=BTX.FON
+BtxPc=BTXPC.FON
+Buccaneer Regular (TrueType)=C:\WINDOWS\_EABEE7B.FOT
+Accent Regular (TrueType)=ACCE.FOT
+AmericanText Regular (TrueType)=AMTE.FOT
+AntiqueOlive Regular (TrueType)=OLIV.FOT
+Balloon Bold (TrueType)=BALL.FOT
+BernhardCondensed Regular (TrueType)=BERN.FOT
+Broadway Regular (TrueType)=BROA.FOT
+BroadwayEngraved Italic (TrueType)=BROABI.FOT
+BroadwayEngraved Regular (TrueType)=BROAB.FOT
+Century Regular (TrueType)=CENT.FOT
+City Bold (TrueType)=CITY.FOT
+Clarendon Regular (TrueType)=CLAR.FOT
+Clearface Regular (TrueType)=CLEA.FOT
+Comix Regular (TrueType)=COMI.FOT
+CommercialScript Regular (TrueType)=COSC.FOT
+Expressa Regular (TrueType)=EXPR.FOT
+FetteFraktur Regular (TrueType)=FEFR.FOT
+GoudyOldStyle Regular (TrueType)=GOUD.FOT
+Hobo Regular (TrueType)=HOBO.FOT
+Keyboard Regular (TrueType)=KEYB.FOT
+LetterGothic Regular (TrueType)=LGOT.FOT
+MicroSquare Regular (TrueType)=MICR.FOT
+OnStage Regular (TrueType)=ONST.FOT
+Pedro Regular (TrueType)=PEDR.FOT
+Peignot Regular (TrueType)=PEYN.FOT
+Quadrat Regular (TrueType)=QUAD.FOT
+Roman Regular (TrueType)=ROMA.FOT
+Sans Regular (TrueType)=SANS.FOT
+SansCond Regular (TrueType)=SANC.FOT
+StarsAndStripes Regular (TrueType)=STAR.FOT
+Adelaide (TrueType)=ADELAIDN.FOT
+Amy (TrueType)=AMYN.FOT
+Arabia (TrueType)=ARABIAN.FOT
+Architecture (TrueType)=ARCHITEN.FOT
+Avalon (TrueType)=AVALONN.FOT
+Avalon Bold (TrueType)=AVALONB.FOT
+Avalon Italic (TrueType)=AVALONI.FOT
+Avant Garde Medium BT (TrueType)=TT0156M0.FOT
+Bahamas (TrueType)=BAHAMASN.FOT
+Bahamas Bold (TrueType)=BAHAMASB.FOT
+BahamasHeavy (TrueType)=BAHAMAHN.FOT
+BahamasLight (TrueType)=BAHAMALN.FOT
+BallroomTango (TrueType)=BALLROON.FOT
+Banff (TrueType)=BANFFN.FOT
+Bangkok (TrueType)=BANGKOK0.FOT
+Bangkok Bold (TrueType)=BANGKOKB.FOT
+Bard (TrueType)=BARDN.FOT
+Bassoon (TrueType)=BASSOONN.FOT
+Bassoon Bold (TrueType)=BASSOONB.FOT
+Bedrock (TrueType)=BEDROCKN.FOT
+Beehive (TrueType)=BEEHIVEN.FOT
+Bodnoff (TrueType)=BODNOFFN.FOT
+Bosanova (TrueType)=BOSANOVN.FOT
+Briquet (TrueType)=BRIQUETN.FOT
+Brisk (TrueType)=BRISKN.FOT
+Fences Plain (TrueType)=FENCES_0.FOT
+France (TrueType)=FRANCEN0.FOT
+France Bold (TrueType)=FRANCEB.FOT
+FrankfurtGothic (TrueType)=FRANKGO0.FOT
+FrankfurtGothicHeavy (TrueType)=FRANKGHN.FOT
+FrankHighlight (TrueType)=FRANKHIN.FOT
+Freeport (TrueType)=FREEPRTN.FOT
+Futura Extra Black BT (TrueType)=TT0148M_.FOT
+Futura Extra Black Condensed BT (TrueType)=TT0204M_.FOT
+Futura Extra Black Condensed Italic BT (TrueType)=TT0205M_.FOT
+Futura Extra Black Italic BT (TrueType)=TT0149M_.FOT
+Galliard Bold BT (TrueType)=TT0069M_.FOT
+Geometric 231 Heavy BT (TrueType)=TT1129M_.FOT
+MT Extra (TrueType)=MTEXTRA0.FOT
+Ottawa (TrueType)=OTTAWAN.FOT
+Paradise (TrueType)=PARADISN.FOT
+Pedro Italic (TrueType)=PEDRI.FOT
+ProseAntique (TrueType)=ANTIQUEN.FOT
+ProseAntique Bold (TrueType)=ANTIQUEB.FOT
+Swiss 721 Thin BT (TrueType)=TT0100M_.FOT
+Wingdings Standard (TrueType)=WINGDIN0.FOT
+Zurich Ultra Black Extended BT (TrueType)=TT0263M_.FOT
+Aardvark Bold (TrueType)=AARDVRKB.FOT
+Alefbet (TrueType)=ALEFBETN.FOT
+Brochure (TrueType)=BROCHURN.FOT
+Brooklyn Bold (TrueType)=BROOKLNB.FOT
+Busker (TrueType)=BUSKERN.FOT
+Campaign (TrueType)=CAMPAIGN.FOT
+Cancun (TrueType)=CANCUNN.FOT
+Carino (TrueType)=CARINON.FOT
+Casablanca (TrueType)=CASABLCN.FOT
+Casablanca Bold (TrueType)=CASABLCB.FOT
+CasablancaAntique (TrueType)=CAS_ANTN.FOT
+CasablancaAntique Italic (TrueType)=CAS_ANTI.FOT
+Castanet (TrueType)=CASTANTN.FOT
+Chalk (TrueType)=CHALKN.FOT
+Charlesworth Bold (TrueType)=CHARLB.FOT
+CommonBullets (TrueType)=COMBULL0.FOT
+CopperPot (TrueType)=COPPRPON.FOT
+CopperPot Bold (TrueType)=COPPRPOB.FOT
+Cosmic (TrueType)=COSMICN.FOT
+CosmicTwo (TrueType)=COSMIC2N.FOT
+Crescent (TrueType)=CRESCENN.FOT
+Cupertino (TrueType)=CUPERTNN.FOT
+Cupertino Italic (TrueType)=CUPERTNI.FOT
+Czar (TrueType)=CZARN.FOT
+DawnCastle (TrueType)=CASTLEN.FOT
+DawnCastle Bold (TrueType)=CASTLEB.FOT
+Dixieland (TrueType)=DIXILAND.FOT
+Eklektic (TrueType)=EKLEKTIN.FOT
+Envision (TrueType)=ENVIN.FOT
+Erie (TrueType)=ERIEN.FOT
+ErieLight (TrueType)=ERIELITN.FOT
+ErieLight Bold (TrueType)=ERIELITB.FOT
+Euromode (TrueType)=EURON.FOT
+Expo (TrueType)=EXPON.FOT
+Florence (TrueType)=FLORENCN.FOT
+Fujiyama (TrueType)=FUJIN.FOT
+Galleria (TrueType)=GALLERIN.FOT
+GeographicSymbols (TrueType)=GEOGRAPH.FOT
+GilbertUltraBold (TrueType)=GIL_UBLN.FOT
+Glacier (TrueType)=GLACIERN.FOT
+GoldMine (TrueType)=GOLDMINN.FOT
+GreekMathSymbols (TrueType)=SYMBOLS.FOT
+Griffon (TrueType)=GRIFFONN.FOT
+GriffonShadow (TrueType)=GRIFFN_N.FOT
+Harpoon (TrueType)=HARPOONN.FOT
+Heidelberg (TrueType)=HEIDLBRN.FOT
+Hollow (TrueType)=HOLLOWN.FOT
+Ireland (TrueType)=IRELANDN.FOT
+KabanaBold (TrueType)=KABANA_N.FOT
+Kastler Bold Italic (TrueType)=KASTLERT.FOT
+Keypunch (TrueType)=KEYPUNCN.FOT
+Keystroke (TrueType)=KEYSTROK.FOT
+Kids (TrueType)=KIDSN.FOT
+Koala Bold (TrueType)=KOALAB.FOT
+Lincoln (TrueType)=LINCOLNN.FOT
+LiquidCrystal (TrueType)=LIQUIDN.FOT
+Lithograph (TrueType)=LITHON.FOT
+Memorandum Bold (TrueType)=MEMORNDB.FOT
+Merlin (TrueType)=MERLINN.FOT
+Motor (TrueType)=MOTORN.FOT
+MusicalSymbols (TrueType)=MUSICAL.FOT
+Newfoundland (TrueType)=NWFDLANN.FOT
+NewOrder (TrueType)=NEWORDEN.FOT
+Palette (TrueType)=PALETTEN.FOT
+Paragon (TrueType)=PARAGONN.FOT
+Penguin (TrueType)=PENGUINN.FOT
+Penguin Bold (TrueType)=PENGUINB.FOT
+PenguinLight (TrueType)=PENGLTN.FOT
+Pepper (TrueType)=PEPPERN.FOT
+Pipeline (TrueType)=PIPELINN.FOT
+Playwright (TrueType)=PLAYN.FOT
+Posse (TrueType)=POSSEN.FOT
+PowerLine (TrueType)=POWERN.FOT
+President (TrueType)=PRESDNTN.FOT
+Quantum (TrueType)=QUANTUMN.FOT
+Scott (TrueType)=SCOTTN.FOT
+Scribe (TrueType)=SCRIBEN.FOT
+Scribe Bold (TrueType)=SCRIBEB.FOT
+Shogun (TrueType)=SHOGUNN.FOT
+Stamp (TrueType)=STAMPN.FOT
+Surreal (TrueType)=SURREALN.FOT
+Surreal Bold (TrueType)=SURREALB.FOT
+Switzerland (TrueType)=SWITZN.FOT
+Switzerland Bold (TrueType)=SWITZB.FOT
+Switzerland Bold Italic (TrueType)=SWITZT.FOT
+Switzerland Italic (TrueType)=SWITZI.FOT
+SwitzerlandBlack (TrueType)=SWZBLKN.FOT
+SwitzerlandBlack Italic (TrueType)=SWZBLKI.FOT
+SwitzerlandInserat (TrueType)=SWZINSRN.FOT
+Technical (TrueType)=TECHNCLN.FOT
+Technical Italic (TrueType)=TECHNCLI.FOT
+ThunderBay (TrueType)=THUNDERN.FOT
+Toronto (TrueType)=TORONTON.FOT
+Toronto Bold (TrueType)=TORONTOB.FOT
+Trafalgar (TrueType)=TRAFALGN.FOT
+Umbrella (TrueType)=UMBRELLN.FOT
+Unicorn (TrueType)=UNICORNN.FOT
+Viking (TrueType)=VIKINGN.FOT
+Vivienne (TrueType)=VIVIENN.FOT
+
+[embedding]
+SoundRec=Klang,Klang,SoundRec.exe,picture
+Package=Paket,Paket,packager.exe,picture
+PBrush=Paintbrush-Bild,Paintbrush-Bild,pbrush.exe,picture
+MPlayer=Media Clip,Media Clip,mplayer.exe,picture
+BitmapImage=Picture Publisher Image,Picture Publisher Image,c:\winapps\picpub4\pp40.exe,picture
+AmiProDocument=AmiPro Document,AmiPro Document,C:\WINAPPS\AMIPRO\AMIPRO.EXE,picture
+CDraw5=CorelDRAW! 5.0 Grafik,CorelDRAW! 5.0 Grafik,C:\WINAPPS\COREL5\PROGRAMS\CORELDRW.EXE,picture
+CQuickDraw5=CorelDRAW! 5.0 Präsentationsaustauschgrafik,CorelDRAW! 5.0 Präsentationsaustauschgrafik,C:\WINAPPS\COREL5\PROGRAMS\CORELDRW.EXE,picture
+CPaint5=Corel PHOTO-PAINT 5.0 Image,Corel PHOTO-PAINT 5.0 Image,C:\WINAPPS\COREL5\PROGRAMS\CORELPNT.EXE,picture
+DAT=DAT,DAT,C:\WINAPPS\AUDIO\WINDAT.EXE,picture
+NetscapeMarkup=Netscape Hypertext Document,Netscape Hypertext Document,C:\COMM\NETSCAPE\NETSCAPE.EXE,picture
+PlayerFrameClass=QuickTime Movie,QuickTime Movie,c:\windows\player.exe,picture
+ViewerFrameClass=QuickTime Picture,QuickTime Picture,c:\windows\viewer.exe,picture
+PaintShopPro=Paint Shop Pro Image,Paint Shop Pro Image,C:\WINAPPS\PSP\PSP.exe,picture
+Soundo'LE=Soundo'LE,Soundo'LE,C:\TOOLS\SB16\WINAPPL\SOUNDOLE.EXE,picture
+
+[TintControl]
+CLUT1=BT485
+AUTO=0
+
+[miroSCOPE]
+Window dimensions=
+Sensibility=100
+Zoom Factor=1
+Hotkey Number=1
+
+[Spooler]
+qp.LPT1=hpvqp.dll
+windowstate=1600000002001800B802FFFFFFFF2C002C001C031002
+msctls_headerbar=0000640064006400
+state=0300
+
+[HPVRDMAN]
+driver=DESKJETC
+LPT1.Redirected=0
+LPT1.Printer=HP DeskJet 600 Printer
+LPT1.Driver=DESKJETC
+LPT1.JobTimeout=45
+LPT1.FlushTimeout=15
+LPT1.Emulation=0
+LPT1.Copies=1
+
+[HPV1284,LPT1.DOS]
+DefaultInputMode=4
+DefaultOutputMode=8
+RelaxState32Timeout=1
+
+[drawdib]
+vxpmr_16.drv 800x600x16(565 5)=31,27,31,31
+vxpmr_15.drv 800x600x16(555 5)=31,31,31,31
+vxpmr_16.drv 1024x768x16(565 5)=31,27,31,31
+
+[CorelGraphics5]
+Dir=C:\WINAPPS\COREL5\CONFIG
+
+[Windows Help]
+H_WindowPosition=[266,200,266,200,0]
+M_WindowPosition=[4,4,1032,776,0]
+
+[Micrografx]
+Picture Publisher 4.0=C:\WINAPPS\PICPUB4
+
+[Picture Publisher 4.0]
+Warning=1
+
+[fastscsi.386]
+SCSIWizard=1
+
+[colors]
+Background=0 0 0
+AppWorkspace=192 192 192
+Window=255 255 255
+WindowText=0 0 0
+Menu=248 248 248
+MenuText=0 0 0
+ActiveTitle=0 0 0
+InactiveTitle=0 0 0
+TitleText=248 248 248
+ActiveBorder=192 192 192
+InactiveBorder=192 192 192
+WindowFrame=0 0 0
+Scrollbar=192 192 192
+ButtonFace=192 192 192
+ButtonShadow=128 128 128
+ButtonText=128 0 64
+GrayText=192 192 192
+Hilight=160 200 240
+HilightText=0 0 0
+InactiveTitleText=192 192 192
+ButtonHilight=255 255 255
+
+[TELES.Com]
+CardType=1
+InstalledDChannel=0
+EMMExclude=D800-D8FF
+Interrupt=10
+device=C:\COMM\ISDN\vs0d.386
+UseAbCard=False
+Path=C:\COMM\ISDN
+PabxEscape=
+AreaCode=07533
+CallBackTest=97086
+GroupName=
+LicenceServer=030/39928-008
+ServiceNumber=030/39928-007
+KeyFile=C:\COMM\ISDN\ACTIVATE.KEY
+WinCOMInstalled=FALSE
+Fax3Installed=FALSE
+FixInstalled=FALSE
+FonInstalled=FALSE
+FonIsVifon=FALSE
+NDISInstalled=FALSE
+FaxInDir=C:\COMM\ISDN\FAX
+FaxOutDir=C:\COMM\ISDN\FAX
+Version=2.94
+VersionDate=950110
+InstallVersion=
+EDSS1=True
+FixEuroEAZ=0
+FaxEAZ=1
+WYSIWISEAZ=2
+EAZMapping9=*
+Charge=12
+SupportIsdnIdle=0
+QueryHang=1
+InfoLang=1
+SupportActualizeDate=960412
+
+[TLSTIME]
+device=TLSTIME.386
+
+[TELES/Btx]
+Pfad=C:\COMM\ISDN
+IsdnNummer=01910
+CapiDir=C:\COMM\ISDN
+
+[TELES.EFIX]
+OutDir=C:\COMM\ISDN\FIXOUT
+InDir=C:\COMM\ISDN\FIXIN
+Path=C:\COMM\ISDN
+
+[T-Online-Decoder]
+path=C:\COMM\T_NOLINE\ONLINE.EXE
+Makropfad=c:\comm\t_noline\makro
+
+[Netscape]
+ini=C:\COMM\NETSCAPE\netscape.ini
+
+[WinFax]
+UserName=Jan Hacker
+CompanyName=
+LicenseNumber=
+ExePath=C:\COMM\WINFAX\
+Fax Path=C:\COMM\WINFAX\DATEN\
+Cover Path=C:\COMM\WINFAX\COVER\
+PhoneBook=Standrd
+imodemdesc=Generic CLASS 1 (Hardware Flow Control)
+ModemTag=11001146
+Version=4.0
+Paper Format=A4 (210 x 297 mm)
+Orientation=Portrait
+Resolution=Standard
+
+[MRU_Files]
+Order=gfaebdc
+a=\\RITAHACK\MUM_C
+b=\\Q133\Q133-MAIN
+c=\\Q133\D
+d=\\Q133\Q-133-CDROM
+e=\\Q133\Q133-D
+f=\\RITAHACK\MUM_D
+g=\\RITAHACK\MUM_E
+
+[MRU_Chat]
+Order=acb
+a=\\Q133
+b=\\DONALDDU
+c=\\JANNOSPC
+
+[MRU_WinPopup_Comp]
+Order=a
+a=\\Q133
+
+[xing]
+XingVideo=C:\winapps\xing\XMPLAYER
+
+[MICROTEK SCANNER]
+Interface=ASPI
+PortAddr=D400
+SCSI ID=6
+ScanType=ScanMaker II
+
+[miroadjust]
+rain=0
+
+[Live3D]
+SystemDirectory=C:\COMM\NETSCAPE\LIVE3D\
+
+[WinG]
+vxpmr_15.drv800x600x16(1,12)v3.10.0.61-1E7D-1.0.0.37N=ZZCCZZIHZZICZZIHZZIHZZIHZZIHZZIHZZZZZZZZZZZZZZZZZZIHZZIHZZIHZZIH0H
+vxpmr_16.drv800x600x16(2,12)v3.10.0.61-1E7D-1.0.0.37N=ZZCCZZIHZZICZZIHZZIHZZIHZZIHZZIHZZZZZZZZZZZZZZZZZZIHZZIHZZIHZZIH0H
+vxpmr_08.drv640x480x8(0,12)v3.10.0.61-1E7D-1.0.0.37=HCHGHCHGHCHGHCHGHGHGHGHGHDHGHDHGZZZZZZZZZZZZZZZZHGHGHGHGHDHGHDHG1H
+vxpmr_16.drv1024x768x16(2,12)v3.10.0.61-1E7D-1.0.0.37N=ZZCCZZIHZZICZZIHZZIHZZIHZZIHZZIHZZZZZZZZZZZZZZZZZZIHZZIHZZIHZZIH0H
+
+[Mach]
+devicebitmap=off
+
+[MAIL]
+MAPI=1
+
+[miroVIRTUAL]
+top=true
+run=false
+align=no
+
+[RegEdit]
+width=280
+height=156
+
+[IGS]
+Weather=832919717
+
+[MSWrite]
+Backup=0
+
+[sounds]
+RingOut=,Ausgehender Anruf
+RingIn=,Eingehender Anruf
+SystemQuestion=,Frage
+SystemExclamation=,Hinweis
+SystemHand=,Kritischer Abbruch
+SystemDefault=,Standardsignal
+SystemAsterisk=,Stern
+SystemExit=,Windows-Ende
+SystemStart=,Windows-Start
+
+[HPV1284,LPT1]
+DefaultInputMode=4
+DefaultOutputMode=8
+RelaxState32Timeout=1
+
+[QMS 1660/1660E,LPT1:]
+DevFileName=C:\WINDOWS\SYSTEM\QMS1660.Q2D
+Author 0=
+Host 0=
+Charge 0=
+feed2=9
+feed4=9
+feed7=9
+feed25=9
+feed26=9
+Overlay Disk=DSK6:
+Overlay File=
+EPS File=
+External Header File Name=
+
+[PostScript,LPT1:]
+ATM=placeholder
+
+[MSCharMap]
+Font=Linus
+
+[PrinterPorts]
+HP DeskJet 600 Printer=DESKJETC,LPT1:,15,45
+ISDN Fax=FAXDRV,CURRENT.SFF,15,45
+QMS 1660/1660E=qmsps,LPT1:,15,45
+WinFax=WinFax,FaxModem,15,45
+
+[devices]
+HP DeskJet 600 Printer=DESKJETC,LPT1:
+ISDN Fax=FAXDRV,CURRENT.SFF
+QMS 1660/1660E=qmsps,LPT1:
+WinFax=WinFax,FaxModem
+
+[TWAIN]
+Default Source=C:\WINDOWS\TWAIN\MSCANDC.DS
+
+[QMS 1660/1660E,LPT1: Fonts]
+Arial=Helvetica
+Times New Roman=Times
+Courier New=Courier
+Symbol=Symbol
+Arial Narrow=Helvetica-Narrow
+Book Antiqua=Palatino
+Bookman Old Style=Bookman
+Century Schoolbook=NewCenturySchlbk
+Century Gothic=AvantGarde
+Monotype Corsiva=ZapfChancery
+Monotype Sorts=ZapfDingbats
+Century Schoolbook SWA=NewCenturySchlbk
+ITC Avant Garde SWA=AvantGarde
+ITC Bookman SWA=Bookman
+ITC Zapf Chancery SWA=ZapfChancery
+ITC Zapf Dingbats SWA=ZapfDingbats
+Zapf Calligraphic 801=Palatino
+

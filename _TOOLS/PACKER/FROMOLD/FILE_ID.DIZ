@@ -1,0 +1,9 @@
+SONARC v2.1h: a LOSSLESS compressor for
+digital audio files.  Compress/decompress
+monaural & stereo, 8-bit & 16-bit audio
+files in WAV, VOC and even "raw" format.
+Command-line interface; wildcards allowed.
+Runs on 8086; auto-senses '386. Shareware.
+This update features enhanced compression
+of 16-bit audio files. Use v2.04g PKUNZIP.
+

@@ -1,0 +1,40 @@
+TEXTASSIST - HÄUFIGE FRAGEN UND ANTWORTEN
+
+            
+Diese Datei enthält Antworten zu einigen häufig gestellten Fragen. 
+Falls Sie auf ein Problem treffen, lesen Sie bitte die folgenden 
+Abschnitte. Wenn Sie dort keine Lösung finden, wenden Sie sich 
+bitte an die technische Unterstützung.
+
+
+F. Wenn ich TextAssist mit mehr als einer Anwendung gleichzeitig verwende,
+   erhalte ich die Meldung "Alle Kanäle momentan in Verwendung".
+   Was kann ich tun?
+
+A. Da TextAssist die gleichzeitige Verwendung mehrerer Kanäle nicht 
+   unterstützt, müssen Sie die Sprache einer Anwendung beenden, 
+   bevor Sie eine weitere starten.
+
+
+F. Ich habe ein Ausnahmewort in das Wörterbuch eingegeben, TextReader 
+   spricht das Wort jedoch weiterhin falsch aus. Weshalb?
+
+A. Überprüfen Sie Ihr Standardwörterbuch und vergewissern Sie sich, 
+   daß es sich um das Wörterbuch handelt, in dem Sie den Eintrag 
+   vorgenommen haben. Um Ihr Standardwörterbuch zu überprüfen, 
+   öffnen Sie das TextAssist-Kontrollfeld und wählen "Wörterbuch" 
+   aus dem Pull-Down-Menü "Konfiguration".
+
+
+F. Ich habe eine neue Stimme im TextAssist-Kontrollfeld hinzugefügt, 
+   kann diese jedoch nicht so tief einstellen, wie ich möchte. 
+   Wie kann ich diese tiefer stellen?
+
+A. Da Harry die tiefste Stimmlage besitzt, vergewissern Sie sich, daß 
+   Harry ausgewählt ist, bevor Sie auf "Hinzufügen" klicken. 
+   Auf diese Weise starten Sie mit der tiefsten Stimmlage.
+   Falls Sie mit Betty starten, kann die Stimmlage nicht so tief 
+   eingestellt werden.
+
+
+  		       *** Ende der Fragen und Antworten ***

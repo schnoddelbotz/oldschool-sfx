@@ -1,0 +1,405 @@
+
+
+  T h e   A u r o r a   E d i t o r   Q u i c k   R e f e r e n c e
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  This Quick Reference briefly summarizes all The Aurora Editor library
+  functions documented in The Aurora Editor Users Guide (A.DOC). For
+  documentation on native macro language functions, see "The Aurora
+  Macro Language Guide".
+
+  Library functions are listed by category. Each library function is
+  followed by the default key definition (if any), and a brief
+  description. User-specified arguments to library functions are
+  enclosed in [bracket] characters.
+
+
+  File
+  ÄÄÄÄ
+
+    newf                   <Ctrl-N>          new edit window
+    askopen                <Alt-E>           open prompt
+    askopenins             <Alt-I>           insert file prompt
+    askopenb                                 open binary prompt
+    openlast               <Alt-Z>           open last window
+    wrdlod CSetB           <Ctrl-]>          open file at cursor
+    refresh                                  refresh file from disk
+    askname                <Alt-N>           rename prompt
+    name [filename]                          rename filename
+    open [filespec] [options]                open filename/directory
+    opena [filename]                         open a .A file
+    save                   <F3>              save current file
+    save [filename]                          save filename
+    asksaveas                                save-as prompt
+
+    fmgr                   <F4>              display file manager
+
+    quit %p                                  close file & window
+    gquit %p               <Alt-X>           close all windows
+    quit %f                                  save file and close window
+    gquit %f                                 save file and close all windows
+
+    wquit %p               <Ctrl-K-Q>        close window
+    fquit %p               <Alt-Q>           close file
+    fquit %f               <Ctrl-X>          save and close file
+
+    fnex                   <Ctrl-Del>        next file
+    fpre                   <Ctrl-Ins>        prev file
+    flis                   <Alt-Hyphen>      display file list
+
+    about                                    display about box
+
+    hlp [major] [minor]                      display User's Guide
+    qref                   <Shift-F1>        display Quick Reference
+
+
+  Window
+  ÄÄÄÄÄÄ
+
+    wlis                   <Alt-W>           display window list
+    wres                                     restore window
+    wkey                   <Ctrl-F5>         move/size window
+    wkey %p                <Ctrl-F6>         pan video background
+    wmin                                     minimize window
+    wmax                   <Ctrl-Z>          maximize window
+    wnex                   <Ctrl-A>          next window
+    wpre                                     prev window
+
+    wcopy                  <Ctrl-C>          copy window
+    wspl %h                <Alt-H>           split window horizontal
+    wspl %v                <Alt-V>           split window vertical
+
+    wcasc                  <Shift-F5>        cascade windows
+    wtileh                 <Shift-F4>        tile windows horizontally
+    wtilev                 <Shift-F3>        tile windows vertically
+
+    wtool                  <Ctrl-F8>         display tool bar
+    winsty                 <Ctrl-F7>         change window style
+    wppt                                     change prompt style
+
+    wrtv %p                <cursorup>        retrieve prev prompt
+    wrtv %n                <cursordown>      retrieve next prompt
+
+
+  Menu
+  ÄÄÄÄ
+
+    menb                   <Esc>, <F10>      to last menu bar item
+    men                    <Alt-F10>         to last pull-down menu
+    menh                   <F1>              help pull-down
+    men2                   <Alt-T>           to last tool bar control
+    mens [submenu]                           display submenu
+
+
+  Cursor Movement
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    left                   <cursorleft>      move cursor left
+    right                  <cursorright>     move cursor right
+    up                     <cursorup>        move cursor up
+    down                   <cursordown>      move cursor down
+
+    cptop                  <Ctrl-Home>       to page top
+    cpbot                  <Ctrl-End>        to page bottom
+    cmov @ 1               <Ctrl-PgUp>       to file top
+    cmov @ (qtexend)       <Ctrl-PgDn>       to file bottom
+    cmov [x] [y]                             to [x], [y] (abs or rel)
+
+    chome                  <Home>            to column one
+    ceol                   <End>             to end of line
+    clast                  <Ctrl-Hyphen>     to last cursor position
+    ctab                   <Tab>             tab right
+    ctab %l                <Shift-Tab>       tab left
+    cwrd %l CSet           <Ctrl-Left>       find left word
+    cwrd %r CSet           <Ctrl-Right>      find right word
+
+    ladj @ -1              <Keypad-5>        center cursor
+    ladj @  1              <Ctrl-F9>         scroll to page top
+    ladj @ (qwinp @ %y1d)  <Ctrl-F10>        scroll to page bottom
+
+    askbset                                  set bookmark prompt
+    bset                   <Ctrl-2>          quick bookmark
+    bset [bookmark]                          set bookmark
+    askbget                                  go to bookmark prompt
+    bget                   <Ctrl-6>          to previous bookmark
+    bget [bookmark]                          go to bookmark
+
+    askglin                <Ctrl-J>          go to line prompt
+    glin [line]                              go to line
+    askgcol                                  go to column prompt
+    gcol [column]                            go to column
+    mloc @ %t              <Ctrl-B>          find top of block
+    mloc @ %b                                find bottom of block
+    cfld                   <Alt-7>           go to next fold
+    cfld %r                                  go to prev fold
+
+    finm                   <Alt-F3>          find matching char
+    finc                   <Alt-F7>          go to compiler error
+
+
+  Scrolling
+  ÄÄÄÄÄÄÄÄÄ
+
+    scry (- (ypagsiz))     <PgUp>            scroll up
+    scry (ypagsiz)         <PgDn>            scroll down
+    scry (- (/ (ypagsiz) 2))                 scroll up 1/2 page
+    scry (/ (ypagsiz) 2)                     scroll down 1/2 page
+    scry -1                <Ctrl-Up>         scroll up one line
+    scry  1                <Ctrl-Down>       scroll down one line
+
+    scrx (- (xpagsiz))     <F7>              scroll left
+    scrx (xpagsiz))        <F8>              scroll right
+
+
+  Modifying Text
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    cmtog                  <Ins>             toggle insert mode
+    enteredit              <Enter>           enter key
+    delch                  <Del>             delete character
+    baksp                  <Backspace>       delete left character
+
+    undo                   <Ctrl-U>          undo last change
+    undo %r                <Ctrl-Y>          redo last change
+
+    lins %a                <Ctrl-Enter>      insert line w/autoindent
+    lins %c                                  insert line
+    ldel                   <Ctrl-Backspace>  delete line
+    lspl                   <Alt-S>           split line
+    ljoin                  <Alt-J>           join line
+
+    leol                   <F6>              erase to end of line
+    leol %l                <Alt-F6>          erase to beginning of line
+    wrddel CSet            <Ctrl-T>          delete right word
+    wrdcas [options] [CSet]                  change case of a word
+    ldup                   <Alt-4>           duplicate line
+    lswp                   <Alt-5>           swap line
+    lcen                   <Alt-6>           center line
+
+    lcom                   <Alt-F1>          comment/uncomment line (//)
+    lcom [string1] [string2]                 comment/uncomment line
+    lit                    <Ctrl-[>          enter literal character
+    wasc                   <Alt-=>           display ascii chart
+    txt [string]                             enter a string at the cursor
+    stamp                  <Ctrl-K-T>        date/time stamp
+    exptab                 <Ctrl-K-X>        expand tabs
+
+
+  OS Commands
+  ÄÄÄÄÄÄÄÄÄÄÄ
+
+    askoscmd %ck           <Alt-F9>          DOS command prompt
+    os [cmd] [options]                       execute DOS command
+    askoscap               <Alt-F8>          DOS capture prompt
+    oscap [cmd] [options]                    capture DOS command output
+    osshell                <F9>              exit to DOS
+
+
+  Marking
+  ÄÄÄÄÄÄÄ
+
+    mset %l                <Alt-L>           mark line
+    mset %r                <Alt-B>           mark column
+    mset %s                <Alt-A>           mark character
+    wrdmrk CSet            <Alt-1>           mark word
+    meol                   <Alt-2>           mark to end of line
+    mpgh %tb               <Alt-3>           mark paragraph
+
+    mdes                   <Alt-U>           unmark
+
+
+  Block
+  ÄÄÄÄÄ
+
+    mcpy                   <Alt-C>           copy block
+    mcpyp                  <Alt-C>           copy block to prompt
+    mmov %o                <Alt-O>           overlay block
+    mmov                   <Alt-M>           move block
+    mmov %of               <Ctrl-M>          move block over
+    mdel                   <Alt-D>           delete block
+    mshf  1                <Shift-F8>        indent block
+    mshf -1                <Shift-F7>        unindent block
+
+    askmfill               <Ctrl-K-F>        fill block prompt
+    mrfl %b                <Alt-R>           reflow block
+    mrfl %br               <Alt-Y>           reflow & right justify block
+    msave                  <Ctrl-K-S>        save block
+    msave %a                                 append block
+    msrt                   <Ctrl-K-O>        sort block
+    mcase %l                                 change block to lower case
+    mcase %u               <Ctrl-K-U>        change block to upper case
+    mcase %ul                                flip case of block
+
+    mjust %l                                 left justify block
+    mjust %c               <Ctrl-K-C>        center block
+    mjust %r                                 right justify block
+
+    print %m               <Alt-P>           print block
+
+
+  Clipboard
+  ÄÄÄÄÄÄÄÄÄ
+
+    clpcpy %d              <Grey->           cut
+    clpcpy %ad             <Ctrl-Grey->      cut append
+    clpcpy                 <Grey+>           copy
+    clpcpy %a              <Ctrl-Grey+>      copy append
+
+    clppst                 <Grey*>           paste
+    clppst %o              <Ctrl-Grey*>      paste over
+
+    clpclr                 <Ctrl-Grey/>      clear clipboard
+    askclp                                   clipboard name prompt
+
+
+  Folding
+  ÄÄÄÄÄÄÄ
+
+    lfld %b                <Alt-8>           fold next line
+    lfld %t                                  fold prev line
+
+    mfld %f                <Alt-F>           fold block
+    mfld %uaf                                fold block flat
+
+    lfld %u                <Alt-G>           unfold line
+    lfld %ua                                 unfold line flat
+    lfld %bs               <Alt-9>           unfold next line
+    lfld %ts                                 unfold prev line
+
+    mfld %u                                  unfold block
+    mfld %ua                                 unfold block flat
+    mflda %ua              <Alt-0>           unfold all
+
+
+  Search and Replace
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    askfind                <Ctrl-F>, <F5>    find prompt
+    askrpl                 <Ctrl-G>          replace prompt
+    search [string]                          find/replace
+    finl                   <Ctrl-L>          do last find/replace
+    askscan                <Ctrl-S>          scan prompt
+
+
+  Printing
+  ÄÄÄÄÄÄÄÄ
+
+    print                  <Ctrl-P>          print
+    print %d               <Ctrl-P>          print file mgr contents
+    print %m               <Alt-P>           print block
+    prtstr [string]                          print string
+    askprtset                                print settings prompt
+
+    prtfil [filename]                        print filename
+
+
+  Settings
+  ÄÄÄÄÄÄÄÄ
+
+    wmwrap                 <Ctrl-W>          word wrap toggle
+    wmautoi                                  autoindent toggle
+    wmvtab                                   variable tabs toggle
+    wmsmtab                                  smart tabs toggle
+    wmmat                                    match character toggle
+    wmbak                                    file backup toggle
+    wmtran                 <Alt-F4>          text translation toggle
+    wmdraw                 <Ctrl-D>          line draw toggle
+    sdraws [0/1/2/3/4]                       line draw style
+
+    asktabw                                  tab width prompt
+    asktabv                                  variable tabs prompt
+    asklmrg                                  left margin prompt
+    askrmrg                                  right margin prompt
+    askind                                   paragraph indent prompt
+    askdefx                                  file extensions prompt
+    askbin                                   binary line length prompt
+    askdlm                                   line delimiter prompt
+
+    vfont %t               <Ctrl-F1>         toggle video mode
+    vfont [columns] [rows]                   change video mode
+
+    setsav                                   save current settings
+    setres                                   restore settings
+
+
+  Key Macros
+  ÄÄÄÄÄÄÄÄÄÄ
+
+    krec                   <Ctrl-R>          record key macro toggle
+    kplay                  <Ctrl-E>          play scrap key macro
+    kdel                   <Ctrl-I>          erase scrap key macro
+    kdel %a                                  erase all key macros
+    askkopen                                 key macro open prompt
+    kopen [filename]                         open key macro file
+    askksav                                  key macro save prompt
+    ksav [filename]                          save key macros to filename
+    kcat                                     assign scrap key macro to key
+
+
+  Macros
+  ÄÄÄÄÄÄ
+
+    opena %acfg                              display configuration (ACFG.A)
+    opena %akbd                              display key defs (AKBD.A)
+    opena %amen                              display menu defs (AMEN.A)
+    opena %atrn            <Alt-F5>          display translate defs (ATRN.A)
+
+    askmcmd                <Ctrl-V>          macro command prompt
+    askmrun                                  run macro prompt
+    askminc                                  include macro prompt
+    askmcom                                  compile macro prompt
+
+    mcmd [expression]                        evaluate macro expression
+    mrun [filename]                          evaluate macro file
+    minc [filename]                          include macro file
+    mcom [filename]                          compile macro file
+
+
+  Miscellaneous Functions
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    say [message] [options]                  display message on title bar
+    mbox [title] [message] [options]         display message box
+    ask [prompt] [title] [width]             user prompt for string
+    askbox [title] [options]                 menu box prompt
+    keyx [key prefix]                        define compound key prefix
+    askkrep                <Ctrl-Q-Q>        repeat last key command
+    dn                                       get fmgr filename at cursor
+
+    moubegmrk [x] [y] [options]              begin mouse mark
+    moumovmrk [x] [y]                        extend mouse mark
+    mouendmrk [x] [y]                        end mouse mark
+
+    winsizt [l] [t] [r] [b] [reps] [options]  resize current window
+    qwrd [char set]                          get the word at the cursor
+    qwinmin                                  test if window is minimized
+    qwinmax                                  test if window is maximized
+    qtimdat                                  return date/time
+
+
+  File Manager
+  ÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    fpar                   <Ctrl-Backspace>  parent directory
+    fopen                  <Enter>,<e>,<o>,<z>  open file/directory
+    fopen %b               <b>               open binary file
+    fopenk                 <k>               open key macro file
+    fmov                   <m>               move file
+    fcpy                   <c>               copy file
+    fdel                   <d>, <Del>        delete file
+    fren                   <n>               rename file
+    frun %c                <r>               run program/batch file
+    fprt                   <p>               print file
+    fatt                   <a>               change file attributes
+    ftch                   <t>               touch file
+    fcred                                    create new directory
+
+    fmtog                  <Space Bar>       mark/unmark file
+    fmrk                   <Alt-M>           mark all files
+    fumrk                  <Alt-U>           unmark all
+
+    fsrt %n                <Alt-N>           sort by name
+    fsrt %s                <Alt-S>           sort by size
+    fsrt %d                <Alt-D>           sort by date
+    fsrt %o                <Alt-O>           no sort (DOS order)
+

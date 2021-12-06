@@ -1,0 +1,560 @@
+ €€€€€€ª   €€€€€ª  €€€€€€ª
+ €€…ÕÕ€€ª €€…ÕÕ€€ª €€…ÕÕ€€ª     RAR version 2.00
+ €€€€€€…º €€€€€€€∫ €€€€€€…º     ~~~~~~~~~~~~~~~~
+ €€…ÕÕ€€ª €€…ÕÕ€€∫ €€…ÕÕ€€ª     RAR Registration and Support sites
+ €€∫  €€∫ €€∫  €€∫ €€∫  €€∫     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ »Õº  »Õº »Õº  »Õº »Õº  »Õº
+
+   The latest version of RAR and support conferences are available at
+the sites and BBS's listed below.  Most of them are FIDONET-nodes, so
+you can request the latest version of RAR, via file request, using
+the magic name of 'RAR'.
+
+
+World-Wide distribution headquarters:
+
+FINLAND
+-------
+ Postal address                  Ordering information
+
+ RAR HQ                          Fax         : +358 (0) 2983308
+ PL 97                           Voice       : +358 (0) 2983307
+ 02101 Espoo                     BBS (V.34)  : +358 (0) 5062622
+ Finland                         Email       : ron@knowledgebase.fi
+
+ FidoNet: 2:220/22
+        : 2:220/20
+
+
+North American Continent:
+
+USA/Illinois
+------------
+ Postal Address:                   Ordering Information:
+
+ Intuitive Vision Software         Voice        : 1-312-583-2480
+ Attn: RAR                         BBS          : 1-312-583-0489
+ P.O. Box 257773                                  1-312-583-0488
+ Chicago, IL  60625-7773                          1-312-583-1745
+                                   FAX          : 1-312-583-1745
+ Voice Hours:                      FidoNet      : 1:115/583
+                                   Internet     : sales@ivsoft.com
+ Mon-Fri: 6:00p  to 10:00p (CST)   FTP          : ftp.ivsoft.com /pub/ivsoft
+ Sat/Sun: 10:00a to 10:00p (CST)   WWW          : http://www.ivsoft.com
+
+
+ Orders accepted by phone, mail, e-mail, fax, or BBS (Charge Door).
+
+ Credit Cards accepted:  Visa, MasterCard, Discover, or American Express.
+
+ Personal Checks, Money Orders, or Cashier's Checks accepted; make
+ payable to Intuitive Vision Software.
+
+ Purchase Orders from Schools, Businesses, or Government Agencies
+ welcome.  Terms: 2% 10 days, Net 30 days
+
+ Illinois residents add 6.25% Sales Tax
+
+
+SouthEastern US
+USA/Kentucky
+----------------
+
+ Postal Address:          Ordering Information/Technical Support:
+ 
+ Janis Kracht             Internet  : jkracht@thepoint.net
+ RAR Registrations        Telephone : 502-245-4353 Voice  (EST 10am-9pm)
+ 1512 Grandin Woods Ct.   Fax       : 502-245-8117 24hrs
+ Louisville, Kentucky     BBS/FAX   : 502-245-8117/VEverything/FAX 24hrs
+ 40299 USA                BBS       : 502-245-1146/V32B,HST 24hrs
+                          Payment accepted by US Check, Bank or US Postal
+                          Money order, or registered letter with Cash payments.
+
+ 
+            Orders accepted by phone, fax or e-mail
+
+ FidoNet  : 1:2320/38 1:2320/100
+ Internet jkracht@thepoint.net
+
+
+USA/Minnesota
+-------------
+ Postal Address:                 Ordering Information:
+                                                
+ Robert L. LaPrise               Voice        : 1-612-939-4044
+ Attn: RAR                       BBS          : 1-612-939-0031
+ 97 North Blake Rd. Apt. 121     FidoNet      : 1:282/4098
+ Hopkins, MN  55343-8282         ITCnet       : 85:833/102
+
+                          Voice Hours:
+
+        Monday thru Friday  --  6:00pm   to  9:00pm (CST)
+        Saturday & Sunday   --  12:00am  to  8:00pm (CST)
+
+ Orders currently accepted by Mail Only, soon to offer online
+ registration via the BBS.
+
+ Personal Checks, Money Orders, or Cashier's Checks accepted; make
+ payable to Robert LaPrise. Personal checks must clear before keys
+ will be released.
+
+ Addition to new release Mailing list available on request.
+
+
+USA/Wisconsin
+-------------
+ Postal Address:                 Ordering Information:
+
+ Mr. Homies' Neighborhood        Voice        : 1-414-764-3068
+ Attn: Dept  TM                  BBS          : 1-414-764-7659
+ 1204 Memorial Drive, #13        FAX          : 1-414-764-7659
+ South Milwaukee,                FidoNet      : 1:154/645
+ WI 53172-1649
+
+                          Voice Hours:
+        Monday-Saturday  --  6:00pm   to  10:00pm (CST)
+        Sunday           --  10:00am  to  10:00pm (CST)
+
+ Orders accepted by Phone, Mail, NetMail (Crash), FAX, and BBS.
+
+ Credit Cards accepted:  Visa and MasterCard
+
+ Personal and Business Checks, Money Orders, or Cashier's Checks accepted; 
+ make all checks payable to:  Mr. Homies' Computex.
+
+ Wisconsin residents add 5.5% sales tax.
+
+
+Canada
+------
+ Postal Address:                 Ordering Information:
+
+ The Gremlin's Palace BBS        BBS/FAX 1-604-535-1077
+ Box #45527                      BBS/FAX 1-604-535-5308
+ Sunnyside Mall PO               FidoNet 1:153/9116 & 9117
+ Surrey, B.C. V4A 9N3
+ Canada
+
+ Orders accepted by Fax, SnailMail, E-Mail. (BBS Online Ordering Shortly)
+
+ Credit Cards accepted:  Visa, MasterCard
+ All Credit Card orders add 5%
+
+ Personal Checks, Money Orders accepted; make payable to Darrell Harder
+
+
+Europe:
+
+Deutschland, ôsterreich und Schweiz
+-----------------------------------
+ Postanschrift                   Information:
+
+      ⁄ƒƒø
+ mediacom≥                       Fax         : +49 (0)6151 151436
+      ¿ƒƒŸ                       Orders      : +49 (0)6151 26438
+ Abteilung RAR Support
+ Karlstra·e 59
+ 64285 Darmstadt
+ Germany
+
+ Sie kînnen Ihre Bestellung per Fax, Mail, E-Mail oder in einer der
+ DIDDI'S DEN SUPPORTBOXEN aufgeben. Dort finden Sie auch die aktuellen
+ Versionen von RAR sowie viele Hilfsprogramme:
+
+ DIDDI'S DEN DARMSTADT       06151-26422  (28.8) / 06151-282622,23 (ISDN)
+ DIDDI'S DEN FRANKFURT       06105-921005 (28.8) / 06105-923170    (ISDN)
+ DIDDI'S DEN WIESBADEN       0611-1840062 (19.2) / noch kein isdn verfÅgbar
+ DIDDI'S DEN BAYREUTH        09278-98383  (19.2) / noch kein isdn verfÅgbar
+ DIDDI'S DEN DINKELSBöHL     09851-3031   (28.8) / noch kein isdn verfÅgbar
+ DIDDI'S DEN LöBECK          0451-471074  (28.8) / noch kein isdn verfÅgbar
+
+
+United Kingdom
+--------------
+ Postal Address:                 Ordering Information/Technical Support:
+
+ Cliff Harrold                   Voice (10am-4pm Weekdays): +44-559-382907
+ (RAR Registrations)             Internet: cliff@coracle.com          
+ Mons-Dd-Ville                   
+ Pencader                        Payments by cheque/postal order/cash
+ Dyfed                           NB: Cash should be sent by registered post only
+ England  SA39 9ES               Credit card registrations available shortly
+
+                Orders accepted by voice, post or e-mail
+                
+  FidoNet : 2:442/403                                                  
+  Internet: rar@coracle.com                                            
+
+
+Holland 
+-------
+ Postal address                  Ordering information
+
+ BROWN automation                Fax         : +31-30-512787
+ Postbus 85332                   Voice       : +31-30-514801
+ 3508 AH  Utrecht                BBS         : +31-30-522171 (multiline)
+ the Netherlands                 Office      :  Fuuthof 21
+                                                Utrecht
+                                                The Netherlands
+ Internet: system@tess.nl
+ FidoNet : 2:2802/100
+
+ Orders accepted by Voice phone, fax, E-Mail, Netmail or at the office
+
+
+Finland, Suomi
+--------------
+ Helsinki            INFO-SHARE BBS              Kari Pietila
+ 358-0-5062622       9600+ V32B V42B CM          2:220/22.358@fidonet
+
+ Yritys  :  KP Tietoliikenne Oy                  fax: +358-0-873 1962
+ osoite     PL 263
+            01301  VANTAA
+            FINLAND
+
+ Orders accepted by fax, mail or BBS
+ Credit cards :  Visa, American Express
+
+
+Sweden
+-------
+ Postal address                  Ordering information
+
+ Computer Security Center        Voice       : +46 (910) 860 46
+ At: Mikael Winterkvist          FAX         : +46 (910) 528 53
+ Kartgatan 15                    BBS (14.4)  : +46 (910) 522 14
+ 931 91 SkellefteÜ               BBS (Zyx)   : +46 (910) 528 53
+ Sweden
+
+ FidoNet: 2:205/422, 2:205/423
+ InterNet: mw@csc.ct.se
+
+ Orders accepted by Voice phone, FAX, Mail, crash NetMail and BBS
+
+
+Denmark
+-------
+ Postal Address:                 Ordering Information:
+
+ NBN Data                        Fax   : +45-53-873418           
+ v. Jan Lassen                   BBS   : +45-53-873418 (19.2 ZyX)
+ Baekkeskovvej 33                Voice : +45-30-880165
+ 4892 Kettinge
+ Denmark
+
+ FidoNet: 2:236/526              Payments by cheque, postal order or cash
+ VirNet : 9:451/182         
+
+ Orders accepted by Voice phone, Mail, Fax or Crash NetMail
+
+
+ Norway
+ ------
+
+ Postal Address:                 Ordering Information/Technical Support:
+
+ BarCode BBS                     Internet  : runej@cinet.no
+ Rune Johansen                   Fax       : 22 64 41 22
+ Spektrumveien 1                 BBS/Data  : 22 64 41 22 (USR DS V34)
+ N-0666 Oslo                     PostGiro  : 0813 20 82139
+ Norway                          BankGiro  : 1607 57 54098
+
+Payments accepted by Cheque or Bank Transfer (Postgiro). Please contact me for
+Credit Card registrations.
+
+Orders accepted by post, fax, crash netmail, e-mail or BBS.
+
+FidoNet: 2:210/20
+
+
+Italy
+-----
+ Postal address                  Ordering information
+
+ Aristide Ferrara                Fax   : +39-81-665060
+ Via M. Schipa, 115                      +39-81-7616269
+ 80122 - Napoli                  BBS   : +39-81-665060  (28800/v34/VFC)
+ ITALY                                    2:335/225
+                                       : +39-81-7616269 (28800/v34/VFC)
+                                          2:335/230
+
+ FidoNet : 2:335/225
+           2:335/230
+
+ Orders accepted by fax, mail or BBS
+ Request the Magic Name 'REG' (without quotes) for more details.
+
+
+France and Belgium  
+------------------
+ Adresse Postale                 Ordering information
+
+ The Lazy Cat's Shelter
+ Radu Caulea                     FAX / BBS   : +(33 1) 64.11.99.85
+ 9, AllÇe de L'Elephant                                           
+ 77184 Emerainville
+ France   
+
+ FidoNet: 2:320/109 300
+
+ Les commandes sont acceptÇes par la poste, fax, crash Netmail et BBS.
+
+
+Spain
+-----
+ Postal address                  Ordering information
+
+ On-Line Services 2000 S.L.      Diablo BBS (24h - 28k8) +34-3-246 23 83
+ Trafalgar 78 2ß 2¶ B            Voice support           +34-3-246 07 61
+ 08010 Barcelona                                         +34-907 22 68 97
+ Spain
+
+ FidoNet : 2:343/121.47
+ RedBBS  : 757:101/4.47
+ VMail   : 70:343/17
+
+ Orders accepted by Voice phone, Mail, Crash NetMail or BBS.
+
+
+Portugal
+--------
+Postal address:                  Ordering Information
+
+Jose Junior                      Fax      :+351-01-9208481
+Urb. do Pinhal Lt5 - 1B          BBS(28.8):+351-01-9201550 2725 Mem
+Martins                          BBS(ISDN):+351-01-9268005 Portugal
+
+Fidonet : 2:362/51
+          2:362/5100
+Internet : sysop@opusnite.centrom.com
+
+Orders accepted by Mail, Fax, Crash Netmail and Online (BBS)
+Credit Cards: VISA (others available soon)
+
+
+Poland
+-------
+  Postal Address                 Ordering information
+
+ Sortie Computer Services                   Voice : +48-90-201580
+ Slawomir Kosinski \ Krzysztof Zielinski    BBS   : +48-22-344870 [22:00-6:00]
+ ul. Pulawska 240 m 80                      FAX   : +48-22-439973
+ 02-670 Warszawa
+ Polska
+
+ FidoNet : 2:480/72, 2:480/54
+
+ Orders accepted by Voice phone, FAX, Mail, crash NetMail and BBS
+ FREQ : RAR-REG for registering information
+
+
+Czech Republic
+--------------
+ Postal Address                  Ordering Information
+
+ T-Mail support BBS              Fax/Node/BBS : +42-67-523247
+ Igor Bilyi
+ Na Vypusti 369
+ 763 15  Slusovice               Voice        : +42-67-523249
+ Czech Rep.                                     +42-67-98642
+
+ Fidonet : 2:421/45, 2:421/50
+ Internet: ulix@derby.cz
+
+ Orders accepted by FAX, Mail, E-Mail, Voice and BBS
+
+
+Czech Republic
+--------------
+ Postal address                    Ordering Information
+
+ JIMAZ s.r.o.                      Voice: +42-2-379-498
+ Hermanova 37                      FAX:   +42-2-378-103
+ 170 00 Praha 7                    BBS:   +42-2-312-1919
+ CZECHIA                           Email: jimaz@jimaz.cz
+
+ Orders accepted by Voice phone, fax, mail and Internet Email.
+ Objednavky prijimame telefonicky, faxem, postou a elektronickou 
+ postou.
+
+
+Hungary
+-------
+ Postal address:                 Ordering information:
+
+ SVV International Kft.      Voice & Fax : +36-1-261-6717  (Russian, 
+                                            Hungarian and Italian)
+ Kertesz Jozsef u. 6         Mobil Phone : +36-20-420-540  (Hungarian)
+ H-5300 Karcag               Voice & Fax : +36-59-311-733  (Hungarian)
+ Hungary                     Voice & Fax : +380-3522-36170 (Russian, 
+                                            English and Hungarian)
+
+ Internet: serg@svv.ternopil.ua
+ FidoNet : 2:463/400
+
+ Orders accepted by Voice Phone, Fax, E-Mail, Fido Netmail or at the office.
+
+ Payments accepted by Cash, Cheque, Bank Transfer.
+
+ COD orders welcome.
+
+
+Slovakia
+--------
+ Postal address                  Ordering information
+
+ Peter Hubinsky                  Voice       : +42-7-2048-228
+ Slovak Antivirus Center - ESET  FAX         : +42-7-2048-230
+ Ondavska 3                      BBS (19.2)  : +42-7-2048-232
+ 826 47 Bratislava               BBS (28.8)  : +42 7 2048 295
+ SLOVAKIA
+
+ FidoNet : 2:422/80
+
+ Orders accepted by Voice phone, fax, mail or BBS
+
+
+Australasia:
+
+Australia
+---------
+ Postal address                  Ordering information
+
+ SPR                             Fax         : +61 7 886 1886
+ PO Box 29                       Voice       : +61 7 204 5000
+ Kallangur                       BBS (28.8)  : +61 7 886 1886
+ Australia 4503                  Contact     : Rod Fewster
+
+ fidonet     :  3:640/886
+ 
+ Orders accepted by phone, fax, mail, crash_netmail, and BBS.
+ Credit cards : Bankcard, Mastercard, Visa
+
+
+New Zealand
+-----------
+ Postal address                  Ordering information
+
+ Arrow Computer Services         Fax         : +64 (649) 486-7606
+ 30A Bracken Ave                 Voice       : +64 (649) 486-1012
+ Takapuna                        Orders      : +64 (649) 486-1012
+ North Shore City 1309           BBS (14.4)  : +64 (649) 488-0769
+ New Zealand
+
+ Internet:   selwyna@nzonline.ac.nz  or  71333,2275@compuserve.com
+ FidoNet :   3:772/185
+ CompuServe: 71333,2275
+
+ Orders accepted by Voice phone, fax, mail or BBS
+ Credit cards :  Visa, Mastercard, Bankcard
+
+
+Middle East:
+
+Israel
+------
+ Postal address:                     Ordering information:
+
+ Chief International Marketing Ltd.  Fax         : +972-8-9403295
+ P.O.Box 499 / 15 Habanim Street     Voice       : +972-8-9400070
+ Nes-Ziona 70400                     BBS (28.8)  : +972-3-9667562
+ Israel
+
+FidoNet: 2:40/1
+Email: sales@glx.chief.co.il
+CompuServe: 100264,26
+World Wide Web: http://www.rudy.org.il/rar
+
+ Accept all major credit cards.
+
+
+Far East:
+
+Japan
+-----
+ Postal Address                  Ordering Information
+
+ Avxia BBS                       Fax          : +81-3-3351-7445
+ Attn: Kazuyoshi Shinada         BBS          : +81-3-3355-4395
+ #202 Hinoki bldg 20 Araki-cho                : +81-3-5269-2826
+ Shinjuku-ku Tokyo 160
+ Japan
+
+ Fidonet : 6:730/9
+           6:730/19
+
+ Orders accepted by FAX, Mail, or Crashed Netmail and BBS
+
+
+Taiwan, Rep. of China   §§µÿ•¡∞Í  ªO∆W
+--------------------------------------
+ Postal address                  Ordering information
+
+    Long Fellow BBS
+    Tonny Lin                    Fax          : 886-4-483-4410
+    PO Box 21-210                BBS          : 886-4-483-4485
+    Tali, Taichung county        BBS          : 886-4-483-4486
+    Taiwan, Rep. of China 412
+
+    Internet: tonny@ms1.hinet.net
+
+ FidoNet  : 6:722/207     90Net    : 90:2020/800  SkyNet   : 33:3002/106
+ ISLNet   : 84:400/113    ZyXELnet : 17:130/201
+
+ Orders accepted by Fax, Mail or Netmail
+ ∏‘±°Ω–®œ•ŒMagic name "REGISTER"®”™ΩØ¡
+
+
+INTERNET
+--------
+                …ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕª
+                ∫  FTP site to get latest RAR version  ∫
+                »ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕº
+
+ The official anonymous FTP site for RAR is ftp.elf.stuba.sk:/pub/pc/pack.
+ You may send comments on accessing this site to hubak@elf.stuba.sk,
+ <Peter Hubinsky>.
+
+                …ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕª
+                ∫ Registration of RAR via the Internet ∫
+                »ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕº
+
+ It is now possible to register your copy of RAR, using a credit card
+ (Visa, Mastercard, Eurocard or Ok) via the internet.  For full  details
+ please see the enclosed file, INTERNET.REG or send a message to:
+
+                        helpdesk@knowledgebase.fi
+                        ftp.rar@knowledgebase.fi
+                        sites.rar@knowledgebase.fi
+                        whatsnew.rar@knowledgebase.fi
+
+
+The author direct contact site (no registration):
+
+RUSSIA
+------
+ Postal address
+
+ for Eugene Roshal               Voice      : +7-3512-368-373
+ a/ja 16112                      FAX        : +7-3512-368-373
+ Chelyabinsk 454091              BBS (14.4) : +7-3512-368-373
+ RUSSIA
+
+ E-mail:  2:5010/23 or Sysop@p0.f23.n5010.z2.fidonet.org
+          2:5010/23.12 or Eugene_Roshal@p12.f23.n5010.z2.fidonet.org
+          (If you failed to connect via Fidonet or gates in the Internet,
+          please write to ron@knowledgebase.fi.
+          The last "emergency" address is andrey@vybor.chel.su).
+
+     SysOp:
+
+   Please place the RAR SFX archive on your BBS, but do not distribute
+RAR registration keys and cracks.
+
+
+     How to become an RAR Registration and Support Site:
+
+   If you want to be an RAR Site and there is none in your area - write
+to the world-wide distribution center in Finland.
+
+

@@ -1,0 +1,172 @@
+=============================================================================
+      "ParaView" - Parametereinflsse bei der
+      graphischen Darstellung mathematischer Funktionen
+=============================================================================
+
+      "ParaView" erm”glicht unkompliziert die graphische Darstellung
+      mathematischer Funktionen auf dem VGA-Bildschirm. Sie k”nnen eine der
+      fnfzehn vordefinierten Funktionen ausw„hlen oder eine beliebige andere
+      Funktion selbst definieren. Bis zu vier Parameter A, B, C und D drfen
+      in der Definition verwendet werden.
+
+      Das Besondere ist nun:
+      Sie k”nnen w„hrend der Darstellung die Werte der Parameter mit den
+      Cursortasten schrittweise oder auch durch Direkteingabe „ndern!
+      Nach jeder nderung wird der neue Funktionsverlauf dargestellt!
+      Die Geschwindigkeit, mit der das geschieht, wird Sie faszinieren,
+      denn die Neuberechnung und Neudarstellung der Funktion dauert bei
+      langsameren Rechnern im Schnitt weniger als eine Viertelsekunde!
+      Der eintretende filmartige Effekt vermittelt die Wirkung der
+      Parameter„nderungen sehr einpr„gsam!
+
+      Das Bild kann durch die gleichzeitige Darstellung der Ableitungen
+      oder einer anderen Funktion komplettiert werden. Der Maástab und
+      die Lage des Koordinatenursprungs lassen sich in weiten Grenzen „ndern.
+      Das Bild l„át sich unproblematisch in den Formaten A4 oder A5
+      ausdrucken, die Ausgabe als PCX- Bild ist m”glich.
+      Selbstverst„ndlich gibt "ParaView" eine Wertetafel aus und berechnet
+      die Nullstellen und Extremwerte.
+
+=============================================================================
+
+      "ParaView" soll den Lehrern bei den Vorbereitungen helfen und Schlern
+      bei den Hausaufgaben. Auch der "live"- Einsatz im Mathematikunterricht
+      kann ohne Risiko geplant werden. Bei entsprechender Ausstattung ist die
+      selbst„ndige Schlerarbeit m”glich. Denken Sie dabei nicht nur an den
+      Stoffabschnitt "Kurvendiskussionen": So manche gute Idee kommt einfach
+      schneller, wenn man rechtzeitig ein Bild der Funktion sehen kann.
+
+      Die Oberfl„che von "ParaView" ist zwar ungew”hnlich bunt, aber ohne
+      ablenkende M„tzchen, sie ist freundlich und leicht intuitiv erfaábar,
+      und eine Hilfefunktion ist integriert.
+
+      Egal, welches Programm Sie bisher zu Funktionsdarstellung nutzten:
+      "ParaView" ist (wahrscheinlich) schneller, einfacher, netter,
+      eben ganz anders! Erleben Sie diese Neuerung!
+
+=============================================================================
+
+      Hilfe fr die Funktionseingabe
+         In drei Gruppen sind bereits 15 Funktionen vordefiniert.
+         Sie k”nnen eine Gruppe mit der <ALT>- Taste ausw„hlen.
+         Die unabh„ngige Variable ist "x".
+         Als Parameter lassen sich "A", "B", "C" und "D" benutzen.
+         Fr selbstdefinierte Funktionen k”nnen Sie verwenden:
+         Operatoren:  +,  -,  *,  /,  ^,  DIV,  MOD
+         Funktionen:  ABS(x), INT(x),  SIGN(x), NEG(x),
+                      SIN(x), COS(x),  TAN(x),  ATN(x),
+                      LN(x),  LG(x),   EXP(x),  SQR(x), SQRT(x)
+         Als Konstante ist PI ( = 3.14159.. ) erlaubt.
+         Die ersten vier selbstdefinierten Funktionen werden bis
+         Programmende gespeichert, die fnfte nur bis zur n„chsten
+         Eingabe einer selbstdefinierten Funktion.
+         Die Verknpfung bereits eingegebener oder vordefinierter
+         Funktionen (z.B. " F3 + 2*F2 ") ist zul„ssig.
+         Erl„uterungen zu Operatoren und Funktionen: nochmals <F1>
+
+=============================================================================
+
+      Operatoren und Funktionen
+         +, -, *, /:    Grundrechenarten ( plus,minus,mal,durch )
+         ^:             Potenzoperator ( x^y : "x hoch y")
+         SQR(x):        Quadrat von x
+         SQRT(x):       Quadratwurzel von x
+
+         DIV:           ganzahlige Division ( Rest wird abgeschnitten)
+         MOD:           Modulo- Operator ( x MOD y = x - (x DIV y)*y )
+
+         ABS(x):        absoluter Betrag von x
+         INT(x):        ganzer Teil von x (Nachkommastellen entfallen)
+         SIGN(x):       1 fr x>0, -1 fr x<0, 0 fr x=0
+
+         SIN(x),COS(x): Sinus   und Kosinus
+         TAN(x),ATN(x): Tangens und Arcus Tangens
+         LN(x):         Natrlicher Logarithmus  ( Umkehrung: EXP(x) )
+         LG(x):         Zehnerlogarithmus        ( Umkehrung: 10^x)
+         EXP(x):        Exponentialfunktion zur Basis e = 2.71..
+
+=============================================================================
+
+      Hilfe fr Modus "Parameter"
+         Ein Parameter  in  Ihrer Funktion  ist variabel.  Wenn Sie
+         mehrere verwenden,  k”nnen Sie mit der <TAB>- Taste  fest-
+         legen,  welcher davon im Moment ver„nderbar ist.  Wenn Sie
+         einen neuen Wert eingeben wollen, tun Sie es einfach.  Der
+         Einfluá der Parameter  auf den Funktionsverlauf  l„át sich
+         aber besser beobachten, wenn Parameter schrittweise ver„n-
+         dert werden. Dazu dienen die vertikalen Cursortasten.  Die
+         Schrittweite wird  mit den horizontalen Cursortasten  oder
+         mit  <Pos1>  ver„ndert.  Rechts oben wird die Schrittweite
+         (und welcher Parameter ver„nderbar ist) angezeigt.
+
+=============================================================================
+
+      Hilfe fr Modus "Maástab"
+         Mit den Cursortasten k”nnen Sie den Maástab ver„ndern. Die
+         horizontalen Tasten ver„ndern die Einteilung der x- Achse,
+         mit den vertikalen Tasten teilen Sie die y- Achse neu ein.
+         Die Einteilung ver„ndert sich in gr”áeren Schritten,  also
+         etwas schneller, wenn Sie gleichzeitig <SHIFT> drcken.
+         Mit den Tasten <BILD auf><BILD ab> „ndern Sie beide Achsen
+         gleichzeitig  und  im gleichen Maástab, als Grundlage wird
+         dabei die aktuelle Einteilung der x- Achse genommen.
+         Mit <Pos1> stellen Sie die Anfangsmaástab wieder her.
+         (Beachten Sie bitte auch die Informationen rechts oben!)
+
+=============================================================================
+
+      Hilfe fr Modus "Ursprung"
+         Mit den Cursortasten k”nnen Sie den Ursprung und damit das
+         gesamte Koordinatensystem  (incl. der gerade dargestellten
+         Funktion) verschieben. Der Maástab und die gew„hlten Para-
+         meter bleiben dabei  natrlich erhalten.  Mit gleichzeitig
+         gedrckter <Shift>- Taste wird in gr”áeren Schritten, also
+         schneller, verschoben. Die Tasten <BILD auf> und <BILD ab>
+         verschieben diagonal.  Die Taste <Pos1> setzt den Ursprung
+         zurck auf die Anfangsposition.
+         Wenn eine Achse einen Bildschirmrand erreicht,  ert”nt ein
+         akustisches Signal, und man kann nicht weiter verschieben.
+
+=============================================================================
+
+      Funktionstastenbelegung
+         F1 : Hilfe, Funktionstastenbelegung
+         F2 : aktuelle Parameter merken
+         F3 : Zeichnen mit Merk-Funktion                 - EIN/AUS
+         F4 : Zeichnen mit Rasterpunkten                 - EIN/AUS
+         F5 : Zeichnen mit erster Ableitung der Funktion - EIN/AUS
+         F6 : Zeichnen mit zweiter Ableitung             - EIN/AUS
+         F7 : Zeichnen mit letztem Funktionsbild         - EIN/AUS
+         F8 : Ausdruck des Bildschirminhalts
+         F9 : Nullstellen, Extremwerte
+         F10: Wertetafel der Funktion
+         <SHIFT>+<F..>: mit einer vordefinierten Funktion - EIN/AUS
+         <Einfg>      : Optionen „ndern
+
+=============================================================================
+
+      Bei schriftlichen Anfragen an den Autor wird um Briefmarken
+      fr das Rckporto gebeten.
+
+      Die Preise (verstehen sich incl. MwSt und Versand):
+      Einzellizenz:  59.- DM,       Schullizenz: 119.- DM
+      Sonderpreis fr Schler, Studenten und Lehrer
+      (Siehe Bestellformular!): ab 29.- DM !
+
+=============================================================================
+
+      šbrigens:  Wenn Sie kein Mathematiklehrer sind,  aber jemanden
+      kennen, der jemand kennt, der vielleicht Mathematiklehrer ist,
+      sollten Sie unverzglich (!) nach einem Weg suchen, wie dieser
+      Lehrer mit "ParaView" bekannt gemacht werden kann...
+      Der Autor und der Mathematiklehrer danken Ihnen!
+
+=============================================================================
+
+                                                      Autor:
+                                                 Hans- Peter Falken
+                                                  Leibnizstraáe 18
+                                                  D- 04105 Leipzig
+                                                  Tel. 0341-290934
+
+=============================================================================

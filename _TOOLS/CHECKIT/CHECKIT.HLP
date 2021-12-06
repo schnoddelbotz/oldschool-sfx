@@ -1,0 +1,1416 @@
+CONTENTS:00001487:none
+CONTENTS:00001585:main
+CONTENTS:00003876:batch
+CONTENTS:00007556:set_clock
+CONTENTS:00008466:memory_test
+CONTENTS:00012234:rpt_config
+CONTENTS:00013288:rpt_dev_drvrs
+CONTENTS:00015515:rpt_cmos_tbl
+CONTENTS:00016372:rpt_interrupts
+CONTENTS:00018304:bench_hdisk
+CONTENTS:00020811:bench_main
+CONTENTS:00023056:bench_video
+CONTENTS:00025354:bench_save
+CONTENTS:00025585:setup_activity_log
+CONTENTS:00027812:show_activity_log
+CONTENTS:00028327:test_sysbd
+CONTENTS:00030061:test_prn
+CONTENTS:00031004:test_ser
+CONTENTS:00031556:test_par
+CONTENTS:00032076:test_flop
+CONTENTS:00033741:test_hard
+CONTENTS:00035468:test_video
+CONTENTS:00037460:test_kbd
+CONTENTS:00039165:test_joy
+CONTENTS:00039921:test_mouse
+CONTENTS:00040395:test_clock
+CONTENTS:00042221:test_mem
+CONTENTS:00045756:log_printer
+CONTENTS:00046330:log_graphics
+CONTENTS:00046827:ram_locate
+CONTENTS:00050055:ram_summary
+CONTENTS:00052187:ram_find
+CONTENTS:00054682:ram_setup
+CONTENTS:00056548:register_user
+CONTENTS:00056904:memmap_base
+CONTENTS:00059366:memmap_int
+CONTENTS:00061050:memmap_tsr
+CONTENTS:00061525:memmap_nothing
+CONTENTS:00000000:memmap_hiram
+CONTENTS:00062819:memmap_ebios
+CONTENTS:00063212:memmap_vram
+CONTENTS:00063634:memmap_available
+CONTENTS:00064112:memmap_rom
+CONTENTS:00064510:memmap_ems
+CONTENTS:00065160:report_detail
+CONTENTS:00065851:custom_heading
+CONTENTS:00066262:modify_tools
+eckIt checkit.hlp Date: 08/21/90, Release: 3.0.
+
+
+HELP:none:Keine Hilfe verfgbar
+Fr diesen Teil des Programms existiert kein Hilfetext.
+END.
+
+HELP:main:Hauptmen
+                          Willkommen in CheckIt
+                          ---------------------
+
+CheckIt ist ein Diagnoseprogramm zur Qualit„ts- und Funktionskontrolle von
+Personalcomputern, die das  Betriebssystem MS-DOS verwenden.  CheckIt kann
+Protokolle Ihrer  Hardware-Konfiguration und  der verwendeten  Systemteile
+erstellen,   Hardware-Komponenten   Ihres   Systems   testen   sowie   die
+Leistungsf„higkeit  der  Hauptfunktionen  Ihres  Rechners  messen  und das
+Ergebnis grafisch aufbereitet anzeigen.
+
+Mit  CheckIt  k”nnen   PC-Anwender  prfen,  ob   ihr  Rechner  zu   einem
+PC-DOS-Ger„t funktionell voll kompatibel ist und ob s„mtliche Bestandteile
+korrekt funktionieren.
+
+Sie entnehmen den  von CheckIt erstellten  Protokollen auch, welche  Hard-
+und Software auf  dem getesteten Rechner  bereits installiert sind.  Diese
+Informationen sind wichtig, wenn Sie sich mit einem neuen Rechner vertraut
+machen m”chten oder einen technischen Kundendienst anrufen. Darber hinaus
+erleichtern diese Informationen die Installation neuer Hardware.
+
+Zudem haben  Sie die  M”glichkeit, die  Verarbeitungsgeschwindigkeit Ihres
+Rechners mit der anderer Ger„te zu vergleichen.
+
+
+                    Die Funktionsbereiche von CheckIt
+                    ---------------------------------
+
+Das Hauptmen von CheckIt enth„lt die folgenden Pull-down-Mens:
+
+Systemdaten:    Anzeige von šbersichten ber Hard- und Software.
+
+Tests:          Auswahl und Aufruf der verschiedenen Tests.
+
+Leistungswerte: Vergleich der Verarbeitungsgeschwindigkeit des getesteten
+                Rechners mit der anderer Systeme.
+
+Dienste:        Darstellung des RAM-Chiplayout von Speicherkarten,
+                Einstellung von Datum und Zeit der Echtzeituhr oder Aufruf
+                eines anderen Programms.
+
+Vorgaben:       Auswahl von Farb- oder Monochromanzeige fr den Bildschirm
+                und Festlegung des Ausgabeger„ts fr das Testprotokoll
+                (Datei und/oder Drucker).
+
+Ende:           Beenden von CheckIt und Rckkehr zu DOS.
+
+Die einzelnen Optionen des Mensystems steuern Sie mit den Pfeiltasten an.
+Die jeweils markierte Option wird in einem Informationsfenster am unteren
+Bildschirmrand beschrieben.
+END.
+
+HELP:batch:Kombinationen...
+Mit dieser Option lassen sich die Testm”glichkeiten von CheckIt speziellen
+Anforderungen anpassen. Sie ist in erster Linie fr die Experten unter den
+Benutzern gedacht, z.B. Servicetechniker.
+
+Diese Option bew„hrt sich vor allem in den folgenden Situationen:
+
+  * Wiederholte  Durchfhrung  eines  Tests,  wenn  ein  Bauteil einen nur
+    sporadisch auftretenden Fehler aufweist.
+
+  * Zusammenstellung  einer   verkrzten  Testreihe,  die  nur   bestimmte
+    Komponenten untersucht. Dies ist besonders ntzlich fr Anwender,  die
+    regelm„áig Rechner testen.
+
+  * Durchfhrung von Dauertests neu installierter Ger„te.
+
+An diesem Bildschirm k”nnen Sie  alle Tests mit ihren Optionen  einstellen
+und die ausgew„hlten Tests anschlieáend unbeaufsichtigt ablaufen lassen.
+
+
+Unbeaufsichtigte Tests  Im  oberen Bildschirmbereich sind s„mtliche  Tests
+                        aufgefhrt,   die   w„hrend   des   Ablaufs  keine
+                        Benutzereingaben  erfordern.  Dies  sind die Tests
+                        des Speichers,  der Festplatte(n),  der Disketten,
+                        der  Hauptplatine,  der   Echtzeituhr  sowie   der
+                        Seriell- und Parallel-Ports.
+
+Interaktive Tests       Bei  den Tests  im mittleren Bereich  muá das   zu
+                        testende  Ger„t  bedient  oder  das   Testergebnis
+                        best„tigt  werden.  Zu  dieser  Gruppe geh”ren die
+                        Tests des Druckers, des Bildschirms, der Tastatur,
+                        der Maus und des Joysticks.
+
+Stapelkontrollen        Diese   Felder  steuern   die  Durchfhrung    von
+                        Testkombinationen.  Sie  k”nnen  darin  festlegen,
+                        wohin  das   Testprotokoll  ausgegeben,   wieviele
+                        Testdurchl„ufe  durchgefhrt  und  ob  die   Tests
+                        nach   Ermittlung   eines   Fehlers   unterbrochen
+                        werden sollen.
+
+HINWEIS: Wenn Sie mehrere Testdurchl„ufe durchfhren und die Ergebnisse in
+         eine  Datei  schreiben  oder  ber  den  Drucker ausgeben lassen,
+         protokolliert CheckIt das Testergebnis nur auf diese Weise.   Auf
+         ein speicherresidentes  Protokoll wird verzichtet, um  zu vermei-
+         den,  daá bei sehr langen Testl„ufen  die Speicherkapazit„t nicht
+         ausreicht.
+
+                     Speichern einer Testkombination
+                     -------------------------------
+
+Sie  k”nnen  eine  ausgew„hlte  Testkombination in der Konfigurationsdatei
+abspeichern.  Beim  n„chsten  Programmaufruf  werden die Einstellungen der
+Kombination dann automatisch geladen.
+
+                      Ausfhren der Testkombination
+                      -----------------------------
+
+Wenn die Testkombination  festgelegt ist, geben  Sie bei der  Aufforderung
+"Kombination starten?" "J" ein und  best„tigen mit RETURN. Wenn Sie  Tests
+ausgew„hlt haben,  die eine  Vorbereitung erfordern  (z.B. Anbringen eines
+Prfschleifensteckers, Einlegen einer  Diskette), wird vor  Testbeginn die
+entsprechende Aufforderung eingeblendet.
+
+Wurden nur Tests ausgew„hlt, die keine Benutzereingaben erfordern,  k”nnen
+Sie  Ihren  Rechner  w„hrend  der  Tests  unbeaufsichtigt  lassen  und die
+Ergebnisse zu einem sp„teren Zeitpunkt einsehen.
+
+Tests nicht installierter Ger„te  werden bersprungen. So ist  es m”glich,
+dieselbe  Testkombination  fr  unterschiedlich  ausgestattete  Rechner zu
+verwenden.
+
+Weitere  Informationen  zur  Auswahl  von  Testkombinationen finden Sie in
+Kapitel 10 des Handbuchs.
+END.
+
+HELP:set_clock:Echtzeituhr einstellen
+Mit  dieser  Option  k”nnen  Sie  Datum  und  Zeit der batteriegepufferten
+CMOS- und der DOS-Uhr einstellen. Sind h„ufige Korrekturen der  Zeitangabe
+erforderlich, ben”tigen Sie m”glicherweise eine neue Batterie.
+
+                            Datumseinstellung
+                            -----------------
+
+Markieren Sie das Datumsfeld mit  den Pfeiltasten und drcken Sie  RETURN.
+Geben Sie  das aktuelle  Datum im  Format TT.MM.JJJJ  ein und  drcken Sie
+erneut RETURN. Der 21. Januar 1990 wird also als 21.01.1990 eingegeben.
+
+                             Zeiteinstellung
+                             ---------------
+
+Markieren Sie  das Zeitfeld  mit den  Pfeiltasten und  drcken Sie RETURN.
+Geben  Sie  die  aktuelle  Zeit  im  24-Stunden-Format ein und drcken Sie
+erneut  RETURN.  8   Uhr  5  abends   wird  also  als   20.05  eingegeben.
+END.
+
+HELP:memory_test:Arbeitsspeichertest
+Sie k”nnen nun die Parameter fr den Speichertest festlegen. Standardm„áig
+ist  ein  Schnelltest  aller  Speichertypen  vorgesehen. Im folgenden wird
+erl„utert, wie Sie diesen Test variieren k”nnen.
+
+               Nur einen bestimmten Speicherbereich testen
+               -------------------------------------------
+
+Wenn  Sie  ein  Speicherproblem  auf  einen bestimmten Bereich eingegrenzt
+haben, k”nnen  Sie CheckIt  nur diesen  Bereich testen  und die Ergebnisse
+protokollieren  lassen.  Diese  Testmethode  eignet  sich  besonders,  nur
+sporadisch  auftretende  Fehler  zu  ermitteln.  Hierzu  testen  Sie   den
+fraglichen Bereich mehrfach.
+
+HINWEIS: Sie  k”nnen   bestimmte  Speichertypen  vom  Test   ausschlieáen,
+         wenn  Sie  als  Start-  und  Endadresse  denselben  Wert angeben.
+         Beachten  Sie,  daá  dabei  der rechts angezeigte Hexadezimalwert
+         ausgeblendet wird.
+
+               Dem System nicht bekannten Speicher testen
+               ------------------------------------------
+
+Wenn ein bestimmter  Speicherabschnitt defekt ist,  kommt es vor,  daá der
+nach  dem  Einschalten  ausgefhrte  Selbsttest  diesen  Bereich als nicht
+installiert  behandelt.  Wenn  CheckIt  die Systemkonfiguration berprft,
+wird  der  obere  Speicherbereich  ausgelassen.  Testen Sie in diesem Fall
+den  fraglichen  Speicherbereich,  den  das  System nicht erkennt, von dem
+SIE  jedoch  wissen,  daá  er  existiert.  Auf  diese  Weise  k”nnen   Sie
+herausfinden, welcher Speicherchip defekt ist, und diesen ersetzen.
+
+                      Testen von Expansionsspeicher
+                      -----------------------------
+
+Aufgrund der Besonderheiten von Expansionsspeichern sollten Sie immer  den
+gesamten Expansionsspeicherbereich  testen. Ausfhrliche  Informationen zu
+diesem Thema finden Sie in den entsprechenden Hinweisen des Handbuchs.
+
+                     Schnelle oder grndliche Tests?
+                     -------------------------------
+
+Wenn das Feld  "Nur Schnelltest" mit  "J" eingestellt ist,  testet CheckIt
+jeden  Speicherblock  einmal  und   verwendet  dabei  ein   Pseudozufalls-
+Testmuster.   Hierdurch  lassen   sich  die   g„ngigsten  Speicherprobleme
+ermitteln. Dieser Test sollte in der Regel ausreichen. Geben Sie in diesem
+Feld "N" an, wird jeder Speicherblock mit 8 weiteren Testmustern getestet.
+
+                        Anzahl der Testdurchl„ufe
+                        -------------------------
+
+Wenn  Sie  Grund  zu  der  Annahme  haben,  daá der Speicher nicht korrekt
+arbeitet,  ein  einzelner  Testdurchlauf  jedoch  keinen  Fehler  anzeigt,
+handelt  es  sich  zumeist  um  eine  sporadisch auftretende Fehlfunktion.
+Solche  Probleme  lassen  sich  am  besten  ermitteln,  wenn  Sie den Test
+wiederholen. Geben  Sie hierzu  im Feld  "Testdurchl„ufe" an,  wie oft der
+Test wiederholt werden soll. Sie  k”nnen anstelle einer Zahl auch  "D" fr
+"Durchgehend" eingeben und so festlegen, daá der Test so  lange wiederholt
+werden  soll,  bis  Sie  ihn  mit  ESC  abbrechen.  Wird  trotz   mehrerer
+Testdurchl„ufe  und  in  einem   grndlichen  Test  dennoch  kein   Fehler
+ermittelt,  wird  das  Problem  aller  Wahrscheinlichkeit nach nicht durch
+einen defekten Chip verursacht.
+
+HINWEIS: Wenn  Sie  mehrere  Testl„ufe  durchfhren und die Ergebnisse  in
+         eine  Datei  schreiben  oder  ber  den Drucker ausgeben  lassen,
+         protokolliert  CheckIt  das  Testergebnis  nur  auf  diese Weise.
+         Auf  ein  speicherresidentes  Protokoll   wird  in  diesem   Fall
+         verzichtet,  um  zu  vermeiden,  daá  bei  sehr langen Testl„ufen
+         die Speicherkapazit„t nicht ausreicht.
+END.
+
+HELP:rpt_config:Systemdaten
+Dieser Bildschirm listet die  auf Ihrem Rechner installierte  Hardware und
+das  verwendete   Betriebssystem  auf.   Sie  k”nnen   in  Ihren   Rechner
+"hineinsehen", ohne ihn dazu ”ffnen zu mssen.
+
+Die  angezeigten  Informationen  k”nnen   in  den  folgenden   Situationen
+hilfreich sein:
+
+ * Sie  wollen  wissen,  ob  Ihr  Rechner  die hard- und softwarebezogenen
+   Mindestanforderungen  zur   Installation  eines   neuen  Ger„tes   oder
+   Programms erfllt.
+
+ * Sie rufen den technischen Kundendienst an, der genaue Angaben  zu Ihrem
+   Rechner ben”tigt.
+
+ * Sie arbeiten mit einem Ihnen nicht vertrauten Rechner und m”chten  sich
+   einen šberblick ber seine wichtigsten technischen Daten verschaffen.
+
+Den obersten Bildschirmzeilen k”nnen Sie die installierte DOS-Version  und
+Informationen  zum  BIOS  des  Rechners  entnehmen. Der Rest der šbersicht
+zeigt die aktuelle Hardwarekonfiguration Ihres Rechners an.
+
+Die einzelnen Angaben sind in Kapitel 5 des Handbuchs ausfhrlich erkl„rt.
+END.
+
+HELP:rpt_dev_drvrs:Ger„tetreiber
+Dieser   Bildschirm    zeigt   eine    Liste   s„mtlicher    block-    und
+zeichenorientierter   Ger„tetreiber   an,   die   im   getesteten  Rechner
+installiert  sind.  Die   Liste  ist  h„ufig   zu  lang,  um   auf   einer
+Bildschirmseite angezeigt werden zu k”nnen. In diesem Fall k”nnen Sie  die
+restlichen Eintragungen mit den Pfeiltasten einblenden.
+
+Blockorientierte  Ger„tetreiber  werden  fr  Festplatten  und   Disketten
+ben”tigt.  Alle   brigen  Ger„te,   einschlieálich  der   Tastatur,   der
+Seriell-Ports   und   des   Bildschirms,   verwenden    zeichenorientierte
+Ger„tetreiber.
+
+Die  Informationen  dieser  Liste  werden  in  den  nachstehenden Abs„tzen
+genauer erl„utert.
+
+  Seg:Off     In dieser Spalte ist die Speicheradresse des  Ger„tetreibers
+              angegeben. Die Werte entsprechen der hexadezimalen Wert  des
+              Segments bzw. des Offset.
+
+  Laufwerk(e) Diese Spalte  bezieht sich nur  auf blockorientierte  Ger„te
+              und  listet  Anzahl  und   Namen  der  von  diesem   Treiber
+              gesteuerten Laufwerke auf.
+
+  Name        Diese  Spalte   bezieht  sich   nur  auf  zeichenorientierte
+              Ger„te und zeigt die  Namen der Treiber an.  Der Treibername
+              des Seriell-Ports ist z.B. COM1.
+
+  Attr.       Die  Angabe in  dieser Spalte entspricht  dem  hexadezimalen
+              Attributbyte  des  Treibers.  Die  n„chsten  beiden  Spalten
+              enthalten  Informationen,  die  sich  diesem  Wert entnehmen
+              lassen.
+
+  DOS         In   dieser   Spalte  ist   angegeben,  welche   DOS-Version
+              mindestens  installiert  sein    muá,  damit   der   Treiber
+              korrekt  arbeitet.   Vergewissern  Sie  sich,   daá  die  im
+              Konfigurationsbildschirm  angezeigte  DOS-Version mindestens
+              derjenigen entspricht, die Ihre Ger„tetreiber ben”tigen.
+
+  Verwen-     In  dieser  Spalte  sind  weitere wichtige Eigenschaften der
+  dungsweise  Ger„tetreiber  angegeben.  Ein  vollst„ndige  šbersicht ber
+              Verwendungsweise und Bedeutung finden  Sie in Kapitel 9  des
+              Handbuchs.
+END.
+
+HELP:rpt_cmos_tbl:CMOS-Tabelle
+Dieser  Bildschirm  zeigt  fr  AT-   und  386er-Rechner   die   aktuellen
+Einstellungen des batteriegepufferten CMOS-Speichers.
+
+Diese Informationen sind in den folgenden Situationen ntzlich:
+
+ * Wenn Sie  feststellen wollen, ob fehlerhafte Daten des  Konfigurations-
+   bildschirms auf einer falschen Einstellung des CMOS-Speichers  beruhen.
+
+ * Wenn  Sie die  Informationen  speichern  oder ausdrucken wollen, um sie
+   sp„ter  einsehen  zu k”nnen. Muá  der  CMOS-Speicher  neu  konfiguriert
+   werden,  k”nnen  Sie   die   Werte  dann  aus  dieser   Sicherungskopie
+   bernehmen.
+
+Sie k”nnen diese Einstellungen  „ndern; hierzu verwenden Sie  das Programm
+SETUP, das mit Ihrem Rechner ausgeliefert wurde.
+
+Weitere Erl„uterungen  zu diesem  Bildschirm finden  Sie in  Kapitel 8 des
+Handbuches.
+END.
+
+HELP:rpt_interrupts:Interrupts
+Dieser  Bildschirm  listet   die  Ger„te  und   Programme  auf,  die   die
+Hardware-Interrupts  (IRQs)  Ihres  Rechners  benutzen. Auáerdem wird eine
+Liste von Standardzuweisungen der DMA-Kan„le angezeigt.
+
+Diese Informationen sind in den folgenden Situationen wichtig:
+
+ * Wenn  Sie  eine  neue  Erweiterungskarte  mit  den  richtigen IRQ-  und
+   DMA-Einstellungen  konfigurieren   wollen,  ohne   dazu  die   aktuelle
+   Konfiguration der bereits installierten Karten ermitteln zu mssen.  So
+   lassen sich Kollisionen der Einstellungen von vorneherein vermeiden.
+
+ * Wenn  Sie  bestehende   Interrupt-Kollisionen  ohne  die  sonst   dazu
+   erforderliche "Versuch-und-Irrtum" Methode beheben wollen.
+
+HINWEIS: CheckIt stellt  nur dann fest,  ob ein Interrupt  verwendet wird,
+         wenn der  entsprechende Ger„tetreiber  installiert und  aktiviert
+         ist.  Um  einen  korrekten  Bericht  zu  erhalten,  ist  es daher
+         erforderlich,  erst  den  Treiber  zu  installieren  und dann den
+         Bericht abzurufen.
+
+                           [Cascade]-Interrupt
+                           -------------------
+
+Wenn  Sie  einen  AT  oder  386er-Rechner  testen, erscheint als Interrupt
+"[Cascade]". N„heres entnehmen Sie bitte Kapitel 7 des Handbuchs. Beachten
+Sie  jedoch,  daá  Hard-  oder  Software,  die  zur  Verwendung  von IRQ 2
+konfiguriert ist, zu IRQ 9 umgeleitet wird. Dies ist normal und zeigt kein
+Problem an.
+
+                               DMA-Kan„le
+                               ----------
+
+Im  Gegensatz  zur   Interrupt-Liste  wird  in   der  DMA-Liste  nur   die
+standardm„áige  Verwendung  der  verfgbaren  Kan„le  durch DOS angezeigt.
+Sonstige Hard- und Software wird nicht aufgefhrt. Obwohl die Liste  nicht
+vollst„ndig ist, kann sie  dennoch herangezogen werden, um  festzustellen,
+welche Kan„le belegt sind.
+END.
+
+HELP:bench_hdisk:Leistungswerte der Festplatte
+Dieser  Bildschirm  gibt  Auskunft  ber  zwei  wesentliche  Aspekte   der
+Leistungsf„higkeit Ihrer Festplatte:
+
+                              Zugriffszeit
+                              ------------
+
+MITTLERE ZUGRIFFSZEIT Dies  ist  die   Zeit,  die  ein   Schreib/Lese-Kopf
+                      durchschnittlich  ben”tigt,  um  von  einer  Spur zu
+                      einer anderen zu gelangen.
+
+ZUGRIFF PRO SPUR      Dieser Wert gibt die Zeit an, die ben”tigt wird,  um
+                      den  Schreib/Lese-Kopf  von  einer  Spur  zu   einer
+                      angrenzenden Spur  zu bewegen.  Das Ergebnis  dieses
+                      Tests  zeigt  also  die  minimale  Zugriffszeit  der
+                      Festplatte.
+
+Die Zugriffszeit ist  der Hauptfaktor zur  Ermittlung der Gesamtzeit,  die
+ben”tigt wird, um auf Daten der Festplatte zuzugreifen.
+
+                       šbertragungsgeschwindigkeit
+                       ---------------------------
+
+Diese  Messung  ermittelt  die  reine  šbertragungsgeschwindigkeit   Ihrer
+Festplatte. Dieser Wert wird durch folgende Faktoren beeinfluát:
+
+Interleave      Wenn dieser Wert  falsch eingestellt wird, kann  dies  zur
+                Folge  haben,  daá  Ihr  Rechner  nur  ein  Zehntel seiner
+                normalen  Verarbeitungsgeschwindigkeit  erreicht.  Auf den
+                meisten Personalcomputern betr„gt der Interleave-Faktor 3.
+
+Disk-Cache      Durch die Verwendung von Disk-Caching-Software l„át   sich
+                die Leistungsf„higkeit einer Festplatte enorm steigern.
+
+Weitere  Informationen  zur  Leistung  Ihrer  Festplatte und dazu, wie Sie
+diese erh”hen k”nnen, finden Sie in Kapitel 22 des Handbuches.
+
+                    Ergebnisse vergleichen/speichern
+                    --------------------------------
+
+CheckIt  vergleicht  die  Leistungswerte  Ihres Rechners standardm„áig mit
+denen  eines  IBM  PC-XT.  M”chten  Sie  jedoch  die  Leistungswerte Ihres
+Rechners als Vergleichswerte  heranziehen, w„hlen Sie  "S" fr die  Option
+"Speichern" und geben Sie einen Namen fr das  Testergebnis ein. Das Test-
+ergebnis wird  dann von  CheckIt in  der  Konfigurationsdatei  gespeichert.
+
+Testen  Sie  nun  zu  einem  sp„teren  Zeitpunkt einen anderen Rechner mit
+CheckIt, so k”nnen Sie seine Leistungswerte mit den zuvor  abgespeicherten
+vergleichen. W„hlen Sie hierzu "V" fr die Option "Vergleich zu ...".
+END.
+
+HELP:bench_main:Leistungswerte von CPU/NPU
+Dieser Bildschirm  zeigt Informationen  zu zwei  wesentlichen Aspekten der
+Gesamtleistung Ihres Rechners an.  Diese Daten helfen Ihnen  zu ermitteln,
+fr welche Anwendung ein bestimmter Rechner am besten geeignet ist.
+
+
+                    CPU-Geschwindigkeit (DHRYSTONES)
+                    --------------------------------
+
+Dieser Wert entspricht der reinen Rechenleistung Ihres  Personalcomputers.
+Er gibt  die Verarbeitungsgeschwindigkeit  der Zentraleinheit  (CPU) Ihres
+Rechners an. Das obere Fenster vergleicht in einer grafischen  Darstellung
+diesen Meáwert  mit einem mit  4,77 MHz getakteten  Original  PC/XT-Ger„t.
+Unterhalb  des  Balkendiagramms  wird  der  fr den Rechner gemessene Wert
+sowie der Prozessortyp und dessen aktuelle Taktgeschwindigkeit angegeben.
+
+                    NPU-Geschwindigkeit (WHETSTONES)
+                    --------------------------------
+
+Der  Meáwert  im  unteren  Fenster  gibt  an,  wie schnell Ihr Rechner ein
+WHETSTONE (Einheit der Geschwindigkeit von Gleitkommarechnungen) ermitteln
+kann. Die Kenntnis dieses Wertes  ist wichtig, wenn Sie auf  Ihrem Rechner
+Tabellenkalkulations-,  CAD/CAM-  oder  andere  rechenintensive  Programme
+verwenden. Durch  den Einbau  eines mathematischen  Koprozessors l„át sich
+der  Wert   um  das   Fnf-  bis   Zehnfache  verbessern.   Unterhalb  des
+Balkendiagramms   wird   der   Typ   und   die   Leistungsf„higkeit  eines
+installierten Koprozessors angezeigt.
+
+                     Ergebnisse vergleichen/speichern
+                     --------------------------------
+
+CheckIt  vergleicht  die  Leistungswerte  Ihres Rechners standardm„áig mit
+denen  eines  IBM  PC-XT.  M”chten  Sie  jedoch  die  Leistungswerte Ihres
+Rechners als Vergleichswerte  heranziehen, w„hlen Sie  "S" fr die  Option
+"Speichern" und geben Sie einen Namen fr das Testergebnis ein. Das  Test-
+ergebnis wird  dann von  CheckIt in  der  Konfigurationsdatei  gespeichert.
+
+Testen  Sie  nun  zu  einem  sp„teren  Zeitpunkt einen anderen Rechner mit
+CheckIt, so k”nnen Sie seine Leistungswerte mit den zuvor  abgespeicherten
+vergleichen. W„hlen Sie hierzu "V" fr die Option "Vergleich zu ...".
+END.
+
+HELP:bench_video:Leistungswerte des Bildschirms
+Dieser  Test  ermittelt  die  Geschwindigkeit Ihrer Bildschirmkarte. Dabei
+werden  zwei  Verfahren  verwendet.  Die Bildschirmgeschwindigkeit ist ein
+wichtiger  Leistungsfaktor  fr  bildschirmintensive  Anwendungen  wie zum
+Beispiel Textverarbeitungsprogramme oder Bildschirm-Treiber.
+
+
+                          BIOS-Bildschirmaufbau
+                          ---------------------
+
+Dieser Leistungswert gibt an, wie schnell Ihr Rechner Daten ber das  BIOS
+am Bildschirm  anzeigen kann.  Die Bildschirmtreiberprogramme  von DOS und
+viele „ltere Programm  verwenden dieses Verfahren,  um Text am  Bildschirm
+darzustellen.  Einige  Bildschirmkarten  stellen  eigene Ger„tetreiber zur
+Verfgung,   die   geladen   werden   k”nnen   und   die   die   grafische
+Leistungsf„higkeit verbessern.
+
+                        Direkter Bildschirmaufbau
+                        -------------------------
+
+Dieser Test ermittelt, wie schnell Ihr Rechner Daten direkt am  Bildschirm
+wiedergibt.  Bei  diesem  Verfahren  wird  das  BIOS  umgangen  und   eine
+schnellere  grafische  Wiedergabe  am  Bildschirm  erreicht.  Die Mehrzahl
+neuerer  Anwenderprogramme  (darunter  auch Textverarbeitungsprogramme und
+DOS-Shells) verwenden dieses Verfahren.
+
+Obgleich dieser  Test im  Textmodus ausgefhrt  wird, kann  die ermittelte
+Geschwindigkeit relativ auf grafische Anwendungen bertragen werden.  Hohe
+Leistungswerte bedeuten, daá  Ihr Rechner sich  gut fr CAD-Programme  und
+fr Programme wie Windows eignet.
+
+
+                    Ergebnisse vergleichen speichern
+                    --------------------------------
+
+CheckIt  vergleicht  die  Leistungswerte  Ihres Rechners standardm„áig mit
+denen  eines  IBM  PC-XT.  M”chten  Sie  jedoch  die  Leistungswerte Ihres
+Rechners als Vergleichswerte  heranziehen, w„hlen Sie  "S" fr die  Option
+"Speichern" und geben  Sie einen Namen fr das Testergebnis ein. Das Test-
+ergebnis  wird  dann von  CheckIt in  der Konfigurationsdatei gespeichert.
+
+Testen  Sie  nun  zu  einem  sp„teren  Zeitpunkt einen anderen Rechner mit
+CheckIt, so k”nnen Sie seine Leistungswerte mit den zuvor  abgespeicherten
+vergleichen. W„hlen Sie hierzu "V" fr die Option "Vergleich zu ...".
+END.
+
+HELP:bench_save:Leistungswerte speichern
+Geben Sie einen Namen (max. 10 Zeichen) fr die aktuellen Ergebnisse  ein.
+Mit "V" k”nnen Sie diese dann zu einem Vergleich mit den Ergebnissen eines
+weiteren Tests heranziehen.
+END.
+
+HELP:setup_activity_log:Vorgaben fr das Testprotokoll
+CheckIt fhrt  ein Protokoll  der getesteten  Bauteile und  der jeweiligen
+Testergebnisse.  Dieses  wird  am  Ende  jedes  Tests,  bei dem ein Fehler
+gefunden wurde, auf dem Bildschirm angezeigt. Das vollst„ndige  Protokoll,
+das die bestandenen und die  nicht bestandenen Tests auflistet, kann  auch
+in eine Datei geschrieben und/oder ber einen Drucker ausgegeben werden.
+
+Bildschirm      Das Fehlerprotokoll wird nur dann am Bildschirm angezeigt,
+                wenn w„hrend eines Tests Fehler festgestellt werden.
+
+Disk./Platte    Die  Testergebnisse   werden  in  der  Datei   CHECKIT.LOG
+                protokolliert. Diese Datei  wird im aktuellen  Verzeichnis
+                angelegt (bzw.  berschrieben). W„hrend  der Arbeitssitzung
+                mit CheckIt werden die laufenden Ergebnisse jeweils an das
+                Ende der Datei angeh„ngt.
+
+Drucker         Wenn Sie  diese Option w„hlen, werden die  Ergebnisse  der
+                beendeten  Tests  an  den  an LPT1 angeschlossenen Drucker
+                gesendet.  Kurz  bevor  die  ersten  Daten  an den Drucker
+                gesendet werden,  wird ein  Meldung eingeblendet,  die Sie
+                auffordert den Drucker vorzubereiten.
+
+Disk./Platte    Mit dieser Option k”nnen  Sie das Fehlerprotokoll in  eine
+und  Drucker    Datei schreiben und gleichzeitig ber den Drucker ausgeben
+                lassen.
+
+                           Name des Protokolls
+                           -------------------
+
+Wenn Sie  das Testprotokoll  in eine  Datei und/oder  zum Drucker  leiten,
+fordert CheckIt Sie auf, einen Namen fr das Protokoll einzugeben.  Diesen
+schreibt es in die ersten  Zeilen des Protokolls. Sie k”nnen  zum Beispiel
+eingeben,  welcher  Rechner  getestet  wurde  oder welche Fehler ermittelt
+werden sollten.
+
+                   Systemdaten-Berichte speichern (F2)
+                   -----------------------------------
+
+Wird das Testprotokoll in eine  Datei geschrieben oder ber einen  Drucker
+ausgegeben,   kann   mit   der   Funktionstaste  [F2]  eine   Kopie  jedes
+Systemdatenberichts an dieses Protokoll angefgt werden.
+END.
+
+HELP:show_activity_log:Testprotokoll
+
+Dieses  Testprotokoll   zeigt  die   Ergebnisse  des   bzw.  der   zuletzt
+durchgefhrten Tests. Die Umleitung des Testprotokolls in  eine Datei oder
+zum Drucker erm”glicht die Archivierung der ermittelten Daten. Das Feld im
+oberen  Abschnitt  des  Protokolls  zeigt  die  Gesamtzahl der ermittelten
+Fehler.
+
+Mit  den  Pfeiltasten  k”nnen  Sie  sich  das  gesamte  Protokoll  auf dem
+Bildschirm anzeigen lassen. Mit RETURN verlassen Sie die Protokollanzeige.
+END.
+
+HELP:test_sysbd:Test der Hauptplatine
+Dieser  Test  berprft  die  Zentraleinheit  (CPU), den Koprozessor (NPU)
+sowie die DMA- und Interrupt-Kontroller.
+
+CPU             CheckIt  testet die allgemeinen Funktionen  der CPU    und
+                sucht auáerdem gezielt nach h„ufig auftretenden Problemen.
+                Wird  in  diesem   Testabschnitt  ein  Fehler   ermittelt,
+                sollten Sie Ihre CPU sofort ersetzen.
+
+Protected Mode  80286- oder 80386-Prozessor werden daraufhin getestet,  ob
+                sie    im    Protected    Mode    einwandfrei    arbeiten.
+                Betriebssysteme wie OS/2 und Xenix verwenden diesen  Modus
+                h„ufig.  Darber  hinaus  muá  bei  jedem  Zugriff auf den
+                Erweiterungsspeicher in  diesen Modus umgeschaltet werden.
+
+NPU             Wenn Sie einen mathematischen Koprozessor (z.B. den  8087)
+                installiert  haben,  werden   sowohl  einfache  als   auch
+                komplexe mathematische Funktionen getestet.
+
+DMA-Kontroller  Dieser Test prft den DMA-Kontroller. Dieser Chip  steuert
+                den  Datenaustausch  zwischen  dem  Speicher  und  anderen
+                Einheiten.  Bei  AT-  und  386er-Rechnern  wird  auch  der
+                zweite DMA-Kontroller getestet.
+
+Interrupt-      Dieser Test prft den Interrupt-Kontroller Ihres Rechners.
+Kontroller      (Bei  AT-  und  386er   Rechnern  wird  auch  der   zweite
+                Kontroller   getestet.)   Dieser   Chip   unterbricht   in
+                bestimmten F„llen  die Arbeit  der CPU.  Der 8259A  sendet
+                beispielsweise jedesmal ein Interrupt, wenn Sie eine Taste
+                drcken.
+END.
+
+HELP:test_prn:Druckertest
+W„hrend dieses Tests wird eine Reihe von Testmustern ausgedruckt.  Dadurch
+k”nnen Kabel- und Konfigurationsprobleme von IBM-, Epson-, HPLaserjet- und
+Standarddruckern gefunden werden.
+
+Sie stellen diesen  Test fr Ihren  speziellen Drucker ein,  indem Sie auf
+die Aufforderung  "Druckertest starten?"  "" fr  "ndern" eingeben.  Sie
+k”nnen dann den Druckertyp und den Port fr den Test angeben.
+
+Prfen Sie  nun, ob  der Drucker  eingeschaltet und  Papier eingelegt ist.
+Beantworten Sie dann die Aufforderung "Druckertest starten?" mit "J".
+
+S„mtliche Tests  werden zusammenh„ngend  ausgedruckt. Daraufhin  zeigt das
+Programm  an,  wie  der  Ausdruck   aussehen  soll,  und  fragt,  ob   der
+tats„chliche  Ausdruck  der  Vorgabe  entspricht.  Eine  Beschreibung  der
+einzelnen  Tests  und  Erl„uterungen  dazu,  wie  Probleme gefunden werden
+k”nnen, finden Sie in Kapitel 18 des Handbuchs.
+END.
+
+HELP:test_ser:Test des Seriell-Port
+Dieser Test prft den Seriell-Port. Getestet werden die einzelnen Register
+des  seriellen  8250  Kontroller-Chips  sowie  die  Datenbertragung   mit
+unterschiedlichen Baudraten.
+
+Obwohl dieser Test auch ohne Prfschleife durchgefhrt werden kann, sollte
+der Test nach  M”glichkeit mit einem  entsprechenden Stecker erfolgen,  da
+nur dann Daten tats„chlich gesendet und empfangen werden.
+
+Weitere Einzelheiten zu den  Prfschleifensteckern und diesen Test  finden
+Sie in Kapitel 16 des Handbuchs.
+END.
+
+HELP:test_par:Test des Parallel-Port
+Dieser Test prft den Parallel-Port.  Er kann ohne oder mit  Prfschleifen
+durchgefhrt  werden.  Wenn  der  Test  ohne Prfschleifenstecker erfolgt,
+werden die  internen Register  des Parallel-Ports  auf korrekte Reaktionen
+untersucht. Wird ein Prfschleifenstecker verwendet, werden zus„tzlich die
+externen Signale und die Datenleitungen getestet.
+
+Weitere Informationen  zu dem  ber Prfschleifenstecker  und diesen  Test
+finden Sie in Kapitel 17 des Handbuchs.
+END.
+
+HELP:test_flop:Diskettenlaufwerk-Test
+
+Dieser Test erfllt zwei Anforderungen. Sie k”nnen damit:
+
+  * die Funktion Ihres Diskettenlaufwerks berprfen,
+
+  * eine bestimmte Diskette auf defekte Spuren untersuchen.
+
+HINWEIS: Fr den Test eines Diskettenlaufwerks ben”tigen Sie eine mit  DOS
+         formatierte Diskette.
+
+Sie  starten  diesen  Test,  indem  Sie  eine  Diskette in das zu prfende
+Laufwerk einlegen und anschlieáend RETURN drcken. Wenn die Diskette nicht
+entsprechend der  Maximalkapazit„t des  Laufwerks formatiert  wurde (liegt
+z.B. ein 360-Kbyte-Diskette in  einem 1,2-Mbyte-Laufwerk), wird die  Frage
+angezeigt, ob die eingelegte Diskette getestet werden soll. Befinden  sich
+auf der Diskette Daten, k”nnen  Sie entweder eine neue Diskette  einlegen,
+den Schreibtest berspringen oder ihn dennoch durchfhren.
+
+                         Wahlfrei lesen
+                         --------------
+
+In  diesem  Testabschnitt  wird  jede  Spur  der  Diskette  auf Lesbarkeit
+geprft. Da die getesteten  Spuren zuf„llig ausgew„hlt werden,  wird dabei
+zugleich der Schrittmotor des Laufwerks geprft. Ermittelte Fehler  werden
+im Fehlerfenster angezeigt.
+
+                        Wahlfrei schreiben
+                        ------------------
+
+In diesem Testabschnitt  wird untersucht, ob  das Laufwerk Daten  auf eine
+Diskette schreiben kann.  Er kann bersprungen  werden, wenn Sie  zum Test
+eine Diskette verwenden, auf der sich Daten befinden.
+
+Ein Diskettenlaufwerk oder eine  Diskette kann den Test  aus verschiedenen
+Grnden nicht bestehen. Einzelheiten hierzu  finden Sie in Kapitel 13  des
+Handbuches.
+END.
+
+HELP:test_hard:Festplattentest
+Mit diesem Test  berprfen Sie die  Funktion Ihrer Festplatte.  Die Daten
+der Festplatte bleiben dabei erhalten.
+
+Es werden drei verschiedene Lesetests durchgefhrt:
+
+                          Linear lesen
+                          ------------
+
+Getestet  werden  s„mtliche  Zylinder,  beginnend  mit  Zylinder  0.  Alle
+Zylinder werden der Reihe nach bis zum letzten Zylinder auf der Festplatte
+untersucht. Dieser Durchgang prft, ob alle Daten in diesem einfachen Test
+lesbar sind.
+
+                        Sprungweise lesen
+                        -----------------
+
+Auch  dieser  Test  prft  s„mtliche  Zylinder.  Dabei  Test werden jedoch
+abwechselnd die „uáeren und  inneren Zylinder gelesen. Hierdurch  wird der
+Positioniermechanismus  der  Festplatte  unter  ungnstigsten  Bedingungen
+geprft.
+
+                         Wahlfrei lesen
+                         --------------
+
+Dieser Test eignet sich  wie der vorherige Test  dazu, Positionierprobleme
+der  Schreib/Lese-K”pfe  zu   ermitteln.  Anders  als   beim  Testen   mit
+sprungweisem Lesezugriff wird in  diesem Test die Festplattenaktivit„t  so
+nachgebildet, wie sie in der Praxis vorkommt.
+
+                          Fehlerdeutung
+                          -------------
+
+Wenn CheckIt  einen Fehler  entdeckt, wird  eine entsprechende  Meldung im
+Fehlerfenster des  Bildschirms und  in der  Hinweisspalte eine Erl„uterung
+dazu  eingeblendet.  Es  k”nnen  eine  Reihe verschiedenen Fehlermeldungen
+angezeigt werden. Einige  sind ernst zu  nehmen, w„hrend andere  lediglich
+der Information dienen. Ein vollst„ndige Liste der Fehlermeldungen  finden
+Sie in Kapitel 12 des Handbuches.
+END.
+
+HELP:test_video:Bildschirmtest
+Mit diesem Test  k”nnen Sie das  Bildschirmsystem prfen. Dieser  Test hat
+drei Teile:
+
+                               Video-RAM
+                               ---------
+
+In   diesem   Testabschnitt   wird   der   Bildschirmspeicher   und    die
+Seitenwechsel-Hardware geprft. Da w„hrend  des Tests beliebige Daten  auf
+dem  Bildschirm  erscheinen,  wird  vor  Beginn ein entsprechender Hinweis
+eingeblendet. Der Test schlieát automatisch ab.
+
+                                Textmodi
+                                --------
+
+In diesem  Testabschnitt werden  s„mtliche auf  Ihrem Rechner  verfgbaren
+Textmodi  geprft.  Da  das  Bestehen  oder Nichtbestehen dieser Tests vom
+Aussehen  des  Bildschirms  abh„ngt,  mssen  SIE entscheiden, ob ein Test
+bestanden wurde oder nicht.
+
+Jede Phase dieses Testabschnitts besteht aus mehreren  Bildschirmanzeigen.
+Am oberen Rand jeder  Anzeige wird jeweils der  Titel, die Nummer und  der
+Modus des aktuellen Tests  eingeblendet. Daran k”nnen Sie  ablesen, welche
+Testphase erreicht ist.
+
+HINWEIS: Beachten  Sie, daá  Sie mit  ESC einzelne  Testschritte oder  den
+         gesamten Test abbrechen k”nnen.
+
+                               Grafikmodi
+                               ----------
+
+In  diesem  Testabschnitt  werden  alle  auf  Ihrem  Rechner   verfgbaren
+Grafikmodi  geprft.  Der  Testanfang  h„ngt   von  der  in  Ihrem   Ger„t
+installierten  Bildschirmkarte  ab.  Wie  im  Fall der Textmodi mssen SIE
+entscheiden, ob ein Test bestanden wurde oder nicht.
+
+               Wenn der Bildschirm leer oder unlesbar ist ...
+
+Eventuell untersttzt Ihre  Bildschirmkarte einige Darstellungsmodi  nicht
+voll.  Drcken  Sie  in  diesem  Fall  "N"  und  anschlieáend  RETURN. Der
+Bildschirm  wird  dann  als  fehlerhaft  markiert.  Das  w„hrend des Tests
+aufgezeichnete Protokoll  gibt Auskunft  darber, welche  Darstellungsmodi
+nicht richtig funktioniert haben.
+END.
+
+HELP:test_kbd:Tastaturtest
+Mit  diesem  Test  prfen  Sie  die  Funktion der einzelnen Tasten und der
+Tastatur-LEDs.
+
+Der  Test  untersttzt  drei   Tastaturtypen:  PC-,  AT-  und   erweiterte
+Tastaturen  (Multifunktionstastaturen).  W„hlen  Sie  die an Ihren Rechner
+angeschlossene  Tastatur  mit   den  Pfeiltasten  aus.   Wenn  Sie   Ihren
+Tastaturtyp nicht bestimmen k”nnen, vergleichen Sie Ihre Tastatur mit  der
+Darstellung  auf  dem  Bildschirm  und  w„hlen  Sie den Typ aus, der Ihrer
+Tastatur am n„chsten kommt.
+
+                            Einzeltastentest
+                            ----------------
+
+In diesem Testabschnitt  kann jede Einzeltaste  geprft werden. Wenn  alle
+Tasten   getestet   wurden,   geht   CheckIt   automatisch   zum  n„chsten
+Testabschnitt ber.  Funktionieren einzelne  Tasten nicht  oder wollen Sie
+nur bestimmte Tasten testen, drcken Sie dreimal eine beliebige Taste. Sie
+haben dann die M”glichkeit, bestehende Probleme zu protokollieren.
+
+                Test der automatischen Wiederholfunktion
+                ----------------------------------------
+
+Dieser Teil  des Tests  prft, ob  die automatische  Wiederholfunktion der
+Tastatur richtig  arbeitet. Dies  ist vom  wiederholten Drcken  derselben
+Taste zu unterscheiden.
+
+                         Test der Tastatur-LEDs
+                         ----------------------
+
+Wenn Sie eine erweiterte  oder eine AT-Tastatur testen,  werden zus„tzlich
+die Tastatur-LEDs  berprft. Die  LEDs der  Tastatur sollten gleichzeitig
+mit denen in der Bildschirmdarstellung aufleuchten.
+
+Weitere Informationen zum Auffinden  und Beheben von Problemen  finden Sie
+in Kapitel 20.
+END.
+
+HELP:test_joy:Joystick-Test
+Wenn Sie einen Joystick an  Ihren Rechner angeschlossen haben, k”nnen  Sie
+mit diesem Test berprfen, ob  dieser korrekt zentriert ist und  ob seine
+Tasten funktionieren.
+
+                         Den Joystick zentrieren
+                         -----------------------
+
+Bewegen Sie hierzu  den Hebel des  Joysticks ganz nach  oben, unten, links
+und rechts. Hierdurch werden die Minimal- und Maximalwerte fr die X-  und
+Y-Achsen ermittelt.
+
+Anschlieáend  ist   der  Joystick   zu  zentrieren.   Der  Cursor   sollte
+bewegungslos in der Mitte des Feldes stehen. Wenn dies nicht der Fall ist,
+korrigieren Sie dies mit  Hilfe der Feineinstellung des  Joysticks. Dieser
+ist daraufhin korrekt ausgerichtet.
+END.
+
+HELP:test_mouse:Maustest
+Mit  diesem   Test  k”nnen   Sie  die   Funktion  einer   an  Ihr   System
+angeschlossenen Maus berprfen. Dieser Test kann nur durchgefhrt werden,
+wenn der Maustreiber installiert ist.
+
+Der Test prft die Beweglichkeit der Maus und die Funktion der Maustasten.
+
+Wenn Sie ein Problem finden, k”nnen  Sie mit ESC den Test (oder  nur einen
+Testabschnitt) abbrechen. Sie erhalten dann die M”glichkeit, den Fehler zu
+protokollieren.
+END.
+
+HELP:test_clock:Uhr/Kalender-Test
+Wenn Ihr  System ber  eine Echtzeituhr  verfgt, k”nnen  Sie mit  CheckIt
+berprfen,  ob  diese  korrekt  eingestellt  ist  und  richtig  geht. Die
+folgenden Tests k”nnen durchgefhrt werden:
+
+             Vergleich der Angaben von Echtzeit- und DOS-Uhr
+             -----------------------------------------------
+
+Geprft wird, ob sich die beiden Zeitangaben in etwa entsprechen. Sind die
+beiden Werte nicht  identisch, wird ihre  Differenz in der  entsprechenden
+Zeile in Klammern angegeben.  Da Abweichungen von wenigen  Sekunden normal
+sind, wird darauf nicht hingewiesen.
+
+                  Vergleich von Echtzeit- und DOS-Datum
+                  -------------------------------------
+
+Beide Werte mssen identisch sein.
+
+                  Test der Weckfunktion der Echtzeituhr
+                  -------------------------------------
+
+Ist in Ihrem Rechner eine standardm„áige AT-CMOS-Uhr eingebaut (wie in den
+meisten AT und 386er-Rechnern), wird zus„tzlich die Weckfunktion getestet.
+Wenn das Wecksignal  nicht zur eingestellten  Zeit gegeben wird,  gilt der
+Test  als  nicht  bestanden.  Von  einigen Kompatiblen wird diese Funktion
+nicht untersttzt. In diesen F„llen zeigt ein Nichtbestehen des Tests  nur
+ein kleineres Kompatibilit„tsproblem an.
+
+                             Gleichlauftest
+                             --------------
+
+Abschlieáend  testet  CheckIt  (unabh„ngig  von  deren  Zeitdifferenz) den
+Gleichlauf  der  beiden  Uhren.  Betr„gt  der  Unterschied  mehr  als  den
+Bruchteil einer Sekunde, wird dies als Fehler gemeldet.
+
+Ein Fehler in diesem Testteil bedeutet im allgemeinen, daá die Echtzeituhr
+neue Batterien ben”tigt.
+
+Weitere  Informationen  zur  Echtzeituhr  finden  Sie  in  Kapitel  15 des
+Handbuches.
+END.
+
+HELP:test_mem:Arbeitsspeichertest
+Mit diesem Test k”nnen Sie den Speicher Ihres Rechners prfen. Die  Felder
+auf der  linken Bildschirmseite  repr„sentieren den  Haupt-, Erweiterungs-
+und Expansionsspeicher. Der fr den Test ausgew„hlte Bereich erscheint  in
+invertierter Darstellung.
+
+                        ndern der Standardwerte
+                        ------------------------
+
+Rechts von den Feldern werden  die Testparameter angezeigt. Wenn Sie  eine
+der   Einstellungen   ver„ndern   wollen,   beantworten   Sie   die  Frage
+"Speichertest  starten?"  mit  ""  und  drcken  Sie  RETURN. Zus„tzliche
+Hilfstexte erkl„ren, wie die einzelnen Felder zu konfigurieren sind.
+
+                        Den Speichertest starten
+                        ------------------------
+
+Sie starten den Speichertest, indem Sie die Frage "Speichertest  starten?"
+mit "J" beantworten und RETURN drcken.
+
+                        Testen der Programmpuffer
+                        -------------------------
+
+Da  der  Speichertest  ohne  Datenverlust  ausgefhrt wird, mssen Sie den
+Originalinhalt jedes getesteten Speicherbereichs zun„chst sichern und dann
+wiederherstellen. CheckIt beginnt den Test mit der šberprfung des  hierzu
+verwendeten Speicherbereichs.
+
+                            Hauptspeichertest
+                            -----------------
+
+Im   Anschluá   daran   wird   der   ausgew„hlte  Hauptspeicher  getestet,
+einschlieálich des von DOS,  CheckIt oder einem anderen  Programm belegten
+Speicherplatzes.  Wenn  CheckIt  auf  einen  Fehler trifft, wird neben dem
+Prffeld  "NEGATIV"  angezeigt  und   der  Fehler  in  das   Testprotokoll
+aufgenommen.
+
+                        Erweiterungsspeichertest
+                        ------------------------
+
+Als n„chstes wird der ausgew„hlte Erweiterungsspeicher getestet. Wie  beim
+Hauptspeichertest  wird  bei  auftauchenden  Fehlern der Hinweis "NEGATIV"
+angezeigt   und   die   betreffende   Speicherposition   im  Testprotokoll
+verzeichnet.
+
+                         Expansionsspeichertest
+                         ----------------------
+
+Im Anschluá  wird der  ausgew„hlte Expansionsspeicher  getestet. Fehler in
+diesem Testabschnitt werden  auf die gleiche  Weise angezeigt wie  bei den
+brigen beiden Speichertests.
+
+                      Test der hohen Adreábereiche
+                      ----------------------------
+
+Der  fr  den  Test  ausgew„hlte  Speicher  wird  daraufhin  berprft, ob
+Probleme  durch  eine  falsche  Chipgr”áe,  verbogene  oder   abgebrochene
+Anschluápins bzw. andere Adressierungsprobleme verursacht werden, die sich
+auf ein entferntes Byte auswirken.
+
+HINWEIS: Eine  optimale  Testaussage  erhalten  Sie,  wenn  Sie in  diesem
+         Schritt den gesamten installierten Speicher berprfen.
+
+                             Fehlerbehebung
+                             --------------
+
+Wenn im Verlauf der Speichertests Fehler gemeldet werden, muá zun„chst der
+defekte  Chip   bestimmt  werden.   Dies   l„át   sich  mit   der   Option
+"RAM-Chiplayout ermitteln"  aus  dem  Men "Dienste"  erreichen. Wenn  der
+Speichertest soeben erst beendet wurde, wird die gesuchte Information beim
+Aufruf der Option bereits  angezeigt. Weitere Informationen zur  Erkennung
+defekter RAM-Chips finden Sie in Kapitel 24.
+
+Ausfhrliche Erl„uterungen zu den Bildschirmmeldungen und weitere Hinweise
+zum Speichertest und  zur Fehlerbeseitigung finden  Sie in Kapitel  11 des
+Handbuchs.
+END.
+
+HELP:log_printer:Testprotokoll zum Drucker
+Das Protokollausgabe ist so  voreingestellt,  daá  die  Testergebnisse und
+Systemdatenberichte ber den Drucker ausgegeben werden. Da es sich hierbei
+um den ersten  Ausdruck handelt, weiá  das Programm nicht,  ob der Drucker
+betriebsbereit und ob gengend Papier eingelegt ist.
+
+Vergewissern Sie  sich, daá  der Drucker  angeschlossen, eingeschaltet und
+betriebsbereit ist und daá  der Papiervorrat ausreichend ist.  Sie starten
+dann  den  Ausdruck  des  Testprotokolls,  indem  Sie eine beliebige Taste
+drcken.
+END.
+
+HELP:log_graphics:Grafikprotokoll
+CheckIt kann  Daten auf  zweierlei Weise  an die  Protokolleinheit senden.
+Verwenden Sie  einen Drucker,  der IBM-Grafiksonderzeichen  umsetzen kann,
+w„hlen Sie fr diese Option EIN. Sie erhalten dann in der Regel Protokolle
+und Ausdrucke von hoher Qualit„t.
+
+Verwenden Sie  einen anderen  Druckertyp, so  w„hlen Sie  fr diese Option
+AUS. CheckIt setzt  dann alle Sonderzeichen  in die ASCII-Zeichen  um, die
+diesen Sonderzeichen am „hnlichsten sind.
+
+HELP:ram_locate:RAM-Chiplayout ermitteln
+Mit dieser Option k”nnen  Sie einen defekten Speicherchip  ermitteln. Dazu
+wird  ein  Bild  der  Speicherkarte  angezeigt,  in  dem  der defekte Chip
+gekennzeichnet ist.
+
+HINWEIS:  Vor  dem  Aufruf  dieser  Funktion  mssen  Sie  das  Layout der
+          Speicherkarte   mit   der   Option   "Layoutdaten eingeben"  aus
+          dem  Men  "Dienste"   definiert  haben.  Weitere  Informationen
+          hierzu  finden Sie  in Kapitel 25 des Handbuchs.
+
+                      Adreá- und Bitdaten eingeben
+                      ----------------------------
+
+Bei  der  Anzeige  von  Speicherfehlern  zeigt  CheckIt eine sechsstellige
+Hexadezimaladresse an, hinter der  die fehlerhaften Bits aufgefhrt  sind.
+Damit CheckIt die defekten Chips ermitteln kann, mssen diese Daten in den
+ersten  Bildschirm  eingegeben  werden.  Unmittelbar  nach  dem Ablauf des
+Speichertests sind  diese Daten  bereits eingetragen.  Ansonsten geben Sie
+"", anschlieáend RETURN ein und tragen die Daten selbst ein. Beachten Sie
+dabei,  daá  vor  Expansionsspeicheradressen  "EMS:"  anzugeben  ist.  Der
+Eingabebildschirm kann mit ESC verlassen werden.
+
+Wenn Sie die  Adreádaten vollst„ndig angegeben  haben, k”nnen Sie  mit der
+Ermittlung der defekten Chips beginnen.  Hierzu k”nnen Sie eines von  zwei
+Verfahren ausw„hlen: den einfachen oder den erweiterten Dialog.
+
+                    Normaler Dialog (Chips ermitteln)
+                   ----------------------------------
+
+Dieses Verfahren eignet  sich fr Anwender,  die nicht allzu  viele Fragen
+beantworten m”chten, wie zum  Beispiel: "Parit„t rechts?" und "Reihenfolge
+umgekehrt?",  und die  dennoch die  Lage fehlerhafter  Chips so genau  wie
+m”glich ermitteln m”chten.
+
+Sie w„hlen den normalen Dialog, indem Sie "N" eingeben und RETURN drcken.
+Ihnen  werden  dann  eine  Reihe  von  Fragen gestellt, die immer genauere
+Informationen  zum  Layout  der  Speicherchips  in Ihrem Rechner abfragen.
+CheckIt wertet Ihre Antworten aus und zieht Rckschlsse auf die Lage  der
+Chips.  Je  mehr  Informationen  Sie  eingeben,  desto  konkreter wird die
+angezeigte und mit jeder Antwort aktualisierte Information am  Bildschirm.
+K”nnen Sie weitere  Fragen nicht beantworten,  beenden Sie den  Dialog und
+lassen Sie sich mit [F2] die aktuellen Rckschlsse ausdrucken.
+
+HINWEIS: Sie k”nnen  den normalen Dialog  verwenden, um die  grundlegenden
+         Angaben zu machen  und die brigen  Fragen im erweiterten  Dialog
+         beantworten.
+
+                  Erweiterter Dialog (Chips ermitteln)
+                  ------------------------------------
+
+Dieses  Verfahren  eignet  sich  fr  Anwender,  die genau wissen, wie die
+Speicherplatinen in  Ihrem Rechner  angeordnet sind,  und genau  ermitteln
+m”chten, welcher Chip fehlerhaft ist.
+
+Sie  w„hlen  den  erweiterten  Dialog,  indem  Sie "E" eingeben und RETURN
+drcken. Der  Bildschirm zeigt  dann eine  Speicherkartenbersicht, in der
+Sie die Speicherkarten  fr Ihr System  angeben k”nnen. Sind  Ihre Angaben
+vollst„ndig,  k”nnen  Sie sich mit [F2] eine Kopie  ausdrucken lassen, die
+die Platinen mit fehlerhaften Chips anzeigen.
+END.
+
+HELP:ram_summary:Ergebnisse
+An  diesem  Bildschirm  k”nnen  Sie  die  Angaben  zu  jeder Speicherkarte
+durchsehen  und  gegebenenfalls  „ndern,  bevor Sie versuchen, fehlerhafte
+Chips zu ermitteln. Sind Sie mit Ihren Angaben zufrieden, starten Sie  die
+Suche  nach  fehlerhaften  Chips,  indem  Sie  "F" und anschlieáend RETURN
+drcken.
+
+                         Speicherkartenbersicht
+                         -----------------------
+
+Der   erste   Bildschirm   zeigt   eine   šbersicht   aller    definierten
+Speicherkarten. Sie k”nnen sich von  hier aus jede dieser Karten  anzeigen
+lassen und ver„ndern.
+
+Anzeigen        Mit dieser Option blenden Sie eine vergr”áerte Darstellung
+                der ausgew„hlten  Karte ein.  Wenn am  oberen oder unteren
+                Rand der Karte das  Wort "WEITER" aufgezeigt wird,  k”nnen
+                Sie mit den  Pfeiltasten AUF und  AB die brigen  Bereiche
+                der Karte  auf den  Bildschirm holen.  Mit den Pfeiltasten
+                LINKS und  RECHTS lassen  sich angrenzende  Speicherkarten
+                anzeigen.
+
+ndern          Mit dieser Option  k”nnen Sie eine neue  Karte  definieren
+                oder  eine  vorhandene  Definition  „ndern.  Zu jedem Feld
+                steht ein Hilfetext  zur Verfgung. Weitere  Informationen
+                hierzu finden  Sie in  Kapitel 25 des Handbuchs.  Dort ist
+                auáerdem  beschrieben,  wie  einige  Spezialf„lle  bei der
+                Definition von Speicherkarten zu handhaben sind.
+
+HINWEIS:        Einige  der  fr  die  Definition ben”tigten Informationen
+                sind sehr technisch.  Es ist daher  von Vorteil, wenn  Sie
+                w„hrend der Definition die Speicherkarte selbst  verfgbar
+                haben.
+
+L”schen         Mit dieser Option k”nnen Sie die Konfigurationsdaten   fr
+                die ausgew„hlte Speicherkarte l”schen.
+
+Fehlerhafte     Mit  dieser Option k”nnen Sie sich die  Speicherkarten und
+Chips ermit-    fehlerhaften Chips entsprechend Ihrer Definition  anzeigen
+teln            lassen.
+
+END.
+
+HELP:ram_find:Fehlerhafte Chips
+Dieser Bildschirm zeigt, welche Chips auf der Platine ausgetauscht  werden
+mssen.
+
+                       Anzeige fehlerhafter Chips
+                       --------------------------
+
+FEHLERHAFTE CHIPS       Diese Chips sind eindeutig von CheckIt als  defekt
+                        ermittelt worden und sollten ausgetauscht  werden.
+                        Am  Bildschirm  werden  diese  Chips  rot blinkend
+                        dargestellt und wie folgt gekennzeichnet: "=>".
+
+EVENTUELL DEFEKTE       Diese Chips wurden als problematisch   eingestuft,
+CHIPS                   d.h.  mindestens einer der gekennzeichneten  Chips
+                        ist defekt. Diese  Art der Fehleranzeige  wird fr
+                        den Erweiterungsspeicher verwendet. Am  Bildschirm
+                        werden diese Chips  rot  blinkend dargestellt  und
+                        wie folgt markiert: "?>". Um den defekten Chip  zu
+                        ermitteln,   mssen   Sie   die   Chips    einzeln
+                        austauschen und den  Test so oft  wiederholen, bis
+                        er ohne Fehlermeldung  abschlieát. Wenn Ihre  Zeit
+                        kostbarer als Ihr  Geld ist, k”nnen  Sie natrlich
+                        auch   s„mtliche    als   m”glicherweise    defekt
+                        markierten Chips austauschen.
+
+Kann die Speicherkarte aufgrund ihrer Gr”áe nicht vollst„ndig eingeblendet
+werden, erscheint am oberen bzw. unteren Bildschirmrand das Wort "WEITER".
+Mit den Pfeiltasten AUF bzw. AB k”nnen Sie die restlichen Chips der  Karte
+anzeigen.
+
+Wurden   mehrere   Speicherkarten   beanstandet,   erscheint   am   oberen
+Bildschirmrand  der  Hinweis  "N„chste Platine". Mit den Pfeiltasten LINKS
+und RECHTS k”nnen Sie dann die brigen Speicherkarten einsehen.
+
+Mit  der  Funktionstaste [F2] k”nnen  Sie  die  Darstellung  der   aktuell
+angezeigten Speicherkarte in das Testprotokoll kopieren lassen.
+
+                       Ungltige Speicheradressen
+                       --------------------------
+
+Wenn Sie eine  Adresse angegeben haben,  die auf keiner  der installierten
+Speicherkarten  existiert,  wird  eine  Meldung  eingeblendet. Diese weist
+darauf hin, daá an dieser Adresse kein Chip gefunden werden kann.
+
+Gehen Sie zur Speicherkartenbersicht zurck und „ndern Sie die Definition
+des Chip-Layout, bis diese Meldung nicht mehr angezeigt wird.
+END.
+
+HELP:ram_setup:Layoutdaten eingeben
+Mit dieser  Option definieren  Sie das  physikalische Layout  der in Ihrem
+Rechner installierten Speicherkarten.  Diese Definition muá  erfolgt sein,
+bevor Sie einen fehlerhaften Chip zu ermitteln.
+
+HINWEIS: Einige  der bei  der Definition  einer Speicherkarte anzugebenden
+         Daten sind technischer Natur. Sie sollten daher nach  M”glichkeit
+         das Handbuch der Karte oder  diese  selbst parat haben,  wenn Sie
+         diese Angaben machen.
+
+                         Speicherkartenbersicht
+                         -----------------------
+
+Der   erste   Bildschirm   zeigt   eine   šbersicht   aller    definierten
+Speicherkarten. Sie k”nnen sich von  hier aus jede dieser Karten  anzeigen
+lassen und ver„ndern.
+
+Anzeigen        Mit dieser Option blenden Sie eine vergr”áerte Darstellung
+                der ausgew„hlten  Karte ein.  Wenn am  oberen oder unteren
+                Rand der Karte das  Wort "WEITER" aufgezeigt wird,  k”nnen
+                Sie mit den  Pfeiltasten AUF und  AB die brigen  Bereiche
+                der Karte  auf den  Bildschirm holen.  Mit den Pfeiltasten
+                LINKS und  RECHTS lassen  sich angrenzende  Speicherkarten
+                anzeigen.
+
+ndern          Mit dieser Option  k”nnen Sie eine neue  Karte  definieren
+                oder  eine  vorhandene  Definition  „ndern.  Zu jedem Feld
+                steht ein Hilfetext  zur Verfgung. Weitere  Informationen
+                hierzu finden Sie  auch in Kapitel 25 des Handbuchs.  Dort
+                finden Sie auáerdem Hinweise dazu, wie einige Spezialf„lle
+                bei der  Definition von  Speicherkarten zu handhaben sind.
+
+L”schen         Mit dieser Option k”nnen Sie die Konfigurationsdaten   fr
+                die ausgew„hlte Speicherkarte l”schen.
+
+END.
+
+HELP:register_user:Benutzerregistrierung
+Bevor Sie  mit CheckIt  arbeiten k”nnen,  mssen Sie  Ihren Namen  und die
+Seriennummer  in  die  entsprechenden  Zeilen   des  Begráungsbildschirms
+eintragen.
+
+Diese Informationen werden bei jedem Aufruf des Programms angezeigt und zu
+Beginn eines Testprotokolls ausgedruckt.
+END.
+
+HELP:memmap_base:Hauptspeicherbelegung
+Dieser Bildschirm zeigt die  Speicherbelegung des ersten Megabyte  (0K bis
+1024K)  an.  Dazu  geh”ren  der  Hauptspeicher  (0K  bis  640K)  und   der
+reservierte Bereich (640K bis 1MB).  Der obere Teil des Bildschirms  zeigt
+die  Speicherbelegung  grafisch  an,  w„hrend  im unteren Teil die gleiche
+Information in einer Liste wiedergegeben wird.
+
+Jedes  am  Bildschirm  gezeigte  Objekt  ist  durch  ein  eigenes   Krzel
+gekennzeichnet.   Die   nachstehende   Liste   erl„utert   diese   Krzel.
+Weitergehende Informationen hierzu finden Sie in Ihrem Handbuch.
+
+I    Interrupt-Vektoren. Dieser Bereich informiert Sie ber die 256
+     Interrupts fr Hard- und Software.
+
+P    Programme. In diesem Bereich befinden sich DOS, CheckIt,
+     speicherresidente Programme und die residenten Ger„te.
+
+F    Frei. Dies ist der DOS-Speicher, der zur Zeit frei ist.
+
+B    Erweiterter BIOS-Datenbereich. Dieser Speicherabschnitt (er befindet
+     sich in der Regel im oberen Bereich des DOS-Speichers) wird vom BIOS
+     eingestellt und von OS/2 verwendet.
+
+V    Video-RAM. Dieser Adreábereich ist von Ihrer Bildschirmkarte belegt.
+
+R    ROM. Hierbei kann es  sich um einen ROM-Adapter  oder das System-ROM
+     handeln.
+
+-    Unbenutzt. Dieser Bereich  wird  zur Zeit weder vom RAM, ROM oder zu
+     anderen Zwecken
+
+E    EMS-Fenster. An  dieser  Stelle befindet  sich das  EMS-Fenster.  Es
+     beansprucht in der Regel 64K.
+
+H    Hi-RAM.   CheckIt  hat   in   diesem  adressierten    Speicherbereich
+     Arbeitsspeicher ermittelt, kann jedoch nicht feststellen, wozu dieser
+     Speicher verwendet  wird.
+
+    Zugewiesener Arbeitsspeicher. Eine Raute  oberhalb  eines Buchstabens
+     kennzeichnet  den  Speicher als  verfgbaren  Expansionsspeicher.  Der
+     EMS-Seitenrahmen kann immer zugewiesen  werden. Ebenso erm”glichen es 
+     einige EMS-Implementierungen, bestimmten  Programmen,  wie  zum  Bei-
+     spiel  DESQview  oder  Windows, DOS-Speicher zuzuweisen.
+
+                        Weitere Details anzeigen
+                        ------------------------
+
+Sie  k”nnen  zu  jeder  aufgelisteten  Position  weitere  Details abrufen.
+Markieren Sie die Position mit den Pfeiltasten und drcken Sie RETURN.  Es
+”ffnet sich dann  ein Fenster, das  weitere Informationen ausgibt.  Mit F2
+k”nnen Sie diese  Informationen zum eingestellten  Ger„teprotokoll senden.
+END.
+
+HELP:memmap_int:Interrupt-Vektoren
+Dieser Bildschirm zeigt die Interrupts, die von der installierten Software
+verwendet   werden.   Diese   Liste   hilft   Ihnen,   die   Ursache   von
+Software-Kollisionen  zu  ermitteln,  insbesondere  dann,  wenn  diese von
+TSR-oder anderen residenten Programmen hervorgerufen werden.
+
+Der Bildschirm gliedert sich in folgende Spalten:
+
+INT             Diese Spalte listet die beschriebenen Interrupts auf.
+
+Allg.           Diese Spalte beschreibt, wofr der  Interrupt   gew”hnlich
+Funktion        verwendet  wird.   Sie  sehen,  daá   einige    Interrupts
+                speziellen Zwecken dienen, w„hrend andere als "reserviert"
+                gekennzeichnet  sind   oder  von   einer  oder    mehreren
+                allgemeinen  Anwendungen  belegt  sind. 
+
+HINWEIS:        Beachten Sie,  daá in  dieser Spalte  nicht  die  aktuelle
+                Verwendungsweise  der   Interrupts,  sondern   nur   seine
+                typische beschrieben ist.
+
+Adresse         Diese Spalte zeigt, die Adresse, auf die der Vektor zeigt.
+                Es sind die Werte des hexadezimalen Segments bzw. des
+                Offsets angegeben.
+
+Zeigt auf       Diese Spalte zeigt, wohin der Vektor gerade zeigt. In  der
+                Regel  wird  er  auf  ein  Bestandteil des Betriebssystems
+                zeigen, wie zum Beispiel das System-ROM, den DOS-Kern oder
+                COMMAND.COM. Es ist  jedoch auch m”glich,  daá er auf  ein
+                TSR oder einen Ger„tetreiber zeigt.
+
+Lesen Sie in Ihrem Handbuch nach, wie die gezeigten Informationen und  die
+Interrupts allgemein zu verstehen sind.
+END.
+
+HELP:memmap_tsr:Programme
+Diese  Liste  zeigt,  wieviel  Speicher  ein residentes Programm (darunter
+CheckIt)  belegt.  Beachten  Sie,  daá  einige  Programme ebenso Daten und
+Umgebungsblocks   zuweisen.    Vergessen   Sie    nicht,   diese    Bl”cke
+miteinzubeziehen,  wenn  Sie  ermitteln,  wieviel  Speicher  ein  Programm
+belegt.
+
+M”chten  Sie  weiteren  DOS-Speicher zur  Verfgung haben, lesen  Sie  die
+entsprechenden Informationen in Ihrem Handbuch.
+END.
+
+HELP:memmap_nothing:<unbenutzt>
+Auf  diese  Weise  gekennzeichnete  Adressen  sind  zur Zeit nicht belegt.
+Abh„ngig  von  Ihrem  System  k”nnen  diese  Bereiche  von ROM-Modulen von
+Erweiterungskarten, EMS-Hardware oder von Hi-RAM benutzt werden.
+
+
+                      Arbeitsspeicher neu zuordnen
+                      ----------------------------
+
+Kann Ihr System hardwarem„áig Speicher  neu zuordnen (wie dies beim  80386
+oder 80486 der Fall ist), so ist es zum Beispiel mit Programmen wie 386MAX
+oder QEMM  m”glich, Arbeitsspeicher  in diesen  Bereichen zu  belegen. Sie
+k”nnen dann einige der residenten Programme dorthin auslagern und so Ihren
+DOS-Speicher fr Anwendungsprogramme freihalten.
+END.
+
+HELP:MEMMAP_HIRAM:Hi-RAM
+Dieser   Bereich   enth„lt   eine   RAM-Zuweisung,   die   CheckIt   nicht
+interpretieren kann. Folgendes k”nnen die Grnde sein:
+
+1. Einige   nicht    standardm„áige    Bildschirmkarten   stellen     mehr
+   Bildschirmspeicher bereit, als CheckIt erwartet.
+
+2. Einige Erweiterungskarten verfgen ber speziellen Arbeitsspeicher, der
+   als Datenpuffer dient oder anderen besonderen Aufgaben vorbehalten ist.
+   Dies trifft zum Beispiel auf LAN-Karten zu.
+
+Weitere Ursachen fr diese Meldung lesen Sie in Ihrem Handbuch nach.
+END.
+
+HELP:memmap_ebios:EBIOS-Datenbereich
+Der erweiterte  BIOS-(EBIOS-)Datenbereich wird  beim Systemstart  vom BIOS
+eingestellt  und  OS/2  oder  anderen  Multitasking-Betriebssystemen   zur
+Verfgung gestellt. Dieser Speicher (ca. 1K)  wird vom oberen  RAM-Bereich
+genommen und ist fr DOS  nicht verfgbar. Daher melden manche  Protokolle
+anstelle von 640K nur 639K Hauptspeicher.
+END.
+
+HELP:memmap_vram:Video-RAM
+Dieser Adreábereich wird  von der Bildschirmkarte  verwendet, um Text  und
+Grafiken anzuzeigen.
+
+Eine  Bildschirmkarten  verwenden  fr  die verschiedenen Darstellungsmodi
+unterschiedliche  Speicherbereiche.  Der  allgemeine  Bericht  zeigt   den
+gesamten  Bereich,  w„hrend  der  ausfhrliche  Bericht wiedergibt, welche
+Bereiche fr welchen Darstellungsmodus verwendet werden.
+END.
+
+HELP:memmap_available:Freier DOS-Speicher
+Dies  ist  der  DOS-Speicher,  der  derzeit  nicht  von anderen Programmen
+belegt wird. Er ist fr Anwendungen und TSR-Programme verfgbar.
+
+BEACHTEN SIE: CheckIt  versteht  sich   selbst als  eines der im  Speicher
+              befindlichen  Programme.  M”chten  Sie  also  den   gesamten
+              verfgbaren  DOS-Speicher  ermitteln,  so  ziehen  Sie   den
+              Arbeitsspeicher ab, den CheckIt belegt.
+END.
+
+HELP:memmap_rom:ROM
+Dieser Bereich enth„lt einen ROM (Nur-Lese-Speicher) ROM-Bausteine  werden
+fr das  BIOS des  Hauptsystems, der  Festplatte, des  Bildschirmspeichers
+usw. verwendet. Findet CheckIt eine Copyright-Vermerk, so zeigt er ihn an.
+Im anderen Fall werden die erste Byte dieses Bereichs angezeigt, damit Sie
+es einfacher haben, die Verwendungsweise des ROM festzustellen.
+END.
+
+HELP:memmap_ems:EMS-Seitenrahmen
+Dies  ist  der  Bereich,  in  dem  der  Expansionsspeicher  sich  mit  der
+"Auáenwelt" berhrt.  In der  Regel haben  Sie auf  diesen Bereich  keinen
+Zugriff, da er sich in einem separaten Adressierungsbereich befindet.  Der
+Seitenrahmen   "”ffnet"    ein    Fenster,   durch    daá    Sie    diesen
+Adressierungsbereich  "sehen"  k”nnen  und  Anwendungen  Daten sichern und
+wiederherstellen k”nnen. Der Seitenrahmen ist mit einem Buch vergleichbar,
+bei dem  Sie eine  bestimmte Seite  aufschlagen, um  Sie zu  lesen oder zu
+beschreiben.  Alle  anderen  Seiten  sind  vor  Ihren Blicken "versteckt".
+END.
+
+HELP:report_detail:Detaillierter Bericht
+Sie k”nnen  wahlweise einen  detaillierten, einen  allgemeinen oder  beide
+Testberichte   anfordern.   Der    detaillierte   Testbericht   ist    die
+Standardeinstellung. Dabei werden die vollst„ndigen Testergebnisse zu  dem
+angegebenen Protokollger„t gesendet.  Der allgemeine Testbericht  paát auf
+eine  Seite;  er  enth„lt  den  Bericht  der  Systemkonfiguration und eine
+Zusammenfassung der Ergebnisse jedes Tests.
+
+HINWEIS:  Wenn  Sie  die  Ergebnisse  in  einer  Datei oder einem Ausdruck
+protokollieren m”chten, prfen  Sie vor Beginn  der Tests, ob  Sie im Men
+VORGABEN das entsprechende Protokollger„t eingestellt haben.
+END.
+
+HELP:custom_heading:Neue šberschrift
+An  dieser  Stelle  k”nnen  Sie  eine einzeilige šberschrift eingeben, die
+zuoberst eines Testprotokolls erscheint. Sie k”nnen zum Beispiel eingeben,
+auf welchem Rechner  Sie das Protokoll  erstellt haben, welche  Fehler Sie
+ermitteln wollten oder eine beliebige andere Information, die Ihnen hilft,
+das Protokoll nachtr„glich entsprechend zuordnen zu k”nnen.
+END.
+
+HELP:modify_tools:Zusatzprogramme einbinden
+Mit dieser  Option k”nnen ablauff„hige  DOS-Programme in das Men Dienste
+integriert  werden.  Geben Sie dazu zun„chst  den Namen des Programms an,
+so wie  er im Men  erscheinen soll,  anschlieáend den vollst„ndigen Pfad
+sowie eventuelle  Aufrufparameter. Ihr Programm kann dann von CheckIt aus
+gestartet  werden.  Wird  es  beendet,  erfolgt die Rckkehr zu  CheckIt.
+Servicetechniker und Kundendienstmitarbeiter k”nnen damit ihre speziellen
+Prf- und Diagnoseroutinen einfgen. Ein eingebundenes Programm l„át sich
+bei Bedarf wieder l”schen, oder - falls notwendig - k”nnen Name, Pfad und
+Parameter abge„ndert werden.
+END.
+

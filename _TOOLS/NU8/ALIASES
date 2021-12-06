@@ -1,0 +1,264 @@
+:
+:             ALIAS-NAMEN - Beispiel fr eine NDOS ALIAS-Datei
+:
+:
+:     Die Alias-Namen in dieser Datei dienen dazu, Ihnen anhand von
+:     Beispielen zu zeigen, wie Alias-Namen in NDOS-Dateien eingesetzt 
+:     werden k”nnen und welche Funktionen sie erfllen. Diese Liste
+:     erhebt nicht den Anspruch auf Vollst„ndigkeit, und einige der
+:     hier beschriebenen Beispiele treffen auf Ihre Anforderungen 
+:     vielleicht nicht zu. Dennoch werden diese Beispiele Ihnen ein
+:     Gefhl dafr geben, wie Sie Ihre Arbeit mit Hilfe von Alias-
+:     Namen schneller und einfacher erledigen k”nnen.
+:
+:     VORSICHT: Bei den hier beschriebenen Alias-Namen handelt es sich um
+:     BEISPIELE. Wir k”nnen NICHT garantieren, daá sie auf Ihrem System
+:     wie beabsichtigt ausgefhrt werden. Diese Beispiele sollen lediglich 
+:     die Arbeitsweise von Alias-Namen veranschaulichen und Ihnen ein Gefhl 
+:     dafr vermitteln, wie Sie Ihre eigenen Alias-Namen schreiben 
+:     k”nnen. Einige davon k”nnen Sie vielleicht fr Ihre Arbeit verwenden, 
+:     andere dagegen arbeiten m”glicherweise nicht bzw. nicht wie beab- 
+:     sichtigt, wenn sie auf einem anderen System als dem System eingesetzt
+:     werden, fr das sie geschrieben wurden.
+:
+:     Diese Datei ist so ausgelegt, daá sie mit dem Befehl ALIAS /R
+:     geladen werden kann. Beispiel:
+:
+:               alias /r aliases
+:
+:     Alias-Namen k”nnen auch ber eine Stapeldatei geladen werden,
+:     doch der Befehl ALIAS /R ist viel schneller. Weitere Hinweise
+:     zum Laden von Alias-Namen finden Sie in Ihrem Handbuch.
+:
+:     Wir empfehlen, h„ufig verwendete Alias-Namen in eine eigenst„ndige 
+:     Datei wie diese einzufgen, die ber AUTOEXEC aufgerufen werden
+:     kann. Dadurch erhalten Sie die M”glichkeit, die Datei auch nach
+:     einer nderung wieder aufzurufen und die Alias-Namen neu zu
+:     installieren. 
+:
+:     Mit den folgenden Alias-Namen werden einige Befehle zur Verzeichnis-
+:     verwaltung definiert, mit denen Sie sich das Verzeichnis in unter-
+:     schiedlichen Darstellungen anzeigen lassen k”nnen (lesen Sie dazu 
+:     auch den Abschnitt ber den Befehl DIR im Handbuch).
+:
+:     Beachten Sie, daá fr keinen Alias-Namen Argumente (%1, %2 usw.)
+:     angegeben sind. Dies bedeutet, daá alle Argumente in der Befehls-
+:     zeile an den Alias-Text angefgt werden. Beispiel:
+:
+:             d2 x*
+:
+:     entspricht:
+:
+:             dir /2pv x*
+:
+:     und:
+:
+:             d2 x* y* z*
+:
+:     entspricht:
+:
+:             dir /2pv x* y* z*
+:
+d2 dir /2pv
+de dir /oe
+dir *dir /p
+wh*ereis dir /dp
+:
+:     Die beiden letzten Befehle zeigen, wie durch das Universalzeichen *
+:     die Alias-Expansion beendet und der Name eines Alias verkrzt
+:     werden kann.                                                  
+:
+:     W„re der Befehl im ersten Fall definiert als 
+:
+:             alias dir dir/p
+:
+:     wrde er einen Alias-Schleifenfehler erzeugen. Das Einschlieáen 
+:     des Sterns (*) bewirkt, daá NDOS die Alias-Expansion fr diesen
+:     Befehl beendet, wodurch die Neudefinition eines Befehls mit 
+:     speziellen Schaltereinstellungen m”glich wird. In diesem Fall
+:     wird der Befehl DIR in DIR/p umdefiniert, wodurch der
+:     Inhalt von Verzeichnissen seitenweise angezeigt wird.
+:
+:     Der Befehl "whereis" veranschaulicht, wie ein Alias-Name abgeschnitten
+:     werden kann. Der Stern (*) wird hinter dem letzten erforderlichen 
+:     Zeichen des Namens angefgt, wodurch der Befehl "whereis" durch "wh",
+:     "whe", "wher" "where", "wherei" oder "whereis" aufgerufen werden kann.
+:
+:     Die folgenden Alias-Namen sind echte Abkrzungen: DD und DU (Verzeichnis
+:     ab und Verzeichnis auf) stehen fr PUSHD und POPD, DX fr "Nur Unterver-
+:     zeichnisse anzeigen", L fr "Liste" usw.
+:
+dd pushd
+du popd
+dx *dir /mwad
+l list
+clr mode mono
+:
+:     Mit Hilfe von Alias-Namen kann auch gesteuert werden, wie einige interne
+:     Befehle ausgefhrt werden. Die beiden folgenden Beispiele zeigen, wie
+:     erreicht werden kann, daá DELETE und MOVE vor ihrer Ausfhrung eine 
+:     Eingabebest„tigung anfordern. Um den Befehl ohne Eingabeaufforderung
+:     zu verwenden, stellen Sie ihm einfach einen Stern ("*DEL") voran.
+:
+del*ete *del /p
+move *move /r
+:
+:
+:     Die n„chsten Alias-Namen zeigen, wie einige Befehle modifiziert
+:     werden k”nnen. Statt vom Benutzer st„ndig neue Werte anzufordern,
+:     k”nnen die aktuellen Informationen auch einfach nur von TIME und 
+:     DATE angezeigt werden.
+:
+date echo Heute ist %_dow %_date
+time echo Die Zeit ist %_time
+:
+:     Hier eine kurze šbersicht ber die Funktionen weiterer Alias-Namen:
+:
+:             more:   Verwendet den NDOS-Befehl LIST /S als Ersatz fr den
+:                     DOS-Befehl MORE. Beachten Sie die Verwendung des *,
+:                     der die Eingabe dieses Befehls in Form von MO, MOR oder 
+:                     MORE erm”glicht
+:
+:             sdel:   Erm”glicht es, aus einer Gruppe von Dateien, die als
+:                     Argument in einem Befehl spezifiziert wurde, die zu
+:                     l”schenden Dateien anzugeben. Beispiel:
+:
+:                             sdel *.obj
+:
+:                     In diesem Befehl k”nnen die zu l”schenden Dateien aus einer 
+:                     Liste mit Dateien des Typs .obj ausgew„hlt werden (fr weitere 
+:		      Informationen lesen Sie dazu den Abschnitt zu dem Befehl 
+:		      SELECT im Handbuch).
+:
+:             up:     Erm”glicht es, im Verzeichnisbaum zur n„chsth”heren Ebene 
+:                     zu wechseln (zum bergeordneten Verzeichnis).
+:
+:             ov:     Erm”glicht es, zu einem Verzeichnisbaum auf gleicher Ebene
+:                     zu wechseln, d.h. zu einem anderen Unterverzeichnis, 
+:                     welches das gleiche bergeordnete Verzeichnis wie das
+:                     aktuelle Verzeichnis hat.
+:
+mo*re list /s
+sdel select del (%1)
+up cd ..
+ov cd ..\%1
+:
+:     Die n„chsten beiden Alias-Namen zeigen, wie Argumente an Befehle 
+:     bergeben werden k”nnen. In beiden F„llen wird das beim Aufrufen
+:     des Alias angegebene Argument an das Programm an der entsprechenden
+:     Stelle in seiner Befehlszeichenfolge bergeben.
+:
+lp lpr -u %1 >lpt1
+ps d:\peri\ps /t:%1 /e:4
+:
+:     Die n„chsten Alias-Namen zeigen mehrere Dinge. Einige verwenden das
+:     Befehls-Trennzeichen ^, mit dem mehrere Befehle in den Alias-Namen
+:     eingebunden werden k”nnen. ND2 verwendet den Operator "&&" (AND), 
+:     der bewirkt, daá der zweite Befehl nur bei erfolgreicher Ausfhrung 
+:     des ersten Befehls gestartet wird. Die beiden Namen PC und BACK 
+:     verwenden den Alias IN, um ihre Aufgabe zu erfllen. IN wurde zur 
+:     internen Verwendung durch andere Alias-Namen in dieser Datei entwickelt, 
+:     obgleich er aber auch anderweitig verwendet werden kann. Beachten Sie,
+:     daá PX definiert wird, bevor andere Alias-Namen darauf Bezug nehmen.
+:     Dies ist nicht unbedingt n”tig, da jeder Befehl in einem Alias, der 
+:     sich auf einen anderen bezieht, erst beim Aufrufen des Alias verarbeitet
+:     wird, und nicht, wenn er mit dem Alias-Befehl definiert wird.
+:
+:     Hier eine Liste der mit jedem Alias ausgefhrten Funktionen:
+:
+:             nd:     Erstellt ein neues Verzeichnis unter dem aktuellen 
+:                     Verzeichnis und wechselt zu diesem.
+:
+:             nd2:    Versucht, das angegebene Verzeichnis auf einem 
+:                     Laufwerk anzulegen und wechselt zu diesem, wenn 
+:                     es das Verzeichnis erfolgreich angelegt hat.
+:
+:             w:      Speichert das aktuelle Verzeichnis, wechselt zu dem
+:                     Verzeichnis WS auf Laufwerk C:, fhrt das Programm
+:                     WS unter Verwendung des ersten Arguments in der 
+:                     Befehlszeile aus und springt danach wieder in das
+:                     ursprngliche Verzeichnis. 
+:
+:             zap:    L”scht alle Dateien mit der Erweiterung .bak 
+:		      im aktuellen Verzeichnis und zeigt eine ausfhrliche
+:		      Verzeichnisliste an.
+:
+:             in:     Erzwingt den Wechsel in ein anderes Verzeichnis,
+:                     fhrt einen Befehl unter Bercksichtigung aller 
+:                     Argumente in der Befehlszeile aus und springt wieder
+:                     in das ursprngliche Verzeichnis. N„heres hierzu 
+:                     k”nnen Sie dem Handbuch unter PUSHD, POPD und den 
+:                     Parametern fr Alias entnehmen.
+:
+:             pc:     Wechselt zu dem Verzeichnis \comm auf Laufwerk C:, 
+:                     fhrt das Programm PCA aus, kehrt zu dem Laufwerk
+:                     und Verzeichnis zurck, das bei der Ausfhrung des
+:                     Befehls aktiv war.
+:
+:             back:   Wechselt zu dem Verzeichnis \backup auf Laufwerk D:, 
+:                     fhrt das Programm TAPE aus und kehrt zu dem vorherigen
+:                     Laufwerk und Verzeichnis zurck.
+:
+nd md %1^cd %1
+nd2 md %1 && *cdd %1
+w pushd c:\wp^ws %1^popd
+zap del *.bak^dir /w
+in pushd %1^%2&^popd
+pc in c:\comm pca
+back in d:\backup tape
+:
+:     In den folgenden Alias-Befehlen wird das Argument %& benutzt. Dieses
+:     Argument bedeutet "alle Argumente in der Befehlszeile". Beispiel:
+:
+:             zap2 *.bak *.lst *.bk!
+:
+:     wird erweitert zu:
+:
+:             erase *.bak *.lst *.bk!^chkdsk^dir /w
+:
+:     Das letzte der drei folgenden Aliase erstellt mit Hilfe
+:     der Funktion %@eval einen Befehlszeilenrechner, indem sie 
+:     alle Argumente in der Befehlszeile an diese Funktion bergibt.
+:
+zap2 erase %&^chkdsk^dir /w
+ed edit %&^del *.bak
+cal*c echo Die Antwort lautet:  %@eval[%&]
+:
+:     Die folgenden beiden Aliase stammen aus dem Handbuch und zeigen, 
+:     wie ein Alias mit Tastenwerten kombiniert wird, um ein Programm
+:     aufzurufen und Parameter an das Programm zu bergeben. Die genaue 
+:     Funktionsweise kann der Beschreibung im Handbuch entnommen werden.
+:     Beachten Sie, daá die Nullen (0) in den Tastenwerten einen leeren 
+:     Tastaturpuffer simulieren; der Wert 13 steht fr Zeilenschaltungen.
+:
+321 keystack 0 13 0 13 0 13 0 13 0 13 "/fr" 0 "%1" 13^123
+drpt pushd c:\data^keystack "use times index times" 13 "report form timerep to print" 13 "quit" 13^dbase^popd
+:
+:     Die folgenden Aliase zeigen die Verwendung von IFF in Alias-
+:     Befehlen. Die erste Zeile definiert SET so um, daá es die Umgebungs-
+:     variablen mit einem /P anzeigt, wenn Parametereingaben fehlen, oder
+:     daá es SET mit den angegebenen Parametern verarbeitet. Die zweite
+:     Zeile prft, ob das Argument ein Verzeichnis ist; ist dies der Fall,
+:     l”scht sie die Dateien in dem Verzeichnis und anschlieáend das 
+:     Verzeichnis selbst. Ansonsten wird eine Fehlermeldung angezeigt.
+:
+set iff "%1"=="" then *set /p ^ else *set %& ^ endiff
+zap iff isdir %1 then ^ *del %1 ^ *rd %1 ^ else ^ beep ^ echo Kein Verzeichnis! ^ endiff
+:
+:     Um weniger Eingaben ber die Tastatur vorzunehmen, kann ein Alias
+:     auch einem Tastenwert zugeordnet werden. Die genaue Vorgehensweise 
+:     zur Angabe von Tastaturbezeichnungen wird im Handbuch erl„utert.
+:
+:     In den folgenden Beispielen werden die folgenden Tasten umbelegt:
+:
+:	    F5:           ausfhrliches Verzeichnis anzeigen
+:           Strg-F1       Bildschirm l”schen
+:           Umschalt-F10: "EXIT" + EINGABETASTE  (fr Wechsel in eine Shell)
+:           Alt-F1:        anderes HILFE-Programm
+:
+@f5 dir /w
+@Ctrl-F1 cls
+@shift-f10 exit r
+@alt-f1 c:\dos\help
+
+

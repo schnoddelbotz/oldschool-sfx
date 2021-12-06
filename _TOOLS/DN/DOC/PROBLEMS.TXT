@@ -1,0 +1,39 @@
+INSTALL
+-------
+ INSTALL.EXE -rus   - Run installation on Russian Language.
+
+Register
+--------
+ For registration you have to:
+ - Get a registration key file(see README.ENG);
+ - Rename your key file into DN.KEY;
+ - Put it into the Program directory;
+ - Restart the Dos Navigator. Registration information is written into the
+   program files. You are able to remove DN.KEY to safe disk space.
+   Remember, that you'll need the key file to re-register a new versions or
+   new installations of the Dos Navigator;
+ - Restart the registered Dos Navigator again.
+
+ If you want to upgrade your DEMO registration just type "DN /REG"
+
+
+Hackers registrations
+---------------------
+Q: Why the Dos Navigator sometimes plays strange melody and
+   does not want to run programs and exit to DOS ?
+A: You are definitely using PIRATE key file. Remove DN.KEY file
+   as soon as possible.
+
+   Note, that DOS Navigator DOES NOT HAVE any kind of
+   special destructively code.
+
+Install language file in User directory
+---------------------------------------
+ It's needed to set 'Modify AUTOEXEC.BAT' option in Install procedure,
+ because the DNDLG-Variable must been set in your DOS Environment.
+
+ARJ 2.42a BETA_2
+----------------
+We strongly recommend do not use this ARJ version with
+DOS Navigator. We found major bug in ARJ update routine caused
+lockups.

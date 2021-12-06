@@ -1,0 +1,109 @@
+@echo off
+rem C:\TOOLS\SB16\DIAGNOSE /S /W=C:\WINDOWS
+mode con lines=50
+PATH C:\DOS;C:\WINDOWS;C:\TOOLS\NC;C:\TOOLS\NU8;C:\BAT;C:\TOOLS\PACKER;C:\TP\BIN;C:\DESKSCAN;C:\GFX\UTIL;C:\TOOLS;
+PROMPT $p$g
+SET TEMP=c:\TEMP
+SET SOUND=C:\TOOLS\SB16
+SET BLASTER=A220 I5 D1 H5 P330 T6
+SET MIDI=SYNTH:1 MAP:E
+goto %config%
+
+:STDR
+cls
+d:\qemm\loadhi /rf c:\dos\doskey
+d:\qemm\loadhi /rf C:\DOS\KEYB GR,,C:\DOS\KEYBOARD.SYS
+d:\qemm\loadhi /rf c:\dos\mouse
+rem lh C:\WINDOWS\TWAIN\ASPIIF
+d:\qemm\loadhi /rf c:\dos\mscdex /D:pioneer
+rem d:\qemm\loadhi /rf smartdrv
+REM ** C:\TOOLS\SB16\DIAGNOSE /S /W=C:\WINDOWS
+C:\TOOLS\SB16\MIXERSET /P /Q
+lh smartdrv
+echo Smartdrive installiert. (2mb)
+goto end
+
+:STOC
+lh c:\dos\doskey
+lh c:\dos\keyb gr,,c:\dos\keyboard.sys
+C:\TOOLS\SB16\MIXERSET /P /Q
+rem cls
+echo\
+echo No mouse-driver installed.
+rem lh c:\dos\mouse
+lh c:\dos\smartdrv 2000 /B:32
+echo\
+lh c:\tools\f-prot\virstop
+echo SmartDrive installed. (2 mb,32k read-ahead)
+echo\
+rem echo FÅhre NET Start aus ....
+rem c:\windows\net start
+goto end
+
+:NODR
+cls
+rem lh c:\dos\doskey
+rem lh c:\dos\keyb gr,,c:\dos\keyboard.sys
+goto end
+
+:EMSD
+cls
+lh c:\dos\doskey
+lh c:\dos\keyb gr,,c:\dos\keyboard.sys
+lh mouse
+lh c:\dos\mscdex /D:pioneer
+REM ** C:\TOOLS\SB16\DIAGNOSE /S /W=C:\WINDOWS
+C:\TOOLS\SB16\MIXERSET /P /Q
+goto end
+
+:RAMD
+cls
+lh c:\dos\doskey
+lh c:\dos\keyb gr,,c:\dos\keyboard.sys
+rem lh mouse
+REM ** lh C:\TOOLS\SB16\DIAGNOSE /S /W=C:\WINDOWS
+lh C:\TOOLS\SB16\MIXERSET /P /Q
+goto end
+
+:WIND
+cls
+echo Starte Windows...
+lh c:\dos\doskey
+lh c:\dos\keyb gr,,c:\dos\keyboard.sys
+smartdrv
+w
+goto end
+
+:appr
+cls
+lh c:\dos\doskey
+lh c:\dos\keyb gr,,c:\dos\keyboard.sys
+echo Starte Datenbank
+smartdrv
+win c:\WINAPPS\APPROACH\immo4.vew
+goto end
+
+:ipxs
+cls
+lh c:\dos\doskey
+lh c:\dos\keyb gr,,c:\dos\keyboard.sys
+c:
+cd\tools\ether
+startnet
+goto end
+
+:isdn
+cls
+lh c:\dos\doskey
+lh c:\dos\keyb gr,,c:\dos\keyboard.sys
+c:
+cd\comm\isdn
+lh tsrkrn
+lh capi
+cd\comm\isdn\fossil
+lh cfos i
+te /device:6
+goto end
+
+:END
+cd\

@@ -1,0 +1,458 @@
+		What's New in VirusScan Version 2.2.11 (9603)
+		    Copyright 1994-1996 by McAfee, Inc.
+			 All Rights Reserved.
+
+
+
+___________________
+What's In This File
+
+- New VirusScan features
+- Known problems
+- New viruses detected
+- New viruses removed
+- How to contact us.
+
+
+_________________________________
+New Features for VirusScan 2.2.11
+
+VirusScan now includes a macro virus remover!
+
+To use the new virus removal capability, just enter the VirusScan clean
+command as usual (for example, enter SCAN /CLEAN at the DOS prompt).
+
+Notes:
+
+Version 2.2.11 is the released version of the beta previously bearing
+the number 2.3.0.
+
+The next DAT update is scheduled for May with another in July.
+Intermediate "emergency" updates will be available only through the BBS.  
+
+______________
+Known Problems
+
+When a macro virus is detected in conjuction with other viruses, the
+macro virus remover will not work.  We are still working on this.  If
+you encounter this, you can remove the other virus first or work in
+a separate area.
+
+____________________
+New Viruses Detected
+
+This DAT file (9603) detects the new viruses listed below. 
+In addition, locations that have experienced problems with
+a particular virus are identified (255).
+
+100P.684
+15YEARS.C		(Spain)
+3223
+AB3.2293
+AB4.3100
+AB6A.3500
+AHAV.377
+ALCON
+AMI.B
+ANNIHILATOR.276
+ANNIHILATOR.298
+ANNIHILATOR.299
+ANNIHILATOR.305
+ANNIHILATOR.308
+ANNIHILATOR.314
+ANNIHILATOR.361
+ANNIHILATOR.383
+ANNIHILATOR.394
+ANNIHILATOR.416
+ANNIHILATOR.453
+ANNIHILATOR.510
+ANNIHILATOR.548
+ANNIHILATOR.596
+ANNIHILATOR.603
+ANNIHILATOR.610
+ANNIHILATOR.673
+ANNIHILATOR.982
+AP.1006
+AP.COMV
+APEX
+API
+APME
+APRIL.B
+ARAR.1375
+ARES.553
+ARIANNA
+ASMODEOUS.1343
+ASMODEOUS.1833
+AT
+BGU.1298
+BLUE POISON.487		(Sweden)
+BONNIE.1000
+BOOT271
+BOOT433			(Netherlands)
+BW.INFERNO.653
+CANCERBERO.1871
+CANN.714
+CEASER.867
+CLICK.375
+COMX (MBR)
+CONCEPT.FR (*)		(France)
+CORDOBA.2209
+CROC.1592
+CYBERTECH.419
+DAGGER.483
+DAGGER.882
+DAMC.DOOM
+DANISH TINY.476B
+DATAFIRE.1080
+DBASE.1864
+DBF.990
+DBF.1046
+DEI.1948
+DEMON.5670
+DESPAIR.633
+DESTRUCTOR.A
+DESTRUCTOR.B
+DESTRUCTOR.C
+DEVASTATOR.LAME
+DEVIL (MBR)
+DEVIL.B
+DEX.1356
+DIGITAL DEATH
+DIGITAL.3547
+DILLINGER.547
+DIR-II.D
+DIR-II.N
+DIRFILL.1409
+DIS.HEAVEN.1553
+DISKKILLER.B
+E.T.1200
+EICAR-STANDARD-AV-TEST-FILE
+FATMAN.789
+FATMAN.836
+FATMAN.1445
+FATMAN.1536
+FMAC.1470
+FMAC.1496
+FORM.X 			(France)
+GCAE.2520
+GDYNIA.680
+GENA
+GOLDEN CICADA
+GRIPE.2040 (*)		(Argentina)
+GRMON.784
+GROG.3000.B
+GROG.3000.C
+HBOOT
+HEMLOCK
+HEX
+HMM.640
+IL
+IVP.336
+IVP.366
+IVP.803
+IVP.FORGET
+IVP.HOT.539
+JACKAL.B (MBR)
+JACKMAIL
+JD.158.C
+JD.158.D
+JD.158.E
+JD.158.F
+JD.158.G
+JD.158.N
+JD.158.O
+JD.158.Q
+JERUSALEM.1215.A
+JERUSALEM.1215.B
+JMP.2153.A
+JOANNA.912
+JOE.1089
+JOSHUA.985
+JUDY2
+KAI.1835
+KEY.996
+KILROY.B
+KILROY.C
+LENINGRAD_II.1499
+LENINGRAD_II.2000
+LUCIFER
+MEGASTEALTH
+MEM.1201
+MEM.1203
+MEM.1217
+MISSISSIPEE
+MMIR.DASBOOT.421
+MOS.1372
+MOS.849
+MPC.BF
+MUTAGEN.12.TEST
+NIGHTFALL.4518/4519	(Europe)
+NIGHTFALL.4655		(Europe)
+NIGHTFALL.5764		(Europe)
+NLA.383
+NOSTARDAMUS
+NOVA.B
+NPOX.1986
+OGRE.B
+PEACEKEEPER.A
+PESTE			(Spain)
+PH33R.1332 (WIN EXE/DLL) (*) (US)
+PHALCON.1110
+POLASKI.4722
+PORCUPINE.3008
+PRINT SCREEN.B
+PS-MPC.139.B
+PS-MPC.282.B
+PS-MPC.355.B
+PS-MPC.374.A
+PS-MPC.391.A
+PS-MPC.404.A
+PS-MPC.408.A
+PS-MPC.418.A
+PS-MPC.423.E
+PS-MPC.425.E
+PS-MPC.428.A
+PS-MPC.442.B
+PS-MPC.473.E
+PS-MPC.497.A
+PS-MPC.510.A
+PS-MPC.577.D
+PS-MPC.600.A
+PS-MPC.802.B
+PS-MPC.910.B
+PURPLE.B
+QUARTZ			(US: Michigan)
+REEDCAT.928
+REFRESH.354
+RHUBARB			(Netherlands)
+RUB.3164
+SATRIA.B		(North America)
+SCHUBERT.323
+SEA
+SHADOW.1185
+SHAKESPEARE.HAMLET.1144
+SHAKESPEARE.HENRY.592
+SHAKESPEARE.HENRY.735
+SHAKESPEARE.HENRY.857
+SHAKESPEARE.HENRY.1263
+SHAKESPEARE.KINGJOHN.667
+SHAKESPEARE.KINGLEAR.667
+SHAKESPEARE.MACBETH.753
+SHAKESPEARE.MERCHANT.793
+SHAKESPEARE.MIDSUMMER.813
+SHAKESPEARE.OTHELLO.585
+SHAKESPEARE.ROMEO.625
+SILLYCR.253
+SIRIUS.ALIVE.2283
+SKATER.571
+SKULL.256.A
+SNO.1015.A
+SNO.1015.B
+STONED.SPIRIT		(France)
+STONED.SURVIVOR
+STONED.TWO
+SVC.2936.C
+SVC.2936.D
+SX.731
+TAIPAN.641
+TAIPAN.846 
+TAIPAN.962
+TAKE WONDER
+TEA
+TEQUILA.B.MBR
+TEQUILA.D.MBR
+TIGER.1800.B
+TINYA.400
+TKD
+TOPA.2476
+TOPA.2520
+TORN
+TRAKA
+TRAN.1982
+TRIVIAL.111		(France)
+TRIVIAL.161
+TRIVIAL.253
+TVED.TRURL.789
+V.475
+VAGABOND.1246		(US: California)
+VAM.1623
+VCCA
+VCCA.A
+VCCA.B
+VCCA.C
+VCCA.D
+VCCA.E
+VCCA.F
+VCCA.G
+VCCA.H
+VCCA.I
+VCCA.J
+VCL.550
+VCLE
+VENDETTA
+VIENNA.353
+VIENNA.480
+VLAD.BIOS (MBR)
+WEREWOLF.641		(France)
+WEREWOLF.1152		(France)
+WEREWOLF.1208		(France)
+WEREWOLF.1361		(Netherlands)
+WEREWOLF.1367		(France)
+XENIXOS (*)
+YANKEE_DOODLE.XPEH.2012
+
+_______________________________
+New Viruses Removed
+
+This DAT file (9603) removes the viruses listed below. 
+In addition, locations that have experienced problems 
+with a particular virus are identified (70).
+
+
+15YEARS.C		(Spain)
+AB3.2293
+AB4.3100
+AB6A.3500
+AB6B.3500
+AB6C.3500
+ARIANNA.3375
+ARIANNA.MBR
+BGU.1295
+BGU.1298
+BLUE POISON.487		(Sweden)
+BOOT271
+BOOT433			(Netherlands)
+BUA.1537
+BURGLAR.1150 (*)	(Switzerland/US)
+CANN.714
+CEASER.867
+COLORS (*)
+CONCEPT (*)		(Worldwide)
+CORDOBA.2209
+DMV (*)
+FITW.7448/7924		(Europe)
+FORM.X	 		(France)
+GDYNIA.680
+GRIPE.2040 (*)		(Argentina)
+HI.378
+KEY.996
+KHIZHNJAK.1011
+LUTIL.591		(Hungary)
+MARZIA.D
+NIGHTFALL.4518/4519 (*)	(Europe)
+NUCLEAR (*)
+PESTE			(Spain)
+PH33R.1332 (WIN EXE/DLL) (*) (US)
+POLASKI.4722
+QUARTZ			(US: Michigan)
+REFRESH.354
+RHUBARB			(Netherlands)
+SATRIA.B		(North America)
+SCHUBERT.323
+SEPULTURA.2136		(Australia)
+SHAKESPEARE.HAMLET.1144
+SHAKESPEARE.HENRY.592
+SHAKESPEARE.HENRY.735
+SHAKESPEARE.HENRY.857
+SHAKESPEARE.HENRY.1263
+SHAKESPEARE.KINGJOHN.667
+SHAKESPEARE.KINGLEAR.667
+SHAKESPEARE.MACBETH.753
+SHAKESPEARE.MERCHANT.793
+SHAKESPEARE.MIDSUMMER.813
+SHAKESPEARE.OTHELLO.585
+SHAKESPEARE.ROMEO.625
+SILLYCR.253
+SKULL.256.A
+SNO.1015.A
+SNO.1015.B
+STONED.SPIRIT		(France)
+TAIPAN.846
+TINYA.400
+TOPA.2476
+TOPA.2520
+TRIVIAL.111		(France)
+VAGABOND.1246		(US: California)
+VALENTINE.2332		(Denmark)
+VIENNA.480
+VIENNA.648
+WEREWOLF.658		(France)
+WEREWOLF.684		(France)
+WEREWOLF.693		(France)
+WEREWOLF.1361		(Netherlands)
+WEREWOLF.1367		(France)
+(*) Requires 2.2.11 executable
+
+
+_______________________________
+Virus Name Changes
+
+In DAT file (9603), the following viruses had their
+names changed to these new names:
+
+BIZATCH -> BOZA
+BM BIRTHDAY -> HALT
+BURGLAR -> BURGLAR.1150
+CLAWS.684 -> WEREWOLF.684
+CLAWS.FANGS -> WEREWOLF.693
+PARITY.BOOT.ENC -> QUANDARY
+
+__________________________
+McAfee Contact Information
+
+For questions, orders and problems call Customer Service Monday-Friday,
+6:00AM - 5:00PM PST at (408) 988-3832
+
+For Faxes (24 hour, Group III FAX), call (408) 970-9727
+To receive information from our Fax-back automated response system,
+call (408) 988-3034.
+
+In addition, you can receive online assistance through any of the
+following resources:
+
+Bulletin Board System (24 hour US Robotics HST DS) at (408) 988-4004
+
+Internet Email:		support@mcafee.com
+Internet FTP:		ftp.mcafee.com
+World Wide Web:		http://www.mcafee.com
+America Online:		keyword:MCAFEE
+CompuServe:		GO MCAFEE
+The Microsoft Network:	GO MCAFEE
+
+You can send correspondence to any of our McAfee locations:
+
+McAfee Corporate Headquarters		McAfee East Coast Office
+2710 Walsh Avenue			766 Shrewsbury Avenue
+Santa Clara, CA 95051-0963		Jerral West Center
+					Tinton Falls, NJ 07724-3298
+
+McAfee Central Office			McAfee Canada
+5944 Luther Lane, Suite 117		178 Main Street
+Dallas, TX 75225			Unionville, Ontario
+					Canada L2R 2G9
+
+McAfee Europe B.V.			McAfee (UK) Ltd.
+Orlyplein 81 - Busitel 1		Hayley House, London Road
+1043 DS Amsterdam			Bracknell, Berkshire
+The Netherlands	RG12 2th 		United Kingdom
+
+McAfee France S.A.			McAfee Deutschland GmbH
+50 rue de Londres			Industriestrasse 1
+75008 Paris				D-82110 Germering
+France					Germany
+
+
+McAfee Training
+---------------
+For more information about scheduling onsite training for
+any McAfee product, call Customer Service at 800/338-8754.
+
+
+Upgrading McAfee Products
+-------------------------
+To make it easier for you to receive and use McAfee's
+products, we have established an Agents program to
+provide service, sales and support around the world for our
+products. A listing of United States and International agents
+is provided in the file README.TXT.
+

@@ -1,0 +1,94 @@
+
+				NEW IN V1.4
+
+	1. Wildcards permitted as the input file specification.
+
+	2. Default output file path: is now the current directory, not
+	   the directory of the source file.
+
+	3. Input files are now opened read-only, so that the message
+	   "access denied" no longer appears when trying to read from
+	   read-only devices, such as CD-ROMs.
+
+   				NEW IN V2.0
+
+	4. New encoding technique permits construction of very compact
+	   object libraries; also, 16-bit files can now be compressed.
+
+   				NEW IN V2.1
+
+	5. The compression techniques of V1.4 and V2.0 have been combined
+	   into this release.
+
+	6. The -o0 command-line option now finds the globally best value
+	   of order for each frame.  It used to find only a "locally"
+	   optimal value.
+
+	7. The -x option checks the spectral content of audio files two
+	   different ways, and uses the one that achieves the higher
+	   compression ratio.  A math coprocessor is not required but is
+	   nevertheless highly recommended.
+
+	8. A new compression after-pass is now applied by default, which
+	   increases compression, especially in files which contain long
+	   sequences of flat zero-crossing signal.  This after-pass is
+	   disabled by the "-E" option, however.
+
+                                NEW IN V2.1a
+
+        9. Columnar screen output.
+
+       10. Bug fix which sometimes prevented -o0 from finding globally
+	   best value of order.
+
+       11. File extension specified for output file now obeyed instead
+           of ignored.
+
+	                        NEW IN V2.1b
+
+       12. Option -E extended to allow -ER, which re-enables the RLE
+           afterpass over the compressed frames.  Release of RLE.OBJ
+	   and UN_RLE.OBJ to licensed Evaluators.
+
+	                        NEW IN V2.1c
+
+       13. Special-order version for one customer, which extends the
+           range of the lossy parameter.
+
+   	                        NEW IN V2.1d
+
+       14. Fixed bug which occasionally caused an underflow run-time
+           error.
+
+       15. Fixed bug which kept -x option from operating on 16-bit data.
+
+       				NEW IN V2.1e
+
+       16. Fixed bug which frequently caused a system lockup or re-boot
+           when processing 16-bit files.
+
+	   			NEW IN V2.1f
+
+       17. Changed copyright notice and address of Speech Compression.
+
+       18. Changes to "lossy" algorithm which slow it down some more (sigh)
+           but which increase the quality and compression percentages.
+
+                                NEW IN V2.1g
+
+       19. Fixed bug which caused an incorrect RIFF length to be reported
+           when a LIST or other chunk follows the data chunk in a WAV file.
+
+	   			NEW IN V2.1h
+
+       20. Revamped the spectral analysis of 16-big data when -X option is
+           not specified.  Some 16-bit files compress substantially better.
+
+       21. Fixed bug which prevented old RIFF length from being restored due
+           to garbage data after end of RIFF/WAVE data.
+
+       22. Sonarc now handles extra byte(s) at the end of a VOC file (some-
+           times added to bring the length of the file up to an even number).
+
+       23. Sonarc now recognizes an obsolete v1.00 VOC format.
+

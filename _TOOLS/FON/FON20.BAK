@@ -1,0 +1,65 @@
+
+
+     					>>>>>>>>	      F O N   2.0
+
+     ein Telefonauskunftprogramm (nicht nur) fuer Konstanz und Allensbach
+
+
+     (c) '96 by phl.
+
+
+
+
+ Introdacktschen
+
+  fon ist eine schlichte, aber nuetzliche und *schnelle* suchoberflaeche
+  fuer Telefonbuecher, die im Ascii-Format abgespeichert  wurden.  Diese
+  kann sich jeder  selber mit div. Telefonauskunft CDs selber erstellen,
+  oder auch nur fuer private adresslisten verwenden.
+  Das  Format  ist einfach  festgelegt: "NAME"#"STRASSE"#"ORT"#"TELEFON"
+  Dadurch wird  jedem ermoeglicht, die  Telefonbeucher zu aktualisieren,
+  eigene zu erstellen etc.
+
+
+ Jus„tsch
+ 
+  denkbar einfach. fon  starten,  name,  strasse, telefon - nummer  etc.
+  eingeben, und geniessen :). Hierbei gibt es jedoch einige "Tricks":
+
+   Sucht man z.B.  nur nach  BERGER  und nicht auch nach OBERBERGER oder
+   auch BERGER-MUELLER, so gibt man als Such-String folgendes ein:
+
+     "berger 
+
+   Zu beachten: Hinter Berger ist noch ein Freizeichen ! Joker o.„. gibt
+   es (in dieser Version :) NOCH nicht.
+
+
+ Probleme
+
+  damit hat das Programm noch zu k„mpfen :(
+  Z.B. Werden doppelte Telefon-Nummern angegeben (Z.B: Suchstring LUNGO)
+  Will be fixed soon.
+
+
+ Blaschwaetz
+
+  warum ist fon auf englisch ? wes ik net. aber es ist auch keine deutsche
+  version in aussicht. Programme *MUESSEN* einfach  auf Englisch  sein, da
+  die Deutsche Sprache hier "behindert" wirkt ;-)
+
+ P”rfom„nz
+
+  ...die kann durch Smartdrv & Co. enorm gesteigert werden. Ein Read-Ahead
+  Cache kann wunder wirken, muss er aber nicht ;-)
+
+
+ Sonst noch was ?
+
+  NEIN. Weitere INFO(s): Suchstring: phl
+
+
+ Fjutscher
+
+  * Friend-Marker. Freunde und Bekannte die man haeufig sucht, koenne fest
+    mit einer gesonderten Farbe verbunden werden, um sie schnell zu finden

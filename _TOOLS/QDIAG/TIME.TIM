@@ -1,0 +1,15 @@
+r15=r30/1000000,r14=r30/1000%1000,r13=r30%1000
+
+echo %r15|
+
+if r14 lt 10 [echo .00%r14|]
+if ((r14 gt 9) && (r14 lt 100)) [echo .0%r14|]
+if r14 gt 99 [echo .%r14|]
+
+if r13 lt 10 [echo ,,00%r13|]
+if ((r13 gt 9) && (r13 lt 100)) [echo ,,0%r13|]
+if r13 gt 99 [echo ,,%r13|]
+
+echo  Seconds
+
+

@@ -1,0 +1,68 @@
+                      MATHEASS Version 6.x
+                      ====================
+
+Folgende Punkte wurden seit der Version 5.0 verbessert bzw. neu aufgenommen :
+
+FUNKTIONSTASTEN:
+----------------
+- Mit F9 wird eine Hardcopy auf einem EPSON-kompatiblen 9-Nadeldrucker, mit
+  F10 auf einem NEC-kompatiblen 24-Nadeldrucker ausgegeben.
+
+- Mit F3 kann die Ausgabe der Funktionsgraphen im Kapitel Analysis auf den
+  ganzen Bildschirm umgeleitet werden. Mit F4 wird wieder auf das Fenster
+  in der rechten Bildschirmh„lfte zurckgeschaltet.
+
+- Mit F5 wird ein kleiner Texteditor aufgerufen, mit dem die Ergebnisse vor
+  dem Ausdrucken kommentiert werden k”nnen. Mit F6 wird dieser Texteditor
+  wieder verlassen.
+
+- Mit Ctrl Y wird das aktuelle Eingabefeld gel”scht, mit Ctrl X alle Felder.
+
+- Mit F1 wird die Belegung der Funktionstasten angezeigt.
+
+- Mit F2 werden in den Taschenrechnern die Bedienungshinweise zur umgekehrten
+  polnischen Notation (UPN) ausgegeben ( frher im Kapitel INFO ).
+
+INFO:
+-----
+- Das Handbuch MATHEASS.DOC kann jetzt gelesen werden, ohne das Programm
+  verlassen zu mssen.
+
+ALGEBRA:
+--------
+- Im Taschenrechner fr Stellenwertsysteme wurde der Basiswechsel ge„ndert,
+  so daá jetzt auch auf Oktalzahlen gewechselt werden kann.
+
+GEOMETRIE:
+----------
+- Die Schnittprobleme wurden um den Schnitt von zwei Geraden im Raum
+  erweitert.
+
+ANALYSIS:
+---------
+- Ein zweiter Funktionsplotter stellt bis zu sechs Funktionen in getrennten
+  Koordinatensystemen gleichzeitig dar.
+
+- Der Paragraph Kurvendiskussion wurde berarbeitet und dabei beschleunigt.
+  Zwischen den verschiedenen Ein- und Ausgabebildschirmen kann jetzt mit PgDn
+  bzw. PgUp hin und her gebl„ttert werden.
+
+- Bei der Integralrechnung wird die Fl„che nicht mehr vollfl„chig gefllt,
+  sondern schraffiert.
+
+STOCHASTIK:
+-----------
+- Zus„tzlich zur Binomialverteilung wurde die hypergeometrische Verteilung
+  aufgenommen.
+
+- Der Paragraph Regression erlaubt es zu einer Reihe von Messpunkten die
+  Regressionsgerade zu bestimmen, oder eine Kurvenanpassung durch eine
+  Polynomfunktion, eine Potenzfunktion, eine Exponentialfunktion oder eine
+  Logarithmusfunktion durchzufhren.
+
+LINEARE ALGEBRA:
+----------------
+- Ein dreidimensionaler Vektor kann als Linearkombination von drei linear
+  unabh„ngigen Vektoren dargestellt werden. Gleichzeitig kann damit die
+  Lineare Unabh„ngigkeit von drei Vektoren berprft werden.
+- Vektorprodukt und Spatprodukt.

@@ -1,0 +1,160 @@
+                           Command line mode
+
+                        The command-line options
+
+F-PROT.EXE is usually run without any parameters and will then enter
+interactive mode.  It is also possible to run it in command-line mode,
+either by specifying a drive, file or directory to scan, or by using the
+/COMMAND option.
+
+Syntax for command-line mode:  F-PROT [drive, file or directory] [options]
+
+The available command-line options are
+
+/640
+On certain old machines, scanning non-existing memory between 640K and 1M
+may cause a system crash.  This switch instructs F-PROT to scan only 640K.
+
+/ALL
+Specifies that all files should be searched, not just normal "executable"
+files.  This switch should never be used with /ANALYSE, but only if a
+virus has already been found, and you are just making sure it is not
+hiding in some obscure overlay file.
+
+/ANALYSE
+Performs a heuristic analysis after the "Secure" scan.  This approach may
+cause false positives, and should be used with care.  See the file
+ANALYSE.DOC for further information.
+
+/APPEND
+Used with /REPORT. Append the report to an existing file.
+
+/AUTO
+May be specified with /DELETE or /DISINF so F-PROT will not request
+permission before deleting or disinfecting.  The default if only /DELETE
+or /DISINF are given is to ask if the file should be disinfected (or
+deleted).
+
+/BOOT (default) /NOBOOT
+Scan/Don't scan boot sectors.
+
+/COMMAND
+Force command-line mode.
+
+/DELETE
+Delete all infected files, instead of just listing them.
+
+/DISINF
+Disinfect whenever possible - deletes first-generation samples and files
+destroyed by overwriting viruses.  It will never delete a file which can
+be disinfected.
+
+/DOC
+Scan Word documents.
+
+/EXT=
+Specify which filename extensions to scan by default, maximum of 10,
+separated by "."  Example: /EXT=COM.EXE.SYS.DLL.OV?
+
+/FILE (default) /NOFILE
+Scan/Don't scan files.  If /NOFILE is used, it implies /NOPACKED and
+/NOUSER as well.
+
+/GURU
+Provides additional information while scanning.
+
+/HARD
+Scans the MBR and all accessible partitions on any hard disks that are
+found.
+
+/HELP or /?
+Display a list of available options.
+
+/INTER
+Force interactive mode.
+
+/LIST
+Produce a report of all files checked, not just those which are infected.
+
+/MONO
+Use monochrome on color displays.
+
+/MULTI
+Scan multiple diskettes.
+
+/NET
+Scans any network "drives" found.
+
+/NOBREAK
+Disables ESC and ^C during scanning
+
+/NODOC
+Do not scan Word documents.
+
+/NOMEM
+Skip the memory scan.
+
+/NOSUB
+Do not scan subdirectories.
+
+/NOWRAP
+Do not wrap text in the report.
+
+/OLD
+Do not display the "This version of the program is rather old" message.
+
+/ONLY 
+When used with /ANALYSE, it will make F-PROT perform ONLY a heuristic
+scan.
+
+/PACKED (default) /NOPACKED
+Search/Don't search inside packed executables (DIET, PKLITE, LZEXE).  This
+does not mean that F-PROT will scan inside archives (ZIP or ARJ).
+
+/PAGE
+Pause after each page.
+
+/PARANOID
+Makes the scanner totally paranoid.  Increases the chances of picking
+up new viruses, but will significantly increase the risk of false
+positives.  Only recommended for use by experienced, technical-minded
+users, and please keep in mind that we are not interested in receiving
+samples of possible false alarms that are only produced when this switch
+is used.
+
+/RENAME
+Rename infected files to *.VOM, *.VXE or *.VVV.
+
+/REPORT=file
+Sends the output to a file, in addition to displaying it on the screen.
+
+/SILENT
+Generates no screen output at all - useful if you want to run the program
+from a batch file, and only check the return code.
+
+/USER /NOUSER (default)
+Search/Don't search for user-defined search strings.  This option should
+only be used if absolutely neccessary, as it may result in a considerable
+speed decrease.
+
+                          Return status
+
+The program uses the following exit codes, which can be checked with the
+ERRORLEVEL command from a BAT file.
+
+    0 - Normal exit - nothing found
+    1 - Abnormal termination - unrecoverable error.  This can mean any of
+	the following:
+	    DOS version 1.x was used (F-PROT requires DOS 2.0 or higher)
+	    The report file (specified with /REPORT=) could not be created.
+	    ENGLISH.TX0 or SIGN.DEF corrupted or not present
+	    Program was run from a diskette, and the diskette then changed.
+    2 - Selftest failed - program has been modified.
+    3 - A Boot/File virus infection found.
+    4 - Virus search string found in memory.
+    5 - Program terminated with ^C or ESC.
+    6 - At least one virus was removed.  This code is only meaningful if
+        the program is used to scan just a single file.
+    7 - Insufficient memory to run the program.
+    8 - At least one suspicious file was found, but no infections.
+

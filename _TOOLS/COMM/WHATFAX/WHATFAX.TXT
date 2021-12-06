@@ -1,0 +1,221 @@
+
+
+
+                               WHATFAX V 1.1
+
+                  Fax modem type identification utility.
+
+                       Logan Industries, Inc. (LII)
+                             January 4th, 1993
+
+
+              (C) Copyright 1992, 1993 Logan Industries, Inc.
+
+
+
+
+
+
+
+
+
+
+WhatFax is a simple utility to determine the type of FAX modem connected to
+the system.  WhatFax will recognize CAS, Class x (x=0..9), and SendFax type
+modems.
+
+
+
+
+
+
+
+                                  AUTHORS
+                                  -------
+
+         WhatFax was written by Alex Soya, Logan Industries, Inc.
+
+
+
+
+
+
+
+
+Logan Industries, Inc.                  Phone:    (407) 984-1627
+604 Mango Drive,                        Fax  :    (407) 951-7292
+Melbourne Beach, FL 32951               BBS  :    (407) 727-0331
+                                        CIS  :    70406,1452
+
+
+
+
+
+
+                                1
+
+
+
+                                  LICENSE
+                                  =======
+FEEL FREE TO UPLOAD THIS SOFTWARE IN EXECUTABLE FORM ONLY (IE: THE SOURCE
+CODE IS COVERED BY A SEPERATE, NON-TRANSFERABLE, LICENSE) TO ANY ELECTRONIC
+BULLETIN BOARD, OR GIVE COPIES TO INDIVIDUAL USERS, SO THAT OTHERS MAY HAVE
+THE OPPORTUNITY TO OBTAIN A COPY FOR USE IN ACCORDANCE WITH THE LICENSE
+TERMS GIVEN IN THIS DOCUMENT.
+
+
+BUSINESSES/INSTITUTIONS/GOVERNMENT USERS. If you are a business, institu-
+tion or a government agency you must obtain an end user license to use this
+software on a regular basis. You may use this trial copy for a period of
+not more than 10 days to determine if this software is suitable for your
+particular task. For bundling, and volume pricing contact LII.
+
+                           TERMS AND CONDITIONS
+                           --------------------
+Logan Industries, Inc. (LII) hereby grants to the user of this software
+package (from hereon referred to as WhatFax), a non-exclusive license to
+use WhatFax and any utility programs associated with WhatFax on one central
+processing unit ("CPU") only.
+
+
+NO WARRANTY ON SOFTWARE
+-----------------------
+THERE ARE NO WARRANTIES, EXPRESS OR IMPLIED ON THE SOFTWARE, INCLUDING BUT
+NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE.
+
+
+LIMITATION OF REMEDIES
+-----------------------
+THE LIABILITY OF LII, ITS AGENTS AND EMPLOYEES, FOR ACTUAL DAMAGES RESULT-
+ING FROM THE PURCHASE OR USE OF THIS SOFTWARE, REGARDLESS OF THE FORM OF
+ACTION, BE LIMITED TO THE LESSER OF $500.00 OR THE PURCHASE PRICE PAID BY
+YOU FOR THE PROGRAM THAT IS DIRECTLY RELATED TO OR THE SUBJECT MATTER OF
+THE CAUSE OF ACTION.
+
+USER ASSUMES THE RISK OF USING THE SOFTWARE AND LOGAN INDUSTRIES, INC.
+SHALL NOT BE RESPONSIBLE FOR ANY DAMAGES, INCIDENTAL OR CONSEQUENTIAL,
+ARISING FROM THE USE OF THE SOFTWARE, INCLUDING, BUT NOT LIMITED TO LOSS OF
+PROFITS, SAVINGS, OR DATABASES, EVEN IF LOGAN INDUSTRIES, INC. HAS BEEN
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+IN NO EVENT SHALL LOGAN INDUSTRIES, INC. BE LIABLE FOR ANY DAMAGES, INCI-
+DENTAL OR CONSEQUENTIAL, ARISING FROM THE USE OF THE PROGRAM DISKETTE,
+INCLUDING, BUT NOT LIMITED TO LOSS OF PROFITS, SAVINGS, OR DATABASES, EVEN
+IF LOGAN INDUSTRIES, INC. HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGES.
+
+
+                                2
+
+
+
+                                USERS GUIDE
+                                ===========
+
+INTRODUCTION & SOURCE CODE ORDERING INFO
+----------------------------------------
+
+WhatFax was originally developed for in-house use to ease installation of
+customized fax software on systems with existing fax modems. We have made
+WhatFax available to the public with this release (version 1.1). For those
+who are curious, the source code to WhatFax (Borland C 3.1 and TASM) may be
+obtained by calling Logan Industries, Inc. at (407) 984-1627 with your
+MasterCard or Visa number, or by sending a check, to:
+
+Logan Industries, Inc.
+604 Mango Drive
+Melbourne Beach, FL 32951
+
+Specify that you wish to order the 'WhatFax Source'. The price is US $38.00
+(Florida residents add 6% sales tax) plus Shipping & Handling as follows:
+
+     USA -          US $ 6.00 via UPS-Blue
+     Canada         US $ 6.00 via Airmail
+     All others     US $20.00 via International Airmail
+
+If you do not specify 3.5" disks we will ship on 5.25" disks by default.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                3
+
+
+
+                               USING WHATFAX
+                               =============
+
+WhatFax is a simple command line utility. Invoke Whatfax from the DOS
+prompt by typing WHATFAX.  You may specify a number of options when invok-
+ing WhatFax:
+
+     /B   -    To Bypass the CAS driver test.
+
+
+     /Cx  -    To specify the COM port used by your Fax Modem.
+               (x = 1..4 for COM1 through COM4)
+
+     WhatFax supports COM1 through COM4. WhatFax obtains the COM port
+     address from the BIOS data area (Segment 40h), thus in order for
+     WhatFax to recognize your COM port, the BIOS must be aware of the COM
+     ports in your system.
+
+     /Ix  -    Specify alternative IRQ number.
+
+     By default WhatFax will use the following COM port to IRQ number mapping:
+
+          COM1 - IRQ4, COM2 - IRQ3, COM3 - IRQ4, COM4 - IRQ3.
+
+     This works for most installations. If your COM port does not use the
+     default IRQ number, you may override the default numbers. For example:
+     /I5  would cause IRQ5 to be used.
+
+     /H   -    display a help screen.
+
+
+Some examples:
+
+     WHATFAX /C1         -    Causes WhatFax to check the modem on COM1.
+
+     WHATFAX /C2 /B      -    Causes WhatFax to check the modem on COM2 but
+                              the CAS driver test is not performed.
+
+     WHATFAX /C3 /I3     -    Causes WhatFax to check the modem on COM3
+                              using IRQ 3.
+
+
+
+
+
+If you have any suggestions for enhancements, feel free to contact the
+author of WhatFax on CompuServe, id: 70406,1452.
+
+
+
+
+                                4
+

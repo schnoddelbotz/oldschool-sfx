@@ -1,0 +1,61 @@
+Hier ist nun meine cfg- Datei fr das iNTEL ARIES PCI Chipset, welches z.B. 
+auf dem ASUS AP4 Board benutzt wird. Ich habe nicht alle verfgbaren Ein-
+stellungen hier eingetragen, sondern nur die wichtigen. Eigentlich ist nur 
+da L2 Cache Control Register wichtig, aber zur šberprfung der BIOS-
+Einstellungen sind die anderen aufgefhrt. Ich habe es z.B. bei meinem alten 
+ASUS VL-Board mit SIS 461 Chipsatz erlebt, daá die Parit„tsprfung auf Enable
+war, der Chipsatz aber trotzdem auf Disable blieb (Placebo-Bioseintrag?).
+Bei meinem Board (Rev 1.6, 4x4 MB Ram 70ns, 256 k Cache 15ns, BIOS 2.04)
+funktioniert der Rechner toll mit den schnellsten Einstellungen (im Chip-
+satz-Setup alles auf Enable und die RAM- Einstellungen auf 60ns und min. 
+Margin). Zus„tzlich habe ich in obigen Register alles auf schnellstm”glich 
+gestellt(Dirty Hit Write: 2-1-1-1; Write Cycle: 3-2-2-2; Read Cache :2-1-1-1).
+Das hat mir den CPUBench aus WinBench 96 von 120 auf 150 Punkte gebracht.
+Natrlich kann ich fr andere Boards keine Garantie geben. Bei mir jedenfalls 
+gibt es keine Abstrze und die WinStones 95 und 96 laufen einwandfrei durch.
+Versucht es einfach!
+
+Jetzt noch ein Tip. Ich habe den neuen AMD X5- 133 Prozessor bei mir 
+eingebaut, da mir ein neues Pentium- Board einfach zu teuer ist. Mit den 
+Einstellungen fr den i486DX4-100 auf Clock x 2 (!!) und Write Back enabled
+komme ich auf obige 150 WinBench- Punkte. 
+Eine Sache wollte jedoch nicht klappen: das Stromsparen. Obwohl alles richtig
+eingestellt war und der AMD die gleiche Struktur hat, ging es nicht. 
+Ich habe herausgefunden, daá der einzige Grund dafr der CPUID- String ist.
+Das BIOS fragt ihn ab und nur wenn sich eine CPU mit GenuineIntel meldet,
+wird das Power Management aktiviert. Man kann das Umgehen, indem man vor (!!)
+dem CPU- Tausch das Bios- File editiert und neu programmiert. Nach dem X5-
+Einbau l„uft leider der Flash- Programmer nicht mehr. Da es aber anscheinend 
+nach der Version 2.04 keine weiteren BIOS- Updates mehr geben wird, ist das
+nicht tragisch. Hier nun die Anleitung:
+
+1. Im BIOS- File die Zeile GenuineIntel buchstabenweise durch AuthenticAMD 
+(Groá/Kleinschreibung!!!) ersetzen. Die Zeile ist unten zu sehen. Andere 
+Bytes habe ich auf Null gesetzt, da der String verteilt dasteht.
+00017170: 00 00 00 00 00 00 47 65  - 6E 75 00 00 00 00 00 6E   ......Genu.....n
+00017180: 74 65 6C 00 00 00 00 00  - 69 6E 65 49 00 00 00 00   tel.....ineI....
+
+2. An einer freien (!) Stelle ist aus einer 00 eine 50 (hex) zu machen. Ich habe
+das Byte 1DFFFh verwendet. Ohne diese nderung stimmt die BIOS- Checksumme
+nicht mehr und der Rechner startet nach dem Ausschalten nicht mehr.
+
+3. Mit einem geeigneten Programm (z.B. AMIDIAG,DR. Hardware) muá die
+Checksumme des BIOS berprft werden. Nur wenn die im BIOS abgelegte Summe mit 
+einer errechneten bereinstimmt, kann man den Rechner starten. Man kann die 
+nderungen nicht einmal mehr durch Neuprogrammieren rckg„ngig machen, da 
+man zum Flash- Programmieren ja DOS gestartet haben muá. Wer das nicht beachtet
+und sich vielleicht vertippt, kommt nicht mehr an seinen Rechner. 
+
+4. Erst wenn die BIOS- Checksumme geprft ist,kann man den Rechner auschalten, 
+die Stromspar- Optionen einstellen und testen.
+
+Ich w„re sehr erfreut, wenn mir jemand seine Erfahrungen mit meinen Tips 
+mitteilen wrde. Besonders ein Feedback von einem c`t - Experten w„re
+toll. Vielleicht lassen sich so auch andere nicht- iNTEL- CPU` s zum Strom-
+sparen berreden. 
+
+Meine Adresse: Stephan Thums
+               Pichelsdorfer Str. 121
+	       13595 Berlin
+	       AOL: Thumi
+	       Compuserve: 100616,1053

@@ -1,0 +1,252 @@
+   ========================================================================
+                     öbersicht Åber die HAYES-Modem-Befehle
+   ------------------------------------------------------------------------
+   Hayes-Befehle werden mit 'AT' eingeleitet (Klein/Gro·schreibung egal)
+   Ist das Modem im Sende-/Empfangsbetrieb mu· mit der Escape-Sequenz '+++'
+   zur Kommandoeingabe Åbergeleitet werden.
+   Befehle mÅssen mit einem Befehlsende-Zeichen abgeschlossen werden:
+   bei Handeingabe genÅgt die ENTER/RETURN-Taste, sonst wird meist '^M' ge-
+   nommen.
+
+   A     Modem schaltet sich auf die bestehende Verbindung und sendet
+         einen 'ANSWER-CARRIER'
+         Anwendung: Man wÑhlt per Hand zu einem anderen Teilnehmer, quatscht
+         ein bi·chen und geht dann Åber zur DFö
+
+   Bn    Umschaltung zwischen Bell- und CCITT-Norm
+         n=1 Bell
+         n=2 CCITT
+
+   Ds    WÑhlkommandos (typ. Beispiel: ATDP 030-1188 = Auskunft in Berlin)
+         s=P imPuls (deutscher Standard)
+         s=T Tonhîhe (in Deutschland nur in neuesten Telefonanlagen)
+
+         spezielle ZusÑtze:
+         ,   Pause (LÑnge im Register S8 festgelegt)
+             wichtig, wenn man aus Nebenstelle ins Netz will:
+             ATDP 9 ,, 030-1188
+         ;   Modem geht nach der Wahl in den Kommando-Modus
+             ATDP 1188 ;
+         W   Modem wartet auf das Freizeichen
+             ATW~ATDP 1188
+         !   Modem wird fÅr 1/2 Sekunde aufgelegt
+             AT!^M~~~ATDP 1188
+         R   Modem wechselt von originate zu answer nach dem WÑhlen
+
+   En    Echokommando
+         n=1 Echo ein
+         n=0 Echo aus
+
+   Hn    Modem einschalten
+         n=1 Modem ein
+         n=0 Modem aus
+
+   Ln    LautstÑrke des Lautsprechers
+         n=0 sehr leise
+         n=1 leise
+         n=2 mittel
+         n=3 maximal
+
+   Mn    Lautsprecher ein/aus-schalten
+         n=0 aus
+         n=1 aus nach dem CARRIER-Ton
+         n=2 immer an
+         n=3 an nach dem WÑhlen bis zum CARRIER-Ton
+
+   O     Online-Kommando
+         Modem kehrt nach der Eingabe einer Kommando-Sequenz in den online-
+         Modus zurÅck
+         Beispiel: Terminal-Dialog lÑuft...
+                   +++ATN1^M~ATO
+                   ...weiter im Terminal-Betrieb
+
+   Qn    Ergebnis-Anzeige ('Result') der Modem AktivitÑten
+         n=0 Ergebnis wird angezeigt
+         n=1 keine Anzeige
+
+   Srx   S-Register-Werte setzen
+         r erlaubt Werte zwischen 0 und 27
+         x erlaubt entweder dezimale Werte (z.B. Sekunden) oder
+                   Bitmusterwerte, wobei jedes Bit eine bestimmte Funktion
+                   ermîglicht bzw. abschaltet (siehe unten REGISTER)
+
+   Vn    Umfang der Ergebnis-Anzeige
+         n=0 kurze Anzeige (nur Zahlencode, siehe unten MELDUNGEN)
+         n=1 lange Anzeige (in Worten)
+
+   Xn    WÑhlvorgang
+         n=0 kurze Anzeige (z.B. '1' fÅr 'CONNECT')
+             Wartezeit wie in Register S6 festgelegt, dann wird gewÑhlt
+             Freizeichen wird ignoriert
+             Besetzt-Zeichen wird nicht ausgewertet
+         n=1 lange Anzeige (z.B. CONNECT 1200)
+             Wartezeit wie in Register S6 festgelegt, dann wird gewÑhlt
+             Freizeichen wird ignoriert
+             Besetzt-Zeichen wird nicht ausgewertet
+         n=2 lange Anzeige (z.B. CONNECT 1200)
+             wartet auf Freizeichen, dann wird gewÑhlt
+             Besetzt-Zeichen wird nicht ausgewertet
+         n=3 lange Anzeige (z.B. CONNECT 1200)
+             Wartezeit wie in Register S6 festgelegt, dann wird gewÑhlt
+             Freizeichen wird ignoriert
+             Besetzt-Zeichen wird ausgewertet
+         n=4 lange Anzeige (z.B. CONNECT 1200)
+             wartet auf Freizeichen, dann wird gewÑhlt
+             Besetzt-Zeichen wird ausgewertet
+
+   Yn    Long space disconnect on/off (wie soll man das blo· Åbersetzen?)
+         n=1 Modem schaltet ab, wenn ein 'space' von mehr als 1,6 Sekunden
+             vom Remote-Modem empfangen wird
+         n=0 Modem schaltet nicht ab, wenn diese Bedingung eintritt
+
+   Z     Modem-Initialisierung
+         Modem wird auf die Ausgangs-Parameter zurÅckgesetzt
+
+
+   &Cn   DCD-PrÅfung
+         n=0
+         n=1
+
+   &Dn   DTR-PrÅfung
+         n=0 DTR wird ignoriert
+         n=1 Umschaltung auf Kommando-Modus, wenn DTR auf 'OFF' geht
+         n=2 Umschaltung auf Kommando-Modus und Modem-Abschaltung, wenn
+             DTR auf 'OFF' geht
+         n=3 setzt Modem zurÅck (wie ATZ), wenn DTR auf 'OFF' geht
+
+   &Gn   Guard-ton-Kontrolle
+         n=0 kein Guard-Ton
+         n=1 Guard-Ton an, 550 Hz
+         n=2 Guard-ton an, 1800 Hz
+
+   &Ln   n=1 Leased Line
+         n=0 Dial up
+
+   &Mn   Synchro
+         n=0 asynchron
+         n=1 synchron (abhÑngig vom Modemtyp)
+
+   &Pn   Make-Break-VerhÑltnis bei Pulswahl
+         n=0 39/61 (US)
+         n=1 33/67 (GB, Hong Kong)
+
+   &Rn   RTS/CTS
+         n=0 wird im asynchronen Modus ignoriert
+         n=1 CTS richtet sich nach Carrier Detect
+
+   &Sn   DSR
+         n=0 DSR immer eingeschaltet
+         n=1 DSR gemÑ· CCITT
+
+   &Tn   Test-Kommandos
+         n=0 Test beenden
+         n=1 local analog loopback LAL (???)
+         n=3 local digital loopback LDL (???)
+         n=4 enable recognition of request for remote digital loopback (RDL)
+         n=5 prohibit recognition of request for RDL
+         n=6 request remote loopback mode
+         n=7 initiate RDL with self-test
+         n=8 initiate LAL with self-test
+
+
+   ------------------------------------------------------------------------
+                                   MELDUNGEN
+
+     Kurzform     Langform             Beschreibung
+   ------------------------------------------------------------------------
+        0        OK              Kommando fehlerfrei ausgefÅhrt
+        1        CONNECT         Verbindung steht mit 300 Baud
+        2        RING            Modem wird von au·en angewÑhlt
+        3        NO CARRIER      kein CARRIER-Ton vorhanden oder gefunden
+        4        ERROR           Kommando fehlerhaft
+        5        CONNECT 1200    Verbindung steht mit 1200 Baud
+        6        NO DIALTONE     kein Freizeichen
+        7        BUSY            besetzt
+        8        NO ANSWER       angerufene Station antwortet nicht
+        9        CONNECT 600     Verbindung steht mit 600 Baud
+       10        CONNECT 2400    Verbindung steht mit 2400 Baud
+
+
+   ------------------------------------------------------------------------
+                                    REGISTER
+
+   Register  Funktion                            Wertebereich  Default (*)
+   ------------------------------------------------------------------------
+    S0       legt die Anzahl der Klingelzeichen
+             fest, bevor das Modem anwortet      0-255         0
+    S1       Anzahl der Klingelzeichen,
+             setzt auf null zurÅck,
+             wenn 8 Sekunden lang kein weiteres
+             Klingelzeichen registriert wird     0-255         0
+    S2       Dezimalwert des ESCAPE-Zeichens     0-127         43 ('+')
+    S3       Dezimalwert fÅr Carriage Return     0-127         13 ('CR')
+    S4       Dezimalwert fÅr Line Feed           0-127         10 ('LF')
+    S5       Dezimalwert fÅr Backspace           0-127         8  ('BS')
+    S6       Wartezeit fÅr Freizeichen           2-255         2
+    S7       Wartezeit fÅr Carrier               1-255         30
+    S8       PausenlÑnge fÅr Kommazeichen        0-255         2
+    S9       Antwort auf Carrier Detect (.1 Sek.)1-255         6
+    S10      Reaktion auf Carrier Loss (.1 Sek.) 1-255         7
+    S11      nicht belegt
+    S12      Esc code guard Zeit (.02 Sek.)      20-255        50
+    S13      nicht belegt
+
+    S14      Bitmuster:
+
+             Bit 0   nicht belegt
+             Bit 1=0 lokales Echo an
+                  =1 lokales Echo aus                          x
+             Bit 2=0 Ergebnisanzeige an                        x
+                  =1 Ergebnisanzeige aus
+             Bit 3=0 Ergebnis in Kurzform (Zahlencode)
+                  =1 Ergebnis in Langform (in Worten)          x
+             Bit 4=0 smart mode an                             x
+                  =1 dumb mode an
+             Bit 5=0 Tonhîhenwahl an
+                  =1 Impulswahl an                             x
+             Bit 6   nicht belegt
+             Bit 7=0 answer mode an
+                  =1 originate mode an                         x
+
+    S15      nicht belegt
+
+    S16      Modemtest-Optionen
+
+             Bit 0=0 local analog loop aus                     x
+                  =1 local analog loop an
+             Bit 1   nicht belegt
+             Bit 2=0 local digital loop aus                    x
+                  =1 local digital loop an
+             Bit 3=0 loopback aus                              x
+                  =1 loopback an
+             Bit 4=0 remote dig. loopback aus                  x
+                  =1 remote dig. loopback an
+             Bit 5=0 erweiterter RDL aus                       x
+                  =1 erweiterter RDL an
+             Bit 6=0 erweiterter LAL aus                       x
+                  =1 erweitertet LAL an
+             Bit 7   nicht belegt
+
+    S17      nicht belegt
+    S18      Test-Timer (0=aus, sonst Sekunden)  0-255         0
+    S19      nicht belegt
+    S20      nicht belegt
+
+    S23      Bit 2&1=00 0-300 Baud
+                    =01 600   Baud
+                    =10 1200  Baud
+                    =11 2400  Baud                             x
+             Bit 5&4=00 even                                   x
+                    =01 space
+                    =10 odd
+                    =11 mark/no parity
+
+    S27      Bit 6=0 CCITT an
+                  =1 Bell an                                   x
+
+   ------------------------------------------------------------------------
+   (*) Default-Werte gelten nur fÅr das ADAPTA-Modem fÅr den Toshiba T1000
+
+
+
+

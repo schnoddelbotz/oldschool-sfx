@@ -1,0 +1,179 @@
+
+
+            ****  The Aurora Editor v1.20, January 1994  ****
+                (c) Copyright 1993-1994 Aurora Terra, Inc
+                           All Rights Reserved.
+
+
+  Welcome to The Aurora Editor v1.20. The Aurora Editor is an advanced
+  high performance text editor with a superb windowing environment, full
+  mouse support, a huge one gigabyte virtual memory for editing very
+  large files, an object oriented macro language, a multi-instance
+  programmable file manager, unlimited multi-level undo/redo, a 386
+  version, and much, much more!
+
+  To install The Aurora Editor, simply copy the distributed files to the
+  drive and directory of your choice. Add this directory to your DOS
+  "PATH" for easier access.
+
+  NOTE: If you are installing over a previous version of Aurora, be sure
+  to backup your configuration files (ACFG.A, AKBD.A, AMEN.A) before
+  installing.
+
+  While you are using the editor, you can press F1 or click on the Help
+  menu bar item to obtain online help on any topic. Press <Esc> to
+  activate the pull-down menu system and explore the features of Aurora.
+
+  The complete documentation for using and configuring the editor is
+  contained in the file A.DOC. Documentation for the Macro Language is
+  contained in the file AML.DOC. Both documents can be printed with the
+  DOS "print" command.
+
+  Technical support is available by telephone (301-468-2255), U.S. Mail,
+  Internet Email to: 71702.1025@compuserve.com, or Compuserve Email to:
+  71702,1025. Technical support can also be obtained from the Aurora
+  Support BBS (301-230-1214). You can call the BBS 24hrs/day at speeds
+  up to 14,400 bps with v.32bis connections.
+
+  Additional support is available on the FidoNet AURORA conference by
+  polling 1:300/8 on FidoNet, or through shareware conferences on the
+  FidoNet, RIME, ILink, SmartNet and U'NI-Net networks.
+
+  Thank you for evaluating Aurora!
+
+
+
+  What's new and different in version 1.20  (Jan 14, 1994)
+  --------------------------------------------------------
+
+  o User-definable Text Translation automatically expands abbreviations
+    and corrects commonly misspelled words or typos as you enter
+    characters into your text. You define the words and substitution
+    text in a translation table in the file ATRN.A. You can also define
+    macros that are executed whenever the macro function name is entered
+    as a word in your text.
+
+    Text translation can be turned ON and OFF for each Edit window via
+    the "Translate" <Alt-F4> toggle on the "Set" pull-down menu. When
+    text translation is ON, a "T" appears on the status line. <Alt-F5>
+    can be used to edit the translation table (ATRN.A).
+
+    One new library command was added for text translation:
+
+      wmtran    - translation ON/OFF toggle
+
+    Three new configuration variables were added:
+
+      TextTran  - text translation ON/OFF default
+      TranObj   - current text translation macro object
+      TranCSet  - character set defining a word for translation lookup
+
+    <Alt-F5> can be used to edit the translation table (ATRN.A).
+
+    (see "Text Translation" 18-7 in A.DOC).
+
+  o From the "Open and Insert" prompt: pressing <Enter> or specifying
+    directories or wildcards will now open a File Manager window and
+    prompt you to select a file.
+
+  o New Edit window color settings were added to the configuration
+    file ACFG.A:
+
+      coEdiD  - the color of modified or "dirty" lines
+      coEdiDL - the color of a modified line at the cursor
+
+  o The Binary Line Length can now be specified after the "b" option
+    when opening binary files from the "Open" prompt(s) or DOS command
+    line. For example:
+
+      Open>  myfile.txt/b43
+
+    In the example above, "myfile.txt" is opened in binary mode with a
+    line length of 43.
+
+  o The <Shift> keys can now be used in combination with the cursor keys
+    to create character and line marks.
+
+  o The "Expand Tabs" <Ctrl-K-X> command now accepts TabWidth values
+    from 1 to 64.
+
+  o A new config setting "DlgStyle" allows you set the border style for
+    dialog boxes (similar to "BoxStyle" for one-line box prompts).
+
+  o The new command "askkrep" <Ctrl-Q-Q> repeats the last key command
+    entered. You are prompted for the number of repetitions.
+
+  o An editor macro can now be specified on the DOS command line with
+    the a "-e" command line option. The macro will be executed after
+    the editor (and all files) are loaded.
+
+  o The library function "cgoto" was renamed to "cmov".
+
+  o The "k_chr" event function has been moved from ALIB.X to AKBD.A for
+    edit and prompt windows. It can be used to intercept non-function
+    (typeable) keys.
+
+  o The evaluation copy can be registered with a key to facilitate easy
+    upgrades for licensed users.
+
+  o New About box and Exit screen.
+
+  o Other minor changes.
+
+  o Maintenance:
+
+    Fixed a rare bug causing error messages #101-#109.
+    Better recovery from full disk saves.
+    The video blink mode is reset when exiting the editor.
+    Fixed minor printing problems.
+    Other minor bug fixes.
+
+
+  What's different in version 1.12  (Nov 17, 1993)
+  ------------------------------------------------
+
+  Version 1.12 is a maintenance release and also contains a few minor
+  enhancements since the previous version (v1.11):
+
+
+  o Added the option to ignore case when sorting marked blocks.
+
+  o Added the "Append" option to the replacement confirmation menu
+    when replacing files with block saves or with move/copy from
+    the file manager.
+
+  o Added the new configuration setting "BoxStyle", which allows you
+    to add optional 3D effects to one-line box prompts.
+
+  o Added a sample macro to AKBD.A showing how to call a spell check
+    program from within an edit window.
+
+  o Aurora is now a "DESQview aware" program.
+
+  o Minor bug fixes
+
+
+  What's different in version 1.11  (Nov 7, 1993)
+  -----------------------------------------------
+
+  o  The contents of a character mark can now be saved to disk.
+
+  o  The option "a" was added to the library function "msave" (save
+     block). This option will allow the block to be appended to an
+     existing file.
+
+  o  A new library function "qwrd" returns the word at the cursor.
+
+  o  Increased the internal stack size when shelling out to dos. This
+     resolves conflicts with some network cards which may require more
+     interrupt stack space.
+
+  o  Corrected an initialization problem which may cause OS/2 or QEMM
+     traps on a few machines.
+
+  o  Added sample macro code to the File Manager (see AKBD.A) to show
+     how to do spell checking, image viewing, unarchiving, and archive
+     viewing, etc with files listed in the File Manager.
+
+  o  Other minor changes.
+

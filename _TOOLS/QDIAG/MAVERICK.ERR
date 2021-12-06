@@ -1,0 +1,271 @@
+*** $Header:   T:\XLC\ROAD\SRC\RDRUNNER.ERV   1.0   24 May 1993 17:35:12   DAVEM  $
+*** rdrunner.ERR .... For process test   03/19/93  RR P1
+***  04/20/93 update added self scan errors ...
+***  05/17/93 a little fix-em-up on the error codes (esp. above 89).
+
+  Key Word 'error'  (must start in first column)
+  |     Drive Internal Error Code  (AKA as AT Extended)
+  |     |   SCSI Sense Key
+  |     |   |  SCSI Sense Code
+  |     |   |  |  SCSI Sense Code Qualifier
+  |     |   |  |  |   Process Control Key  ... 1 Sense with '1' Ignore
+  |     |   |  |  |   |                        4 Sense with '1' Retry, but fail
+  |     |   |  |  |   |                        4 Sense with '3' Retry, no fail
+  |     |   |  |  |   |   Error Code Description
+*-V-----V---V--V--V---V---V--------v---------v---------v----------v---------v
+error   0,  0,00,00,  0   No Error detected at Drive level
+error   1,  3,03,00,  0   Write fault
+error   2,  1,03,00,  0   Recovered Write Fault
+error   4,  3,11,00,  0   Uncorrectable data field ECC error
+error   5,  1,17,01,  1   Recovered data field ECC error
+error   6,  6,9A,00,  0   A target attempted to re-select
+error   7,  3,13,00,  0   Data field sync timeout
+error   8,  1,13,00,  0   Recovered data field sync timeout
+error   9,  3,14,01,  0   No record found
+error   A,  1,14,00,  0   Recovered no record found
+error   B,  4,15,00,  3   Seek error
+error   C,  1,15,00,  0   Recovered seek error
+error   D,  1,18,00,  0   Recovered data error via ECC w/2 = syndromes
+error   E,  1,18,01,  0   Recovered data error via ECC on last retry
+error   F,  5,1A,00,  0   Parameter overrun
+error  10,  5,20,00,  0   Invalid command
+error  11,  5,21,00,  0   Invalid LBA
+error  12,  5,24,00,  0   Invalid bits set in CDB
+error  13,  5,26,00,  0   Invalid field in parameters
+error  14,  6,29,00,  0   Reset occurred
+error  15,  6,2A,00,  0   Mode select parameters were changed
+error  16,  4,40,00,  0   RAM error (most likely found in a diagnostic)
+error  17,  4,87,00,  0   Logical assertion/firmware consistency check err
+error  18,  4,42,00,  0   Internal ROM checksum error
+error  19,  B,47,00,  0   SCSI Bus parity error
+error  1A,  4,42,01,  0   Marker for resident code checksum
+error  1B,  3,80,00,  0   Error in writing to system sector
+error  1C,  3,81,00,  0   Error in reading from system sector
+error  1D,  4,9E,00,  0   Motor unable to get up to speed
+error  1E,  1,9E,00,  0   Recovered motor unable to get up to speed
+error  1F,  4,84,00,  0   Failure in writing to sequencer format table
+error  20,  4,86,00,  1   Unexpected sequencer error
+error  21,  1,86,00,  0   Recovered unexpected sequencer error
+error  22,  4,8A,00,  0   Head read from ID not equal to selected head
+error  23,  5,8A,00,  0   Invalid head specified
+error  24,  5,8B,00,  0   Invalid cylinder specified
+error  25,  5,8D,00,  0   Bytes per block/bytes per sector gives a remaindr
+error  26,  2,04,00,  0   Drive is up to speed and recalibrating
+error  27,  2,04,01,  0   Drive is spinning up
+error  28,  2,04,02,  0   Drive has not been told to spin up
+error  29,  3,32,01,  0   No more alternate sectors available
+error  2A,  5,8F,00,  0   Invalid sector specified
+error  2B,  4,95,00,  0   Sequencer timeout
+error  2C,  1,95,00,  0   Recovered sequencer timeout
+error  2D,  4,09,00,  3   Bump timeout
+error  2E,  1,09,00,  0   Recovered bump timeout
+error  2F,  E,1D,00,  0   Read buffer miscompare
+error  30,  4,A1,00,  0   Sequencer rollover register failure
+error  31,  3,A3,00,  0   Failure reading sector in Reassign Blocks command
+error  32,  5,AE,00,  0   Bad parameter(s) found in mode pages during init
+error  33,  3,31,01,  0   FDPE write failed during format unit command
+error  34,  3,10,00,  0   ID ECC error
+error  35,  1,10,00,  0   Recovered ID ECC error
+error  36,  3,12,00,  0   AM mark not found for ID field
+error  37,  1,12,00,  0   Recovered AM mark not found for ID field
+error  38,  3,AA,00,  0   Read Data written on realloc of uncorrectbl data
+error  39,  1,AA,00,  0   Recovrd Rd data Wr on realloc of uncorrctbl data
+error  3A,  3,19,00,  0   Bad defect list
+error  3B,  3,32,00,  0   Defect list is full
+error  3C,  1,AB,00,  0   Requested format in Read Defect Data not avail
+error  3D,  4,97,00,  0   Underrun error
+error  3E,  1,97,00,  0   Recovered underrun error
+error  3F,  4,06,01,  0   RCL FLT- Coarse Slope PES Gain calibration
+error  40,  1,06,01,  0   Recovered RCL FLT- Coarse Slope PES calibration
+error  41,  4,06,02,  0   RCL FLT- Fine Slope PES Gain calibration at AEQBH
+error  42,  1,06,02,  0   Recovered RCL FLT- Fine Slope PES calib at AEQBH
+error  43,  4,06,03,  0   RCL FLT- Fine Slope PES Gain calib at AEQBL
+error  44,  1,06,03,  0   Recovered RCL FLT- Fine Slope PES calib at AEQBL
+error  45,  4,06,04,  0   RCL FLT- Cannot Lock to track
+error  46,  1,06,04,  0   Recovered RCL FLT- Cannot Lock to track
+error  47,  4,06,05,  0   RCL FLT- Cannot detect SAM during unparking
+error  48,  1,06,05,  0   Recovered RCL FLT- Can't detect SAM during unpark
+error  49,  4,42,06,  0   Marker for diskware vector table checksum
+error  4A,  4,FF,00,  0   Autowr cmd received while host channel disabled
+error  4B,  4,FF,01,  0   ID in format track descriptor list not found
+error  4C,  4,FF,02,  0   Bad descriptor in format track descriptor list
+error  4D,  3,14,01,  0   Bad block mark set for ID (AT)
+error  4E,  4,AC,00,  0   Airlock stuck open
+error  4F,  4,03,00,  0   WUS Write fault (bump)
+error  50,  1,03,00,  0   Recovered WUS Write fault (bump)
+error  51,  3,82,00,128   Error during reading of diskware
+error  52,  4,09,04,  0   Unrecoverable Bad servo sync
+error  53,  1,09,04,  0   Recovered bad servo sync
+error  54,  4,09,05,  0   Unrecoverable Bad servo address mark (SAM)
+error  55,  1,09,05,  1   Recovered bad servo address mark (SAM)
+error  56,  4,09,06,  0   Unrecoverable Bad track number data
+error  57,  1,09,06,  1   Recovered bad track number data
+error  58,  4,09,07,  0   Unrecoverable Servo Defect
+error  59,  1,09,07,  0   Recovered Servo Defect
+error  5A,  4,09,08,  0   Unrecoverable Bump
+error  5B,  1,09,08,  0   Recovered Bump
+error  5C,  4,15,01,  0   Unrecovrd Gray code != desired track while ontrk
+error  5D,  1,15,01,  0   Recovered Gray code != desired track while ontrk
+error  5E,  4,15,03,  3   Unrecovrd multi bad Sync/SAM while Settle/Ontrk
+error  5F,  1,15,03,  1   Recovered multi bad Sync/SAM while Settle/Ontrk
+error  60,  4,9E,01,  0   Unrecoverable Speed out of range
+error  61,  1,9E,01,  0   Recovered speed out of range
+error  62,  4,15,04,  0   Seek timeout with no servo fault
+error  63,  1,15,04,  0   Recovered seek timeout with no servo fault
+error  64,  3,11,01,  0   Marker for CRC/Continue
+error  65,  1,17,08,  1   Recovered marker for CRC/Continue
+error  66,  4,42,02,128   Marker for resident and overlay are incompatible
+error  67,  4,42,03,128   Marker for ROM and resident are incompatible
+error  68,  4,42,04,128   Marker for ROM and overlay are incompatible
+error  69,  4,42,05,  0   Marker for overlay checksum
+error  6A,  4,06,06,  0   RCL FLT - DAC offset calibration failure
+error  6B,  1,06,06,  0   Recovered RCL FLT - DAC offset calib failure
+error  6C,  4,86,01,  1   Unexpected SEQ Err during recovery from SEQ TMO
+error  6D,  1,86,01,  0   Recovrd unexpect SEQ err during SEQ TMO recovery
+error  6E,  4,86,02,  1   Read, write ID miscompare
+error  6F,  1,86,02,  0   Recovered read, write ID miscompare
+error  70,  3,12,01,  0   AM not found for ID field with internal continue
+error  71,  1,12,01,  0   Recovrd AM not found for ID w/ internal continue
+error  72,  3,03,00,  0   Write gate still asserted when wedge detected
+error  73,  4,15,05,  0   Unrecovrd multi bad Sync/SAM during Seek ISR
+error  74,  1,15,05,  0   Recovered multi bad Sync/SAM during Seek ISR
+error  75,  4,06,06,  0   RCL FLT - Cannot detect reliable SAM on any head
+error  76,  1,06,06,  0   Recovrd RCL FLT-Can't detect SAM on any head
+error  77,  4,06,07,  0   RCL FLT - Can't seek to OD to get near Sys yl
+error  78,  1,06,07,  0   Recovrd RCL FLT - Can't seek to OD near Sys Cyl
+error  79,  4,06,08,  0   RCL FLT - Can't seek to Fine Slope PES calib trk
+error  7A,  1,06,08,  0   Recovrd RCL FLT-Can't seek to Fine SLP calib trk
+error  7B,  4,06,09,  0   RCL FLT - Seek failure during Nulli calibration
+error  7C,  1,06,09,  0   Recovrd RCL FLT - Seek fail during Nulli calib
+error  7D,  4,06,0A,  0   RCL FLT - Seek failure during V_SCALE adaptation
+error  7E,  1,06,0A,  0   Recovered RCL FLT-Seek fail during V_SCALE adapt
+error  7F,  4,06,0B,  0   RCL FLT - Seek failure during KLOOP calibration
+error  80,  1,06,0B,  0   Recovrd RCL FLT - Seek fail during KLOOP calib
+error  81,  4,06,0C,  0   RCL FLT - Seek failure during RRO calibration
+error  82,  1,06,0C,  0   Recovrd RCL FLT - Seek fail during RRO calib
+error  83,  4,06,0D,  0   RCL FLT - Seek failure to track 0 during rezero
+error  84,  1,06,0D,  0   Recovrd RCL FLT-Seek fail to trk 0 during rezero
+error  85,  4,06,0E,  0   RCL FLT - Unable to complete KLOOP calibration
+error  86,  1,06,0E,  0   Recovrd RCL FLT - Unable to complete KLOOP calib
+error  87,  4,06,0F,  0   RCL FLT - Unable to complete RRO calibration
+error  88,  1,06,0F,  0   Recovrd RCL FLT - Unable to complete RRO calib
+
+error  89,  3,01,00,  0   No disk index found on current track
+error  8A,  1,17,09,  1   EC_ON_FLY_CORRECTED
+error  8B,  4,42,07,  0   EC_RES_VT_VERSION
+error  8C,  4,42,08,  0   EC_ROM_VT_VERSION
+
+error  8D,  4,1B,00,  0   EC_SYNC_XFER
+error  8E,  5,9B,00,  0   EC_INV_SYNC_PARMS
+error  8F,  5,9C,00,  0   EC_ACTIVE_SELECT
+error  90,  5,25,00,  0   EC_INV_LUN
+error  91,  4,43,00,  0   EC_MSG_REJECT
+error  92,  B,45,00,  0   EC_RESELECT_TIMEOUT
+error  93,  B,48,00,  0   EC_INIT_DET_ERR
+error  94,  4,85,00,  0   EC_FIRMWARE_1
+error  95,  B,00,00,  0   EC_ABORT_MSG
+error  96,  5,8C,00,  0   EC_DOUBLE_SELECT
+error  97,  6,8E,00,  0   EC_UNXPCT_SIC_INT
+error  98,  4,90,00,  0   EC_SYNC_REQ_ACK
+error  99,  4,91,00,  0   EC_SYNC_ACK
+error  9A,  4,94,00,  0   EC_SIC
+error  9B,  4,4A,00,  0   EC_FIFO_LOAD
+error  9C,  4,49,00,  0   EC_FIFO_UNLOAD
+error  9D,  4,4B,00,  0   EC_FIFO_PRED_FULL
+error  9E,  B,29,00,  0   EC_RAM_PARITY
+error  9F,  5,66,00,  0   EC_LIST_LEN
+error  A0,  3,31,00,  0   EC_MED_FMT_CORRPT
+error  A1,  5,C2,00,  0   EC_NA_COMMAND
+error  A2,  2,C0,00,  0   EC_BURN_IN_TEST
+
+  *** read variables offset values ...
+vars     39  F1
+vars     512  BufSize
+vars     23  AEQBL_TBL
+vars     24  AEQBM_TBL
+vars     25  AEQBH_TBL
+vars      0  NULLI
+vars     27  AC_OFFSET_TBL
+vars     26  SLP_TBL
+vars      2  DAC_ZERO_I
+vars     16  SAM2SAM
+vars     58  UNPARK_CUR
+vars     80  ERASE_C_BURST
+vars     81  BAD_WEDGE_NUMBER
+vars     41  POS_OFFS
+vars     83  DO_AEQB
+vars     84  AEQB_WRD
+
+ *** Self Scan Error Codes ...
+sserror  01 Average seek time is > than the limit.
+sserror  02 Too many soft errors per drive.
+sserror  03 Too many soft errors per head.
+
+sserror  10 Test time > limit.
+sserror  11 Wait for power off had a fatal error condition.
+
+sserror  20 Invalid/out-of-range test number requested.
+
+sserror  40 Too many seek errors.
+sserror  41 Initial seek in a seek test failed.
+sserror  48 Servo not recovered by retry.
+sserror  4F Cannot seek to location after retry.
+
+sserror  50 Start Stop test start spin up timed-out.
+sserror  54 Start Stop test stopped w/ latch stuck open.
+sserror  58 Start Stop test failed to spin up on start.
+
+sserror  60 Error writing wedge during AM defect span search.
+sserror  61 Error calculating AM defect span.
+sserror  62 Invalid sequencer error from KONI.
+sserror  63 SelfScan Defect List is full.
+sserror  64 Too many defects per cylinder.
+sserror  65 Too many defects per head.
+sserror  66 Too many defects per drive.
+
+sserror  70 Too many Servo defects per track.
+sserror  71 Servo Defect List is full.
+sserror  72 Timeout waiting for Servo Interrupt.
+sserror  73 Timeout waiting for index.
+sserror  74 Too many bad servos per track.
+sserror  75 Bad servos are too close.
+
+sserror  80 Failed while formatting the drive.
+sserror  81 Hard defect found in Customer Scan.
+sserror  82 Format retries exhausted.
+sserror  83 Error computing ID's during format track.
+
+sserror  90 NULLI value too low.
+sserror  91 NULLI value too high.
+sserror  92 Difference between similar NULLI points too high.
+sserror  9A Average Thermistor value too low.
+sserror  9B Average Thermistor value too high.
+sserror  9C Difference between Thermistor readings too high.
+
+sserror  A0 Can not find defect free track.
+sserror  A1 Write retries exhausted, Write Curr Opt or Res Check.
+sserror  A2 Too many Zones/Heads failed window margin.
+sserror  A3 Adaptive Boost/Cutoff failed to improve WM to min limit.
+sserror  A4 Error reading Config Pages from disk.
+sserror  A5 Error writing Config Pages to disk.
+
+sserror  B0 Ram test failed.
+sserror  B8 Can not Read/Write sector.
+sserror  B9 ECC bytes miscompare
+
+sserror  C1 P-List is full.
+
+sserror  D0 Internal firmware error.
+
+sserror  E0 Sequencer Error.
+sserror  E1 Out-of-range Sequencer error.
+
+sserror  F0 SelfScan Password not found.
+sserror  F1 Error reading selfscan test sectors.
+sserror  F2 Error writing selfscan test sectors.
+sserror  F7 Error RRO/NRRO results were out of spec.
+sserror  F9 Error loading a selfscan overlay.
+sserror  FA Selfscan was terminated by Host.
+sserror  FF Bad SS Results Sector or NO SS results found.
+
+*** END OF FILE ***

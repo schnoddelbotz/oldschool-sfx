@@ -1,0 +1,177 @@
+============
+IPXFER v1.10
+============
+
+IPXFER is a set of utilities for sending files accross an IPX network. This
+eliminates the headache of juggling floppies when you are exchanging, say
+for instance PWADs.
+
+Well, here is the v1.10 release.  Thanks to a few individuals that have
+bothered to reply to my request for comments, I have decided to continue
+work on this program.
+
+This program fixes a small bug in v1.00 that would cause a really weird
+result if you told it to send files that did not exist.  I have also
+once again tweaked the packet sequencing method.  I have yet to have a
+transfer lock with v1.10  (I have beta tested it by sending better than
+500Mb of data back and forth... I guess its pretty well bug free now.)
+
+==========
+DISCLAIMER
+==========
+
+The author of this program accepts NO resposibility for any damage whether
+it be Software, Hardware, or Mental from the use of this program.
+
+============
+DISTRUBUTION
+============
+
+Everyone and anyone that can use a copy of this program is more than welcome
+to it!  Just please include this text file!
+
+===========
+Limitations
+===========
+
+   You can only receive files on one computer at a time.  I'm working on this,
+   but its tougher than it sounds.  It's hard enough to try to make sure the
+   file gets there intact when IPX does NO packet checking itself.
+
+   You MUST be in the directory of the files that you wish to send.  (Don't
+   enter something like the following:  SENDNET C:\DOOM\WADS\*.WAD)
+
+   The speed of your hard drive!
+
+This program can only transfer data as fast as your computer can process
+it and write it to your hard drive.  The physical limit at which this program
+is capable of transmitting data is around 900,000cps!!! (Memory to Memory
+transfer and no CRC checking)
+
+The following are actual transfer speeds that I have experienced when sending
+a file of about 1Mb in size between different computers:
+
+                            
+      386dx/40              386sx/40Mhz
+      11ms IDE HDD      =>  28ms IDE HDD          = 50,000 cps
+      2Mb Disk Cache        384kb Disk Cache
+
+      386sx/40              386dx/40Mhz
+      28ms IDE HDD      =>  11ms IDE HDD          = 70,000 cps
+      384kb Disk Cache      2Mb Disk Cache
+
+      386dx/40              486sx/33Mhz
+      11ms IDE HDD      =>  11ms IDE HDD          = 85,000 cps
+      2Mb Disk Cache        1Mb Disk Cache
+
+      386dx/40              486dx/50Mhz
+      11ms IDE HDD      =>  10ms IDE HDD          = 95,000 cps
+      2Mb Disk Cache        1Mb Disk Cache
+
+      486sx/33              486dx/50Mhz
+      11ms IDE HDD      =>  10ms IDE HDD          = 110,000 cps
+      1Mb Disk Cache        1Mb Disk Cache
+
+I'm dying to try it between a couple of 486's that have fast SCSI hard drives!
+
+Not bad when you compare it to the absolute maximum of 11,000cps when sending
+between 2 computers at 115,200baud (IF, and ONLY IF they both have 16550
+UARTS)!
+
+=======================
+How to use this program
+=======================
+
+   On the sendning computer enter
+
+      SENDNET filename.ext  (This CAN include wildcards)
+
+   On the receiving computer enter
+
+      RECNET
+
+ Thats all there is to it!
+
+ BTW, you have to have LAN cards and your IPX drivers loaded first (DUH!) :)
+
+IF you have a transfer crash and have to CTRL-BREAK your way out of it, enter
+the following command 
+
+      CLOSES
+
+This closes the sockets used by IPXFER so that you can initialize another
+transfer.
+
+                              Josh
+
+PS- If you have a transfer lockup that is not the fault of you IPX drivers, or
+the lack of good cables/terminators... PLEASE let me know.  I have not had
+any lockups whatsoever with v1.10  but, the hardest bugs to kill are ones
+that don't show up on your computer!
+
+===============================================
+Other DOOM related programs by Jackson Software
+===============================================
+
+The following are available at the OFFICIAL DOOM ftp site:
+
+   infant2.sphs.indiana.edu
+
+And at Software Creations BBS
+
+   (508) 368-7036
+   (508) 368-4137
+
+The DOOM Front END (Currently at v1.33) DFE133.ZIP
+
+   A menu system of sorts for DOOM. Supports IPX, Serial, Modem, and Single
+   player games.  Allows for External wad file loading.  It also has a built
+   in Map and Sprite Viewer.
+
+The DOOM Hacker's Tool Kit (Currently at v1.00) DHTK100.ZIP
+
+   Tons of source code for accessing a variety of resources in the wad file
+   including:
+
+      Sprite Viewing/Scaling
+      Map Viewing/Scaling
+      Wall Texture Viewing/Scaling
+      Floor Texture Viewing/Scaling
+      SoundBlaster Sound Sampling Routines
+      -plus-
+      The source code for DFE v1.32 (Sorry, it has a small bug in it, but it
+      was the current version when I released DHTK100.ZIP)
+
+IPXSETUP v1.1  IPXSTP11.ZIP
+
+   A modified version of IPXSETUP.EXE from Id software that corrects the
+   problem "OPEN SOCKET 0xFF" after aborting an IPXSETUP session.
+
+   This program is currently being included in the ZIP files for all of my 
+   other utilities.
+
+================
+My advertisement
+================
+
+If you are interested in setting up an IPX based network for playing DOOM,
+or anything else that uses it (Windows for Workgroupd, Novell, etc),  I am
+currently selling IPX based cards for my cost (wholesale) plus shipping.
+
+I am selling a variety of cards and their accessories starting at around $40.
+
+-or- if you are just having trouble using one of my programs, would like to
+register one (not required, but I will be sure to send you lots of other
+great utilities for DOOM), or would like some tech support setting up an IPX
+based network for DOOM, feel free to mail or call me at the below address/
+number)
+
+Internet:   jsoftware@delphi.com
+
+Snail   :   Joshua Jackson    
+            Jackson Software
+            10506 Bayard Rd
+            Minerva, OH  44657
+
+Phone   :   (216) 868-1169
+

@@ -1,0 +1,94 @@
+==============================================================================
+                     MAXTOR MODEL LXT-200A IDE DRIVE
+==============================================================================
+
+              Interface:  AT                   RLL 1,7 Encoding
+
+Capacity, Unformatted                Capacity, Formatted AT Compatible
+
+Per Drive (Mbytes)    :  234.00      Per Drive (Mbytes)    :  201.00
+Per Surface (Mbytes)  :  33.40       Per Surface (Mbytes)  :  29.60
+                                     Per Sector (Bytes)    :  512
+
+Parameters                           Performance Specifications
+
+Cylinders  :  Physical=1320          Transfer rate, Mbits/sec    :  10
+           :  Logical=1314           Access Time (Average)       :  15msec
+           :  Sectors/Track(6 Zones) Access Time (Track-To-Track):  3msec
+           :  Zone 1=33              Access Time (Maximum)       :  30msec
+           :  Zone 3=53              
+Data Heads :  7
+Pre-Comp   :  NONE
+
+MTBF:  150,000 Hous (POH)             Dimensions(Inches): 1.625" x 4.0" x 5.750"
+
+Power Requirements:  +12VDC +\- 5%. 0.6A Typical, 2.5A Maximum
+                     + 5VDC +\- 5%. 1.7A Typical, .75A Maximum
+
+==============================================================================
+
+                           LXT-xxxA PCB Layout
+зддддбддддддддд© здд©  здддддддддд©  зддд©    зддддддддд©  зд©  здддддддддд©
+Ё    Ё         юды  юдды          юдды   юдддды         юдды юдды          Ё
+Ё J3 Ё                 имммммммммммммммммммммм╩                            Ё
+Ё    Ё    J6           ╨    9  7  5  3  1     ╨                            Ё
+юдддбы зддддд©         ╨  здддддддддддддддд©  ╨                        здбде
+зддда© Ё:::|:Ё<дддддддд╤  Ё *  *  *  ш  *  Ё  ╨                        Ё цде
+Ё    ц юддддды         ╨  Ё *  *  *  ш  *  Ё  ╨                     J5 Ё цде
+Ё    ц                 ╨  юдддддддддддддддды  ╨                        Ё цде
+Ё    ц                 ╨   10  8  6  4  2     ╨                        юдаде
+Ё    ц                 хмммммммммммммммммммммм╪                        здбде
+Ё    ц                                                                 Ё цде
+Ё J1 ц                                                                 Ё цде
+Ё    ц                                                              J2 Ё цде
+Ё    ц                                                                 Ё цде
+Ё    ц                                                                 Ё цде
+Ё    ц                                                                 Ё цде
+Ё    ц                                                                 юдаде
+Ё    ц                                                                 здбде
+юдддбы                                                              J4 Ё цде
+    Ё      зд©        To attach an external LED, use pins 9-10ддддддд> юдаде
+    юдддддды Ё                                                          здды
+    здддддддды                                                          юдд©
+    юдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
+
+    LXT-A Jumper Designations           Ё1-2Ё3-4Ё5-6Ё7-8Ё9-10Ё
+    здддддддддддддддддддддддддддддддддддедддедддедддедддедддд╢
+    Ё Master/Slave                      Ё   Ё   Ё   Ё   Ё    Ё
+    Ё  Only drive in single drive sys   Ё R Ё   Ё   Ё   Ё    Ё
+    Ё  Master in dual drive system      Ё R Ё   Ё   Ё   Ё    Ё
+    Ё  Slave in dual drive system       Ё J Ё   Ё   Ё   Ё    Ё
+    цдддддддддддддддддддддддддддддддддддедддедддедддедддедддд╢
+    Ё Drive Active (System LED)         Ё   Ё J Ё   Ё   Ё    Ё
+    цдддддддддддддддддддддддддддддддддддедддедддедддедддедддд╢
+    Ё Slave Present                     Ё   Ё   Ё   Ё   Ё    Ё
+    Ё  One drive in single drive sys    Ё   Ё   Ё R Ё   Ё    Ё
+    Ё  Master in dual drive system      Ё   Ё   Ё R Ё   Ё    Ё
+    Ё  Slave in dual drive system       Ё   Ё   Ё O Ё   Ё    Ё
+    цдддддддддддддддддддддддддддддддддддедддедддедддедддедддд╢
+    Ё Two Drive System                  Ё   Ё   Ё   Ё   Ё    Ё
+    Ё  One drive in single drive sys    Ё   Ё   Ё   Ё R Ё    Ё
+    Ё  Master in dual drive sys         Ё   Ё   Ё   Ё J Ё    Ё
+    Ё  Slave in dual drive sys          Ё   Ё   Ё   Ё R Ё    Ё
+    цдддддддддддддддддддддддддддддддддддедддедддедддедддедддд╢
+    Ё Sync Spindle Pulse Source         Ё   Ё   Ё   Ё   Ё    Ё
+    Ё  If receiving pulse               Ё   Ё   Ё   Ё   Ё R  Ё
+    Ё  If transmitting pulse*           Ё   Ё   Ё   Ё   Ё J  Ё
+    юдддддддддддддддддддддддддддддддддддадддадддадддадддадддды
+      J=Jumpered R=Removed O=Optional
+      *=This jumper may only be used
+        only on one drive in an array
+
+     CMOS Configuration:     Cyls  Hds  Write  Landing Sec/Trk
+                                       PreComp  Zone
+     200.5MB Capacity        ---------------------------------
+     (191 Million Bytes)      816   15     0       0       32
+
+          NOTE:  This drive has been factory Low Level Formatted.  
+
+               LXT-200A is a trademark of Maxtor Corporation.
+              AT is a registered trademark of IBM Corporation.
+              Specifications subject to change without notice.
+                     Copyright 1992 Maxtor Corporation.
+==============================================================================
+

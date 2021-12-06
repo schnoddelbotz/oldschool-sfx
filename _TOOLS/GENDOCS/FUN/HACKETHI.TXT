@@ -1,0 +1,17 @@
+                        Die Hackerethik:
+                        ================
+
+1. Der Zugriff auf Computer und alles, was Dir zeigen kann, wie diese
+   Welt funktioniert, soll unbegrenzt und vollstaendig sein.
+
+2. Alle Information soll frei und unbeschraenkt sein.
+
+3. Beurteile einen Hacker nach dem, was er tut, nicht an Hand handelsueblicher
+   Kriterien wie Aussehen, Alter, Rasse, Geschlecht oder gesellschaftlicher
+   Stellung.
+
+4. Man kann mit einem Computer Kunst und Schoenheit schaffen.
+
+5. Computer koennen Dein Leben zum Besseren veraendern.
+
+6. Muelle nicht die Daten anderer Leute.

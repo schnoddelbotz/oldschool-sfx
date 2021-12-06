@@ -1,0 +1,119 @@
+H2bench -- by Harald B”geholz / c't Magazin fr Computertechnik
+Copyright (C) 1996 Verlag Heinz Heise GmbH
+===============================================================
+
+
+H2bench l„uft unter DOS und greift direkt ber das BIOS auf die
+Festplatte zu. Um unsere Messungen nachvollziehen zu k”nnen, mssen
+Sie DOS ohne irgendwelche Cacheprogramme und nur mit den unbedingt
+notwendigen Treibern booten. Im Falle des SCSI-Adapters von NCR ist
+das der Doscam-Treiber, ohne den die Platten nur im langsameren
+Asynchronmodus des SCSI-Busses betrieben wrden. Fr EIDE-Platten ist
+in der Regel kein Treiber erforderlich. Das BIOS unseres Testsystems
+(Asus-Board mit Triton-Chipsatz) erreicht auch ohne Treiberhilfe die
+volle Performance. Bei anderen Boards kann es jedoch durchaus zu einer
+Leistungssteigerung fhren, einen Treiber fr Busmaster-Betrieb zu
+laden. Das gilt insbesondere fr Pentium-Pro-Boards, die auf dem
+Natoma-Chipsatz basieren. Der begrenzt n„mlich im treiberlosen
+Normalbetrieb die Transferrate auf wenig mehr als 4 MByte/s -- nicht
+genug fr moderne EIDE-Platten.
+
+In den DOS-Boxen von Windows, Windows 95 oder OS/2 liefert H2bench
+keine zuverl„ssigen Ergebnisse. Ebenso wrden Treiber wie Emm386, die
+den Prozessor im virtuellen 8086-Modus betreiben, die Messungen
+verf„lschen und sollten daher weggelassen werden.
+
+H2bench erwartet auf der Kommandozeile die Nummer der zu testenden
+Festplatte sowie Optionen, die die durchzufhrenden Tests festlegen.
+Ein Aufruf ohne Parameter liefert einen kurzen Hilfstext. Alle
+Optionen mssen als Kleinbuchstaben angegeben werden. Der wichtigste
+Parameter ist die Nummer der zu testenden Festplatte. Die erste
+physikalische Platte hat die Nummer 0, die n„chste die Nummer 1 und so
+weiter. Gibt man auf der Kommandozeile nur die Plattennummer ohne
+Optionen an, so zeigt H2bench das Mapping (Zylinder, K”pfe, Sektoren)
+und die Kapazit„t der Platte an. Wenn mehrere Platten im Rechner sind,
+empfiehlt es sich, H2bench zun„chst einmal nur so aufzurufen, um
+sicherzustellen, daá man die richtige Platte trifft.
+
+Da H2bench unter Umgehung der Partitionierung direkt auf die Platte
+zugreift, wrden beim Beschreiben der Platte alle Daten verlorengehen.
+Daher fhrt er alle Benchmarks normalerweise nur lesenderweise durch.
+Erst die Option "-!" aktiviert auch die Schreibmessungen. Diese
+wiederum funktionieren aus Sicherheitsgrnden nur, wenn keine
+Partitionen auf der Platte sind.
+
+Die drei Komponenten der H2bench-Messung sind die Zonenmessung, die
+Hdbench-Messung und die Messung der mittleren Zugriffszeit. Die Option
+"-z" aktiviert die Zonenmessung, "-s" die Seek-Messung. Die
+Hdbench-Messung kombiniert Lese- und Schreibzugriffe mit verschiedenen
+Blockgr”áen in einem 6 MByte groáen Bereich der Platte. Die Option "-h
+<n>" veranlaát diese Messung bei <n> % der Kapazit„t der Platte (die
+Leerstelle zwischen -h und <n> ist wichtig). Wir fhren die
+Hdbench-Messung grunds„tzlich in der schnellsten Medienzone durch, die
+bei den allermeisten Festplatten ganz auáen, also bei 0 % der
+Kapazit„t liegt.
+
+Mit der Option "-ha" sucht sich H2bench die schnellste Medienzone
+selbst. Dazu fhrt das Programm zun„chst die Zonenmessung durch und
+legt dann die Hdbench-Zone an Hand der ermittelten Leseraten fest. Da
+es die Schreibrate fr die Wahl der schnellsten Zone nicht
+bercksichtigt, kann es in seltenen F„llen passieren, daá es die
+"falsche" Zone w„hlt, so zum Beispiel bei den derzeit neusten
+EIDE-Platten von Western Digital. Bei der AC21600 bricht die
+Schreibrate im Auáenbereich stark ein, der gewichtete Mittelwert
+betr„gt nur 2,95 MByte/s. Miát man dagegen bei 20 % der Kapazit„t,
+wo die Schreibrate in Ordnung ist, so schafft sie respektable
+3,39 MByte/s. Die Option "-a" schlieálich fhrt alle drei
+Teilmessungen durch; sie entspricht der Kombination von "-z", "-ha"
+und "-s".
+
+Die Option "-w <Dateiname>" legt einen <Dateinamen> fr das
+Abspeichern der Ergebnisse fest. Der angegebene Name darf keine
+Extension enthalten, da das Programm diese selbst anh„ngt. H2bench
+erzeugt zwei Ergebnisdateien mit den Extensions ".txt" und ".ps". Die
+Die .txt-Datei ist eine ASCII-Datei, die im vorderen Teil die
+Ergebnisse im Klartext zusammenfaát. Der hintere Teil enth„lt die
+Detailergebnisse der Hdbench-Messung und der Zonenmessung. Vorsicht:
+Die Zonenmessung hat fr Lesen und Schreiben jeweils bis zu 1000
+Meápunkte. Die Ergebnisse stehen jeweils in einer eigenen Zeile, um
+die Auswertung mit anderen Programmen zu erm”glichen. Bevor Sie auf
+die Idee kommen, die .txt-Datei auszudrucken, sollten Sie mit einem
+Texteditor den hinteren Teil der Datei abschneiden, da Sie sonst ber
+30 Seiten "Zahlenmll" zu Papier bringen.
+
+Fr den Ausdruck ist die .ps-Datei gedacht. Sie enth„lt alle
+Meáergebnisse auf einer DIN-A4-Seite zusammengefaát im
+PostScript-Format. Besitzer eines PostScript-Druckers k”nnen die Datei
+einfach so zum Drucker schicken, beispielsweise mit dem DOS-Befehl
+
+copy /b Dateiname.ps prn
+
+Wer ber einen weniger edlen Drucker verfgt oder die Ergebnisse am
+Bildschirm betrachten m”chte, kann den Freeware-Interpreter
+GhostScript beziehungsweise das Programm GhostView zur Anzeige
+benutzen. Die Programme sind fr praktisch alle Betriebssysteme
+verfgbar und stehen unter anderem in der c't-Mailbox zum kostenlosen
+Download bereit.
+
+Zu Dokumentationszwecken dienen die folgenden Optionen: "-tt", gefolgt
+von der Bezeichnung der Festplatte (in Anfhrungszeichen), legt den
+"Titel" des Tests fest. Entsprechend gibt es "-tb" fr das BIOS, "-tc"
+fr die CPU, "-tm" fr das Motherboard und "-ta" fr den verwendeten
+(SCSI- oder EIDE-) Adapter. Da letztere Komponenten h„ufig
+gleichbleiben, kann man die Angaben auch in Environment-Variablen
+unterbringen, zum Beispiel per SET-Befehl in der Autoexec.bat. Die
+entsprechenden Variablen heiáen H2btitle, H2bbios, H2bcpu, H2bboard
+und H2badapter und kommen dann zum Zuge, wenn auf der Kommandozeile
+keine antsprechenden Angaben vorliegen.
+
+Meist braucht man beim Test dann nur noch den Namen der Festplatte
+anzugeben. Ein typischer Aufruf lautet beispielsweise
+
+h2bench 0 -a -! -tt "Festplatte 42" -w 42
+
+Dies fhrt mit der ersten am Rechner angeschlossenen Festplatte alle
+Messungen durch und speichert die Ergebnisse in den beiden Dateien
+"42.txt" und "42.ps".
+
+Bei Fragen zu H2bench wenden Sie sich bitte per EMail an
+bo@ct.heise.de.

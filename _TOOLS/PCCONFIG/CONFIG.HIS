@@ -1,0 +1,117 @@
+
+History:
+========
+Punkte in eckigen Klammern wurden in neueren Versionen wieder entfernt.
+
+ V6.31 * erkennt Art des DPMI-Servers (QDPMI, OS2, Windows, 386max)
+       * erkennt 387-Emulator von QuickWare
+       * erkennt Hyperdisk 4.51
+       * erkennt weitere PS/2 Modelle
+       * erkennt weiteren SIS Chipsatz
+ V6.40 * erkennt Intel Pentium
+       * erkennt Details zu UMC Chipsatz
+       * Plattentest 'Lineares Lesen' implementiert
+       * differenziert OPTi 386 ChipsÑtze
+       * erkennt weitere OAK, NCR, Trident, WD, C&T, Cirrus, Primus VGA-Chips
+       * unterscheidet QDPMI V1.00 & V1.01
+ V6.41 * erkennt Smartdrive V4.10 und EMM386 V4.45
+ V6.45 * IDE-Cache wird fÅr den Rotationstest abgeschaltet
+       * erkennt weitere SCSI Controller und Board-ChipsÑtze
+       * erkennt Details zu SIS und Symphony Chipsatz
+       * Chipsatz kann in der .INI Datei direkt angegeben werden
+ V6.50 * erkennt 220 weitere Microchannel-Karten
+ V7.00 * Maussteuerung (na endlich)
+       * MenÅpunkt Logische Laufwerke
+       * erkennt VESA-Local-Bus und PCI Mainboards
+       * erkennt Hyperdisk 4.65, Novel-Lite, NL-Cache
+       * erkennt weitere ChipsÑtze: OPTi, Shasta, PC-CHIPS
+       * testet mehr VESA Grafikmodi auf ihre Wiederholfrequenz
+       * erkennt weitere VGA-Chips
+ V7.05 * erkennt Cyrix 486S CPU, Cirrus 5428 Chip
+       * Fehlerkorrekturen
+ V7.10 * erkennt UART 16C552, Toshiba Chipsatz
+       * differenziert First und Second Level Cache, Cirrus VGA-Chips
+       * zeigt mehr als 2 Festplatten korrekt an
+       * erkennt Details zum Shasta Chipsatz
+       * erkennt einige Soundgalaxy-kompatible Karten
+       * zeigt Details zum Cyrix 486dlc an
+       * erkennt S3 86c805-P & ET4000.W32 Chips
+ V7.15 * erkennt weitere Cirrus, Trident, S3 und TSENG VGA Chips
+       * erkennt weitere DACs auf TSENG VGA Karten
+       * erkennt QDPMI 1.02 & 1.03, DoubleSpace Festplattenkomprimierer
+       * erkennt 12 weitere Microchannel-Karten
+       * erkennt Stacker Versionsnummer, weitere RAM-Disks
+ V7.20 * CDROM-Benchmark eingebaut
+       * erkennt und unterscheidet nun alle zZ verfÅgbaren Cyrix CPUs,
+         einschlie·lich Cx486Ru, Cx486S, Cx486dx
+       * erkennt Novell DOS 7 und Versionsnummern von dessen EMM386
+         und DPMS Server
+       * erkennt 'Advanced Power Managment' Funktionen auf Laptops
+       * erkennt 'Green BIOS' Funktion auf einigen Mainboards
+       * erkennt nun auch die neueren 'GenuineIntel CPUs' zuverlÑssig
+       * Neues .INI Fileformat. Bitte keine alten .INI Files benutzen
+ V7.25 * erkennt DAC Chips auf ATI Ultra VGAs
+       * bessere Windows KompatibilitÑt
+       * erkennt Weitek 9000/9100 & S3 864 Chips
+       * erkennt 486DX/2 wenn CPUID Befehl unterstÅtzt wird
+       * erkennt Intel 486SXJ CPU, TI486SXL CPU
+       * gibt Revision von neueren Cyrix CPUs aus
+ V7.26 * erkennt Intel 486DX4 CPU
+       * erkennt weitere Cirrus und S3 VGA Chips
+       * erkennt PC-Kwik RAM-Disk und HD-Cache Programm
+ V7.27 * erkennt UMC 5US CPU
+       * erkennt EPP BIOS
+       * Vergleichsliste aktualisiert
+       * TaktÅberwachung an Pentiums angepasst, lÑ·t sich auch abschalten
+       * eigene Vergleichsliste kann auch in der SW Version geladen werden
+ V7.30 * erkennt Intel Saturn und Neptun Chipsatz in Award BIOS
+       * prÅft Enhanced IDE Bestandteile
+       * prÅft FDIV Fehler auf Pentiums, Fehler in Cyrix DX
+       * alternativer Accesstest Åber Lesefunktion
+       * erkennt SIS471 Register korrekt
+       * zeigt POWER.EXE und VESA Power Managment an
+       * erkennt weiteren Cirrus 5428 Chip Revision
+       * Megabyte Definition kam in der .INI Datei geÑndert werden:
+         1000x1000 Byte oder 1024x1024 Byte
+       * erkennt Speichergrî·e auf ET4000.W32 richtig
+       * erkennt IBM XGA
+       * Benchmark fuer bis zu 4 Festplatten
+       * erkennt Takt von IBM486SLC und IBM486BL richtig
+       * erkennt Hyperdisk V4.70
+       * sucht PCMCIA BIOS
+       * gibt CPU Vendor aus zB GenuineIntel oder CyrixInstead
+       * erkennt VLB VGA Chipsatz Cirrus 6440
+       * erkennt 80386SL, 80486SL und UMC U5D CPUs
+ V7.31 * sucht nach VGA Kennung Diamond VIPER => Weitek 9000 Chip
+       * erkennt Trident 9440, S3 864-P und ATI Mach64 VGA Chips
+       * erkennt Intel 486DX2- Write Back CPU
+       * erkennt PCI-EISA Kombiboards
+       * keine Videospeicher Åber 4 MB mehr
+       * Falschmeldung 'CONFIG.OVL not found' behoben
+ V7.33 * erkennt viel mehr mathematische CoProzessoren, incl IIT, ULSI,
+         Cyrix
+ V8.00 * ASPI-Info implementiert
+       * erkennt Intel DX/2 DX/4 etc, nicht nur 80486
+       * erkennt NexGen586, C&T 38600DX CPU
+       * erkennt weitere S3 VGA Chips, Cirrus 5429 Chip
+       * Zeigt PCI Slot Belegung an, ca 260 Hersteller
+       * komplett neue OberflÑche im Turbo-Vision Look
+       * XMS Anzeige bis 64 MB
+       * Festplattenparameter > 1024 Cylinder ermîglicht
+       * verbesserte LauffÑhigkeit unter Windows
+ V8.02 * korrigiert: falsche Zugriffszeitenwerte bei IDE-Platten >1024 Zyl
+                     falsche Plattengrî·e, wenn >2 Platten vorhanden
+                     CD-ROM Benchmark
+       * erkennt AMD 486 DX/4 SV8B (WriteBack) CPU
+       * zeigt IDE-Parameter von >2 Platten an
+       * CONFIG.VGL und CONFIG.XXX nun aus dem Programm editierbar
+ V8.04 * erkennt AMD 5x86 CPU, Cyrix DX/4, Cyrix 5x86, 6x86, Pentium Overdrive
+       * mehr Details-Info zu Cyrix-CPUs
+       * kleinere Anpassungen an CPUs >100 MHz, Vergleichsliste aktuallisiert
+       * erkennt S3 Trio64 V+ Chip
+ V8.05 * keine Fehlermeldung mehr, falls keine CD im Laufwerk liegt
+ V8.10 * Cache-Grî·en-Erkennung jetzt bis 512k
+       * Chipsatzdetail-Infos fÅr Intel TRI*ON, Neptun u.a.
+       * erkennt ca 160 neue PCI-Karten-Hersteller
+       * erkennt viel mehr VGA Chips, inclusive Matrox, Avance Logic, ARK
+

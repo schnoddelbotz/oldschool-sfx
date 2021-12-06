@@ -1,0 +1,92 @@
+[common]
+rem DEVICE=C:\TOOLS\PLUGPLAY\DRIVERS\DOS\DWCFGMG.SYS
+rem DEVICE=C:\TOOLS\SB16\DRV\CTSB16.SYS /UNIT=0 /BLASTER=A:220 I:5 D:1 H:5
+rem DEVICE=C:\TOOLS\SB16\DRV\CTMMSYS.SYS
+dos=high,umb
+country=049,,c:\dos\country.sys           
+buffers=40
+FILES=80
+lastdrive=o
+stacks=9,256
+switches=/f
+rem shell=C:\COMMAND.COM /E:1024 /P
+ 
+[menu]
+menudefault=stoc,3
+menucolor=15,1
+menuitem=stdr,normale  konfiguration  (aspi, aspicd,maus)
+menuitem=stoc,normal,  ohne cd        (smartdrv)
+menuitem=nodr,minimale konfiguration  (keine treiber)
+menuitem=emsd,konfiguration  mit ems  (maus,aspi+cd)
+menuitem=ramd,10  mb  ram-drive       
+menuitem=wind,windows  starten        (cd-rom,smartdrive)
+menuitem=ipxs,ipx  -soft laden
+ 
+[stdr]
+rem .........DEVICE=C:\TOOLS\PLUGPLAY\DRIVERS\DOS\DWCFGMG.SYS
+SET LOADHIDATA=D:\QEMM\LOADHI.RF
+DEVICE=d:\qemm\QEMM386.SYS aram=ca80-cfff rf ram
+device=d:\qemm\dos-up.sys @d:\qemm\dos-up.dat
+DEVICE=D:\QEMM\LOADHI.SYS /RF C:\SCSI\ASPI8DOS.SYS /D
+device=C:\SCSI\ASPICD.SYS /D:PIONEER
+device=d:\qemm\loadhi.sys /rf C:\windows\ifshlp.sys
+device=d:\qemm\loadhi.sys /rf c:\dos\ansi.sys
+rem .........DEVICE=C:\TOOLS\SB16\DRV\CTSB16.SYS /UNIT=0 /BLASTER=A:220 I:5 D:1 H:5
+rem ........ DEVICE=D:\QEMM\LOADHI.SYS /RF C:\TOOLS\SB16\DRV\CTMMSYS.SYS
+SHELL=C:\COMMAND.COM C:\ /P
+ 
+[stoc]
+rem DEVICEhigh=C:\TOOLS\PLUGPLAY\DRIVERS\DOS\DWCFGMG.SYS
+device=c:\dos\himem.sys /TestMem:Off
+devicehigh=c:\dos\emm386.exe noems x=d800-d8ff
+rem DEVICEhigh=C:\TOOLS\SB16\DRV\CTSB16.SYS /UNIT=0 /BLASTER=A:220 I:5 D:1 H:5
+
+devicehigh=c:\dos\ansi.sys
+devicehigh=c:\windows\ifshlp.sys
+rem devicehigh=C:\scsi\ASPI8DOS.SYS /D
+rem devicehigh=C:\DOS\RAMDRIVE.SYS 19000 /E
+ 
+[nodr]
+device=c:\dos\himem.sys /TestMem:Off
+rem device=c:\deskscan\mini400i.sys not required or supported !
+rem device=c:\deskscan\sjiix.sys
+rem device=c:\windows\ifshlp.sys
+switches=/f
+rem no drivers to install !
+ 
+[emsd]
+rem device=c:\deskscan\mini400i.sys not required or supported !
+rem device=c:\deskscan\sjiix.sys
+rem device=c:\windows\ifshlp.sys
+switches=/f
+device=c:\dos\himem.sys
+devicehigh=c:\dos\emm386.exe x=d800-d8ff
+devicehigh=c:\dos\ansi.sys
+DEVICEhigh=C:\SCSI\ASPI8DOS.SYS /D
+devicehigh=C:\SCSI\ASPICD.SYS /D:PIONEER
+DEVICEhigh=C:\TOOLS\PLUGPLAY\DRIVERS\DOS\DWCFGMG.SYS
+ 
+[ramd]
+switches=/f
+device=c:\dos\himem.sys
+device=C:\DOS\ANSI.SYS
+devicehigh=c:\dos\emm386.exe x=d800-d8ff
+devicehigh=c:\dos\ramdrive.sys 10000 /e
+DEVICEhigh=C:\TOOLS\PLUGPLAY\DRIVERS\DOS\DWCFGMG.SYS
+ 
+[wind]
+rem device=c:\deskscan\mini400i.sys not required or supported !
+rem device=c:\deskscan\sjiix.sys
+rem device=c:\windows\ifshlp.sys
+switches=/f
+device=c:\dos\himem.sys
+devicehigh=c:\dos\emm386.exe noems x=d800-d8ff
+devicehigh=c:\dos\ansi.sys
+ 
+[ipxs]
+rem device=c:\deskscan\mini400i.sys not required or supported !
+rem device=c:\deskscan\sjiix.sys
+rem device=c:\windows\ifshlp.sys
+switches=/f
+device=c:\dos\himem.sys
+devicehigh=c:\dos\emm386.exe noems x=d800-d8ff

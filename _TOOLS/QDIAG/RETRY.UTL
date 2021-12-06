@@ -1,0 +1,10 @@
+if r28 eq 0 [retry = 0]
+if r28 eq 1 [retry = 1]
+if r28 eq 2 [retry = 2]
+if r28 eq 3 [retry = 3]
+if r28 eq 4 [retry = 4]
+if r28 eq 5 [retry = 5]
+if r28 eq 6 [retry = 6]
+if r28 eq 7 [retry = 7]
+if r28 eq 8 [retry = 8]
+

@@ -1,0 +1,9 @@
+{Initialising...}
+{}
+{IPX is already loaded}
+{}
+{LOCALIPX cannot be unloaded because another TSR has been loaded}
+{LOCALIPX unloaded from memory}
+{LOCALIPX is not loaded}
+{LOCALIPX is already loaded - type LOCALIPX /U to unload from memory}
+

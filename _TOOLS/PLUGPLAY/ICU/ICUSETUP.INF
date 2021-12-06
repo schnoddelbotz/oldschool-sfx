@@ -1,0 +1,30 @@
+[General]
+RestartWindows=No
+MiscEdits=No
+RemoveSBProVol=No
+AddSndblstSection=No
+DisplayIntroDialog=No
+
+[Introduction]
+"This program will create the Configuration Manager program group window."
+
+[End]
+"Configuration Manager program group window is created."
+
+[ConflictDrivers]
+
+[ConflictDevices]
+
+[Windows]
+
+[Windows.System]
+
+[Ini]
+
+[progman.groups]
+"Configuration Manager", cm.grp
+
+[cm.grp]
+"ISA Configuration Utility", winicu.exe
+"ISA User's Guide", icuug.hlp
+

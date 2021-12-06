@@ -1,0 +1,129 @@
+Boot-B:  Boot the B: Drive
+Copyright (c) 1990, 1991 Solutions by the Numbers
+
+Written by Scott A. Numbers
+
+Do you have tons of games on 5.25" diskettes that can only run by
+booting them, but you can't run them because your A: drive is a 3.5"
+drive?  Now you can.  By using Boot-B: you can start most of those
+diskettes from the B: drive.  Boot-B: is a program that creates a new
+boot sector for a disk in drive A: which when booted will pass the
+boot process over to the B: drive.
+
+It is not a TSR (obviously), nor does it in any way alter the format of
+the diskette.  It simply replaces the non-functional boot sector of
+the floppy with one that redirects the boot process.  All DOS disk
+parameters are left unaltered.  Since Boot-B: does all of its changes
+in the boot sector, the BOOT_B program does not need to be present on
+the floppy disk.
+
+In many cases, using BOOT_B without any parameters will work fine.  Some
+hardware configurations may require one of the switches to help identify
+the disk and drive combination.
+
+Using Boot-B:
+
+  BOOT_B  [options]
+
+  options are:
+
+           T1  -   Drive B: is a 360K floppy in a 360K drive
+
+           T2  -   Drive B: is a 360K floppy in a 1.2M drive
+
+           T3  -   Drive B: is a 1.2M floppy in a 1.2M drive
+
+           T4  -   Drive B: is a 720K floopy in a 720K drive
+
+       REBOOT  -   Restart system skipping memory tests
+
+     WARMBOOT  -   Restart system skipping memory tests (same as reboot)
+
+     COLDBOOT  -   Restart system including memory tests
+
+
+  Place a formatted diskette in drive A: and type the command:
+
+     BOOT_B  [option1 option2]
+
+  When Boot-B: is run, it will check the disk in Drive A: and determine
+  whether it currently has a system on it.  If it does have a system
+  on it, you will be asked if you want to continue with the process.
+  If you choose to continue, Boot-B: will alter the disk in drive A: so
+  that whenever the computer is started with that disk in drive A:,
+  the B: drive will be used to start the computer.  If you use Boot-B:
+  on a diskette with a system, it will remove the system files from
+  the diskette since they are no longer needed.
+
+  If the disk in drive A: does not contain a system but Boot-B:
+  determines it was not formatted under DOS (possibly a game disk),
+  you will be given a warning that it was not formatted under DOS and
+  asked if you want to continue.  If you continue, the disk in Drive
+  A: will be altered to Boot the B: drive.
+
+  If the disk was formatted under DOS and there is no system on it,
+  Boot-B: will alter the disk in Drive A: without any warnings or
+  prompts.
+
+  Boot-B: does all of its changes in the boot record of the disk in
+  drive A:.  Under no circumstances will it write to your fixed disk.
+
+  Examples:
+
+      BOOT_B T2 Warmboot     - will alter the disk in drive A: so that
+                               it will boot a 360k diskette in a 1.2M
+                               B: drive.  After the boot sector is fixed
+                               on the A: disk the computer will be
+                               warm started.
+
+      BOOT_B T3 Coldboot     - will alter the disk in drive A: so that
+                               it will boot a 1.2M diskette in a 1.2M
+                               B: drive.  After the boot sector is fixed
+                               on the A: disk the computer will be
+                               cold started.
+
+      BOOT_B                 - will alter the disk in drive A: so that
+                               it will boot the diskette in Drive B:
+                               using the ROM BIOS default settings for
+                               the drive.
+
+
+You may get an error message telling you to try another Boot-B:
+configuration.  This is caused by incorrect information for the disk
+and drive.  Simply re-run Boot-B: using the correct option for the
+disk and drive (T1, T2, T3, or T4).
+
+Items to consider:
+
+   1.  If your B: drive needs to a device driver such as DRIVER.SYS
+       to make it work, Boot-B: most likely won't work since the
+       device drivers cannot be loaded before the boot process
+       starts.  But it doesn't hurt to try.
+
+   2.  If your games were written to run on a system with Color Graphics
+       Adapter and they look funny on your VGA, try setting your adapter
+       to CGA and reboot the computer.  For example: If you have a
+       Paradise VGA card and you need to boot in CGA mode, create your
+       boot disk, then issue the command VGAPLUS CGA REBOOT.  This
+       will reboot your system in CGA mode.
+
+   3.  Starting DOS from the B: drive is not recommended.  DOS will overlay
+       some of the drive controlling logic placed in top of conventional
+       memory at boot time.
+
+This program is supplied AS IS without any warranty, expressed or
+implied, including but not limited to fitness for a particular
+purpose.
+
+If you find Boot-B: useful, a registration of $10.00 would be
+appreciated.  For your registration, you will receive a diskette
+containing the assembly source for BOOT_B.  Send check or money
+order to:
+
+               Solutions by the Numbers
+               P.O. Box 1856
+               Germantown, MD 20875
+
+Have you been searching high and low for that certain program or utility
+to handle a specific need.  Drop us a note and we'll see what we can do.
+

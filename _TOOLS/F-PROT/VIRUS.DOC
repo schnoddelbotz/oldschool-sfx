@@ -1,0 +1,217 @@
+
+                         Computer Viruses: An Introduction
+
+What is a computer virus ?
+
+Well, the best definition we have been able to come up with is the
+following 4-part one:
+
+   #1 A virus is a program that is able to replicate, that is create
+      (possibly modified) copies of itself.
+
+   #2 The replication is intentional, not just a side-effect.  
+
+   #3 At least some of replicants in turn are also viruses by the same
+      definition.
+
+   #4 A virus has to attach itself to a "host", in the sense that
+      execution of the host implies execution of the virus.  
+
+#1 distinguishes viruses from non-replicating malware, such as Trojans,
+ANSI bombs and logic Bombs.
+
+#2 distinguishes between viruses and programs such as DISKCOPY.COM
+that can replicate.
+
+#3 is needed to exclude certain "intended viruses", that attempt to
+replicate, but fail - they simply do not qualify as "real" viruses.
+
+#4 is necessary to distinguish between viruses and worms, which do not
+require a host.
+
+A Trojan is a program that pretends to do something useful (or at least
+interesting), but when it is run, it may have some harmful effect, like
+scrambling your FAT (File Allocation Table) or formatting the hard disk.
+
+Viruses and Trojans may contain a "time-bomb", intended to destroy
+programs or data on a specific date or when some condition has been
+fulfilled.
+
+A time bomb is often designed to be harmful, maybe doing something like
+formatting the hard disk.  Sometimes it is relatively harmless, perhaps 
+slowing the computer down every Friday or making a ball bounce around the
+screen.  However, there is really no such thing as a harmless virus.  Even if
+a virus has been intended to cause no damage, it may do so in certain cases,
+often due to the incompetence of the virus writer or unexpected hardware
+or software revisions.
+
+A virus may be modified, either by the original author or someone else, so
+that a more harmful version of it appears.  It is also possible that the
+modification produces a less harmful virus, but that has only rarely
+happened.
+
+The damage caused by a virus may consist of the deletion of data or
+programs, maybe even reformatting of the hard disk, but more subtle damage
+is also possible.  Some viruses may modify data or introduce typing errors
+into text.  Other viruses may have no intentional effects other than just
+replicating.
+
+The major groups of viruses on PCs are boot sector viruses (BSV), program
+viruses and application viruses.
+
+A BSV infects boot sectors on diskettes and/or hard disks.  On diskettes, 
+the boot sector normally contains code to load the operating system files. 
+The BSV replaces the original boot sector with itself and stores the
+original boot sector somewhere else on the diskette or simply replaces it
+totally.  When a computer is then later booted from this diskette, the
+virus takes control and hides in RAM.  It will then load and execute the
+original boot sector, and from then on everything will be as usual. 
+Except, of course, that every diskette inserted in the computer will be
+infected with the virus, unless it is write-protected.
+
+A BSV will usually hide at the top of memory, reducing the amount of
+memory that the DOS sees.  For example, a computer with 640K might appear
+to have only 639K.
+
+Most BSVs are also able to infect hard disks, where the process is similar
+to that described above, although they usually infect the master boot
+record instead of the DOS boot record.
+
+Program viruses, the second type of computer viruses, infect executable
+programs, usually .COM and .EXE files, but sometimes also overlay files,
+device drivers or even object files.
+ 
+An infected program will contain a copy of the virus, usually at the end,
+in some cases at the beginning of the original program, and in a few cases
+the virus is inserted in the middle of the original program.
+
+When an infected program is run, the virus may stay resident in memory
+and infect every program run.  Viruses using this method to spread the
+infection are called "Resident Viruses".
+
+Other viruses may search for a new file to infect, when an infected
+program is executed.  The virus then transfers control to the original
+program.  Viruses using this method to spread the infection are
+called "Direct Action Viruses".  It is possible for a virus to use both
+methods of infection.
+
+Most viruses try to recognize existing infections, so they do not infect
+what has already been infected.  This makes it possible to inoculate
+against specific viruses, by making the "victim" appear to be infected.
+However, this method is useless as a general defense, as it is not 
+possible to inoculate the same program against multiple viruses.
+
+The third type of viruses are application viruses, which do not infect
+normal programs, but instead spread as "macros" in various types of files,
+typically word-processor documents or spreadsheets.
+
+In general, viruses are just program - rather unusual programs perhaps,
+but written just like any other program.  It does not take a genius to
+write one - any average assembly language programmer can easily do it. 
+Fortunately, few of them do.
+
+Now - to correct some common misconceptions, here are a few bits of
+information about what viruses cannot do.
+
+        A virus cannot appear all by itself, it has to be written, just
+        like any other program.
+        
+        Not all viruses are intentionally harmful - some may only cause
+	minor damage as a side effect - however, there is no such thing
+	as a "harmless" virus.
+
+	Reading data from an infected diskette cannot cause an infection.
+
+        A write-protected diskette cannot become infected, if the
+	hardware is working properly.
+
+It used to be the case that a virus could not infect a computer unless it
+was booted from an infected diskette or an infected program was run on it,
+but alas, this is no longer true.  It is possible for a virus infection to
+spread, just by the act of reading an infected Microsoft Word document,
+for example, or through use of Lotus Notes, to name two well-known
+applications.
+
+It also used to be the case that a virus could not infect data files or
+spread from one type of computer to another - a virus designed to infect
+Macintosh computers could not infect PCs or vice versa, but with the
+appearance of application viruses this has changed as well - there are now
+a few viruses that can infect WinWord as well as MacWord.
+
+Apart from using anti-virus programs, there are several ways to protect
+your computer from viruses:
+
+        Rule #1 is: MAKE BACKUPS!!!  Keep good backups (more than one) of
+        everything you do not want to lose.  This will not only protect you
+        from serious damage caused by viruses, but is also necessary in the
+        case of a serious hardware failure.
+
+        Never boot a computer with a hard disk from a diskette because that
+        is the only way the hard disk could become infected with a BSV.
+        (well, strictly speaking, it can happen if you run a "dropper"
+        program too, but that happens extremely rarely).
+
+	If your BIOS allows you to change the boot sequence to "C: A:",
+	do it. This will give you very good protection against boot
+ 	sector virus infections.
+
+        Should you, by accident, have left a non-bootable diskette in
+        drive A: when you turn the computer on, the message
+
+                        Not a system disk.
+
+        may appear.  If the diskette was infected with a virus, it will now
+        be active, but may not have infected the hard disk yet. if this
+        happens, turn the computer off, or press the reset button.  It is
+        important to note that pressing Ctrl-Alt-Del will not be sufficient,
+        as a few viruses can survive that.
+
+        If the computer has no hard disk, but is booted from a diskette,
+        you should always use the same diskette, and keep it write-protected.
+
+        Keep all diskettes write-protected unless you need to write to them.
+        When you obtain new software on a diskette, write-protect the
+        diskette before you make a backup copy of it.  If it is not possible
+        to make a backup of the diskette, because of some idiotic
+        copy-protection, I do not recommend using the software.
+
+        Be really careful regarding your sources of software.  In general,
+        shrink-wrapped commercial software should be "clean", but there
+        have been a few documented cases of infected commercial software.
+        Public-Domain, Freeware and Shareware packages do not have to be
+        any more dangerous - it all depends on the source.  If you obtain
+        software from a BBS, check what precautions the SysOp takes against
+        viruses.  If he does not screen the software made available for
+        downloading, you should find another source.
+
+        Check all new software for infection before you run it for the
+        first time.  It is even advisable to use a couple of scanners from
+        different manufacturers, as no single scanner is able to detect
+        all viruses.
+
+        Obtain Shareware, Freeware and Public-Domain software from the
+        original author or reliable distribution sites, if at all possible.  
+
+        Look out for any "unusual" behavior on your computer, like:
+
+                Does it take longer than usually to load programs ?
+                Do unusual error messages appear ?
+                Does the memory size seem to have decreased ?
+                Do the disk lights stay on longer than they used to ?
+                Do files just disappear ?
+
+Anything like this might indicate a virus infection.
+
+If your computer is infected with a virus - DON'T PANIC!  Sometimes a
+badly thought out attempt to remove a virus will do much more damage
+than the virus could have done.  If you are not sure what to do, leave
+your computer turned off until you find someone to remove the virus for
+you.
+
+Finally, remember that some viruses may interfere with the disinfection
+operation if they are active in memory at that time, so before attempting
+to disinfect you MUST boot the computer from a CLEAN system diskette.
+
+It is also a good idea to boot from a clean system diskette before
+scanning for viruses, as several "stealth" viruses are very difficult do
+detect if they are active in memory during virus scanning.

@@ -1,0 +1,60 @@
+
+Important announcement from the Worldwide RAR Support and Registration Team:
+---------------------------------------------------------------------------
+
+We are pleased to announce that we can now offer a new service to all RAR
+users (registered and un-registered), via the Internet.
+
+The service revolves around an "automatic response" system, allowing you to
+receive RAR information via an automated e-mail message service, triggered by
+you writing to a particular internet address.
+
+By simply sending a message to the relevant address, the information sheet
+will be automatically sent to you. (The *text* of your message can be as short
+and simple as "Info please" ... it is the ADDRESS that triggers the
+information being sent)
+
+Here are the current addresses available, and information on what you will
+receive:
+
+E-mail to:                        Response message:
+---------                         ----------------
+
+ftp.rar@knowledgebase.fi          A list of ftp sites which are known to have
+                                  the current version of RAR available
+
+register.rar@knowledgebase.fi     Details of how to register RAR directly via
+                                  the Internet using your credit card (full
+                                  pricing information and a registration form
+                                  included)
+
+sites.rar@knowledgebase.fi        A list of the current RAR Support and       
+                                  Registration sites, with full contact
+                                  details
+
+whatsnew.rar@knowledgebase.fi     An information sheet giving the latest news 
+                                  on the current RAR release, and the most
+                                  recent additions to features and commands
+
+This list will be posted on a regular basis, together with news of any
+additional services available (Your suggestions would be welcomed!)
+
+In addition, general help and information enquiries may be addressed to:
+
+                    "helpdesk@knowledgebase.fi"
+
+Please ensure that (in this case) you include full particulars of your
+enquiry AND your location, so that your request may be forwarded to the
+nearest support site, where appropriate.
+
+                ษออออออออออออออออออออออออออออออออออออออป
+                บ  FTP site to get latest RAR version  บ
+                ศออออออออออออออออออออออออออออออออออออออผ
+
+ The official anonymous FTP site for RAR is ftp.elf.stuba.sk:/pub/pc/pack.
+ You may send comments on accessing this site to hubak@elf.stuba.sk,
+ <Peter Hubinsky>.
+
+
+RAR-HQ on behalf of Eugene Roshal
+

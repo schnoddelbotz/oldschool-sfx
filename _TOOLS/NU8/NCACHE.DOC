@@ -1,0 +1,192 @@
+----------------------------------------------------------------
+                  Norton Cache 8.0 Information
+----------------------------------------------------------------
+
+Diese Datei enth„lt wichtige Informationen ber Norton Cache, die nicht im
+Handbuch stehen.
+
+Wenn Sie diese Datei drucken m”chten, wechseln Sie in das Verzeichnis, in
+dem die Norton Utilities installiert sind (z. B. \NU), und geben Sie an der
+DOS-Eingabeaufforderung folgendes ein:
+
+      LP NCACHE.DOC /HI
+
+Sie k”nnen sich die Datei auch mit dem NDOS-Befehl "LIST NCACHE.DOC" am
+Bildschirm anzeigen.
+
+
+Kompatibilit„t mit Windows 3.1
+================================================================
+
+Diese Version von Norton Cache ist vollst„ndig kompatibel mit Windows
+3.1, sowohl im Standardmodus als auch im Erweiterten Modus.
+
+Wir haben herausgefunden - und Microsoft hat es best„tigt - daá Windows mit
+jedem Festplattencache inkompatibel ist, der EMS-Speicher (Expanded) benutzt.
+Mit einem Cache in EMS kann es passieren, daá der Computer blockiert,
+besonders wenn DOS-Programme in einem Fenster ausgefhrt werden. Wir haben
+NCACHE daher dahingehend ge„ndert, daá EMS-Cache-Puffer immer auf 0 KB
+reduziert werden, wenn Windows l„uft. Das bedeutet, daá zum Parameter /EXP
+nur eine Zahl angegeben werden darf, n„mlich die Gr”áe des DOS-Cache. Wenn
+Sie mit Windows arbeiten, empfehlen wir dringend die Verwendung von
+XMS-Speicher (Extended) fr den Cache (also die Angabe mit dem
+Parameter /EXT).
+
+
+Programm„nderungen
+================================================================
+
+Die Vorgabegr”áe des Schreibpuffers wurde auf maximal 8 KB ge„ndert. Zuvor
+verwendete NCACHE die Gr”áe der weitesten Spur als Gr”áe des Schreibpuffers.
+Bei den weitaus meisten Systemen l„át sich praktisch kein Leistungsanstieg
+durch gr”áere Schreibpuffer als 8 KB nachweisen. Wenn Sie dennoch einen
+gr”áeren Schreibpuffer wnschen, k”nnen Sie dessen genaue Gr”áe ber den
+Parameter /WRITE angeben.
+
+
+Hinweise zur Kompatibilit„t
+================================================================
+
+Wir haben versucht, NCACHE zu einem der kompatibelsten der verfgbaren
+Festplattencache-Programme zu machen. NCACHE arbeitet mit nahezu jeder
+Festplatte, die von DOS untersttzt wird. Es ist jedoch schlicht unm”glich,
+jeden Cache auf jedem/jeder jemals hergestellten und verkauften
+Computer/Festplatte zu testen. Die Vielfalt auf dem PC-Markt ist einfach
+zu groá, und kaum ein Computer ist mit einem anderen Modell identisch.
+
+NCACHE integriert sich eng in Betriebssystem und Hardware und erf„hrt
+m”glicherweise Kompatibilit„tsprobleme, die bei Standardanwendungsprogrammen
+(wie Textverarbeitungssystemen und Tabellenkalkulationsprogrammen) nicht
+auftreten wrden. Wenn Ihr Computer nicht 100prozentig kompatibel ist, k”nnen
+Sie Standardanwendungen m”glicherweise problemlos verwenden, NCACHE aber
+nicht.
+
+In vielen F„llen lassen sich alle Kompatibilit„tsprobleme mit den Parametern
+/MULTI=OFF oder /WRITE=0 w„hrend der Cache-Installation l”sen. Versuchen Sie
+/MULTI=OFF vor /WRITE=0. /MULTI=OFF l”st viele Kompatibilit„tsprobleme und
+fhrt nur zu einem geringfgigen Leistungsverlust. Wenn Sie einen „lteren
+Computer haben, fragen Sie gegebenenfalls]# beim Hersteller nach, ob ein
+neueres ROM BIOS erh„ltlich ist.
+
+NCACHE ist vollst„ndig kompatibel mit den Datenverdichtungstreibern Stacker
+und SuperStor. Die Verwendung von NCACHE mit anderen
+Datenverdichtungsprogrammen wird von uns nicht empfohlen.
+
+Wenn Sie mit Stacker SSWAP, SuperStor DEVSWAP oder einem anderen Programm
+arbeiten, das die dynamische Auslagerung von Laufwerkskennungen erm”glicht,
+mssen alle diese Auslagerungen VOR dem Laden von NCACHE erfolgen. Wenn
+Laufwerkskennungen erst nach dem Laden von NCACHE ausgelagert werden, werden
+m”glicherweise Daten auf die falsche Disk geschrieben und damit
+gegebenenfalls]# andere Informationen berschrieben.
+
+Zur vollst„ndigen Kompatibilit„t mit allen Versionen von Windows emuliert
+NCACHE den SmartDrive-Festplattencache von Microsoft. Wenn NCACHE geladen
+ist, meldet SYSINFO, daá die Ger„tetreiber fr NCACHE und SmartDrive
+vorhanden sind. Dies ist normal. Wenn NCACHE geladen ist und Sie versuchen,
+SmartDrive 4.x zu laden, nimmt SmartDrive an, daá es selbst bereits
+geladen ist.
+
+Wenn Sie NCACHE, Windows im Erweiterten Modus und das
+Speicherverwaltungsprogramm QEMM-386 zusammen verwenden m”chten,
+ben”tigen Sie mindestens die QEMM-Version 5.13. Wenn Sie mit QEMM Version
+6.00 arbeiten, empfehlen wir die Nachrstung auf Version 6.01.
+
+Viele SCSI-Host-Adapter verwenden heute Bus-Master-Verfahren zur
+Leistungsverbesserung. Wenn Sie einen solchen Adapter in einem 386er
+oder 486er Computer verwenden, ben”tigen Sie einen Ger„tetreiber, der die
+VDS-Spezifikation (Virtual DMA Services) untersttzt. VDS ist ein
+Industriestandard, der Bus-Master-Ger„ten die Zusammenarbeit mit
+386-Speicherverwaltungsprogrammen erlaubt. Zu fast allen SCSI-Adaptern sind
+heutzutage VDS-kompatible Treiber verfgbar; Informationen ber m”gliche
+Nachrstungen erhalten Sie beim zust„ndigen Hersteller/H„ndler.
+
+NCACHE arbeitet nur mit "normal angeschlossenen" Diskettenlaufwerken. Wenn
+das Diskettenlaufwerk eine spezielle Schnittstellenkarte oder einen
+Ger„tetreiber ben”tigt, kann NCACHE damit wahrscheinlich keine
+Cache-Operationen ausfhren. Die meisten externen Laufwerke werden von NCACHE
+nicht untersttzt.
+
+NCACHE ist nicht in der Lage, Cache-Operationen auf einem Diskettenlaufwerk
+auszufhren, das "Diskettenwechselinformation" nicht untersttzt. Dabei
+handelt es sich um eine Hardwareeinrichtung, die dem Computer signalisiert,
+wenn eine Diskette aus dem Laufwerk genommen wurde. Laufwerke fr 360 KB
+verfgen h„ufig nicht ber diese Signalfunktion und sind daher fr
+Cache-Operationen ungeeignet. Mit den meisten anderen Laufwerken (1,2 MB,
+720 KB, 1,44 MB usw.) funktioniert NCACHE problemlos. NCACHE stellt
+automatisch fest, mit welchen Laufwerken Cache-Operationen m”glich sind.
+Wenn Caching bei einem Laufwerk nicht m”glich ist, meldet NCACHE entweder
+"Diskettenwechsel kann bei diesem Laufwerk nicht festgestellt werden", oder
+das Laufwerk wird bei der Statusanzeige von NCACHE einfach weggelassen.
+
+Wenn Ihr Speicherverwaltungsprogramm „lteren Datums ist, informieren Sie sich
+beim Hersteller Ihrer Speicherkarte ber Nachrstungsm”glichkeiten. In den
+meisten F„llen wird eine neue Speicherverwaltungs-Software vollkommen
+ausreichen. Hardware-Ver„nderungen sind in der Regel nicht erforderlich.
+
+NCACHE ignoriert normalerweise den EMS-Speicher, wenn Sie nicht das richtige
+Speicherverwaltungsprogramm haben. Wenn Sie NCACHE ohne Parameter ausfhren,
+berspringt es einfach den EMS-Speicher und versucht stattdessen,
+XMS-Speicher (Extended) oder den konventionellen Speicher zu verwenden.
+Wenn Sie den Parameter /EXP ausdrcklich angeben, erhalten Sie eine
+Fehlermeldung, und NCACHE wird nicht installiert.
+
+Aufgrund eines Konflikts in der Verwendung von EMS-Speicher (Expanded) ist
+das Datenbankverwaltungssystem Paradox SE von Borland nicht mit NCACHE
+kompatibel. Dagegen ist NCACHE mit der "professionellen" Paradox-Version 3.5
+und neueren Versionen kompatibel. Wenn Sie beim Laden von Paradox SE den
+Befehlszeilenparameter "-EMK 0" angeben, l„uft auch Paradox SE
+m”glicherweise mit NCACHE. Ist dies nicht der Fall, muá der Ladevorgang von
+NCACHE rchg„ngig gemacht werden, bevor Paradox SE verwendet wird.
+
+Wenn Sie den Treiber RCD.SYS mit auswechselbaren IOMEGA-Laufwerken benutzen,
+ben”tigen Sie mindestens Version 7.0, und Sie mssen den Treiber im unteren
+Speicherbereich laden. RCD Version 7 ist kompatibel mit allen Typen von
+IOMEGA-Laufwerken sowie mit ISA- und MicroChannel-Computern. Wenn Sie
+mit einer „lteren Version arbeiten, setzen Sie sich bitte mit IOMEGA in
+Verbindung.
+
+Es kann immer nur jeweils ein Festplattencache-Programm im Computer geladen
+sein. Jeder andere Cache (z. B. SMARTDRIVE oder PC-KWIK) muá entfernt werden,
+bevor Sie NCACHE installieren k”nnen. Bei Verwendung mehrerer
+Festplattencache-Programme kann es zu Konflikten und zur Besch„digung von Daten auf
+der Disk kommen.
+
+NCACHE ist nicht kompatibel mit Zenith DOS 3.3 Plus, wenn
+Festplattenpartitionen vorhanden sind, die gr”áer sind als 32 MB.
+
+Wenn Sie ein Programm verwenden, das Ihren Computer automatisch neu startet,
+besteht die M”glichkeit, daá im Cache gespeicherte Daten nicht auf die Disk
+geschrieben werden. Der Befehl BE REBOOT setzt NCACHE automatisch zurck,
+andere mit Neustart verbundene Programme tun dies allerdings nicht. Wir
+empfehlen daher, entweder auf die Verwendung von BE REBOOT berzugehen, oder
+den Befehl NCACHE RESET unmittelbar vor dem Befehl einzusetzen, der den
+Systemneustart ausl”st.
+
+Bei den meisten Computern f„ngt NCACHE die Sequenz STRG-ALT-ENTF ab, mit der
+das System neu gestartet wird. Wenn Cache-Puffer Daten enthalten, die noch
+nicht auf die Disk geschrieben wurden, erledigt NCACHE diesen Schreibvorgang,
+bevor das System neu gestartet wird. Manche 386-Speicherverwaltungsprogramme
+und manche Tastaturerweiterungsprogramme unterbinden jedoch das Abfangen von
+STRG-ALT-ENTF durch NCACHE. Wenn NCACHE nicht in der Lage ist, STRG-ALT-ENTF
+auf Ihrem Computer zu erkennen, deaktivieren Sie die Funktion fr verz”gertes
+Schreiben mittels des Befehlszeilenparameters /WRITE=0 w„hrend der
+Installation von NCACHE.
+
+Wenn Sie eine RAM-Disk oder andere Treiber besitzen, die XMS- oder
+EMS-Speicher benutzen, mssen Sie auch dafr sorgen, daá mindestens 16 KB frei
+sind, bevor Sie Windows starten. Wenn Sie berhaupt nicht mit Windows
+arbeiten, k”nnen Sie den gesamten verfgbaren Speicher fr NCACHE verwenden.
+
+Manche Anti-Virus-Programme k”nnen Ger„tetreiberdateien besch„digen. Dies
+betrifft auch NCACHE. Beim Norton Anti-Virus gibt es dieses Problem NICHT, er
+ist mit NCACHE vollst„ndig kompatibel. Problematisch sind die Produkte, die
+.EXE-Dateien direkt ver„ndern, um Prfsummen oder andere Daten zu speichern.
+Beachten Sie, daá NCACHE nicht der einzige Treiber ist, der davon betroffen
+sein kann. Jeder Treiber mit der Erweiterung .EXE kann besch„digt werden, so
+auch SETVER.EXE in MSDOS 5.0.
+
+Wenn Sie aufgrund eines NCACHE-Kompatibilit„tsproblems Ihr System nicht
+starten k”nnen, k”nnen Sie die Installation von NCACHE verhindern, indem Sie
+w„hrend des Ladens die Taste STRG gedrckt halten.
+
+-------------------  ENDE DER DATEI NCACHE.DOC  -------------------

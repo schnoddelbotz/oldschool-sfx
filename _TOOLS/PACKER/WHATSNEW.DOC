@@ -1,0 +1,151 @@
+
+ €€€€€€ª   €€€€€ª  €€€€€€ª
+ €€…ÕÕ€€ª €€…ÕÕ€€ª €€…ÕÕ€€ª     RAR - What's new in the latest version
+ €€€€€€…º €€€€€€€∫ €€€€€€…º     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ €€…ÕÕ€€ª €€…ÕÕ€€∫ €€…ÕÕ€€ª
+ €€∫  €€∫ €€∫  €€∫ €€∫  €€∫
+ »Õº  »Õº »Õº  »Õº »Õº  »Õº
+
+   Version 2.00 - a "Major" release
+
+
+   1. The general compression algorithm has been significantly improved: 
+      Compression ratio and speed are both improved under normal 
+      conditions and adapt better to available memory. 
+
+   2. A special "multimedia" compression method has been added. It is 
+      intended primarily to be used when compressing digital audio data 
+      and graphics (true color bitmaps).  An improvement in the 
+      compression ratio, of up to 30%, can be expected over the normal 
+      compression algorithm. 
+
+      The use of multimedia compression is optional and may be switched 
+      on by the "Use multimedia compression" item in the configuration 
+      menu or by the command line switch -mm[f]. RAR performs intelligent 
+      data analysis and uses the general compression algorithm when 
+      multimedia compression provides no improvement. Optimum performance 
+      occurs when different data types are combined in the same archive. 
+      The switch -m<N> "Set compression method" may also be used with 
+      multimedia compression. 
+
+      When multimedia compression is required for the entire archive 
+      (switch off data analysis when compressing certain multimedia 
+      files), the -mmf switch may be used "Force Multimedia Compression". 
+
+   3. The OS/2 version of RAR 2.00 contains an option for changing the 
+      size of the sliding dictionary created when files are compressed. 
+      This may be set to 64Kb, 128Kb, 256Kb (default), 512Kb or 1Mb and 
+      results in a corresponding (significant) decrease in the size of 
+      the output archive, particularly when compressing large files. When 
+      compressing using a large (more than 64Kb) sliding dictionary, 
+      compression time will increase. 
+
+   4. The RAR 2.00 version for Dos may be used to unpack archives created 
+      with RAR 2.00 on other platforms (currently OS/2 only) where the 
+      sliding dictionary size is greater than 64 Kb. As much memory 
+      (Conventional and EMS) as possible should be made available to the 
+      Dos version of RAR when unpacking archives created using a large 
+      sliding dictionary, in order to improve unpacking speed. Archives 
+      created with a large dictionary cannot be converted to SFX with the 
+      default SFX module in the Dos version. 
+
+   5. Password encryption has been improved.
+
+   6. A Data Recovery facility has been implemented. Optionally, 
+      redundant information may be added to a RAR archive, incurring a 
+      small penalty in archive size, which will help to recover archived 
+      files in the case of floppy disk failure or other data losses. Use 
+      the option "Put recovery record" in the configuration or the Alt/F6 
+      key in RAR to place the redundant recovery information into a 
+      created archive. The corresponding command lines switch is -rr[N], 
+      where N is the number of redundant data sectors (1 to 8). Default 
+      values are: 
+
+                   Archive size     Number of RR-sectors
+                     < 50Kb                   2
+                     50Kb-500Kb               4
+                     > 500Kb                  8
+
+      A damaged archive may be reconstructed using the "Repair" function 
+      of RAR (Alt/F8 key combination in RAR or the command line option 
+      "r"). The recovered archive will be named _RECOVER.RAR. If the old, 
+      pre-2.00 repair procedure was used (without data recovery records) 
+      or recovering was not completed, the reconstructed archive will be 
+      named _RECONST.RAR. 
+
+      The chance of successful archive reconstruction, using recovery 
+      records, is very high if the size of the continuous portion of 
+      damaged data is not greater than N*512 bytes, where N is number of 
+      RR-sectors initially placed into the archive. 
+
+   7. RAR 2.00 is compatible with previous releases and handles archives 
+      created by older versions of RAR. The sole limitation of backward 
+      compatibility: you will need the old external SFX module to convert 
+      an old style archive to SFX or simply build it using RAR 1.5x. 
+      Archives created with RAR 2.00 cannot be unpacked by older versions 
+      of RAR. 
+
+   8. RAR 2.00 for DOS determines the current CPU type and uses 386/486 
+      CPU instructions code if possible. This option may be switched 
+      on/off using the option "Use 386 instructions" in the configuration 
+      menu. 
+
+   9. The OS/2 version of RAR 2.00 has a new feature "Set task priority 
+      and sleep time".  Use Alt/R in full-screen or the switch -
+      ri<P>[:<S>] on the command line to activate this option. 
+
+      The task priority <P> (possible values, 0 to 128) is the OS/2 
+      task priority.  Values of <P> are grouped as follows: 
+
+                <P> value      OS/2 <priority class>:<priority level>
+                   0                OS/2 default (i.e. 2:0, or <P>=33)
+                  1-32              1:0-1:31
+                 33-64              2:0-2:31
+                 65-96              3:0-3:31
+                 97-128             4:0-4:31
+
+      When <P> is equal to 0, the default OS/2 task priority is used.
+
+      The sleep time <S> is a value from 0 to 1000 (milliseconds). 
+      This is the period of time that RAR will give back to OS/2 after 
+      every read or write during the packing or unpacking operation.  
+      The sleep time setting is useful when several tasks with the 
+      same priority are running in the system. 
+
+  10. Names of files produced by the 'R' command have been changed from
+      $RECOVER.RAR and $RECONST.RAR to _RECOVER.RAR and _RECONST.RAR 
+      for better portability with future RAR/Unix with Unix shell. 
+
+  11. In the fullscreen mode, information concerning method, dictionary
+      size and ratio is displayed in the lower right corner. 
+
+  12. The commands 'V' and 'L' can be suplied with the '-v' switch meaning
+      "process all volumes starting from the specified". If these commands
+      cause processing more than one archive (volume), total information 
+      concerning all archives will be shown. 
+
+  13. OS/2 versions of RCVT and UNRAR have been added to the
+      distribution archive.
+
+  14. The file order list for solid archiving in file RARFILES.LST is
+      inroduced. There you may set up the user-defined sorting order for
+      specific files or group of files.
+
+  15. The bug detected, located in old portable version 1.01 of unRAR 
+      source only, which caused CRC errors in some cases. If you are using
+      unRAR 1.01 to unpack old archives (created with RAR prior to version
+      2.00) then fix the problem applying the following patch:
+
+       Replace string 353 in the unpack.c:
+
+        if (Distance > D->MaxDist3)
+          Length++;
+
+       with:
+
+        if (Distance >= D->MaxDist3)
+          Length++;
+
+  16. RCVT 1.01 is released. The scheme of processing archives is changed:
+      first the program performs 'Del', then 'Add' operation.
+

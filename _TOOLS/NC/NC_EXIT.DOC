@@ -1,0 +1,80 @@
+NC_EXIT.COM          Programm und Dokumentation von Tony McNamara, Symantec
+
+Zweck:
+======
+    Lagert den Norton Commander ohne die Hilfe eines TSR-Programms aus.
+    šbernimmt wahlweise einen Befehl mit bis zu 11 Zeichen zur sp„teren
+    Ausfhrung.
+
+Version 2.0, 1. Februar 1991
+    Untersttzung fr Befehlszeilenparameter hinzugefgt.
+
+Syntax:
+=======
+    NC_EXIT
+    oder
+    NC_EXIT <Zeichenkette>
+    wobei <Zeichenkette> eine Eingabe von bis zu 11 Zeichen darstellt. Diese
+    wird nach dem Verlassen des Norton Commanders wie eine Tastatureingabe
+    behandelt.
+
+Kompatibilit„t:
+===============
+    Lagert nur den Norton Commander aus.
+    Windows-kompatibel.
+    Entwickelt fr hohe Kompatibilit„t.
+    Kann durch manche Tastaturbeschleuniger wirkungslos gemacht werden.
+
+Verwendung:
+===========
+    Rufen Sie NC_Exit mit einer Stapeldatei oder einer Befehlsfolge in einem
+    Benutzermen auf. Parameter sind nicht erforderlich, werden bei Eingabe
+    jedoch als ASCII-Zeichenkette angesehen.
+    Aufgrund der Methode sollte NC_Exit der letzte aufgerufene Befehl in
+    einer Stapeldatei oder einem Benutzermen sein. Ansonsten kann die
+    Tastatureingabe von einem anderen Programm angenommen oder zurckge-
+    setzt werden.
+    
+    WICHTIG: Sowohl NC_Exit als auch die durch <Zeichenkette> aufgerufene
+             ausfhrbare oder Stapeldatei mssen in Ihrem PATH liegen, um
+             zu funktionieren. Ein geeigneter Ort ist evtl. Ihr Norton
+             Commander-Verzeichnis, das sich bereits in Ihrem PATH befinden
+             sollte.
+    
+BEISPIELE:
+==========
+    Um Windows von auáerhalb des Commanders auszufhren, k”nnen Sie im
+    Benutzermen folgendes einrichten:
+        W:      MS Windows
+                nc_exit win
+    (unter der Annahme, daá WIN.COM in Ihrem PATH liegt). Jedesmal, wenn Sie
+    dann Windows in Ihrem Benutzermen ausw„hlen, verlassen Sie den Commander
+    und starten MS Windows ohne ihn.
+
+    Um den PATH unter dem Commander dauerhaft zu „ndern (im Gegensatz zu
+    einer nur zeitweiligen nderung fr die Dauer einer Stapeldatei), mssen
+    Sie den Commander verlassen, den Pfad einrichten und NC neu starten.
+    Diesen Vorgang k”nnen Sie nun folgendermaáen automatisieren:
+
+        1) Erstellen Sie eine Stapeldatei mit den zwei folgenden Zeilen:
+                PATH=<der gewnschte Pfad>
+                NC
+
+        2) Richten Sie Ihr Benutzermen, Ihre Erweiterungsdatei oder
+           was auch immer die Stapeldatei aufruft, so ein, daá
+           NC_EXIT <Stapeldateiname> aufgerufen wird.
+
+        Beispiel: Nennen Sie folgende Befehle "SETNC.BAT":
+                SET NORCMD=ON
+                NC
+        und fgen Sie folgendes Ihrem Benutzermen hinzu:
+                T:      Test NC_Exit
+                        NC_EXIT SETNC
+        In Ihrem Benutzermen w„hlen Sie dann "T". Sie sollten umgehend
+        wieder in den Commander zurckgelangen, doch wenn Sie jetzt "SET"
+        eingeben, máten Sie die neue Umgebungsvariable "NORCMD" sehen.
+
+
+Wenn Sie noch Fragen oder Probleme haben, wenden Sie sich bitte an das
+NORUTL-Forum auf CompuServe.
+

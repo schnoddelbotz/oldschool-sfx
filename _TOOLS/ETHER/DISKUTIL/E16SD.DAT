@@ -1,0 +1,6 @@
+Connector Type	 utp
+I/O Base Address 0x300
+Interrupt Number 2
+ROM Size	 8k
+ROM Address	 0xd000
+

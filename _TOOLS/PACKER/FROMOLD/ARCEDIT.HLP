@@ -1,0 +1,145 @@
+.SEITE
+
+           Benutzung:  PgUp / PgDn    Eine Seite vor / zurck
+                       Ctrl-Home      Zu *dieser* Seite
+                       F1, Escape     Beenden, zurck zum Programm 
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                          Verzeichnis- / Archivfenster
+                         ==============================
+
+ Laufw./Verz. wechseln: Alt-L, Alt-V; Befehle im "Dateien"-Men
+ Archiv wechseln      : Alt-A; Befehl "Dateien/Archiv wechseln"; bei Angabe 
+                        einer Erweiterung wird das Archivsystem umgeschaltet
+ "Point and Shoot"    : Return; Doppelklicks auf Dateinamen o. Verzeichnisse
+                        (Prg. ausfhren, Archiv wechseln, Verz. wechseln etc.)
+ Fenster rollen       : Mauscursor ber/unter Fenster, Knopf gedrckt halten
+
+                                Verzeichnisbaum
+                               =================
+                               
+ Lichtbalken bewegen   : Pfeiltasten; Verzeichnisse anklicken
+ Verzeichnisbaum rollen: PgUp/PgDn/Home/End; Linksklicks ber/unter Fenster
+ Verzeichnis w„hlen    : Return; Doppelklick auf Verzeichnis
+ Abbrechen             : Escape bzw. Rechtsklick
+
+.SEITE
+
+                                Packen und Entpacken
+
+ ş Einzeldatei vom Verzeichnis ins Archiv packen:
+   - Im Verzeichnisfenster Lichtbalken auf Dateinamen setzen.
+   - Button "Packen", Befehl "Aktionen/Akt. Datei packen" oder Taste "p".
+
+ ş Mehrere Dateien vom Verzeichnis ins Archiv packen:
+   - Im Verz.-fenster Dateien markieren (Leertaste, Maus, Men "Markieren").
+   - Button "Packen", Befehl "Aktionen/Mark. Datei packen" oder Taste "P".
+
+ ş Mit Unterverzeichnissen packen: 
+   - Packoptionen "Unterverz. durchsuchen" und "Pfadnamen merken" einschalten.
+   - Gewnschte Maske einstellen (Alt-M).
+   - Befehl "Aktionen/Maskendateien packen" (Ctrl-P).
+
+ ş Einzeldatei aus dem Archiv ins Verzeichnis entpacken:
+   - Im Archivfenster Lichtbalken auf Dateinamen setzen.
+   - Button "Entpacken", Befehl "Aktionen/Akt. Datei entp." od. Taste "e".
+
+ ş Mehrere Dateien aus dem Archiv ins Verzeichnis entpacken:
+   - Im Archivfenster Dateien markieren (Leertaste, Maus, Men "Markieren").
+   - Button "Entpacken", Befehl "Aktionen/Mark. Datei entp." od. Taste "E".
+.SEITE
+
+                                  Packoptionen 
+                                 ==============
+
+ - Alle Dateien einpacken (Add): Dateien werden auch dann ins Archiv gepackt, 
+   wenn sie *„lter* sind als bereits vorhandene Archivversionen.  
+
+ - Nur jngere Dateien und neue (Update): Verzeichnisdateien werden nur 
+   eingepackt, wenn sie *entweder* im Archiv noch nicht vertreten *oder* 
+   jngeren Datums sind als bereits vorhandene Archivversionen.  
+
+ - Nur jngere Dateien (Freshen): Verzeichnisdateien werden nur eingepackt, 
+   wenn sie jngeren Datums sind als bereits vorhandene Archivversionen.  
+
+ - Nachher l”schen: Verzeichnisdateien werden nach dem Einpacken gel”scht.  
+
+ - H/S/R: Auch HSR-Dateien werden eingepackt. Nicht bei ARC-, PAK-Archiven.  
+
+ - Unterverzeichnisse durchsuchen (Rekursion): Auáer dem aktuellen werden auch 
+   all dessen Unterverzeichnisse durchsucht. Nicht bei ARC-Archiven.  
+
+ - Pfadnamen merken: Bei eingeschalteter Rekursion werden auáer den Datei-
+   namen die Verzeichnispfade mit abgespeichert. Nicht bei ARC-Archiven.  
+.SEITE
+
+                                Entpackoptionen
+                               =================
+
+ - šberschreiben (Overwrite): Archivdateien werden auch dann ins Verzeichnis 
+   entpackt, wenn sie *„lter* sind als bereits vorhandene Verzeichnisdateien.  
+
+ - Vor dem šberschreiben fragen (Ask): Bei gleichnamigen Dateien fragt das 
+   Entpackprogramm, ob die Verzeichnisdatei berschrieben werden soll.  
+
+ - Nicht berschreiben (Skip): Gleichnamige Verzeichnisdateien werden 
+   grunds„tzlich *nicht* berschrieben. Nicht bei HYP-Archiven.  
+
+ - Unterverzeichnisse bercksichtigen: Falls Unterverzeichnispfade enthalten 
+   sind ("+"-Markierungen), werden die Dateien dorthin entpackt; noch nicht 
+   vorhandene Unterverzeichnisse werden automatisch erstellt.  
+
+ - PFADINFO bercksichtigen: Archivdateien werden optional in jenes Verzeich-
+   nis zurckentpackt, von dem aus das Archiv ursprnglich angelegt wurde (gut 
+   fr Backups !). Voraussetzung: Bei der Archiverstellung muá die Packoption 
+   "PFADINFO speichern" eingeschaltet gewesen sein.  
+
+.SEITE
+
+                           Archivunterteilung mit ARJ 
+                          ============================ 
+
+   Ist die Option "Optionen/Archivsystem-Programme/Archivunterteilung" einge-
+ schaltet, unterteilt ARJ groáe Archive beim Packen automatisch in "handli-
+ chere" Portionen: Das Startarchiv erh„lt die normale Erweiterung ARJ; die 
+ Fortsetzungsarchive erhalten die Erweiterungen A01, A02 etc. (und k”nnen ber 
+ die Sfx-Einlesefunktion im "Dateien"-Men in's Archivfenster geladen werden).  
+ Beispiel: BACKUP.ARJ-->BACKUP.A01-->BACKUP.A02-->BACKUP.A03-->...  
+
+ ArcEdit steuert ARJ beim Packen folgendermaáen an: 
+
+ - Wird das Startarchiv auf *Diskette* angelegt, ermittelt ARJ den noch freien 
+   Speicherplatz und nutzt ihn voll aus. Nach jeder Diskette wartet ARJ, bis 
+   Sie die n„chste Diskette eingelegt und mit "y" best„tigt haben.  
+ - Wird das Startarchiv auf *Festplatte* angelegt, erstellt ARJ Archive mit 
+   einer Maximalgr”áe von 360.000 Bytes, sodaá alle g„ngigen Diskettentypen 
+   zum Speichern verwendet werden k”nnen.  
+
+   Beim *Entpacken* von Dateien aus solchen Archiven sollte die Option 
+ ebenfalls eingeschaltet sein, vor allem bei "gesplitteten" Dateien, die im 
+ einem Archiv anfangen und im n„chsten enden.  
+
+.SEITE
+
+                                 Tastenbefehle
+                                ===============
+
+ Funktionstasten:                  ³  Verzeichnis-/Dateifunktionen:
+                                   ³
+ F1     Hilfebildschirm            ³  Alt-L   Laufwerk wechseln
+ F2     Verzeichnis neu lesen      ³  Alt-V   Verzeichnis wechseln
+ F3     šbergeordn. Verzeichnis    ³  Alt-A   Archiv wechseln
+ F4     Datei suchen               ³  Alt-M   Neue Dateinamenmaske
+ F5/F6  Mark. Dateien aufsuchen    ³  Alt-F1  Benutzerdefinierte
+ F7/F8  Markierbereich Anfang/Ende ³   bis       Dateinamenmasken
+ F10    Zuletzt aktives Men       ³  Alt-F10    aktivieren
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Markieren:                        ³  Sortieren:
+                                   ³
+ Ctrl-A  Alle Dateien markieren    ³  Alt-U  Unsortierte Ausgabe der Dateien
+ Ctrl-F  Markierungen entfernen    ³  Alt-D  Nach Dateinamen sortiert
+ Ctrl-I  Markierungen invertieren  ³  Alt-E  Nach Erweiterungen sortiert
+ Ctrl-N  Nach Dateinamen markieren ³  Alt-G  Nach Dateigr”áen sortiert
+ Ctrl-T  Nach Attributen markieren ³  Alt-D  Nach Erstellungsdaten sortiert
+ Ctrl-U  Unkompr. Progr. markieren ³  Alt-F  Aufsteigende Reihenfolge
+                                   ³  Alt-B  Absteigende Reihenfolge

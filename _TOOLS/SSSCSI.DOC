@@ -1,0 +1,61 @@
+SCSI HD-Sleep-Manager, (C) 1993 H.Hackbarth. Alle Rechte vorbehalten.
+=====================================================================
+
+Der SCSI-HD-Sleep-Manager ist ein speicherresidentes Programm zum
+kontrollierten Aus- und Einschalten ihres SCSI-Festplattenmotors.
+Wird eine gewisse (einstellbare) Zeit nicht auf die Festplatte
+zugegriffen, so sendet das Programm ein Stop-Kommando an diese.
+Auáerdem l„át sich der Plattenmotor manuell durch Drcken von
+[Alt]-[Bild runter] abschalten.
+
+Sobald wieder ein Zugrif auf die Platte erfolgt, sendet das Programm
+ein Start-Kommando ber den Controller und die Platte l„uft an.
+
+Voraussetzungen:
+----------------
+Die Festplatte muá den Befehl "START/STOP UNIT" untersttzen; dies ist
+bei den meisten Platten neueren Datums der Fall.
+Zur Steuerung des Plattencontrollers muá auáerdem ein ASPI-Manager
+(z.B. ASPI2DOS.SYS, ASPI4DOS.SYS o.„) geladen sein.
+Um das Programm in den Speicherbereich oberhalb 640K laden zu k”nnen,
+empfiehlt sich ein entsprechender Speichermanager (EMM386, QEMM386 etc.).
+
+Einschr„nkungen:
+----------------
+Die Sharewareversion untersttzt nur Platten mit Target ID 0, LUN 0;
+auáerdem erscheint beim Programmstart ein Registrierhinweis, der durch
+Tastendruck best„tigt werden muá. Dieser entf„llt bei der Vollversion,
+auáerdem werden dann auch Platten mit anderer Ger„te-ID untersttzt.
+Ein Entfernen aus dem Speicher ist nicht vorgesehen, der Rechner muá
+gegebenenfalls neu gebootet werden. Das Programm berprft auch nicht,
+ob es bereits schon resident geladen wurde. Damit die Abschaltung per
+Tastendruck funktioniert, muá der Tastaturtreiber bereits geladen sein,
+wenn das Programm aufgerufen wird. Unter Windows funktioniert die
+manuelle Abschaltung nur innerhalb von DOS-Boxen.
+Das Utility wurde nach bestem Wissen und Gewissen programmiert und
+getestet, dennoch kann keine Garantie fr fehlerfreie Funktion und keine
+Haftung fr Sch„den bzw. Datenverluste, die durch die Benutzung des
+Programmes entstehen, bernommen werden.
+
+Syntax:
+-------
+
+    ssscsi [min]
+
+Dem Programm kann beim Start die gewnschte Zeitspanne in Minuten bis
+zum Abschalten der Platte bergeben werden. Wird kein Parameter
+angegeben, benutzt das Programm 5 Minuten als Standardvorgabe.
+
+
+Registrierung:
+--------------
+Die registrierte Vollversion des Programmes ist erh„ltlich bei
+
+            Helge Hackbarth                  Tel.: (040) 8801629
+            Hellgrund 84
+            D-22880 Wedel
+            (Deutschland)
+
+Der Preis betr„gt DM 25,- zuzglich DM 5,- (Porto/Verpackung Inland)
+bzw. DM 8,- (Porto/Verpackung Ausland). Lieferung erfolgt nur gegen
+Vorkasse/Verrechnungsscheck (Auslandsbestellungen nur mit EC-Scheck).

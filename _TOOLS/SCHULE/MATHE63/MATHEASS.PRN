@@ -1,0 +1,24 @@
+5,27,64,27,3,24,   4,27,76,128,2,   2,27,64
+
+Falls Ihr Drucker mit den auf F9 bzw. F10 gelegten Hardcopy-Routinen
+nicht arbeitet, k”nnen Sie mit F8 eine Hardcopy-Routine aufrufen, die
+ihre Parameter aus dieser Datei einliest.
+
+Der erste Block enth„lt die Steuerzeichen, die vor dem Graphikausdruck
+an den Drucker gesendet werden, angefhrt von ihrer Anzahl.
+
+Der zweite Block enth„lt die Steuerzeichen, die vor Beginn jeder Zeile
+an den Drucker gesendet werden, angefhrt von ihrer Anzahl.
+
+Der dritte Block enth„lt die Steuerzeichen, die nach dem Graphikausdruck
+an den Drucker gesendet werden, angefhrt von ihrer Anzahl.
+
+Die Routine ist im Gegensatz zu den beiden anderen nicht in Assembler
+geschrieben und deshalb recht langsam.
+
+Beispiel :  3,27,3,24,   4,27,76,128,2,   2,27,64
+            
+            3 Bytes ( ESC "3" CHR(24) )  fr  24/216 Zoll Zeilenabstand
+            4 Bytes ( ESC "L" CHR(128) CHR(2) ) fr die Ausgabe einer
+              Graphikzeile mit  128 + 2*256 = 640  Zeichen  
+            2 Bytes ( ESC @ ) um den Drucker zurck zu setzen 

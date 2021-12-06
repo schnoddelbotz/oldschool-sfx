@@ -1,0 +1,420 @@
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ The Aurora Editor v1.20  - Configuration Settings                  ³
+//³                                                                    ³
+//³ Please keep a backup copy of this file.                            ³
+//³                                                                    ³
+//³ For a description of these configuration settings, select the      ³
+//³ "Configuration" item on the "Help" pull-down menu.                 ³
+//³                                                                    ³
+//³ To change a configuration setting, locate the desired setting in   ³
+//³ this file and type in the new value for the setting. Do NOT change ³
+//³ the name of the setting. String values containing blanks or        ³
+//³ punctuation (',' or '.') should be enclosed in quotes and preceded ³
+//³ by the '@' character. Do not add or remove any punctuation.        ³
+//³                                                                    ³
+//³ When you are finished, save this file and select "Restore          ³
+//³ Settings" from the "Set" pulldown menu. Exit and re-enter the      ³
+//³ editor for your changes to take effect.                            ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  obj  prf (
+
+    set%
+
+
+ // Video ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    VidCols          0               ,// video columns (0=default)
+    VidRows          0               ,// video rows (0=default)
+
+    VidStr           @"°"            ,// video background fill string
+                                      //   (null=use existing bkgnd)
+
+    VidSav           y               ,// (y/n) restore screen on exit
+                                      //   (registered version only)
+
+
+  // Mouse ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Mouse            y               ,// (y/n) enable/disable mouse
+    MouReverse       n               ,// (y/n) reverse mouse buttons
+
+    MouSenX          5               ,// x sensitivity (lower=sensitive)
+    MouSenY          12              ,// y sensitivity (lower=sensitive)
+    MouDst           50              ,// double-speed threshold
+
+    MouDouble        300             ,// double-click interval (in msec)
+    MouHold          300             ,// mouse hold time (in msec)
+    MouDelay         0               ,// mouse repeat delay (in msec)
+                                      //   0=fast (try 0,8,16,24,30)
+
+    MouMrkS          r               ,// default mark on single-click & drag
+                                      //   (r=column, l=line, s=stream)
+
+    MouMrkD          l               ,// default mark type on double-click
+                                      //   & drag (see MouMrkS above)
+
+
+ // Word Processing ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    TabWidth         8               ,// tab width for interval tabs
+
+    Tabs             @"4 8 16 24 50 72"            ,// variable tab stops
+
+    VarTabs          n               ,// (y/n) default to variable tabs ON
+    SmartTabs        n               ,// (y/n) default to smart tabs ON
+    WordWrap         n               ,// (y/n) default to word wrap ON
+
+    LMargin          3               ,// left margin
+    RMargin          72              ,// right margin
+    Indent           0               ,// paragraph indent
+
+
+ // Default File Extensions ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    DefExt           @"c h cpp doc txt a asm pas inc bat"               ,
+
+
+ // Open options ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    OpenOpt          f               ,// default load options (z=maximize,
+                                      //   f=full, c=cascade, n=minimize,
+                                      //   e=same window)
+
+    LineDlm          0D0Ah           ,// default line delimiter
+
+    BinaryLength     64              ,// default binary line length
+
+    TruncLength      0               ,// maximum line length at load
+                                      //   (0=editor maximum)
+
+    FmgrOpt          dhf             ,// file manager options (d=subdir,
+                                      //   (d=subdirectories, h=hidden &
+                                      //   system files, k=show sizes in
+                                      //   1k increments, f=directories
+                                      //   first when sorting by name)
+
+    FmgrSrt          n               ,// default file manager sort
+                                      //   (n=name, s=size, d=date,
+                                      //    o or null=OS default)
+
+    FmgrQuit         n               ,// (y/n) close file mgr window when
+                                      //   loading file from file mgr
+
+
+ // Save options ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-ÄÄ
+
+    Backup           y               ,// (y/n) default to backup ON
+
+    BakDir           @""             ,// backup directory
+                                      //   (null=directory of file)
+
+    BakExt           @"BAK"          ,// file extension for backup
+
+    SaveEOF          n               ,// (y/n) append Ctrl-Z to end of
+                                      //   file when saving
+
+    AutoSave         0               ,// seconds between automatic saves
+                                      //   (0=OFF)
+
+
+ // Editing preferences ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    UndoSize         300             ,// undo/redo stack size
+
+    HistSize         50              ,// prompt history size
+
+    ClipName         @"clipboard"    ,// default clipboard name
+
+    Insert           y               ,// (y/n) default to insert mode ON
+
+    EnterIns         s               ,// <Enter> key behavior in INS mode
+                                      //   (s=split, i=ins line, null=to
+                                      //   beginning of next line)
+
+    EnterOvl                         ,// <Enter> key behavior in OVL mode
+                                      //   (see EnterIns above)
+
+    TabShift         y               ,// (y/n) shift text on tab left or
+                                      //   tab right in INS mode
+
+    DelJoin          y               ,// (y/n) join lines if delete char
+                                      //   at end-of-line
+
+    BakJoin          y               ,// (y/n) join lines if backspace at
+                                      //   column one
+
+    BakOvl           n               ,// (y/n) backspace overlay if not
+                                      //   in insert mode
+
+    CopyLine         y               ,// (y/n) block copy repeats current
+                                      //   line if nothing marked
+
+    DelLine          n               ,// (y/n) block delete deletes current
+                                      //   line if nothing marked
+
+    AutoMark         ptb             ,// default marking for block cmds
+                                      //   (p=paragraph, l=line, null=none,
+                                      //   if p then t=to top, b=to bot)
+
+    MoveMark         y               ,// (y/n) move mark on copy & overlay
+    DrawMark         y               ,// (y/n) cursor movement sizes mark
+    CurHigh          y               ,// (y/n) highlight cursor line
+    RepEnd           n               ,// (y/n) repeat End/Home keys
+
+    MatchChar        n               ,// (y/n) default to match char ON
+    AutoIndent       y               ,// (y/n) default to autoindent ON
+
+    LineStyle        0               ,// default line draw style (0=single,
+                                      //   1=double horz, 2=double vert,
+                                      //   3=double, 4=erase)
+
+    FastCursor       0               ,// cursor scroll acceleration
+                                      //   (0=none)
+
+    MultCopy         n               ,// (y/n) allow loading of same file
+                                      //   or directory more than once
+
+    OneWindow        n               ,// edit in "OneWindow" mode
+
+    CurOT            80              ,// cursor top in OVL mode (0-99)
+    CurOB            90              ,// cursor bot in OVL mode (0-99)
+    CurIT            50              ,// cursor top in INS mode (0-99)
+    CurIB            90              ,// cursor bot in INS mode (0-99)
+
+    SearchOpt        i               ,// default search options (i=ignore
+                                      //   case, r=reverse, b=block only,
+                                      //   g=global, w=whole word)
+
+    ReplaceOpt                       ,// default replace options
+                                      //   (a=replace all, null=none)
+
+    SearchWrap       n               ,// (y/n) wrap to file top/bot on
+                                      //   repeat last find/replace
+
+    EOTLine          @""             ,// end-of-text line (null=default)
+
+    ExitOpen         n               ,// (y/n) display open prompt on exit
+
+
+    // tailored prompt string positions
+    //
+    //  1-open                       11-macro command
+    //  2-open and insert            12-key macro open
+    //  3-rename                     13-key macro save
+    //  4-save as                    14-place & goto bookmark
+    //  5-os command                 15-block fill
+    //  6-save block                 16-open binary
+    //  7-find
+    //  8-replace                    18-global settings
+    //  9-goto line & column         19-user defined prompts
+    // 10-scan files                 20-file mgr command prompts
+
+    // tailored prompt values (0=cmd line, 1=one-line box, 2=dlgbox):
+    Prompts          11111111111111111111
+
+
+ .set%
+
+ // Window preferences ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    EditStyle        nsmvh           ,// edit window style (n=north title,
+                                      //   s=south title, m=menu, h=horz
+                                      //   scrollbar, v=vert scrollbar
+                                      //   1=toolbar)
+
+    EditTitle        nl              ,// edit window title location
+                                      //   (n=north, s=south, l=left,
+                                      //    c=center, r=right)
+
+    EditStatus       nr              ,// edit window status location
+    EditCtls         n               ,// edit window controls location
+
+    FmgrStyle        nsmvh           ,// file mgr window style
+    FmgrTitle        nl              ,// file mgr window title location
+    FmgrStatus       sl              ,// file mgr window status location
+    FmgrCtls         n               ,// file mgr window controls location
+
+    BoxStyle         i1              ,// one-line box prompt style
+                                      //   (f=flat, i=3D-in, o=3D-out,
+                                      //    and border type 0-6)
+
+    DlgStyle         i1              ,// dialog box style (see BoxStyle)
+                                      //   (f4=previous versions)
+
+    TileNum          3               ,// number of tiles allowed before
+                                      //   2nd split when tiling windows
+
+
+ // Print options ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    PrtDev           PRN             ,// printer device name
+    PrtPag           0               ,// lines per page (0=continuous)
+    PrtSpace         1               ,// line spacing
+    PrtCop           1               ,// number of copies to print
+
+    PrtIni           @""             ,// printer specific initialization
+                                      //   string
+
+    PrtTop           0               ,// top margin
+    PrtBot           0               ,// bottom margin
+    PrtLeft          0               ,// left margin
+    PrtRight         0               ,// right margin
+
+    PrtOpt           hpes            ,// default print options (h=header,
+                                      //   f=footer, p=page numbers,
+                                      //   l=line numbers, e=eject when
+                                      //   done, s=separator line)
+
+
+ // Desktop options ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    SaveWin          y               ,// (y/n) remember window/cursor pos
+
+    SaveHis          y               ,// (y/n) save window/cursor position
+                                      //   and prompt history to A.HIS on
+                                      //   exit (and reload on entry)
+
+    SaveMac          n               ,// (y/n) save all key macros to
+                                      //   A.MAC on exit (and reload on
+                                      //   entry)
+
+    BootOpt          d               ,// action to take when starting the
+                                      //   editor and no filespec is
+                                      //   specified (d=last desktop,
+                                      //   f=file mgr, o=open prompt)
+
+
+ // Memory options ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    MaxXMS           -1              ,// maximum XMS memory (in k) to use
+                                      //   0=none, -1=available maximum
+
+    MaxEMS           -1              ,// maximum EMS memory (in k) to use
+                                      //   0=none, -1=available maximum
+
+    SwapFile1        @"c:\aurora@1.swp"          ,// primary swap file
+    SwapFile2        @"d:\aurora@2.swp"          ,// secondary swap file
+
+
+ // Other options ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    KeyEnh           y               ,// (y/n) test for enhanced keyboard
+
+    KeyPad           y               ,// (y/n) use grey keypad keys as
+                                      //   function keys
+
+    KeyTrim          n               ,// (y/n) trim keyboard buffer
+    Sound            y               ,// (y/n) enable/disable sound
+    SoundF           200             ,// beep frequency
+
+
+ // Char sets to define words for word functions ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    CSetA            @"a-zA-Z0-9_"                        ,// char set A
+    CSetB            @"a-zA-Z0-9_()\-./\\@{}~:^!#$%&`'"   ,// char set B
+    CSetC            @"-!-ş"                            ,// char set C
+
+    CSet             @CSetA          ,// default char set
+
+
+ // Text Translation ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    TextTran         n               ,// (y/n) default to translate ON
+    TranObj          trn             ,// translation object name
+    TranCSet         @"a-zA-Z0-9_;"  ,// translation lookup char set
+
+
+ // Confirmations ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    ConDel           y               ,// (y/n) confirm on file delete
+    ConRpl           y               ,// (y/n) confirm on file replace
+    ConTch           y               ,// (y/n) confirm on file touch
+
+
+ // Colors ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    // background
+    coBak            121             ,// background color
+
+    // border
+    coBor            120             ,// window border color
+    coFsh            168             ,// window border flash color
+    coCor            135             ,// window corner color
+    coCorI           120             ,// window corner inactive color
+
+    // edit window colors
+    coEdiT           31              ,// edit text color
+    coEdiB           63              ,// edit block highlight color
+    coEdi0           155             ,// edit title color
+    coEdiS           112             ,// edit scroll color
+    coEdiM           112             ,// edit menu color
+    coEdiH           4               ,// edit menu highlight color
+    coEdiX           160             ,// edit menu bar highlight
+    coEdiZ           27              ,// edit end-of-text line color
+    coEdiC           14              ,// edit title control color
+    coEdiF           26              ,// edit text fold color
+    coEdiG           47              ,// edit search-found highlight color
+    coEdiL           30              ,// edit cursor line highlight color
+    coEdiD           31              ,// edit modified line color
+    coEdiDL          30              ,// edit modified line & cursor line
+    coEdi0I          151             ,// edit inactive title color
+    coEdiSI          120             ,// edit inactive scroll color
+    coEdiMI          120             ,// edit inactive menu color
+
+    // file manager window colors
+    coFmgT           47              ,// file mgr text color
+    coFmgB           160             ,// file mgr block highlight color
+    coFmg0           47              ,// file mgr title color
+    coFmgS           112             ,// file mgr scroll color
+    coFmgM           112             ,// file mgr menu color
+    coFmgH           4               ,// file mgr menu highlight color
+    coFmgX           160             ,// file mgr menu bar highlight
+    coFmgC           14              ,// file mgr title control color
+    coFmg0I          39              ,// file mgr inactive title color
+    coFmgSI          120             ,// file mgr inactive scroll color
+    coFmgMI          120             ,// file mgr inactive menu color
+
+    // dialog box colors
+    coDlg            127             ,// dialog box color
+    coDlgI           112             ,// dialog box inactive color
+    coDlgB           127             ,// dialog box border color
+    coDlgF           122             ,// dialog box flash color
+    coDlgH           4               ,// dialog box highlight color
+    coDlgC           14              ,// dialog box control color
+
+    // one-line box prompt color
+    coBox            -1              ,// one-line box prompt color
+                                      //   (-1=window title bar color)
+    // button colors
+    coButI           32              ,// button inactive color
+    coBut            47              ,// button color
+
+    // group box colors
+    coGrp            63              ,// group box color
+    coGrpI           48              ,// group box inactive color
+
+    // history tab color
+    coRtv            40              ,// history tab color
+
+    // video overscan border colors (-1=no change)
+    coVib            -1              ,// entry screen border color
+    coVibX           -1              ,// exit screen border color
+
+
+ // Borders ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Shadow           1               ,// shadow thickness
+
+    BorT             0               ,// border type (0=expanded, 1=single,
+                                      //   2=double horz, 3=double vert,
+                                      //   4=double, 5=solid, 6=blank)
+
+    // for expanded borders (BorT=0):
+    BorX             1               ,// x border thickness
+    BorY             1               ,// y border thickness
+    BorO             2               .// corner overlap length
+
+  ).
+

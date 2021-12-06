@@ -1,0 +1,265 @@
+°°±²º DOS Navigator versie 1.37 shareware º²²²±±±±±±±°°°°°°°°°°°°°°°°°°°°°
+
+
+  Versie 1.37 Shareware (10 july 1995) - wijzigingen sinds 1.35
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+1. "Point-and-shoot" functie voor 0-, 1- en 2-karakterextensies werkt nu.
+
+
+  Versie 1.35 Shareware (28 januari 1995) - wijzigingen sinds 1.33
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Een groot aantal problemen zijn opgelost. Het zou zonde van de tijd zijn om
+ze allemaal te beschrijven; hier volgen de belangrijkste:
+
+ Algemeen
+ ~~~~~~~~
+ [+] Installatieprogramma
+ [+] Mogelijkheid om overlay-bestanden in XMS/EMS geheugen te laden (optioneel)
+ [+] CD-ROM speler.
+ [+] DOS omgevingsvariabelen viewer/editor.
+ [+] DOS NAVIGATOR controleert bij het opstarten of het al geladen is en geeft
+     dan zonodig een waarschuwingsmelding.
+ [*] DN.COM maakt nu een flag file in de opstartdirectory aan (of in de DNSWP
+     directory) om te voorkomen dat de swap file wordt overschreven door DN
+     vanuit verschillende sessies onder multitasking.
+ [+] Als FILES staat ingesteld op < 20, wordt de waarde automatisch vergroot.
+ [+] Het toetsenbordbuffer wordt eerst geleegd bij het opstarten en verlaten
+     van externe programa's.
+ [+] -Mask in het filter sluit aangegeven files uit. Bv.: *.*;-*.bak
+     Opm.: Als U -FileSpec in het filter wilt gebruiken, moet U bij het filter
+     aangeven volgens welke FileSpec files uitgezonderd moeten worden
+     (bijvoorbeeld, *.*).
+ [+] Mogelijkheid om de opdrachtregel te verbergen (voor XTree-achtige
+     interface).
+ [+] Het starten van batchfiles vanaf de opdrachtregel is verbeterd:
+     de 1% parameter kan worden gebruikt voor de huidige filenaam in het huidig
+     aktieve filepaneel.
+
+ Filekopie
+ ~~~~~~~~~
+  [*] We hopen dat alle lastige problemen nu zijn opgelost.
+  [+] 'Beep after complete operation' bij kopie als de totaal verstreken tijd
+      langer dan 30 sec bedroeg (instelling in Options|Configuration|Interface)
+  [*] Directory-attributen blijven bewaard.
+
+ Editor
+ ~~~~~~
+ [+] Persistente blokken.
+ [+] AutoBrackets functie.
+ [+] Blok-overschrijf instelling (alleen voor niet-persistente blokken).
+ [+] Extra highlight opties bij bepaalde extensies.
+ [+] Editor macros voor verschillende filespec. (Zie DN.HGL).
+ [+] Markeer enkel woord     - Ctrl+K T
+         Kopieer blok        - Ctrl+K C
+         Verplaats blok      - Ctrl+K V
+         Verwijder blok      - Ctrl+K Y
+         Verberg/toon blok   - Ctrl+K H
+         Print blok          - Ctrl+K P
+         Verplaats naar begin van blok - Ctrl+Q B
+         Verplaats naar einde van blok - Ctrl+Q K
+         Terug naar menu balk - Ctrl+K D
+         Markeer regel        - Ctrl+K L
+
+ File Manager
+ ~~~~~~~~~~~~
+  [+] Maak een aantal directories aan vanuit "Make Directory" m.b.v. ';'
+      bv.: 1;2;3;4;5 maakt vijf subdirectories aan met de respectievelijke
+      benamingen in de huidige directory.
+  [+] Shift-Enter in het Find-paneel zoekt naar deze file in het inactieve
+      paneel van de File Manager.
+  [+] F3 op een directory = [ALT][G]
+  [+] F4 op een directory = [ALT][E]
+  [+] Volledig pad voor de huidige directory in het Directory dialoogvenster.
+  [+] Linker- en rechter Ctrl-toets onafhankelijk (zie Options|Configuration|
+      Interface): ongeacht welk paneel actief is, kan met de toetsencombinatie
+      linker CTRL/crsr het schijfstation voor het linkerpaneel worden gekozen
+      en met rechter CTRL/crsr het schijfstation voor het rechterpaneel.
+  [+] Linker- en rechter Alt-toets onafhankelijk bij Quick Dirs: ongeacht welk
+      paneel actief is, kan met de toetsencombinatie linker ALT-n de directory
+      voor het linker paneel worden bepaald en met de toetsencombinatie rechter
+      ALT-n die voor het rechter paneel (n = nummer van Quick Dir).
+  [+] Indien "Display selected files info" niet is ingesteld in de Panel Setup,
+      dan zal de huidige file-informatie worden vervangen door informatie over
+      eventueel geselecteerde files. (m.a.w.: net als bij Norton Commander).
+
+ Point-and-shoot (starten op extensie)
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  [+] Het is nu mogelijk om een aantal extensies aan te geven voor ‚‚n
+      opdrachtblok. Bv.: pcx,bmp,tif{win !.!}
+  [+] Gebruik ]] om het "]"- symbool aan te geven in de DOS opdracht (in het
+      opdrachtblok); }} voor }, )) voor )
+
+  Versie 1.33 Shareware (31 oktober 1994) - wijzigingen sinds 1.32
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1. Kopie/verplaats algoritme is helemaal veranderd.
+2. Mogelijkheid toegevoegd om files te hernoemen met bijbehorende naam bij
+   File-kopi‰ren.
+3. "Recurse directories" -opties toegevoegd in het kopie-dialoogvenster om
+   terugkerende directory-structuren op te slaan of te verplaatsen.
+4. Statusbalken voor lezen en schrijven in het file-kopie venster zijn
+   gescheiden.
+5. "Terminal Grab procedure" probleem opgelost (Ctrl-Ins, Shift-Ins).
+6. Aantal problemen in de Autodialer opgelost.
+7. Cursor positioneringsprobleem in de Disk Editor opgelost.
+8. Probleem met Quick Directory wijziging van een ingepakt bestand opgelost.
+9. Het is mogelijk ingepakte bestanden nogmaals te lezen met Alt-R.
+10. Een aantal problemen met "Country support" zijn opgelost.
+11. Dupliceer opdracht in de Text Editor toegevoegd - F4.
+14. Een aantal problemen in het User Menu zijn opgelost.
+15. ^V op de opdrachtregel schakelt nu tussen insert en overschrijven.
+16. ^Del in het File-paneel verwijdert geselecteerde files van de huidige lijst
+    (files worden niet daadwerkelijk van de schijf verwijderd).
+17. Openen van de directories van de TEMP: of FIND: stations in "Enter opens
+    directory" -instelling is mogelijk met ^PgDn/toetsaanslag.
+18. Het is mogelijk om vermogen te berekenen met de rekenmachine.
+19. "FOSSIL support" is verwijderd van het Communicatie-dialoogvenster en
+    vervangen door IRQ en Port(hex) waarden.
+20. ZModem is in orde gemaakt - file herstellen werkt nu.
+21. Probleem met '$'-teken op de opdrachtregel is opgelost.
+22. Probleem bij het file zoeken op inhoud is opgelost.
+
+  Versie 1.32 Shareware (4 augustus 1994) - wijzigingen sinds 1.31
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1. Probleem HPFS samen met Direct Disk Access is opgelost.
+2. Interne Scherm "Grabber" toegevoegd om opgenomen schermen in het Clipboard
+   van SmartPad(TM) te plaatsen. In plaats van stapels papier op Uw bureau, nu
+   alleen maar even SmartPad(TM) activeren met ALT-Q en het benodigde van het
+   scherm overnemen en weer doorgaan met waar U mee bezig was.
+3. Probleem bij het verwijderen van een directory van het Tree-paneel opgelost.
+4. Apart Tree-venster verwijderd. In plaats daarvan wordt nu de Selecteer
+   Directory dialoog aangeroepen.
+   Na de selectie wordt de File Manager met Tree paneel geopend.
+5. Terminal opnieuw gecompileerd met nieuwe bibliotheken. Ik hoop dat een
+   aantal problemen met protocollen zijn opgelost, ook Compuserve B+ protocol
+   toegevoegd.
+6. "History strings" in de Terminal toegevoegd.
+7. Terminal Scherm "Grabber" toegevoegd. U kunt (door het indrukken van
+   Ctrl-Ins) het opgenomen scherm in de "String History" of in het SmartPad(TM)
+   Clipboard plaatsen.
+8. "FOSSIL support" toegevoegd in terminal. Zie Communicatie dialoogvenster.
+
+  Versie 1.31 Shareware (22 juni 1994) - wijzigingen sinds 1.30
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1. "Quick directory change" functie toegevoegd. Het is mogelijk om van de ene
+   naar de andere directory te gaan (welke vaak wordt gebruikt) door het
+   indrukken van Alt-n, (n = cijfer (1-9). Gebruik Alt+Shift+0 om een "Quick
+   change" lijst te krijgen.
+   Om de huidige directory op te slaan in de "Quick change" lijst, gebruikt U
+   de toetsencombinatie Ctrl+Alt+Shift+n (n = cijfer 1-9).
+2. Het is mogelijk om van directory te veranderen tijdens "Quick search": geef
+   dan enkel de directorybenaming op met backslash.
+3. Editor:
+    Ctrl-[ woord in hoofdletters (gebruik Ctrl-Shift-[ om een hele regel in
+    hoofdletters te krijgen)
+    Ctrl-] woord in kleine letters (gebruik Ctrl-Shift-] om een hele regel in
+    kleine letters te krijgen)
+    Ctrl-\ begin woord met hoofdletter (gebruik Ctrl-Shift-\ om alle woorden
+    in een regel met hoofdletters te laten beginnen)
+4. File-paneel "Hotkeys"-uitleg in het help-scherm toegevoegd.
+5. Een groot aantal problemen opgelost (ik kan ze me niet allemaal herinneren):
+   - als station A: niet gereed is maar wel actief is, dan loopt DN vast bij
+     het opstarten.
+   - als DoubleSpace is geladen, schakelt DN elke keer de floppydrives aan bij
+     het opstarten.
+   - DN kan geen attributen instellen voor "read-only" files
+   - Directories in RAR 1.50 inpakbestanden werden ook als files weergegeven.
+   - Bij het werken met lege "Phone Book" directories loopt het systeem vast.
+   - Memo velden raken door elkaar als de cursor in het "Phone Book" wordt
+     verplaatst.
+   - Disk formatteren werd beeindigd bij het aantreffen van een bad-sector.
+   - Schijfstation was niet toegangelijk meer na een niet-standaard
+     formatteeropdracht (bijvoorbeeld 800kB) als een externe diskette extender
+     was geladen.
+6. Het is mogelijk om de omgevingsvariabelen DNCFG end DNDSK te gebruiken om
+   gespecificeerde benamingen in te stellen voor de configuratie- en desktop-
+   files (DNxxxxxx.CFG en DNxxxxxx.DSK). Bijvoorbeeld: SET DNCFG = _OS2
+   houdt in dat DN de file DN_OS2.CFG zal gebruiken als configuratie-file.
+   Deze optie geeft de mogelijkheid om gebruikers- en OS specifieke
+   configuraties voor DN te maken.
+
+
+  Versie 1.30 Shareware (1 Juni 1994) - wijzigingen sinds 1.25
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1. Rekenmachine is veranderd. Kopie-toets maakt het mogelijk om een resultaat
+   van een berekening naar het Clipboard te kopi‰ren volgens 'Copy as'.
+   Voor hexadecimale, octale, en binaire getallen kunt U alle mogelijke
+   combinaties gebruiken welke bestaan in de verscheidene programmeertalen
+   bv. 0x23AF=$23AF=23AFh, 01234=1234o, 0b100101=100101b
+2. Het is mogelijk om geselecteerde files in het Clipboard te plaatsen door
+   het indrukken van Ctrl+Ins.
+   Tevens kunt U Shift+Ins gebruiken op de opdrachtregel om een string vanuit
+   het Clipboard te verkrijgen.
+3. Kopi‰er-algoritme is gewijzigd. Nu kan DN al het aanwezige EMS/XMS geheugen
+   gebruiken.
+4. Nu is het mogelijk om te kopi‰ren naar (nog) niet bestaande subdirectories,
+   welke dan automatisch aangemaakt zullen worden. Tevens kunt U via deze
+   methode een nieuwe subdirectory aanmaken.
+   Stel, U wilt files kopi‰ren naar de directory C:\MYDIR\MYSUBDIR1\MYSUBDIR2,
+   maar de directory C:\MYDIR en subdirecotries bestaan niet.
+   Geen zorgen, voer gewoon C:\MYDIR\MYSUBDIR1\MYSUBDIR2\ in in het "Copy to"
+   dialoogvenster.
+5. OS/2 ondersteuning:
+   ş Alt+'/' - schakelt naar de OS/2 opdrachtaanwijzingsmode over. Alle files
+     (behalve intern gebruikte inpakprogramma's en viewers) en opdrachten
+     zullen door de OS/2 opdrachtprocessor verwerkt worden.
+   ş Als NUM LOCK ingeschakeld stond bij het opstarten van een OS/2 sessie,
+     werd deze sessie na het uitvoeren door de opdracht "pause" stilgezet.
+6. "QuickView" en "Autochange Directory" in het filepaneel is in orde gemaakt.
+7. Werking van het "User menu" werd gewijzigd:
+   ş User menu wordt getoond inclusief met alles wat er al op het scherm was,
+     zoals het PullDown menu.
+   ş Als het User menu niet wordt aangetroffen in de huidige directory, zal DN
+     er naar zoeken in bovenstaande directories.
+   ş Het is mogelijk om over te schakelen tussen Lokaal- en Algemeen User Menu
+     tijdens het uitvoeren van het User Menu.
+   ş Het is mogelijk om het User Menu te gaan editten nadat het werd
+     aangeroepen.
+   ş Een lege regel volgend op een Menu-onderdeel houdt een scheiding in het
+     menu in, in het Menuvenster.
+   ş Macro's gewijzigd:
+         ! - Filenaam in het aktieve filepaneel
+         $ - Filenaam in het passieve filepaneel
+         .! - Extensie van een file in het aktieve filepaneel
+         .$ - Extensie van een file in het passieve filepaneel
+         !\ - Directory van een file in het aktieve filepaneel
+         $\ - Directory van een file in het passieve filepaneel
+         !/ - Directory van een file in het aktieve filepaneel (zonder
+              backslash)
+         $/ - Directory van een file in het passieve file paneel (zonder
+              backslash)
+         !: - Schijfstation van een file in het aktieve filepaneel
+         $: - Schijfstation van een file in het passieve filepaneel
+
+         U kunt deze macro's gebruiken in de benamingen van een menu-onderdeel.
+
+         %1 - Naam van lijst van geselecteerde files in het aktieve filepaneel
+         %2 - Naam van lijst van geselecteerde files in het passieve filepaneel
+         %3... - Gebruikersparameters
+8. Een "file-open" dialoog in de stijl van Windows toegevoegd.
+9. TAR ondersteuning toegevoegd.
+10. "Herstellen oude files"-icon toegevoegd in het File kopie/verplaats
+    dialoog-venster.
+11. Het werken met "ingepakte" bestanden:
+     ş "Copy to archive" functie.
+     ş Uitpakken van een bestand, zonder het te openen.
+12. Het werken met beschrijvingen: editten (met Alt-INS), kopi‰ren,
+    verplaatsen.
+    Opm.: all‚‚n voor geregistreerde gebruikers!
+13. RAR 1.50 ondersteuning toegevoegd.
+14. Tekst editor:
+     ş sorteren van regels d.m.v. bepaalde vertikale blokinhoud (Alt-T)
+     ş het is mogelijk om het totaal aan getallen in vertikele blokken te
+       berekenen en in het Clipboard te plaatsen (Alt-Ins).
+15. File zoeken:
+     ş Zoeken naar een enkel file-masker gaat sneller.
+     ş Uitgebreide zoekfunctie toegevoegd om tijd, grootte en vereiste
+       attributen in te stellen voor de te zoeken files.
+16. Het indrukken van de rechter-muisknop terwijl een dialoog wordt gevoerd
+    komt nu overeen met het standaard icon voor dialogen.
+17. Het is mogelijk om file-lijsten te lezen zoals files met omschrijvingen
+    en *.?lo (Alt-V in het filepaneel).
+18. "View DN Team" opdracht toegevoegd aan het "About" dialoogvenster.
+19. Nieuwe disk formatteermogelijkheden toegevoegd. (Uitgebreide opties zijn
+    all‚‚n voor geregistreerde gebruikers beschikbaar).
+

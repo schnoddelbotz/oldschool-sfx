@@ -1,0 +1,39 @@
+/reencodedict 16 dict def
+/ReEncodeFont {
+reencodedict begin /newcodes exch def /newfontname exch def /basefontname exch def
+/basefontdict basefontname findfont def
+/newfont basefontdict maxlength dict def
+basefontdict { exch dup /FID ne { dup /Encoding eq { exch dup length array copy newfont 3 1 roll put }
+{ exch newfont 3 1 roll put } ifelse } { pop pop } ifelse } forall
+newfont /FontName newfontname put
+128 1 255 { newfont /Encoding get exch /.notdef put } for
+newcodes aload pop newcodes length 2 idiv { newfont /Encoding get 3 1 roll put } repeat
+newfontname newfont definefont pop
+end
+} def
+
+/CodePage852 [ 7/bullet 16/grave 17/acute 18/circumflex 19/tilde 20/macron
+21/breve 22/dotaccent 23/dieresis 24/ring 25/cedilla 26/hungarumlat
+27/ogonek 28/caron
+
+128/Ccedilla 129/udieresis 130/eacute 131/acircumflex 132/adieresis
+135/ccedilla 136/lslash 137/edieresis 140/i 142/Adieresis
+
+144/Eacute 146/Iacute 147/ocircumflex 148/odieresis 153/Odieresis
+154/Udieresis 157/Lslash
+
+160/aacute 161/i 162/oacute 163/uacute 166/Zcaron 167/zcaron 170 space
+174/guillemotleft 175/guillemotright
+
+179/bar 180/plus 181/Aacute 182/Acircumflex 185/plus 186/bar 187/plus 188/plus
+191/plus
+
+192/plus 193/plus 194/plus 195/plus 196/hyphen 197/plus 200/plus 201/plus
+202/plus 203/plus 204/plus 205/hyphen 206/plus 207/currency
+
+211/Edieresis 214/Iacute 215/Icircumflex 217/plus 218/plus
+
+224/Oacute 225/germandbls 226/Ocircumflex 233/Uacute
+
+245/section 247/cedilla 248/ring 249/dieresis 250/periodcentered
+] def

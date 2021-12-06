@@ -1,0 +1,15 @@
+                          Installation 
+
+Installation of F-PROT involves copying all the files which make up the
+package to a separate directory on the hard disk or on a network server.
+One line is then added to AUTOEXEC.BAT or CONFIG.SYS to load the
+VIRSTOP.EXE program - see VIRSTOP.DOC for further information
+
+Earlier versions of F-PROT offered semi-automatic installation, but it was
+very limited - only allowed loading VIRSTOP from AUTOEXEC, and did not
+work on networked machines. 
+
+We came to the conclusion that the installation should be handled with a
+dedicated "INSTALL" program and such a program now exists for the
+Professional version.
+

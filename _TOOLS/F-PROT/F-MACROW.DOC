@@ -1,0 +1,145 @@
+                     F-MACROW Last Minute Release Notes
+
+WARNING! This is a BETA version of our new macro scanner/disinfector.
+We made it available because of the increased demand for a good document
+disinfection program and because we were not satisfied with the quality of
+the previous (DOS) versions of the F-MACRO.EXE program.  However, we have
+not had the time to put F-MACROW through the extensive internal tests which
+our products usually undergo.  Therefore, there is increased probability
+that the program is not entirely bug-free.  The users are strongly advised
+to make backup copies of the documents before attempting to disinfect them. 
+This is particularly important when disinfecting Excel workbooks, since
+Microsoft failed to provide us with the information we needed to implement
+proper Excel virus disinfection.
+
+If any bugs are found, please report them to bontchev@complex.is, and if
+you have any suggestions for improvements - feel free to e-mail to the
+above address.
+
+F-MACROW is a 16-bit Windows application. It has been tested
+successfully under Windows for Workgroups 3.11, Windows 95 and Windows
+NT (3.51 and 4.0 beta 2), although it should work under plain Windows
+3.1 as well. It does not work under DOS - but then, if you do not run
+Windows the you do not have to worry about these viruses anyhow.
+
+Installation.
+
+To install F-MACROW, follow the simple procedure described below. (Future
+versions will include an automatic installation program.)
+
+1) Copy the file CTL3DV2.DLL to your WINDOWS\SYSTEM directory, if it is
+not there already (the file is probably already in place).
+
+2) The program needs the file OLE2.DLL in the WINDOWS\SYSTEM directory
+too. However, if this file is not already on your system, WinWord 6.x or
+above will not run, so macro viruses are not your concern.
+
+3) Copy the files F-MACROW.EXE and MACRO.DEF in some directory (e.g.,
+in the same directory where you have installed F-PROT). It doesn't
+matter where they are placed but both of them must be in the same directory.
+
+4) Create an item in some Program Manager group and make it point to the
+file F-MACROW.EXE. (Alternatively, if you are using Windows 95, simply
+drag the file from the Explorer and drop it on the desktop.)
+
+Using F-MACROW
+
+Once you have installed the required files you can launch the program by
+double-clicking the F-MACROW icon.  Windows 95 users can also launch it
+from the DOS prompt in a DOS box.
+
+The program interface is very simple.  The user clicks on the Scan button to
+start the scanning.  This brings up a dialog box, where the user can select
+scanning options.
+
+The following options are available:
+
+Scan directory        - Selects the directory to be scanned.
+What to scan          - Selects whether to scan files with standard extensions
+                        for Word and Excel (*.DOC, *.DOT, *.XL?), or whether to
+                        scan files with any extension.
+Scan Subdirectories   - Whether to scan subdirectories of the specified
+                        directory.
+If a virus is found   - Specifies what action should be taken if a virus is
+                        found.  The following options are available:
+                          - Report only.  Just reports the virus.
+                          - Disinfect automatically. The virus will be
+                            automatically removed.
+                          - Ask each time.  The user will be asked each time
+                            if the file should be disinfected.
+Report all scanned
+documents              - Normally the program will report only the files in
+                         which a virus is found.  If this option is checked,
+                         all scanned files will be reported.
+Report file            - Check this option if you wish to save the report to a
+                         file, and use the next two fields to specify the name
+                         of the report file and whether the new report should
+                         overwrite an already existing file or append to it.
+
+When the desired options have been selected, press the OK button to start
+the scan.  The scanning can be stopped by pressing ESC or clicking the Stop
+button.
+
+To exit the program click on the Exit button.
+
+The on-line help option has not yet been implemented.
+
+List of viruses detected by F-MACROW:
+===========================================================================
+
+FormatC         (Trojan)
+Reflex.Dropper  (Trojan)
+Laroux          (Excel)
+Aliance
+Atom
+Boom:De
+Buero:De
+Colors.A
+Colors.B
+Colors.C
+Colors.D
+Clock:De
+Concept.A
+Concept.B:Fr
+Concept.C
+Concept.D
+Concept.E
+Concept.F
+Concept.G
+Concept.H
+Date
+Dietzel:De
+Divina
+DMV
+Doggie
+Friendly:De
+Goldfish
+Guess
+Hot
+Imposter.A
+Imposter.B
+Irish
+KillDLL
+LBYNJ:De
+MadDog
+MDMA
+NF
+NOP.A:De
+NOP.B:De
+Npad
+Nuclear.A
+Nuclear.B
+Nuclear.C
+PCW:De
+Pheeew:NL
+Polite          (In documents produced by Word 6.x and above only)
+Reflex
+Satanic
+Tedious
+Wazzu.A
+Wazzu.B
+Wazzu.C
+Wazzu.D
+Xenixos:De
+
+

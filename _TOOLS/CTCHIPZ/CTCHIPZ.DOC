@@ -1,0 +1,221 @@
+Chipsatz intern, Intel Triton, Mercury, Neptun , c't 10/95 S.332 (as)
+********************************************************************
+
+ctchipz.exe  V3.1 ausfÅhrbares Programm
+intelpci.cfg Konfigurationsdatei fÅr die Intel-Pentium-ChipsÑtze
+             Triton, Neptun und Mercury
+
+
+ctChipz ermîglicht das Auslesen und Setzen von ChipsÑtzen. Die
+jeweilige Chipsatzinformation wird einer Konfigurationsdatei
+entnommen (Extension .CFG). ctChipz Version 3 beherrscht nun auch
+32bittige Ports und kann mit PCI-ChipsÑtzen umgehen.
+
+Interaktiver Betrieb
+*********************
+
+Um  einen Intel-Pentium-Chipsatz auszulesen, ist lediglich
+
+ctchipz intelpci
+
+einzugeben.
+
+Alternativ kann man auch Name und Pfad im Environment setzen,
+z.B.
+
+set chipset=C:\chipset\intelpci.cfg
+
+dann genÅgt es, allein ctchipz aufzurufen.
+
+ctchipz gibt die aktuelle Einstellung der Register aus.
+Nach jedem Register hÑlt es an, der Benutzer kann den Registerinhalt
+Ñndern, abbrechen oder weitermachen. Folgende Eingaben sind
+mîglich:
+
+S  : Schaltet Darstellung um zwischen
+     aktuell: nur aktuelle Einstellung anzeigen  oder
+     alle:    alle mîglichen Einstellungen anzeigen.
+     Die aktuelle Einstellung ist rot gekennzeichnet.
+
+M  : Schaltet die Darstellung um zwischen
+    Bitmuster: betroffene Bits als 1, nicht betroffene als 0 markieren
+               also etwa 11100001 fÅr Bit 7,6,5,1
+    Bit-Liste: explizite Auflistung der Bits (Default)
+               also 7..5,1 fÅr  Bit 7,6,5,1
+
+R  : Wiederholung
+
+I,/: fragt neuen Index (in hex) ab
+
+?  : kurzes Help
+
+Q,ESC:Abbruch
+
+CR : oder alle hier nicht aufgefÅhrten Zeichen: weiter
+
+
+#### RegisterÑnderungen #####
+
+
+H,$: gibt aktuellen Registerwert hexadezimal aus,
+     Wert lÑ·t sich editieren (mit Cursor rechts, links, Hexzahl,
+     CR), Abbruch mit ESC
+
+B,%: gibt aktuellen Registerwert binÑr aus,
+     Wert lÑ·t sich editieren (mit Cursor rechts, links, Binzahl,
+     CR), Abbruch mit ESC
+
+P  :Fragt nach Bitpattern in der Gestalt Bitliste:=Wert.
+
+    FÅr 8bittige Ports gilt zum Beispiel
+
+    7..5,1:=%1111
+
+    FÅr 16 und 32bittige Ports sind die einzelnen Bitnummern
+    zweistellig einzugeben, also z.B
+    07..05,01:=%1111
+
+    in beiden FÑllen werden nur die Bits 7,6,5 und 1 gesetzt, der
+    Rest bleibt unverÑndert.
+
+    Oft will man nur ein Bit Ñndern, was hiermit recht praktisch
+    geht, z.B.: P31:=1
+
+###################### W A R N U N G   ###########################
+
+Das éndern bestimmter Chipsatzregister  kann zum Absturz
+des Rechners fÅhren!
+##################################################################
+
+Um gleich bei einem bestimmten Register zu starten, kann man den Index in
+der Kommandozeile Åbergeben, z.B:
+
+ctchipz intelpci /72
+
+Kommandoline, Batchbetrieb und Makros
+*************************************
+
+Register lassen sich direkt Åber die Kommandozeile setzen:
+
+ctchipz intelpci /5E:=77
+
+setzt das 8bittige Register 5Eh auf 77h (alle Zahlenwerte auch ohne 'h' in
+hex, Registerindizes ab A0h erfordern eine vorangestellte 0). Dadurch wird
+der Speicherbereich von E000h bis E7FFFh auf Read/write cacheable
+geschaltet. Das Programm zeigt die geÑnderten Register (vorher/nachher) an,
+ohne auf ein Eingabe des Benutzers zu warten.
+
+Alternativ sind binÑre Werte mîglich:
+
+ctchipz intelpci /5E:=%01110111
+
+Um nur einen Teilbereich des Registers zu setzen, lassen sich hier
+"Don't-Care-Bits" Åbergeben, etwa um nur E000h bis E3FFFh auf
+Write only zu setzen:
+
+ctchipz intelpci /5E:=%xxxx0010
+
+Die Åbergebene Bitzahl mu· dabei jeweils mit der Breite des Registers
+(Åblicherweise 8) Åbereinstimmen.
+
+Um Ihnen hier die Arbeit etwas zu vereinfachen, sind einige
+Macros und Variable definiert in der Konfigurationsdatei. So lÑ·t
+sich obiger Aufruf auch einfacher merkbar mit
+
+ctchipz intelpci /SE0=WON
+
+entsprechende Macros gibt es in IntelPCI fÅr
+
+/SC0  (C0000..C3FFF) in 16 KB-Schritten bis
+/SF0  (F0000..FFFFF)
+
+mit den Attributen:
+
+rwc   = x111     ;; read write Cacheable
+rwn   = x011     ;; read write not Cacheable
+won   = x010     ;; Write only not Cacheable
+roc   = x101     ;; Read only, cacheable
+ron   = x001     ;; Read only not Cacheable
+bus   = x000     ;; Read/Write to PCI Bus
+
+Weitere Macros sind definiert, die auch im laufenden Betrieb das Ein-
+/Auschalten der Caches, oder énderung der Cachestrategien etc. erlauben. Diese
+Macros sollte man mîglichst nicht im virtuellen Modus aufrufen (EMM386, Max,
+QEMM, Windows- oder OS/2-DOS-BOX), da hier die Datenkonsistenz nicht 100%
+sichergestellt ist. Au·erdem lÑ·t sich im virtuellem Modus der geschÅtzte
+Prozessorbefehl WBINVD zum Flushen der Caches nicht einsetzen.
+Zum "Reinigen" der Caches wird ferner das Lesen eines gro·en
+Speicherblocks verwendet (zweimal Cache-Grî·e). Bei Caches von 512KByte oder
+grî·er ist das nicht mehr im Real-Modus mîglich. Mit dem Kommando-Switch
+
+/L2
+
+bzw.
+
+/L2=512
+
+benutzt ctchipz fÅr die Reinigungsaktion den Protected Mode
+
+(fÅr grî·ere Caches entsprechend /L2=1024 etc.)
+
+In der Kommandozeile kann man mehrere Registerwerte, Makros
+und Switches Åbergeben, z.B
+
+ctchipz intelpci /L2 /58=%xxxxxxx0 /sE0=rwc /sE4=rwc ... /Q
+
+Der Switch /Q sorgt dafÅr, da· nur evtl. Fehlermeldungen ausgegeben werden.
+Ansonsten kann man die reichhaltigen Ausgabe auch mit > Nul "vernichten".
+
+FÅr grî·ere Konfigurationsorgien ist mit
+
+/dat=name
+
+die Angabe einer Textdatei mîglich, in der die Registerwerte, Makros oder
+weitere Dateien zeilenweise enthalten sind ('/' kann entfallen), also
+
+ctchipz intelpci /dat=mein.cfg
+
+und in mein.cfg:
+
+QUIET          ; entspricht dem Switch /Q
+L2=512         ; nur bei 512-K-Caches
+58=%xxxxxxx0
+sE0=rwc
+sE4=rwc
+...
+
+Welche Macros definiert sind, entnehmen Sie bitte der zum Chipsatz
+zugehîrigen Konfigurationsdatei (Macro = ...). Im allgemeinen gibt es
+Macros wie L2ON, L2OFF, L1ON, L1OFF, L2WT, L2WB, Dirty etc. Der Triton
+kennt kein L2ON, er benîtigt dafÅr die Angabe der installierten Cachegrî·e,
+also L256ON oder L512ON. Selbstdefinierte Macros lassen sich recht einfach
+hinzufÅgen, wenn man sich an den vorhandenen Beispielen im Listing
+orientiert.
+
+Hardwareexperten kînnen natÅrlich auch eigene Konfigurationsdateien
+entsprechend der Struktur und Syntax vorliegender .CFG-Dateien erstellen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

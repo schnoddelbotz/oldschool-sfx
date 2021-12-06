@@ -1,0 +1,16 @@
+sp=0
+fill 0
+silent on,msen 1,silent off
+getb 0 r0
+r0=r0+1
+func msel
+cdb.4=r0
+iorb.l=r0
+depb 0 0
+depb 4 0 0 0 0 0
+depb 12 01h
+depb 14 00h
+excdb
+
+
+

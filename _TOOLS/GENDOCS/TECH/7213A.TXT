@@ -1,0 +1,170 @@
+===============================================================================
+                             MAXTOR 7213A IDE DRIVE
+===============================================================================
+
+KEY FEATURES:
+
+  * 15ms average seek               * 64K on-board cache  
+  * Low power consumption           * Zone density recording 
+  * 1:1 interleave                  * Dual drive master/slave support 
+  * Rotary voice coil               * Automatic actuator lock 
+  * Single-sided surface mount PCBA
+
+SPECIFICATIONS:
+
+Formatted: ................................. 212,787,200 Bytes
+Embedded Controller: ....................... AT 
+Actuator type: ............................. Voice Coil
+Number of Disks: ........................... 2
+Data Surfaces: ............................. 4
+Data Heads: ................................ 4
+Servo: ..................................... Embedded
+Tracks per surface: ........................ 1,698
+Track Density (average): ................... 1,973 tpi
+Bytes per Block: ........................... 512
+Sectors per track: ......................... 42 physical
+
+PERFORMANCE (Typical):
+
+Seek times* (ms)
+     Track to track: ....................... 3
+     Average: .............................. 15 **
+     Maximum: .............................. 28.2
+
+Average latency (ms) ....................... 8.45
+Rotation speed ............................. 3,551 RPM
+Controller overhead ........................ 1 ms
+
+Data transfer rate (Mbytes per sec)
+     To/from media ......................... 2.83
+     To/from buffer (AT) ................... 9.0
+     To/from interface ..................... 7.5
+Start time / power up (0-3,551 RPM)
+     Typical ............................... ó7 sec
+Stop time / power down
+     Typical ............................... ó3 sec
+Start/stop cycles .......................... 20,000 typical
+Interleave: ................................ 1:1
+Buffer Size: ............................... 64K
+Interface: ................................. AT 
+Recording Method: .......................... 1,7 RLL
+Recording Density (Kbpi) ................... 42.7 maximum
+Flux Density (Kfci) ........................ 32.0 maximum
+
+Power Requirments (Typical):
+
+    Mode   +12VDC ñ8%   +5VDC ñ5%   Power
+    R/W     145mA        340mA      3.7 W
+    Idle    140mA        330mA      3.5 W
+
+Physical:
+
+    Height:  1.00"  (2.54 cm)
+    Length:  5.75"  (14.61 cm)
+    Width:   4.00"  (10.16 cm)
+    Weight:  1.2 lbs. (.57 kg)
+
+Environmental:
+
+Temperature
+    Operating .............................. 5øC to 50øC
+    Non-operating .......................... -40øC to 65øC
+    Thermal gradient ....................... 20øC per hour max
+Humidity ***
+    Operating .............................. 5% to 95% non-condensing
+    Non-operating .......................... 5% to 95% non-condensing
+    Maximum wet bulb ....................... 20ø C 
+Altitude (relitive to sea level)
+    Operating .............................. -200 to 10,000 feet
+    Non-operating .......................... 40,000 feet max
+    
+Reliability and Maintenance:
+
+MTBF ....................................... >150,000 hours 
+                                             (POH, predicted at 35 degrees C)
+Preventative Maintenance ................... None
+Component design life ...................... 5 years (minimum)
+Data reliability
+     Hard read errors ...................... <10 per 10 to the 13th bits read
+Shock & Vibration (typical)
+          Shock measured at half-sine pulse. Vibration 
+          measured at swept sine, 1 octave per minute
+    Operating shock ........................ 70 Gs, 11ms
+    Non-operating shock .................... 10 Gs, 11ms (without 
+                                             non-recoverable errors)
+    Non-operating Vibration 
+     5-20 Hz ............................... .10" (double amplitude)
+     20 - 300 Hz ........................... 2 Gs peak amplitude
+    Operating Vibration
+     5-20 Hz ............................... .05" (double amplitude)
+     20 - 300 Hz ........................... 1 Gs peak amplitude
+Acoustic Noise
+    35 dBA at 1 meter (typical) in idle (spinning) on track mode.
+    (sound power -4.5 bels average)
+
+*   At nominal DC input volages
+**  The average of 10,000 random seek times (measured on independent
+    test equipment) consitutes the average seek time specification.
+*** Operating and non-operating specs meet MIL-STD-810E. 
+    Method 507.3 Table 507.3-I High humidity diurnal catagory. 
+    Natural, High Humidity, Cyclic (Cycle 3)
+
+==============================================================================
+                       7213A JUMPER DESIGNATION
+                                             ³J23³J22³J20³J16³
+       ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+       ³ SYNC Spindle Control                ³   ³   ³   ³   ³
+       ³  Sync Spindle Disabled*             ³ O ³   ³   ³   ³
+       ³  Sync Spindle Enabled               ³ J ³   ³   ³   ³
+       ³  Sync Slave*                        ³   ³ O ³   ³   ³
+       ³  Sync Master                        ³   ³ J ³   ³   ³
+       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+       ³ Master/Slave                        ³   ³   ³   ³   ³
+       ³  Only drive in single drive system* ³   ³   ³ J ³   ³
+       ³  Master in dual drive system        ³   ³   ³ J ³   ³
+       ³  Slave in dual drive system         ³   ³   ³ O ³   ³
+       ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+       ³ I/O Channel Ready                   ³   ³   ³   ³   ³
+       ³  Enabled                            ³   ³   ³   ³ J ³
+       ³  Disabled*                          ³   ³   ³   ³ O ³
+       ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÙ
+         J=Jumpered O=Open *=Default
+
+ÚÄÄÄÄÄ¿  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿     ÚÄÄ¿  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿     ÚÄÄ¿  ÚÄÄÄÄÄÄÄÄÄ¿
+³     ÀÄÄÙ                  ÀÄÄÄÄÄÙ  ÀÄÄÙ             ÀÄÄÄÄÄÙ  ÀÄÄÙ         Ã¿
+³                                                            ÚÄÄÄÄ¿       ÚÄÁÁ¿
+³ Å              ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ>³::::³       ´   ³
+³        ÉÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍ»                                  ÀÄÄÄÄÙ       ´   ³
+³        º     J24 J22    º                                     Å   ÚÄÄ¿  ´   ³
+³        º  ÚÄÄÄÅÄÄÄÅÄ¿   º                                         ³,,³  ´   ³
+³        º  ³ * * * * ³   º           ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ>³::³  ´   ³
+³        º  ³ * * * * ³   º   ÉÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍ»                     ³::³  ´J1 ³
+³        º  ÀÄÅÄÄÄÅÄÄÄÙ   º   º    ÚÄÄÄÄÄ¿    º                     ÀÄÄÙ  ´   ³
+³        º   J25 J23      º   º J20Å ßßß ³    º                           ´   ³
+³        ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼   º    ³ * * ÅJ19 º                           ´   ³
+³                             º J18Å * * ³    º  Å                        ´   ³
+³                             º    ³ * * ÅJ17 º                           ´   ³
+³                             º J16Å * * ³    º                           ´   ³
+³       Å                     º    ÀÄÄÄÄÄÙ    º                           ÀÄÄÂÙ
+³                             ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼                          ÚÄÄÄÁ¿
+³                                                                   Å    µ    ³
+³                                                                        µ    ³
+³                                                                        µ J3 ³
+³    ÚÄÄ¿                 ÚÄÄÄÄÄ¿   ÚÄÄ¿                ÚÄÄÄÄ¿  ÚÄÄ¿     µ    ³
+ÀÄÄÄÄÙ  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ     ÀÄÄÄÙ  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ    ÀÄÄÙ  ÀÄÄÄÄÄÁÄÄÄÄÙ
+
+                            CMOS Configuration:     
+
+                    Cyls  Hds  Write  Landing Sec/Trk
+                               PreComp  Zone
+                    ---------------------------------
+                    683   16     0       0       38
+
+            Yields: 212.8 Million Bytes (Approx. 202 Mega-Bytes)
+
+            7213A and 7213S are trademarks of Maxtor Corporation.
+                AT is a registerd trademark of IBM Corporation.
+              Specifications subject to change without notice.
+                     Copyright 1992 Maxtor Corporation.
+==============================================================================
+

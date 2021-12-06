@@ -1,0 +1,210 @@
+Der Norton Commander 5.0
+-------------------------
+Willkommen beim neuen Norton Commander 5.0. Diese Anleitung enth„lt:
+
+	* Eine šbersicht ber die Neuheiten im Norton Commander 5.0
+
+	* Eine Liste mit erweiterten Funktionen
+
+Neuheiten im Norton Commander 5.0
+---------------------------------
+
+* Drag & Drop 
+
+Drag & Drop-Untersttzung erleichert die Arbeit mit den Dateien in den
+Fenstern noch mehr. Sie k”nnen eine einzelne Datei oder Gruppen von Dateien
+und Verzeichnissen ziehen und ablegen.
+
+Ziehen Sie Dateien von einem Fenster in das andere, um sie zu kopieren,
+oder halten Sie die Alt-Taste gedrckt, um sie zu bewegen.
+
+Sie k”nnen Dateien und Verzeichnisse sogar auf die Funktionstastenleiste
+am unteren Bildschirmrand ziehen, um eine Dateioperation zu starten.
+
+* Filter
+
+Norton Commander 5.0 verfgt nun ber erweiterte Funktionen zur Auswahl von
+Dateien. Die Dateiauswahl basiert nun auf Aktionsfiltern, die auf alle
+Dateioperationen wie Kopieren, Bewegen, Synchronisieren, L”schen und Kom-
+primieren anwendbar sind.
+
+Aktionsfilter gestatten dem Anwender die Angabe von Auswahlkriterien wie
+Dateinamen, Datum und Zeit, Dateigr”áe und sogar Attribute. Diese fortge-
+schrittenen Auswahlkriterien sind blicherweise nur in speziellen Dateisuche-
+programmen zu finden - der Norton Commander integriert diese Funktionalit„t
+jedoch im "Herz" des Commander-Kernels, was ihn nun zu einem der besten
+Allround-Dateimanager macht.
+
+* Verzeichnisse synchronisieren
+
+Der Norton Commander erleichtert die Synchronisation von Dateien und Ver-
+zeichnissen zwischen zwei und mehr Maschinen und auf Netzwerk-Volumes.
+Diese Funktion ist besonders zu empfehlen fr Benutzer von portablen Com-
+putern, die aktuelle Kopien ihrer Dateien ben”tigen.
+
+* Ansicht komprimierter Dateien
+
+Jetzt k”nnen Sie sich den Inhalt jeder Datei innerhalb einer komprimierten
+Datei ansehen. ™ffnen Sie einfach die komprimierte Datei, w„hlen Sie die
+gewnschte Datei, und drcken Sie die Taste "Anz." (F3).
+
+* Datentr„ger-Dienstprogramme
+
+Der Norton Commander verfgt nun ber eine Reihe ntzlicher Datentr„ger-
+Dienstprogramme als Erweiterung des Dateimanagers, damit allt„gliche DOS-
+Arbeiten innerhalb der Commander-Umgebung erledigt werden k”nnen.
+
+	<> Diskette formatieren:
+		Formatieren Sie Disketten auf einfache Art, ohne sich ber
+                den DOS-Befehl FORMAT den Kopf zu zerbrechen.
+
+	<> Diskette kopieren:
+		Erstellen Sie Image-Dateien von Disketten, und fertigen Sie
+		Mehrfachkopien einer Diskette an - einfacher und schneller 
+		als mit dem DOS-Befehl COPY.
+
+	<> Datentr„ger benennen:
+		Jedem DOS-Laufwerk k”nnen Sie nun eine Bezeichnung hinzufgen mit
+		diesem einfachen und ntzlichen Dienstprogramm.
+
+* Netzwerk-Dienstprogramme
+
+Mit dem Norton Commander k”nnen Sie nun eine Vielzahl von Aktionen ber ein
+LAN ausfhren, und zwar mit einem klaren Mensystem und vertrauter Benutzer-
+oberfl„che. Sie k”nnen Nachrichen senden, Server-Volume-Informationen ein-
+sehen, Verbindungen zu Servern aufbauen oder trennen und Laufwerkszuwei-
+sungen einrichten und aufheben.
+
+Diese Dienstprogramme untersttzen Novell-Netzwerke in den Versionen
+Netware 3.x und Netware 4.x.
+
+   <> Nachricht senden:
+   	Senden Sie Nachrichten, und sehen Sie Einzelheiten zu 
+   	Benutzern und Benutzergruppen auf dem LAN ein.
+
+   <> Server verbinden/abtrennen:
+   	Stellen Sie Verbindungen mit Servern einfach ber eine Liste her,
+   	oder trennen Sie die Verbindung ohne komplexe Befehlssyntax.
+
+   <> Laufwerkszuweisung:
+   	Weisen Sie Laufwerken Server zu - mit einem einfachen Tastendruck.
+
+   <> Server-Information:
+   	H„lt Informationen zu allen Netzwerken auf einem LAN bereit.
+
+* Dateitrennung
+
+Der Norton Commander 5.0 verfgt ber eine Funktion zum Trennen und Zu-
+sammenfhren von Dateien, mit der groáe Dateien in kleinere Teildateien
+aufgeteilt werden k”nnen - unerl„álich, wenn Ihre Datei nicht auf eine
+Diskette paát. Verteilen Sie sie ber mehrere Disketten, und fhren Sie sie
+zu einem sp„teren Zeitpunkt auf einer anderen Festplatte wieder zusammen.
+
+* System aufr„umen
+
+Beseitigen Sie unerwnschte Dateien, die von anderen Programmen erstellt
+wurden, von Ihrer Festplatte - wie z. B. Readme-, Sicherungs- und tempor„re
+Dateien. Komplett konfigurierbar, damit Sie Ihre eigenen Dateis„tze er-
+stellen k”nnen.
+
+* Dateisuche
+
+Das Dateisuchemodul des Norton Commanders wurde v”llig neu berarbeitet und
+bietet nun die folgenden richtungsweisenden sowie ntzlichen Funktionen:
+
+ <> Regul„re Ausdrcke. Bei der Suche nach Dateien haben Sie nun mehr
+    Kontrolle in der Definition Ihrer Suchkriterien. Sie bestimmen,
+    welche Dateien bei der Suche ein- oder ausgeschlossen werden sollen.
+    Auch die Suche nach bestimmten Textmustern in Dateien ist m”glich.
+
+ <> Dateisuche-Fenster. Die Ergebnisse Ihrer Suche k”nnen Sie in ein
+    Commander-Dateifenster legen. Dies eignet sich besonders zur Aus-
+    fhrung von Block-Operationen fr eine Gruppe von Dateien, die ber
+    verschiedene Verzeichnisse auf Ihrer Festplatte verstreut sind.
+
+ <> Suche nach doppelten Dateien. Sie k”nnen nun doppelte Dateien auf
+    Ihrer Festplatte aufspren.
+
+ <> Mehrere Suchverzeichnisse. Sie k”nnen mehrere Verzeichnise nach
+    Ihren Dateien durchsuchen. Sie k”nnen auch Umgebungsvariablen wie
+    %PATH% verwenden, um die Suche auf Ihren Laufwerken zu steuern.
+
+ <> Untersttzung der Befehlszeile. Sie k”nnen die Dateisuche des Norton
+    Commanders mit Befehlszeilenschaltern starten, um bestimmte Dateien
+    zu suchen. Hierbei liegt die volle Funktionsvielfalt und Flexibilit„t
+    des mengesteuerten Programms vor.
+
+Erweiterte Funktionen im Norton Commander 5.0
+---------------------------------------------
+
+* Dateiattribute
+
+Jetzt k”nnen Sie mehrere Dateien und Verzeichnisse ausw„hlen und die Attri-
+bute aller Dateien in einem einzigen Schritt „ndern. Dies eignet sich z. B.
+dazu, alle Dateien in einer verschachtelten Verzeichnisstruktur mit dem
+Attribut "Nur lesen" zu versehen.
+
+* Systeminformationen
+
+Die Systeminformationen des Norton Commanders wurden erweitert und enthalten
+nun Informationen zur Auslegung des Speichers, zur Hardware-Konfiguration
+und zum CMOS-Status.
+
+* Dateien drucken
+
+Sie k”nnen nun den Inhalt einer Datei auf einem Postscript-Drucker aus-
+drucken.
+
+* Komprimierung
+
+Der Norton Commander 5.0 kann nun bis zu 40.000 Dateien mit einer Reihe von
+Komprimierungsprogrammen komprimieren (ZIP, ARC, ARJ, PAK, LHARC und ZOO).
+
+* Befehl "L”schen"
+
+Der verbeserte L”schbefehl gestattet nun das L”schen aller Dateien in einem
+Verzeichnis, ohne die Verzeichnisstruktur zu zerst”ren. Entwickler werden
+diese M”glichkeit bei der Archivierung eines Entwicklungsprojektes zum
+L”schen ihrer MAP- und LNK-Dateien zu nutzen wissen.
+
+* Konfiguration
+
+Die Konfiguration des Norton Commanders 5.0 wurde in einem einzigen, leicht
+bedienbaren Dialogfeld zusammengefaát. šber dieses einheitliche Men k”nnen
+Anwender ihre Bildschirmeinstellungen,  die Fenster, die Bildschirmschoner
+sowie die Maus-, Best„tigungs- und Druckeroptionen fr alle
+Commander-Dienstprogramme konfigurieren.
+
+Ein im Norton Commander 5.0 neu untersttztes Merkmal ist die F„higkeit, den
+Zeichensatz auf einen halb-grafischen umzuschalten, um Kontrollk„stchen und
+Optionsfelder „hnlich wie in Windows erscheinen zu lassen.
+
+* Terminalemulationsprogramm
+
+Das Terminalemulationsprogramm wurde berarbeitet, um die neue, elegantere
+Benutzeroberfl„che des Norton Commanders 5.0 wiederzuspiegeln. Desweiteren
+werden nun Tastaturmakros, INT-15 und NCSI untersttzt. Das Produkt arbeitet
+nun mit Datenverbindungen mit bis zu 115.200 bps zusammen, so daá Benutzer
+mit schnellen Modems derartige Geschwindigkeiten mit diesem Programm nutzen
+k”nnen. Auch der Zugriff auf Compuserve wurde verbessert und untersttzt nun
+das Compuserve-B-Dateibertragungsprotokoll.
+
+* Befehl "Kopieren"
+
+Der Kopierbefehl des Norton Commanders wurde um folgende Funktionen
+erweitert:
+
+  <> Nur neuere Dateien kopieren: Dies kann sich auf die insgesamt be-
+     n”tigte Zeit fr das Kopieren oder Synchronisieren von Verzeichnissen
+     von einem auf den anderen Computer enorm auswirken. In Verbindung mit
+     dem neuen Befehl "Verzeichnisse synchronisieren" ist dies der ideale
+     Dateimanager fr mobile Computer-Anwender.
+
+  <> Der Platz auf dem Ziellaufwerk kann nun vor dem Beginn des Kopier-
+     vorgangs berprft werden.
+
+* Bildschirmschoner
+
+Sie k”nnen nun aus einem Angebot von 20 Bildschirmschonern (teils grafisch,
+teils auf Textgrundlage) den gewnschten ausw„hlen.
+

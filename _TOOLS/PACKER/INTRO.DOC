@@ -1,0 +1,229 @@
+
+     INTRO.DOC                                                   July 1995
+
+
+     INTRODUCTION:
+
+	This document is intended for new users of the file archiver, ARJ.
+
+	ARJ is a program that allows the user to store one or more files in
+	a compressed format in an archive file.  This saves space both in
+	the compression and in the saving of disk sector clusters.  On a
+	hard disk, each file requires a minimum amount of space, typically,
+        2048 to 8192 bytes.  Combining 100 small files in an archive can
+        save 200K bytes of space or more.
+
+	For archiver flexibility, ARJ is arguably unsurpassed for features.
+
+
+     INSTALLATION:
+
+	This assumes that you have already executed the self-extracting
+	distribution archive and extracted its archived files into a
+	directory.
+
+	To install the ARJ software, simply copy ARJ.EXE, REARJ.EXE,
+	REARJ.CFG, and ARJSORT.COM to one of the directories named in your
+	DOS PATH statement found in your AUTOEXEC.BAT.	On many PCs, this
+	directory may be C:\DOS or C:\BIN.
+
+
+     ARJ COMMAND USAGE:
+
+	The ARJ archiver gives you a lot of flexibility in command usage.
+	You can use zero options or many options on a command line.
+
+	The basic command line consists of:
+	1) the command "ARJ"
+	2) the ARJ command letter such as "a" (add), or "e" (extract)
+	3) the switch options such as "-r" (recurse through subdirectories)
+	4) the name of the ARJ archive
+	5) the name of the target directory (if any)
+	6) the names of the selected files
+
+	ARJ <command> [<options>] <archive_name> [<target_dir\>] [<files>]
+
+	Switch options (-r, -jp, and so on) may be placed anywhere in the
+	command line after the command "ARJ".  The target directory name is
+	optional and should end in a "\" symbol.  The default for the
+	selected files is "*.*".
+
+
+     CREATING ARJ ARCHIVES:
+
+	To create an ARJ archive containing all of the files in the
+	current directory:
+
+	    ARJ a archive
+
+	To create an ARJ archive in another directory containing all of
+	the files in the current directory:
+
+	    ARJ a directory\archive
+
+	To create an ARJ archive containing all files with the ".DOC"
+	extension in the current directory:
+
+	    ARJ a archive *.DOC
+
+	To create an ARJ archive containing all files with the ".DOC"
+	and ".EXE" extension in the current directory:
+
+	    ARJ a archive *.DOC *.EXE
+
+	To create an ARJ archive containing all of the files in a
+	named directory:
+
+	    ARJ a archive named_directory\*.*
+
+	To create an ARJ archive containing all of the files in the
+	named directory and all files in subdirectories of the named
+	directory:
+
+	    ARJ a -r archive named_directory\*.*
+
+	To create an archive containing files without pathname information
+	in the archive, creating slightly smaller archives:
+
+	    ARJ a -e archive named_directory\*.*
+
+	For maximum compression, use the "-jm" or "-jm1" options.
+	For better speed, use the -m2 option.
+
+	    ARJ a -r -jm1 archive named_directory\*.*
+	    ARJ a -r -m2 archive named_directory\*.*
+
+	To create an ARJ archive containing the full specified pathnames
+	of the stored files including any drive and root specs:
+
+	    ARJ a -r -jf archive C:\top_directory\*.*
+
+
+     LISTING THE CONTENTS OF AN ARCHIVE:
+
+	To list all of the files in an archive:
+
+	    ARJ l archive
+
+	To list all of the files with display pauses:
+
+	    ARJ l archive -jp
+
+	To list only the files with a ".DOC" file extension in an archive:
+
+	    ARJ l archive *.DOC
+
+	The last field on the LIST display "BTPMGVX" stands for:
+	    B -> file has been marked as a backup
+	    T -> text/binary/directory type
+	    P -> path information available in "V" listing
+	    M -> compression method used
+	    G -> file has been garbled (encrypted)
+	    V -> archive has been continued to another volume
+	    X -> this file is an extended portion of a larger file
+
+
+     EXTRACTING ARJ ARCHIVES:
+
+	To extract all of the files in an archive to the current
+	directory:
+
+	    ARJ e archive
+
+	To extract all of the files in an archive to a named directory:
+
+	    ARJ e archive named_directory\
+
+	To extract all files with the ".DOC" extension to the current
+	directory:
+
+	    ARJ e archive *.DOC
+
+	To extract all of the files in an archive recreating the
+	original directory structure:
+
+	    ARJ x archive
+
+	To extract all of the files in an archive containing absolute
+	pathnames to the original paths:
+
+	    ARJ x -jf archive
+
+
+     TESTING THE INTEGRITY OF AN ARCHIVE:
+
+	To test the contents of an archive:
+
+	    ARJ t archive
+
+	This testing verifies that the contents of the archive data matches
+	the original file.  This is done using cylical redundancy checking,
+	CRC for short.	ARJ uses a 32 bit CRC for increased reliability.
+
+
+     CREATING A SELF-EXTRACTING ARJ ARCHIVE:
+
+	A self-extracting ARJ archive is an EXE file that contains an ARJ
+	archive.  This self-extractor when executed will extract the
+	contents of its archive.
+
+	The command "ARJ y -je archive" will create a full featured
+	self-extracting archive from an already built archive.
+
+	The command "ARJ y -je1 archive" will create a smaller
+	self-extracting archive.
+
+	Syntax:  ARJ y -je archive	produces archive.exe
+
+
+     CONVERTING ZIP ARCHIVES TO ARJ ARCHIVES:
+
+	You can convert a directory of ZIP archives to ARJ archives with
+	the following commands:
+
+	1)  Change to the directory with the ZIP archives.
+	2)  Type REARJ *.ZIP
+
+
+     COMMON PROBLEMS USING ARJ:
+
+	By default, ARJ stores the path specified with the filename in the
+	archive.  "ARJ a archive temp\*.*" will store the path "temp\" with
+	the filenames.	You may eliminate the paths with the "-e" option.
+	You can remove the paths with the "r" command as in "ARJ r archive".
+
+	ARJ identifies each file by the name stored in the archive.
+	Filenames with paths are considered by ARJ to be DIFFERENT from
+	filenames without paths.  In other words, "temp\notes" is not the
+	same as "notes".  This can result in archives that have duplicates
+	if you archive a set of files twice with different file
+	specifications as in
+	"ARJ a archive temp\*.*" and "ARJ a archive *.*".
+
+	When updating an ARJ archive, ARJ builds the new archive as a
+	temporary file in the same directory as the original archive.  This
+	can require a lot of extra disk space.	If you are adding files,
+	you will need as much free space as the original archive plus space
+	for the added files.
+
+	When archiving files to DISKETTES, it is STRONGLY recommended that
+	you use the "-w" option and the "-jt" option.  The "-w" option sets
+	a working directory.  This should point to a fast disk drive
+	directory.  The "-jt" option verifies the archive.
+
+	ARJ a -wC:\ -jt a:archive *.*
+
+	When copying archives to DISKETTES, it is strongly recommended that
+	you verify that the diskette archives are intact.  Most damaged
+	archives involve diskettes.
+
+
+     FOR FURTHER STUDY:
+
+	ARJ supports hundreds of options for functions such as archiving
+	across multiple diskettes, accessing hidden files, selecting files
+	by date, and more.  See the ARJ.DOC reference guide for more
+	information.
+
+
+     end of document

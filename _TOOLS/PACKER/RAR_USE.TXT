@@ -1,0 +1,467 @@
+
+ ÛÛÛÛÛÛป   ÛÛÛÛÛป  ÛÛÛÛÛÛป                RAR Informationsblatt - v1.1
+ ÛÛษออÛÛป ÛÛษออÛÛป ÛÛษออÛÛป               ออออออออออออออออออออออออออออ
+ ÛÛÛÛÛÛษผ ÛÛÛÛÛÛÛบ ÛÛÛÛÛÛษผ
+ ÛÛษออÛÛป ÛÛษออÛÛบ ÛÛษออÛÛป              Letzte Aktualisierung: 4.6.95
+ ÛÛบ  ÛÛบ ÛÛบ  ÛÛบ ÛÛบ  ÛÛบ              อออออออออออออออออออออออออออออ
+ ศอผ  ศอผ ศอผ  ศอผ ศอผ  ศอผ
+
+                    RAR Archivierer  - Copyright Eugene Roshal 1993-95
+                    ออออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+ Inhalt:
+ อออออออ
+
+ 1. Einfhrung
+
+ 2. spezielle Konfigurationen fr:
+
+        GEcho
+        FastEcho
+        Squish
+        FileManager
+        AllFix
+        File Library Manager
+
+ 3. Programme mit "eingebauter" RAR-Untersttzung
+
+ 4. Wo Sie weitere Hilfe bekommen
+
+ 5. "Die RAR-Familie"
+
+ 6. ber dieses Dokument
+
+                       อออออออออออออออออออออออออออ
+
+ 1. Einfhrung
+    ออออออออออ
+
+ Wegen der stetig wachsenden Popularitt des RAR-Archivierers haben wir
+ besonders fr neue Anwender Informationen zusammengestellt, mit deren
+ Hilfe sie ihre bevorzugten Anwendungen zur Zusammenarbeit mit RAR be-
+ wegen k”nnen.
+
+ Soweit m”glich zeigen wir in diesem Dokument Screenshots der Konfigu-
+ rationsmens der jeweiligen Programme.
+
+ Das Copyright fr diese Screenshots liegt bei den jeweiligen Autoren;
+ beachten Sie auch die Dokumentationen der Programme - in ihnen werden
+ Sie weitergehende Hilfe finden.
+
+ Die hier erwhnten Programme sind ausnahmslos Free- oder Shareware.
+ Beachten Sie die Lizenzbestimmungen in Bezug auf Nutzungseinschrn-
+ kungen oder sonstige Erfordernisse.
+
+ Die Mitglieder des RAR-Support-Teams sprechen allen Autoren von Soft-
+ ware, die den RAR-Archivierer untersttzt, ihren Dank und ihre An-
+ erkennung aus.
+
+ Obwohl wir jede Anstrengung unternommen haben, um die hier gezeigten
+ Konfigurationen zu testen, k”nnen wir keine Garantie ber die Funktions-
+ fhigkeit abgeben. Selbstverstndlich ersetzt diese Datei nicht die
+ Dokumentation der jeweiligen Programme, die Sie sorgfltig lesen und
+ beachten sollten!
+
+
+                       ออออออออออออออออออออออออออ
+
+
+ 2. Spezielle Konfigurationen
+    อออออออออออออออออออออออออ
+
+  NB: a) Wenn die "always make solid"-Option in RAR eingestellt ist,
+         kann der '-s'-Schalter aus der Packer-Konfiguration ent-
+         fernt werden.
+
+      b) Im Normalfall sollten Sie die -m3-Komprimierungsrate ver-
+         wenden. Benutzen Sie die strkste Kompressionsrate (-m5),
+         mssen Sie mit leichten Geschwindigkeitseinbuแen beim
+         Komprimieren rechnen.
+
+
+
+ GEcho SETUP 1.11+ - Registrierte Version
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ NB: Die Konfigurationszeile fr GEcho gestattet die Eingabe von h”chstens
+ 18 Zeichen. Daher sollte die "make solid"-Option (-s) als Voreinstellung
+ in Ihre Standard-RAR-Konfigurationsdatei eingetragen sein.
+
+
+ ออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+ ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ
+ ฐฐีอออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+ ฐฐณ
+ ฐฐณ ARC  ARC.EXE -a   ีออออออออออออออออออออออออออออออ RAR ธ
+ ฐฐณ ARJ  ARJ.EXE a -e ณ                                   ณ
+ ฐฐณ LZH  LHA.EXE a /m ณ Program file  RAR.EXE             ณ
+ ฐฐณ PAK  PAK.EXE A /L ณ ณ-Switches    a -ep1 -m3 -o+ -y   ณ
+ ฐฐณ ZIP  PKZIP.EXE -a ณ ณ-Memory      425                 ณ
+ ฐฐณ ZOO  ZOO.EXE a:   ณ +-Available   Yes                 ณ
+ ฐฐณ SQZ  SQZ.EXE a /p ณ                                   ณ
+ ฐฐณ UC2  UC.EXE A -BF ณ Program file  RAR.EXE             ณ
+ ฐฐณ RAR  RAR.EXE a -e ณ ณ-Switches    e -o+ -y            ณ
+ ฐฐณ  10               ณ +-Memory      270                 ณ
+ ฐฐณ GUS               ณ                                   ณ
+ ฐฐณ PKT               ิอออออออออออออออออออออออออออออออออออพ
+
+
+ FASTECHO 1.41โ
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+
+ ษอออออออออออออออออออออ Compression Programs ออออออออออออออออออออออป
+ บ    Tag  Command                                            List บ
+ วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+ บ A) ZIP  Pkzip.exe -ao                                         @ บ
+ บ B) ARJ  Arj.Exe a -y -e                                       ! บ
+ บ C) ARC  Arc.exe aw                                            @ บ
+ บ D) LZH  LHa.Exe a -m1                                         @ บ
+ บ E) PAK  Pak.Exe a /wa /st                                     @ บ
+ บ F) SQZ  Sqz.Exe a /p3                                         @ บ
+ บ G) RAR  rar.exe a -m3 -ep1 -s -y -c-                          @ บ
+ บ H)                                                              บ
+ ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ ษอออออออออออออออออออออ Decompression Programs ออออออออออออออออออออป
+ บ Type     Command                                                บ
+ วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+ บ  Unknown rar.exe e -y -c-                                       บ
+ บ      ARC Arc.Exe xwo                                            บ
+ บ    PKARC PkUnPak.Exe -xr                                        บ
+ บ      PAK Pak.Exe e /wa /st                                      บ
+ บ ARC+Plus Xarc.Exe                                               บ
+ บ      ZOO Zoo.Exe xo                                             บ
+ บ    PKZip PkunZip.Exe -o -ed                                     บ
+ บ      LHa LHa.Exe e -m1                                          บ
+ บ      ARJ Arj.Exe e -y                                           บ
+ บ      SQZ Sqz.Exe e /p3o1                                        บ
+ ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+ Squish
+ ฤฤฤฤฤฤ
+ 
+ UNRAR konfigurieren Sie in der Squish ((c) Lanius Corporation) compress.cfg:
+
+ Archiver RAR
+      Extension     RAR
+      Ident         0,526172211a0700
+      Extract       unrar e %a %f
+      View          unrar v %a
+ End Archiver
+
+ 
+ AllFix version 4.31/g2
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ Auszug aus UPDATE.LOG der letzten Allfix Gamma - Version
+
+          ALLFIX version 4.31/g2
+          ----------------------
+
+            14.     I have added the ability to define other archive
+                    programs. You need to enter the extension and the
+                    archive signature. The extension is necessary to make
+                    archives of that format, and the signature is necessary
+                    to recognize archives of that format. Below is a sample
+                    configuration for the new compression program RAR:
+
+
+                    Program file RAR
+                     รฤSwitches  a -std -y -r -s -ep1
+                     ภฤBanner
+
+                    Program file RAR
+                     ภฤSwitches  x -std -y
+
+                    Signature    52 61 72 21
+                    Extention    RAR
+
+                    The signature is encoded using hexadecimal values.
+                    Spaces can also be entered as wildcards. This means
+                    ALLFIX will skip that particular byte. The signatures
+                    for other archivers can usually be found in the
+                    documentation or in the technical specifications. I
+                    determined the signature for RAR by inspecting a few
+                    archives.
+
+
+ FILEMGR BETA v0.60
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ ออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+ ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ
+ ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ+อออออออออออออออออออ+ฐฐฐฐฐ
+ ฐฐฐฐฐฐฐฐฐีออออออออออออออออออออออออออออออออออออออออออออออออออ
+ ฐฐฐฐฐฐฐฐฐณ
+ ฐฐฐฐฐฐฐฐฐณ ZIP     ีอออออออออออออออออออออออออออ Archiver 1 ธ
+ ฐฐฐฐฐฐฐฐฐณ ARJ     ณ                                       ณ
+ ฐฐฐฐฐฐฐฐฐณ LZH     ณ Packer name    :  rar.exe             ณ
+ ฐฐฐฐฐฐฐฐฐณ ARC     ณ  ณ> Switches   :  a -av -ep1 %1 @%2   ณ
+ ฐฐฐฐฐฐฐฐฐณ PAK     ณ  +> Add banner :  c %1 อ%2            ณ
+ ฐฐฐฐฐฐฐฐฐณ ZOO     ณ                                       ณ
+ ฐฐฐฐฐฐฐฐฐณ Squeeze ณ Unpack name    :  unrar.exe           ณ
+ ฐฐฐฐฐฐฐฐฐณ RAR     ณ  +> Switches   :  e -o+ -c- %1        ณ
+ ฐฐฐฐฐฐฐฐฐณ Hyper   ณ                                       ณ
+ ฐฐฐฐฐฐฐฐฐณ DWC     ิอออออออออออออออออออออออออออออออออออออออพ
+
+
+ FLM2 (File Library Manager) v2.20 Advanced Edition
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+  NB: Eine komplette RAR-Untersttzung wurde fr die nchste Version des
+      File Library Managers angekndigt.
+
+ ีออออออออออออออออออออออออ Archiver Configuration ออออออออออออออออออออออออธ
+ ณ                                                     Record  1 of 30    ณ
+ ณ Archive Extension                : RAR                                 ณ
+ ณ                                                                        ณ
+ ณ Pack Command Line                : +RAR.EXE A *F *L -s -ep1 -y         ณ
+ ณ Pack Command Line with Paths     : +RAR.EXE A *F *L -s -r              ณ
+ ณ                                                                        ณ
+ ณ Unpack Command Line              : +RAR.EXE E *F *L -y -std            ณ
+ ณ Unpack Command Line with Paths   : +RAR.EXE X *F *L -y -std            ณ
+ ณ                                                                        ณ
+ ณ Delete from Archive Command Line :                                     ณ
+ ณ                                                                        ณ
+ ณ Banner File Cmd Line             : <Not required - set in RAR config>  ณ
+ ณ                                                                        ณ
+ ณ                                                                        ณ
+ ณ                                                                        ณ
+ ณ ESC-exit   F1-help                                                     ณ
+ ิออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออพ
+
+                    ออออออออออออออออออออออออออออ
+
+
+
+ 3. Programme mit "eingebauter" RAR-Untersttzung
+    อออออออออออออออออออออออออออออออออออออออออออออ
+
+ Im folgenden sehen Sie eine Liste von Programmen, die bereits den RAR-
+ Archivierer untersttzen. Die Originalbeschreibungen stammen aus den
+ Dateiinformationen, die mit diesen Programmen verbreitet werden.
+
+ Dateiname:      Beschreibung:
+ อออออออออ       ออออออออออออ
+
+ Mta_vf58.rar    MTA Make Them Anything V 15.58 Minor Rel.
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                 DISP software: MTA -- Make Them Anything
+                 Version/Date : V 15.58 / August 14th, 1994
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                 MTA is a conversion utility to convert al-
+                 most any archive and/or GIF to another for-
+                 mat. It contains special support for BBS's,
+                 exits, doors and such. Also you can check
+                 for virus inside the archives while you
+                 convert. Add-on utilities included !! Also
+                 included is support for FileDoor (LITE and PRO)
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                 This version adds:
+                 * RAR support
+                 * UC2r2 volume-label support
+                 * Virtual volume labels for archivers that
+                 don't support volume-labels
+                 * Some bug-fixes
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+ Mta1vf58.rar    MTA  Make Them Anything V 15.58.1 Minor Rel
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                 DISP software: MTA  -- Make Them  Anything
+                 Version/Date : V 15.58.1 / August 14th,1994
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                 This archive is a patch for MTA V 15.58 to
+                 fix some small problems with RAR. You must
+                 (at least) have the MTA_VF58.ZIP main
+                 release archive
+                 (optional the overlay and DPMI versions).
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+ Csys14.rar      CompSys 1.4, the LiveSystems ObjectOrientated
+                 toolbox for using compressed files. Full source,
+                 easy to extend. Already used in a number of
+                 released programs!
+
+ Ncav48b8.rar    AVIEW V4.8 Beta-8, 20-Dec-94,
+                 The Norton Commander Archive Viewer.
+                 A small utility to manipulate ARC,
+                 ARJ, HYP, LZH, PAK, RAR, SQZ, UC2,
+                 ZIP and ZOO files, lots of options,
+                 can be fully mouse-operated, very
+                 easy to use, can also be used as
+                 stand-alone utility. *FREEWARE*
+                 *** PUBLIC BETA RELEASE ***
+
+ Shez105.rar     SHEZ v10.5-<ASP>-Premier Compression Shell.
+                 ZIP,  LHA,  ZOO,  ARC, ARJ,  SQZ, PAK, UC2,
+                 HAP,  RAR,  WINDOWS  COMPRESSED  supported.
+                 Improved 4DOS/NDOS support,  Strip comments
+                 from  ARJ  files, Config menu hot keys, and
+                 numerous misc. fixes.
+                 One of the most versatile compressed/normal
+                 file manipulators.
+                 Easy to use and extremely user configurable.
+
+ Rav150.rar      Û฿฿฿฿฿฿฿฿฿Û฿฿฿฿฿฿฿฿฿Û฿฿฿฿Û  Û฿Û
+                 Û   ÜÜÜ  ÜÛ   ÜÜÜÜ  Û    Û  Û Û
+                 Û        ฿Û         Û    Û  Û Û
+                 ÛฐฐฐฐÛ฿ÛฐฐÛฐฐฐฐÛ฿ÛฐฐÛฐฐฐฐÛ ÜÛฐÛ
+                 ÛฑฑฑฑÛ ÛฑฑÛฑฑฑฑÛ ÛฑฑÛฑฑฑฑÛÜÛฑฑÛ
+                 ÛฒฒฒฒÛ ÛฒฒÛฒฒฒฒÛ ÛฒฒÛฒฒฒฒฒฒฒฒÛ฿
+                 ฿฿฿฿฿฿ ฿฿฿฿฿฿฿฿฿ ฿฿฿฿฿฿฿฿฿฿฿฿฿
+                 ÜÛ฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿ÛÜ
+                 Ý  Remote Archive Viewer 1.5  Þ
+                 Ý    for Remote Access 2.+    Þ
+                 ÝฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤÞ
+                 Ý  On-line Archive Viewer for Þ
+                 Ý  ZIP2, ARJ2, LZH, RAR, UC2  Þ
+                 Ý  SQZ, ZOO, ARC, PAK.        Þ
+                 Ý  Detecting arc by arc-id.   Þ
+                 Ý  Viewing SFX archives.      Þ
+                 Ý  Viewing imbedded archives. Þ
+                 Ý  Extracting files for dl.   Þ
+                 Ý  Internal text viewer.      Þ
+                 Ý  ANSI & Avatar support.     Þ
+                 Ý  Full language support.     Þ
+                 Ý  Colors configurable.       Þ
+                 Ý  Usable for RAMGR, too.     Þ
+                 Ý  Easy installation.         Þ
+                 ÝฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤÞ
+                 Ý  ShareWare  by G.Brockhaus  Þ
+                 Ý      Prize $10/15,-DM       Þ
+                 ฿ÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛ฿
+
+ Rfw_v131.rar    RFW Remote FileList (Windowed) V 1.31 Min.
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                 DISP software: Remote Filelist Window(ed)
+                 Version/Date : V 1.31 / August 15th, 1994
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                 RFW is a program to view the file-listings
+                 on a BBS and a direct replacement for the
+                 internal file-list viewers. Tagging in the
+                 DISP/FileDoor compatible format is present
+                 as well as a direct interface to DISP MTS
+                 archive-view program. Special support for
+                 CD-ROM. Can do file-list, newfile-list,
+                 file-search and keyword-search, the latter
+                 also INSIDE non-archive files.
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                 Version 1.31 is a minor release that fixes the
+                 high CPU consumption and now supports UC2 and
+                 RAR archives.
+                 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+ Find221e.rar    FIND - a small, fast and reliable file-
+                 finder (v.2.21 - english)
+                 +----------------------------------------+
+                 | Support for RA 2.0x and ProBoard 2.0x. |
+                 | Adds support for RAR and LIMIT and for |
+                 | extended descriptions in FILES.BBS and |
+                 | similar files...                     . |
+                 | Find is FREEWARE (c) Peter Hampf & pbs |
+                 | German version:  FIND221G.ZIP (FINDG)  |
+                 +----------------------------------------+
+
+ Ie103jan.rar    InterEcho 1.03a/demo - Echomail tosser for
+                 Wildcat! 4.0, Wildcat! 3.5, PCBoard, JAM, Hudson
+                 and *.msg. Supports all common archive formats,
+                 sizes and names. Hubing to downlinks. Areafix.
+                 Netmail import/export for multiple netmail
+                 folders on your BBS. Smart area import. Easy to
+                 use. Demo exp Feb 01 1995. Call our BBS at
+                 44-1603-219462 for more info.
+
+NU_V220.RAR      NU - Nodelist Updater 2.20
+                 ==========================
+                 Updates nodelists with the weekly
+                 difference files or a new nodelist.
+                 NU automatically detects the
+                 decompression method needed for
+                 the files, can create statistics,
+                 automatically compresses new files,
+                 updates descriptions for FILES.BBS
+                 or the RemoteAccess 2.0 filebase,
+                 and much, MUCH more ....
+                 
+THDPRO10.RAR     THD ProScan Version 10.0
+                 File/Upload Tester/Convertor.
+                 ARC-ARJ-HYP-LHA-PAK-RAR-UC2-ZIP-GIF-TD0
+                 Virus  Scan using  any  combination  of
+                 TBScan, Scan and  F-Prot. Simple to use
+                 installation for the first  time  user.
+                 Test and  convert all  of the supported
+                 archive types, incl. imbedded archives.
+                 Generic upload tester with  support for
+                 FILES.BBS, RG, TG and RA 2.xx  formats.
+
+
+                   อออออออออออออออออออออออออออออออออ
+
+
+ 4. Wo Sie weitere Hilfe bekommen
+    ออออออออออออออออออออออออออออออ
+
+ Es gibt eine internationale Support-Konferenz fr RAR, die Sie bei
+ einer wachsenden Zahl von FidoNetz-Bulletin Board Systems in aller
+ Welt beziehen k”nnen. Die Konferenz wird in folgende Netze bertragen:
+ MercuryNet, VirtualNet und DiscNet networks.
+
+ RAR Support- und Registration-Sites sind ber alle Welt verteilt, damit
+ Sie einen leicht erreichbaren Ansprechpartner haben oder sich sogar in
+ eine der lokalen Fidonetz-Konferenzen einklinken k”nnen, wo Sie Hilfe
+ in Ihrer Mutterspreche erhalten.
+
+ Viele der hier genannten Programme haben ebenfalls eigene Support-Kon-
+ ferenzen im Fidonetz.
+
+                      ออออออออออออออออออออออออออออออ
+
+
+ 5. "Die RAR-Familie"
+    ออออออออออออออออ
+
+ Mittlerweile hat der RAR-Archivierer einige eigene Support-Dateien.
+
+ Die genannten Programme erhalten Sie in vielen Mailboxen weltweit sowie
+ bei allen RAR-Support- und Registration Sites:
+
+ RAR ........ Version 1.53 des "weltbesten" Archivierers
+ unRAR ...... FREEware Entpacker fr RAR (DOS Version)
+ unRAROS2 ... FREEware Entpacker fr RAR (OS/2)
+ unRARAMY ... FREEware Entpacker fr RAR (Amiga)
+ unRARNT .... FREEware Entpacker fr RAR (Windows NT)
+ unRARST .... FREEware Entpacker fr RAR (ST)
+ unRARLNX ... FREEware Entpacker fr RAR (LINUX)
+
+ Der Source-Code fr unRAR, mit dem unRAR auf weitere Systeme portiert
+ werden kann, ist frei erhltlich (Bestandteil des unRAR fr DOS-Pakets).
+
+                 อออออออออออออออออออออออออออออออออออ
+
+ 6. ber dieses Dokument
+    ออออออออออออออออออออ
+
+ Dieses Dokument wurde zusammengestellt aus Informationen, die in
+ der weltweiten Support-Konferenz auftauchten, sowie aus Beschreibungen
+ unserer Anwender und des Support Teams, die die genannten Programme
+ fr RAR konfiguriert und getestet haben.
+
+ Wir werden dieses Dokument bestndig erweitern und von Zeit zu Zeit
+ neu ver”ffentlichen.
+ Wenn Sie auch ein Programm verwenden, das RAR untersttzt oder fr
+ RAR konfiguriert werden kann, benachrichtigen Sie bitte den Autor (s.u.)
+ oder das nchstgelegene RAR Support-Site.
+
+                          ออออออออออออออออออ
+
+ Dave Carter - UK/Eire RAR Support and Registration
+
+ FidoNet   : 2:25/60              Internet : davec@sentinel.co.uk
+ WorldNet  : 64:777/0             PO Box 50, Glossop, SK13 9NL, England
+ MercuryNet: 240:100/35           Telephone: (Mobile) +44-(0)585-134567
+
+
+
+ Danke, daแ Sie RAR untersttzen!

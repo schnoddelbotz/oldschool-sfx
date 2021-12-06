@@ -1,0 +1,63 @@
+                                 ParaView - Bestellung
+                                 =====================
+
+         Herrn
+         Hans- Peter Falken
+         Leibnizstraáe 18
+         D- 04105 Leipzig
+         (Tel. 0341-290934)
+
+
+         Bitte liefern Sie unverzglich und zu den angegebenen Bedingungen
+         das Programm "ParaView" zur Darstellung mathematischer Funktionen
+         und des Einflusses ihrer Parameter.
+
+           .... Schullizenz,  (Programm + Handbuch):     119.- DM   ......
+                (gltig auch fr lokale Netze der Einrichtung)
+
+           .... Einzellizenz  (Programm + Handbuch):      59.- DM   ......
+
+           .... Schlerlizenz (nur Programm):  (*)        29.- DM   ......
+
+           .... Lehrerlizenz  (nur Programm):  (**)       29.- DM   ......
+
+           .... Handbcher (nur zus„tzlich m”glich):       9.- DM   ......
+                                                                    ______
+
+         Diskettenformat: ..............                   Summe:   ......
+
+         (*)  M”glich fr Schler und Studenten, wenn die Bescheinigung auf
+              diesem Formular korrekt ausgefllt und best„tigt wurde.
+         (**) Nur m”glich fr Lehrkr„fte, deren Einrichtung bereits ParaView
+              erworben hat oder zugleich erwirbt, und wenn die Bescheinigung
+              auf diesem Formular korrekt ausgefllt und best„tigt wurde.
+         Der angegebene Preis der Lizenzversionen versteht sich stets incl.
+         Verpackungs- und Portokosten sowie Mehrwertsteuer.
+         Bei Schullizenzen erfolgt die Lieferung gegen Rechnung, sonst 
+         gegen beigelegten Verrechnungsscheck (natrlich mit Quittung).
+
+
+         Name des Bestellers:  .........................
+
+         (fr Schullizenzen:
+         Name der Einrichtung: ......................... )
+
+         Adresse/ Telefon:     .........................
+
+                               .........................
+
+                               .........................
+
+
+         Bestelldatum: .......   (Stempel)        Unterschrift: ...........
+
+         ===================================================================
+
+         Bescheinigung: .................... ist zur Zeit
+         Schler/ Student/ Lehrkraft unserer Einrichtung.
+
+         (Datum/ Stempel/ Unterschrift):
+
+         ===================================================================
+         Hinweis des Bestellers fr den Autor: Ich erhielt die Info- Version
+         von "ParaView" ber:

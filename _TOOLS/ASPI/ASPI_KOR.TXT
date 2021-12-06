@@ -1,0 +1,105 @@
+
+Korrektur-Nachtrag ASPIxDOS V2.01
+
+
+ASPIxDOS.ASM
+
+ExecuteSCSI_IORequest	PROC	Pascal FAR
+	USES	DS,DI,SI
+	MOV     AX,@Data
+	MOV     DS,AX
+;*** neu
+        LES	DI,[DWord Ptr SRB_ParBlock.pbASPIsrb]
+;*** ---
+###############################################################################
+
+ASPIxDOS.H
+/*;ASPI SCSI Request Block defintion [Execute]*/
+struct _ASPI_SRB_ExecuteSCSI_IORequest
+  {
+    struct _ASPI_SRB_Header _;
+    byte TargetID;		/* Target identification */
+    byte LUN;			/* LUN */
+/*** int -> long „ndern
+    long DataAllocLen;		/* Data Allocation Length */
+/*** ---
+
+/*** int * PtrOpC -> byte far ... „ndern */
+extern pascal far void GetInstHostAdapters(byte far *InstHostAdap,byte far *NumHostAdap);
+extern pascal far byte SetHostAdapterParam(byte far *PtrParLST);
+extern pascal far byte AllocSRBExecute(byte far *PtrOpC,byte OpCLEN);
+/*** --- */
+
+Korrektur-Nachtrag ASPIxDOS V2.02
+
+
+ASPIxDOS.ASM
+
+GetInstHostAdapters
+        ...
+
+        @HostAdapterInquire
+;*** neu
+        JNC	$+6
+        POP	AX	;V2.02
+        POP	CX
+        JMP	@@End
+;*** ---
+	XOR	BL,BL
+
+
+GetDeviceType
+	...
+
+;*** neu
+	MOV	ES:[(_ASPI_SRB_GetDeviceType Ptr DI)._.CommandCode],01	;V2.02 >ES:<
+;*** ---
+
+Korrektur-Nachtrag V2.1
+
+IFDEF MemMod
+%	.MODEL	USE16 MemMod,Pascal
+ELSE
+	.MODEL	USE16 SMALL,Pascal
+ENDIF
+
+	...
+
+IF @Model EQ 01
+;Model={TINY}
+SetDS	MACRO
+	PUSH	CS
+	POP	DS
+	ENDM
+ELSE
+;Model={SMALL|MEDIUM|COMPACT|LARGE|HUGE}
+SetDS	MACRO
+	MOV	AX,@Data
+	MOV	DS,AX
+	ENDM
+ENDIF
+
+---> alle Prozeduren <---
+
+*** alt
+	MOV	AX,@Data
+	MOV	DS,AX
+*** neu
+	SetDS
+
+;------------------------------------------------
+ASPIxDOS.PAS, ASPIxDOS.H, ASPIxDOS.DEF
+CDBLength = 12
+
+V2.12, ASPIxDOS.ASM, ASPIxDOS.PAS
+	InitSCSIMGR
+	SetDS
+	PUSH	DS
+	...
+	POP	DS
+	JC	Err...
+
+V1.02, SHOWSCSI
+	
+	ReadCapacity -> {CD-ROM drives}
+

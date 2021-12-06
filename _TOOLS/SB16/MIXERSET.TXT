@@ -1,0 +1,239 @@
+MIXERSET-DIENSTPROGRAMM
+=======================
+
+Das MIXERSET-Dienstprogramm erm”glicht, die Lautst„rke und andere 
+Mischpultregler (wie Balance, Verst„rkung und Klang) der Audio-Ausgabe-
+und Aufzeichnungsquellen Ihrer Karte einzustellen.
+
+Sie k”nnen das Dienstprogramm als einen Befehl bei der DOS-Eingabe-
+aufforderung benutzen, oder die MIXERSET-Schnittstelle aufrufen, mit der
+Sie die Mischpulteinstellungen ber ein Vollbildfenster steuern k”nnen, 
+welches aus Kontrollk„stchen und Schiebereglern besteht.
+
+Die Datei bietet Ihnen genauere Informationen ber die Verwendung von
+MIXERSET. Sie ist wie folgt untergliedert:
+
+*       Den MIXERSET-Befehl kennenlernen
+*       Den MIXERSET-Befehl benutzen
+*       Den MIXERSET-Steuerungsbildschirm starten
+*       Den MIXERSET-Steuerungsbildschirm kennenlernen
+*       Maus und Tastatur benutzen
+
+
+Den MIXERSET-Befehl kennenlernen
+--------------------------------
+
+Das Mischpult wird durch Angabe von Schaltern hinter dem MIXERSET-Befehl
+konfiguriert. Zur Verwendung des MIXERSET-Befehls:
+1.      Wechseln Sie in Ihr Soundverzeichnis.
+2.      Geben Sie MIXERSET [Schalter] ...  ein, und drcken 
+	Sie die <EINGABETASTE>.
+
+wobei nur ein oder eine Kombination der folgenden Schalter verwendet werden
+kann:
+
+	/? oder /H      Zeigt Hilfemeldungen an.
+	/Q              Fhrt MIXERSET ohne Anzeige der 
+			Einstellungsinformation aus.
+	/P              Stellt das Mischpult in Anklang zu den PRESET-
+			Einstellungen in der CTMIX.CFG-Datei ein.
+	/MA:n;x         Legt die MASTER-Lautst„rke und Balance des 
+			linken und rechten Kanals fest.
+	/VO:n;x         Legt die Stimmlautst„rke und Balance des 
+			linken und rechten Kanals fest.
+	/MI:n;x         Legt die MIDI-Lautst„rke und Balance des 
+			linken und rechten Kanals fest.
+	/CD:n;x         Legt die CD-Lautst„rke und Balance des
+			linken und rechten Kanals fest.
+    /LI:n;x     Legt die LINE-In-Lautst„rke und Balance des linken
+		und rechten Kanals fest.
+    /MIC:n      Legt die Mikrofonlautst„rke fest.
+    /SP:n       Legt die PC-Lautsprecherlautst„rke fest.
+    /TR:n;x     Legt den H”hen-Level und die Balance des linken und 
+		rechten Kanals (falls verfgbar) fest.
+    /BA:n;x     Legt den Tiefen-Level und die Balance des linken und
+		rechten Kanals (falls verfgbar) fest.
+
+    HINWEIS: n bestimmt die Lautst„rke und liegt zwischen 0 und 255.
+	     x bestimmt die Balance des linken und rechten Kanals und 
+	       liegt zwischen -5 und +5. Vor dem x muá ein Semikolon (';') 
+	       stehen.
+		
+    Zum Beispiel legt /MA:200;5 die Master-Lautst„rke auf 200 fest und
+    die Balance auf 5 (das bedeutet, die Lautst„rke in dem linken Kanal
+    wird niedriger sein). Die Einstellung /MA:;-5 verringert die Lautst„rke
+    in dem rechten Kanal.
+
+	/OPS:ss         Setzt die Audio-Ausgabeschalter (OPSW) auf EIN
+			oder AUS.
+			ss steht fr CDz, LIz und MICz, oder eine 
+			Kombination davon, wobei z + (Ein) oder - (Aus) ist.
+
+			Zum Beispiel erm”glicht /OPS:CD+ MIC- den Empfang
+			von CD-Audioausgabe. Es gelangt kein Klang durch 
+			das Mikrofon zu den Lautsprechern.
+
+	/IPL:ss         Schaltet linke Eingangsschalter (IPLSW) ein oder aus.
+			ss steht fr CDRz, CDLz, MDLz, MDRz, LIRz, LILz und 
+			MICz, oder eine Kombination davon, wobei z + (Ein)
+			oder - (Aus) ist.
+
+	/IPR:ss         Schaltet rechte Eingangsschalter (IPRSW) ein oder aus.
+			Analog zu /IPL.
+	
+	/IPG:l,r        Legt die Eingangsverst„rkung (IPGAIN) des linken (l)
+			und rechten (r) Kanals fest. Sowohl l als auch r 
+			k”nnen die Werte 1, 2 oder 4 annehmen.
+			
+	Zum Beispiel setzt /IPG:4 sowohl den linken als auch den rechten 
+	Kanal auf 4, /IPG:,4 setzt den rechten Kanal auf 4 und /IPG:4 
+	den linken Kanal auf 4.
+		
+	/OPG:l,r        Legt die Ausgabeverst„rkung (OPGAIN) des linken (l)
+			und rechten (r) Kanals fest. Sowohl l als auch r
+			k”nnen die Werte 1, 2 oder 4 annehmen.
+
+	/AGC:+|-        Schaltet die automatische Verst„rkungsregelung
+			(AGC, falls verfgbar) ein (+) oder aus (-).
+
+Sie mssen nicht die ganze Zeichenkette jedes Schalters angeben, den Sie
+benutzen, da ein gekrzter Zeichenketteneintrag genauso gut funktioniert.
+Es mssen jedoch mindestens 2 Zeichen vom Beginn des Schalternamens 
+angegeben werden, mit Ausnahme der folgenden Schalter: /P, /H, /? und /Q.
+
+Zum Beispiel bewirkt MIXERSET /P dasselbe wie MIXERSET /PRESET und 
+MIXERSET /MA:200;5 dasselbe wie MIXERSET /MASTER:200;5.
+
+Wenn Sie mehrere MI-, IP- oder OP-Schalter eingeben, besitzt 
+MIDI (fr MI-Schalter), IPGAIN (fr IP-Schalter) und 
+OPGAIN (fr OP-Schalter) Priorit„t.
+
+Den MIXERSET-Befehl benutzen
+----------------------------
+
+Im folgenden finden Sie einige Beispiele ber die Verwendung von MIXERSET:
+
+*   Die PC-Lautsprecherlautst„rke auf 200 festlegen:
+    1. Geben Sie MIXERSET /SP:200 ein, und drcken Sie die <EINGABETASTE>.
+
+*   Die Master-Lautst„rke auf 200 mit ausgeglichener Ausgabe auf dem 
+    linken und rechten Kanal festlegen:
+    1.  Geben Sie MIXERSET /MA:200 ein, und drcken Sie die <EINGABETASTE>.
+	Wenn Balance nicht angegeben ist, werden beide Kan„le gleich 
+	eingestellt.
+
+*   Das Obige mit einem einzigen Befehl festlegen:
+    1.  Geben Sie MIXERSET /SP:200 /MA:200;0 ein, und drcken Sie 
+	die <EINGABETASTE>.
+
+
+Den MIXERSET-Steuerungsbildschirm starten
+-----------------------------------------
+
+Um den MIXERSET-Steuerungsbildschirm zu starten:
+
+1.      Wechseln Sie in Ihr Soundverzeichnis.
+2.      Geben Sie MIXERSET ein und drcken Sie die <EINGABETASTE>.
+	Der MIXERSET-Steuerungsbildschirm erscheint.
+	
+
+Den MIXERSET-Steuerungsbildschirm kennenlernen
+----------------------------------------------
+
+Der MIXERSET-Steuerungsbildschirm besteht aus den folgenden Komponenten:
+
+*       Lautst„rkeregler
+*       Balanceregler
+*       Kontrollk„stchen fr automatische Verst„rkungsregelung
+*       Speichern-Schaltfl„che
+*       Eingangsfeld
+*       Ausgangsfeld
+
+
+Lautst„rkeregler
+----------------
+Steuert die Lautst„rke der Eingangsquellen und die Level fr Tiefen und
+H”hen.
+
+Balanceregler
+-------------
+Die Regler steuern die Balance zwischen den linken und den rechten 
+Lautsprechern fr Audioquellen mit Stereo-F„higkeit. Durch Verschieben
+des Reglers nach links, verringert sich die Lautst„rke des rechten 
+Lautsprechers, wobei der linke Lautsprecher unver„ndert bleibt. Das
+Gegenteil ist der Fall, wenn Sie den Regler nach rechts bewegen.
+
+Kontrollk„stchen fr automatische Verst„rkungsregelung
+------------------------------------------------------
+Das Kontrollk„stchen fr automatische Verst„rkungsregelung (AGC) stellt
+(falls verfgbar) automatisch die Eingangsverst„rkung von dem 
+Mikrofon auf einen Level ein, der fr Aufnahme geeignet ist.
+
+Speichern-Schaltfl„che
+----------------------
+Die Speichern-Schaltfl„che speichert alle nderungen, die am Mischpult 
+vorgenommen wurden, in die CTMIX.CFG-Datei. Die neuen Einstellungen
+werden verwendet, wenn Sie beim n„chsten Start des Mischpults die 
+Mixer-Einstellungen mit dem Befehl MIXERSET /P voreinstellen.
+
+Eingangsfeld
+------------
+Das Eingangsfeld erm”glicht die Auswahl der Audioquellen, die Sie als
+Eingang in dem Mischpult steuern wollen. Die verfgbaren Audioquellen sind
+MIDI, Line-Input, Mikrofon-Eingang und CD-Audio. Sie k”nnen diese 
+Audioquellen durch die linken oder/und rechten Eingangskan„le Ihres
+Mischpults leiten.
+
+HINWEIS: Um einen Stereosound-Effekt zu erhalten, stellen Sie sicher, daá
+	 das Signal des linken Kanals der Audioquelle zu dem linken
+	 Eingangskanal fhrt und das rechte Signal zu dem rechten Eingangs-
+	 kanal.
+
+Die Drehfelder erh”hen oder verringern die Eingangsverst„rkung.
+
+HINWEIS: Die Verst„rkung erh”ht oder verringert die Verst„rkung einer 
+	 Audioquelle.
+ 
+
+Ausgangsfeld
+------------
+Das Ausgangsfeld erm”glicht die Auswahl der Audioquellen, die Sie als
+Ausgang von dem Mikrofon, Line-Input und CD-Audio zu den linken oder
+rechten Lautsprechern steuern wollen. Sie k”nnen eine der obigen 
+Audioquellen, oder eine Kombination davon, ausw„hlen, die durch die 
+Karte wiedergegeben werden.
+
+
+Maus und Tastatur benutzen
+--------------------------
+
+Mit der MIXERSET-Schnittstelle kann das Mischpult mit einer Maus oder einer
+Tastatur konfiguriert werden.
+
+Fr Maussteuerung:
+*   W„hlen Sie die Option, wenn es ein Kontrollk„stchen ist.
+*   Bewegen Sie den Regler durch die Klicken und Ziehen-Methode, oder klicken
+    Sie auf das „uáerste Ende des Reglers, um die Lautst„rke, den Klang und
+    die Verst„rkung zu erh”hen oder zu verringern.
+*   Um MIXERSET zu beenden, w„hlen Sie das Systemmenfeld.
+
+Fr Tastatursteuerung:
+*   Drcken Sie <Tab>, um von einer Gruppe zur n„chsten zu gelangen.
+*   Drcken Sie <Umschalt+Tab>, um zu einer vorherigen Gruppe zu gelangen.
+*   Drcken Sie die Pfeiltaste nach oben oder nach unten, um innerhalb einer 
+    Gruppe von einer Option zur n„chsten zu gelangen.
+*   Drcken Sie die Pfeiltaste nach links oder rechts, um die Lautst„rke
+    oder die Verst„rkung einzustellen.
+*   Drcken Sie die <Leertaste> oder die <Eingabetaste>, um ein 
+    Kontrollk„stchen zu aktivieren oder deaktivieren.
+*   Um MIXERSET zu beenden, drcken Sie <Esc>.
+
+
+Hinweis
+-------
+
+Einige der oben erw„hnten Funktionen k”nnten auf Ihrer Audiokarte nicht
+verfgbar sein. Zum Beispiel: Tiefen-, H”hen-, Ausgangsverst„rkungs- und
+Eingangsverst„rkungs-Funktionen sind nur bei den erweiterten Versionen
+der Audiokarten verfgbar. Benutzen Sie den Befehl MIXERSET /?, um eine
+Liste der Funktionen Ihrer Karte zu erhalten.

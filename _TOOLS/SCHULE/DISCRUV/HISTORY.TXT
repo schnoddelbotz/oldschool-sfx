@@ -1,0 +1,177 @@
+DISCOURV (c) 1993 by Jochen G”ttler
+-----------------------------------
+
+Entwicklungsgeschichte des Programms
+
+
+V4.11 - 21.05.93
+----------------
+- Behebung von Fehlern bei Krmmungskreisberechnung (Grafikanzei-
+  ge), Verschachtelung von Funktionsreferenzen (Syntax-Fehler),
+  Differenzieren von log(x,y)
+
+V4.10 - 30.03.93
+----------------
+- Quadratische Achseneinteilung, Achseneinteilung in Vielfachen
+  von Pi
+- Strichst„rken normal/fett
+
+V4.02 - 18.03.93
+----------------
+- Behebung eines Fehlers, der beim Differenzieren von Termen mit
+  mehreren gleichen reellen Konstanten auftrat
+
+V4.01 - 15.03.93
+----------------
+- Behebung eines Speichermanagement-Fehlers, der nach h„ufigem
+  Wechsel zwischen Text und Grafik zum Programmabsturz fhrte
+
+V4.00 - 14.03.93
+----------------
+- Schnellere Verarbeitung beliebiger Funktionsterme
+- Verbesserung der symbolischen Ableitung
+- Weglassen von Klammern bei beliebigen Funktionen mit einzelnem
+  Argument m”glich
+- Postfix-Notation fr Quadrat, Fakult„t, Prozent, Grad
+- Erweiterung der trigonometrischen Fkt. um Sekans und Kosekans
+
+V3.88 - 28.01.93
+----------------
+- Schnellere Newton-Interpolation
+- Erweiterung der Mausfunktionen beim Zoomen
+
+V3.87 - 18.01.93
+----------------
+- Berechnung von Polstellen
+
+V3.86 - 01.01.93
+----------------
+- Fehler beim Zeichnen von Subtangenten/-normalen beseitigt
+
+V3.85 - 31.12.92
+----------------
+- Berechnung von Schnittpunkten zweier Funktionen
+- Ausdrucken von Schaubildern mit gleichen L„ngeneinheiten
+  horizontal/vertikal
+- Automatische Seitenverh„ltnis-Korrektur bei allen Zoom-
+  Operationen
+- Verhinderung eines Stack-šberlaufs bei Funktionstermen
+  hoher Schachtelungstiefe
+
+V3.84 - 20.11.92
+----------------
+- SuperVGA-Modus fr 800x600 Punkte bei 16 Farben hinzugefgt
+
+V3.83 - 25.10.92
+----------------
+- Standardaufl”sung fr Schaubilder gleich der halben Aufl”sung
+  des Grafikbildschirms zur Beschleunigung des Kurvenplottens
+- Fehler beim L”schen von Wertepaaren beseitigt
+
+V3.82 - 15.10.92
+----------------
+- Darstellung von Daten in einem invertierten Ein-/Ausgabe-Feld
+- Verdunkelte Anzeige von inaktiven Menpositionen
+
+V3.81 - 03.10.92
+----------------
+- Kurvenscharen
+
+V3.80 - 28.09.92
+----------------
+- Grafische Veranschaulichung jeder Berechnung im Schaubild
+- Men zur nderung von Farben, Linienarten, Fllmustern
+- Subtangenten, -normalen, Krmmungskreise, Rotationsk”rper,
+  Rotationsvolumen, Bogenl„nge
+- Mehrfache Numerische Differentation und Integration fr
+  beliebige Terme und durch Wertepaare definierte Funktionen
+- Sonderzeichen fr die Funktionstermeingabe: Quadrat, Wurzel,
+  Pi, Einviertel, Einhalb
+- Monotonie- und Krmmungsverhalten durch Vorzeichenvergleich
+  statt Untersuchung der Ableitungen
+- Abfangen von Flieákommaberlauf-Fehlern
+
+V3.72 - 16.09.92
+----------------
+- Anzeige von durch Wertepaare definierten Polynomen durch
+  Auflistung der Wertepaare
+- Automatisches Sortieren der Wertepaare
+
+V3.71 - 27.08.92
+----------------
+- Einfgen/Entfernen von Wertepaaren
+
+V3.70 - 19.08.92
+----------------
+- Grafische Konstruktion von Polynomen
+  (nur mit Maus m”glich)
+- Bis zu 5 durch Wertepaare definierte Polynome gleichzeitig
+  als h<n>(x)
+- Generieren von Wertepaaren aus anderen Funktionen
+
+V3.60 - 31.07.92
+----------------
+- Definition eines Standard-Wertebereiches fr Funktionen
+
+V3.50 - 05.07.92
+----------------
+- Logarithmische Achsen
+
+V3.40 - 27.05.92
+----------------
+- Absolute Fl„cheninhalte, Fl„cheninhalte zwischen Kurven
+
+V3.30 - 02.04.92
+----------------
+- Hardcopy fr Farbnadeldrucker
+
+V3.20 - 22.09.92
+----------------
+- Dualer Logarithmus, Floor/Ceiling-Funktionen statt Trunc/Int
+- Rckw„rts-Zoom, Verkleinerm/Vergr”áern um eine Achseneinheit,
+  Bewegen des Schaubildes in alle Richtungen
+- Definition von jeweils 5 beliebigen Funktionstermen und
+  Polynomen gleichzeitig
+- Kopie und Tausch von Funktionen; Kopie von Polynomen auf bel.
+  Funktionsterme
+- Verknpfung von Funktionen durch Aufrufe der Form
+  f<n,k>(x) und g<n,k>(x)
+- Numerische Integration von beliebigen Termen nach Simpson
+- Hardcopy fr HPJet-Drucker
+- Optionen-Men
+
+V3.10 - 20.08.91
+----------------
+- Hardcopy fr alle Grafikformate
+- Berechnung von Nullstellen fr Nicht-Polynome durch
+  Intervallschachtelung
+
+V3.00 - 02.06.91
+----------------
+- Symbolische Ableitung beliebiger Funktionsterme
+- Taylorreihenentwicklung
+- Achsen wahlweise am Rand oder in der Mitte des Schaubildes
+- Hilfsgitter im Schaubild
+- Wertetabellen
+- Normalen 
+- Berechnung von trigonometrischen Arkus- und Hyperbelfunktionen,
+  Umwandlung Grad-Bogenmaá und umgekehrt, Eulersche Konstante e
+- Automatische Zahlenformatierung
+- "Shortcuts" fr die Menpositionen
+- Automatische Berechnung des y-Wertebereiches von Schaubildern
+  zur Wahrung eines korrekten Seitenverh„ltnisses
+
+V2.21 - 01.03.91
+----------------
+- Definition von Initialisierungs- und Grafikbefehlen zur
+  Druckeranpassung
+
+V2.20 - 26.12.90
+----------------
+- Men zur Druckeranpassung Epson/IBM, 9/24-Nadler, 
+  Definition des Druckformats
+
+V2.10 - 09.11.90
+----------------
+Erste zum Verkauf freigegebene Version
+

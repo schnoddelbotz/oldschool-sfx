@@ -1,0 +1,37 @@
+                    Known problems with F-PROT
+
+The following compatibility problems are known at the moment, and will be
+fixed as soon as possible.
+
+    VIRSTOP is not compatible with the Cyrix 486SLC processor because of a
+    "bug" in the Cyrix chip - it is not 100% compatible with Intel
+    processors.  This problem can be bypassed by using the /NOTRACE
+    command-line switch.
+
+    VIRSTOP may under some circumstances not be compatible with the 386Max
+    and BlueMax memory managers.  If you have a problem, use the /NOTRACE
+    command-line switch.
+
+    VIRSTOP.EXE is not effective if run before a program which totally takes
+    over the "Load-and-Execute" function.  This includes Novell Netware and
+    PC-NFS, and as explained elsewhere, VIRSTOP should be run after those
+    programs, or run again with the /REHOOK command-line switch, after
+    those programs are loaded.
+
+    Occasionally, when using Novell Netware and Windows 3.0 with VIRSTOP
+    installed, and an attempt is made to send anything to a HP laser
+    printer over the network, from inside certain Windows applications, the
+    output may become garbled.  The reason for this is not known, but as
+    several other TSR's are known to cause the same problem, this is
+    probably not a F-PROT problem.  This can be solved by using LPT1.OS2
+    instead of LPT1 as the printer port.  This bug seems to have been fixed
+    in Windows 3.1
+
+The following problem is not likely to go away in the near future:
+
+    If F-PROT is run from a diskette, the diskette may not be removed while
+    the program is running, so other diskettes cannot be inserted for
+    scanning.  The reason is that F-PROT stores all its text messages in a
+    separate file, and needs to be able to access that file while running. 
+    The recommended solution is to copy the package to the hard disk or a
+    RAM-disk, if you need to scan diskettes.

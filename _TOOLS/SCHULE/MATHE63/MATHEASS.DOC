@@ -1,0 +1,1290 @@
+
+
+
+
+
+
+
+
+
+         ÚÄÄ¿ÚÄÄ¿ ÚÄÄÄÄÄ¿ÚÄÄÄÄÄ¿ÚÄ¿ ÚÄ¿ ÚÄÄÄÄ¿         ÚÄÄÄÄÄ¿ ÚÄÄÄÄ¿ ÚÄÄÄÄ¿
+         ³  ÀÙ  ³ ³ ÚÄ¿ ³ÀÄ¿ ÚÄÙ³ ³ ³ ³ ³ ÚÄÄÙ         ³ ÚÄ¿ ³ ³ ÚÄÄÙ ³ ÚÄÄÙ
+         ³ Ú¿Ú¿ ³ ³ ÀÄÙ ³  ³ ³  ³ ÀÄÙ ³ ³ ÀÄ¿  ÚÄÄÄÄ¿  ³ ÀÄÙ ³ ³ ÀÄÄ¿ ³ ÀÄÄ¿
+         ³ ³ÀÙ³ ³ ³ ÚÄ¿ ³  ³ ³  ³ ÚÄ¿ ³ ³ ÚÄÙ  ÀÄÄÄÄÙ  ³ ÚÄ¿ ³ ÀÄÄ¿ ³ ÀÄÄ¿ ³
+         ³ ³  ³ ³ ³ ³ ³ ³  ³ ³  ³ ³ ³ ³ ³ ÀÄÄ¿         ³ ³ ³ ³ ÚÄÄÙ ³ ÚÄÄÙ ³
+         ÀÄÙ  ÀÄÙ ÀÄÙ ÀÄÙ  ÀÄÙ  ÀÄÙ ÀÄÙ ÀÄÄÄÄÙ         ÀÄÙ ÀÄÙ ÀÄÄÄÄÙ ÀÄÄÄÄÙ
+
+         Copyright 1988 :  Bernd Schultheiá, 7613 Hausach, Hegerfeldstr. 27
+
+
+
+
+
+
+
+
+
+
+
+                     I N H A L T S V E R Z E I C H N I S :
+
+
+         1. Einleitung ................................................... 1
+
+         2. Hardware-Voraussetzungen ..................................... 2
+
+         3. Installation ................................................. 2
+
+         4. Bedienung .................................................... 3
+
+         5. Umgekehrte Polnische Notation (Taschenrechner) ............... 5
+
+         6. Algebra ...................................................... 6
+
+         7. Geometrie .................................................... 9
+
+         8. Analysis .................................................... 13
+
+         9. Stochastik .................................................. 17
+
+        10. Lineare Algebra ............................................. 19
+
+
+
+
+
+
+                                  - 1 -
+
+
+                         1 .  E I N L E I T U N G
+                         ========================
+
+         Das Programm MATHE-ASS ist eine umfangreiche Sammlung von Routinen,
+         die vielen Aufgaben aus der Schulmathematik ihren Schrecken nehmen.
+
+         Es ist nicht als Mathematik-Lernprogramm zu verstehen, sondern als
+         Mathematik-Assistent fr  den Lehrer,  fr Schler  und alle,  die
+         auáerhalb  der  Schule  mit  mathematischen Problemen konfrontiert
+         sind. Dies schlieát natrlich nicht aus, daá Schler,  die mit dem
+         Programm ihre Hausaufgaben berprfen, dabei etwas lernen.
+
+         Die verwendeten Algorithmen habe ich in  mehreren Jahren gesammelt
+         und zu dem vorliegenden Programm  zusammensetzt.  Sollten  Sie den
+         einen oder anderen Aufgabentyp  vermissen,  oder ber interessante
+         Algorithmen  verfgen,  die in den Rahmen dieses Programms passen,
+         so wrde ich mich ber einen Brief von Ihnen sehr freuen.
+
+         Das Programm wird laufend  berarbeitet  und erweitert,  und jeder
+         registrierte Benutzer erh„lt eine  aktualisierte  Version,  sobald
+         sich wesentliche Ver„nderungen ergeben haben.
+
+         Das Programm  MATHE-ASS  ist sogenannte 'SHARE WARE', das heiát es
+         darf kopiert  und  weitergegeben werden. 'Authorisierter Benutzer'
+         werden Sie durch die  šberweisung  der  Registrationsgebhr.  Jede
+         nderung des Programms verst”át gegen das Urheberrecht.
+
+         Prfen Sie bitte, ob das  Programm  und das  Update  Ihr Interesse
+         finden.  Falls dies,  was ich hoffe,  der Fall ist, berweisen Sie
+         bitte unter Angabe der Versionsnummer  30 DM  auf folgendes Konto,
+         um sich als authorisierter Benutzer registrieren zu lassen.
+
+                 Kontonummer           : 72104-759
+                 Postgiroamt Karlsruhe : BLZ 660 100 75
+                 Kontoinhaber          : Bernd Schultheiá, Hausach
+
+                 Registrationsgebhr   : 30 DM
+                 Stichwort             : MATHE-ASS Version 6.0
+
+         Eine pers”nliche Anmerkung zur Wahl der Programmiersprache sei zum
+         Schluá noch erlaubt.  Mir kam es darauf an, daá unabh„ngige Module
+         geschrieben und Assemblerroutinen eingebunden werden konnten,  daá
+         das fertige Programm  unabh„ngig von der Graphikkarte  die gleiche
+         Darstellung der graphischen Ergebnisse liefert. Vorallem sollte es
+         eine Sprache sein,  die sich eng an eine  ANSI-Norm h„lt und unter
+         verschiedenen Betriebssystemen zur Verfgung steht, damit das Pro-
+         gramm auch nach dem Aussterben von DOS weitergepflegt werden kann.
+
+         Interessanterweise fand ich die  passende Sprache  nicht unter den
+         PASCAL-Dialekten, wie man zun„chst vermuten k”nnte, sondern in der
+         von  Kemeny und Kurtz  v”llig neu entwickelten  BASIC-Version, die
+         sich voll an die  ANSI-Norm  h„lt und deshalb  True BASIC  genannt
+         wurde. Sie l„uft bereits auf  PC's , ATARI, AMIGA und dem MAC, und
+         wird demn„chst auch unter UNIX zur Verfgung stehen.
+
+         True BASIC  vereinigt die Vorteile eines Compilers mit denen eines
+         Interpreters und bietet dem Programmentwickler mit einem komforta-
+         blen Editor ohne Schn”rkel eine ideale  Entwicklungsumgebung. Eine
+         stattliche Anzahl von Libraries  beschleunigt die Programmentwick-
+         lung zus„tzlich. Vertrieben wird True BASIC von der Firma
+
+         pfotenhauer Mikrocomputer-Anwendungen, D-7590 Achern, Hauptstr. 97
+
+                                  - 2 -
+
+
+            2 .  H A R D W A R E - V O R A U S S E T Z U N G E N   
+            ====================================================
+
+         Das Programm l„uft auf allen IBM-kompatiblen Rechnern
+
+         -  mit mindestens 384 KB Speicher.
+
+         -  mit einer CGA-, HGC- oder EGA-Graphikkarte.
+            Bei CGA- oder EGA-Karten muá vorher GRAFTABL geladen werden,
+            da sonst der obere Zeichensatz nicht dargestellt wird.
+
+         -  Ein mathematischer Coprozessor wie der 8087 bzw. 80287 wird,
+            falls vorhanden, untersttzt.
+
+
+
+                        3 .  I N S T A L L A T I O N
+                        ============================
+
+         Eigentlich  gibt es bei diesem Programm nichts zu installieren, da
+         es selbst„ndig erkennt welche Graphikkarte Sie verwenden.  Vermut-
+         lich  wollen Sie sich jedoch eine  selbststartende Arbeitsdiskette
+         anlegen.  Fr diejenigen, die mit MS-DOS nicht vertraut sind, hier
+         kurz die erforderlichen Schritte.
+
+         a) Installation auf Diskette
+            -------------------------
+
+         - Systemdiskette mit den externen DOS-Befehlen einlegen und
+
+         - FORMAT A:/S     eingeben
+
+         - Leerdiskette einlegen und ENTER drcken
+
+         - auf diese Diskette folgende DOS-Dateien kopieren:
+           COMMAND.COM, KEYBGR.EXE, GRAFTABL.EXE ( nur bei CGA oder EGA )
+            
+         - auáerdem von der MATHEASS-Diskette die Datei MATHEASS.EXE
+         
+         - mit einen geeignetem Texteditor z.B. EDLIN, RPED  oder anderen
+           folgende Datei erzeugen und unter dem Namen  AUTOEXEC.BAT  auf 
+           die Arbeitsdiskette schreiben:
+
+                    ECHO OFF
+                    KEYBGR
+                    GRAFTABL
+                    MATHEASS
+
+         Die Programmbeschreibung  MATHEASS.DOC, die Sie gerade lesen, hat
+         auf der Arbeitsdiskette keinen Platz mehr. Wollen Sie die Routine
+         im Ordner  INFO  zum Lesen des Handbuchs benutzen, so mssen Sie,
+         nachdem Sie das Programm  MATHEASS  geladen haben, eine Diskette,
+         die die Datei  MATHEASS.DOC  enth„lt, einlegen.
+ 
+
+         b) Installation auf Festplatte
+            ---------------------------
+
+                    CD \
+                    MD MATHEASS
+                    CD \MATHEASS
+                    COPY A:*.* C:
+
+                                  - 3 -
+
+
+                           4 .  B E D I E N U N G
+                           ======================
+
+         Das Programm wird auf DOS-Ebene  mit  MATHEASS  gestartet.  Danach
+         erscheint folgendes Hauptmenue :
+
+   ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+   º   ÚÄÄ¿ÚÄÄ¿ ÚÄÄÄÄÄ¿ ÚÄÄÄÄÄ¿ ÚÄ¿ ÚÄ¿ ÚÄÄÄÄ¿       ÚÄÄÄÄÄ¿ ÚÄÄÄÄ¿ ÚÄÄÄÄ¿   º
+   º   ³  ÀÙ  ³ ³ ÚÄ¿ ³ ÀÄ¿ ÚÄÙ ³ ³ ³ ³ ³ ÚÄÄÙ       ³ ÚÄ¿ ³ ³ ÚÄÄÙ ³ ÚÄÄÙ   º
+   º   ³ Ú¿Ú¿ ³ ³ ÀÄÙ ³   ³ ³   ³ ÀÄÙ ³ ³ ÀÄ¿ ÚÄÄÄÄ¿ ³ ÀÄÙ ³ ³ ÀÄÄ¿ ³ ÀÄÄ¿   º
+   º   ³ ³ÀÙ³ ³ ³ ÚÄ¿ ³   ³ ³   ³ ÚÄ¿ ³ ³ ÚÄÙ ÀÄÄÄÄÙ ³ ÚÄ¿ ³ ÀÄÄ¿ ³ ÀÄÄ¿ ³   º
+   º   ³ ³  ³ ³ ³ ³ ³ ³   ³ ³   ³ ³ ³ ³ ³ ÀÄÄ¿       ³ ³ ³ ³ ÚÄÄÙ ³ ÚÄÄÙ ³   º
+   º   ÀÄÙ  ÀÄÙ ÀÄÙ ÀÄÙ   ÀÄÙ   ÀÄÙ ÀÄÙ ÀÄÄÄÄÙ       ÀÄÙ ÀÄÙ ÀÄÄÄÄÙ ÀÄÄÄÄÙ   º
+   ÌÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍ¹
+   º INFO º ALGEBRA º GEOMETRIE º ANALYSIS º STOCHASTIK º LIN.ALGEBRA º ENDE º
+   ÌÍÍÍÍÍÍÊÍÍÍÍÍÍËÍÍÊÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍ¼
+   º Allgemeines º±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   º Copyright   º±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   º Bedienung   º±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   º Handbuch    º±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ÈÍÍÍÍÍÍÍÍÍÍÍÍÍ¼±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ÉÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+   º Vers. 6.0 º (C) 1988 : Bernd Schultheiá, 7613 Hausach, Hegerfeldstr. 27 º
+   ÈÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+         Vom Hauptmenue aus w„hlt man mit -> bzw. mit <-  einen der Ordner
+         INFO, ALGEBRA,  GEOMETRIE,  ANALYSIS, STOCHASTIK, LINEARE ALGEBRA
+         aus, die in der Menleiste aufgefhrt sind.
+         Innerhalb des gew„hlten Ordners wird mit Hoch- bzw Tief-Pfeil ein
+         Lichtbalken bewegt, der einen Paragraphen markiert.
+         Der markierte Paragraph wird mit der ENTER-Taste  <ÄÙ aufgerufen.
+
+         Zu Beginn jedes Paragraphen wird eine 'Eingabemaske' dargestellt.
+         Die Eingabefelder sind unterstrichen, das aktive Feld durch einen
+         Lichtbalken markiert.  Der Lichtbalken wird mit den 4 Pfeiltasten
+         bewegt.  Sind alle erforderlichen Gr”áen eingegeben, wird mit der
+         Taste  PgDn (Bild)  die n„chste Eingabemaske aufgerufen bzw. das
+         Programm gestartet.
+         Bei mehreren Eingabemasken kann mit  PgUp  auch zurck gebl„ttert
+         werden (siehe 8.Analysis). Auáer im Graphikmodus wird immer ange-
+         zeigt, ob nur PgDn oder PgDn und PgUp zum bl„ttern benutzt werden
+         k”nnen.
+
+         Hardcopy:
+         ---------
+         Um nicht nur Texte, sondern auch Graphiken auf dem Drucker ausge-
+         ben zu k”nnen, sind fr CGA-, HERCULES- und EGA-Graphik sowie fr
+         EPSON-kompatible  9-Nadel- und  24-Nadeldrucker  Hardcopyroutinen
+         in das Programm integriert. Sie werden mit den Funktionstasten F9
+         fr 9-Nadler und mit F10 fr 24-Nadler aufgerufen.
+
+         Sollten Sie einen  „lteren Drucker  haben, der die Graphiksequenz
+         ESC * nicht kennt, k”nnen Sie mit  F8 eine Hardcopy aufrufen, die
+         ihre Parameter aus der Datei MATHEASS.PRN einliest. Auáerdem kann
+         jeder residente Graphiktreiber mit SHIFT PrtSc aufgerufen werden.
+
+                                  - 4 -
+
+
+         Mit der Funktionstaste  F1  kann eine Ged„chtnissttze aufgerufen
+         werden, die die Belegung der Funktionstasten anzeigt.
+
+                     ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+                     º F3  = Vollbild ein (Analysis)º
+                     º F4  = Vollbild aus (Analysis)º
+                     º F5  = Texteditor aufrufen    º
+                     º F6  = Texteditor verlassen   º
+                     º F9  = Hardcopy mit  9 Nadeln º
+                     º F10 = Hardcopy mit 24 Nadeln º
+                     º                              º 
+                     º Ctrl Y = Eingabefeld l”schen º
+                     º Ctrl X = alle Felder l”schen º 
+                     º  ESC   = Hauptmen           º
+                     ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+
+         F3/F4 Vollbild:
+         ---------------
+         Die Funktion  Vollbild erlaubt es, in den Analysis-Programmen die
+         Ausgabe der  Funktionsgraphen  von  dem  Bildschirmfenster in der
+         rechten Bildschirmh„lfte  auf den gesamten Bildschirm umzuleiten.
+         Die  wesentlichen  Ergebnisse  werden dann ber die Zeichnung ge-
+         schrieben. Sie wird mit  F3  eingschaltet  und gilt dann fr alle
+         Analysis-Programme, bis sie mit  F4  wieder ausgeschaltet wird.
+
+         F5/F6 Texteditor:
+         -----------------
+         Mit  F5  wird ein kleiner Texteditor aufgerufen, mit dem man z.B.
+         die Funktionsgraphen beschriften,  oder Kommentare  auf den Bild-
+         schirm schreiben kann,  bevor man ihn  ausdrucken l„át.  Wird der
+         Texteditor im Graphikmodus aufgerufen, so wird der Bildschirm als
+         Hintergrund gesichert und bei jeder L”schung mit DELETE oder BACK
+         SPACE rekonstruiert. Ruft man den Texteditor zweimal auf, so sind
+         auch die bereits geschriebenen Texte  Teil des Hintergrundes  und
+         k”nnen nicht mehr gel”scht werden.
+
+         Zum Editieren stehen stehen folgende Tasten zur Verfgung:
+
+             Die Pfeiltasten  um den Cursor zu bewegen
+             HOME             Zeilenanfang
+             END              Zeilenende
+             PgUp             oberer Bildschirmrand
+             PgDn             unterer Bildschirmrand
+             Delete           l”scht Zeichen unter dem Cursor
+             Backspace        l”scht Zeichen links vom Cursor
+             Enter            auf den Anfang der n„chsten Zeile
+
+         Es steht kein Einfgemodus zur Verfgung und beim L”schen rcken
+         nachfolgende Zeichen nicht nach.
+
+         Der Texteditor kann nur mit  F6  verlassen werden.
+
+         Ruft man die Hilfe-Seite  oder den  Texteditor auf,  w„hrend eine
+         Rechnung durchgefhrt,  oder  eine Kurve gezeichnet wird,  so muá
+         nach dem Verlassen  eine beliebige Taste gedrckt werden,  um die
+         letzte Aktion fortzusetzen.
+
+         ESC Hauptmen:
+         --------------
+         Mit der  ESCAPE-Taste gelangen Sie von jeder Stelle des Programms
+         direkt ins Hauptmen.
+
+                                  - 5 -
+
+
+                       5 .   U P N - R E C H N E R
+                        ===========================
+
+         Die Paragraphen Bruchrechnen, Groáe Zahlen und Stellenwertsysteme
+         sind als Taschenrechner in  Umgekehrter polnischer Notation (UPN)
+         realisiert. Sie unterscheidet sich von der Algebraischen Notation
+         in der Reihenfolge der Eingabe.
+
+         Um eine Rechenoperation auszufhren,  werden die beiden Operanden
+         durch ENTER getrennt eingegeben und erst dann die Rechenoperation
+         bestimmt.
+
+                     ÚÄÄÄÄÄ¿    ÚÄÄÄÄÄ¿   ÚÄ¿ ÚÄ¿
+         Beispiel: 4 ³ENTER³ 12 ³ENTER³ 5 ³+³ ³*³  entspricht 4ù(12 + 5) =
+                     ÀÄÄÄÄÄÙ    ÀÄÄÄÄÄÙ   ÀÄÙ ÀÄÙ
+
+         Zwischenergebnisse,  die bei der Berechnung von Termen entstehen,
+         werden in vier Stapelregistern gehalten, die meistens mit x, y, z
+         und t bezeichnet werden. Funktionen wie  SIN oder COS  wirken auf
+         das x-Register, das zugleich Eingaberegister ist. Operationen wie
+         + oder *  verknpfen das x- und y-Register, das Ergebnis steht im
+         x-Register und die anderen Register rcken nach unten nach.
+
+         W„hrend der Rechnung verschwindet der Lichtbalken im  x-Register.
+         In dieser Zeit sind keine Eingaben m”glich, auch nicht ESC.
+
+         Ein Beispiel, soll die Funktion der vier Stapelregister  x, y, z
+         und t  veranschaulichen.  Mit dem  UPN-Rechner  fr groáe Zahlen
+         wird der folgende Term berechnet
+
+                         ( 9 + 8 ) ú ( 7 + 2 )
+                         ---------------------
+                               8 + 3 ú 4
+
+         Eingabe       Belegung der Stapelregister x, y, z und t
+         
+            9             x = 9
+          ENTER           x = 9     y = 9
+            8             x = 8     y = 9
+            +             x = 17
+          ENTER           x = 17    y = 17
+            7             x = 7     y = 17
+          ENTER           x = 7     y = 7     z = 17
+            2             x = 2     y = 7     z = 17
+            +             x = 9     y = 17
+            *             x = 153
+          ENTER           x = 153   y = 153
+            8             x = 8     y = 153
+          ENTER           x = 8     y = 8     z = 153
+            3             x = 3     y = 8     z = 153
+          ENTER           x = 3     y = 3     z = 8     t = 153
+            4             x = 4     y = 3     z = 8     t = 153
+            *             x = 12    y = 8     z = 153
+            +             x = 20    y = 153
+            /             x = 7.65
+
+          Es wird also zuerst  9+8 berechnet und auf den Stapel gelegt,
+          danach 7+2.  Die beiden Summen werden multipliziert  und das
+          das Produkt auf den Stapel gelegt (ENTER) usw.
+
+          Mit  x<->y (Taste X) werden das x- und y-Register vertauscht.  
+          Mit  Cursor-hoch  bzw. -tief werden die Register 'gescrollt'.
+
+                                  - 6 
+
+
+                            6 .  A L G E B R A
+                            ==================
+
+         PRIMZAHLEN
+         ----------
+         Das Programm berechnet alle Primzahlen zwischen zwei Zahlen. Die
+         beiden Zahlen  a  und  b  werden in die unterstrichenen Eingabe-
+         felder eingegeben.  Der Lichtbalken wird mit den Tasten  Cursor-
+         links  und  Cursor-rechts  von einem Feld auf das andere bewegt.
+         Da  a und b  natrliche Zahlen sind,  werden bei der Eingabe nur
+         Ziffern aber  kein Dezimalpunkt und  kein Vorzeichen akzeptiert.
+         Sind die  untere und obere  Grenze eingegeben,  wird die Eingabe
+         mit PgDn abgeschlossen.  Da das Programm mit einer Tabelle aller
+         vierstelligen Primzahlen arbeitet, ist es bis  100 000 000 recht
+         schnell, danach wird es merklich langsamer.
+
+
+         PRIMFAKTORZERLEGUNG
+         -------------------
+         Das Programm zerlegt natrliche Zahlen in ihre Primzahlpotenzen.
+
+         Beispiel: 123456789 = 3^2 * 3607 * 3803
+
+         Es arbeitet mit derselben Primteiler-Tabelle  wie das Primzahl-
+         programm,  das heiát es wird ebenfalls sehr langsam,  falls die
+         eingegebene Zahl mehr als vierstellige Primteiler enth„lt.
+
+
+         GGT UND KGV
+         -----------
+         Zu zwei Zahlen a und b werden der  gr”áte gemeinsame Teiler, das    
+         kleinste gemeinsame Vielfache und ihre Teilermengen bestimmt.
+
+         Beispiel:     a = 1001        b = 3575
+                       gr”áter gemeinsamer Teiler         ggT = 143
+                       kleinstes gemeinsames Vielfaches   kgV = 25025
+
+
+         PERIODISCHE DEZIMALBRšCHE
+         -------------------------
+         Das Programm wandelt periodische  und  abbrechende Dezimalbrche
+         um in Brche. Dazu werden der nichtperiodische Teil der Zahl und
+         die Ziffern der Periode getrennt eingegeben.
+                                                         _
+         Bsp: Nichtperiodischer Teil : 1.2            1.26 = 12/10 + 6/90
+                             Periode : 6                   = 19/15
+
+
+         LINEARE GLEICHUNGSSYSTEME
+         -------------------------
+         Das Programm bestimmt den L”sungsvektor eines  Systems  linearer
+         Gleichungen ( LGS ) mit  n Gleichungen und n Unbekannten (nó10).
+         Eingeben werden der Grad n und die Koeffizienten des Gleichungs-
+         systems, das zuvor auf folgende Form gebracht werden muá:
+
+                   a(1,1)ùx(1) + ... + a(1,n)ùx(n) = b(1)
+                      :              :     :
+                   a(n,1)ùx(1) + ... + a(n,n)ùx(n) = b(n) 
+
+
+
+
+
+                                  - 7 -
+
+
+         Bsp : Sucht man eine Parabel durch die Punkte P(1/3), Q(2/1) und
+               R(4/9), so fhrt dies auf das Gleichungssystem
+  
+                1ùx(1) + 1ùx(2) + 1ùx(3) = 3       Mit dem L”sungsvektor:
+                4ùx(1) + 2ùx(2) + 1ùx(3) = 1
+               16ùx(1) + 4ùx(2) + 1ùx(3) = 9                ( 2, -8, 9 )
+
+                   Die Parabel hat also die Gleichung  y = 2x^2 - 8x + 9.   
+
+
+         GLEICHUNGEN  4. GRADES
+         ----------------------
+         Das Programm bestimmt die reellwertigen L”sungen einer Gleichung   
+         4. oder  kleineren Grades.  Eingegeben werden die  Koeffizienten
+         a bis e, wobei a der Koeffizient von  x^4  ist.  Fr Gleichungen
+         von h”herem Grad als 4 gibt es abgesehen von N„herungsrechnungen
+         ( Nullstellen im Programm Kurvendiskussion )  kein algebraisches 
+         L”sungsverfahren. Einen Ausweg bietet dann nur noch die Polynom-
+         division. Ist etwa  q  eine durch Probieren gefundene L”sung, so 
+         fhrt die  Polynomdivision  durch  (x-q)  auf eine Gleichung mit
+         niedrigerem Grad.
+
+         Beispiele: a) x^4 + 2x^3 - 8x^2 -18x - 9 = 0
+                       Eingeben werden   a=1, b=2, c=-8, d=-18  und  e=-9
+                       Berechnet wird die L”sungsmenge  L = ( -3, -1, 3 )
+
+                    b) x^5 - x^4 - 16x + 16 =0
+                       Durch Probieren findet man die L”sung  x = 1. 
+                       Mit dem Programm Polynomdivision dividiert man die
+                       linke Seite  der Gleichung durch  (x-1).
+                       Die Nullstellen des Restpolynoms  x^4 - 16 liefern 
+                       die weiteren L”sungen.
+
+
+
+         TASCHENRECHNER FšR GROSSE ZAHLEN
+         --------------------------------
+         Das Programm ersetzt einen  wissenschaftlichen Taschenrechner in
+         umgekehrter polnischer Notation ( siehe UPN-Rechner ) und bietet
+         im Gegensatz zu diesem eine Genauigkeit von  60 Nachkommastellen
+         und nur durch den Speicher begrenzte Vorkommastellen.  Angezeigt
+         werden die ersten  48 Ziffern.  Bei mehr als  48 Vorkommastellen
+         wechselt die Anzeige auf Flieákommadarstellung mit maximal vier-
+         stelligem Zehnerexponenten.  Beim Rechnen mit sehr groáen Zahlen
+         ist zu beachten, daá zwar nur  48 Stellen angezeigt  aber intern
+         unter Umst„nden mit 2000 Stellen und mehr gerechnet wird.
+
+         Neben den Grundrechenarten und dem Potenzieren ( auch mit ratio-
+         nalen Exponenten ) stehen die Funktionen SIN, COS, TAN, ATN, LN,
+         EXP, û  und  x! ( mit ! oder F aufrufen ), sowie die Konstante ã 
+         zur Verfgung.
+
+         Die trigonometrischen Funktionen arbeiten im Bogenmaá. Winkel im
+         Gradmaá mssen also zuvor mit  ã/180  multipliziert werden,  was
+         Sie selbstverst„ndlich mit dieser Routine machen k”nnen.
+         
+         Beispiele:
+                       ÚÄÄÄÄÄ¿               ÚÄ¿
+         1 234 567 890 ³ENTER³ 9 876 543 210 ³*³ 
+                       ÀÄÄÄÄÄÙ               ÀÄÙ
+         ergibt   12 193 263 111 263 526 900
+
+
+                                  - 8 -
+
+
+           ÚÄÄÄÄÄ¿    ÚÄ¿
+         2 ³ENTER³ 64 ³^³    ergibt   184 467 440 737 709 551 616
+           ÀÄÄÄÄÄÙ    ÀÄÙ
+            ÚÄ¿
+         40 ³!³ ergibt
+            ÀÄÙ
+         815 915 283 247 897 734 345 611 269 596 115 894 272 000 000 000
+
+
+
+         TASCHENRECHNER FšR BRšCHE
+         -------------------------
+         Das Programm ersetzt einen Taschenrechner  mit Brucharithmetik in
+         umgekehrter polnischer Notation ( siehe UPN-Rechner ).  Es stehen
+         die vier Grundrechenarten + - * - und das Potenzieren ^ mit ganz-
+         zahligem Exponenten zur Verfgung, auáerdem die bei  UPN-Rechnern
+         blichen Stapeloperationen wie Scrollen und Tauschen.
+
+         Z„hler und Nenner eines Bruchs werden  getrennt eingegeben.  Der
+         Lichtbalken, der das Eingabefenster markiert wird mit den Tasten
+         <- und -> zwischen Z„hler und Nenner hin und her bewegt.
+                 ÚÄÄ¿    ÚÄÄÄÄÄ¿    ÚÄÄ¿   ÚÄ¿
+         Bsp:  9 ³->³ 16 ³ENTER³ 24 ³->³ 5 ³+³   entspricht   9/16 + 24/5
+                 ÀÄÄÙ    ÀÄÄÄÄÄÙ    ÀÄÄÙ   ÀÄÙ
+
+
+         TASCHENRECHNER FšR STELLENWERTSYSTEME
+         -------------------------------------
+         Der dritte UPN-Rechner dient zum Rechnen in einem anderen Zahlen-
+         system als dem Zehnersystem. Die Bedienung entspricht den beiden
+         anderen Rechnern.  Gerechnet wird nur im Bereich der natrlichen
+         Zahlen einschlieálich der Null,  das heiát  negative Differenzen
+         werden auf  Null gesetzt  und Divisionsreste abgeschnitten.  Die
+         L„nge des Eingabefeldes wird so angepaát, daá der Integerbereich
+         ( 15 Stellen im Zehnersystem ) nicht verlassen wird.  Die gr”áte
+         Basis ist 16 (hexadezimal) mit den Ziffern 0,... ,9,A,B,C,D,E,F.
+
+         Die Basis kann mit  <Ctrl B>  gewechselt werden.
+
+         Beispiel mit eingestellter Basis 2 :
+
+                  10000000          dezimal 128
+                  ENTER
+                    101011          dezimal 43
+                    +
+         ergibt   10101011          dezimal 171
+                  Ctrl B  16  Enter
+         ergibt   AB                d.h. 10ù16 + 11
+ 
+
+
+         TASCHENRECHNER FšR KOMPLEXE ZAHLEN
+         ----------------------------------
+         Das Programm bietet einen  UPN-Rechner  fr komplexe Zahlen  an.
+         Bedient wird er wie der UPN-Rechner fr Brche, d.h. mit <-- und
+         --> wechselt man zwischen der Eingabe von Realteil und Imagin„r-
+         teil.
+
+         Beispiel:  ( 3 + 4i )( 3 - 4i ) = 25
+                      ÚÄÄ¿   ÚÄÄÄÄÄ¿ ÚÄÄÄÄ¿ ÚÄÄÄ¿
+                    3 ³->³ 4 ³ENTER³ ³KONJ³ ³ * ³    liefert  25 + 0i
+                      ÀÄÄÙ   ÀÄÄÄÄÄÙ ÀÄÄÄÄÙ ÀÄÄÄÙ
+
+                                  - 9 -
+
+
+                         7 .  G E O M E T R I E
+                         ======================
+
+
+         RECHTWINKLIGE DREIECKE
+         ----------------------
+         Ein rechtwinkliges Dreieck ist  meist durch zwei Gr”áen zusammen
+         mit dem rechten Winkel eindeutig bestimmt.  Das Programm erlaubt
+         es aus den folgenden Gr”áen zwei auszuw„hlen und ihre Werte ein-
+         zugeben:   - Katheten a und b
+                    - Hypotenuse c
+                    - Hypotenusenabschnitte p und q
+                    - H”he h
+                    - Winkel à und á
+                    - Fl„cheninhalt A
+         Werden zwei der neun Gr”áen eingegeben  und die Eingabe mit PgDn
+         abgeschlossen,  so berechnet das Programm die restlichen Gr”áen.
+         Eine  graphische Darstellung  des Dreiecks kann mit dem n„chsten
+         Programm erfolgen.
+
+
+         DREIECKE AUS DREI GR™SSEN
+         -------------------------
+         Werden von einem Dreieck drei bestimmende '„uáere' Gr”áen,  d.h.
+         Seiten oder Winkel eingegeben und die Eingabe mit der PgDn-Taste
+         abgeschlossen, so berechnet das Programm die Seiten, die Winkel,
+         die H”hen,  die Seitenhalbierenden,  die Winkelhalbierenden, den
+         Umfang und den Fl„cheninhalt,  sowie die Mittelpunkte und Radien
+         des Umkreises und des Inkreises des Dreiecks.  Auáerdem wird das
+         Dreieck mit  In- und Umkreis  gezeichnet. Werden zwei Seiten und
+         der Winkel, der der kleineren Seite gegenberliegt (sSw), einge-
+         geben, wird zun„chst die erste L”sung angezeigt. Auf Tastendruck
+         erfolgt dann die zweite L”sung.
+         Am Ende gelangt man mit ENTER zurck in die Eingabemaske.
+
+
+         DREIECKE AUS DREI PUNKTEN
+         -------------------------
+         Werden von einem Dreieck die Koordinaten der drei Eckpunkte ein-
+         gegeben,  so berechnet das Programm alle '„uáeren' und 'inneren'
+         Gr”áen des Dreiecks und zeichnet das Dreieck einschlieálich  In-
+         und Umkreis.  Die Darstellung ist dieselbe wie im vorhergehenden
+         Programm. Am Ende gelangt man mit  ENTER  zurck zur Eingabe der
+         Eckpunkte.
+
+
+         VIELECKE
+         --------
+         Zun„chst mssen die x/y-Koordinaten der Eckpunkte eines Vielecks
+         eingegeben werden.  Das Programm stellt  dazu eine  Eingabemaske
+         fr 14 Punkte  A - N  zur Verfgung. Sobald die Eingabe mit PgDn
+         abgeschlossen wurde sucht das Programm den letzten  vom Ursprung
+         verschiedenen Punkt um die Anzahl der Ecken festzulegen.  Danach
+         werden der Fl„cheninhalt, der Umfang und die x/y-Koordinaten des
+         Schwerpunktes berechnet.  Auáerdem wird das Vieleck in einem an-
+         gepaáten Koordinatensystem gezeichnet und schraffiert.
+
+
+
+
+
+
+
+                                  - 10 -
+
+ 
+         ABBILDUNGEN
+         -----------
+         Das Programm erlaubt es auf ein  n-Eck  bis zu vier  Abbildungen
+         anzuwenden. Die Eingabe der Ecken erfolgt mit derselben Eingabe-
+         maske wie in dem Programm VIELECKE. Wenn eine Ecke des n-Ecks im
+         Ursprung liegt,  darf diese nicht als  letzte eingegeben werden.
+         Nach der Eingabe des n-Ecks, die wieder mit  PgDn  abgeschlossen
+         wird, werden die Abbildungen definiert. Zur Auswahl stehen:
+
+             - Verschiebung um dx in x-Richtung und dy in y-Richtung
+             - Geradenspiegelung an der Gerade (PQ)
+             - Punktspiegelung an dem Punkt Z
+             - Drehung um den Punkt Z mit Drehwinkel à
+             - Zentrische Streckung aus Z mit Faktor k
+             - Scherung an der Gerade (PQ) mit Winkel à
+
+         Im ersten Feld jeder Eingabezeile  wird der Anfangsbuchstabe der
+         Abbildung eingegeben (V,G,P,D,Z oder S).  Es erscheint dann die,
+         fr die betreffende Abbildung  erforderliche  Eingabemaske.  Die
+         Eingabegr”áen werden fr jede Zeile getrennt gespeichert, so daá
+         auch mehrere Abbildungen vom gleichen Typ m”glich sind. Man kann
+         also auch  Mehrfachspiegelungen an verschiedenen Geraden auf das
+         n-Eck anwenden lassen. 
+
+         Im letzten Feld der Zeile wird angegeben,  wie die Bildfigur ge-
+         zeichnet werden soll.  Es stehen  vier  Linienarten zur Auswahl.
+         Eine Null als Linienart bedeutet,  daá diese Bildfigur nicht ge-
+         zeichnet werden soll.  Damit ist es z.B. m”glich,  das  Ergebnis
+         einer Drehstreckung  oder  einer Schubspiegelung direkt anzeigen
+         zu lassen.
+         Das Urbild wird immer in der Linienart  1  also durchgezogen ge-
+         zeichnet.
+
+         Nach der Eingabe aller Gr”áen, die mit  PgDn abgeschlossen wird,
+         werden alle Zwischenergebnisse protokolliert und die Bildfiguren
+         in einem  automatisch  angepaáten  Koordinatensystem gezeichnet.
+         Mit  PgUp  gelangt man zurck in die Eingabemasken, wo die Werte
+         korrigiert werden k”nnen. Mit ESC kommt man ins Hauptmen.
+
+
+
+         KOORDINATEN
+         -----------
+         Mit diesem Programm  lassen  sich  zweidimensionale  kartesische
+         Koordinaten in Polarkoordinaten umrechnen und umgekehrt.
+         Kartesische Koordinaten  bestimmen  einen  Punkt in einem recht-
+         winkligen  x/y-Koordinatensystem,  Polarkoordinaten  geben  den
+         Abstand des Punktes vom Koordinatenursprung  und den Richtungs-
+         winkel seines Ortsvektors mit der Horizontalen an.
+
+         Beispiel:  y                             
+                      ³                            ³
+                      Å                            ³
+                      ³                            ³
+                    1 Å - - - * P(1/1)             ³       * P(45ø;û2)
+                      ³       ³                    ³   r /
+                      Å                            ³   /
+                      ³       ³                    ³ / à
+                      ÀÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ x      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                              1       2
+
+
+                                  
+                                  - 11 -
+
+
+         EBENE DURCH DREI PUNKTE
+         -----------------------
+         Drei Punkte im Raum bestimmen,  wenn sie nicht auf einer Geraden
+         liegen, genau eine Ebene.  Gibt man die Raumkoordinaten von drei
+         Punkten ein,  so bestimmt das Programm die  Punkt-Richtungs-Form
+         und die Koordinatengleichung der zugeh”rigen Ebene,  sowie ihren
+         Abstand vom Ursprung. Dabei werden die Richtungsvektoren und der
+         Normalenvektor auf ganze Zahlen erweitert.  Zus„tzlich  wird die
+         Lage der Ebene im Raum durch ein Schr„gbild veranschaulicht, das
+         ihre Schnittgeraden mit einem achsensymmetrischen Wrfel,  sowie
+         die Spurpunkte der Ebene enth„lt.
+
+         Beispiel: Ebene durch die Punkte  A(2/0/1), B(3/3/6), C(4/-1/2)
+                       Ú ¿     Ú ¿     Ú  ¿
+                   ->  ³2³     ³1³     ³ 2³
+                   x = ³0³ + rù³3³ + sù³-1³    bzw.   8x + 9y - 7z = 9
+                       ³1³     ³5³     ³ 1³
+                       À Ù     À Ù     À  Ù
+
+
+         KUGEL DURCH VIER PUNKTE
+         -----------------------
+         Eine Kugel ist durch  4 Punkte,  die nicht in einer Ebene liegen
+         eindeutig bestimmt.  Das Programm  bestimmt aus  den Koordinaten 
+         von den vier Punkten die Kugelgleichung und zeichnet daneben das
+         Schr„gbild eines achsensymmetrischen Wrfels  mit dem zur  Bild-
+         ebene parallelen Groákreis der Kugel.
+
+         Beispiel: Kugel durch A(11/1/3), B(7/1/7), C(3/-5/7), D(3/-8/-2)
+
+                   Sie hat den Mittelpunkt  M(5/-2/1) und den Radius r=7
+
+
+         SCHNITT VON ZWEI GERADEN
+         ------------------------
+         Das Programm bestimmt zu zwei Geraden den Schnittpunkt, auáerdem
+         den  Schnittwinkel  und  die  Abst„nde vom Ursprung. Die Geraden
+         mssen in Parameterdarstellung eingegeben werden.
+
+         Beispiel:     Ú  ¿     Ú  ¿                    Ú  ¿     Ú  ¿
+                       ³ 1³     ³ 1³                    ³ 3³     ³ 2³
+                g: x = ³ 0³ + rù³-1³     und     h: x = ³-2³ + sù³ 3³
+                       ³ 2³     ³ 1³                    ³ 4³     ³ 0³
+                       À  Ù     À  Ù                    À  Ù     À  Ù
+                haben den Schnittpunkt S(3/-2/4) und schneiden sich unter
+                dem Winkel 99.21ø.
+
+                       
+         SCHNITT VON ZWEI EBENEN
+         -----------------------
+         Das Programm bestimmt  aus den  Koordinatengleichungen  von zwei
+         Ebenen die Gleichung der Schnittgerade,  ihren Abstand vom Null- 
+         punkt und den Winkel zwischen den Ebenen.  Zur Veranschaulichung
+         werden die Ebenen und die Schnittgerade in das Schr„gbild  eines 
+         achsensymmetrischen Wrfels eingezeichnet.
+
+         Beispiel: Die Ebenen   E1: x + y + z = 12   und   E2: x - y = 5
+                   schneiden sich in            Ú  ¿     Ú  ¿
+                                            ->  ³ 0³     ³ 1³
+                                       g:   x = ³-5³ + rù³ 1³
+                                                ³17³     ³-2³
+                                                À  Ù     À  Ù
+                   
+                                  - 12 -
+
+         SCHNITT VON ZWEI KUGELN
+         -----------------------
+         Aus den Mittelpunkts-Koordinaten und den Radien von zwei Kugeln
+         bestimmt das Programm Mittelpunkt und Radius des Schnittkreises
+         sowie die Koordinatengleichung der Schnittkreisebene. Die r„um-
+         liche Darstellung aller Gr”áen hat provisorischen Charakter, da
+         mir bis jetzt noch  keine L”sung eingefallen ist,  wie mit ver-
+         tretbarem Aufwand  zwei Kugeln und ihr Schnittkreis anschaulich
+         gemacht werden k”nnen.
+
+         Gibt man bei einer Kugel als  Mittelpunkt  einen  Punkt auf der
+         anderen Kugel ein  und fr den Radius eine Null,  so erh„lt man
+         die Gleichung der Tangentialebene.
+
+         Beispiel: Die Kugeln  k1: M(1/3/9), r=7 und  k2: M(2/-1/5), r=4
+                   schneiden sich in einem Kreis um  M(2/-1/5)  mit r=4,
+                   der in der Ebene  x - 4y - 4z = -14  liegt.
+
+
+         SCHNITT VON EBENE UND KUGEL
+         ---------------------------
+         Aus der Koordinatengleichung einer Ebene und dem Mittelpunkt und
+         und dem Radius einer Kugel bestimmt das Programm den Mittelpunkt
+         und den Radius des Schnittkreises. (Darstellung siehe oben)
+
+         Beispiel: Gegen sind die Ebene E und die Kugel k mit
+                         E:  2x + y -2z = 11 
+                         K:  (x-2)^2 + (x+1)^2 + (x-5)^2 = 49
+                            also mit Mittelpunkt M(2/-1/5) und Radius r=7
+
+                   Ergebnis: Die Ebene und die Kugel schneiden sich in
+                             einem Kreis um M(6/1/1) mit Radius  r=3.61.
+
+
+
+
+
+
+
+
+                   
+
+                                  - 13 -
+
+
+                          8 .   A N A L Y S I S
+                          =====================
+
+         POLYNOME
+         --------
+         Das Programm berechnet das Produkt  und den  Quotienten von zwei   
+         Polynomen. 
+
+         Beispiel: 1. Polynom :  x^4 + 4x^3 + 6x^2 + 4x + 1
+                   2. Polynom :  x^2 + 2x + 1
+
+                   Produkt :  x^6 + 6x^5 + 15x^4 + 20x^3 + 15x^2 + 6x + 1
+                   Quotient:  x^2 + 2x + 1
+                   Rest    :  0
+                                                     4    3     2
+         Beispiel: Gesucht sind die Nullstellen von x - 8x + 14x + 8x-15
+                   Durch Probieren findet man 1 und -1.  Polynomdivision
+                   durch (x-1)(x+1) also durch x^2-1 liefert x^2 -8x +15
+                   das leicht in (x-3)(x-5) zerlegt werden kann.
+
+
+         DEFINITON DES KOORDINATENSYSTEMS
+         --------------------------------
+         Bei allen Programmen, die  Schaubilder von Funktionen  zeichnen,
+         wird  auch  der  Bereich  fr das  Koordinatensystem  abgefragt.
+         In dieser Eingabemaske wird auch  festgelegt,  ob die Achsen des
+         Koordinatensystems  linear  oder  logarithmisch  skaliert werden
+         sollen. Auáerdem kann man zwischen  4 Genauigkeitsstufen w„hlen.
+
+         Der Zeichenbereich wird von dem Programm bei Bedarf nachtr„glich
+         ver„ndert, um ein  besser  darstellbares  Intervall zu erhalten.
+         Bei logaritmischer Skalierung werden  Zehnerpotenzen als Skalen-
+         striche verwendet,  auáerdem wird die  untere Grenze,  falls sie
+         negativ ist, auf 0.1 gesetzt.
+
+         Beispiele, wie der Zeichenbereich angepaát wird:
+         
+         a) bei linearer Skalierung
+                               ÚÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄ¿
+            -1.5 ó x ó 2.1          1         0         1         2
+                               ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄ¿
+            -1.5 ó x ó 9.4    -2     0     2     4     6     8    10
+                               ÚÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄÄÂÄÄÄ¿
+            -0.8 ó x ó 0.1    -.8       -.6       -.4       -.2        0
+                               ÚÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄ¿
+             -7  ó x ó 12     -10                0                10
+
+         b) bei logarithmischer Skalierung    
+                               ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             -4  ó x ó  4     .1                    1                   10   
+                               ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+            0.01 ó x ó 12     .01            1            10            100
+
+
+         Nach der Definiton des Koordinatensystems  k”nnen sie noch fest-
+         legen, mit welcher Aufl”sung  die Schaubilder  gezeichnet werden
+         sollen. Bei der groben Aufl”sung  (0)  wird nur fr jeden achten
+         horizontalen Bildschirmpunkt der Funktionswert berechnet.Dadurch
+         wird der Funktionsgraph relativ schnell, unter Umst„nden aber zu
+         eckig gezeichnet . Falls dies der Fall sein sollte,  k”nnen  Sie
+         die Aufl”sung nachtr„glich erh”hen.  Bei der  h”chsten Aufl”sung
+         (3) wird der Funktionswert fr jeden Bildpunkt berechnet.
+
+                                  - 14 -
+
+
+         FUNKTIONSPLOTTER I
+         ------------------
+         Der Funktionsplotter arbeitet mit zwei  Eingabeseiten  und einer
+         Ausgabeseite,  zwischen denen mit  PgDn  bzw.  PgUp  hin und her
+         gebl„ttert werden kann.
+
+             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             ³ Eingabe der Funktionsterme       ³
+             ³    ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             ³    ³ Eingabe des Koordinatensystems   ³
+             ³    ³    ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             ³    ³    ³ Ausgabe der Schaubilder          ³
+             ³    ³    ³                                  ³
+             ³    ³    ³                                  ³
+             ÀÄÄÄÄ³    ³                                  ³
+                  ³    ³                                  ³
+                  ÀÄÄÄÄ³                                  ³
+                       ³                                  ³
+                       ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         Es k”nnen bis zu 4 Funktionsterme eingegeben werden.  Zus„tzlich
+         werden auf Wunsch auch deren  1. und 2. Ableitung gezeichnet.
+ 
+         Die Funktionsterme drfen auáer den Rechenzeichen  + - * / ^ ( )
+         die Funktionen  ABS, INT, LOG (ln), EXP (e^x), SQR (û),SIN, COS,
+         TAN, COT,  ATN (arctan),  ASIN (arcsin),  SEC und CSC enthalten.
+         Die trigonometrischen Funktionen erwarten Winkel im Bogenmaá.
+         Zul„áig sind auch  Verknpfungen bereits definierter Funktionen,
+         wie zum Beispiel f1+f2, f1*f2 oder f1(f2).
+
+         Fr jede der definierten Funktionen  einschlieálich ihrer Ablei-
+         tungen k”nnen Sie eine von vier Linienarten festlegen. Eine Null
+         bedeutet hier, daá die Funktion nicht gezeichnet wird.
+
+
+         FUNKTIONSPLOTTER II
+         -------------------
+         Diese  kleine Routine  habe ich erg„nzt,  um  mehrere Funktionen
+         in getrennten Schaubildern zeichnen zu k”nnen. Damit lassen sich
+         mehrere Funktionen in einem Ausdruck graphisch darstellen.
+
+         Der Texteditor, der mit  F5  aufgerufen wird, erm”glicht es, die
+         Schaubilder z.B. mit Aufgabennummer und Seite zu beschriften.
+
+
+         KURVENSCHAREN
+         --------------
+         Das Programm zeichnet die Schaubilder von beliebigen Funktionen,
+         die einen Scharparameter  k  enthalten.  Neben dem Funktionsterm
+         werden  Anfangswert, Endwert und Schrittweite von k eingeben.
+
+         Beispiel: Sinuskurven mit verschiedenen Phasenverschiebungen.
+                   f(x,k)=sin(x+k)
+                   k von -2 bis 2 mit Schrittweite 1
+                   Zeichenbereich  -7 ó x ó 7 ,  -2 ó y ó 2
+
+
+
+
+
+
+
+
+                                  - 15 -
+
+
+         KURVENDISKUSSION
+         ----------------
+         Bei diesem Programm k”nnen Sie mit  PgDn und PgUp  zwischen zwei
+         Eingabe- und  zwei  Ausgabeseiten hin und her bl„ttern.
+
+             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             ³ Eingabe der Funktionsterme       ³
+             ³    ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             ³    ³ Ausgabe der Kurvendiskussion     ³
+             ³    ³    ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             ³    ³    ³ Eingabe des Koordinatensystems   ³
+             ³    ³    ³    ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             ³    ³    ³    ³ Ausgabe des Schaubildes          ³
+             ÀÄÄÄÄ³    ³    ³                                  ³
+                  ³    ³    ³                                  ³
+                  ÀÄÄÄÄ³    ³                                  ³
+                       ³    ³                                  ³
+                       ÀÄÄÄÄ³                                  ³
+                            ³                                  ³
+                            ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         Seite 1:  Hier wird ein  bel. Funktionsterm  eingegeben  und das
+                   Intervall festgelegt,  in dem die Funktion  untersucht 
+                   werden soll.
+
+         Seite 2:  Ausgabe der Nullstellen, der Hoch- und Tiefpunkte  und
+                   der Wendepunkte.  Es werden  nur  die Nullstellen  mit 
+                   Vorzeichenwechsel ausgegeben.  Definitionslcken  kann
+                   das Programm nicht erkennen,  da sie wegen der bin„ren
+                   Arithmetik  meist  nicht im Rechenbereich liegen, oder
+                   bersprungen werden. Aus diesem Grund k”nnen dort ver-
+                   sehentlich Extrema oder Wendepunkte angezeigt werden.
+                   
+         Seite 3:  Eingabe des Koordinatensystems, die Art der Skalierung
+                   und die Aufl”sung, mit der die Kurve gezeichnet werden
+                   soll.
+
+         Seite 4:  Ausgabe des Schaubildes und der Wertetabelle.          
+
+ 
+         Beipiel:  f(x)=4/x-4/x^2
+
+                   ÚÄ Nullstellen Ä¿ ÚÄÄ Extrema ÄÄ¿ ÚÄÄ Wendepunkte ÄÄ¿
+                   ³ N(1/0;4)      ³ ³ H(2/1;0)    ³ ³ W(3/0.89;-0.15) ³
+                   ³               ³ ³             ³ ³                 ³
+                   ³               ³ ³             ³ ³                 ³
+                   ³               ³ ³             ³ ³                 ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                   Die Werte hinter den Strichpunkten geben die Steigung
+                   der Kurve in den Punkten an.
+
+
+         INTEGRALRECHNUNG
+         ----------------
+         Das Programm berechnet den orientierten und den absoluten Inhalt
+         der Fl„che  zwischen  zwei Funktionskurven in einem  gewnschten
+         Intervall. Nach der Definition des Koordinatensystems werden die
+         beiden Funktionsterme und die Grenzen des Integrationsintervalls
+         eingeben. Wird keine zweite Funktion eingeben, bestimmt das Pro-
+         gramm die Fl„che zwischen f1 und der x-Achse.
+
+
+
+                                  - 16 -
+
+
+
+         Nachdem die  Fl„cheninhalte  bestimmt sind,  wird die berechnete
+         Fl„che im Schaubild schraffiert.
+
+         Beispiel:  f1(x)=4-x^2 ,  f2(x)=(x-1)^2
+                    Integrationsintervall von  0  bis  3
+                    
+                    Fl„cheninhalt: orientiert = 0 
+                                   absolut = 9.51
+
+         Der positiv und der negativ orientierte Teil der Fl„che sind bei
+         diesem Beispiel gleich groá.
+
+
+
+         PARAMETERKURVEN
+         ---------------
+         Mit diesem Programm lassen sich Kurven zeichnen, die nicht durch
+         einen expliziten Funktionsterm gegeben sind,  sondern durch zwei
+         Funktionen fr die horizontale und vertikale Auslenkung. 
+         Wie schon der Funktionsplotter arbeitet auch dieses Programm mit
+         zwei Eingabe-  und einer Ausgabeseite,  zwischen denen mit  PgDn
+         und PgUp hin und her gebl„ttert werden kann.
+
+         Bei der niedrigsten Aufl”sung  werden  100 Punkte  der Kurve be-
+         rechnet.  Jede Erh”hung der Aufl”sung verdoppelt die die Anzahl.
+
+         Einfache Beispiele sind:
+
+         1. Der Kreis     x(k)=sin(k), y(k)=cos(k),  k von 0 bis 6.28319 
+                          Zeichenbereich  -2 ó x ó 2 ,  -2 ó y ó 2
+
+         2. Die Spirale   x(k)=k*sin(k), y(k)=k*cos(k),  k von 0 bis 20 
+                          Zeichenbereich -20 ó x ó 20 ,  -20 ó y ó 20
+
+         3. Die Lissajou-Figuren, die man erh„lt, wenn an ein Oszilloskop
+            zwei Wechselspannungen  mit  verschiedenen Frequenzen  anlegt
+            werden:
+                          x(k)=sin(3*k), y(k)=cos(5*k)
+                          k von -3.14159 bis 3.14159
+                          Zeichenbereich -2 ó x ó 2 ,  -2 ó y ó 2
+
+                                 - 17 -
+
+
+                          9 .  S T O C H A S T I K
+                          ========================
+
+         STATISTIK
+         ---------
+         Das Programm berechnet zu einer Urliste den Mittelwert, (arithm.    
+         Mittel), den Zentralwert (Median), die Varianz und die Standard-
+         abweichung. Zus„tzlich wird die Verteilung als Histogramm ausge-
+         gegeben. In der Eingabemaske k”nnen bis zu  70 Werte  eingegeben  
+         werden, von denen das Programm den ersten bis einschlieálich den
+         letzten von Null verschiedenen Wert verwendet.     
+
+
+         REGRESSION
+         ----------
+         Mit dieser Routine k”nnen Sie zu einer  Meáreihe  mit maximal 45
+         Wertepaaren eine Kurvenanpassung durchfhren lassen. Zur Auswahl
+         stehen:
+          
+           1 :  Lineare Regression              y = a + b*x
+
+         2..9:  Polynomregression n-ter Ordnung y = a(0) + ... + a(n)*x^n
+
+          10 :  Geometrische Regression         y = a*b^x
+
+          11 :  Exponentielle Regression        y = a^(b*x)
+
+          12 :  Logarithmische Regression       y = a + b*ln(x)
+
+         Auáerdem k”nnen Sie bei Bedarf alle Punkte in x- oder y-Richtung
+         verschieben.
+
+         Beispiel:      x ³    0    3   -1    1
+                        ÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                        y ³    4   10    6    7
+
+
+         Die Lineare Regression liefert  y = 1.2286x + 5.8286 
+         mit einem Korrelationskoeffizienetn von 0.839274.
+
+         Das Schaubild zeigt jedoch deutlich, daá der Meáreihe sehr wahr-
+         scheinlich kein proportionaler Zusammenhang zugrunde liegt.  Bei
+         vier Punkten gibt es, falls sie alle verschiedene x-Werte haben,
+         eine ganzrationale Funktion  dritten Grades, deren Schaubild die
+         Punkte enth„lt. Den Funktionsterm bestimmt die Polynomregression
+         dritter Ordnung. Es ist  y = -0.75x^3 + 2.5x^2 + 1.25x + 4 .
+
+
+         KOMBINATORIK
+         ------------
+         Berechnet werden die Anzahlen der M”glichkeiten aus  n Elementen
+         k  auszuw„hlen,  wenn auf die Reihenfolge  Wert gelegt wird oder
+         nicht und wenn Wiederholungen zugelassen sind  oder nicht. 
+
+         Beispiel:   n = 49,  k = 6
+
+         Geordnet ,  ohne Wh.:   n! / (n-k)! =   10 068 347 520
+         Geordnet ,  mit  Wh.:           n^k =   13 841 287 201
+         Ungeordnet, ohne Wh.:      n ber k =       13 983 816  ( Lotto )
+         Ungeordnet, mit  Wh.:  n+k-1 ber k =       25 827 165
+
+         Permutationen von k :            k! =              720
+
+                                  - 18 -
+
+
+
+         BINOMIALVERTEILUNG
+         ------------------
+         Berechnet werden fr eine b(k;n;p)  verteilte Zufallsgr”áe X bei
+         festem n und festem p
+
+         - ein Stabdiagramm der Wahrscheinlichkeiten P( X = k )
+         - ihre numerischen Werte in einem Intervall [k-min;k-max]
+         - die Wahrscheinlichlichkeit P( k-min ó X ó k-max)
+
+         Beispiel:   n = 50 ,  p = 0.3    =>    P( X ó 10 ) = 0.78128
+ 
+
+
+         HYPERGEOMETRISCHE VERTEILUNG
+         ----------------------------
+         Berechnet werden fr eine h(k;n;m;r)  verteilte  Zufallsgr”áe  X
+         bei festem n, m und festem r
+
+         - ein Stabdiagramm der Wahrscheinlichkeiten P( X = k )
+         - ihre numerischen Werte in einem Intervall [k-min;k-max]
+         - die Wahrscheinlichlichkeit P( k-min ó X ó k-max)
+         
+         Die Routine ist besonders ntzlich, da wegen der 4 Eingabegr”áen
+         kaum Tabellen fr die  hypergeometrische Verteilung  existieren,
+         und die Berechnung der  Wahrscheinlichkeiten sehr aufwendig ist.
+
+
+                                  - 19 -
+
+
+                     10 .  L I N E A R E   A L G E B R A
+                     ===================================
+
+
+         LINEARE GLEICHUNGSSYSTEME
+         -------------------------
+         siehe Algebra
+
+
+         LINEARKOMBINATION
+         -----------------
+         Das Programm bestimmt die  Linearkombination  eines  Vektors aus
+         drei gegebenen Vektoren. Sind diese linear abh„ngig, so wird eine
+         Fehlermeldung ausgegeben. Sie k”nnen die Routine daher auch dazu
+         benutzen, die lineare Unabh„ngigkeit von Vektoren zu prfen.
+
+         Beispiel:     Ú   ¿     Ú   ¿     Ú   ¿     Ú   ¿
+                       ³ 1 ³     ³ 2 ³     ³ 0 ³     ³ 2 ³
+                     aù³ 2 ³ + bù³ 1 ³ + cù³ 1 ³  =  ³ 3 ³
+                       ³ 0 ³     ³ 1 ³     ³ 0 ³     ³ 7 ³
+                       À   Ù     À   Ù     À   Ù     À   Ù
+                     Ergibt fr die Koeffizienten der Linearkombination
+                     a = -12 ,  b = 7 ,  c = 20
+
+
+         SKALARPRODUKT
+         -------------
+         Das Programm berechnet zu zwei Vektoren deren Skalarprodukt, die
+         L„nge der beiden Vektoren und den eingeschlossenen Winkel.
+                          Ú     ¿         Ú     ¿
+         Beispiel:    ->  ³  1  ³     ->  ³  5  ³
+                      a = ³  3  ³     b = ³  0  ³
+                          ³  1  ³         ³  3  ³
+                          À     Ù         À     Ù
+                      Skalarprodukt der Vektoren = 8
+                      L„nge des ersten  Vektors  = 3.32
+                      L„nge des zweiten Vektors  = 5.83
+                      eingeschlossener Winkel  á = 65.56ø
+
+
+         VEKTORPRODUKT
+         -------------
+         Das Programm berechnet zu zwei Vektoren das Vektorprodukt, sowie
+         seinen Betrag. Das Vektorprodukt steht auf dem von ihnen  aufge-
+         spannten Parallelogramm senkrecht und sein Betrag ist gleich dem
+         Fl„cheninhalt des Parallelogramms.
+                          Ú     ¿         Ú     ¿
+         Beispiel:    ->  ³  1  ³     ->  ³  7  ³
+                      a = ³  2  ³     b = ³  1  ³
+                          ³  3  ³         ³  4  ³
+                          À     Ù         À     Ù
+                          Ú     ¿
+                  ->  ->  ³  5  ³       ->  ->
+                  a x b = ³ 17  ³     ³ a x b ³ = 21.98
+                          ³-13  ³
+                          À     Ù
+
+
+
+
+
+
+
+                                  - 20 -
+
+
+         SPATPRODUKT
+         -----------
+         Das Programm berechnet zu drei Vektoren das Spatprodukt,  dessen
+         Betrag das Volumen des verschobenen Quaders ( Spat ) angibt, der
+         von den drei Vektoren aufgespannt wird.
+         Fr linear abh„ngige Vektoren ist das Spatprodukt Null.
+                          Ú     ¿         Ú     ¿         Ú     ¿
+         Beispiel:    ->  ³  2  ³     ->  ³  2  ³     ->  ³  3  ³
+                      a = ³  3  ³     b = ³ -1  ³     c = ³  9  ³
+                          ³  5  ³         ³  7  ³         ³  2  ³
+                          À     Ù         À     Ù         À     Ù
+
+                        ->  ->    ->
+                      ( a x b ) ù c  =  26
+
+
+         MATRIZENINVERSION
+         -----------------
+         Das Programm berechnet zu einer quadratischen Matrix der Ordnung    
+         n die Determinante, den Rang und die inverse Matrix.
+
+         Beispiel:  Ordnung der Matrizen = 3
+                    Ú             ¿                 Ú                  ¿
+                    ³  0   1   1  ³                 ³ 0.25  -0.25  0.5 ³
+                    ³  0   1   3  ³ ist invers zu   ³  1.5  -0.5    0  ³
+                    ³  2   0   1  ³                 ³ -0.5   0.5    0  ³
+                    À             Ù                 À                  Ù
+
+
+         MATRIZENMULTIPLIKATION
+         ----------------------
+         Das Programm berechnet zu zwei Matrizen die Produktmatrix.
+         Nichtquadratische Matrizen mssen durch Nullen aufgefllt werden.
+
+         Beispiel:  Ordnung der Matrizen = 4
+
+                    1. Matrix :                  2. Matrix :
+                    Ú                     ¿      Ú                   ¿
+                    ³   1   2   3  :  0   ³      ³   1   2   3   4   ³
+                    ³   4   5   6  :  0   ³      ³   5   6   7   8   ³
+                    ³  . . . . . . . . .  ³      ³   9  10  11  12   ³
+                    ³   0   0   0  :  0   ³      ³  . . . . . . . .  ³
+                    ³   0   0   0  :  0   ³      ³   0   0   0   0   ³
+                    À                     Ù      À                   Ù
+
+                    Produktmatrix :
+                    Ú                   ¿
+                    ³  38  44  50  56   ³
+                    ³  83  98  113 128  ³
+                    ³  . . . . . . . .  ³
+                    ³   0   0   0   0   ³
+                    ³   0   0   0   0   ³
+                    À                   Ù
+
+

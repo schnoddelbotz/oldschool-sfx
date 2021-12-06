@@ -1,0 +1,51 @@
+{ initialising...}
+{You cannot run more than }
+{ slave}
+{ slaves}
+{ with this serial number}
+{Slave name }
+{ already in use}
+{Initialisation failed}
+{Cannot communicate with BRIDGE}
+{Versions of REMOTE and BRIDGE do not match}
+{To CHAT during WATCH, CONTROL, SHARE or one-to-one SHOW, press: CTRL+ALT+T}
+{ cannot be unloaded because another TSR has been loaded}
+{ unloaded from memory}
+{ already loaded}
+{Type SLAVE /U to unload slave from memory}
+{Serial number: }
+{ (upto }
+{ slaves)}
+{Licensed to: };
+{Cannot load Slave - no interrupts free (60H - 66H).}
+{ wishes to establish a link}
+{Accept (Y/N)? }
+{Message from }
+{Press CTRL+ENTER: }
+{SHOW suspended - control in graphics mode}
+{SLAVE is already running on the BRIDGE machine}
+{No ?MS available - SLAVE loaded in low memory}
+{}
+{}
+{}
+{Usage: SLAVE name [*][password] [/A /B /E /X /F /Gnn /I /Mnn /R /Vnnnnnnnn /W]}
+{   /A       use alternate NetBIOS adapter}
+{   /B       accept broadcast show}
+{   /E, /X   load in EMS or XMS respectively}
+{   /F       disable file transfer}
+{   /G       super VGA (800 x 600) video mode (hexadecimal, default = 6A)}
+{   /I       ignore broadcast messages}
+{   /M       specify message timeout in minutes (0 = never, maximum 30)}
+{            by default, messages are erased after 30 minutes}
+{   /N       set no. of buffers (default = 1; 2 or 3 work faster with BRIDGE)}
+{   /R       reboot slave when control disconnects}
+{   /V       set reboot vector (default = F000FFF0); use F000E05B for PS/2's}
+{   /W       allow Watch only (Control, Share and Show are disabled)}
+{}
+{The password must be encrypted using CALCPSW; if it is}
+{preceded by *, the slave must consent to being watched.}
+{}
+{Examples:}
+{   SLAVE G7 *9768633    - name G7, password PASS, must agree to being watched}
+{   SLAVE K9 /M0 /N2 /E  - name K9, no message timeout, 2 buffers, load in EMS}
+

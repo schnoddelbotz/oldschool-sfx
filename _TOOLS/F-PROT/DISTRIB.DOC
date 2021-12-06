@@ -1,0 +1,44 @@
+                 Restrictions on the distribution of F-PROT
+
+The F-PROT shareware package must always be distributed complete and
+without modifications.  We publish a detached PGP signature for the entire
+package, and any modifications to the file will invalidate that signature.
+
+The only authorized modification involves the file available from the
+Garbo FTP site.  We can accept the modification, as we upload the file
+directly there.  However, because of this modification, the PGP signature
+cannot be used to check the file available on Garbo. 
+
+Any other modifications to the package, including the addition of BBS
+advertisements are strictly forbidden - we want to be able to assure the
+users of our package that the product they receive is identical to the one
+we released.
+
+Mass distribution of F-PROT in magazines or books requires approval from us
+or (in countries where we do not license the shareware version) the
+relevant local distributor of F-PROT Professional.  The same restriction
+applies to "bundling" of F-PROT with other products, including distribution
+as a part of a larger package or pre-installation on hard disks.
+
+F-PROT shareware may be made available on FTP and BBS sites, as well as
+included on CD-ROMs containing other shareware/freeware programs, such as
+the SIMTEL and GARBO collection CD-ROMs, provided the conditions below
+are not violated.  
+
+Any distribution of F-PROT is subject to the following restrictions:
+
+We do not want to have F-PROT distributed together with viruses, virus
+source code, virus construction programs or virus creation material such as
+40Hex, Crypt or the Nuke newsletters.  Therefore,
+
+  1) F-PROT may not under any circumstances be made available on a site
+     which makes such material freely available.
+
+  2) F-PROT may not be included on a CD-ROM (or similar media) containing
+     such material.
+
+  3) F-PROT may not be distributed as a part of a package containing
+     such material.
+
+We will consider legal action in the case of any violation of those three
+conditions.

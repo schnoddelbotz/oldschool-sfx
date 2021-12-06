@@ -1,0 +1,46 @@
+File List for P/I-P55T2P4 Motherboard Support Diskette 
+
+
+File Name        Description
+
+1. README.TXT    Information on how to use the PFlash utility.    
+
+2. PFLASH.EXE    Utility to update the motherboard's flash BIOS.
+
+3. T25Ixxxx.AWD  Binary file containing a BIOS version.
+
+4. DMI.EXE       Type "DMI C:\" at A:\> to decompress two files (DMICFG
+                 .EXE and README.DOC).
+                 1) DMICFG.EXE: DMI Configuration utility for modifying/
+                                viewing the MIDF contents.
+                 2) README.DOC: Read with Microsoft Word or Wordpad (Included
+                                in Win95). Provides information on how to use
+                                the DMICFG utility.
+
+5. BMREADME.TXT  To provides information how to install Intel PIIX Bus Master
+                 IDE drivers. Note : Please read this file first before
+                 you would like to do drivers installation.
+
+6. BMIDE_95.EXE  Intel PIIX Bus Master IDE drivers for Windows 95.
+
+7. BMIDE_NT.EXE  Intel PIIX Bus Master IDE drivers for Windows NT.
+
+8. BMIDEOS2.EXE  Intel PIIX Bus Master IDE drivers for OS/2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FILE.LST 3/13/96
+

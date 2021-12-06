@@ -1,0 +1,107 @@
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ The Aurora Editor v1.20  - Text Translation table definitions      ³
+//³                                                                    ³
+//³ Please keep a backup copy of this file.                            ³
+//³                                                                    ³
+//³ For a description of these text translation definitions and how    ³
+//³ to change them, select the "Key/Mouse/Trans Config" item from the  ³
+//³ "Help" pull-down menu. Then select "Text Translation" from the     ³
+//³ submenu.                                                           ³
+//³                                                                    ³
+//³ To change a translation table definition, simply locate the        ³
+//³ desired word and it's replacement and change them in the table.    ³
+//³ Be sure to enclose both the word and it's replacement in double    ³
+//³ quotes. Table entries must be separated from each other by commas. ³
+//³                                                                    ³
+//³ If you have made any changes, save this file and select "Restore   ³
+//³ Settings" from the "Set" pulldown menu. Exit and re-enter the      ³
+//³ editor for your changes to take effect.                            ³
+//³                                                                    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+// NOTE: The default text translations and macros listed here are
+// only examples and suggestions. Replace them with your own.
+
+
+objnew% trn 99.               // table name and estimated table size
+obj  trn (                    // translation table object
+
+  set
+
+  // Text Translation Table ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  // When text translation is ON, words in the left column are replaced
+  // with the phrases in right column as-you-type. To turn translation
+  // ON and OFF, select "Translate" from the "Set" menu.
+
+  // Words defined with a "*" suffix are translated only when a word
+  // delimiter character is entered - the rest are translated when the
+  // last character of the word is entered. All table entries must be
+  // separated by commas.
+
+
+  // Word:            Replace with:
+  // ÄÄÄÄ             ÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    "adn"             "and"                                            ,
+    "asap"            "as soon as possible"                            ,
+    "aurora"          "The Aurora Editor"                              ,
+    "btw"             "by the way,"                                    ,
+    "don;t"           "don't"                                          ,
+    "etc"             "et cetera"                                      ,
+    "i*"              "I"                                              ,
+    "imho"            "In my humble opinion,"                          ,
+    "incl"            "include"                                        ,
+    "occurence"       "occurrence"                                     ,
+    "recieve"         "receive"                                        ,
+    "teh"             "the"                                            ,
+    "yn"              "your name"                                      ,
+
+
+
+ .// Macro Translations ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  // If text translation is ON, these macros are executed when you type
+  // the macro name as a word in your text. Note that macros defined in
+  // this object cannot call each other (this object is for lookup only).
+
+
+  // type the word "bip" (and a space) to beep the PC speaker
+  fun  bip* (
+    beep 800 100.                     // beep the PC speaker
+  ).
+
+
+  // type the word "dt" to enter the date and time at the cursor
+  fun  dt (
+    cwrd %l.                          // find left word ("dt")
+    wrddel.                           // delete the word "dt" just entered
+    stamp.                            // enter the date/time stamp
+  ).
+
+
+  // type the word "tx" on a blank line to replace the current line
+  // with commonly-used text from a file (replace c:\your.txt with
+  // the name of your text file).
+
+  fun  tx (
+    if (open "c:\your.txt" %i) (      // include the file after the cursor
+      ldel.                           // delete current line if successful
+    ).
+  ).
+
+
+  // type the word "ifs" to generate a C-language "if" structure
+  // on the current line
+
+  fun  ifs (
+    cwrd %l.                          // find left word ("ifs")
+    wrddel.                           // delete the word "ifs" just entered
+    txt "if ( ) {".                   // write "if", parens, and bracket
+    lins %a.                          // insert a line with autoindent
+    txt "}".                          // write closing bracket
+    cmov 3 -1 %r.                     // move cursor between the parens
+  ).
+
+).

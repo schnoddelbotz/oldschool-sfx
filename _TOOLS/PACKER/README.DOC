@@ -1,0 +1,78 @@
+
+   README.DOC                                                 October 1995
+
+
+   This archive contains ARJ shareware version 2.50.
+
+   The use of ARJ in a business, commercial, government or institutional
+   environment requires a license.
+
+   *****************************************************************
+   ***                                                           ***
+   ***  PLEASE READ UPDATE.DOC FOR CHANGES.  THIS IS IMPORTANT!  ***
+   ***                                                           ***
+   ***  MANY PROBLEMS CAN BE AVOIDED BY READING THE UPDATE.DOC.  ***
+   ***                                                           ***
+   *****************************************************************
+
+   This software as originally released by the author came "sealed" in
+   an ARJ self-extracting archive with an ARJ-SECURITY envelope to
+   prevent tampering.  Re-archival of this software will destroy this
+   security feature "seal".
+
+
+   MAJOR FEATURES OF ARJ INCLUDE:
+
+   The ability to process and archive up to 32,000 files at one time.
+
+   ARJ provides excellent file compression in terms of resulting archive
+   size and speed.
+
+   ARJ has the option to create multiple volume archives with one
+   command making ARJ useful for making backups to multiple floppies or
+   archiving a very large file to several floppies without "SLICE"ing.
+
+   A myriad of commands and options to provide ummatched flexibility in
+   archiver usage.
+
+
+   THIS ARCHIVE CONTAINS THE FOLLOWING FILES:
+
+   ARJ250.EXE   - An ARJ-SECURE "sealed" self-extracting archive containing
+                  the following files:
+
+                  AGENTS.DOC     - List of authorized ARJ agents
+                  ARJ.DOC        - ARJ user manual
+                  ARJ.EXE        - ARJ executable program
+		  ARJ_BBS.DOC	 - List of ARJ support BBSes
+                  ARJ$DISP.EXE   - Demonstration display program
+                  ARJDISP.BAT    - Demonstration display batch file
+                  ARJDISP.DOC    - Description of new ARJ display feature
+                  ARJSORT.BAT    - Sort archive by various parameters
+		  ARJSORT.COM	 - Compiled ARJSORT.BAT file
+		  ARJSORT.DOC	 - ARJSORT user manual
+		  CREDIT.CRD	 - Form for handling credit card orders
+		  ERRORS.DOC	 - Description of ARJ error messages.
+                  FILE_ID.DIZ    - Program description file.
+                  INTRO.DOC      - Introduction for new users of ARJ.
+		  LICENSE.DOC	 - License policy for ARJ
+		  ORDERFRM.DOC	 - Order form for ARJ
+		  README.DOC	 - This file
+		  REARJ.CFG	 - Default REARJ configuration file
+		  REARJ.DOC	 - REARJ user manual
+		  REARJ.EXE	 - Archive conversion utility
+                  SYSOP.DOC      - SYSOP offer order form
+                  UPDATE.DOC     - Update to ARJ user manual
+                  WHATSNEW.DOC   - Changes to ARJ from 2.30
+		  WHY_ARJ.DOC	 - ARJ commercial message
+		  ARJBACK.BAT	 - Batch file to fully backup C: to A:
+		  ARJREST.BAT	 - Batch file to restore to C: from A:
+		  ARJINCR.BAT	 - Batch file to incrementally backup C:
+		  REARJALL.BAT	 - Batch file to REARJ ZIP, LZH to ARJ.
+                  TESTARJ.BAT    - Batch file to test system compatibility.
+
+   To install the ARJ software, simply copy ARJ.EXE, REARJ.EXE, REARJ.CFG,
+   and ARJSORT.COM to one of the directories named in your DOS PATH
+   statement found in your AUTOEXEC.BAT such as C:\DOS.
+
+   end of readme.doc

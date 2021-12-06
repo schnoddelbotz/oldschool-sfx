@@ -1,0 +1,33 @@
+
+     ARJDISP.DOC                                              October 1995
+
+
+     New to ARJ 2.50 is a feature that allows a programmer to use ARJ,
+     DEARJ, or ARJSFX within an application in such a way as to allow the
+     programmer significant control over the ARJ display output.
+
+     It is possible to inhibit all ARJ/DEARJ/ARJSFX screen output and to
+     build a display program that ARJ/DEARJ/ARJSFX will use to display a
+     graphical output of the installation progress.  This will produce a
+     more professional looking application.
+
+     The main drawback to this new display feature is that of speed. There
+     is a loss of extraction speed when processing archives with many small
+     files.  For single diskette archives, this should not be a problem.
+
+     To see how all this works in practice, you should execute the
+     ARJDISP.BAT batch file and follow its instructions.  This feature is
+     also available in the large ARJSFX (self-extractor) module and in
+     DEARJ.EXE.  This feature is NOT available in the ARJSFXV (multiple
+     volume) self-extractor and the small ARJSFXJR modules.
+
+     The C source code for the ARJ$DISP.EXE program is provided to
+     ARJ licensees as part of the licensee ARJ software diskette.
+
+     Please note that the use of ARJ in a business, government, or
+     institutional environment requires either an internal use license or
+     a distribution license.
+
+
+     end of ARJDISP.DOC
+

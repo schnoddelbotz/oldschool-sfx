@@ -1,0 +1,41 @@
+CDTA -- CD-ROM Timing Analyzer
+
+    This CD-ROM timing analysis program measures the data throughput on
+your CD-ROM drive and controller and also guesstimates the amount of time
+required for the drive "head" to move from one place to another on the
+disc, i.e., the access time.
+
+    The numbers computed by CDTA may not match manufacturers specs.  For
+instance, CDTA assumes that you may not have more than 450 MB on the CD-ROM
+disc currently in the drive.  So the access time test won't push the head
+out past where the data ends.  When the manufacturers do their testing,
+however, they probably use a 660 MB disc and so their computation of access
+time will be higher than the one CDTA comes up with.  So, as a final step,
+CDTA adds in a 50% fudge factor.  In any case, the numbers CDTA
+produces should prove useful in comparing one drive to another.
+
+So far, I've gotten the following numbers:
+                     Read rate         Access time
+Philips CM-100        15K bytes/sec       1036 ms
+Genstar 3000          30K bytes/sec        694 ms
+
+    A second purpose of CDTA is to test out your drive/controller and disc.
+If your system fails the first test, the sequential read test that starts
+at sector 1000, then you have a hardware problem (or perhaps a dirty disc.)
+Ditto if it fails the second test, assuming that you are testing with a 450
+MB disc.  (Two discs that will work with CDTA are the Software Toolworks
+Encyclopedia and the Ramsoft Pixure I GIF disc.)
+
+    While I've copyrighted CDTA, it can be distributed freely as long as no
+modifications are made.  (If you would like to see something modified,
+please drop me a line.)  CDTA is freeware, not shareware, so no registration
+fee is required.  However, if you would like to send me a few $$$ for my
+BBS, I won't mind.  <g>
+
+
+                                                Eric Balkan
+                                                14704 Seneca Castle Ct
+                                                Gaithersburg MD 20878
+                                                BBS: 301-294-0756
+                                                Rime ID:  ->PACKET
+

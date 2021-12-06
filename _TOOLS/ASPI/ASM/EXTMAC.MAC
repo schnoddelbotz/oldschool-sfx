@@ -1,0 +1,255 @@
+	MASM
+;*******************************************************************************
+;* Module-Name: extended Macros                                                *
+;*-----------------------------------------------------------------------------*
+;* Version   Modification Date:     Author:           History:                 *
+;*   V1.0      29-September-1993    Ulf Rohbeck       First Creation           *
+;*   V1.1      27-February-1994     Ulf Rohbeck       PUSHSeg                  *
+;*                                                    IF CodeSeg OR DataSeg    *
+;*   V1.2      01-May-1994          Ulf Rohbeck       PUSHrm32                 *
+;*-----------------------------------------------------------------------------*
+;* Description: definition of macros for programming                           *
+;*******************************************************************************
+
+;*******************************************************************************
+;*                             P U S H S e g                                   *
+;*-----------------------------------------------------------------------------*
+;*      PUSHSeg                SegPtr                                          *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter:                                                                  *
+;*   SegPtr : segment pointer                                                  *
+;*******************************************************************************
+PUSHSeg MACRO   SegPtr
+	IsSegReg = 0
+	if (.TYPE SegPtr) eq 110000b
+	  irp RegSeg, <es, ds, cs, ss, fs, gs>
+	    ifidni  <SegPtr>, <&RegSeg&>
+	      IsSegReg = 1
+	      exitm
+	    endif
+	  endm
+	  if IsSegReg
+	    PUSH	SegPtr
+	  else
+	    err "Illegal use of Segment Register detected"
+	  endif
+	else
+	  IF (@MODEL EQ 01)
+  	    IF ((.TYPE SegPtr) AND 001B)
+	      PUSH	CS
+	    ELSE
+	      IF ((.TYPE SegPtr) AND 010B)
+	        PUSH	DS
+	      ELSE
+	        PUSH	Seg SegPtr
+	      ENDIF
+	    ENDIF
+	  ELSE
+            PUSH	Seg SegPtr
+	  ENDIF
+	ENDIF
+	ENDM
+;*******************************************************************************
+;*                               P U S H r m 3 2                               *
+;*-----------------------------------------------------------------------------*
+;*      PUSHMrm32              rm32                                            *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter:                                                                  *
+;*   rm32:   dword register/memory operand/imm32                               *
+;*******************************************************************************
+PUSHrm32	MACRO	rm32
+local   IsReg8
+        ifb <rm32>
+          display "**Error** The rm32 parameter must be provided to PUSHrm32"
+          err
+        else
+	  ;;Register
+          IsSegReg = 0
+          if (.TYPE rm32) eq 110000b
+	    irp Reg, <es, ds, cs, ss, fs, gs>
+              ifidni  <rm32>, <&Reg&>
+                 IsSegReg = 1
+                 exitm
+              endif
+	    endm
+            if IsSegReg
+              display "**Error** Segment Register are not supported to PUSHrm32"
+	      err
+	    else
+              IsReg8 = 0
+              irp Reg8, <AL,AH,BL,BH,CL,CH,DL,DH>
+                ifidni  <rm32>, <&Reg8&>
+                  IsReg8 = 1                  ; Return that the register
+		  exitm                       ; is a 8-bit-register
+		endif
+	      endm
+	      if IsReg8
+		display "**Error** Operand types do not match to PUSHrm32"
+		err
+	      else
+		IsReg32 = 0
+		irp Reg32, <EAX,EBX,ECX,EDX,EDI,ESI>
+		  ifidni  <rm32>, <&Reg32&>
+		    IsReg32 = 1			; Return that the register
+		    exitm			; is a 32-bit-register
+		  endif
+		endm
+		if IsReg32
+		  PUSH    rm32
+		else
+		  display "**Error** Operand types do not match to PUSHrm32"
+		endif
+	      endif
+	    endif
+	  else
+	    if ((.TYPE rm32) AND 1100B) eq 0
+	      ;;indirect register
+	      MOV	EAX,rm32
+	      PUSH	EAX
+	    else
+	      if (.TYPE rm32) and 100B
+		;;constant
+		MOV	EAX,rm32
+		PUSH	EAX
+	      else
+		;;memory expression
+		if (TYPE rm32) ne 4
+		  display "**Error** Operand types do not match to PUSHrm32"
+		  err
+		else
+		  DB	  66H
+		  PUSH    rm32
+		endif
+	      endif
+	    endif
+	  endif
+	endif
+	ENDM
+;*******************************************************************************
+;*                               P U S H r m 1 6                               *
+;*-----------------------------------------------------------------------------*
+;*      PUSHMrm16              rm16                                            *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter:                                                                  *
+;*   rm16:   word register/memory operand/imm16                                *
+;*******************************************************************************
+PUSHrm16	MACRO	rm16
+local   IsReg8
+        ifb <rm16>
+          err "The rm16 parameter must be provided to PUSHrm16"
+        else
+	  ;;Register
+          IsSegReg = 0
+          if (.TYPE rm16) eq 110000b
+            irp Reg, <es, ds, cs, ss, fs, gs>
+              ifidni  <rm16>, <&Reg&>
+                 IsSegReg = 1
+                 exitm
+              endif
+	    endm
+            if IsSegReg
+              err "Segment Register are not supported to PUSHrm16"
+	    else
+              IsReg8 = 0
+	      irp Reg8, <AL,AH,BL,BH,CL,CH,DL,DH>
+		ifidni  <rm16>, <&Reg8&>
+		  IsReg8 = 1                  ; Return that the register
+		  exitm                       ; is a 8-bit-register
+		endif
+	      endm
+	      if IsReg8
+		err "Operand types do not match to PUSHMrm16"
+	      else
+		PUSH    rm16
+	      endif
+	    endif
+	  else
+	    if ((.TYPE rm16) AND 1100B) eq 0
+	      ;;indirect register
+	      MOV	AX,rm16
+	      PUSH	AX
+	    else
+	      if (.TYPE rm16) and 100B
+		;;constant
+		PUSH	rm16
+	      else
+		;;memory expression
+		if (TYPE rm16) ne 2
+		  err "Operand types do not match to PUSHrm16"
+		else
+		  PUSH    rm16
+		endif
+	      endif
+	    endif
+	  endif
+	endif
+	ENDM
+;*******************************************************************************
+;*                                P U S H r m 8                                *
+;*-----------------------------------------------------------------------------*
+;*      PUSHrm8                rm8                                             *
+;*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+;* parameter:                                                                  *
+;*   rm8 :    byte register/memory expression/imm8                                *
+;*******************************************************************************
+PUSHrm8    MACRO   rm8
+local   IsReg8
+        ifb <rm8>
+          err "The rm8 parameter must be provided to PUSHrm8"
+        else
+          IsSegReg = 0
+          if ((.TYPE rm8) eq 110000b)
+	    irp Reg, <es, ds, cs, ss, fs, gs>
+              ifidni  <rm8>, <&Reg&>
+                 IsSegReg = 1
+                 exitm
+              endif
+	    endm
+            if IsSegReg
+              err "Segment Register are not supported to PUSHrm8"
+	    else
+              IsReg8 = 0
+              irp Reg8, <AL,AH,BL,BH,CL,CH,DL,DH>
+                ifidni  <rm8>, <&Reg8&>
+                  IsReg8 = 1                  ; Return that the register
+                  exitm                       ; is a 8-bit-register
+                endif
+              endm
+              ife IsReg8
+                err "Operand types do not match to PUSHrm8"
+              else
+                ifdifi <AL>,<rm8>
+                  MOV  AL,rm8
+                endif
+                XOR    AH,AH
+	        PUSH   AX
+              endif
+	    endif
+    	  else
+            if ((.TYPE rm8) AND 1100B) eq 0
+	      ;;indirect register
+              MOV	AL,rm8
+              XOR       AH,AH
+	      PUSH	AX
+            else
+	      if (.TYPE rm8) and 100B
+                ;;constant
+		if rm8 gt 0FFH
+                  err "Argument to instruction PUSHrm8 has illegal size"
+		else
+                  PUSH	rm8
+		endif
+	      else
+	        ;;memory expression
+                if (TYPE rm8) ne 1
+                  err "Operand types do not match to PUSHrm8"
+                else
+		  MOV     AL,rm8
+		  XOR	  AH,AH
+                  PUSH    AX
+                endif
+              endif
+            endif
+          endif
+	endif
+        ENDM

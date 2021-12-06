@@ -1,0 +1,37 @@
+                    Quantum SCSI Generic Quick Test 
+                             Failure Codes
+
+Fail
+Code                          Description
+----  --------------------------------------------------------------------
+0000  No Errors.
+
+1000  Target ID NOT found
+1010  Drive NOT Ready
+1020  Inquiry Command Failed
+1030  Read Capacity Command Failed
+1040  Drive Is NOT Quantum.
+1050  Target ID Is NOT Set To 6
+1060  Drive Is NOT Generic
+
+2000  Failed For Too Many Grown Defects.
+
+3000  Failed Stop Command.
+3010  Failed Start Command.
+  
+4000  Failed Write Buffer Command With Data Pattern 00h.
+4010  Failed Read Buffer Command With Data Pattern 00h.
+4020  Failed Buffer Miscompare Error With Data Pattern 00h.
+4030  Failed Write Buffer Command With Data Pattern FFh.
+4040  Failed Read Buffer Command With Data Pattern FFh.
+4050  Failed Buffer Miscompare Error With Data Pattern FFh.
+4060  Failed Write Buffer Command With Random Data Pattern.
+4070  Failed Read Buffer Command With Random Data Pattern.
+4080  Failed Buffer Miscompare Error With Random Data Pattern.
+
+5000  Failed ECC Test.
+
+6000  Failed Scan Test - Reading.
+6010  Failed Scan Test - Writing.
+6020  Failed Scan Test - Reading And Writing.
+

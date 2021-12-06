@@ -1,0 +1,282 @@
+HéUFIG AUFTRETENDE FRAGEN
+=========================
+
+Diese Datei enthÑlt hÑufig auftretende Fragen der Anwender und die
+Antworten dazu. Lesen Sie bitte den Text sorgfÑltig durch, bevor Sie
+sich mit Ihrem Kundendienst in Verbindung setzen.
+
+Diese Datei behandelt die folgenden Themenbereiche:
+
+   1. Installieren der Windows 3.1-Treiber fÅr den software-audio
+      1.1 Windows 3.1 Treiber Neu Einrichten
+      1.2 Einrichten von TREIBERN in der SYSTEMSTEUERUNG (OEMSETUP.INF)
+      1.3 Allgemeines
+
+   2. DOS-Treiber (CTSB16.SYS und CTMMSYS.SYS)
+      2.1 Laden der DOS-Treiber unterdrÅcken
+      2.2 DOS-Treiber laden
+
+   3. Allgemeines
+      3.1 UnterdrÅcken von unerwÅnschten GerÑuschen
+      3.2 Audioquellen einstellen
+      3.3 Holprige Wiedergabe Digitaler Sounds vermeiden
+      3.4 Es erscheint eine Fehlermeldung, wenn WINSETUP.EXE lÑuft.
+      3.5 Einstellung der I/O-Basisadresse fÅr eine Plug and
+          Play-Audiokarte konfigurieren
+      3.6 Deaktivieren des Game-Ports
+
+
+1. INSTALLIEREN DER WINDOWS 3.1 TREIBER FöR DEN SOFTWARE-AUDIO
+
+
+   1.1 WINDOWS 3.1 TREIBER NEU EINRICHTEN
+
+   F1. Wie kann ich meine Windows 3.1 Treiber neu einrichten?
+
+   A1. Sie kînnen Ihre Windows 3.1 Treiber neu einrichten, indem Sie
+       an der DOS-Eingabeaufforderung INSTALL aus Ihrem Software-Audio
+       Verzeichnis heraus aufrufen. WÑhlen Sie "Setup Windows", und
+       folgen Sie den Anweisungen auf dem Bildschirm, um das Setup
+       abzuschlie·en.
+
+
+   1.2 Einrichten von TREIBERN in der SYSTEMSTEUERUNG (OEMSETUP.INF)
+
+   F1. Audio-Treiber sind beim Starten von Windows nicht installiert.
+
+   A1. Bevor Sie die Audio-Treiber einfÅgen, sollten Sie vorher
+       alle anderen Audio Treiber aus der Liste der installierten
+       Treiber entfernen und danach Windows neu starten. énderungen
+       an installierten Audio-Treibern, die beim Start von Windows
+       geladen wurden, werden ignoriert. Sie mÅssen Windows also
+       zwingend neu starten, bevor die Treiber korrekt arbeiten
+       kînnen.  Weitere Informationen finden Sie in Ihrem
+       Windows-Handbuch.
+
+
+   1.3 Allgemeines
+
+   F1. Die Audio-Treiber kînnen nicht installiert werden, oder es
+       ergeben sich Probleme mit den installierten Treibern.
+
+   A1. Hier sind einige Punkte die Sie prÅfen sollten, bevor Sie sich
+       an die Technische UnterstÅtzug wenden.
+
+   a. Wenn Sie Windows 3.1 Åber die Funktion "Express Installation"
+      installieren, sucht Windows selbststÑndig nach bereits
+      installierten Programmen. Das hat zur Folge, da· auch Ñltere
+      Audio-Programme, die sich zum Zeitpunkt der Installation
+      bereits auf der Festplatte befinden, mit eingerichtet werden.
+      Entfernen Sie die falsch eingerichteten Sinnbilder.
+
+   b. ôffnen Sie die Treibereinstellung in der Systemsteuerung. Dort
+      mÅssen die folgenden Treibernamen eingetragen sein:
+
+        Creative Sound Blaster AWE32 MIDI Driver
+        Voyetra / Sound Blaster SuperSAPI FM Driver
+        Creative Sound Blaster 16 Auxiliary Audio
+        Creative Sound Blaster 16 Wave and MIDI
+        MIDI Mapper
+        Timer
+        [MCI] CD Audio    ;nur fÅr Besitzer eines CD-ROM-Laufwerks
+        [MCI] MIDI Sequenzer
+        [MCI] Klang
+
+      Wenn einer oder mehrere der Treiber nicht existieren, mÅssen
+      Sie die fehlenden Treiber eintragen. (Genauere Informationen
+      dazu finden Sie in Ihrem Windows-Handbuch).
+
+   c. PrÅfen Sie die SYSTEM.INI. FÅhren Sie dazu Åber den Programm-
+      Manager das Programm SYSEDIT aus. PrÅfen Sie die EintrÑge
+      [boot], [drivers] und [sndblst.drv]. Dort mÅssen Sie folgende
+      EintrÑge vorfinden:
+
+        [boot]
+        drivers=mmsystem.dll msmixmgr.dll
+
+        [drivers]
+        Timer=timer.drv
+        Midimapper=midimap.drv
+        Aux=sb16aux.drv
+        MIDI=sbawe32.drv
+        MIDI1=sb16fm.drv
+        Wave=sb16snd.drv
+        MIDI2=sb16snd.drv
+        mixer=sb16aux.drv
+
+        [sndblst.drv]
+        port=220
+        int=5
+        dmachannel=1
+        hdmachannel=5
+        MIDIport=330
+        AWEPort=620
+
+   d. Wenn Windows die Installation eines Treibers ablehnt, oder Sie
+      die Meldung "GerÑt nicht gefunden" erhalten, wenn Sie eine Wave-,
+      MIDI Datei oder CD abspielen mîchten, ÅberprÅfen Sie, ob folgende
+      EintrÑge unter [mci] in der SYSTEM.INI vorhanden sind:
+
+        [mci]
+        WaveAudio=mciwave.drv
+        Sequencer=mciseq.drv
+        CDAudio=mcicda.drv  ; nur fÅr Besitzer eines CD-ROM-Laufwerks
+
+      Wenn einer oder mehrere der Treiber nicht existieren, mÅssen Sie
+      die fehlenden Treiber eintragen. (Genauere Informationen dazu
+      finden Sie in Ihrem Windows-Handbuch).
+
+
+2. DOS-TREIBER (CTSB16.SYS UND CTMMSYS.SYS)
+
+   2.1 LADEN DER DOS-TREIBER UNTERDRöCKEN
+
+   F1. Ich mîchte die DOS-Treiber CTSB16.SYS und CTMMSYS.SYS nicht
+       beim Systemstart laden. Wie mache ich das?
+
+   A1. DrÅcken Sie wÑhrend des Systemstarts die Taste ALT, um das
+       Laden der Treiber CTSB16.SYS und CTMMSYS.SYS zu unterdrÅcken.
+
+       Oder stellen Sie mit Hilfe eines Text-Editors folgenden Zeilen
+       in der CONFIG.SYS REM voran.
+
+        DEVICE=C:\SB16\DRV\CTSB16.SYS /UNIT=0 /BLASTER=A:220 I:5 D:1 H:5 
+        DEVICE=C:\SB16\DRV\CTMMSYS.SYS
+
+
+   2.2 DOS-TREIBER LADEN
+
+   F1. Ich mîchte die DOS-Treiber bei jedem Systemstart laden. Wie mu·
+       ich meine CONFIG.SYS modifizieren?
+
+   A1. FÅhren Sie das Programm DIAGNOSE im Verzeichnis von Software-
+       Audio mit dem Parameter /A aus. Gehen Sie wie folgt vor:
+
+        1) Wechseln Sie in das Verzeichnis von Software-Audio.
+        2) Geben Sie "DIAGNOSE /A" ein, und drÅcken Sie die
+           Eingabetaste.
+
+
+3. Allgemeines
+
+   3.1 UNTERDRöCKEN VON UNERWöNSCHTEN GERéUSCHEN
+
+   F1. Wenn ich unter Windows oder DOS aufnehme, rauscht es. Was kann
+       ich tun?
+
+   A1. Starten Sie den Mixer. Stellen den Aufnahmepegel fÅr die
+       Audioquelle auf einen optimalen Wert ein. Wenn Sie den
+       Aufnahmepegel in die NÑhe des Maimalwertes bringen, erhalten
+       Sie eine gerÑuschfreie Aufnahme. Auf der anderen Seite mÅssen
+       Sie die anderen Eingangsquellen auf Null zurÅckdrehen. Das
+       stellt sicher, das nur KlÑnge der gewÅnschten Quelle
+       aufgenommen werden.
+
+
+   3.2 AUDIO QUELLEN EINSTELLEN
+
+   F1. Aus meinen Lautsprechern ist nichts zu hîren obwohl mir
+       DIAGNOSE alle Einstellungen als OK zurÅckgibt.  Was kann ich
+       tun ?
+
+   A1. PrÅfen Sie die Mixereinstellungen der verschiedenen Quellen.
+       Benutzen Sie MIXERSET.EXE im DOS oder den CTMIXER.EXE in
+       Windows, um die Einstellungen auf hîhere Werte einzustellen.
+
+
+   3.3 HOLPRIGE WIEDERGABE DIGITALER SOUNDS VERMEIDEN
+
+   F1. Die Wiedergabe digitaler Sounds hîrt sich so holprig an. Ist
+       meine Sound-Karte defekt?
+
+   A1. Wenn Sie sich in Windows befinden, kann das an der Art Ihrer
+       Swap-Datei liegen. TemporÑre Swap-Dateien sind zuweilen
+       fragmentiert, was zu einer ruckenden, holprig klingenden
+       Wiedergabe fÅhren kann. Arbeiten Sie mîglichst mit einer
+       permanenten Swap-Datei, um dieses Problem zu beheben.
+       Anweisungen zum Anlegen einer permanenten Swap- Datei finden
+       Sie in Ihrem Windows-Handbuch.
+
+       Die Verwendung eines Platten-Cache-Programms wie SMARTDRV kann
+       dieses Problem ebenfalls verhindern. Anweisungen zur Verwendung
+       von SMARTDRV finden Sie in Ihrem DOS- oder Windows-Handbuch.
+
+
+   3.4 Es erscheint eine Fehlermeldung, wenn WINSETUP.EXE lÑuft.
+
+   F1. Wenn ich Windows starte und WINSETUP lÑuft, erhalte ich eine
+       Fehlermeldung, in der es hei·t "...kann die Umgebung nicht
+       finden".
+
+   A1. Die BLASTER-Umgebung ist nicht oder falsch eingestellt worden.
+       FÅr dieses Programm mu· Ihre BLASTER-Umgebung korrekt
+       eingestellt und auf Ihren hardware-audio abgestimmt sein.
+       Um die Einstellungen Ihrer Umgebungsvariablen zu ÅberprÅfen,
+       geben Sie an der DOS-Eingabeaufforderung "SET" ein und drÅcken
+       die Eingabetaste. Weitere Einzelheiten zur BLASTER-Umgebung
+       finden Sie in Ihrem Handbuch Erste Schritte.
+
+
+   3.5 EINSTELLUNG DER I/O-BASISADRESSE FÅR EINE PLUG AND PLAY-AUDIOKARTE
+       KONFIGURIEREN
+
+   F1. Die I/O-Basisadresse des Ports des Wavetable-Synthesizers
+       meiner Audiokarte, die bei AusfÅhrung des Intel Plug and
+       Play-Konfigurations-Dienstprogramms (ICU.EXE) erscheint,
+       unterscheidet sich von derjenigen, die von DIAGNOSE.EXE
+       angezeigt wird. Woran liegt das?
+
+       Einige meiner Spiele haben Probleme mit der MIDI-Audioausgabe,
+       obwohl beim MIDI-Wiedergabetest in DIAGNOSE.EXE keine Probleme 
+       auftreten. Woran liegt das?
+
+   A1. Die I/O-Basisadresse des Wavetable-Synthesizers von PnP-
+       Audiokarten ist unabhÑngig von der I/O-Basisadresse des
+       Ports der Audiokarte. Bei einigen Ñlteren Spielen wird
+       jedoch die Wavetable-I/O-Basisadresse von der I/O-
+       Basisadresse der Audiokarte abgeleitet.
+
+       Um die KompatibilitÑt mit solchen Spielen beizubehalten,
+       Åberschreibt DIAGNOSE.EXE die I/O-Basisadresse des Wavetable-
+       Synthesizers, die durch den PnP-Konfigurations-Manager
+       zugewiesen wurde. Damit dies bei jedem Start Ihres Computers
+       automatisch erfolgt, mu· Ihre AUTOEXEC.BAT-Datei den folgenden
+       Eintrag enthalten:
+
+           C:\SB16\DIAGNOSE /S /W=C:\WINDOWS
+
+       Sie mÅssen den Pfad von DIAGNOSE.EXE und das WINDOWS-
+       Verzeichnis entsprechend anpassen, falls diese von dem
+       obigen Eintrag abweichen. Beachten Sie, da· der oben
+       stehende Eintrag auch andere Einstellungen Ihrer Audiokarte
+       konfiguriert. Daher sollte dieser Eintrag nicht entfernt
+       werden, der normalerweise durch das Installationsprogramm
+       in Ihre AUTOEXEC.BAT-Datei geschrieben wird.
+
+
+   3.6 DEAKTIVIEREN DES GAME-PORTS
+
+   F1. Wie deaktiviere ich den Game-Port?
+
+   A1. Sie kînnen den Game-Port auf mehrere Arten aktivieren bzw.
+       deaktivieren, je nachdem, welche Audiokarte Sie haben.
+
+       a. Karte ohne Plug and Play
+          Um den Game-Port zu aktivieren oder zu deaktivieren, mÅssen
+          Sie den entsprechenden Jumper einstellen. Die Position des
+          Jumpers finden Sie im Handbuch  Erste Schritte". Wenn Ihre
+          Audiokarte den Jumper fÅr die Aktivierung bzw. Deaktivierung
+          des Game-Ports nicht hat, kînnen Sie den Game-Port mit Hilfe
+          des Dienstprogramms GAMEPORT.EXE aktivieren bzw. deaktivieren.
+          Wenn Ihre Audiokarte das Aktivieren bzw. Deaktivieren von
+          Game-Port-Software nicht unterstÅtzt, haben Sie das Programm
+          GAMEPORT.EXE mîglicherweise nicht.
+
+       b. Karte mit Plug and Play
+          Bei einer Karte, die Plug and Play unterstÅtzt, mÅssen Sie
+          BIOS-Setup oder das Konfigurationsdienstprogramm ISA verwenden,
+          um den Game-Port zu aktivieren bzw. zu deaktivieren.
+
+
+                *********  Ende von CQA.TXT  *********
+

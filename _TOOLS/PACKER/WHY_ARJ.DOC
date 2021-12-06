@@ -1,0 +1,196 @@
+
+     WHY_ARJ.DOC                                                 July 1995
+
+
+     This document describes the benefits of ARJ.  ARJ is a trend setter
+     in PC file archivers.
+
+     You can find reviews of ARJ in the following magazine articles:
+
+     Computer Personlich, June 12, 1991, Leader of the Pack, Bernd
+     Wiebelt and Matthias Fichtner.  In this German magazine, ARJ 2.0 was
+     named Test Sieger (Test Winner) over six other archivers including
+     PKZIP and LHA.  Compression, speed, documentation, and features were
+     compared.
+
+     PC Sources, July 1991, Forum, Barry Brenesal, "A new challenger, ARJ
+     2.0, not only offers the speed of PKZIP, but also has the best
+     compression rate of the bunch."
+
+     Computer Shopper, September 1991, Shells, Bells, and Files:
+     Compressors for All Cases, Craig Menefee.	"ARJ ... is extremely fast
+     and produces excellent compression; it ... has a rich set of options.
+     ... This is a mature technology, and any of these programs will do a
+     fine and reliable job."
+
+     PC Magazine, October 15, 1991, Squeeze Play, Barry Simon.	"Jung has
+     combined that foundation with academic research to produce an
+     impressive product. ...  If your main criterion is compressed size,
+     ARJ will be one of your two main contenders, along with LHA."
+
+     SHAREWARE Magazine, Nov-Dec 1991, Fall Releases, Joseph Speaks.  "Don't
+     tell the creators of ARJ that PKZIP is the standard for data
+     compression.  They probably already know.	But that hasn't stopped
+     them from creating a data compression utility that makes everyone -
+     even the folks at PKWare - sit up and take notice. ... but compression
+     statistics don't tell the whole story.  The case for using ARJ is
+     strengthened by new features it debuts."
+
+     BOARDWATCH Magazine, December 1991, ARCHIVE/COMPRESSION UTILITIES.
+     "This year's analysis rendered a surprise winner.  Robert K. Jung's
+     ARJ Version 2.22 is a relatively new compression utility that offers
+     surprising performance.  The program emerged on the scene within the
+     past year and the 2.22 version was released in October 1991.  It rated
+     number one on .EXE and database files and number two behind LHarc
+     Version 2.13 in our directory of 221 short text files."
+
+     INFO'PC, October 1992, Compression de donn‚es: 6 utilitaires du
+     domaine public, Thierry Platon.  In this article, the French magazine
+     awarded ARJ 2.20, the Certificat de Qualification Labo-tests InfoPC.
+
+     PC Magazine, March 16, 1993, PKZIP Now Faster, More Efficient,
+     Barry Simon.  "One of the more interesting features is the ability to
+     have a .ZIP file span multiple floppy disks, but this feature is not
+     nearly as well implemented as in ARJ."
+
+     PC Magazine, October 12, 1993, ARJ: A Worthy Competitor to PKZIP,
+     Barry Simon.  "We tested ARJ 2.41a against PKZIP 2.04g ... Overall,
+     PKZIP proved to be faster, but compression results with the two
+     programs were about equal.  Where ARJ comes out ahead is in its many
+     options ...  ARJ's ability to compress data onto multiple floppy
+     disks is especially good."
+
+
+     ARJ FEATURES:
+
+     1)  Registered users receive technical support from a full-time
+         software author with over SIXTEEN years of experience in
+         technical support and software programming.  And YES, ARJ is a
+         full-time endeavor for our software company.  ARJ and REARJ
+         have proven to be two of the most reliable archiver products
+         available.  We test our BETA test releases with the help of
+         thousands of users.
+
+         ARJ has proven reliable and stable on numerous PC platforms
+         unlike some of our competition.  This can be significant in terms
+         of technical support issues for vendors using ARJ software to
+         install their software.  Technical support costs due to
+         installation software failures add up.  This may be the most
+         significant plus of ARJ when comparing archivers.
+
+     2)  ARJ provides excellent size compression and practical speed
+	 compared to the other products currently available on the PC.
+
+         ARJ is particularly strong compressing databases, uncompressed
+         graphics files, and large documents.  One user reported that in
+         compressing a 25 megabyte MUMPS medical database, ARJ produced
+         a compressed file of size 0.17 megabytes while two other very
+         popular archivers produced a compressed file of 17 plus
+         megabytes.  Please note that compression results are highly
+         dependent upon the type of data compressed.
+
+     3)  Compared to the popular archivers PKZIP, LHA, ARC, PAK, and
+         ZOO, only ARJ can archive up to 32,000 files at one time.  This
+         enables ARJ to handle very large disk drives.
+
+     4)  Compared to PKZIP, LHA, ARC, PAK, and ZOO, only ARJ provides
+         the capability of archiving files to multiple volume archives
+         no matter what the destination media.  ARJ can archive files
+         directly to diskettes no matter how large the input files are
+         and without requiring EXTRA disk space.
+
+         This feature makes ARJ (DEARJ) especially suitable for
+         distributing large software packages without the concerns about
+         fitting entire files on one diskette.  ARJ will automatically
+         split files when necessary and will reassemble them upon
+         extraction without using any EXTRA disk space.
+
+         This multiple volume feature of ARJ makes it suitable as a
+         inexpensive backup utility.  ARJ saves pathname information, file
+         date-time stamps, and file attributes in the archive volumes.
+         ARJ can also create an index file with information about the
+         contents of each volume.  For systems with multiple drives, ARJ
+         can be configured to save the DRIVE letter information, too.
+         Files contained entirely within one volume are easily extracted
+         using just the one volume.  There is no need to always insert the
+         last diskette of the set.  In addition, the ARJ data verification
+         facility unique to ARJ among archivers helps ensure reliable
+         backups.
+
+         In addition, only ARJ allows the user to restart an aborted
+         backup at the disk where the failure occurred.
+
+     5)  Compared to PKZIP, LHA, ARC, PAK, and ZOO, only ARJ provides
+         multiple volume self-extracting archives.
+
+     6)  The myriad number of ARJ commands and options allow the user
+         outstanding flexibility in archiver usage.  No other leading PC
+         archiver gives you that flexibility.
+
+	 Here are some examples of ARJ's flexibility.
+
+	 a)  Search archives for text data without extracting the
+	     archives to disk.
+	 b)  Save drive letter and pathname information.
+	 c)  Re-order the files within an ARJ archive.
+	 d)  Merge two or more ARJ archives without re-compressing files.
+	 e)  Extract files directly to DOS devices.
+	 f)  Synchronize an archive and a directory of files with just a
+	     few commands.
+	 g)  Compare the contents of an archive and a directory of files
+	     byte for byte without extracting the archive to disk.
+	 h)  Allow duplicates of a file to be archived producing
+	     generations (versions) of a file within an archive.
+	 i)  Display archive creation and modification date and time.
+         j)  Extract selected files based upon a text search.
+         k)  Name archives automatically based upon date or time.
+         l)  And much more.
+
+     7)  ARJ provides ARJ archive compatibility from revision 1.00 to
+         now.  In other words, ARJ version 1.00 can extract the files
+         from an archive created by the current version of ARJ and
+         vice-versa.
+
+     8)  ARJ provides the facility to store EMPTY directories within its
+         archives.  This makes it easier to do FULL backups and also to
+         distribute software products that come with EMPTY directories.
+
+     9)  ARJ self-extracting modules provide default pathname support.
+         That means that you can build self-extracting archives of
+         software directories containing sub-directories.  The end user
+         of the self-extracting archive does not have to type any
+         command line options to restore the full directory structure of
+         the software.  Moreover, the ARJ self-extractors allow the
+         vendor to build selected command line options into the archive.
+         This greatly simplifies software distribution.
+
+     10) The ARJ archive data structure with its header structure and 32
+         bit CRC provide excellent archive stability and recovery
+         capabilities.  In addition, ARJ is the only archiver that
+         allows you to test an archive during an archive process.  With
+         other archivers, you may have already deleted the input files
+         with a "move" command before you could test the built archive.
+         In addition, the test feature allows one to select an actual
+         byte for byte file compare with the original input files.  This
+         is especially useful for verifying multi-megabyte files where a
+         32 bit CRC compare would not provide sufficient reliability.
+
+     11) ARJ optionally provides a security envelope facility to "seal"
+         ARJ archives with a unique envelope signature.  A "sealed" ARJ
+         archive cannot be modified by ARJ or other programs without
+         destroying the envelope signature "seal".  This provides some
+         level of assurance to the user receiving a "sealed" ARJ archive
+         that the contents of the archive are intact as the "signer"
+         intended.
+
+     12) ARJ has MS-DOS 3.x international language support.  This makes
+         ARJ more convenient to use with international alphabets.
+
+     13) ARJ has many satisfied users in countries all over the world.
+         ARJ customers include the US government and many leading
+         companies including Lotus Development Corp, Hewlett Packard,
+         and Novell.
+
+
+     end document
+

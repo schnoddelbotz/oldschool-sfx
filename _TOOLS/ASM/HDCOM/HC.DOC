@@ -1,0 +1,135 @@
+
+                            A TSR Harddisk and COM
+                              Monitoring System.
+
+                         26HDCOM (C)1991 Cornel Huth
+
+
+     SUMMARY FEATURES ----------------------------------------- 12/06/90-pre
+
+     26HDCOM.COM, HC for short, requires an IBM PC, XT, AT, AT-386, or other
+     close compatible and DOS 2 or above. It's a TSR program that monitors
+     the hard drives (D: also on ATs only) by reporting the drive, cylinder,
+     head, sector, and status of the disk controller. HC can also monitor
+     the serial ports/modem and will report DTR,RTS,CTS,DSR,RI,DCD and also
+     bps and communication protocol (parity, data & stop bits).
+
+     What makes HC even more useful is that it displays the status line on
+     the 26th line of IBM compatible video systems, including the CGA, EGA
+     and VGA color systems. For IBM compatible monochrome systems, the status
+     line is displayed on line 1. This status line can be momentarily disabled
+     by having Scroll Lock on, or by pressing the ALT key down.
+
+     STATUS LINE ---------------------------------------------------------
+
+C:1023 Hd:15 Sc:63  OK                         DTR RTS CTS DSR RI  DCD 38400 N81
+
+     is what the status line looks like full-blown.  The hard drive letter
+     is followed by the current cylinder, head, sector, error message, and
+     then the serial port status.  On color systems this is black with a green
+     background.  On monochrome systems it's in reverse video.
+
+     Possible disk errors are (including floppy):
+
+                 0  OK
+                 1  BAD COMMAND
+                 2  ADDRESS MARK NOT FOUND
+                 3  WRITE PROTECT ERROR
+                 4  SECTOR NOT FOUND
+                 5  RESET FAILED
+                 6  DISKETTE REMOVED
+                 7  BAD PARAMETER TABLE
+                 8  DMA OVERRUN
+                 9  DMA ACROSS 64K BOUNDARY
+                 A  BAD SECTOR FLAG DETECTED
+                 B  BAD TRACK FLAG DETECTED
+                 C  BAD MEDIA TYPE
+                 D  TOO MANY SECTORS ON FORMAT
+                 E  CTRL DATA ADDR MARK FOUND
+                 F  DMA ARBTRA`N OUT-OF-RANGE
+                10  UNCORRECTABLE ECC|CRC ERR
+                11  ECC CORRECTED DATA FAILURE
+                20  GENERAL CONTROLLER FAILURE
+                40  SEEK FAILED
+                80  TIME OUT|DRIVE NOT READY
+                AA  DRIVE NOT READY
+                BB  UNDEFINED ERROR OCCURED
+                CC  WRITE FAULT
+                E0  STATUS ERROR/ERROR REG = 0
+                FF  SENSE OPERATION FAILED
+
+     A disk error will be retained on the status line for 2 seconds
+     provided that no new error occurs within that time.
+
+     The COM section monitors:
+
+                DTR Data terminal ready
+                RTS Ready to send
+                CTS Clear to send        &   bps rate
+                DSR Data set ready           parity
+                RI  Ring indicator (yours)   data bits
+                DCD Data carrier detect      stop bits
+
+
+     USAGE ---------------------------------------------------------------
+
+     HC occupies about 2500 bytes of system RAM with a standard DOS
+     environment when resident and is controlled by command line options.
+
+      HC       * install TSR to monitor status
+      HC /U    * remove from memory
+      HC /S    * sleep mode
+      HC /R    * restore status line and awaken if in sleep mode
+      HC /Cn   * monitor COM port (n=1-4  0=off)
+      HC /Mn   * select controller BIOS data interpret mode (n=1-4)
+      HC /H    * help
+
+     At the COMMAND prompt, enter HC.  This installs the TSR portion.
+
+     There are currently three different interpretation modes supported for
+     the harddisk BIOS data area.  HC will start up in mode 1 (generally
+     XT controllers).  If you have an AT use mode 3 (drive 0=C:) or 4
+     (drive 1=D:). If this doesn't work with your AT, try mode 2 (non-BIOS
+     controller card).  To change the mode that HC starts up in, use a
+     disk editor (Norton's, PC Tools, etc.) and change the byte at 113
+     decimal (71 hex) from '1' to the mode you want (1 to 4).  This is
+     the character '1' to '4', not ASCII 01 to 04.  If you don't want
+     to change it permanently you can still change it with the command
+     line option /M2, /M3, /M4.
+
+     BIOS supports 4 COM ports.  To select the port to monitor, use HC/Cn
+     where n equals 0 - 4.  0 will turn off any current COM monitoring.
+
+     HC can be removed from memory (HC/U).  This should only be
+     done when at DOS's top level, not from a shell, and really only
+     when it is the last current TSR installed.  I say 'really' because
+     HC checks to make sure that the interrupt it uses still points to
+     itself, i.e., no other TSR is using it.  You can safely try HC/U at
+     anytime (at top level); HC will only remove itself if safe to do so.
+     A better way to 'disconnect' HC is to use the sleep mode /S.
+
+     Sleep mode (HC/S) is performed by unchaining HC from the user timer-tick
+     interrupt that it uses (1Ch) and replacing the interrupt vector to the
+     one active when HC was installed.  This means that HC can be 'turned off'
+     even after shelling to DOS from another program.  Very useful.  And of
+     course, HC can be restored to its active state with /R.
+
+     The restore function (HC/R) awakens the dormant HC and also resets the
+     display to 26 lines on color systems, since any video mode change
+     (e.g., MODE co80) will reprogram the system to its default mode.  Note
+     that EGA or VGA systems must be in standard mode, i.e., 25 lines,
+     not 43 or 50, to either install or restore.  The VGA should also be
+     connected to a VGA monitor (720x400 is the std text mode of the VGA).
+     If you are in a non-compatible mode, HC will not install or restore
+     itself but just exit with an error message.
+
+     It sure is nice to know what your harddisk and modem are up to.
+     The MASM assembly source is included for your computing pleasure.
+
+     chh
+
+     12/03/90 2.00 adapted from DSTCOM v3.10 - chh
+     12/06/90 2.01 Modify bps to handle above 9600, e.g. 38400 - chh (4Geo)
+     12/06/90 2.01 fix mode1/2 positioning of head number on stat line - chh
+
+

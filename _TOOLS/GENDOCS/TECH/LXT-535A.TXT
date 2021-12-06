@@ -1,0 +1,154 @@
+============================================================================
+                     Maxtor LXT-535A ATA IDE Drive
+============================================================================
+
+Key features:
+
+* 12 read, 13 write msec average seek time
+* Advanced buffer implementation (read ahead cache)
+* Proven AT compatability
+* Auto parking
+* No Pre-Comp required
+
+SPECIFICATIONS:
+
+Performance;
+
+Capacity, typical format
+* Per drive (Mbytes)...........535
+* Per sector (bytes)...........512
+* Spare capacity (Mbytes)......8.7
+
+AT Bus Transfer(Mbytes)........6.0
+
+Disk Transfer (Mbits/sec)......13.27
+
+Seek time (msec), typical
+* Read.........................12
+* Write........................13
+* Track to Track................3
+* Maximum......................30
+
+Rotational Speed (RPM).......3600 +/- 5%
+
+Average latency (msec).......8.33
+
+FUNCTIONAL:
+
+* Data zones....................8
+* Bit density (Kbpi)........33-44
+* Track density (tpi).......1,600
+* Disks.........................6
+* Data heads...................11
+* Servo heads...................1
+* Physical tracks..........17,072
+* Sectors per track.........47-72
+* Physical cylinders........1,560
+
+PHYSICAL:
+
+Dimentions
+
+* Height....................1.625 in. (41.3 mm)
+* Width.....................4.000 in. (101.6 mm)
+* Depth                     5.750 in. (146 mm)
+* Weight....................2.2 lb. (1 kg.)
+
+Temperature limits
+
+* Operating.................5-50 (C)
+* Non-operating...........-40-65 (C)
+* Temperature gradiant/Hr..20 (C)/hr.
+
+Relative humidity limits ( Non condensing)
+
+* Operating.................5 to 80%
+* Non-operating.............5 to 80%
+* Maximum gradiant/Hr............20%
+* Maximum wet bulb...............27.6 (C)
+
+Shock (G's)
+
+* Non-operating..................50
+* Operating (no errors)...........3
+* Operating (recoverable errors).10
+
+POWER:
+
+* +12VDC  +/- 5%, 0.6A (typical) 2.1A, Max.
+* +5VDC +/- 5%, 0.5A (typical)
+* Power dissapation (typical) 11 WAtts
+
+RELIABILITY:
+
+MTBF.......................150,000 Hrs.
+PM........................Not Required
+MTTR........................20 Minutes
+Component design life..........5 years(min)
+
+
+==============================================================================
+
+                            LXT-xxxA PCB Layout
+ÚÄÄÄÄÂÄÄÄÄÄÄÄÄÄ¿ ÚÄÄ¿  ÚÄÄÄÄÄÄÄÄÄÄ¿  ÚÄÄÄ¿    ÚÄÄÄÄÄÄÄÄÄ¿  ÚÄ¿  ÚÄÄÄÄÄÄÄÄÄÄ¿
+³    ³         ÀÄÙ  ÀÄÄÙ          ÀÄÄÙ   ÀÄÄÄÄÙ         ÀÄÄÙ ÀÄÄÙ          ³
+³ J3 ³                 ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»                            ³
+³    ³    J6           º    9  7  5  3  1     º                            ³
+ÀÄÄÄÂÙ ÚÄÄÄÄÄ¿         º  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿  º                        ÚÄÂÄÅ
+ÚÄÄÄÁ¿ ³:::|:³<ÄÄÄÄÄÄÄÄ¶  ³ *  *  *  Û  *  ³  º                        ³ ÃÄÅ
+³    Ã ÀÄÄÄÄÄÙ         º  ³ *  *  *  Û  *  ³  º                     J5 ³ ÃÄÅ
+³    Ã                 º  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ  º                        ³ ÃÄÅ
+³    Ã                 º   10  8  6  4  2     º                        ÀÄÁÄÅ
+³    Ã                 ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼                        ÚÄÂÄÅ
+³    Ã                                                                 ³ ÃÄÅ
+³ J1 Ã                                                                 ³ ÃÄÅ
+³    Ã                                                              J2 ³ ÃÄÅ
+³    Ã                                                                 ³ ÃÄÅ
+³    Ã                                                                 ³ ÃÄÅ
+³    Ã                                                                 ³ ÃÄÅ
+³    Ã                                                                 ÀÄÁÄÅ
+³    Ã                                                                 ÚÄÂÄÅ
+ÀÄÄÄÂÙ                                                              J4 ³ ÃÄÅ
+    ³      ÚÄ¿        To attach an external LED, use pins 9-10ÄÄÄÄÄÄÄ> ÀÄÁÄÅ
+    ÀÄÄÄÄÄÄÙ ³                                                          ÚÄÄÙ
+    ÚÄÄÄÄÄÄÄÄÙ                                                          ÀÄÄ¿
+    ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    LXT-A Jumper Designations           ³1-2³3-4³5-6³7-8³9-10³
+    ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÄ´
+    ³ Master/Slave                      ³   ³   ³   ³   ³    ³
+    ³  Only drive in single drive sys   ³ R ³   ³   ³   ³    ³
+    ³  Master in dual drive system      ³ R ³   ³   ³   ³    ³
+    ³  Slave in dual drive system       ³ J ³   ³   ³   ³    ³
+    ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÄ´
+    ³ Drive Active (System LED)         ³   ³ J ³   ³   ³    ³
+    ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÄ´
+    ³ Slave Present                     ³   ³   ³   ³   ³    ³
+    ³  One drive in single drive sys    ³   ³   ³ R ³   ³    ³
+    ³  Master in dual drive system      ³   ³   ³ R ³   ³    ³
+    ³  Slave in dual drive system       ³   ³   ³ O ³   ³    ³
+    ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÄ´
+    ³ Two Drive System                  ³   ³   ³   ³   ³    ³
+    ³  One drive in single drive sys    ³   ³   ³   ³ R ³    ³
+    ³  Master in dual drive sys         ³   ³   ³   ³ J ³    ³
+    ³  Slave in dual drive sys          ³   ³   ³   ³ R ³    ³
+    ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÄ´
+    ³ Sync Spindle Pulse Source         ³   ³   ³   ³   ³    ³
+    ³  If receiving pulse               ³   ³   ³   ³   ³ R  ³
+    ³  If transmitting pulse*           ³   ³   ³   ³   ³ J  ³
+    ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÄÙ
+      J=Jumpered R=Removed O=Optional
+      *=This jumper may only be used
+        only on one drive in an array
+
+     CMOS Configuration:     Cyls  Hds  Write  Landing Sec/Trk
+                                       PreComp  Zone
+     505.8MB Capacity        ---------------------------------
+     (528.5 Million Bytes)   1024  16     0     1024      63
+
+          LXT-535A & LXT-535S are trademarks of Maxtor Corporation.
+              AT is a registered trademark of IBM Corporation.
+              Specifications subject to change without notice.
+                     Copyright 1992 Maxtor Corporation.
+==============================================================================
+

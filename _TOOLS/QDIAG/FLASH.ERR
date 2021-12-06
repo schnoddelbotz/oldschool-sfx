@@ -1,0 +1,280 @@
+****************************************************************************
+*
+*                   Copyright (C) 1993 Quantum Corporation
+*                            ALL RIGHTS RESERVED
+*
+*
+*       Project Name:   DIAGS and other PROCESS Applications
+*    Project Purpose:   Application Program to Drive Interface
+*
+*
+*        Module Name:   FLASH.ERR
+*     Module Purpose:   FLASH -- Error Code to English Translation
+*      PVCS $Logfile:   U:\FLASH\SRC\FLASH.ERV  $  
+*  Current $Revision:   1.4  $
+*     Revision $Date:   23 Sep 1993  9:40:18  $
+*   Revision $Author:   TUANP  $
+*
+*
+*     Current Author:   Lance Beazley
+*         
+*
+* Version Released + to Documentation Control
+*                  |
+*    Date          |  Ver.    Name    Comments
+*    --------      |  ----    ----    ------------------------------------
+*    xx/xx/xx <----+->     
+*
+*#########################################################################*
+*
+* PVCS REVISION HISTORY:
+*
+* $Revision:   1.4  $
+*
+* PVCS Comment: Updated description for internal errors 75H and 76H.
+*
+* $Log:   U:\FLASH\SRC\FLASH.ERV  $
+* 
+*    Rev 1.4   23 Sep 1993  9:40:18   TUANP
+* 
+*    Rev 1.4   23 Sep 1993  9:32:30   TUANP
+* Updated description for internal errors 75H and 76H.
+* 
+*    Rev 1.3   06 May 1993 12:04:20   HKW
+* Fix double 04/06/06 problem. 
+* 
+*    Rev 1.3   06 May 1993 12:01:56   HKW  
+* Added error code for ECC on the fly corrected (8A). 
+* 
+*    Rev 1.2   06 Apr 1993 19:01:56   Tyson
+* Added error code for ECC on the fly corrected (8A). 
+* 
+*    Rev 1.1   27 Mar 1993 19:13:06   Tyson
+* Added error code for ECC on the fly corrected (8A). 
+*   
+*      Rev 1.0   20 Mar 1993 18:23:04   Tyson
+*   Initial revision.
+* 
+*#########################################################################*
+*
+* Create date: 01/15/93
+* Modified date: 03/16/93  Tuan Pham
+* Modified date: 03/17/93  Tuan Pham
+* Modified date: 03/19/93  Tuan Pham
+*
+* ThunderBolt Family Error Code data file for use with:
+*                                     
+*                              Program        Version
+*                            -------------   ---------
+*                               SCSIDIAG       3.00  (or later)
+*                               ATADIAG        3.10  (or later)
+*
+*
+* ERROR FILE RULES are as follows:
+*
+*    error <iec>,<key>,<code>,<qual>,<pkey> <english description>
+*
+* Where:
+*
+* 1. Comment lines start with an '*' in the first column. All other lines
+*    that do not start with the word 'error' are ignored as well.
+*
+* 2. Error code lines start with the word 'error' in the first column. Case
+*    is not significant. Following the key word 'error' are the drive's 
+*    internal error code <iec>, the corresponding SCSI <key>, <code> and 
+*    qualifier <qual>, the process control key <pkey> and an English 
+*    description of the error. All numbers are seperated by commas. There is 
+*    only white space between 'error' and the internal error code and between
+*    the process control key and the English description. The description 
+*    string may be an arbitrary length but most applications truncate it 
+*    around 40 characters. A new line or tab delimits the far end of the 
+*    string.
+*
+* 3. Error codes are not required to be in any order, however, most 
+*    applications perform a linear search through the error code list that
+*    is generated from this file so it can be faster if you put more common
+*    codes at the top.
+*
+*#########################################################################*
+
+
+
+  Key Word 'error'  (must start in first column)
+  |
+  |     Drive Internal Error Code  (AKA as AT Extended)
+  |     |
+  |     |   SCSI Sense Key
+  |     |   |
+  |     |   |  SCSI Sense Code
+  |     |   |  |
+  |     |   |  |  SCSI Sense Code Qualifier
+  |     |   |  |  |
+  |     |   |  |  |   Process Control Key
+  |     |   |  |  |   |
+  |     |   |  |  |   |   Error Code Description
+  |     |   |  |  |   |   |                           
+  |     |   |  |  |   |   |        10        20        30         40        50
+*-V-----V---V--V--V---V---V--------v---------v---------v----------v---------v
+error   0,  0,00,00,  0   No Error detected at Drive level
+error   1,  3,03,00,  0   Write fault
+error   2,  1,03,00,  0   Recovered Write Fault
+error   3,  4,42,05,  0   Marker for overlay checksum
+error   4,  3,11,00,  0   Uncorrectable data field ECC error
+error   5,  1,17,01,  0   Recovered data field ECC error
+error   6,  6,9A,00,  0   A target attempted to re-select
+error   7,  3,13,00,  0   Data field sync timeout
+error   8,  1,13,00,  0   Recovered data field sync timeout
+error   9,  3,14,01,  0   No record found
+error   A,  1,14,01,  0   Recovered no record found
+error   B,  4,15,00,  0   Seek error
+error   C,  1,15,00,  0   Recovered seek error
+error   D,  1,18,00,  0   Recovered data error via ECC w/2 = syndromes
+error   E,  1,18,01,  0   Recovered data error via ECC on last retry
+error   F,  5,1A,00,  0   Parameter overrun
+error  10,  5,20,00,  0   Invalid command
+error  11,  5,21,00,  0   Invalid LBA
+error  12,  5,24,00,  0   Invalid bits set in CDB
+error  13,  5,26,00,  0   Invalid field in parameters
+error  14,  6,29,00,  0   Reset occurred
+error  15,  6,2A,00,  0   Mode select parameters were changed
+error  16,  4,40,00,  0   RAM error (most likely found in a diagnostic)    
+error  17,  4,87,00,  0   Logical assertion/firmware consistency check err  
+error  18,  4,42,00,  0   Internal ROM checksum error
+error  19,  B,47,00,  0   SCSI Bus parity error
+error  1A,  4,42,01,  0   Marker for resident code checksum
+error  1B,  3,80,00,  0   Error in writing to system sector
+error  1C,  3,81,00,  0   Error in reading from system sector
+error  1D,  4,9E,00,  0   Motor unable to get up to speed
+error  1E,  1,9E,00,  0   Recovered motor unable to get up to speed
+error  1F,  4,84,00,  0   Failure in writing to sequencer format table
+error  20,  4,86,00,  0   Unexpected sequencer error
+error  21,  1,86,00,  0   Recovered unexpected sequencer error
+error  22,  4,8A,00,  0   Head read from ID not equal to selected head
+error  23,  5,8A,00,  0   Invalid head specified
+error  24,  5,8B,00,  0   Invalid cylinder specified
+error  25,  5,8D,00,  0   Bytes per block/bytes per sector gives a remaindr 
+error  26,  2,04,00,  0   Drive is up to speed and recalibrating
+error  27,  2,04,01,  0   Drive is spinning up
+error  28,  2,04,02,  0   Drive has not been told to spin up
+error  29,  3,32,01,  0   No more alternate sectors available
+error  2A,  5,8F,00,  0   Invalid sector specified
+error  2B,  4,95,00,  0   Sequencer timeout
+error  2C,  1,95,00,  0   Recovered sequencer timeout
+error  2D,  4,09,00,  0   Bump timeout
+error  2E,  1,09,00,  0   Recovered bump timeout
+error  2F,  E,1D,00,  0   Read buffer miscompare
+error  30,  4,A1,00,  0   Sequencer rollover register failure
+error  31,  3,A3,00,  0   Failure reading sector in Reassign Blocks command
+error  32,  5,AE,00,  0   Bad parameter(s) found in mode pages during init
+error  33,  3,31,01,  0   FDPE write failed during format unit command
+error  34,  3,10,00,  0   ID ECC error
+error  35,  1,10,00,  0   Recovered ID ECC error
+error  36,  3,12,00,  0   AM mark not found for ID field
+error  37,  1,12,00,  0   Recovered AM mark not found for ID field
+error  38,  3,AA,00,  0   Read Data written on realloc of uncorrectbl data
+error  39,  1,AA,00,  0   Recovrd Rd data Wr on realloc of uncorrctbl data
+error  3A,  3,19,00,  0   Bad defect list
+error  3B,  3,32,00,  0   Defect list is full
+error  3C,  1,AB,00,  0   Requested format in Read Defect Data not avail    
+error  3D,  4,97,00,  0   Underrun error
+error  3E,  1,97,00,  0   Recovered underrun error
+error  3F,  4,06,01,  0   RCL FLT- Coarse Slope PES Gain calibration
+error  40,  1,06,01,  0   Recovered RCL FLT- Coarse Slope PES calibration
+error  41,  4,06,02,  0   RCL FLT- Fine Slope PES Gain calibration at AEQBH
+error  42,  1,06,02,  0   Recovered RCL FLT- Fine Slope PES calib at AEQBH
+error  43,  4,06,03,  0   RCL FLT- Fine Slope PES Gain calib at AEQBL
+error  44,  1,06,03,  0   Recovered RCL FLT- Fine Slope PES calib at AEQBL
+error  45,  4,06,04,  0   RCL FLT- Cannot Lock to track
+error  46,  1,06,04,  0   Recovered RCL FLT- Cannot Lock to track
+error  47,  4,06,05,  0   RCL FLT- Cannot detect SAM during unparking
+error  48,  1,06,05,  0   Recovered RCL FLT- Can't detect SAM during unpark
+error  49,  4,42,06,  0   Marker for diskware vector table checksum
+error  4A,  4,FF,00,  0   Autowr cmd received while host channel disabled
+error  4B,  4,FF,01,  0   ID in format track descriptor list not found
+error  4C,  4,FF,02,  0   Bad descriptor in format track descriptor list
+error  4D,  3,14,01,  0   Bad block mark set for ID (AT)
+error  4E,  4,AC,00,  0   Airlock stuck open
+error  4F,  4,03,00,  0   WUS Write fault (bump)
+error  50,  1,03,00,  0   Recovered WUS Write fault (bump)
+error  51,  3,82,00,  0   Error during reading of diskware
+error  52,  4,09,04,  0   Unrecoverable Bad servo sync
+error  53,  1,09,04,  0   Recovered bad servo sync
+error  54,  4,09,05,  0   Unrecoverable Bad servo address mark (SAM)
+error  55,  1,09,05,  0   Recovered bad servo address mark (SAM)
+error  56,  4,09,06,  0   Unrecoverable Bad track number data 
+error  57,  1,09,06,  0   Recovered bad track number data 
+error  58,  4,09,07,  0   Unrecoverable Servo Defect
+error  59,  1,09,07,  0   Recovered Servo Defect
+error  5A,  4,09,08,  0   Unrecoverable Bump
+error  5B,  1,09,08,  0   Recovered Bump 
+error  5C,  4,15,01,  0   Unrecovrd Gray code != desired track while ontrk
+error  5D,  1,15,01,  0   Recovered Gray code != desired track while ontrk
+error  5E,  4,15,03,  0   Unrecovrd multi bad Sync/SAM while Settle/Ontrk 
+error  5F,  1,15,03,  0   Recovered multi bad Sync/SAM while Settle/Ontrk
+error  60,  4,9E,01,  0   Unrecoverable Speed out of range
+error  61,  1,9E,01,  0   Recovered speed out of range
+error  62,  4,15,04,  0   Seek timeout with no servo fault
+error  63,  1,15,04,  0   Recovered seek timeout with no servo fault
+error  64,  3,11,01,  0   Marker for CRC/Continue
+error  65,  1,17,08,  0   Recovered marker for CRC/Continue
+error  66,  4,42,02,  0   Marker for resident and overlay are incompatible
+error  67,  4,42,03,  0   Marker for ROM and resident are incompatible
+error  68,  4,42,04,  0   Marker for ROM and overlay are incompatible
+error  69,  4,06,06,  0   RCL FLT - DAC offset calibration failure
+error  6A,  1,06,06,  0   Recovered RCL FLT - DAC offset calib failure
+error  6B,  4,86,01,  0   Unexpected SEQ Err during recovery from SEQ TMO
+error  6C,  1,86,01,  0   Recovrd unexpect SEQ err during SEQ TMO recovery
+error  6D,  4,86,02,  0   Read, write ID miscompare
+error  6E,  1,86,02,  0   Recovered read, write ID miscompare
+error  6F,  3,12,01,  0   AM not found for ID field with internal continue
+error  70,  1,12,01,  0   Recovrd AM not found for ID w/ internal continue
+error  71,  3,03,01,  0   Write gate still asserted when wedge detected
+error  72,  1,03,01,  0   Recovrd WR Gate still asserted during servo wedge
+error  73,  4,15,05,  0   Unrecovrd multi bad Sync/SAM during Seek ISR
+error  74,  1,15,05,  0   Recovered multi bad Sync/SAM during Seek ISR
+error  75,  4,06,10,  0   RCL FLT - Cannot detect reliable SAM on one or more heads
+error  76,  1,06,10,  0   Recovrd RCL FLT-Can't detect SAM on one or more heads
+error  77,  4,06,07,  0   RCL FLT - Can't seek to OD to get near Sys Cyl
+error  78,  1,06,07,  0   Recovrd RCL FLT - Can't seek to OD near Sys Cyl
+error  79,  4,06,08,  0   RCL FLT - Can't seek to Fine Slope PES calib trk
+error  7A,  1,06,08,  0   Recovrd RCL FLT-Can't seek to Fine SLP calib trk
+error  7B,  4,06,09,  0   RCL FLT - Seek failure during Nulli calibration
+error  7C,  1,06,09,  0   Recovrd RCL FLT - Seek fail during Nulli calib
+error  7D,  4,06,0A,  0   RCL FLT - Seek failure during V_SCALE adaptation
+error  7E,  1,06,0A,  0   Recovered RCL FLT-Seek fail during V_SCALE adapt
+error  7F,  4,06,0B,  0   RCL FLT - Seek failure during KLOOP calibration
+error  80,  1,06,0B,  0   Recovrd RCL FLT - Seek fail during KLOOP calib
+error  81,  4,06,0C,  0   RCL FLT - Seek failure during RRO calibration
+error  82,  1,06,0C,  0   Recovrd RCL FLT - Seek fail during RRO calib
+error  83,  4,06,0D,  0   RCL FLT - Seek failure to track 0 during rezero
+error  84,  1,06,0D,  0   Recovrd RCL FLT-Seek fail to trk 0 during rezero
+error  85,  4,06,0E,  0   RCL FLT - Unable to complete KLOOP calibration
+error  86,  1,06,0E,  0   Recovrd RCL FLT - Unable to complete KLOOP calib
+error  87,  4,06,0F,  0   RCL FLT - Unable to complete RRO calibration
+error  88,  1,06,0F,  0   Recovrd RCL FLT - Unable to complete RRO calib
+error  89,  4,01,00,  0   No disk index found on current track
+error  8A,  1,17,09,  0   Data corrected via ECC on the fly algorithm
+error  8B,  4,42,07,  0   Resident and vector table diskware versions are incompatable.
+error  8C,  4,42,08,  0   ROM and vector table versions are incompatable.
+error  8D,  4,1B,00,  0   Synchronous transfer error
+error  8E,  5,9B,00,  0   Invalid period or offset in synchronous message
+error  8F,  5,9C,00,  0   Active initiator selected us while disconnected
+error  90,  5,25,00,  0   Invalid LUN specified
+error  91,  4,43,00,  0   Message reject error
+error  92,  B,45,00,  0   Initiator did not reselect
+error  93,  B,48,00,  0   Initiator detected error
+error  94,  4,85,00,  0   Rejct of message that should never have been sent
+error  95,  B,00,00,  0   Response for an abort message
+error  96,  5,8C,00,  0   Intruding initiator selected drive a second time
+error  97,  6,8E,00,  0   Unexpected SIC interrupt occurred
+error  98,  4,90,00,  0   Synchronous acknowledge error
+error  99,  4,91,00,  0   Synchronous acknowledge error
+error  9A,  4,94,00,  0   Undocumented SIC error - SIC
+error  9B,  4,4A,00,  0   Undocumented SIC error - Fifo load
+error  9C,  4,49,00,  0   Undocumented SIC error - Fifo unload
+error  9D,  4,4B,00,  0   Undocumented SIC error - Fifo pred full
+error  9E,  B,29,00,  0   Undocumented SIC error Ram parity
+error  9F,  5,66,00,  0   Undocumented SIC error - List length
+error  A0,  3,31,00,  0   Undocumented SIC error 
+error  A1,  5,C2,00,  0   Undocumented SIC error 
+error  A2,  2,C0,00,  0   Undocumented SIC error 

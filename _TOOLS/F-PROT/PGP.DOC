@@ -1,0 +1,38 @@
+                           About PGP
+
+We encourage the use of PGP for various purposes, including the transfer
+of virus samples.  This document is not intended to describe how to
+install PGP or use it to encrypt files.  However, PGP can also be used to
+verify that the F-PROT package you receive has not been tampered with.   
+
+We use PGP to provide two types of detached signatures.  One is for the
+FP-xxx.ZIP package that is made available via FTP, E-mail and other means. 
+This signature can be obtained by doing a 'finger f-prot@complex.is'.  It
+is also included in the announcement we send out.  Do not trust this
+signature unless you obtain it from a secure source.  NOTE: THIS SIGNATURE
+CANNOT BE USED TO VERIFY THE INTEGRITY OF THE PACKAGE AVAILABLE AT THE
+GARBO FTP SITE, AS THE FILE IS MODIFIED THERE.
+
+The other signatures are included in the package, and are therefore less
+secure, as they could be tampered with.
+
+Assuming you have installed PGP and added my public key (included in
+new_vir.doc), you can verify the files by giving a command like
+
+    pgp f-prot.asc f-prot.exe
+
+You should then see something like this:
+
+    File has signature.  Public key is required to check signature.
+    File 'f-prot.$00' has signature, but with no text.
+    Text is assumed to be in file 'f-prot.exe'.
+
+    Good signature from user "Fridrik Skulason <frisk@complex.is>".
+
+If, instead, you get a "bad signature" message, it means that either you
+are using the wrong signature, or that the .ZIP file has been modified.
+In some cases FTP archive sites may modify .ZIP files by adding a comment.
+If that appears to be the case, you can strip the comment away by running
+pkzip with the -z switch, and then use PGP to check the resulting file.
+
+option

@@ -1,0 +1,164 @@
+
+ €€€€€€ª   €€€€€ª  €€€€€€ª
+ €€…ÕÕ€€ª €€…ÕÕ€€ª €€…ÕÕ€€ª     RAR - What's new in latest version
+ €€€€€€…º €€€€€€€∫ €€€€€€…º     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ €€…ÕÕ€€ª €€…ÕÕ€€∫ €€…ÕÕ€€ª
+ €€∫  €€∫ €€∫  €€∫ €€∫  €€∫
+ »Õº  »Õº »Õº  »Õº »Õº  »Õº
+
+
+   Version 1.53 beta
+
+   1. RAR now utilizes Expanded memory (EMS 4.0). Using EMS allows
+   to decrease minimum memory volume needed to create and update
+   archives on 64 Kb as well as extract from archives.
+   The option "Use expanded memory" is added to configuration.
+   The switch '-ems-' - "disable EMS using" has been added.
+
+   2. The option "Keep backup archive" is removed as the switch '-b'
+   still exists.
+
+   3. Adding files to archive with command line options requires now
+   282 Kb only.
+
+   4. Minor speed increasing on packing operation.
+
+   5. Due to memory limitations, the functionality of backwards
+   compatibility is reduced. Now RAR can only extract and test
+   archives created by RAR versions prior to 1.50.
+
+   6. The switch '-av' - "disable checking authenticity information" has
+   been added.
+
+   7. The switch '-ds' - "do not sort files while adding to solid" has
+   been added. It could be used when experiments in order to get
+   highest compression depending on order of files in solid archive.
+
+   8. The switch '-z<file>' in conjuction with commands 'A','F','U','M','C'
+   adds archive comment from the file. It gives more opportunity than
+   old combination '=<file>', because the new switch can be placed in any
+   position of the command line and allows adding comments to existant
+   archives. Old combination '=<file>' still exists for compatibility
+   reasons.
+
+   9. In full-screen mode in directory the function key <F8> performs
+   now deletion of file, as Alt-<F8> initiates repair function.
+
+   10. The SFX module handling broken archives has been imporoved.
+
+
+   Version 1.52
+
+   1. The modification of solid archives is now implemented.
+   Option "Always make solid" has been added to the configuration
+   menu, if set then RAR will always create solid archives.
+   The update and delete file operations for solid archives
+   require 520 Kb of RAM. Adding files to a solid archive
+   requires 420 Kb of RAM.  Adding files to a solid archive is
+   significantly faster than updating or deleting.
+
+   2. The RAM requirement for extracting files from an
+   archive has been reduced and is approximately 265 Kb. To
+   start RAR you need only 230 Kb of memory. The RAM requirement
+   for creating and updating archives has not changed
+   (approximately 420 Kb).
+
+   3. The switch '-tk' - "do not modify archive date" has been
+   added.
+
+   4. The switch '-tl' - "set archive date as the date of
+   newest file" has been added.
+
+   5. It is now possible to give several switches, of the form
+   '-x<name>' ("exclude files") on the same command line.
+
+   6. The SFX archive module now can be handled by switches:
+       -t - "test SFX archive" and
+       -v - "view archive content".
+
+   7. Temporary files will no longer be created while extracting
+   and testing files in the archive if the operation can be 
+   performed in RAM.
+
+   8. Temporary file names are all of the form "$RAR$_*.*".
+
+   9. FREE unRAR utility now provided within RAR distributive.
+
+
+   Version 1.51
+
+   1. Sound effects are added with option Sound in configuration.
+
+   2. CRC errors may be logged to a file RAR.LOG - option Log
+   errors to file in configuration. This feature is available only
+   in the registered version.
+
+   3. Pressing Alt-J in full-screen mode while archive processing
+   and in menus starts DOS shell. This feature is available only in
+   the registered version.
+
+   4. Commands 'C' and 'CF' could not be processed with archives
+   created by RAR versions prior to 1.50.
+
+
+   Version 1.50.2 beta
+
+   1. Fixed bug in command 'x' with switches -f -u.
+
+   2. Interface advances:
+      - clicking mouse key at top of the screen causes to
+        change current disk;
+      - Ctrl-\ causes entering root directory (changing
+   current directory to root).
+
+
+   Version 1.50.1 beta
+
+   1. Packing when insufficient memory bug fixed.
+
+
+   Version 1.50 beta
+
+   1. In order to get high reliability and compatibility with
+   different file and operating systems, the RAR archive file
+   format was changed (see TECHNOTE.DOC for details).
+
+   RAR 1.50 is compatible with older releases and can handle
+   archives created with previous versions, with the exception of
+   minor functions - repair, create SFX and adding authenticity
+   verification).
+
+   Archives created with RAR 1.50 cannot be handled by older
+   versions of RAR.
+
+   Due to memory limitations, the functionality of backwards
+   compatibility, will be reduced to a minimum.
+
+   2. Compression speed has improved in the "most compressive" mode
+   (when using the switch -m5).
+
+   3. Password encryption algorithm improved. Files encrypted in
+   archives with old RAR versions are also supported.
+
+   4. Authenticity verification feature changed. When the archive is
+   created with -av full integrity checking is performed.
+
+   5. User interface improved.
+
+   6. Pressing Control-Break causes return to RAR when used in full-
+   screen mode, not exit to DOS as previously.
+
+   7. String search implemented in internal viewer (F7).
+
+   8. Edit function set extended for string enter.
+
+   9. Option "After command ..." removed from Configuration.
+
+   10. Option "Stdout mode" added to configuration.
+
+   11. Switch -vs removed as the identical combination "-v -sfx"
+   exists.
+
+   12. Volume size can now be entered in kilobytes (not only in
+   thousands of bytes). Add symbol 'k' for it.
+

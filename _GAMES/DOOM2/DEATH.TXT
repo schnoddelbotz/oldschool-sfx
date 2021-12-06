@@ -1,0 +1,37 @@
+===============================================================
+Title                   : Death   
+Author                  : Jay DeVore
+Email Address           : DSMNET@sdevore.com
+                          
+Description             : Neat Little Start of a level made to be added on to.
+
+Misc. Author Info       : I'm just a 12 year old DOOM freak with way to much
+                          time on my hands.
+
+Additional Credits to   : The ID folk down in Texas for what was that? i my 
+                          gosh I forgot. And to the makers of Aliens TC for 
+                          1 idea. And finaly to my Dad whose fine computer I'm
+                          typing on right now.
+================================================================
+
+* Play Information *
+
+Mape Level #            : Map 01            
+Single Player           : Yes  
+Cooperative 2-4 Player  : Haven't put any starts on.
+Deathmatch 2-4 Player   : Haven't put any starts on.
+Difficulty Settings     : None
+New Sounds              : No
+New Graphics            : Nope
+
+* Construction *
+
+Base                    : Scratch
+Build Time              : Maybe 5 hours
+Editor(s) used          : EDMAP 1.22 THe best.
+Known Bugs              : Not that I now of.
+
+
+* Copyright / Permissions *
+Do whatever you want to this. All I'm asking if you give It out tp put my name 
+In the Credits. THanks. Have fun dooming.

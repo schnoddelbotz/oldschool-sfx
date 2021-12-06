@@ -1,0 +1,1065 @@
+  -------------------------------------------------------------------------
+  IMPORTANT NOTE!  This document was compiled by an external source before
+  Descent Registered was available.  Most of the information pertains to
+  the Shareware version of Descent.  We make no claims as to the accuracy
+  of this info with respect to this Registered/Commercial version.
+                                                           -Parallax
+  -------------------------------------------------------------------------
+
+ __          __  ___    ________   _______    __  ___                 _______
+|  ||\      |  ||___\  /________\ /_______\  |  ||___\   |',    |',  |_______\
+|  ||  \    |  | ____      ____    __        |  | ____   |  '\  |  |    __
+|  | \   \  |  ||____\     \   \  |  \       |  ||____\  |   ||\|  |   |  |
+|  |___\  | |  |______  ___/   /  |   \_____ |  |______  |   ||    |   |  |
+|_________| |_________\ \_____/    \_______/ |_________\ |___| \___|   |  |
+                                                                        \ |
+                            F       A       Q                            \|
+                      (Frequently Asked Questions)
+                               Version 1.0
+
+    Compiled by John D. DeCuir (decuirjd@netcom.com). 
+
+    This is the OFFICIAL Descent FAQ.  It provides pointers/answers to the
+    most Frequently Asked and easily answered Questions about Descent that
+    often get posted.
+    
+    This is NOT a substitution for the README.TXT that comes with Descent.
+    The README file contains vital information that every Descent-player
+    should read.  This FAQ is intended as an up-to-date supplement, NOT
+    a substitution.
+
+    All specific names included herein are trademarks:  Descent, Interplay
+    Productions, Parallax Software, FlightStick, Gravis GamePad, Pentium,
+    Intel, Cyrix, Id Software, Doom, Quake, Apogee, Wolfenstein 3D,
+    IBM, OS/2, OS/2 Warp, PC Gamer, CompuServe, America Online, GEnie,
+    Microsoft Windows, Smartdrive, Return of the Jedi, Star Wars, Death Star.
+    Any trademarks not mentioned here are hypothetically acknowledged.
+
+    This article is (C) Copyright 1995 by John D. DeCuir.  All rights
+    reserved.  You are welcome to make copies and redistribute this article,
+    as long as it is kept in its original form.
+
+  CONTENTS:
+  
+  [1]. INTRODUCTION
+      [1a] What is Descent?
+      [1b] But I already play Doom.  Why would I like Descent?
+      [1c] Who created Descent?
+      [1c-2]    How can I contact Interplay?
+      [1d] What are the differences between the different releases of Descent?
+      [1e] Wait, I read somewhere about something called Quake.  Is this it?
+      [1f] Will a level editor be released?
+      [1g] What is needed to run Descent?
+      [1h] Can I play Descent under OS/2?
+      [1i] Can I play Descent under Windows?
+      [1j] Where can I get Descent?
+      [1k] Is there a Descent newsgroup on Usenet?
+      [1l] Is there source code available?
+      [1m] What are the differences between the different robots?
+      [1n] What are some popular control configurations?
+      [1o] What are the VCR controls in the Demo Playback?
+      [1p] What are the differences between version 1.0 and 1.1?
+
+  [2]. TACTICS  (or, "Doom Recovery 101")
+      [2a] Help!  I'm lost in the maze.
+      [2b] I'm having trouble controlling my ship.  Any suggestions?
+      [2c] I can't find places on the map.
+      [2d] How do I beat the big bad robot at the end of level 7?
+      [2e] I think Descent is too easy.
+      [2f] I think Descent is too hard.
+      [2g] The secret resource: Lava
+      [2h] What are those yellow tunnels with sparkly things in it?
+      [2i] What are those purple areas that new ships come out of?
+      [2j] What are the relative strengths of the weapons?
+
+  [3]. CHEATS AND SECRETS
+      [3a] Is there a list of the secrets in Descent?
+      [3b] What are the cheat codes?
+      [3c] Undocumented Map features
+      [3d] A Walkthrough of Level 7
+
+  [4]. MULTI-PLAYER CAPABILITY
+      [4a] Can I play with other people?
+      [4b] Does each computer require a distinct version of the software?
+      [4c] Why do different computers play differently on a net game?
+      [4d] Can I play over the Internet?
+      [4e] Is there a good place to meet other players?
+      [4f] A note about networking and Descent
+
+  [5]. OTHER PROBLEMS:
+      [5a] Why can't I save my game in the middle of a level?
+      [5b] I just died; where did all my stuff go?
+      [5c] How can I skip past all the dialogue in the beginning of the game?
+      [5d] How can I avoid motion sickness?
+      [5e] I'm having hallucinations when I look away from the monitor.
+      [5f] Descent and Cyrix CPUs
+      [5g] Advice for 4 MB memory setups
+      [5h] My frame rate is far too slow.  Any suggestions to speed it up?
+
+----------------------------------------------------------------------------
+REVISION HISTORY
+
+    12/26/94  Descent 0.1 FAQ born by John DeCuir.
+    12/26/94  A distinct, "Descent 0.5 FAQ" written by Seth Delackner.
+    12/27/94  Merger takes place, including new information from
+              Adam Pletcher from Parallax Software.
+              Thanks Adam!   Descent FAQ 0.6 born.
+    12/28/94  Added Ascii Art logo by Thomas Axelsson, created FAQ 0.61.
+    12/28/94  Added lots of new info about robots, undocumented map
+              features, control configurations, framerate.  FAQ 0.7 born.
+     1/02/95  Added new Ascii Logo by Thomas Axelsson, some miscellaneous
+              information.  Re-organized, created a new TACTICS section.
+              Debuted with FAQ 0.75.
+     1/03/95  Added minor info about OS/2 and GEnie.  FAQ 0.77.
+              This FAQ was never released.
+     1/03/95  Added Level 7 walkthrough by Mike Lorant.  FAQ 0.8.
+     1/05/95  Added info about VCR controls, secrets.  FAQ 0.81.
+     1/15/95  Added lots of information throughout the FAQ.  Created
+              FAQ 0.85.
+     1/16/95  Added/changed some minute detail.  Thanks to Adam
+              Pletcher for adding/correcting info.  FAQ 0.86.
+     2/9/95   Changed some info from Adam Pletcher.  Received
+              blessing from the Parallax Software deities and
+              went to version 1.0.  Thanks all! :)
+
+WHERE CAN I FIND THE FAQ?
+
+    On the Internet, specifically in the Usenet newsgroups,
+    look for it in comp.sys.ibm.pc.games.action, alt.games.descent,
+    or e-mail decuirjd@netcom.com for the latest version.
+
+    You can also FTP the FAQ from ftp.netcom.com in the directory
+    /pub/cs/csua/descent.
+
+    Alternatively, look on the IRC in channel #descent and ask for it.
+    Either Bruin or Descender should have a current copy.
+
+    To find a copy of the FAQ in WWW (World Wide Web) format, look at
+    http://www.ping.de/~sven/descent/, or
+    http://www.eskimo.com/~stickman/deshome.html.  Some delays may occur 
+    after the release of a new FAQ, however.
+    
+----------------------------------------------------------------------------
+
+Part [1].  INTRODUCTION
+
+-- [1a] ----------  What is Descent?
+
+    "Descent is a heart-pounding, gun-wrenching, edge-of-your-seat
+     experience."
+         -from the README.TXT file in Descent
+
+    "The sensation of speed is amazing, and the 3D, texture-mapped graphics
+     make this game a genuine joy to behold."
+         -PC Gamer
+
+    Descent is a new game from Interplay and Parallax Software.  It immerses
+    you in a full 3D environment with 6 degrees of freedom -- you truly have
+    the experience of weightlessness and zero gravity.
+
+    You are a pilot who must rescue hostages and blow up the reactors of
+    certain enemy mines.  However, there are many, many robot drones out to
+    destroy you before you destroy them.  When the reactor blows, you have
+    45 seconds to get out of there before you go with it!
+
+    You are given an arsenal of different weapons, such as the Vulcan 
+    chaingun-like gun.  Also, you have finite energy and shield strength,
+    both of which may be replenished in the course of the game.
+
+    Descent boasts true heightmapping and light sourcing -- the textures
+    and feel of the game are absolutely real.  And the light effects are
+    terrific -- try shooting a missile down a dark corridor and watch it
+    light the walls along its path.
+
+-- [1b] ---------- But I already play Doom.  Why would I want Descent?
+
+    Descent, unlike Doom, has a true 3-D environment with six degrees
+    of freedom.  This means you have three axes of motion and three axes of
+    rotation.
+
+    Descent also has 3D texture-mapped polygon enemies, and no flat enemy
+    bitmaps like Doom has.  As to which is better is a matter for debate. :)
+
+    Descent boasts unrestricted level design -- it's not limited to 90 degree
+    walls (like Wolfenstein) or 2-dimensional layouts.
+
+    This is nothing against Doom, of course -- Doom was a revolutionary game
+    in its own right; but what Doom did for Wolfenstein 3D, Descent does for
+    Doom.
+
+-- [1c] ---------- Who created Descent?
+
+    Descent was created by Parallax Software, along with Interplay
+    Productions. 
+
+-- [1c-2]   How can I contact Interplay?
+
+    Interplay Technical Support can be reached 24 hours a day through their
+    Automated Customer Service system, with representatives available during
+    normal business hours.  Their phone number is 714-553-6678.
+
+    Other ways to get help:
+
+    Interplay Productions          Interplay BBS: 714-252-2822
+    attn: Customer Service         America Online: keyword INTERPLAY
+    17922 Fitch Avenue                             email "IPTECH"
+    Irvine, CA 92714               GEnie: type "M805;1"
+                                   CompuServe: GO GAMBPUB
+                                   Prodigy: email to "PLAY99B"
+                                   Internet: email to support@interplay.com
+
+-- [1d] ---------- What are the differences between the releases of Descent?
+
+    The shareware release of Descent was released in December 1994,
+    and contains the first 7 levels of the game.
+
+    The 1.2 version of Descent will be released shortly after
+    the registered version is available.
+
+    Following is the official word on Registered Descent purchase
+    information.  Thanks to Matt Toschlog for this info.
+
+              Registered Descent Purchase Information
+              ---------------------------------------
+
+    There's been a lot of questions about purchasing Registered Descent, 
+    so here's the definitive information.
+
+    Registered Descent will be available directly from Interplay sometime
+    in the first half of February 1995.  Registered Descent includes:
+
+    30 levels (including the 7 shareware levels)
+    Full save game feature
+    4 new weapons
+    New multiplayer games: cooperative, team anarchy, & anarchy w/ robots
+
+    Registered Descent will be available on both floppy and CD-ROM; the two 
+    are identical and will cost the same.  This is the only version of 
+    Descent available at this time. 
+
+    To order, call 1-800-INTERPLAY.  Registered Descent costs US $39.95, 
+    plus $4.50 shipping.  For mail orders, see the file ORDERFRM.TXT, 
+    included with the shareware version.
+
+    European orders are UK#29.99.  Call (44) 707-675-757 (UK) for info.
+
+    The Registered version should be available through normal retail 
+    channels (stores & mail order) sometime in March.
+
+    A CD-Enhanced version will be available Summer '95 with lots of extra 
+    features, including new levels & robots, more powerups, redbook audio, 
+    and more animations.  There will be a reasonable upgrade path from 
+    Registered to CD-Enhanced.
+
+-- [1e] ---------- Wait, I read somewhere about something called Quake.
+                   Isn't this it?
+
+    No.  Quake is a game currently being designed by Id software, the makers
+    of Doom.  Quake is promised to contain many of the features that Descent
+    carries, such as true 3D.  But for now, Descent is wholly independent of
+    the Quake project, and there is no overlap between the two.
+
+-- [1f] ---------- Will a level editor be released?
+
+    From Adam Pletcher at Parallax:
+
+    "Here's our unofficial stance on homebrew stuff:  We're discussing it.
+     Due to the complexity of our segment structure, it's unlikely a useable
+     homebrew editor will be made in the foreseeable future.  We're 
+     considering several approaches from just seeing what people come up 
+     with, to total release of our editor.  The main fear in releasing 
+     the editor we have is that it isn't bug-free and isn't the most 
+     user-friendly thing.  Neither of these things is a big deal, but we 
+     don't want Interplay/Parallax to start getting tech support calls 
+     for the thing.  I'll tell you this, though:  we didn't put in any 
+     code to make homebrew levels hard to use."
+
+     Parallax *will* be releasing Descent specs.  The date of release
+     at this point is unknown.
+     
+-- [1g] ---------- What do I need to run Descent?
+
+    According to the README.TXT, the bare requirements for running
+    Descent are:
+    - IBM PC compatible 386-33 or faster
+    - 4 MB RAM
+    - DOS 5.0 or greater
+
+    Strongly recommended are:
+    - 486 or Pentium processor
+    - 8 MB RAM
+    - stereo 16-bit soundcard with General MIDI support
+    - a quality joystick
+
+-- [1h] ---------- Can I play Descent under OS/2?
+
+    Yes!  Descent runs PERFECTLY under OS/2.  All you need to do is to
+    increase your memory settings for a Descent object to 8 megs or more, and
+    you can run it fine.  You should change "DPMI_MEMORY_LIMIT" to 8 megs or
+    more. 
+
+    It even runs inside a PM window, although the frame rate
+    isn't great... :)
+
+-- [1i] ---------- Can I play Descent under Windows?
+
+    You can, although it is not recommended.  There are certain timing
+    problems which interfere with Descent's performance when you play
+    through a DOS Window (whether full screen or windowed).
+
+    The best performance will be achieved when you exit Windows entirely
+    (by File/Exit), and THEN load Descent directly from DOS.
+
+-- [1j] ---------- Where can I get Descent?
+
+    You can download the shareware version of Descent from the following
+    sources:  (two files: dcnt11-1.zip and dcnt11-2.zip)
+
+    :: Interplay BBS:  714-252-2822, 24 hours, up to 28.8k baud, 8N1
+    :: Software Creations BBS:  508-368-4137, 24 hours, 8N1
+       or telnet to ftp.swcbbs.com
+    :: redeye BBS: +49.89.5460535, Munich, Germany, 24 hours, 28.8k,
+       big Descent Area, free downloads
+    :: CompuServe:  "GO GAMBPUB", in the Interplay software libraries
+    :: America Online:  keyword "INTERPLAY", in the software libraries
+    :: GEnie: type "M805;3", then search for "Interplay"
+    :: FTP sites...
+          ftp.wustl.edu         in /pub/msdos_uploads/descent
+          ftp.uwp.edu           in /pub/incoming/games
+          ftp.funet.fi          in /pub/msdos/games/interplay
+          ftp.netcom.com        in /pub/cs/csua/descent
+          ftp.demon.co.uk       in /incoming  OR  /pub/ibmpc/games/misc
+          janus.library.cmu.edu in /pub/descent
+          ftp.cdrom.com         in /.17/games/incoming
+          ftp.leo.org           in /pub/comp/platforms/pc/games
+          ftp.prairienet.org    in /pub/software/descent
+
+    You can get the registered version of Descent directly from Interplay, or
+    you can buy it in retail stores about a month after the registered
+    version is available.
+
+-- [1k] ---------- Is there a Descent newsgroup on Usenet?
+
+    Yes!  Most sites carry the newsgroup "alt.games.descent".  Ask your
+    local news administration to carry it if they don't already.
+
+-- [1l] ---------- Is there source code available?
+
+    Descent is a commercial product, and hence, no source code of the game
+    is available.
+
+-- [1m] ---------- What are the differences between the different robots?
+
+    From the introductory info:
+
+    Class 1 Drone  (Yellow) :
+        Standard utility robot, apparently modified for combat.  Should
+        pose little threat alone, but could be trouble in groups.
+
+    Class 2 Drone  (Blue) :
+        Aggressive when cornered.  Relatively weak weapons, but fires
+        rapidly.
+
+    Medium Lifter  (Green with arms) :
+        Normally used to burrow through porous rock.  Recon cameras
+        have witnessed this robot shredding anything in sight -- including
+        hostages!  Stay away from this robot -- because he has no
+        projectile weapons, your best bet is to fire from far away.
+
+    Small Hulk  (Green, bulky) :
+        Standard borer robot.  Tough and agile.
+
+    Medium Hulk  (Yellow/Brown, bulky) :
+        Heavily armored for explosive deployment deep in mines.  Slow
+        moving, but very dangerous.
+
+    "Spider" Processing Robot (Red, 4 arms) :
+        These mechs were designed to pick up rubble for processing in
+        their body cavities.  Explodes into smaller spiders when hit.
+
+    Unknown name  (Silver) :
+        This robot is vicious, as it fires its vulcan guns (chaingun)
+        at you immediately when it sees you.  Don't stay in its sight
+        too long!
+
+    SuperMech  (Red; fires homing missiles) :
+        These guys are like the hulks, but about 200% more angry.
+
+    Mega Hulk   (Yellow, huge, cloaks) :
+        This robot is huge and cloaks whenever you hit it.  It reappears
+        somewhere else.  For hints on how to kill it, see section [2d].
+
+-- [1n] ---------- What are some popular control configurations?
+
+    "I use a basic analog joystick, along with the keyboard.  I use
+     W,A,S, and D to strafe, and F to accelerate and V to reverse.
+     Ctrl fires and space bar fires a missile.  The joystick controls
+     where my ship is pointed."
+         -John D., aka Bruin on #descent
+
+    (FAQ Note:  "Strafing" means to slide, as opposed to accelerate.
+    For example, when you sidestep to your left, you are "strafing".
+    While the terminology is confusing, it is well-rooted in the
+    Doom culture of today, so this writer will choose to keep
+    it in.)
+
+    "The mouse is the best for me.  Pitch up is the mouse, y-axis
+     inverted.  Pitch down is the mouse's x-axis.  Fire primary is
+     mouse left button, and fire secondary is the mouse right button.
+     (If you're using a 3 button mouse, use the middle button to fire
+     the secondary, and right button to go forward.  W,A,S, and D
+     to strafe, and Caps Lock for a reverse view.  Reverse
+     acceleration is left shift, and forward is space bar.  Everything
+     else is default."
+         -"vxl" on IRC/#descent
+
+    "Mouse Y: pitch; Mouse X: turn (yaw); Mouse 1: primary weapon;
+     Mouse 2: accelerate; Mouse 3: reverse; W,A,X,D: slide; Q,E: roll;
+     C,Z,S: increase, decrease, stop cruise; spacebar: primary weapon;
+     Left Alt: secondary weapon; Left Shift: slide mode for mouse;
+     Left Ctrl: bomb.  I tend not to use the cruise control much."
+         -Sean Gugler
+
+    "Number pad as ship heading controls.  / above 8 is the flare
+     launcher; the * is the bomb key.  My right hand is on the num pad
+     with my pointer on 4, my middle finger on 8, and my ring finger
+     on 6.  My thumb rests on 0, which is the thrust-reverse key.  My
+     left hand controls forward movement, and rests on the right side
+     of the main keypad.  Right shift is thrust forward, the alt is
+     strafe on, and ctrl is fire.  On the num pad, the 1 and 3 are 
+     roll left and right."
+         -Matt Ebel
+
+-- [1o] ---------- What are the VCR controls in the Demo Playback?
+
+    Down Arrow:        Pause
+    Up Arrow:          Resume Playback
+    Left Arrow:        Go back one frame
+    Right Arrow:       Go forward one frame
+    Shift Left Arrow:  Fast Reverse
+    Shift Right Arrow: Fast Forward
+    Ctrl Left Arrow:   Rewind to beginning
+    Ctrl Right Arrow:  Fast Forward to end
+
+    (thanks to adliber@aol.com)
+
+-- [1p] ---------- What are the differences between v1.0 and v1.1?
+
+    From the README.TXT:
+
+SHAREWARE 1.0   Initial Shareware release
+
+SHAREWARE 1.1
+         Fixed: non-responsive joystick axes
+                problems with Wingman Extreme/FCS hat switches
+                demo playback not showing F8 messages
+                demo playback not decloaking ships
+                problems with SLIDE ON using joystick or mouse
+                soundcard clicks during modem play
+                loadpatch problems with >512k GUS cards
+                detail levels not saving properly
+                incorrectly mapped MIDI instruments
+
+         Added: support for non-standard COM IRQ settings
+                default taunt macros for new pilots
+                moving reticle for VR helmet head tracking
+                mouse sensitivity slider
+                shield/energy indicators to full-screen view
+                keeps COM port unchanged when exiting game
+                documented Automap 'S' key in REFCARD.TXT
+                VR helmet information phone numbers in README.TXT
+                -NoDosCheck command line option for DR-DOS users
+
+Note that the 1.2 version of Shareware Descent will be released shortly
+after the registered version is available.
+
+
+Part [2].  TACTICS, or "Doom Recovery 101."
+
+-- [2a] ---------- Help!  I'm lost in the maze.
+
+    The transition from 2D to 3D is not an easy one.  While it can be
+    challenging, once you're used to it, 2D worlds will just seem, well,
+    flat.
+
+    The best advice is to keep checking your map (hit TAB).  How the maze is
+    oriented once you enter the map screen is a view from behind your ship,
+    with "up" going "up".  You can rotate the map around after you realize
+    where you are to see where you want to go.  To zoom in and out, 
+    strafe up and down.
+
+    Also, look for landmarks -- i.e. a room full of monitors, a huge cavernous
+    room, or a room full of doors.  Keep returning to these rooms until you've
+    explored every branch.
+
+    One technique that may or may not work is to simply barrel down tunnels,
+    not caring where you're going, just to kill enemies.  This has two
+    advantages -- one, a lot of the enemies in the maze will be wiped out so
+    you don't have to deal with them when you start exploring, and a 
+    substantial chunk of the maze will already be mapped on your automap. 
+    Once you get a large portion of the map, you can start exploring and
+    looking for keys.  Of course, your mileage may vary.
+
+    Another technique to keep in mind is to keep the lights of
+    the tunnel to the top of the screen; this will orient you correctly.
+
+-- [2b] ---------- I'm having trouble controlling my ship.  Any suggestions?
+
+    This is often the most brought up subject.  Like I said earlier, the
+    transition to 3D is not an easy one.
+
+    The predominant opinion is that the best setup is with a fancy joystick,
+    such as the FlightStick.  This has lots of buttons and switches on the
+    stick itself that will let you control the game.
+
+    Failing that, the next best option is to use a normal, ANALOG joystick
+    together with the keyboard.  I personally use the joystick to point 
+    where I want to go and to use Z and X to accelerate and decelerate,
+    respectively.  I don't suggest a digital joystick, such as the Gravis
+    gamepad, because a large portion of that immersive experience is lost
+    when you can't control how fast or how slow you want to turn.
+
+    The least attractive solution is to use the keyboard by itself, although
+    it has been known that a lot of players have become quite adept at this
+    method.  The best way is to use the keypad for pointing, strafing, etc.
+    and other keys (such as z and x) on the other side of the board for
+    accelerating and firing.
+    
+    One suggestion that everyone should try, though -- have DEDICATED strafing
+    keys!  For example, use W,A,S and D for strafe up, left, down, and right,
+    respectively.  This lets you strafe while doing other things, such as
+    turning, and will improve your gameplay significantly.
+
+-- [2c] ---------- I can't find places on the map.
+
+    Remember that when you enter the map screen, the view is from behind 
+    your ship, with up pointing up.  Use strafe up and down with the map to 
+    zoom.  (With defaults, use left alt + up or down.)
+
+    Undocumented feature:  To pan across the map (make the map move, as 
+    if you put your hand there and slid it over), hold down "S" while moving
+    the joystick/cursor keys.  Your new center of rotation will be the
+    center of the screen, NOT your ship.
+
+-- [2d] ---------- How can I beat the big bad robot at the end of level 7?
+
+    Adam Pletcher of Parallax Software recommends:
+
+    "Stay tight against the inside pillar, and keep circling. This is the
+     best way to lose missiles that have lock.  Take out the Vulcan
+     Guys, SuperMechs (the red guys), and the Boss, in that order.  Get the
+     cloak in the alcove on the far side of the pillar.  When attacking the
+     Boss, make passes, don't sit still.  And make extra sure none of  
+     those green missiles hit you in the face, they'll probably kill you."
+
+-- [2e] ---------- I think Descent is too easy.
+
+    Try the following:
+
+    :: Don't use any cheat codes
+    :: Increase the difficulty level of your game
+    :: Use only one type of weapon, i.e. use only the normal guns
+    
+    Descent has many difficulty levels, and should appeal to every gamer.
+
+-- [2f] ---------- I think Descent is too hard.
+
+    It depends what you mean by "hard".  If you're having trouble controlling
+    the ship, see the section above about controlling your ship.  Otherwise,
+    try the following:
+
+    :: Decrease the difficulty level of your game
+    :: Try flying around an empty mine tunnel as fast as you can and
+       as fluidly as you can.
+    :: PRACTICE STRAFING!!  This technique will save you many times over
+       when it comes to enemy fire.
+    :: Learn when to (and when not to) use the different kinds of weapons
+       you have.
+    :: Practice, practice, practice!
+
+-- [2g] ---------- The secret resource: Lava
+
+    "I discovered something about the lava by accident, and a fairly
+     costly one at that: the lava is REALLY explosive - like missiles.  This
+     can be EXTREMELY useful:
+
+     Suppose you're in level 2 (the one with the very large room near
+     the start), and you're going to get the red keycard, which is defended
+     by about 4 or 5 robots.  As you may recall, there'a large lava pit in
+     the middle of the room, which at least one of the robots is always
+     directly above.  Instead of aiming at the robot, aim at the lava right
+     below it and fire a blast or two.  The blasts will cause the lava under
+     it to explode, and blow the robot above it apart!  Also, since the shots
+     are sufficiently far from the robot, it won't try to dodge the blasts!
+     The Vulcan can be nice here: it's extremely high rate of fire turns the
+     lava into an exploding pool of fiery death (what vivid language :).
+     This also can work well against humans: fire above them so they dive
+     into the lava, then blast the lava around them.  Either you'll kill
+     them, or they'll accidentally shoot the lava and commit suicide - you
+     get their stuff either way."
+         -Scott Adams, via alt.games.descent 
+
+-- [2h] ---------- What are those yellow tunnels with sparkly things?
+
+    These are areas which recharge your energy.  If your energy level
+    is below 100, if you enter this area, your energy will be refilled
+    to 100.  Note that this area has no effect on your shield level.
+
+-- [2i] ---------- What are those purple areas with new ships?
+
+   These are enemy generators, and they are VERY DANGEROUS.  Try to
+   stay away from them, as new enemies pop out of them unexpectedly.
+   There is no way to destroy these areas (aside from blowing the
+   reactor, of course).
+
+-- [2j] ---------- What are the relative strengths of the weapons?
+
+   Espen Monnich wrote the following table:
+
+ "----------------------------------------------------
+  |Weapon     | Number | Damage  |  Total  | Energy  |
+  |           |of shots| pr.shot |  damage | pr.shot |
+  |-----------|--------|---------|---------|---------|
+  |Laser lv1  | 2 (4)* |  10     |  20 (30)| 0.25    |
+  |  "   lv2  | 2 (4)  |  11     |  22 (33)| 0.25    |
+  |  "   lv3  | 2 (4)  |  12     |  24 (36)| 0.25    |
+  |  "   lv4  | 2 (4)  |  13     |  26 (39)| 0.25    |
+  |-----------|--------|---------|---------|---------|
+  |Vulcan     | ca. 25 |  --     |  4      | 0       |
+  |-----------|--------|---------|---------|---------|
+  |Spreadfire | 3      |  6      |  18     | 0.25    |
+  |-----------|--------|---------|---------|---------|
+  |C. Missile | 1      |  25     |  25     | 0       |
+  |H. Missile | 1      |  27     |  27     | 0       |
+  |-----------|--------|---------|---------|---------|
+  |Bomb       | 1      |         |  24     | 0       |
+  ----------------------------------------------------
+
+  * () specifies the Quad laser. It shoots 4 shots, but does only 50% more 
+    total damage.    
+
+
+NOTE: This table is a bit unclear, becouse I have not considered the fire-
+      rate for each of the weapons and the speed of the shot itself. For 
+      example, the Spreadfire has a bit faster fire-rate than the Laser, 
+      and the fire-rate and the speed of the shots for the Vulcan is very 
+      high."
+
+
+Part [3].  CHEATS AND SECRETS
+
+-- [3a] ---------- Is there a list of secrets in Descent?
+
+    Adliber@aol.com writes:
+    "In level 4 there is a long reddish tunnel which has a gate at the 
+     end.. one you open the gate you see one of these purple areas on your 
+     right... about 3 green medium lifter robots show up out of this area.. 
+     if successful you blast them and three more show up you can shoot them 
+     until no more robots come out, and think that's it right?  Well now 
+     for the bonus... if you back out of the area through the gate you came 
+     in, and come back in to the same area again...more robots come out 
+     again... shoot them, until no more come out... the benefit is that 
+     when you shoot them you'll get the blue sphere that replenishes your 
+     shields... I did this about three times... (that is back out from the 
+     area, and re-enter) and was able to replenish my shields all three
+     times. After all the robots were killed for the 3rd time.. no more 
+     came out but I had replenished my shields from 25 to about 85!  By then 
+     I really needed the shields and it was the only place where I could 
+     replenish them... I found this by accident, and will try the same on 
+     other purple areas."
+
+     Adliber also writes:
+     "I found a hidden room by accident in Level 1...there is a hidden
+      room in the ceiling and it's full of goodies; it has about 3
+      or 4 packs of missiles and assorted ammo.  When you get to the yellow 
+      area with the floating "stars" that replenishes your energy... find 
+      one of the video screens on one of the corner walls...look up at the 
+      ceiling, and you will see (faintly) a door... shoot at it and you 
+      will be able to go up into that room... There are two entrances to 
+      this area but the easiest one to spot is the one by the video screen 
+      on the wall.  If you cannot see it... just shoot at the ceiling 
+      where you see the video screen in this area..."
+
+     First Level secrets by Sven Neuhaus:
+     "1) From the start, turn right/down.  Next intersection, turn right.
+      Turn left in front of the prison, turn right in front of the
+      ventilation.  Now turn either right or left.  The next corner
+      you are approaching has a secret entrance at the ceiling.  Contains
+      vulcan ammo and rockets.
+
+      2) From the start, turn left/down.  Follow the path.  Turn up to fly
+      into the new room.  Fly towards the left back corner.  The wall
+      there has a horizontal seam on it.  Fire at the door or fly close
+      to open it.
+
+      3) Inside the second secret, right behind the second secret's 
+      entrance, but at the ceiling.  Secret contains a Small Hulk and a 
+      Laser.
+
+      4) Inside the second secret, turn left after you entered the second
+      secret door.  Move down through the hole in the floor.  Turn right.
+      There's a secret door with a shield boost behind it.
+
+      5) From the start, turn right/down.  At the intersection, turn left.
+      There will be a hole in the ground.  Move down.  Fly forward slowly.
+      There is another hole in the ground at the very dark spot.  This
+      leads to a room with a small hulk, the vulcan cannon and some energy
+      boosts."
+
+-- [3b] ---------- What are the cheat codes?
+
+    Type the following directly in the game, regardless of your current
+    keyboard mapping setup.
+
+    GABBAGABBAHEY = Cheats enabled!
+    SCOURGE       = WowieZowie Weapons!
+    MITZI         = All Keys!
+    RACERX        = Invulnerability On/Off!
+    GUILE         = Cloak On/Off!
+    TWILIGHT      = Shields Recharged!
+    FARMERJOE     = Warp to Which Level?
+
+    You might want to change your "bomb" key to something that won't conflict
+    with these codes, otherwise you might blow up before you finish typing
+    it. :)
+
+    Note that when you use cheat codes, your score drops to 0 and you
+    can't save your game.  Hence, use these codes only as practice
+    runs.  (Thanks to adliber@aol.com)
+
+    Also, you can't use the cheat codes in a multiplayer game.  If you
+    use the TWILIGHT cheat when your shield is over 100, the cheat will
+    reset your shield strength to 100!   (Geoff Simmons)
+
+-- [3c] ---------- Undocumented Map features
+
+    The following features are undocumented:
+
+    In the map, hold down "S" and move the control around.  You can
+    pan the map this way.
+
+    If cheat codes are enabled (see above), hit "Alt-F" in the map screen.
+    The entire map will appear.
+
+-- [3d] ---------- A Walkthrough of Level 7
+
+    BIG thanks to Mike Lorant (mikel@ucc.su.oz.au, also "Dense" on
+    IRC's #descent) for writing this section.  Obviously, this section 
+    contains major spoilers.  Read at your own risk.
+
+    1. Getting the blue key
+
+    At the start of the level go straight ahead up the ramp and follow the
+    corridor around to the right.  At the room fly thru the far left hand 
+    door and into a large room with a passover bridge in it.  Then exit 
+    via the corridor directly above from where you started.  The corridor 
+    will bend to the left and then dip down the slope.  Fly through the 
+    corridor with the grating on the left hand side and out the other 
+    end.  Follow the corridor past a T junction and around through the 
+    rechargerator and over to the next T junction.  See diagram 1.  Turn 
+    left and grab the blue key.
+
+    Diagram 1
+       _____
+      /  R  \
+     /  ___  \     B = Blue Key
+    /  /   \  \    1 = 1st T junction
+   |  |_____|  |   2 = 2nd T junction
+   | 2   B   1 |   R = Rechargerator
+   |   _____   |   E = Entrance
+   |  |     |  |   X = Exit
+   |==|     |==|
+   | X|     |E |
+
+    2. Getting to the blue door
+
+    Head back to the second T junction and turn left where there should be a
+    door in front of you.  There will be grating on the left hand side with a
+    door down the end.  Continue up the rising corridor and down the other 
+    side until you enter a large spherical area and to the blue door on 
+    the southern side of the room.
+
+    3. Getting the yellow key
+
+    Pass through the small corridor into the room with a red star shaped
+    structure and exit straight ahead (upward direction).  As the corridor
+    points upwards watch out for the 2 cloaked Medium Lifters.  The corridor
+    will level out again and continue following it.  It will then dip a short
+    distance away and passes past a yellow grating with lava below it.  The
+    grating that is above you sometimes contains a Class 1 drone so watch out
+    for its missles.  It is recommended that if it is there you destroy it
+    because it can be a hinderance when tackling the next enemy.  The 
+    corridor will turn left at the bottom and at the end of it will be a 
+    Supermech firing missles that lock on.  Level out and grab the yellow 
+    key.
+
+    4. Getting to the yellow door
+
+    Return to the beginning of the level (where you started).  There will 
+    be a yellow door on the left hand side, just below and behind the 
+    ramp you came from.  See diagram 2. Go through the yellow door.
+
+    Diagram 2
+
+          |  |____
+       |  |R |   _Y
+     __|  |  |  |
+     __         |     S = Start
+       |        |     Y = Yellow door
+       |   __   |     R = Ramp
+       |  |  |  |
+       |  |  |S |
+
+    5. Getting the red key
+
+    Pass down the long dark corridor with grating on the left hand side 
+    with a yellow door down the end.  There will be a small cavity 
+    directly ahead which you can fly up.  Go through there and fly to the 
+    top.  Watch out for the Supermech firing missles which lock on.  
+    There will be a cloaking powerup at the top and just over the other 
+    side will be the red key.  Grab the red key.
+
+    6. Getting to the red door
+
+    Return to the start of the level and and fly up the ramp that you
+    initially flew through when getting the blue key.  At the end of the 
+    corridor go through the door straight ahead and you will enter a tiny 
+    corridor with a door down the end.  See diagram 3.
+
+    Diagram 3
+
+  ___| 2|_
+ /        \
+1   /\     |
+ \  \/     |    E = Entrance
+  \ ____   /    1 = Go through on way to Blue door
+       |  |     2 = Go through on way to Red door
+       /  |
+      /  /
+     | E|
+
+    As you enter the next room there will be a door on the top far left hand
+    side.  After going through that you will find another corridor that will
+    dip down downwards.  However, watch out for two secret doors behind you
+    that will open when you are halfway down the corridor.  Two Automated 
+    Scout Robots will come from those two chambers (left and right 
+    side).  Continue down to the end of the corridor into a large arena 
+    room.  The floor will be volcano shaped entrance with a red door on 
+    the inner northern end.  Go through the red door.
+
+    7. Killing the Shareware Big Boss
+
+    Note that the red door will be unopenable from the other side so you will
+    have no escape.  Read section [2d] for details on tactics to destroy
+    him.  Good luck!
+
+-- [3e] ---------- Quick 'n Dirty 3-D Descent
+
+    Think Descent is incredible as it is?  Imagine playing it in
+    a true 3D environment, and seeing your enemies literally float
+    in space in front of you...
+    
+
+Part [4].  MULTI-PLAYER CAPABILITY
+
+-- [4a] ---------- Can I play with other people?
+
+    Yes!  Descent is a full multi-player game as well.  You can
+    either link up with a fellow player via modem, serial cable, or
+    network.
+
+    One of the advantages that Descent has over other similar games is
+    that any player can join or leave the game at any time on a network.
+    
+    For modems, Descent's setup couldn't be easier.  For the vast
+    majority of modems, a simple ATZ sets things up for Descent, and
+    you're ready to go.  You can set this up in the multi-player setup
+    menu off the main menu.
+
+-- [4b] ---------- Does each computer require a distinct version of the
+                   software?
+
+    No and yes.  If you are running SHAREWARE DESCENT, you are free to
+    run a netgame from a single copy.  If you're running this REGISTERED
+    version, however, each computer must be using its own independent
+    copy of the software.
+
+-- [4c] ---------- Why do different computers play differently on a net 
+                   game?
+
+    When a Pentium and a 386 are playing on a network, there is an element
+    of "unfairness" to the 386-user.  In past games, such as Doom, the
+    system compensated by reducing the Pentium-user's display to match the
+    386 display.
+
+    However, Parallax and Interplay decided not to take this route, and
+    to have every computer play at the level it can play at.
+
+-- [4d] ---------- Can I play Descent on the Internet?
+
+    One of Descent's shining points is that it can be played over the
+    Internet using IHHD (Internet Head to Head Daemon - a program
+    that allows modem games to work over the internet).  It's almost
+    as fast, if not faster than a modem connection!  In order to get
+    started, you need to get the IHHD software compiled for the unix
+    machine you have your shell account on (sorry slip users).  On
+    IRC in the #descent channel, type /dcc chat descender.  then type
+    /msg descender files.  the rest is easy.  Once you have the IHHD
+    Binary for your system, find someone to play.  (there's almost
+    always someone on #descent in IRC who'd like to play).  One of
+    you runs "tcpanswer", the other runs "tcpdialer
+    machine_name_of_other_player".  Once you have connected, each of
+    you should exit your comm programs (leaving carrier up of
+    course), load Descent and select multiplayer game, then Establish
+    Null Modem Link.  Presto!  You've got a IHHDescent game going.
+
+    (thanks to Seth Delackner (dax@rahul.net) for this)
+
+-- [4e] ---------- Is there a good place to meet other players?
+
+    On the IRC (Internet Relay Chat), there is always someone willing
+    to play in the #descent channel.  Of course, they vary in
+    degrees of skill, but you can often find someone good to play
+    with.
+
+    There is also an IRC 'bot called Descender -- type "/msg
+    Descender !ls" to see what files you can get from it.  It
+    stores this FAQ and the IHHD software, among other things.
+
+    You can often find me (John) there as Bruin.  MSG me for a copy of
+    the most recent FAQ!
+
+-- [4f] ---------- A note about networking and Descent
+
+    (Thanks to mdmbkr on #descent on IRC for writing this section.)
+
+    Like most multi-player games, Descent uses packets to communicate
+    with other players in the network.  Each packet contains information
+    that each other player in the network uses to determine the
+    coordinates and other aspects of the players.  For example, say
+    you are playing in a 2 player network game.  Your computer will
+    broadcast packets to the other player's computer, and the other
+    player's computer will broadcast packets to your computer.
+
+    Like we mentioned above, Descent allows all computers in the
+    network to run at their full speed, unlike Doom.  Doom slows down
+    the entire network to the speed of the slowest computer
+    attached.  It does this by forcing synchronized transmission to
+    and from all of the players.  Descent, on the other hand, does
+    not require synchronized transmission.  This is why all of the
+    computers will run at their maximum speed, and that certain
+    delays (such as those associated with IHHD) do not affect the
+    playing speed of the game.
+
+    However, in some cases, long delays in the reception or
+    transmission of packets can yield unusual results.  Please do
+    not be alarmed; this is normal, especially if you are using
+    IHHD.
+    
+
+Part [5].  OTHER PROBLEMS
+
+-- [5a] ---------- Why can't I save my game in the middle of a level?
+
+    Mid-level saving of games WILL be implemented in the registered
+    version of Descent.  The shareware version does not incorporate
+    mid-level game saving.
+    
+-- [5b] ---------- I just died; where did all my stuff go?
+
+    Your stuff (weapons, energy, etc.) remain where you died.  Just fly back
+    where you died and gather all your stuff back.
+
+-- [5c] ---------- How can I skip past all the dialog in the beginning of
+                   the game?
+
+    Hit "Enter" to stop the scrolling, or hit "Esc" to stop the entire
+    dialogue and to bring you directly to the game.
+
+-- [5d] ---------- How can I avoid motion sickness?
+
+    Descent is a very immersive game, and you will likely still feel like
+    you're inside Descent's environment for a short time after playing.  Many
+    people complain of motion sickness, or feeling ill after playing a while.
+    Try to follow the following advice if you're having problems.
+
+    :: Blink occasionally.  During gameplay, you are staring intently
+       at the monitor, your eyes dry out, and you are subject to
+       strain, headaches, etc.  Blinking helps to yank you back
+       in the real world occasionally.  (Thanks to Jon Hylands)
+    :: Try different display sizes.
+    :: Try sitting closer/further from the display.
+    :: Try different machine speeds. 
+    :: Try different input devices.
+    :: Play on your friend's computer, and see if it is better/worse.
+    :: TAKE BREAKS WHILE YOU PLAY. 
+    :: If you have a sound card, try playing with/without the sound.
+
+    Of course, if you have any medical problems while playing this game,
+    stop playing IMMEDIATELY and call your doctor.
+
+-- [5e] ---------- I'm having hallucinations when I look away from the
+                   monitor.
+
+    You've been playing far too long, and you need sleep.  Go take a nap. :)
+
+-- [5f] ---------- Descent and Cyrix CPUs
+
+    If your game is locking up, try this:  
+
+    "Set Windows to give DOS programs 100% of the time slicing, and run
+     Descent from there.  The game will take longer to load, including
+     quite a bit of disk thrashing at one point...but will still be quite
+     playable."
+        -M J MacKenzie
+
+-- [5g] ---------- Advice for 4 MB memory setups
+    
+    "...the best setup seems to want emm386.exe with the RAM switch...
+     I still turn down the detail levels though because in combat it slows
+     down quite a bit.  Also, use smartdrive, about 256K.  Anything larger
+     eats into your RAM too much."
+        -Bradley Becker
+
+-- [5h] ---------- My frame rate is too slow.  Any suggestions?
+
+    Try the following, in order:  (Thanks again to mdmbkr on
+    #descent for help in writing this.)
+
+    SOFTWARE solutions:
+
+    :: Change the game detail to something simpler.  (F2)
+    :: Reduce the size of the screen.  (+ and -)
+    :: Switch to the status bar  screen instead of the cockpit view.
+       this increases speed, but minutely.
+    :: Turn off the music.  This will also dramatically increase
+       the framerate, especially if you have a less powerful CPU.
+       Also consider turning off the digital sound effects.  You can
+       use the setup program to make these changes.
+
+    HARDWARE solutions:
+
+    :: Make sure Smartdrive is loaded, as it has a drastic improvement.
+       See your DOS/Windows documentation for details (or just run
+       Memmaker -- this installs Smartdrive automatically).
+    :: Get a faster video board -- word is, the faster the video
+       board, the better.
+    :: Get more memory.
+    :: Get a faster computer.
+
+---------------------------------------------------------------------
+
+    Hope you all enjoyed reading this as much as I enjoyed writing it.
+    As a disclaimer, I do not work for any software company, and I am
+    just a satisfied gamer who is extremely impressed with the Descent
+    game engine.
+
+    If you have any contributions or comments to this FAQ, please send
+    them to me at decuirjd@netcom.com on the Internet.  You'll get full
+    credit.  Thanks!
+
+    Happy Descending!
+
+    JDD/2-9-95
+
+

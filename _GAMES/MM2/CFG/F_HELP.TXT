@@ -1,0 +1,162 @@
+                     FICHIER D'AIDE MICRO MACHINES 2
+                     -------------------------------
+
+
+        Nous avons essay‚ de rendre l'installation et le 
+fonctionnement de ce jeu aussi simples que possible. Cependant, en 
+raison du nombre important de cartes son, vid‚o, configurations et 
+autres logiciels pouvant se trouver sur votre systŠme, il se peut
+que le jeu ne fonctionne pas bien la premiŠre fois. Ce fichier est 
+con‡u pour vous aider … jouer si vous avez des problŠmes.
+
+Les sections suivantes traitent des:
+
+1.      PROBLEMES DE MEMOIRE
+
+2.      PROBLEMES DE SON
+
+
+------------------------------------------------------------------------
+1.      PROBLEMES DE MEMOIRE:-
+
+        
+        Le jeu n‚cessite 3400Ko de m‚moire libre. Sur un ordinateur
+typique de 4Mo (ou plus) vous devriez avoir cette quantit‚. Cependant,
+vos fichiers CONFIG.SYS et AUTOEXEC.BAT contiennent de nombreuses
+commandes qui chargent les programmes et prennent de la place dans la
+m‚moire de votre systŠme. Pour lib‚rer de la m‚moire, vous devez
+effacer ces lignes, et r‚initialiser votre systŠme. Consultez votre
+manuel DOS pour en savoir plus sur CONFIG.SYS et AUTOEXEC.BAT. Pour
+pouvoir retrouver votre systŠme tel qu'il ‚tait avant de jouer … Psycho 
+Pinball, il convient de faire une copie de ces fichiers, afin que vous
+puissiez les retrouver aprŠs. La proc‚dure est la suivante:
+
+
+(Message d'erreur "Pas assez de m‚moire pour lancer le jeu" affich‚ 
+aprŠs MM2 (enter))
+
+Remarque: Toutes les instructions suivantes (de 1 … 8) doivent ˆtre 
+effectu‚es dans le r‚pertoire "racine". Donc votre prompt doit ˆtre: 
+C:\ et non C:\MM2.
+
+1.      COPY CONFIG.SYS CONFIG.OLD (Enter)
+
+2.      COPY AUTOEXEC.BAT AUTOEXEC.OLD (Enter)
+
+3.      EDIT CONFIG.SYS (Enter) et annulez toutes les commandes qui 
+                        risquent d'occuper la m‚moire - mais pas celles 
+                        qui sont n‚cessaires pour la carte son ou le 
+                        lecteur CD (si applicable).
+
+4.      EDIT AUTOEXEC.BAT (enter) et annulez toutes les commandes qui 
+                        risquent d'occuper la m‚moire - mais pas celles 
+                        qui sont n‚cessaires pour la carte son ou le 
+                        lecteur CD (si applicable).Les commandes … 
+                        effacer sont souvent SMARTDRV, EMM386, QEMM et 
+                        tout ce qui comporte le mot CACHE.
+
+5.      R‚initialisez votre systŠme
+
+6.      MEM (Enter) pour voir si vous avez lib‚r‚ assez de m‚moire pour
+                        jouer - si vous n'en avez pas assez, ‚ditez les 
+                        fichiers CONFIG.SYS et AUTOEXEC.BAT, et 
+                        recommencez l'op‚ration.
+
+7.      Essayez de relancer MM2.
+
+8.      Si vous avez effac‚ des lignes dans vos fichiers CONFIG.SYS ou
+        AUTOEXEC.BAT pour lancer le jeu, vous devrez trŠs certainement 
+        les remettre pour que d'autres applications de votre systŠme 
+        fonctionnent correctement.
+
+        Soyons francs, ce n'est pas trŠs amusant. Si vous devez le 
+        faire pour que le jeu fonctionne, pourquoi ne pas faire une 
+        copie des fichiers CONFIG.SYS et AUTOEXEC.BAT, une fois que le 
+        jeu marche. Pour cela, tapez:
+
+        COPY CONFIG.SYS GAMECONF.SYS
+        COPY AUTOEXEC.BAT GAMEAUTO.BAT
+
+        Puis
+
+        COPY CONFIG.OLD CONFIG.SYS
+        COPY AUTOEXEC.OLD AUTOEXEC.BAT
+
+        pour retrouver votre configuration initiale.
+
+        Maintenant, avant de repasser par toutes ces ‚tapes, suivez les 
+        instructions suivantes … chaque fois que vous voulez jouer … 
+        MM2:
+
+        COPY GAMECONF.SYS CONFIG.SYS
+        COPY GAMEAUTO.BAT AUTOEXEC.BAT
+
+        R‚initialisez votre systŠme, jouez et si vous d‚sirez retrouver 
+        votre configuration initiale:
+
+        COPY CONFIG.OLD CONFIG.SYS
+        COPY AUTOEXEC.OLD AUTOEXEC.BAT
+
+        Un conseil:
+        Les versions les plus r‚centes de MS DOS ont un systŠme de menus 
+        pour les fichiers de configuration CONFIG.SYS et AUTOEXEC.BAT. 
+        Consultez votre manuel DOS au chapitre "MENUITEM".
+        Avec cette fonction, vous avez accŠs … un menu de configurations 
+        chaque fois que vous initialisez votre PC. Vous pouvez donc 
+        choisir 1 pour une configuration "normale", 2 pour les jeux,etc.
+
+------------------------------------------------------------------------
+2.      PROBLEMES DE SON:-
+
+        Si vous avez s‚lectionn‚ la configuration de votre carte dans la
+fonction SON et que le jeu n'‚met pas de sons, ou gŠle, il est probable
+que vous ayez l'un des problŠmes suivants:-
+
+1/      Si le jeu gŠle lorsque vous le lancez, il est probable qu'un 
+        autre p‚riph‚rique soit en conflit avec votre carte sonore. 
+        V‚rifiez qu'aucune autre carte n'a la mˆme configuration. 
+        Souvenez-vous que tous les dispositifs ont une valeur IRQ et DMA 
+        diff‚rente. Sur certains PC, les souris ont des valeurs IRQ qui 
+        peuvent causer problŠme. IRQ: 5 par exemple.
+
+2/      Si le jeu fonctionne, mais sans le son, il est probable que le 
+        jeu ne trouve pas votre carte son. Ceci peut ˆtre un problŠme 
+        avec les compatibles Soundblaster qui ne sont pas 100% 
+        compatibles, bien que nous n'ayons pas rencontr‚ de problŠmes 
+        avec celles que nous avons essay‚es. Sinon, il se peut que votre 
+        carte ne soit pas configur‚e correctement, ou qu'elle ait des 
+        valeurs identiques … celles d'un autre p‚riph. Il est possible 
+        que vous ayez entr‚ des valeurs qui ne correspondent pas … la 
+        configuration de la carte. Consultez le manuel de votre carte 
+        sonore pour savoir comment choisir et ajuster sa configuration.
+
+CONFIGURATIONS INCOMPATIBLES!!!
+
+        Les valeurs IRQ sup‚rieures … 7 ne peuvent pas ˆtre utilis‚es.
+Cette restriction s'applique … de nombreux jeux, et si elle est r‚gl‚e 
+sur une valeur plus ‚lev‚e, vous devez la r‚gler sur 2,3,5 ou 7.
+Consultez le manuel de votre carte sonore pour savoir comment le faire.
+
+CONSEILS SUPPLEMENTAIRES...
+
+        Si vous ne connaissez pas la configuration de votre carte, vous
+devez choisir la carte, puis s‚lectionner l'option "Aucune id‚e...". 
+Ceci ne touche pas aux configurations existantes et lorsque le jeu
+fonctionne, le programme essaie de d‚tecter la configuration de votre
+carte. Si votre carte est configur‚e correctement avec le logiciel qui
+l'accompagne, cette option devrait marcher.
+
+        Il est donc recommand‚ de suivre cette proc‚dure:-
+
+        a/      Si vous connaissez la configuration, s‚lectionnez-la.
+
+        b/      Si vous n'ˆtes pas s–r, s‚lectionnez l'option "Aucune
+                id‚e". Cependant, souvenez-vous que si vous avez
+                s‚lectionn‚ manuellement la configuration, et que vous
+                vous ˆtes tromp‚, la configuration du logiciel de votre
+                carte son aura ‚t‚ modifi‚e. Vous devrez remettre le 
+                systŠme en route pour r‚initialiser votre carte. 
+                S‚lectionnez ensuite "Aucune id‚e" et le jeu adoptera 
+                la configuration de votre logiciel.
+
+

@@ -1,0 +1,22 @@
+Here is a listing of all the files in this directory, and what they are
+for.   Please be aware that Apogee & 3D Realms cannot help with
+inquiries on these products.  They are provided "as is".
+
+ARTFORM.TXT     -> .ART File Format Documentation
+BSETUP.EXE      -> Setup program for Build
+BUILD.EXE       -> Main Build Executable
+BUILDHLP.EXE    -> Help File for Build
+DUKELVLS.TXT    -> Credits for Duke Level Design
+EDITART.EXE     -> Art Editing Program
+KEXTRACT.EXE    -> This program will let you decompile the .GRP data files
+KGROUP.EXE      -> This program creates a .GRP data file
+LOOKUP.DAT      -> Build Data File
+NAMES.H         -> Build Data File
+PALETTE.DAT     -> Build Data File
+SEHELP.HLP      -> Help File for Build
+SETUP.DAT       -> Build Data File
+STHELP.HLP      -> Help File for Build
+TABLES.DAT      -> Build Data File
+_SE.MAP         -> Sector Effector Demo Map
+_ST.MAP         -> Sector Tag Demo Map
+_ZOO.MAP        -> Zoo Map (Has everything in the game in one Level)

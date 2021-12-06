@@ -1,0 +1,46 @@
+This is a quick and dirty hack to make DESCENT2 run without its CD ROM in
+the drive.  This makes NO modifications to Descent II and was not made using
+any reverse engineering of D2 code.  All it does is emulate Microsoft's
+published specifications for MSCDEX.
+
+To make this substitution work, you must make a disk that looks like the descent
+CD ROM.  This can be a floppy, a hard disk partition, or anything you can set
+the volume label on. (This makes direct substitution of a Novell volume
+difficult.)  For local drives this is trivial.  First make a D2DATA directory
+off of the drive that will emulate your CDROM.  This can be empty.  Second,
+set the volume label to DESCENT_II.  Lastly run FAKED2 followed by the drive
+you just set up.
+
+If you are running from the same drive as you set up you will get a message
+saying you can't run Descent from the CDROM.  To fix this use the SUBST command
+to make a duplicate of the drive.  Example, to duplicate drive C on drive E
+use the command "SUBST E: C:\" before running FAKED2.
+
+Example for faking drive A:
+
+A:
+MD D2DATA
+LABEL DESCENT_II
+FAKED2 A:
+C:
+CD GAMES\DESCENT
+D2
+
+Example for faking drive C:
+
+C:
+MD D2DATA
+LABEL DESCENT_II
+SUBST E: C:\
+FAKED2 E:
+CD GAMES\DESCENT2
+DESCENT2
+
+First warning - This may not work under Windows.
+
+Last warning - If MSCDEX is not present, attempting to use Redbook audio could
+cause weird stuff to happen.
+
+This program is released to the public domain.
+
+

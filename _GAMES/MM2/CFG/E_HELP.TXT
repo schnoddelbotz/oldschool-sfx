@@ -1,0 +1,195 @@
+                     MICRO MACHINES 2 HELP FILE
+                     --------------------------
+MM2 is a DOS program.  Do not try to install or run from within 
+Windows 3.0 or 3.1.  You should choose EXIT WINDOWS from the FILE 
+menu of the PROGRAM MANAGER to get to the DOS prompt.
+
+We have tried our best to make this game install and run as
+easily as possible.  However, due to the incredible variety of PC's,
+soundcards, video cards, system settings and other software that may
+be on your system, there may be circumstances where the game does not
+work first time.  This file is designed to help you adjust things so
+that the game runs, if you are having problems.
+
+There follows sections on:
+
+1.      MEMORY PROBLEMS
+
+2.      SOUND PROBLEMS
+
+
+------------------------------------------------------------------------
+1.      MEMORY PROBLEMS:-
+
+        
+        The game requires 3400K of free system memory.  On a typical
+4Meg (or more) machine there should be this much free.  However, if
+your CONFIG.SYS and AUTOEXEC.BAT files contain lots of commands that
+load programs in, that take away your system memory, then you may not
+have enough.  The way to free up memory is to remove offending lines
+in these files, and then re-boot your system.  See your DOS manual for
+details on CONFIG.SYS and AUTOEXEC.BAT.  So that you can easily get
+your system back to how it was after you have played Micro Machines 2
+it is a good idea to make a backup copy of these files, which can then
+be restored afterwards.  So, the procedure is as follows:
+
+("Not enough memory to run game" error displayed after MM2 (enter))
+
+Please Note:- All of the following instructions 1 to 8 should be carried
+              out, while in your "root" directory. e.g. your prompt
+              should be C:\ not C:\MM2.
+
+1.      COPY CONFIG.SYS CONFIG.OLD (enter)
+
+2.      COPY AUTOEXEC.BAT AUTOEXEC.OLD (enter)
+
+3.      EDIT CONFIG.SYS (enter) and delete any commands that you suspect 
+                        may be taking memory away - but not ones that 
+                        will be required for your soundcard, or CD drive 
+                        (if applicable).
+
+4.      EDIT AUTOEXEC.BAT (enter) and delete any commands that you 
+                        suspect may be taking memory away - but not ones 
+                        that will be required for your soundcard, or CD 
+                        drive (if applicable). The most likely offenders 
+                        are SMARTDRV, EMM386, QEMM and anything with the 
+                        word CACHE in it.
+
+5.      Re-boot your system
+
+6.      MEM (enter) to see if you have succeeded in freeing up enough
+                        memory to play the game - if not edit CONFIG.SYS
+                        and AUTOEXEC.BAT some more, if in doubt chop it
+                        out!
+
+7.      Try running MM2 again.
+
+8.      If you have had to take things out of your CONFIG.SYS or
+        AUTOEXEC.BAT files, in order to get the game to run, then you
+        will almost certainly have to put them back in to make other
+        applications on your system function properly.
+
+        Let's face it, this is not good fun. If you do find yourself
+        having to do this, to get the game to run, then why not make
+        a copy of your game CONFIG.SYS and AUTOEXEC.BAT, once you have
+        got it working. So, :-
+
+        COPY CONFIG.SYS GAMECONF.SYS
+        COPY AUTOEXEC.BAT GAMEAUTO.BAT
+        
+        Then :-
+
+        COPY CONFIG.OLD CONFIG.SYS
+        COPY AUTOEXEC.OLD AUTOEXEC.BAT
+
+        to get things back to the setup you had before you started.
+
+        Now, instead of going through all of that, every time you want
+        to play MM2, just do the following :-
+
+        COPY GAMECONF.SYS CONFIG.SYS
+        COPY GAMEAUTO.BAT AUTOEXEC.BAT
+
+        Reboot, play, and if you want to go back to your original setup
+        again :-
+
+        COPY CONFIG.OLD CONFIG.SYS
+        COPY AUTOEXEC.OLD AUTOEXEC.BAT
+
+Helpful Hint!
+
+Later versions of MS DOS have a menu system for your setup files
+CONFIG.SYS and AUTOEXEC.BAT. Look in your DOS manual under "MENUITEM".
+Using this, you can have a menu of setups, every time you boot up your
+PC. i.e. You can choose 1 for A "Normal" Setup, 2 for "Games" etc.
+
+ALTERNATE METHOD - Boot from a System Disk
+
+If you do not want to change your AUTOEXEC.BAT and CONFIG.SYS files you 
+can cause your system to boot off a floppy disk by creating a System 
+Disk. Please see your DOS manual (under the FORMAT command) for details.  
+You can then copy your AUTOEXEC.BAT and CONFIG.SYS files onto this disk.  
+When you power-on with the floppy in drive A it will be these files, not 
+the files on your hard drive, that will be used.  This way you can edit 
+them to remove all lines that do not relate to your sound card or CD 
+drive without being concerned that you may mess up your system settings.  
+So, the procedure would be as follows:
+
+1.   Create a System Disk, see your DOS manual under FORMAT for details.
+      e.g.  type FORMAT A: /S (enter) with a BLANK disk in the drive!!!
+
+2.   Type COPY C:\CONFIG.SYS A:\CONFIG.SYS (enter)
+
+3.   Type COPY C:\AUTOEXEC.BAT A:\AUTOEXEC.BAT (enter)
+
+4.   Type EDIT A:\CONFIG.SYS (enter)  Then delete all lines that do not 
+     relate to your sound card or CD drive (if applicable) and save the 
+     file.
+
+5.   Type EDIT A:\AUTOEXEC.BAT (enter)  Then delete all lines that do 
+     not relate to your sound card or CD drive (if applicable) and save 
+     the file.
+
+6.   Turn your machine on or reset it with the System Disk in drive A.
+
+7.   Run MM2, e.g 
+           type C: (enter)
+           type CD \MM2 (enter)
+           type MM2 (enter)
+
+
+------------------------------------------------------------------------
+2.      SOUND PROBLEMS:-
+
+If you have selected your card's settings in the SOUND utility, 
+and the game still produces no sound, or crashes, then it is most 
+likely that you have one of the following problems:-
+
+1/      If the game crashes when you try to run it, then it is most 
+        likely that some other device is conflicting with your sound 
+        card. Please ensure that no other cards, share the same 
+        settings. Remember that all devices must have a seperate
+        address and interrupt.  On some PC's, mice tend to have
+        inconvenient interrupts i.e. Interrupt 5.
+
+2/      If the game runs, but with no sound, then it is most likely
+        that the game cannot find your sound card. This may be a problem
+        on Soundblaster compatibles which are not 100% compatible, 
+        although we have not found any problems on the ones that we have 
+        tried. Other than this, it is most likely that your card is not 
+        set up correctly, or is set to values that conflict with other 
+        devices. Or, it is possible that you have entered values that 
+        are not the same as the card settings.  Please refer to you 
+        sound card manual for specific instructions on how to choose and 
+        set the settings.
+
+INCOMPATIBLE SETTINGS !!!
+
+It should be noted that interrupt values above 7 cannot be used.
+This restriction is common to many games, and if you currently have it 
+set to a higher value you will have to change the setting to either 
+2,3,5 or 7. Refer to your sound card manual for details on how to do 
+this.
+
+A FEW EXTRA WORDS...
+
+If you really have no idea what your card's settings are, then
+you are best advised to choose the card, then select the option "I 
+have no idea ...". What this does is leave all your existing settings
+alone and when the game runs it will try to detect the settings of
+your card.  If you have your card set up correctly using the software
+that came with it, then this option should work.
+
+        Therefore, it is probably best to follow this procedure:-
+
+        a/      If you definitely know your settings, select them.
+
+        b/      If you are not quite sure, select the "Don't know"
+                option. However, bear in mind that if you have tried
+                to select the settings manually, and got something
+                wrong, then you will have changed your sound card
+                software settings. So, you will have to reboot to
+                re-initialise your card. Then select "Don't Know"
+                and the game will go by your software's settings.
+
+

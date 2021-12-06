@@ -1,0 +1,67 @@
+================================================================
+Title                   : CZPSYCHO.WAD   
+Author                  : Chris Zahrt
+Email Address           : ZAHRT@INS.INFONET.NET
+Misc. Author Info       : I am a 14 year old DOOM adict from Everly, Iowa 
+                          that loves everything about DOOM. I am a sysop of 
+                          a BBS with many DOOM and DOOM related files, many 
+                          other things also.
+                          THE SHOP (712) 834-2317
+
+Description             : An awsome small level for DOOM ][ with a
+                          Peace sign and a Ying-Yang on the floor.
+                          (Just thought I would be different)
+                          Designed for DEATHMATH.
+                          Their is no end to level so don't look for it.
+                          I did that to to keep the snoops from accidentally
+                          passing the level. (Man does that piss me off)
+                          Great with ALTDEATH
+
+Additional Credits to   : The person who rebuilt this level the first time
+                          STEVE MOORADIAN
+                          Id the makers of the KICK ASS game DOOM & DOOM ][
+                          The peoples that brought us DEEP and DEU
+================================================================
+
+* Play Information *
+
+Episode and Level #     : MAP01
+Single Player           : Yes - just to scope out the sights
+Cooperative 2-4 Player  : I'm not a wimp therefor I do not make levels for 
+                          WIMPS!!
+Deathmatch 2-4 Player   : YES - It rules especially for 3 or 4 players.
+Difficulty Settings     : no - there are no enemies
+New Sounds              : no - none needed
+New Graphics            : Just the graphics you see when you blow your DOOM
+                          friend off the planet
+Demos Replaced          : None - Why have demos when you going to be DOOMIN
+
+* Construction *
+
+Base                    : Modified PSYCHO.WAD created by
+Build Time              : 4 HOURS, Many more hours playing deathmatch with 
+                          friends
+Editor(s) used          : DEEP 6.01 AND DEEP 6.13b
+Known Bugs              : The flies that are about to be flying around your
+                          dead and bloody carcus.
+
+
+* Copyright / Permissions *
+
+Authors may NOT use this level as a base to build additional
+levels.  
+
+You MAY distribute this WAD, provided you include this file, with
+no modifications.  You may distribute this file in any electronic
+format (BBS, Diskette, CD, etc) as long as you include this file 
+intact.
+
+
+
+* Where to get this WAD *
+
+FTP sites : Not yet
+
+BBS numbers:  THE SHOP - (712) 834-2317
+
+Other:HAPPY DOOMIN!!!!!!!!!!!!!!!!!!!!!!!

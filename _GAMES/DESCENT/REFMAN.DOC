@@ -1,0 +1,549 @@
+            __          __  ___    __        __   ____    __
+           |  ||\      |  ||___\   \ \      / /    ||    |  |
+           |  ||  \    |  | ____    \ \    / /     ||    |  |
+           |  | \   \  |  ||____\    \ \  / /      ||    |  |
+           |  |___\  | |  |______     \ \/ /       ||    |  |____
+           |_________| |_________\     \__/       _||_   |_______\
+                                        
+                    The DEVIL V1.01 reference manual
+		    
+This manual is directly extracted out of the source-code. If DEVIL's 
+behaviour differs from what is described here, you have found a bug and it
+would be nice if you report this to me (ubdb@rz.uni-karlsruhe.de).
+
+Have a look at the statistics: 'file->level info'.
+
+Contents
+ [0] Introduction.
+  [0a] What this file is for&how you use it.
+  [0b] Definitions.
+ [1] Basics.
+  [1a] The different modes.
+  [1b] Tagging.
+  [1c] Moving around.
+  [1d] The grid.
+  [1e] Selecting current object.
+ [2] The menu on the right side.
+  [2a] Moving in the menu.
+  [2b] Side effects.
+  [2c] Cube menu.
+  [2d] Side menu.
+  [2e] Point menu.
+  [2f] Thing menu.
+  [2g] Wall menu.
+  [2h] Internal menu.
+  [2i] Data.
+ [3] Inserting&deleting,growing&shrinking objects.
+  [3a] Cube mode.
+ +[3b] Side mode.
+  [3c] Point mode.
+  [3d] Thing mode.
+  [3e] Wall mode.
+  [3f] All modes.
+ [4] Special functions.
+  [4a] Set exit.
+  [4b] Fit bitmap.
+  [4c] Align bitmaps.
+  [4d] Light shading.
+  [4e] Make room.
+  [4f] Recalculate textures.
+  [4g] Drawing modes.
+  
+******************************************************************************
+  
+[0] Introduction.
+
+ [0a] What this file is for&how you use it.
+  This manual is a reference manual. Therefore if you're a beginner with
+  DEVIL you should at least read the Tutorial (BUILDLEV.DOC). Here you can
+  find a complete list of the functions of DEVIL and their exact behaviour.
+ 
+  I only refer to the menupoints, not to the hotkeys in this manual.
+  Referring to the menupoints is done with 'menu->menupoint', so if you're
+  searching the description of a special function try to search it this way
+  (try case insensitive search).
+ 
+  All sections with a '+' in the contents are new or changed since the last
+  release of DEVIL (V1.0c).
+  
+ [0b] Definitions.
+  Here are some words and their meaning:
+   -origin,x/y/z-axis: These words refer to the permanent, not changing
+    coordinate system of the level.
+   -your origin,x/y/z-axis: This is your own coordinate-system. The origin
+    is in the middle of your screen, the x-axis goes horizontal on your
+    screen (from left to right), the y-axis goes vertical on your screen
+    (from bottom to top) and the z-axis goes through the middle of your
+    screen (from your eyes in the level).
+   -cube: a thing with eight points and six sides.
+   -side: a cube has six sides.
+   -wall: a door/switch/texture.
+   -thing: robots/powerups/hostages/starting places/reactor.
+   -object: cubes/sides/walls/things.
+   
+******************************************************************************
+
+[1] Basics.
+ [1a] The different modes.
+  There are five different modes in DEVIL:
+   Cube, Side, Point, Wall and Thing mode.
+  You can change between the modes with the buttons on the right side of
+  the screen in the middle. You can see there also the 'Internal' button.
+  This button only changes the menu above these buttons, but not the
+  mode.
+  
+  There are also five current objects in DEVIL:
+   -the current cube is marked green.
+   -the current side on the current cube is marked with a violet, a yellow
+    and two red lines.
+   -the current point is marked with a red 3D-cross.
+   -the current wall is marked green.
+   -the current thing is marked green.
+
+------------------------------------------------------------------------------
+
+ [1b] Tagging.
+  'select->tag': tag current object.
+  'select->tag all: tag all objects of current mode
+   (i.e. in cube mode, tag all cubes).
+  'select->tag special': is only useful in two modes:
+   -In point mode you tag all corners of the current point.
+   -In side mode you can lock this side, this means, the texture of this side
+    is not calculated automatically anymore if the shape of the side changes.
+  'select->use cube tag': works only in side/point-mode. Tags all 
+   sides/points of the tagged cubes (other tags in this mode are cleared).
+  'select->use side tag': works only in point-mode. Tags all points of
+   the tagged sides (other tags in this mode are cleared).
+  'select->tag box': if box is off, draw tag box on the last position. 
+   if box wasn't drawn before you do this, the tag box is inited at the last
+   loaded starting place as a cube with 30*gridsize as size (direction of the
+   starting place).
+   If tag box is already on, tag all objects of current mode in box.
+   (cubes&sides are only tagged if they're completely in the box).
+  'select->new tag box': if box if off, init the tag box 45*gridsize for your
+   nose with size=30*gridsize aligned on your current direction.
+   If tag box is already on.
+  shift+left button: you can drag up a two-dimensional tag box on
+   your screen. If you press the left button again, all objects of
+   the current mode in this box as far as you can see are tagged.
+   (cubes&sides only if they're completely in the box).
+  
+------------------------------------------------------------------------------
+   
+ [1c] Moving around.
+  The seven/eight buttons in the lower right corner with the arrows:
+ 
+  There are two modes for moving in DEVIL:
+   -Moving yourself (lowest button='Move')
+   -Moving things (lowest button='Modify')
+  If the tagbox is on the 'Move'-mode splits up in two modes:
+   -Moving yourself (lowest, right button='You').
+   -Moving the box (lowest, right button='Box').
+  Turning is not affected by the lowest, right button, only moving.
+  
+  If you're in 'Move'-mode, the tag box is off and you press the left button
+  you turn yourself around the axis of the arrow, if you press the right
+  button you move in the direction of the arrow:
+   -left/right upper button: your neg./pos. z-axis.
+   -middle upper/lower button: your pos./neg. y-axis.
+   -lower left/right button: your neg./pos. x-axis.
+  
+  If you're in 'Move'-mode and the tag box in on and you press the right
+  button, you'll move the box, not yourself. Left button is unchanged.
+ 
+  If you're in 'Modify'-mode it depends on the current mode what you're
+  moving:
+   -Cube mode: You move all tagged cubes in the direction of your axis'.
+   -Side mode: Same with sides.
+   -Point mode: Same with points.
+   -Wall mode: You can't move walls, you must move the side with the wall.
+   -Thing mode: If the thing has it's own direction (is a little ship)
+    you move/turn the thing in his own coordinate system. Otherwise you 
+    move the thing in your coordinate system.
+    
+  Also you can use the following menu-points:
+   'move->beam to current object': sets your position near to the current
+    object.
+   'move->align to ...': aligns your direction to the given axis.
+         
+------------------------------------------------------------------------------
+
+ [1d] The grid.
+  You can turn on/off the grid with 'edit->grid on/off'. If the grid is
+  turned on all moved points/things are snapped to the grid. The grid
+  size is changed with 'g' and 'G'.
+         
+------------------------------------------------------------------------------
+
+ [1e] Selecting current object.
+  You can select your current object by clicking on the screen:
+   -left button: select thing (you must click the middle point of
+    the not-drawn line if you want to click a ship).
+   -right button: select cube/side/point. You must click one point 
+    of the cube: the point becomes the current point, the nearest
+    side becomes the current side and the nearest cube becomes the
+    current cube.
+   -shift+right button: select wall (you must click on the intersection
+    of the four lines).
+  'select->next cube', 'select->next side', 'select->next point',
+  'select->next thing, 'select->next wall':
+   cube/side/point/thing/wall with the next number. if the current object
+   is the last one, select number 0.
+  'select->prev cube', 'select->prev side', 'select->prev point',
+  'select->prev thing, 'select->prev wall':
+   cube/side/point/thing/wall with the previous number. if the current object
+   is the first one, select the last one.
+  'select->choose cube', 'select->choose wall', 'select->choose thing':
+   select the current object by number.
+  'select->change to sidecube':
+   if the current cube has a neighbour cube at the current side, select
+   this neighbour cube as current cube.
+  'select->go to wall':
+   set current cube&side to the cube&side with the current wall.
+
+******************************************************************************
+  
+ [2] The menu on the right side.
+  Only special entries are mentioned in the sections to the menus.
+  
+  [2a] Moving in the menu.
+   In the menu on the right side you see a '*' before the current entry.
+   You can move this '*' with 'cursor up' and 'cursor down' and change the
+   entry with 'return'. 
+   
+   Sometimes when you select an item the current menu is replaced by a list of
+   possible choices. You can select an item from this list with 'space' or
+   'return' or the left mousebutton. The old value is marked with
+   a '#'. You can scroll up and down with 'page up' and 'page down' or
+   the right mousebutton in the upper/lower half of the list, go
+   to the beginning of the list with 'Home' and to the end with 'End'.
+   If you go in the line with the topic, you can enter a number which is
+   not available on the list.
+   
+   If there's more than one item to select, 'space' marks the
+   items and 'return' ends the selection and changes the entry. With 'Esc'
+   you can end the selection without changing the entry. 
+   
+   If not explicit stated, the change is done with all tagged objects.
+   You can avoid this by pressing 'ctrl' when selecting the item.
+
+------------------------------------------------------------------------------
+  
+  [2b] Side effects.
+   Some menu entries have side effects when changed. That means that DEVIL
+   changes more than just the entry you've selected. You can suppress 
+   side effect by pressing 'shift' when selecting the entry you would like
+   to change. You can also combine 'shift'+'ctrl' to change only the current
+   object without tagged objects and without any side effects.
+
+------------------------------------------------------------------------------
+  
+  [2c] Cube menu.
+   cube type:
+    -normal: just a normal cube.
+    -fuel center: an energy station.
+                  'value' has no further meaning.
+    -repair center: won't work at all.
+    -reactor: you must set the cube with the reactor to this type.
+     DEVIL will warn you when you try to save a level with a reactor in
+     a 'normal'-cube.
+    -producer: a materialization center for robots.
+               If you select 'produces' you will get the list of robots
+	       the center produces. If you've selected more than one
+	       robot-type, DESCENT will select the type randomly each time
+	       a robot is produced. Every producer produces 3 robots if
+	       activated and can be activated 3 times.
+   cube light: The light in the inner cube. Robots&the reactor and
+    other players are affected by this.
+   avg.p. light: The average of the light in the corners of this cube.
+    If you change this value the light of all corners of this cube is changed
+    to the given value.
+
+------------------------------------------------------------------------------
+  
+  [2d] Side menu.
+   origin for t2: you can turn the second texture around 0, 90, 180 and
+    270 degrees on the first texture with this.
+   avg.p. light: The average of the light in the corners of this side.
+    If you change this value the light of all corners of this side is changed
+    to the given value.
+
+------------------------------------------------------------------------------
+  
+  [2e] Point menu.
+   txt-x, txt-y: The position of this point in the two-dimensional 
+    texture-space. You can change this value, but better is if you use
+    'edit->fit bitmap'.
+
+------------------------------------------------------------------------------
+  
+  [2f] Thing menu.
+   type: the type of the thing.
+    If you change this, the ID (i.e. type of robot) is also changed 
+    (of course). The orientation of the object is not affected if you
+    change from an object with orientation to an object without.
+    In the line below this line is the ID of the object.
+    -robot:
+     drop type: what for a thing is dropped by this robot.
+      -nothing: I'm not quite sure if this is really nothing.
+      -default: The robot drops sometimes an item. Which one and how
+       often is probably defined in the .pof-files.
+     behaviour: 'path' and 'hide' won't work in DESCENT, :-(.
+     texture: if you want to change the texture of a robot. The robot
+      is then only in this texture, so you have no eyes etc. anymore.
+    -hostage: The head of the hostage is in the top-direction of a ship.
+     no: useless, I think.
+    -item: something to pickup.
+     graphics: Well, if you think it's funny you can change this, but
+      normally it's changed automatically with the ID.
+    -reactor: the reactor. Only one per level and don't forget to change
+     the cube type.
+     texture: You can change the texture of the reactor. But makes this
+      really sense?
+
+------------------------------------------------------------------------------
+  
+  [2g] Wall menu.
+   Part of the entries in this menu are changed also on the corresponding wall
+   on the other side of the wall (marked with D). Suppress this with pressing
+   shift when selecting the entry.
+   wall-type (D):
+    -blow door: This door opens only if you shoot at it. Hitpoints
+       are set automatically to 100 (normal hostage door).
+      animation (D): Select the animation for your door here. Sets 
+       automatically the texture1&texture2 on both sides.
+    -normal door:
+      open-at-end: This door opens if the reactor is blown up.
+      key (D): the key you need to open the door.
+  switchtype:
+   -alternate exit: if you fly through this exit and in your msn-file
+     a secret level is available for this level, you enter the secret-level.
+   -normal exit: normally exit the mine.
+   -producer: if you select this all tagged producers are activated by this
+     switch. 
+    switches: how many producers are triggered by this switch?
+     (you can't change this value). The producers currently triggered
+     are marked red.
+   -open door: if you select this all tagged doors are opened by this switch.
+    switches: how many doors are opened by this switch?
+     (you can't change this value). The doors currently triggered are marked
+     red.
+  hitpoints: If you set this to a value, you can blow the wall up,
+   independent of it's type.
+  texture1&texture2: The textures on both sides of the wall. If you want
+   to change just one wall, try changing texture in side mode.
+   
+------------------------------------------------------------------------------
+  
+  [2h] Internal menu.
+   Zoom: this determines your viewing-angle 
+    (changed with '+' & '-' in 'Move'-mode).
+   ZoomS: the multiplier for '+' and '-'.
+   Visib.: how far you can see ('A' and 'Y' or 'Z').   
+   VisiS.: multiplier for 'A' and 'Y'.
+   Movef.: the (damned, what the word for 'Schrittweite') for yourself
+    (changed with '*' and '/').
+   PMovef.: the %$&(%&$%% for objects.
+   MoveS.: multiplier for '*' and '/'.
+   Angel: the rotation angle for yourself (changed with '7' and '9').
+   PAngel: the rotation angle for things.
+   AngelS: multiplier for '7' and '9'.
+   Grid: gridsize ('g' and 'G').
+   GridS: multiplier for 'g' and 'G'.
+   ConnD.: the distance two points can have if you try to connect them
+    with 'makeroom' or 'delete' in side mode.
+   UConn.: the distance two points can have if you try to connect them
+    while inserting a macro.
+   clickangle: this is the angle of the 'magical beam' used for clicking.
+    If you click a spot on the screen, a cone is created, with the top on
+    the screen and the nearest object is clicked. Be careful, this
+    is the cosine of the angle.
+   thingsize: size of the little 3d-crosses.
+   door bend: the distance between the side and the middle-point of the wall.
+   xpos, ypos, zpos: your current position.
+   map angle: this is for the DESCENT-like map. All lines between two sides
+    are drawn when the angle between the two sides is larger than this
+    angle. This is the cosine of this angle.
+
+------------------------------------------------------------------------------
+  
+  [2i] Data.
+   With 'drawing->data' you can toggle drawing of the data-structure
+   which is corresponding with the current object so you can modify
+   the bytes by yourself.
+
+******************************************************************************
+
+ [3] Inserting&Deleting objects.
+  [3a] Cube mode.
+   'edit->insert': Insert the current macro on the current side. The macro
+    is inserted in a way that the point which was the current point when
+    creating this macro lays on the current point. After inserting the
+    macro all objects of the macro are tagged.
+   'edit->insert special': Insert the current macro like in 'edit->insert'
+    but also connect the side from the macro with the side of the level.
+    The shape of the side of the macro is changed if they don't fit
+    together and if DEVIL can find the points belonging together.
+   'edit->delete': Delete all tagged cubes. On the sides where they have
+    neighbour cubes is a standard-side inserted. If there's a wall in
+    the cube, the cube is not deleted.
+   'edit->enlarge': Make the current cube bigger. The center of the cube is
+    calculated and then the distance of all points to this center is 
+    multiplied with the zoom factor (ZoomS. in 'internal'-menu).
+   'edit->shrink': Make the current cube smaller. Same as enlarge but 
+    with dividing instead of multiplying.
+   'macros->insert scaled': Insert the current macro like in 'edit->insert',
+    but scale it with a given factor.
+   'macros->insert fast,scaled': Insert the current macro like in
+    'edit->fast insert', but scale it with a given factor.
+ 
+------------------------------------------------------------------------------
+  
+  [3b] Side mode.
+   'edit->insert special': If the current side is a connection between two
+    cubes, you insert a side in both sides of the cubes, therefore
+    you kill the connection. You don't double the points this way,
+    so if you move the point belonging to one of the both cubes you still
+    also change the other cube (you can avoid this with 'fast insert'
+    or with inserting points). You can't do this with sides with walls.
+   'edit->insert': Like 'insert special' but the cubes are seperated 
+    completely, so you can move one of the cubes independent from the
+    other one.
+   'edit->delete': Delete all tagged sides&the current side, therefore make
+    connections between the side which is tagged and an opposite side which 
+    DEVIL tries to find. If DEVIL doesn't find this side, try to make the
+    connection more obvious (the distance between the points smaller,
+    the maximum distance is ConnD. in the internal menue).
+   'edit->special delete': Connect the side which is tagged with the current
+    side. DEVIL tries to find the corresponding points. If the connection
+    is ambiguous, try to make the connection more obvious
+    (the distance between the points smaller, the maximum distance is UConn.
+    in the internal menue).
+   'edit->enlarge': Make the current side bigger. The center of the side is
+    calculated and then the distance of all points to this center is 
+    multiplied with the zoom factor (ZoomS. in 'internal'-menu).
+   'edit->shrink': Make the current side smaller. Same as enlarge but 
+    with dividing instead of multiplying.
+
+------------------------------------------------------------------------------
+  
+  [3c] Point mode.
+   'edit->insert': If you do this with a point which is involved in more
+    than one cube, all sides of the current cube depending on this point
+    are inserted, so you can move this point independent from the other
+    cubes.
+
+------------------------------------------------------------------------------
+  
+  [3d] Thing mode.
+   'edit->insert': Insert the standard item.
+   'edit->delete': Delete all tagged items.
+
+------------------------------------------------------------------------------
+  
+  [3e] Wall mode.
+   'edit->insert': Insert a standard wall at the current side.
+   'edit->delete': Delete all tagged walls.
+
+------------------------------------------------------------------------------
+  
+  [3f] All modes.
+   'edit->delete all': Delete all tagged objects in every mode. This is
+    useful if you've inserted a macro the wrong way because it deletes
+    all things&walls&cubes. You're asked before DEVIL deletes all tagged
+    objects.
+   'macros->make macro': Save all tagged cube and tagged things as a macro
+    in memory. All walls between two tagged cubes are copied also. The
+    current side is the side which will be connected when inserting
+    the macro (further description see 'insert' in cube mode).
+   'macros->save macro': Save the macro from memory to disk.
+   'macros->choose macro': Choose a macro from disk.
+     
+******************************************************************************
+
+ [4] Special functions.
+  [4a] Set exit. ('edit->set exit')
+   With this function you can set the exit side at the end of the exit
+   corridor. The exit corridor starts with the exit door and ends with
+   the exit side (it's the corridor where DESCENT steers your glider).
+   Just set the exit on the last wall of the corridor. Sometimes
+   DESCENT will end the game directly after you've flown through the
+   exit door (I think the corridor never works with the .msn-files but I 
+   hope I get a fix until next release).
+
+------------------------------------------------------------------------------
+  
+  [4b] Fit bitmap. ('edit->fit bitmap')
+   With this function you can move the textures on the sides. Just move/turn
+   around with the normal move/turn keys/buttons (incr.&decr. of 
+   rotation angle&moving factor work also). In 'Move'-mode you will
+   move the shape, in 'Modify'-mode you can stretch and turn the shape.
+   The following keys have special functions:
+    -'g': Recalculate the shape of the side.
+    -'G': Fit the bitmap on the side. The bitmap will be stretched so it
+     fits on the side. Useful if you want to make large doors/signs.
+    -'f': Leave fit bitmap-mode and save changes.
+    -'F': Leave fit bitmap-mode and store changes to all tagged sides.
+    -'Esc': Leave fit bitmap-mode and discard changes.
+
+------------------------------------------------------------------------------
+  
+  [4c] Align bitmaps. ('edit->align bitmaps')
+   This feature you can use to align bitmaps so all bitmaps fit together.
+   To do this, tag all sides you want to align, and then go with the current
+   side on one of these sides. Then make 'edit->align bitmaps'. DEVIL will
+   take the current side and align all tagged sides in the neighbour cubes
+   (but only one per cube) which have a line with the current side common
+   and untag them. Then it goes on with the aligned sides and repeats this
+   as often as there are tagged sides in the neighbour cubes with common
+   lines.
+
+------------------------------------------------------------------------------
+  
+  [4d] Light shading. ('edit->light shading')
+   This function can be used to make a corridor with a very light start cube
+   and a pitch-dark end cube. Just tag cubes so they're forming a corridor,
+   then set the light of the start side which is the side in the startcube
+   opposite of the next tagged cube and the light of the endside. Then
+   use 'edit->light shading'. DEVIL will then shade each corner seperately
+   from start to end side. The inner cube light is also shaded.
+   The following algorithm is used to set the lights:
+   (0) 'current side'=start side, 'light'=start light, 'light add'=difference
+       between start and end light divided through the number of cubes.
+   (1) set the light on the 'current side' in each corner to the
+       corresponding 'light'.
+   (2) add 'light add' to 'light'. Set the inner cube light to the average
+       of all eight corners. 
+   (3) set light at the opposite side of the 'current side' to 'light'.
+   (4) search side with next cube. 'current side' is the side of the
+       next cube which corresponds to the found side.
+   (5) if this is not the end cube jump to (1).
+
+------------------------------------------------------------------------------
+  
+  [4e] Make room. ('edit->make room')
+   This is useful if you want to make big rooms. It deletes all sides between
+   tagged cubes. Just tag all cubes you want to connect execute this function.
+   It will search for every side without a connection a corresponding side.
+   A corresponding side is found if a side is found with all four points
+   nearer than 'ConnD' from the 'internal'-menu. 
+
+------------------------------------------------------------------------------
+  
+  [4f] Recalculate textures.
+   Just recalculates the shape of the side in texture-space. This you need
+   only if you've locked several sides and now want to recalculate their
+   shape in texture-space. Normally this is done automatically by DEVIL.
+
+------------------------------------------------------------------------------
+  
+  [4g] Drawing modes.
+   With 'drawing->cubes', 'drawing->things', 'drawing->walls' you can
+   turn on/off the drawing of the named objects. 'drawing->data' is
+   described in the 'Data' section in the 'Menu' chapter.
+   'drawing->lines' calculates a while and then presents a DESCENT-like
+   map. You can move points in this map and do all other things. 
+   DEVIL will change back to normal mode if you insert or delete a cube
+   or point.
+   'drawing->x-tagged' is for turning on/off the extra lines in tag mode.
+   Just try it.

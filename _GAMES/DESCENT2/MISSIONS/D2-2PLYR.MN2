@@ -1,0 +1,9 @@
+name = DogFight!
+type = anarchy
+num_levels = 4
+dog1.rl2
+dog2.rl2
+dog3.rl2
+dog4.rl2
+
+

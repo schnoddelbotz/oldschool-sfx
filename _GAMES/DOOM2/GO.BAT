@@ -1,0 +1,1 @@
+ipxsetup -file h2hmud01.wad -skill 4 -warp 01

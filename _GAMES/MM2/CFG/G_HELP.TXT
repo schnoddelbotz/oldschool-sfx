@@ -1,0 +1,165 @@
+                     MICRO MACHINES 2-HILFEDATEI
+                     ---------------------------
+
+
+        Wir haben versucht, dieses Spiel so zu gestalten, da· es 
+mîglichst leicht zu installieren und zu betreiben ist. Aufgrund der 
+gro·en Vielfalt von PCs, Soundkarten, Videokarten, 
+Systemkonfigurationen und anderer Software, die Sie eventuell betreiben, 
+kann es manchmal vorkommen, da· das Spiel nicht sofort korrekt lÑuft. 
+Diese Datei soll Ihnen dabei helfen, Ihr System spielgerecht 
+einzustellen, falls Sie Probleme haben.
+
+Folgende Bereiche werden behandelt:
+
+1.      SPEICHERPROBLEME
+
+2.      SOUND-PROBLEME
+
+------------------------------------------------------------------------
+1.      SPEICHERPROBLEME:
+
+        
+        Das Spiel erfordert 3400 KB freien Systemspeicher. Auf einem 
+her-kîmmlichen GerÑt mit 4 MB (oder mehr), sollte soviel Platz verfÅgbar 
+sein. Falls Ihre CONFIG.SYS- und AUTOEXEC.BAT-Dateien jedoch viele 
+Befehle enthalten, die Programme laden, welche auf Systemspeicher 
+zugreifen, kînnen Speicherprobleme auftreten. Sie kînnen Speicherplatz 
+freistellen, indem Sie die betreffenden Zeilen in diesen Dateien lîschen 
+und einen Neustart durch-fÅhren. Genaue Informationen zu CONFIG.SYS und 
+AUTOEXEC.BAT finden Sie in Ihrem DOS-Handbuch. Um Ihr System nach dem 
+Spielen von "Micro Machines 2" leicht wieder in seinen Originalzustand 
+zurÅckzuversetzen, sollten Sie Backup-Kopien dieser Dateien anfertigen, 
+die anschlie·end wieder geladen werden kînnen. Wenden Sie dazu folgendes 
+Verfahren an:
+
+(Fehlermeldung "Not enough memory to run game" [Nicht genÅgend Speicher, 
+um Spiel zu betreiben] erscheint, wenn Sie MM2 (Enter) eingeben.)
+
+Bitte beachten Sie: Die folgenden Schritte (1 - 8) sollten von Ihrem
+      Wurzelverzeichnis aus durchgefÅhrt werden. Das Systemzeichen 
+      sollte also beispielsweise C:\ sein, nicht C:\MM2.
+
+1.      COPY CONFIG.SYS CONFIG.OLD (Enter)
+
+2.      COPY AUTOEXEC.BAT AUTOEXEC.OLD (Enter)
+
+3.      EDIT CONFIG.SYS (Enter). Lîschen Sie alle Befehle, die scheinbar 
+                        den Speicher beeinflussen, au·er denen fÅr Ihre 
+                        Soundkarte oder Ihren CD-ROM-Treiber 
+                        (falls erforderlich).
+                        
+
+4.      EDIT AUTOEXEC.BAT (Enter). Lîschen Sie alle Befehle, die 
+                        scheinbar den Speicher beeinflussen - au·er 
+                        denen fÅr Ihre Soundkarte oder Ihren 
+                        CD-ROM-Treiber (falls benîtigt). VerdÑchtig sind 
+                        vor allem SMARTDRV, EMM386 und jegliche Zeilen 
+                        mit dem Wort CACHE.
+                        
+
+5.      Starten Sie Ihren Computer neu. 
+
+6.      Geben Sie MEM (Enter) ein, um zu sehen, ob Sie genug Speicher 
+                        fÅr das Spiel freigestellt haben. Falls nicht, 
+                        editieren Sie CONFIG.SYS und AUTOEXEC.BAT noch 
+                        weiter. (Nur keine falsche ZurÅckhaltung!)
+
+7.      Versuchen Sie nun erneut, MM2 zu starten.
+
+8.      Wenn Sie Dinge aus Ihrer CONFIG.SYS- oder AUTOEXEC.BAT-Datei
+        entfernen mu·ten, um das Spiel betreiben zu kînnen, mÅssen Sie 
+        sie zum Betreiben anderer Anwendungen hîchstwahrscheinlich 
+        wieder einfÅgen.
+
+        Dies nach jedem Spiel zu tun, ist natÅrlich kein Spa·. Die beste 
+        Lîsung besteht darin, Kopien Ihrer CONFIG.SYS- und AUTOEXEC.BAT-
+        Spieldateien anzufertigen, nachdem Sie sich vergewissert haben, 
+        da· diese funktionieren. Dazu geben Sie folgendes ein:
+
+        COPY CONFIG.SYS GAMECONF.SYS
+        COPY AUTOEXEC.BAT GAMEAUTO.BAT
+
+        Und dann:
+
+        COPY CONFIG.OLD CONFIG.SYS
+        COPY AUTOEXEC.OLD AUTOEXEC.BAT
+
+        Damit stellen Sie Ihr ursprÅngliches Setup wieder her.
+
+        Anstatt dies nun jedesmal zu wiederholen, wenn Sie MM2 
+        spielen mîchten, folgen Sie einfach diesem Verfahren:
+
+        COPY GAMECONF.SYS CONFIG.SYS
+        COPY GAMEAUTO.BAT AUTOEXEC.BAT
+
+        FÅhren Sie einen Neustart durch, spielen Sie, und kehren Sie 
+        danach folgenderma·en zu Ihrem ursprÅnglichen Setup zurÅck:
+
+        COPY CONFIG.OLD CONFIG.SYS
+        COPY AUTOEXEC.OLD AUTOEXEC.BAT
+
+
+Kleiner Tip!
+
+        Neuere Versionen von MS-DOS haben ein MenÅsystem fÅr Ihre Setup-
+        Dateien CONFIG.SYS und AUTOEXEC.BAT. Schlagen Sie dazu in Ihrem 
+        DOS-Handbuch unter "MENUITEM" nach. 
+        Damit kînnen Sie fÅr jedes Starten Ihres Computers ein MenÅ 
+        einrichten, z.B. mit 1 fÅr "Normal", 2 fÅr "Spiele" etc. 
+
+------------------------------------------------------------------------
+2.      SOUND-PROBLEME:
+
+        Haben Sie im SOUND-Setup die Einstellungen Ihrer Karte gewÑhlt, 
+und das Spiel generiert noch immer keinen Sound oder stÅrzt ab, dann 
+haben Sie wahrscheinlich eines der folgenden Probleme:-
+
+1/      StÅrzt das Spiel ab, wenn Sie es zu betreiben versuchen, dann 
+        besteht wahrscheinlich ein Konflikt zwischen Ihrer Soundkarte 
+        und einem anderen Programm. Stellen Sie sicher, da· keine 
+        anderen Karten die gleichen Einstellungen verwenden. Jedes GerÑt 
+        benîtigt eine separate Adresse und Interrupt-Einstellung. Bei 
+        einigen PCs kann die Maus einen unpassenden Interrupt-Wert 
+        haben, z.B. Interrupt 5.
+
+2/      LÑuft das Spiel, jedoch ohne Sound, dann kann Ihr Spiel 
+        Ihre Soundkarte wahrscheinlich nicht finden. Dies kann bei 
+        Soundblaster-kompatiblen Karten vorkommen, die nicht zu 100% 
+        kompatibel sind, obwohl bei unseren Tests keine solchen Probleme 
+        aufgetreten sind. Ein anderer Grund kann sein, da· Ihre 
+        Soundkarte nicht korrekt oder auf Werte eingestellt ist, die mit 
+        anderen GerÑten in Konflikt stehen. Vielleicht haben Sie auch 
+        Werte eingegeben, die nicht denen Ihrer Karte entsprechen. 
+        Genaue Anweisungen, wie Sie die korrekten Werte wÑhlen und 
+        einstellen, finden Sie im Handbuch zu Ihrer Soundkarte.
+
+INKOMPATIBLE EINSTELLUNGEN!!!
+
+        Beachten Sie bitte, da· Sie keine Interrupt-Werte Åber 7 wÑhlen 
+kînnen. Diese BeschrÑnkung gilt fÅr viele Spiele, und falls Sie zur Zeit 
+einen hîheren Wert eingestellt haben, mÅssen Sie ihn auf 2, 3, 5 oder 7 
+Ñndern. Im Handbuch zu Ihrer Soundkarte finden Sie eine Anleitung dazu.
+
+NOCH ETWAS...
+
+        Wenn Sie gar keine Ahnung haben, welche Einstellungen Ihre Karte 
+hat, dann wÑhlen Sie am besten Ihre Karte und die Option 
+"Keine Ahnung!...". In diesem Fall bleiben Ihre derzeitigen 
+Einstellungen erhalten, und das Spiel versucht, die Werte Ihrer Karte zu 
+bestimmen. Haben Sie Ihre Karte mit der dazugehîrigen Software korrekt 
+eingestellt, dann sollte diese Option problemlos funktionieren.
+
+        Folgen Sie also am besten diesen Schritten:-
+
+        a/      Wenn Sie Ihre Werte genau kennen, dann wÑhlen Sie sie.
+
+        b/      Sind Sie sich nicht ganz sicher, dann wÑhlen Sie die 
+                "Keine Ahnung"-Option. Denken Sie jedoch daran, da· Sie, 
+                falls Sie eine manuelle Einstellung versucht haben und 
+                etwas schief lief, die Einstellungen Ihrer Soundkarten-
+                Software geÑndert haben. Sie mÅssen daher einen Neustart 
+                durchfÅhren, um Ihre Karte neu zu initialisieren. WÑhlen 
+                Sie dann "Keine Ahnung", und die neuen Werte werden vom 
+                Spiel akzeptiert.
+

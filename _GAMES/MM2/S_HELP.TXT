@@ -1,0 +1,163 @@
+ARCHIVO DE AYUDA DE MICRO MACHINES 2
+
+Hemos hecho todo lo que hemos podido para que este juego sea f cil de 
+instalar y ejecutar. Sin embargo, debido a la incre¡ble variedad de 
+ordenadores personales, tarjetas de sonido y tarjetas de v¡deo que 
+existen, a los ajustes particulares de tu sistema y a otros productos de 
+software que puedes tener instalados en ‚ste, pueden darse 
+circunstancias en las que el juego no funciona a la primera. Este 
+archivo est  pensado para, si tienes problemas, ayudarte a ajustar todas 
+esas cosas de manera que el juego funcione.
+
+A continuaci¢n encontrar s las siguientes secciones:
+
+1. PROBLEMAS CON LA MEMORIA
+
+2. PROBLEMAS CON EL SONIDO
+
+------------------------------------------------------------------------------
+
+1. PROBLEMAS CON LA MEMORIA
+
+El juego necesita 3.400K de memoria RAM libres. En una m quina de 4MB 
+(o m s) no deber¡a haber problema en disponer de esa cantidad de 
+memoria. Pero si tus archivos CONFIG.SYS y AUTOEXEC.BAT contienen muchos 
+comandos para cargar programas que ocupan parte de esa memoria, puede 
+que no tengas espacio libre suficiente. La forma de liberar memoria es 
+retirar las l¡neas de esos archivos que est n causando el problema y 
+volver a arrancar el ordenador. Consulta el manual del DOS para ver m s 
+detalles sobre CONFIG.SYS y AUTOEXEC.BAT. Para que tu ordenador vuelva a 
+estar en las mismas condiciones que estaba antes de jugar a Micro 
+Machines 2, es una buena idea hacer una copia de seguridad de esos archivos 
+para luego volver a ponerlos en la memoria. El procedimiento es el 
+siguiente.
+
+(Despu‚s de teclear MM2 y pulsar Enter aparece el siguiente mensaje 
+de error "Not enough memory to run game" [Memoria insuficiente para 
+ejecutar el juego])
+
+Atenci¢n: tienes que seguir las instrucciones 1-8 desde tu directorio 
+"ra¡z", por lo que la se¥al del sistema deber¡a ser C:\, no C:\MM2.
+
+1. Teclea COPY CONFIG.SYS CONFIG.OLD y pulsa Enter.
+
+2. Teclea COPY AUTOEXEC.BAT AUTOEXEC.OLD y pulsa Enter.
+
+3. Teclea EDIT CONFIG.SYS y pulsa Enter. Despu‚s borra todos los 
+comandos que sospeches que est n ocupando memoria innecesariamente, pero 
+no los que te vayan a hacer falta para la tarjeta de sonido o para el 
+controlador de CD (si procede).
+
+4. Teclea AUTOEXEC.BAT y pulsa Enter. Despu‚s borra cualquier comando 
+que sospeches que est  ocupando memoria, pero no los que te vayan a 
+hacer falta para la tarjeta de sonido o para el controlador de CD (si 
+procede). Los culpables m s probables son SMARTDRV, EMM386, QEMM y todo 
+lo que lleve la palabra CACHE.
+
+5. Vuelve a arrancar el ordenador.
+
+6. Teclea MEM y pulsa Enter para ver si has liberado suficiente memoria 
+para que el juego funcione. Si no es as¡, edita CONFIG.SYS y 
+AUTOEXEC.BAT un poco m s. Si dudas sobre algo, p‚gale un tajo.
+
+7. Prueba otra vez a poner MM2 en funcionamiento.
+
+8. Si has tenido que sacar cosas de tus archivos CONFIG.SYS y 
+AUTOEXEC.BAT para que el juego funcione, lo m s seguro es que luego 
+tengas que volver a meterlas para que otras aplicaciones de tu sistema 
+puedan funcionar correctamente.
+
+No nos enga¥emos, esto es una lata. Si tienes que meter y sacar cosas 
+cada vez que quieras jugar, lo mejor es que hagas una copia de los 
+archivos CONFIG.SYS y AUTOEXEC.BAT del juego una vez que hayas 
+conseguido que funcione. Para ello teclea:
+
+COPY CONFIG.SYS GAMECONF.SYS
+COPY AUTOEXEC.BAT GAMEAUTO.BAT
+
+A continuaci¢n teclea:
+
+COPY CONFIG.OLD CONFIG.SYS
+COPY AUTOEXEC.OLD AUTOEXEC.BAT
+
+para que los archivos vuelvan al estado en que estaban antes de que 
+empezaras a jugar.
+
+En vez de tener que repetir este largo proceso, cuando quieras jugar a 
+MM2, s¢lo tienes que teclear lo siguiente:
+
+COPY GAMECONF.SYS CONFIG.SYS
+COPY GAMEAUTO.BAT AUTOEXEC.BAT
+
+Vuelve a arrancar el ordenador, juega y, si quieres volver a tener los 
+archivos como estaban, teclea:
+
+COPY CONFIG.OLD CONFIG.SYS
+COPY AUTOEXEC.OLD AUTOEXEC.BAT
+
+­Una sugerencia £til!
+
+Las £ltimas versiones del MS DOS tienen un sistema de men£s para los 
+archivos del sistema CONFIG.SYS y AUTOEXEC.BAT. Busca el apartado 
+"MENUITEM" en el manual del DOS. Utilizando este comando puedes tener un 
+men£ de configuraciones, cada vez que arranques tu ordenador podr s 
+escoger 1 para una configuraci¢n "est ndar", 2 para "juegos", etc.
+
+---------------------------------------------------------------------------------
+
+2. PROBLEMAS CON EL SONIDO
+
+Si has seleccionado los ajustes de tu tarjeta de sonido en el programa 
+SOUND (sonido) pero el juego no produce ning£n sonido o deja de 
+funcionar, lo m s probable es que se presenten uno de los siguientes 
+problemas.
+
+1/ Si el juego se detiene cuando est s intentando ejecutarlo, lo m s 
+probable es que haya un dispositivo en conflicto con tu tarjeta de 
+sonido. Aseg£rate de que no hay ninguna otra tarjeta compartiendo los 
+mismos ajustes. Recuerda que todos los dispositivos tienen que tener una 
+direcci¢n y una interrupci¢n diferentes. En algunos ordenadores 
+personales, los ratones tienen interrupciones conflictivas, 
+ej. Interrupci¢n 5.
+
+2/ Si el juego funciona pero no produce ning£n sonido, lo m s probable 
+es que no pueda encontrar la tarjeta de sonido. Este problema puede 
+presentarse con tarjetas que son compatibles con Soundblaster pero no 
+100%, aunque nosotros no hemos tenido problemas con las que hemos 
+probado. Si no es eso, puede que tu tarjeta no est‚ ajustada 
+correctamente o que los valores de los ajustes est‚n en conflicto con 
+los de otros dispositivos. Tambi‚n puede ser que hayas introducido unos 
+valores que no se corresponden con los ajustes que requiere la tarjeta. 
+Consulta el manual de tu tarjeta de sonido para ver las instrucciones 
+espec¡ficas para escoger y realizar los ajustes.
+
+­AJUSTES INCOMPATIBLES!
+
+Ten en cuenta que las interrupciones no pueden tener valores superiores 
+a 7. Muchos otros juegos presentan la misma restricci¢n y si tu tarjeta 
+de sonido est  ajustada con un valor superior a ‚se, tendr s que 
+cambiarlo por 2, 3, 5 ¢ 7. Consulta el manual de tu tarjeta de sonido 
+para ver detalles sobre c¢mo hacer esto.
+
+UNAS PALABRAS M S
+
+Si no tienes ni idea de cu les son los ajustes de tu tarjeta de sonido, 
+lo mejor que puedes hacer es seleccionar el nombre de tu tarjeta y 
+seleccionar la opci¢n "No tengo ni idea". De esta manera todos los 
+ajustes se quedan como est n y cuando el juego empiece a funcionar, 
+tratar  de encontrarlos. Si ajustaste tu tarjeta correctamente 
+utilizando el programa que vino con ella cuando la compraste, esta 
+opci¢n solucionar  el problema.
+
+Por lo tanto, lo mejor es seguir este procedimiento:
+
+a/ Si sabes los ajustes de tu tarjeta, selecci¢nalos.
+
+b/ Si no est s seguro, selecciona la opci¢n "No tengo ni idea". 
+Pero ten en cuenta que si has intentado introducir los ajustes a mano y 
+has hecho algo mal, habr s cambiado los ajustes que hiciste con el 
+programa que vino con la tarjeta. As¡ que, tendr s que volver a arrancar 
+el ordenador para re-inicializar la tarjeta. Luego selecciona "No tengo 
+ni idea" y el juego funcionar  con los ajustes del programa que vino con 
+la tarjeta cuando la compraste.
+

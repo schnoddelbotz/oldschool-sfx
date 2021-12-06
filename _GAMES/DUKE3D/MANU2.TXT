@@ -1,0 +1,107 @@
+[Setup]
+;Setup File for Duke Nukem 3D
+SetupVersion = "1.3D"
+; 
+; 
+[Screen Setup]
+; 
+; 
+;ScreenMode
+; - Chained - 0
+; - Vesa 2.0 - 1
+; 
+ScreenMode = 1
+ScreenWidth = 640
+ScreenHeight = 480
+; 
+; 
+Shadows = 1
+Environment = ""
+Detail = 1
+Tilt = 1
+Messages = 1
+Out = 0
+ScreenSize = 8
+ScreenGamma = 52
+[Sound Setup]
+; 
+; 
+FXDevice = 0
+MusicDevice = 0
+FXVolume = 236
+MusicVolume = 248
+NumVoices = 8
+NumChannels = 2
+NumBits = 16
+MixRate = 22000
+MidiPort = 0x330
+BlasterAddress = 0x220
+BlasterType = 6
+BlasterInterrupt = 5
+BlasterDma8 = 1
+BlasterDma16 = 5
+BlasterEmu = 0x620
+ReverseStereo = 0
+; 
+; 
+SoundToggle = 1
+VoiceToggle = 1
+AmbienceToggle = 1
+MusicToggle = 0
+[KeyDefinitions]
+; 
+; 
+Move_Forward = "Up" "Kpad8"
+Move_Backward = "Down" "Kpad2"
+Turn_Left = "Left" "Kpad4"
+[die komplette Tastenbelegung]
+Steroids = "R" ""
+Quick_Kick = "`" ""
+Next_Weapon = "'" ""
+Previous_Weapon = ";" ""
+; 
+; 
+[Controls]
+; - Keyboard                  - 0
+; - Keyboard and Mouse        - 1
+; 
+ControllerType = 0
+JoystickPort = 0
+MouseSensitivity = 32768
+ExternalFilename = "EXTERNAL.EXE"
+EnableRudder = 0
+MouseAiming = 0
+MouseButtonClicked2 = ""
+JoystickButtonClicked7 = ""
+MouseAnalogAxes0 = "analog_turning"
+MouseDigitalAxes0_0 = ""
+JoystickAnalogAxes0 = "analog_turning"
+GamePadDigitalAxes1_1 = "Move_Backward"
+; 
+; 
+[Comm Setup]
+; 
+; 
+ComPort = 2
+IrqNumber = ~
+UartAddress = ~
+PortSpeed = 9600
+ToneDial = 1
+SocketNumber = ~
+NumberPlayers = 2
+ModemName = ""
+InitString = "ATZ"
+HangupString = "ATH0=0"
+DialoutString = ""
+PlayerName = "Hackerle"
+RTSName = "DUKE.RTS"
+PhoneNumber = ""
+ConnectType = 0
+CommbatMacro#0 = "An inspiration for birth control."
+CommbatMacro#1 = "You're gonna die for that!"
+CommbatMacro#2 = "It hurts to be you."
+[...telefon-nummern....]
+[Misc]
+Executions = 57
+RunMode = 0
+Crosshairs = 1

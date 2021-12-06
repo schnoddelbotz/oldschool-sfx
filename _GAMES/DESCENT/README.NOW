@@ -1,0 +1,34 @@
+
+     DESCENT Registered
+     1.0->1.4a Update Patch
+
+
+This 1.4a version includes support for :
+ --  Enhanced screen resolutions up to 640x480
+ --  Additional support for VR headsets/Head Mounted Devices
+ --  The ability to play net games across routers
+ --  Assorted bug fixes
+See the readme.txt after installing for conplete update information.
+
+Please make sure that your installed, registered version of Descent 
+has no unofficial modifications (i.e. hacks, level editor, etc.).
+If so, re-install Descent 1.0 before running this patch.
+
+To install this update/patch, copy all files into your \DESCENT directory and 
+type "PATCH".
+
+This will NOT update/patch Descent Shareware version.
+
+After installation, view the README.TXT for the latest version changes and 
+additions.
+
+If you have problems installing the patch: 
+ --  Backup any Pilot profiles (*.PLR), save-game files (.SG?), demos (.DEM), or
+     additional levels you have installed (File names can vary).
+ --  Delete all of the files in your Descent directory
+ --  Re-install the original 1.0 Retail version.
+ --  Copy the 1.4a update files into the \DESCENT directory.
+ --  Run the PATCH program to update Descent.
+ --  Test the Descent program.
+ --  Restore your savegames, demos, and additional levels.
+

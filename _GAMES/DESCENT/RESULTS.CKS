@@ -1,0 +1,53 @@
+; ** CHKSALL ** Checksum-Calculator file. Do not modify...
+; Taken from path: D:\SPIELE\DESCENT
+       COPYING         1601273
+          LINK           12677
+      MAKEFILE          107906
+   PALETTE.256         1011885
+    HMIDET.386         1278874
+    HMIDRV.386         4967426
+   HMIMDRV.386         6763831
+  DESCENT2.ADV          120055
+   DESCENT.B50          140454
+   DESCENT.BAT           12286
+    LAUNCH.BAT            4914
+    COPYING.CB          279713
+   DESCENT.CFG           25030
+    SERIAL.CFG            8719
+   DESCENT.DEM       180940603
+    COPYING.DJ          138178
+  DCNTSPEC.DOC          259229
+      DSGE.DOC          692282
+    REFMAN.DOC         2138469
+       DES.EXE        94229121
+  DESCENTR.EXE        94229121
+      DMAX.EXE        94229125
+      DSGE.EXE         2272603
+   EXTRACT.EXE         2066710
+      GO32.EXE         8247499
+   HOGFILE.EXE         2692778
+   HOGUTIL.EXE         1917135
+   MAKEHOG.EXE         3845917
+   PCXVIEW.EXE         1263015
+     SETUP.EXE        34923122
+   DESCENT.FAQ         3835905
+   GODLIKE.HEX           80254
+    DESCENT.HI           14307
+   DESCENT.HOG       605922363
+  DESCENTG.INI          362863
+   DESCENT.M50           81509
+    README.NOW          109549
+   DESCENT.PHX          170924
+   DESCENT.PIG       646687280
+  HACKERLE.PLR           81328
+   QUATTRO.PLR           73825
+  HACKERLE.SG0         5195197
+  HACKERLE.SG1         2380081
+  HACKERLE.SG2         6036140
+  HACKERLE.SG4         8880013
+  HACKERLE.SG5         8839393
+  HACKERLE.SG6         7292013
+  HACKERLE.SG8         9433296
+  HACKERLE.SG9         8605546
+Total Checksum  :   1854501736
+; Program Terminated succesfully.

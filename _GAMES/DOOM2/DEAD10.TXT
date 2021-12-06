@@ -1,0 +1,59 @@
+===========================================================================
+Title                   : dead10.wad
+Date Finished           : 15/01/95
+Author                  : Keith McDonnell
+Email Address           : keithm@orlie.supernet.ab.ca
+Other Files By Author   :dead 1-9
+Misc. Author Info       : 
+
+Description             : level 10 get some weapons first, very difficult 
+			  all monsters present and listen before you act.
+Additional Credits to   : Mike McDonnell for playtesting
+===========================================================================
+DOOM II file
+
+New level WAD           : Yes
+Sound PWAD Only         : No
+Music PWAD Only         : No
+Graphic Addon Only      : No
+Dehack Patch Only       : No 
+.LMP Only               : No
+Other                   : No 
+Required To Have In Dir : 
+
+* Play Information *get some weapons first
+Map #                   : Map 10
+Single Player           : Yes
+Cooperative 2-4 Player  : Yes
+Deathmatch 2-4 Player   : Yes
+Difficulty Settings     : Not implemented
+New Sounds              : No
+New Music               : No
+New Graphics            : No
+Demos Replaced          : None
+
+* Construction *
+
+Base                    : New level from scratch
+Build Time              : approx.5hrs 
+Editor(s) used          : edmap v1.22
+Known Bugs              : none
+May Not Run With...     :
+
+* Copyright / Permissions *
+
+Authors MAY use this level as a base to build additional levels.  
+
+
+You MAY distribute this WAD, provided you include this file, with
+no modifications.  You may distribute this file in any electronic
+format (BBS, Diskette, CD, etc) as long as you include this file 
+intact.
+
+* Where to get this WAD *
+
+FTP sites: ftp.cdrom.com
+
+BBS numbers:
+
+Other:

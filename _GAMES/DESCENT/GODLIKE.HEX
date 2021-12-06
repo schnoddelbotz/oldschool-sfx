@@ -1,0 +1,22 @@
+godlike.hex.reg.dcnt.zip contains: dcntspec.doc
+------------------------------------------------------------------------------
+This file is for people that would like to cheat at the Registered Version
+of Descent. This file contains hex addresses that apply only to the
+registered version. 
+
+This is basically a follow up to my descent.godlike.plr files you may have 
+seen. You may have been disappointed to find out they didn't work. More than 
+likely it is because that file will ONLY patch the shareware version of 
+descent. So, if you are sad, stuck on a level, and know how to hex edit 
+... then you are in luck. Now you have the dcntspec.doc.
+
+What? You don't know how to hex edit!? That's okay, look for ...
+
+Raymond Leach's "dplredit"	or
+Andrew Pye's soon to be released "DSGE" for the Commercial Release of 
+Descent.
+
+If you have any questions, comments, suggestions, etc please write to:
+
+Brian C. McDonald
+gs01bcm@panther.gsu.edu

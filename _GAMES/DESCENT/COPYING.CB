@@ -1,0 +1,85 @@
+This is file "copying.cb".
+
+This document describes the terms for distributing the source code of and any
+derived work based on the LIBGRX graphics library. Such source code is marked
+with the copyright notice:
+
+   "Copyright (c) 1992 Csaba Biegl, 820 Stirrup Dr, Nashville, TN 37221"
+
+Source code copyright Csaba Biegl is distributed under the following terms:
+
+ (1) The event queue library (code in the 'events' sub-directory of the
+     archive), the test programs for the graphics library (code in the
+     'test' sub-directory) is distributed without restrictions. This code
+     is free for use in commercial, shareware or freeware applications.
+
+ (2) The LIBGRX graphics library is distributed under the terms of the
+     GNU LGPL (Library General Public License) with the following exception:
+
+     -  Using the DOS versions (DOS only! this exception DOES NOT apply to
+	the Linux version) you are permitted to distribute an application
+	linked with GRX in binaries only, provided that the documentation
+	of the program:
+
+	   a)	informs the user that GRX is used in the program, and
+
+	   b)	provides the user with the necessary information about
+		how to obtain GRX. (i.e. ftp site, etc..)
+
+
+ (3) Parts of this code were derived from source code copyrighted:
+     "Copyright (C) DJ Delorie, 24 Kirsten Ave, Rochester NH. 03867-2954".
+     Such code falls under the original copyright. A copy of the file
+     "COPYING.DJ" is included with this document. If you did not receive
+     a copy of "COPYING.DJ", you may obtain one from where this document
+     was obtained, or by writing to:
+
+	DJ Delorie
+	24 Kirsten Ave
+	Rochester NH  03867-2954
+	USA
+
+ (4) Graphics drivers (even the new ones) are distributed under the terms
+     described in "COPYING.DJ".
+
+ (5) Fonts (in the 'fonts' directory) are distributed according to the
+     terms in the file "COPYING.MIT". Most of the fonts included with the
+     LIBGRX library were derived from fonts in the MIT X11R4 distribution.
+     The exception is the "pc" BIOS font family, which is distributed
+     without restrictions.
+
+ (6) The 8514/A graphics driver and some 8514/A specific low-level library
+     library functions were derived from code published in "Graphics
+     Programming for the 8514/A" by Jake Richter and Bud Smith.
+     (M&T Publishing Inc., 1990) See the file "./src/reg8514a.h" for
+     further copyright details.
+
+ (7) Donations are always welcome.
+
+A copy of the GNU GPL (in the file "COPYING") and the GNU LGPL (in
+the file "COPYING.LIB") is included with this document. If you did
+not receive a copy of "COPYING", you may obtain one from where
+this document was obtained, or by writing to:
+
+  Free Software Foundation
+  675 Mass Ave
+  Cambridge, MA 02139
+  USA
+
+
+
+If, by some random chance, you decide to take paragraph #7 above
+(about the donations) seriously, don't forget about: DJ Delorie (address
+above), without whom we still would be paying $500+ for a probably
+inferior 32 bit protected mode DOS C compiler, the folks at the FSF
+(address above) who brought you GCC, and the folks at Berkeley who are
+mainly responsible for the C run-time library in DJGPP. Their address:
+
+  Computer Systems Research Group
+  Computer Science Division, EECS
+  University of California
+  Berkeley, California  94720
+  USA
+
+
+

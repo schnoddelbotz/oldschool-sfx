@@ -1,0 +1,168 @@
+                     FILE GUIDA MICRO MACHINES 2
+                     ---------------------------
+
+
+Abbiamo fatto del nostro meglio per rendere l'installazione e         
+l'esecuzione del gioco il pi— semplice possibile. Tuttavia, a causa 
+dell'incredibile variet… di schede sonore e video, regolazioni di 
+sistema e altro software PC che potrebbero essere nel sistema, in 
+alcuni casi il gioco potrebbe non funzionare la prima volta. Questo 
+file Š stato creato per aiutarti a impostare le regolazioni in caso 
+di problemi.
+
+Le sezioni di questo file si occupano di:
+
+1.      PROBLEMI DI MEMORIA
+
+2.      PROBLEMI CON IL SONORO
+
+------------------------------------------------------------------------
+1.      PROBLEMI DI MEMORIA:-
+
+        
+        Il gioco richiede 3400 K di memoria libera. Una normale 
+macchina a 4 Meg (o superiore) dovrebbe avere questa quantit… di 
+memoria libera.Tuttavia, se i file CONFIG.SYS e AUTOEXEC.BAT 
+contengono molti comandi che caricano i programmi che occupano molta 
+memoria del sistema, potresti non averne abbastanza. Per liberare 
+memoria devi togliere le righe in conflitto da questi file e riavviare 
+il sistema. Per informazioni sui file CONFIG.SYS e AUTOEXEC.BAT consulta 
+il manuale di DOS. Per poter riportare il sistema al suo stato 
+normale dopo che hai giocato Micro Machines 2, Š utile fare una 
+copia di riserva di questi file, che possono eventualmente essere 
+ripristinati. La procedura Š la seguente:
+
+(Dopo aver digitato MM2 (invio), appare il messaggio di errore 
+"Memoria insufficiente per eseguire il gioco")
+
+Importante: Le seguenti istruzioni dall'1 all'8 dovrebbero essere
+eseguite dalla directory "radice", ad esempio il prompt dovrebbe
+essere C:\ e non C:\MM2.
+
+
+1.      COPY CONFIG.SYS CONFIG.OLD (invio)
+
+2.      COPY AUTOEXEC.BAT AUTOEXEC.OLD (invio)
+
+3.      EDIT CONFIG.SYS (invio) e cancella tutti comandi che possono
+                        occupare memoria ma non quelli richiesti 
+                        dalla scheda sonora o dall'unit… CD (se questo 
+                        Š il caso).
+
+4.      EDIT AUTOEXEC.BAT (invio) e annulla tutti i comandi che possono
+                        occupare memoria, ma non quelli che sono
+                        richiesti dalla scheda sonora o dall'unit… CD 
+                        (se questo Š il caso). I dispositivi che 
+                        creeranno dei disturbi sono SMARTDRV, EMM386, 
+                        QEMM e tutto quello con la parola CACHE).
+
+5.      Riavvia il sistema.
+
+6.      MEM (invia) per vedere se sei riuscito a liberare abbastanza
+                        memoria per eseguire il gioco; altrimenti,
+                        modifica ancora un po' CONFIG.SYS e
+                        AUTOEXEC.BAT e se non sei sicuro...taglia!
+
+7.      Prova ad eseguire di nuovo MM2.
+
+8.      Se hai dovuto togliere delle cose dai file CONFIG.SYS o
+        AUTOEXEC.BAT per eseguire il gioco, quasi sicuramente dovrai
+        rimetterle al loro posto per far funzionare correttamente
+        altre applicazioni sul sistema.
+        
+        Diciamo la verit…, non che questo sia divertente. Se per
+        eseguire il gioco dovrai ogni volta ripetere questo 
+        
+        procedimento, perch‚ non fai una copia del gioco CONFIG.SYS e
+        AUTOEXEC.BAT, dopo che l'avrai eseguito? Dunque:
+        
+        COPY CONFIG.SYS GAMECONF.SYS
+        COPY AUTOEXEC.BAT GAMEAUTO.BAT
+        
+        Quindi digita:
+        
+        COPY CONFIG.OLD CONFIG.SYS
+        COPY AUTOEXEC.OLD AUTOEXEC.BAT
+        
+        per ripristinare l'allestimento di prima che tu cominciassi
+        a installare questo gioco.
+        
+        Quindi, invece di dover ripetere tutto il procedimento,
+        ogni volta che vorrai giocare MM2, digita:
+        
+        COPY GAMECONF.SYS CONFIG.SYS
+        COPY GAMEAUTO.BAT AUTOEXEC.BAT
+        
+        Riavvia, gioca e se vuoi ritornare all'allestimento originale
+        digita:
+        
+        COPY CONFIG.OLD CONFIG.SYS
+        COPY AUTOEXEC.OLD AUTOEXEC.BAT
+
+
+Consiglio utile!
+Versioni pi— recenti di MS DOS hanno un sistema di menu per i file di
+allestimento CONFIG.SYS e AUTOEXEC.BAT. Consulta il manuale DOS alla 
+voce "MENUITEM". Utilizzando questo puoi avere un menu di allestimenti 
+ogni volta che avvierai il PC. Puoi scegliere 1 per un Allestimento 
+"Normale", 2 per "Giochi", etc.
+
+------------------------------------------------------------------------
+2.      PROBLEMI CON IL SONORO:-
+
+        Se hai selezionato le regolazioni della scheda nell'utilit… 
+SONORO e non senti nessun sonoro o il gioco si blocca, allora
+molto probabilmente avrai uno dei seguenti problemi
+
+1/      Se quando provi ad eseguirlo il gioco si blocca, 
+        probabilmente Š perch‚ altri dispositivi sono in conflitto
+        con la tua scheda sonora. Controlla che non ci siano altre
+        schede che hanno le stesse regolazioni. Ricorda che tutti i
+        dispositivi devono avere degli indirizzi e interrupt
+        separati. Alcuni mouse di PC possono avere degli interrupt
+        scomodi come ad esempio Interrupt 5.
+
+2/      Se il gioco gira, ma senza sonoro, molto probabilmente Š
+        perch‚ non riesce a trovare la scheda sonora. Questo potrebbe
+        essere un problema su schede compatibili Soundblaster che non
+        sono compatibili al 100%, sebbene noi non abbiamo mai
+        avuto problemi con quelle che abbiamo provato. Altrimenti,
+        probabilmente non hai allestito correttamente la tua scheda o
+        l'hai allestita su valori che sono in conflitto con altri
+        dispositivi. Oppure potresti aver inviato dei valori diversi
+        da quelli delle regolazioni della scheda. Per ulteriori
+        informazioni su come selezionare o impostare le regolazioni
+        consulta il manuale della scheda sonora.
+
+REGOLAZIONI INCOMPATIBILI!!!
+
+        Ricorda che non possono essere utilizzati valori superiori a
+7. Questa Š una limitazione comune a molti giochi e se sono regolati
+su valori pi— alti, dovrai cambiare le regolazioni su 2,3,5 o 7.
+Per informazioni su come fare questo, consulta il manuale della
+scheda.
+
+ALTRE DUE PAROLE...
+
+        se non hai la minima idea di quali siano le regolazioni 
+della tua scheda, allora ti consigliamo di selezionare l'opzione "I 
+have no idea ..." (Non ne ho idea). Questo lascer… invariate le 
+regolazioni esistenti e durante l'esecuzione del gioco, prover… ad
+individuare le regolazioni della tua scheda. Se la tua scheda Š
+allestita correttamente con il software ad essa accluso, questa
+opzione dovrebbe funzionare.
+
+        Quindi, probabilmente la cosa migliore Š seguire questa
+procedura: 
+
+        a/      Se sai quali sono le tue regolazioni, selezionale.
+
+        b/      Se non sei completamente sicuro seleziona "Don't
+                Know" (Non lo so). Tuttavia ricorda che se hai
+                provato a selezionare le regolazioni manualmente
+                e hai sbagliato qualcosa, allora avrai cambiato le
+                regolazioni del software della tua scheda sonora.
+                Quindi per rinizializzare la tua scheda dovrai 
+                riavviare. Quindi seleziona "Don't Know" e il gioco
+                utilizzer… le regolazioni del software.
+

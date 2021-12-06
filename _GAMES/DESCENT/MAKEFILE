@@ -1,0 +1,30 @@
+makeall: compile extract.exe
+OBJ=devil.o tools.o insert.o initio.o plot.o savetool.o readlvl.o event.o \
+ do_bmap.o do_event.o change.o grfx.o macros.o
+CFLAGS=-Wall -O -m486 -g
+%.exe: %.out
+	rem strip $<
+	coff2exe $<
+devil.out: $(OBJ)
+	gcc @link
+compile: $(OBJ)
+inclevel.out: inclevel.c
+	gcc -Wall -ansi -g inclevel.c -o inclevel.out
+extract.out: extract.c
+	gcc -Wall -ansi -g extract.c -o extract.out
+
+tools.o: tools.c tools.h structs.h
+savetool.o: savetool.c savetool.h tools.h structs.h
+insert.o: insert.c insert.h tools.h structs.h
+macros.o: macros.c macros.h event.h insert.h tools.h insert.h structs.h
+readlvl.o: readlvl.c readlvl.h tools.h insert.h structs.h
+initio.o: initio.c initio.h tools.h structs.h
+plot.o: plot.c plot.h tools.h structs.h
+grfx.o: grfx.c grfx.h tools.h structs.h
+event.o: event.c event.h do_event.h structs.h tools.h 
+do_bmap.o: do_bmap.c do_bmap.h do_event.h structs.h
+do_event.o: do_event.c do_move.c do_event.h do_bmap.h change.h event.h \
+ structs.h tools.h insert.h macros.h credits.h
+change.o: change.c do_side.c change.h event.h tools.h structs.h
+insert.o: insert.c insert.h stdtypes.h tools.h structs.h
+devil.o: devil.c structs.h plot.h initio.h readlvl.h tools.h

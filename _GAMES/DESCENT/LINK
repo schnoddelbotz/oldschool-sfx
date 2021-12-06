@@ -1,0 +1,1 @@
+-o devil.out devil.o tools.o insert.o initio.o plot.o savetool.o readlvl.o event.o do_bmap.o do_event.o change.o grfx.o macros.o -lm -lgrx

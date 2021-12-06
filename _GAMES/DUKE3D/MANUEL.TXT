@@ -1,0 +1,30 @@
+.            <DIR>         28.06.96   22:41
+..           <DIR>         28.06.96   22:41
+DNTOOLS      <DIR>         01.07.96   22:00
+TEN          <DIR>         28.06.96   22:41
+DUKE3D   CFG         5.312 14.09.96   13:06
+RESULTS  CKS         1.444 03.07.96   15:42
+DEFS     CON        28.893 19.04.96   13:30
+GAME     CON        99.639 19.04.96   13:30
+USER     CON        36.960 03.09.96   20:58
+USER     CO_        36.960 19.04.96   13:30
+COMMIT   DAT           738 03.09.96   20:58
+DEMO1    DMO        22.884 19.04.96   13:30
+DEMO2    DMO        31.538 19.04.96   13:30
+COMMIT   EXE        25.942 19.04.96   13:30
+DN3DHELP EXE        73.594 19.04.96   13:30
+DUKE3D   EXE     1.179.131 19.04.96   13:30
+SETMAIN  EXE       576.639 19.04.96   13:30
+SETUP    EXE        27.153 19.04.96   13:30
+DUKE3D   GRP    26.524.524 19.04.96   13:30
+TENGAME  INI           118 19.04.96   13:30
+ULTRAMID INI         6.871 19.04.96   13:30
+[... ein paar .MAP-Dateien]
+MODEM    PCK         4.125 19.04.96   13:30
+DUKE     RTS       188.954 19.04.96   13:30
+GB-DUKE1 RTS       651.735 01.07.96   20:48
+GB-DUKE3 RTS     1.160.718 01.07.96   20:48
+README   TXT           386 24.06.96   19:58
+MANUEL   TXT             0 14.09.96   13:07
+       45 Datei(en)     31.448.078 Byte
+                        69.402.624 Byte frei

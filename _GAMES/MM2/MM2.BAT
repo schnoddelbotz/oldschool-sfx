@@ -1,0 +1,4 @@
+@echo off
+SET BLASTER=A220 I10 D0
+MM2.EXE
+

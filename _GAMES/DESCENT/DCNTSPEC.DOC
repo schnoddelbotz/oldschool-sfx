@@ -1,0 +1,91 @@
+These are the player specs for the REGISTERED VERSION of Descent 1.0... 
+This WILL NOT work with the Shareware/demo version of Descent. I wrote this
+because of the dramatic difference between saved-games of the registered 
+version and the shareware version. 
+
+I used Darren Lo's plrspecs, for the shareware version of Descent, as a 
+referrence guide. This was to keep my sanity.
+
+[DISCLAIMER....]
+You should only use this if you want to hack your .sg0, .sg1, etc, saved-games 
+(ie. if you don't know how to or what is hex editing, please forget that you 
+ever saw this [unless you like to screw up your files]).
+
+OFFSET:
+
+13DA____________________00=nothing, 04=quad lasers
+
+13DF-13E0_______________energy level: (max=FFx7F)
+
+13E3-13E4_______________shield level: (max=FFx7F)
+
+13E5____________________# of lives:
+
+13E7____________________laser description:
+
+13E8____________________level that game was started at:
+
+13EB____________________Weapon inventory: (primary)
+    ____________________(01) 00000001=lasers
+    ____________________(02) 00000010=vulcan cannon
+    ____________________(04) 00000100=spreadfire cannon
+    ____________________(08) 00001000=plasma cannon
+    ____________________(10) 00010000=fusion cannon
+    ____________________(1F) 00011111=all
+
+13EC____________________Weapon inventory: (secondary)
+    ____________________(01) 00000001=concussion missile
+    ____________________(02) 00000010=homing missile
+    ____________________(04) 00000100=proximity bomb
+    ____________________(08) 00001000=smart missle
+    ____________________(10) 00010000=mega missile
+    ____________________(1F) 00011111=all
+
+13EF-13F0_______________Vulcan ammo packs: (1 pack = about 25.501 rounds)
+
+13F7-13F8_______________# of concussion missiles: (max=FFxFF)
+
+13F9-13FA_______________# of homing missles: (max=FFxFF)
+
+13FB-13FC_______________# of proximity bombs: (max=FFxFF)
+
+13FD-13FE_______________# of smart missiles: (max=FFxFF)
+
+13FF-1400_______________# of mega missiles: (max=FFxFF)
+
+1401-1404_______________?????????????????????????
+
+1405-1408_______________Current Score: (I think this is signed around
+                                        2 billion or FFxFFxFFx78/79)
+
+1431____________________Selected primary weapon:
+    ____________________00=lasers
+    ____________________01=vulcan cannon
+    ____________________02=spreadfire cannon
+    ____________________03=plasma cannon
+    ____________________04=fusion cannon
+
+1432____________________Selected secondary weapon:
+    ____________________00=concussion missile
+    ____________________01=homing missile
+    ____________________02=proximity bomb
+    ____________________03=smart missile
+    ____________________04=mega missile
+
+1433____________________Difficulty level:
+    ____________________00=trainee
+    ____________________01=rookie
+    ____________________02=hotshot
+    ____________________03=ace
+    ____________________04=insane
+
+
+If you have any questions, comments, additions, etc., write to:
+
+     Brian C. McDonald
+     gs01bcm@panther.gsu.edu
+
+Cheatcodes: first GABBAGABBAHEY
+then: GUILE   (Cloak)
+      RACERX  (Invuln.)
+      SCOURGE (All Weapons)

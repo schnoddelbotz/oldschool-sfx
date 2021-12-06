@@ -1,0 +1,115 @@
+     >>> CYBRDTH2.WAD - A Doom2 Arena Style DeathMatch PWAD <<<
+
+ This is rev "B" of CYBRDETH.WAD. Rev "A" added two Doom1 v1.666
+compatible demos. This time around, it has been converted to the
+Doom2 PWAD format. All three demos have been replaced. The first one
+is a two player DeathMatch demo and is *very* fast paced... the last
+two are just to show that the level can be completed in single play
+on skill 3 and skill 4.  To watch the demos, simply load CYBRDTH2.WAD
+into Doom2 and let the game sit for a few seconds and they will start
+to play automatically.
+
+---------------------------------------------------------------------
+"Cyber Death [CYBRDTH2.WAD]" is an outdoor "arena" style
+DeathMatch PWAD; DeathMatch on this level is intended to be played with
+the-NOMONSTERS switch. The level has hidden teleporters & bonuses
+placed specifically for DeathMatch, tons of large pillars scattered
+randomly about, four weapon depots, and an open area in the middle
+(where most of the fighting will probably occur).For single play, it
+should be a true test of your Doom maneuverability skills because,
+depending upon the skill setting, there are *numerous* CyberDemons and
+limited ammo. There is *always* enough ammo to finish the Cybers, but
+you will probably be forced to shotgun the last few.Hehe... If you can't
+get 100% kills on skill 3, you're not worthy!! If you can get 100% kills
+on skill 4, you can rest assured that you are one of the few. It's a
+good way to practice for DeathMatches too, because it will force you to
+conserve ammo and to take better [faster] aim, while perfecting
+maneuvers like the COD. *PLUS* it should help some of you "CyberPhobic"
+people get over your problem by making you face your fears.
+
+ Some of you are saying "More than one CyberDemon!? That's just stupid!".
+To that, I say: "You *wimps*... er... uh... I mean, try the level for
+DeathMatch then; you'll never even have to see a CyberDemon". The reason
+that I put so many Cybers in there for single play was to give myself a
+warm up for DeathMatches and also because I find it somewhat entertaining
+to go head-to-head with six CyberDemons (that's on skills 4 & 5, on skill
+3 there are 3 Cybers, and on skills 1 & 2 there is only one Cyber, which
+even my dog Fido can beat!). Your opinion on the entertainment value of
+dancing with 6 CyberDemons may vary slightly from my own.
+
+ For a hilarious & hair raising DeathMatch, try fighting your opponent
+with a few Cybers strolling around the level (is it me, or do they always
+seem to team up with the other guy!?).
+
+ Some things that people have said while playing CYBRDETH.WAD:
+
+ "OH @%&*!!"
+ "Where in the %&*@ are all of the weapons!?"
+ "Uh...why am I on the ground? The level just started!"
+ "*WAY* to skimpy on the ammo!"
+ "Did I  just get Teleporter Fragged?"
+ "Victorious in battle, only to be pummeled to death at the end..."
+ "I thought that I was good, but..."
+ "Christ!! They're everywhere!"
+
+================================================================
+Title                   : Cyber Death
+File Name               : CYBRDTH2.WAD
+Author                  : Scott A. Smith
+Email Address(es)       : scott@gate.net
+                          scott10911@aol.com
+
+Misc. Author Info       : er... Size 9.5" boots.
+
+Additional Credits to   : id Software and the authors of DEU and
+                          BSP. Joe Wilcox, for creating D!, *the*
+                          best Doom shell there is, which also did
+                          most of the conversion to the Doom2 PWAD
+                          format, saving me some time!
+                          I'd also like to thank all of the
+                          people on ALT.DOOM.GAMES who were arguing
+                          the best way to kill a single CyberDemon,
+                          which is what gave me the idea for this
+                          level. Try killing six, guys!
+                          And let's not forget Steve; he's the green
+                          guy in the first demo. Thanks for letting
+                          me teleporter frag you, buddy!
+
+================================================================
+* Play Information *Level #                 : Map 1
+Single Player           : Yes
+Cooperative 2-4 Player  : Yes
+Deathmatch 2-4 Player   : Yeah buddy!!
+                          Skill 3 is best for two players...
+Difficulty Settings     : Yes
+New demos               : YES!
+New Sounds              : Nope
+New Graphics            : well... a new level of graphic *violence*,
+                          perhaps. No new images.
+* Construction *
+Base                    : New level from scratch
+Build Time              : Not long at all...
+Editor(s) used          : DEU 5.21, BSP 1.2x., D! for conversion.
+Known Bugs              : There's a hidden weapon that can sometimes
+                          be picked up without having to find the
+                          area that it is hidden in. It leaves you
+                          wondering "Now where the hell did this come
+                          from!?"...
+                          No other *known* bugs...
+
+* Copyright / Permissions *
+
+Authors may NOT use this level as a base to build additional levels
+without including this unmodified text file and a list of the changes
+made to the level...You MAY distribute this WAD to any BBS or online
+service, provided youinclude this file, with no modifications.  You
+may mass distribute thisWAD in any *other* electronic format
+(Diskette, CD, etc) *only* with my approval (which will be quite easy
+to get, I imagine).
+
+* Where to get this WAD *
+
+America Online: PC Games Forum
+
+FTP sites:  infant2.sphs.indiana.edu, in /pub/doom/NEWSTUFF
+            or wherever it's moved to.

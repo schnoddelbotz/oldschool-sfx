@@ -1,0 +1,50 @@
+For the curious, here is a listing of all the official levels in
+Duke Nukem 3D, and who designed them.
+
+AB - Allen H Blum III
+LL - Richard Bailey Gray (The Levelord)
+
+Episode 1:
+----------
+AB - Hollywood Holocaust
+AB - Red Light District
+AB - Death Row
+AB - Toxic Dump
+LL - The Abyss
+AB - Launch Facility
+AB - Faces of Death (Dukematch Only level)
+AB - Dukematch Level 1 (Dukematch Only level)
+
+Episode 2:
+----------
+AB - Moonbase
+LL - Incubator
+LL - Warp Factor
+AB - Fusion Station
+AB - Occupied Territory
+AB - Tiberius Station
+AB - Lunar Reactor
+AB - Dark Side
+AB - Overlord
+LL - Spin Cycle
+LL - Lunatic Fringe
+
+Episode 3:
+----------
+LL - Raw Meat
+LL - Bank Roll
+LL - Flood Zone
+LL - L.A. Rumble
+LL - Movie Set
+LL - Rabid Transit
+LL - Fahrenheit
+LL - Hotel Hell
+AB - Stadium
+LL - Tier Drops
+AB - Freeway
+
+Other:
+------
+AB - _se.map    (Sector Effector Demo Map)
+AB - _st.map    (Sector Tag Demo Map)
+AB - _zoo.map   (Zoo Map)

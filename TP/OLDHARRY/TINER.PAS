@@ -1,0 +1,21 @@
+Program TINER;
+Uses Crt,Graph;
+Var grd,grm,x,y,max,z:integer;
+      c:char;
+BEGIN;
+
+clrscr;
+detectgraph(grd,grm);
+initgraph(grd,grm,'c:\tp\bgi\');
+settextstyle(defaultfont,horizdir,143);
+
+FOR X:=1 to 20 do begin;setcolor(x);moveto(10,43);outtext('TINA!');end;
+settextstyle(sansseriffont,horizdir,5); moveto(150,200);setcolor(white);outtext(' IST DA !');
+settextstyle(triplexfont,horizdir,4);
+for x:=300 to 401 do begin;
+setcolor(x);
+moveto(x-250,x);
+outtext('WO WARST DU DENN ?');
+end;
+delay(5000);
+end.

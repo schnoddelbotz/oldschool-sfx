@@ -1,0 +1,1356 @@
+=======================================================================
+		Dienstprogramme zu Borland Pascal
+=======================================================================
+
+In dieser Datei werden einige Dienstprogramme beschrieben, die zum
+Lieferumfang von Borland Pascal geh”ren. Im einzelnen sind dies:
+
+    1.  GREP - ein Dienstprogramm zur Textsuche
+    2.  BINOBJ - eine beliebige Datei in eine Object-Datei konvertieren
+    3.  MAKE, der Projektmanager von Turbo Pascal 7.0
+
+=======================================================================
+		GREP: Ein Dienstprogramm zur Textsuche
+=======================================================================
+
+GREP (Global Regular Expression Print) ist ein leistungsstarkes Programm
+zum Auffinden von Zeichenfolgen in Dateien oder im Standardeingabe-Stream.
+Es ist von einem UNIX-Dienstprogramm gleichen Namens abgeleitet.
+
+Die allgemeine Syntax fr GREP ist:
+
+   grep [Parameter] Suchstring [Datei(en) ... ]
+
+Ein Parameter besteht aus einem oder mehreren Buchstaben, dem ein Binde-
+strich (-) vorangestellt wird; damit lassen sich verschiedene Vorein-
+stellungen von GREP „ndern.
+
+Suchstring gibt das Muster an, nach dem gesucht wird.
+
+Datei(en) (eine Liste von Dateispezifikationen) weist GREP an, in welchen
+Dateien gesucht werden soll. Die Dateispezifikation kann Pfadangaben und
+die DOS-Ersetzungszeichen * und ? enthalten. Fehlt eine Pfandangabe,
+durchsucht GREP das aktuelle Verzeichnis. Ist keine Datei angegeben, sucht
+GREP die Standardeingabe ab (was ohne eine Umleitung der Ein-/Ausgabe von
+DOS nicht allzuviel Sinn hat).
+
+GREP-Optionen
+=============
+
+Die Optionen in der Kommandozeile bestehen aus einem oder mehreren Zeichen,
+denen ein Bindestrich (-) vorangestellt wird. Jedes einzelne Zeichen ist
+eine Option, die an- oder ausgeschaltet werden kann. Das Pluszeichen (+)
+nach einem Buchstaben schaltet die betreffende Option an, mit einem Minus-
+zeichen (-) wird sie abgeschaltet. Die Standardvorgabe ist "+". -r bedeutet
+also dasselbe wie -r+. Sie k”nnen mehrere Parameter hintereinander einzeln
+auflisten (z.B. -i-d-l) oder sie kombinieren (z. B.: -ild oder -il, -d, usw.);
+GREP macht da keinen Unterschied.
+
+Die Schalter von GREP sind wie folgt definiert:
+
+   -c       Count: Gibt nur die Anzahl von šbereinstimmungen aus. Fr jede
+	    Datei, bei der zumindest in einer Zeile der Suchstring vorkommt,
+	    wird der Dateiname zusammen mit der Anzahl der šbereinstimmungen
+	    in Zeilen angegeben, weitere Angaben erfolgen nicht.
+	    Die Voreinstellung ist Aus.
+
+   -d       Directories: Dateien werden nicht nur im angegebenen Verzeichnis
+	    gesucht, sondern auch in allen davon ausgehenden Unterverzeich-
+	    nissen. Wenn Sie keinen Pfad angeben, sucht GREP im aktuellen
+	    Verzeichnis. Voreinstellung ist Aus.
+
+   -i       Ignore case: GREP behandelt Groá- und Kleinbuchstaben gleich,
+	    wobei die deutschen Umlaute (wie blich) nicht mit eingeschlossen
+	    sind. '' und '„' sind also auch in diesem Fall "verschiedene"
+	    Zeichen. Die Voreinstellung ist Aus.
+
+   -l       List: Wenn der Suchstring innerhalb einer Datei gefunden wird,
+	    gibt GREP nur den Namen dieser Datei aus und setzt die Suche
+	    sofort in der n„chsten Datei fort. Die Voreinstellung ist Aus.
+
+   -n       Number: Jede Zeile, in der GREP den Suchstring findet, wird
+	    zusammen mit ihrer Zeilennummer ausgegeben. Die Voreinstellung
+	    ist Aus.
+
+   -o       Output format UNIX: Paát die Ausgaben von GREP dem Ausgabe-
+	    format von UNIX an. Jeder angegebenen Zeile wird der Name der
+	    entsprechenden Datei vorangestellt. Die Voreinstellung ist Aus.
+
+   -r       Regular expression: Der durch Suchstring angegebene Text wird
+	    nicht als literaler String, sondern als regul„rer Ausdruck
+	    behandelt. Die Voreinstellung ist An.
+
+   -u       Update: GREP kombiniert die hier angegebenen Schalter mit den
+	    Standardvorgaben und schreibt eine neue Version von sich selbst,
+	    die mit diesen Parametern als Standardvorgabe arbeitet. Damit
+	    l„át sich das Programm jederzeit individuell anpassen.
+
+   -v       Nonmatch: Nur Zeilen, in denen GREP den Suchstring nicht findet,
+	    werden ausgegeben. Die Voreinstellung ist Aus.
+
+   -w       Word search: Mit dem Suchstring bereinstimmende Zeichenfolgen
+	    werden nur dann als "gefunden" betrachtet, wenn vor und nach
+	    ihnen ein Trennzeichen steht. Standardm„áig betrachtet GREP die
+	    Zeichen A..Z, 0..9 und den Unterstrich (_) als Bestandteile
+	    eines Worts.
+
+	    Mit einer Angabe der Form -w[Zeichensatz] l„át sich festlegen,
+	    welche Zeichen GREP als Wort betrachten soll. Als Zeichensatz ist
+	    jeder regul„re Ausdruck zul„ssig.
+
+	    Wenn Sie den Zeichensatz als alphabetische Zeichenfolge definieren,
+	    enth„lt dieser automatisch die Werte der Groá- und Kleinbuchstaben
+	    (ganz gleich, wie er eingegeben wird) auch bei einer Suche, bei
+	    der zwischen Groá- und Kleinschreibung unterschieden wird. Wenn Sie
+	    den Parameter -w in Kombination mit dem Schalter -u verwenden, wird
+	    der neue Zeichensatz als Standardvorgabe gespeichert.
+
+   -z       Verbose: GREP gibt bei jeder durchsuchten Datei den Namen sowie
+	    die Anzahl der gefundenen Zeilen aus, auch wenn die Datei keine
+	    šbereinstimmungen enth„lt. Gefundene Zeilen werden mit vorange-
+	    stellter Zeilennummer ausgegeben. Die Voreinstellung ist aus.
+
+
+Jede GREP-Option ist ein Schalter. Er wird in der Reihenfolge, in der er ge-
+setzt wurde, bearbeitet. Jeder Schalter kann entweder ein- oder ausgeschaltet
+sein. Jede neue Schalterangabe berschreibt die vorangegangene. Bei folgender
+Kommandozeile
+
+   grep -r -d -i -r-  main( my*.c
+
+arbeitet GREP mit eingeschalteten Schaltern -d und -i und ausgeschaltetem
+Schalter -r.
+
+Sie k”nnen die Voreinstellung fr jeden Schalter in GREP.COM mit dem Schalter
+-u selbst angeben. Wann GREP immer eine "verbose-Suche" (-z an) durchfhren
+soll, k”nnen Sie dies mit folgendem Befehl angeben:
+
+   grep -u -z
+
+
+Der Such-String
+===============
+
+Um GREP effizient einsetzen zu k”nnen, mssen Sie sich mit der Formulierung
+von Such-Strings vertraut machen. Der Wert des Suchstrings definiert ein
+bestimmtes Muster, nach dem GREP suchen soll. Ein Suchstring kann entweder
+ein regul„rer Ausdruck oder ein literaler String sein.
+
+Bei einem regul„ren Ausdruck haben bestimmte Zeichen eine spezielle Bedeutung:
+Sie sind Operatoren und steuern die Suche.
+
+In einem literalen String gibt es keine Operatoren: Jedes Zeichen wird als
+direkte Angabe behandelt.
+
+Falls Leerzeichen und Tabulatoren nicht als Trennzeichen interpretiert werden
+sollen, mssen Sie den Suchstring in Anfhrungszeichen setzen. Der Suchstring
+darf nicht ber das Zeilenende hinausgehen, d.h. der Text, nach dem gesucht
+werden soll, muá in einer einzigen Zeile stehen.
+
+Wenn Sie mit dem Schalter -r arbeiten (Standardvorgabe An), wird der Such-
+string als regul„rer Ausdruck behandelt (und nicht als literaler Ausdruck).
+Die folgenden Zeichen haben dabei eine besondere Bedeutung:
+
+   ^       steht fr den Beginn einer Zeile, wenn es als erstes Zeichen des
+	   Such-Strings angegeben ist.
+
+   $       steht fr ein Zeilenende, wenn es als letztes Zeichen des Such-
+	   Strings angegeben ist.
+
+   .       steht fr ein beliebiges Zeichen.
+
+   *       steht fr eine beliebige Anzahl von Wiederholungen des voran-
+	   gehenden Zeichens: die Suche nach fo* findet f (0 Wiederholungen
+	   von o), fo, foo, fooo usw. - nicht aber fa.
+
+   +       arbeitet „hnlich wie *, setzt aber mindestens ein Vorkommen des
+	   vorangehenden Zeichens voraus. Die Suche nach fo+ findet fo, foo,
+	   fooo usw. - nicht jedoch f.
+
+   [ ]     ein von eckige Klammern eingeschlossener String wird als Zeichen-
+	   satz behandelt. Ist das erste Zeichen im String ein Zirkumflex (^),
+	   entspricht der Ausdruck jedem Zeichen, auáer den im String vorkom-
+	   menden Zeichen.
+
+	   Eine Angabe wie [xyz] sucht nach den Buchstaben x, y und z; die
+	   Angabe [^xyz] nach s„mtlichen Zeichen, auáer x, y und z. Sie k”nnen
+	   auch einen bestimmten Zeichenbereich spezifizieren, indem Sie zwei
+	   Zeichen mit einem Bindestrich verbunden als Grenzzeichen angeben.
+	   Der Zirkumflex l„át sich auch auf Zeichenbereiche anwenden. [^a-f]
+	   sucht nach s„mtlichen Zeichen, auáer den Kleinbuchstaben von a bis
+	   f, [a-bd-z?] nur nach dem Fragezeichen und allen Kleinbuchstaben
+	   auáer c.
+
+   \       Der Backslash erm”glicht die Suche nach einzelnen Zeichen, die
+	   ansonsten speziell interpretiert wrden. \. sucht in einem Ausdruck
+	   nach einem Dezimalpunkt, \$ nach einem Dollarzeichen usw. Der Back-
+	   slash kann durch doppelte Eingabe (\\) auf sich selbst verweisen.
+
+
+HINWEIS: Vier der "speziellen" Zeichen ($, ., *, und +) haben keine
+bestimmte Bedeutung innerhalb eines Zeichensatzes. Der Zirkumflex (^) wird
+nur dann als Negation gewertet, wenn er direkt am Anfang des Zeichensatzes
+(also direkt nach der ”ffnenden eckigen Klammer [) steht.
+
+Alle in dieser Liste nicht aufgefhrten Zeichen werden direkt miteinander
+verglichen, z.B. > mit >, # mit #, usw. Regul„re Ausdrcke k”nnen auch
+verkettet werden.
+
+
+Einige Beispiele zu GREP
+========================
+
+Folgende Beispiele zeigen eine Kombination der Funktionen von GREP, um
+verschiedenartige Suchen auszufhren. Dabei gehen wir davon aus, daá
+alle Optionen standardm„áig abgeschaltet sind.
+
+
+Kommando    grep -n function dirdemo.pas
+
+Findet      File DIRDEMO.PAS:
+	    51        LessFunc = function(X, Y: DirPtr): Boolean;
+	    60      function NumStr(N, D: Integer): String;
+	    73      function LessName(X, Y: DirPtr): Boolean;
+	    78      function LessSize(X, Y: DirPtr): Boolean;
+	    83      function LessTime(X, Y: DirPtr): Boolean;
+
+Hinweise    Findet alle Funktionen in der Datei DIRDEMO.PAS. Die Option
+	    -N teilt GREP mit, daá jeder Trefferzeile die Zeilennummer
+	    vorangestellt wird.
+
+
+Kommando    grep {\$ dirdemo.pas
+
+Findet      File DIRDEMO.PAS:
+	    {$I-,S-}
+	    {$M 8192,8192,655360}
+	    {$F+}
+	    {$F-}
+
+Hinweise    Findet alle Compilerbefehle in DIRDEMO.PAS. Das \
+	    vor dem $-Zeichen ist n”tig, weil dieses ansonsten
+	    fr ein Zeilenende stehen wrde. Gesucht wrde in
+	    diesem Fall nach Zeilen, deren letztes Zeichen ein
+	    { ist.
+
+
+Kommando    grep -i "^ *function.*).*real" *.pas
+
+Findet      File WORKERS.PAS:
+	    function RoundPay(Wages: Real): Real;
+
+Hinweise    Findet Zeilen, die mit einem oder mehreren Leerzeichen
+	    beginnen, worauf das Wort function, ein beliebiger String
+	    mit 0 oder mehr Zeichen, eine schlieáende Klammer, ein
+	    weiterer String mit 0 oder mehr Zeichen und das Wort
+	    Real folgen. Groá- und Kleinschreibung werden ignoriert.
+	    Damit findet GREP alle Funktionen, die einen Real-Wert
+	    zurckgeben. šberlegen Sie sich, wie Sie das noch
+	    erreichen k”nnten.
+
+	    Die Anfhrungszeichen sind n”tig, weil der Such-String
+	    ein Leerzeichen enth„lt. Ohne Anfhrungszeichen wrde
+	    DOS den Suchstring als zwei getrennte Parameter auffassen,
+	    und GREP wrde alles hinter dem ^ (dem Zirkumflex) als
+	    Dateiangabe interpretieren. Dies wrde zu folgender
+	    Meldung fhren:
+
+	    No files matching: *FUNCTION.*).*.
+
+
+=======================================================================
+		    Das Dienstprogramm BINOBJ
+=======================================================================
+
+Das Dienstprogramm BINOBJ wandelt eine beliebige Datei in eine OBJ-
+Datei um, so daá diese als "Prozedur" in ein Pascal-Programm gelinkt
+werden kann. Von Nutzen ist das, wenn Sie bin„re Daten im Code-Segment
+unterbringen mssen oder wenn diese Daten zu umfangreich sind, um als
+Array in einer typisierten Konstante angegeben zu werden. Beispielsweise
+k”nnen Sie, wenn Sie mit der Unit Graph arbeiten, Grafiktreiber oder
+Schriften direkt in die EXE-Datei linken. Sie ben”tigen dann auáer der
+EXE-Datei keine weiteren Dateien (siehe das Beispielprgramm BGILINK.PAS).
+
+BINOBJ bernimmt drei Parameter:
+
+   BINOBJ  <Quelle[.BIN]>  <Ziel[.OBJ]>  <™ffentlicher Name>
+
+Quelle ist die zu konvertierende Bin„rdatei, Ziel ist der Name
+der erzeugten OBJ-Datei und ™ffentlicher Name ist der Name, unter
+dem die Prozedur im Pascal-Programm deklariert wird.
+
+Im folgenden Beispiel bernimmt die Funktion ShowScreen einen Zeiger
+als Parameter und kopiert 4000 Byte in den Bildschirmspeicher. Die
+Datei MENU.DTA enth„lt ein Bild des Startbildschirms (80 * 25 * 2
+ergeben 4000 Byte).
+
+Es folgt ein einfaches Beispielprgramm (ohne jede Fehlerprfung):
+
+   program MyProg;
+
+   uses Crt;
+
+   procedure ShowScreen(ScreenData : Pointer);
+   { Bildschirmdaten anzeigen, keine Fehlerprfung! }
+   var
+     ScreenSegment: Word;
+
+   begin
+     if (Lo(LastMode) = 7) then      { Mono? }
+       ScreenSegment := $B000
+     else
+       ScreenSegment := $B800;
+     Move(ScreenData^,               { Vom Zeiger }
+      Ptr(ScreenSegment, 0)^,        { Zum Bildschirmspeicher }
+      4000);                         { 80 * 25 * 2 }
+   end;
+
+   var
+     MenuP : Pointer;
+     MenuF : file;
+   begin
+     Assign(MenuF, 'MENU.DTA');      { Datei mit Bildschirmdaten ”ffnen }
+     Reset(MenuF, 1);
+     GetMem(MenuP, 4000);            { Puffer auf dem Heap bereitstellen }
+     BlockRead(MenuF, MenuP^, 4000); { Bildschirmdaten lesen }
+     Close(MenuF);
+     ShowScreen(MenuP);              { Bildschirmdaten anzeigen }
+   end.
+
+
+Die Datei mit den Bildschirmdaten wird ge”ffnet und in einen Puffer
+auf dem Heap gelesen. MYPROG.EXE und MENU.DTA mssen beide vorhanden
+sein, damit das Programm l„uft. Mit BINOBJ k”nnen Sie MENU.DTA in
+eine OBJ-Datei konvertieren und dieser Datei eine Prozedur mit dem
+Namen MenuData zuordnen. Als n„chstes deklarieren Sie die Pseudo-
+Prozedur MenuData, die in Wirklichkeit nichts als Bildschirmdaten
+enth„lt. Wenn Sie die OBJ-Datei mit dem Compiler-Befehl $L linken,
+enth„lt MenuData die 4000 Byte Bildschirmdaten. Rufen Sie also
+zun„chst BINOBJ auf:
+
+
+   binobj MENU.DTA MENUDTA MenuData
+
+Der erste Parameter ist der Name der inzwischen sattsam bekannten Datei
+MENU.DTA, der zweite Parameter ist der Name der OBJ-Datei, die von BINOBJ
+generiert wird (da keine Namenserweiterung angegeben worden ist, wird
+.OBJ verwendet). Der letzte Parameter ist der Name der Prozedur, unter
+dem die Daten eingebunden werden. MYPROG.PAS sieht damit folgendermaáen
+aus:
+
+
+   program MyProg;
+
+   uses Crt;
+
+   procedure ShowScreen(ScreenData : Pointer);
+   { Bildschirmdaten anzeigen, keine Fehlerprfung! }
+   var
+     ScreenSegment: Word;
+   begin
+     if (Lo(LastMode) = 7) then             { Mono? }
+       ScreenSegment := $B000
+     else
+       ScreenSegment := $B800;
+     Move(ScreenData^,                      { Vom Zeiger }
+      Ptr(ScreenSegment, 0)^,               { Zum Bildschirmspeicher }
+      4000);                                { 80 * 25 * 2 }
+   end;
+
+   procedure MenuData; external;
+   {$L MENUDTA.OBJ }
+   begin
+     ShowScreen(@MenuData);                 { Bildschirmdaten anzeigen }
+   end.
+
+Beachten Sie, daá sich an ShowScreen nichts ge„ndert hat, und daá die
+Adresse der Prozedur mit Hilfe des @-Operators bergeben wurde.
+
+
+=======================================================================
+			       TPUMOVER
+=======================================================================
+
+Turbo Pascal prft bei der Suche nach einer Unit zuerst die Datei
+TURBO.TPL; die dort enthaltenen Units werden beim Start von Turbo
+Pascal automatisch in den Hauptspeicher geladen und stehen ohne weitere
+Plattenzugriffe zur Verfgung.
+
+Wenn Sie eigenen Units entwickelt haben, die Sie immer wieder in Ihre
+Programme einbinden, k”nnen Sie daher einiges an Zeit einsparen, wenn
+Sie diese Units in TURBO.TPL aufnehmen. Mit TPUMOVER ist das kein
+Problem.
+
+
+Einige technische Details
+=========================
+
+Turbo Pascal unterscheidet zwei Arten von Unit-Dateien: Die Compilierung
+eines einzelnen Unit-Quelltextes erzeugt eine TPU-Datei (Turbo-Pascal-
+Unit); die Zusammenfassung mehrerer TPU-Dateien mit TPUMOVER erzeugt eine
+TPL-Datei.
+
+Turbo Pascal sucht eine ber uses angegebene Unit zuerst in TURBO.TPL.
+Ist die gesucht Unit nicht Teil von TURBO.TPL, dann wird nach einer
+TPU-Datei gesucht, die denselben Namen wie die Unit hat.
+
+
+Benutzung von TPUMOVER
+======================
+
+Zur schnellen Bearbeitung von Units mittels TPUMOVER stehen verschie-
+dene Kommandozeilenparameter zur Verfgung. Aufgerufen wird TPUMOVER
+wie in der folgenden Zeile:
+
+   TPUMOVER Dateiname Operation
+
+Als Dateiname kann entweder eine TPU-Datei oder eine TPL-Datei ange-
+geben werden.
+
+Der Parameter Operation ist optional und kann aus einem oder mehreren
+der folgenden Kommandos bestehen:
+
+	 +Unitname    Fgt eine Unit in die Bibliothek ein.
+	 -Unitname    L”scht eine Unit in der Bibliothek.
+	 *Unitname    Extrahiert eine in der Bibliothek ent-
+		      haltene Unit.
+
+Wird der Parameter Operation nicht angegeben, gibt TPUMOVER eine Liste
+der in der Bibliothek enthaltenen Units aus, zusammen mit der Angabe
+ihrer Gr”áe und den Namen der Units, von denen die aufgelistete Unit
+abh„ngt.
+
+
+=======================================================================
+	    MAKE, der Projektmanager von Turbo Pascal 7.0
+=======================================================================
+
+Das von Borland mitgelieferte Kommandozeilenprogramm MAKE sorgt
+dafr, daá die ausfhrbaren Versionen Ihrer Programme immer auf
+dem aktuellen Stand sind. Vor allem dann, wenn Sie Objekt-
+Dateien zu Pascal-Dateien linken oder Programme auáerhalb der
+IDE (der integrierten Entwicklungsumgebung) schreiben wollen.
+
+MAKE bringt Ihre Programme auf den neuesten Stand, indem es die
+folgenden Funktionen durchfhrt:
+
+o Es verifiziert das Vorhandensein von Zieldateien. Diese sind
+  gew”hnlich ausfhrbare Dateien, deren Namen aus der
+  Kommandozeile oder aus der zuletzt von MAKE benutzten MAKE-
+  Datei ersichtlich sind.
+
+o Es legt solche Zieldateien an, falls keine vorhanden sind.
+
+o Es berprft Zeit und Datum der Dateien, um den Gebrauch
+  obsolet gewordener ausfhrbarer Dateien bzw. deren Quell- und
+  Objekt-Dateien zu unterbinden.
+
+o Es erzeugt neue Zieldateien, wenn abh„ngige Dateien veraltet
+  sind.
+
+
+Das Erzeugen einer MAKE-Datei
+=============================
+MAKE-Dateien zu erstellen, ist dem Programmieren mit
+Definitionen, Befehlen und Anweisungen sehr „hnlich. Sie k”nnen
+einen ASCII-Text-Editor (etwa den in der IDE eingebauten oder
+auch Brief oder SideKick) dazu hernehmen. Als grundlegende
+Elemente enth„lt eine MAKE-Datei die Namen der Quell- und
+Zieldateien sowie Informationen ber abh„ngige Dateien. Eine
+MAKE-Datei beinhaltet auáerdem entweder explizite Regeln (die
+komplette Dateinamen spezifizieren) oder implizite Regeln
+(welche nur Namenserweiterungen spezifizieren, um
+Dateiabh„ngigkeiten aufzuzeigen). Alle Regeln, Definitionen und
+Symbol enden mit einem Zeilenvorschub; wenn eine Zeile zu lang
+wird, k”nnen Sie sie mit einem Backslash auf die n„chste Zeile
+fortsetzen. MAKE-Dateien k”nnen zudem Anweisungen und Makros
+enthalten, um die Ausfhrung der MAKE- Datei zu steuern und zu
+automatisieren.
+
+
+Kommentare
+----------
+Kommentare beginnen mit einem Doppelkreuz (#); MAKE ignoriert
+den Rest der Zeile hinter diesem Symbol. Kommentare k”nnen
+berall stehen und mssen nicht in einer bestimmten Spalte
+beginnen.
+
+
+Explizite Regeln
+----------------
+Eine explizite Regel gibt vollst„ndige Dateinamen an. Explizite
+Regeln haben folgendes Format:
+
+Ziel[Ziel...]:[Quelle...]
+    [Befehl]
+     ...
+
+Dabei ist "Ziel" die Datei, die aktualisiert werden soll, "Quelle"
+ist eine Datei, von der Ziel abh„ngig ist. Befehl ist ein beliebiges
+DOS-Kommando (einschlieálich der Aktivierung von .BAT-Dateien und
+der Ausfhrung von .COM- und .EXE-Dateien).
+
+Explizite Regeln definieren einen oder mehrere Namen fr
+Zieldateien, keine oder mehrere Quelldateien und eine optionale
+Liste von durchzufhrenden Befehlen. Namen von Ziel- und
+Quelldateien in expliziten Regeln k”nnen normale DOS-Laufwerks-
+und Verzeichnisangaben enthalten.
+
+Bei der Syntax von expliziten Regeln ist folgendes zu beachten:
+
+o Ziel muá am Anfang einer Zeile stehen (in Spalte 1 beginnen).
+
+o Vor Quelle muá nach dem Doppelpunkt mindestens ein
+  Leerzeichen oder ein Tab stehen.
+
+o Jeder Befehl muá eingerckt sein (es muá mindestens ein
+  Leerzeichen oder Tab davor stehen). Wie bereits erw„hnt, dient
+  der Backslash als Fortsetzungszeichen, wenn die Liste der
+  Quelldateien oder ein Befehl nicht in eine Zeile paát.
+
+Die Angabe von Quelldatei(en) und Befehlen ist optional; es
+ist m”glich, daá eine explizite Regel nur aus Ziel [Ziel ...],
+gefolgt von einem Doppelpunkt besteht.
+
+Explizite Regeln gehen von der šberlegung aus, daá der
+aufgelistete Befehl bzw. die aufgelisteten Befehle Ziel unter
+Verwendung von Quelle anlegen oder aktualisieren. Wenn MAKE auf
+eine explizite Regel trifft, prft es zuerst, ob eine der
+Quelldateien an anderer Stelle in der MAKE-Datei selbst eine
+Zieldatei ist. Falls das der Fall ist, wird diese Regel als
+erste ausgewertet.
+
+Sobald alle Quelldateien mit Hilfe weiterer Regeln angelegt
+oder aktualisiert sind, prft MAKE, ob das Ziel existiert.
+Existiert es nicht, werden die Befehle in der angegebenen
+Reihenfolge aufgerufen. Existiert eine Zieldatei, werden die
+Zeit- und Datumsangaben der Erstellung mit den entsprechenden
+Angaben jeder Quelldatei verglichen. Ist eine Quelldatei
+neueren Datums als das Ziel, wird die Befehlsliste ausgefhrt.
+
+Ein angegebener Dateiname darf nur einmal w„hrend einer MAKE-
+Ausfhrung auf der linken Seite einer expliziten Regel
+auftreten.
+
+Jede Befehlszeile in einer expliziten Regel beginnt mit einem
+Whitespace. MAKE interpretiert alle folgenden Zeilen als Teil
+der Befehlsliste fr diese Regel, solange, bis wieder eine
+Zeile in der ersten Spalte beginnt (ohne vorausgehendes Whitespace)
+oder bis das Ende der Datei erreicht ist. Leerzeilen werden ignoriert.
+
+Eine explizite Regel, der keine Befehlsliste folgt, wird anders
+ausgewertet als explizite Regeln mit Kommandozeilen.
+
+o Wenn explizite Regeln Befehle einschlieáen, ist die Zieldatei
+  nur von denjenigen Quelldateien abh„ngig, die in der Regel
+  aufgelistet sind.
+
+o Hat eine explizite Regel aber keine Befehle, h„ngen die
+  Zieldateien von zwei Dateimengen ab: von den in der expliziten
+  Regel angegebenen Dateien und von jeder Datei, die zu einer
+  impliziten Regel fr die Zieldatei(en) paát.
+
+Im folgenden finden Sie einige Beispiele fr explizite Regeln:
+
+   myutil.obj: myutil.asm
+     tasm myutil.asm,myutil.obj;
+
+   myapp.exe:  myapp.pas myglobal.tpu myutils.tpu
+     tpc myapp /Tc:\tp5\bin
+
+Die erste explizite Regel besagt, daá MYUTIL.OBJ von MYUTIL.ASM
+abh„ngt, und daá MYUTIL.OBJ durch die Ausfhrung von TASM
+erzeugt wird.
+
+Die zweite explizite Regel besagt, daá MYAPP.EXE von MYAPP.PAS,
+MYGLOBAL.TPU und MYUTILS.TPU abh„ngt und durch den Befehl TPC
+MYAPP erzeugt wird (Die Option /T sowie die Pfadangaben werden
+weiter unten genauer erkl„rt).
+
+Wenn Sie die Regeln umstellen, etwa so, daá MYAPP.EXE als erstes
+bearbeitet wird, compiliert MAKE nur diejenigen Dateien neu,
+die es korrekterweise aktualisieren muá. Hat MAKE n„mlich keine
+Zielangabe in der Kommandozeile, wird es versuchen, die erste
+explizite Regel in der MAKE-Datei abzuarbeiten.
+
+
+Implizite Regeln
+----------------
+Mit MAKE k”nnen auch implizite Regeln angelegt werden, die
+verallgemeinerte explizite Regeln darstellen und sich auf alle
+Dateien mit bestimmten identifizierenden Erweiterungen anwenden
+lassen.
+
+Im folgenden finden Sie ein Beispiel, das die Beziehung
+zwischen zwei Regeln illustriert.
+
+   myutil.obj: myutil.asm
+     tasm myutil.asm,myutil.obj;
+
+Die Regel ist typisch, weil sie einem generellen Prinzip folgt.
+Eine .OBJ-Datei h„ngt von der .ASM-Datei gleichen Namens ab und
+wird von TASM (Turbo Assembler) angelegt. Sie k”nnen nun eine
+MAKE-Datei haben, die mehrere (oder auch sehr viele) explizite
+Regeln desselben Formats enth„lt.
+
+Schreiben Sie eine explizite Regel in eine implizite Regel um,
+so k”nnen Sie alle expliziten Regeln mit der selben Form
+eliminieren. Eine implizite Regel hat folgendes Aussehen:
+
+   .asm.obj:
+     tasm $*.asm,$*.obj;
+
+Diese Regel l„át sich wie folgt lesen: Jede Datei mit der
+Namenserweiterung .ASM wird in eine Datei desselben Namens,
+aber mit der Namenserweiterung .OBJ, unter Zuhilfenahme des
+Befehls
+
+   tasm $*.asm,$*.obj;
+
+bersetzt. $* ist ein besonderes Makro, das den Namen der
+Quelldatei ohne Erweiterung liefert. Es wird weiter unten
+besprochen.
+
+Die Syntax fr implizite Regeln lautet:
+
+ QuellExt.ZielExt:
+    [Befehl]
+    ...
+
+Die Befehle sind optional, mssen aber, wenn vorhanden,
+eingerckt werden.
+
+QuellExt ist die Namenserweiterung der Quelldatei. Sie trifft
+fr jede Datei zu, die folgendes Format hat:
+
+    Dateiname.QuellExt
+
+Entsprechend bezieht sich ZielExt auf die Datei
+
+    Dateiname.ZielExt
+
+Dateiname ist fr beide Dateien gleich. Mit anderen Worten: Diese
+implizite Regel ersetzt fr jeden Dateinamen alle expliziten Regeln,
+die folgendes Format haben:
+
+    Dateiname.ZielExt: Dateiname.QuellExt
+      [Befehl]
+      ...
+
+HINWEIS: MAKE setzt implizite Regeln ein, wenn keine expliziten Regeln
+fr ein angegebenes Ziel gefunden werden oder wenn fr Ziel eine
+explizite Regel ohne Befehle existiert.
+
+Zur Bestimmung der anzuwendenden impliziten Regel wird die
+Namenserweiterung des betreffenden Dateinamens herangezogen.
+Die implizite Regel wird angewendet, wenn eine Datei mit
+demselben Basisnamen wie die Zieldatei und mit der
+entsprechenden Quelldatei-Namenserweiterung gefunden wird.
+Nehmen wir beispielsweise an, daá wir eine MAKE-Datei (namens
+MAKEFILE) mit folgendem Inhalt haben:
+
+   .asm.obj:
+     tasm $*.asm,$*.obj;
+
+Nehmen wir weiterhin an, daá es eine Assemblerroutine RATIO.ASM
+gibt, die mit dem folgenden Befehl zu RATIO.OBJ compiliert
+werden soll:
+
+   make ratio.obj
+
+MAKE wrde RATIO.OBJ als Ziel interpretieren. Da es fr das
+Anlegen von RATIO.OBJ keine explizite Regel gibt, wendet MAKE
+die implizite Regel an und generiert den Befehl:
+
+   tasm ratio.asm,ratio.obj;
+
+der den zur Compilierung von RATIO.OBJ erforderlichen
+Arbeitsschritt ausfhrt.
+
+MAKE verwendet auch dann implizite Regeln, wenn Sie eine
+explizite Regel ohne Befehl angeben. Nehmen wir an, daá
+folgende implizite Regel am Beginn der MAKE-Datei steht:
+
+   .pas.tpu:
+     tpc $<
+
+(Das Makro $< setzt den kompletten Namen der Quelldatei ein.)
+Sie k”nnten dann einige explizite Regeln folgendermaáen neu
+schreiben:
+
+   myglobal.tpu: myglobal.pas
+   myutils.tpu: myutils.pas myglobal.tpu myutil.obj
+
+Weil Sie keine Befehle angegeben haben, welche diese TPU-Dateien
+generieren wrden, verwendet MAKE die zuvor definierte implizite
+Regel.
+
+Sie k”nnen mehrere implizite Regeln mit derselben Zieldatei-
+Namenserweiterung schreiben. Existiert mehr als eine implizite
+Regel fr eine gegebene Zieldatei-Namenserweiterung, werden die
+Regeln in der Reihenfolge abgearbeitet, in der sie in der MAKE-
+Datei aufgefhrt sind.
+
+MAKE verwendet die erste implizite Regel, die auf eine Datei
+mit der Quell-Namenserweiterung zutrifft. Auch wenn die Befehle
+dieser Regel fehlgehen, werden keine weiteren Regeln
+ausgewertet.
+
+Alle Zeilen, die auf eine implizite Regel folgen - bis zu der
+Zeile, an deren Anfang kein Whitespace steht oder bis zum
+Ende der Datei - werden als Teil der Befehlsliste fr die Regel
+interpretiert.
+
+Bei impliziten Regeln wird der Dateiname nicht angegeben. Damit
+Make trotzdem weiá, welche Dateien es zu verarbeiten hat, kann man
+spezielle Makros (wie $< und $*) angeben, die den Dateinamen einsetzen.
+
+
+Befehlslisten fr implizite und explizite Regeln
+------------------------------------------------
+Befehle in einer Befehlsliste mssen eingerckt sein und haben die
+folgende Form:
+
+ [Pr„fix...] Befehlsrumpf
+
+Jede Kommandozeile in einer Befehlsliste besteht aus einer
+optionalen Liste von Pr„fixen, gefolgt von einem einzigen
+Befehlsrumpf.
+
+Pr„fixe beeinflussen die Bearbeitung dieser Befehle durch MAKE.
+MAKE kennt zwei Pr„fixe: den sogenannten "Klammeraffen" (@)
+und den Bindestrich, gefolgt von einer Zahl. Bezeichner mssen
+mit einem Whitespace-Zeichen abgeschlossen werden.
+
+     Pr„fix     Wirkung
+     ---------------------------------------------------------------------
+     @          Verhindert, daá MAKE den Befehl vor der Ausfhrung
+		anzeigt. Das Pr„fix @ bewirkt also dasselbe wie die
+		Option -s in der Kommandozeile, gilt aber im Gegensatz
+		zu -s nicht global, sondern nur in der Zeile, wo es steht.
+
+    -Zahl       Beeinfluát die Behandlung von Exit-Codes durch MAKE.
+		Wenn eine Zahl agegeben ist, unterbricht MAKE die
+		Abarbeitung nur dann, wenn der Exit-Status eines
+		Befehls die hinter dem Bindestrich stehende Zahl
+		berschreitet. Im nachfolgenden Beispiel unterbricht
+		MAKE die Abarbeitung, wenn der Exit-Status gr”áer als
+		4 ist:
+
+		  -4 MYPROG SAMPLE.X
+
+		Wird das Pr„fix -Zahl nicht angegeben und ist der Status
+		ungleich 0, h„lt MAKE an und l”scht die aktuelle Zieldatei.
+		(Exit-Codes sind die Rckgabewerte der ausgefhrten
+		Programme.)
+
+    -           Mit einem Bindestrich ohne nachfolgende Zahl berprft
+		MAKE den Exit-Status nicht und setzt die Verarbeitung ohne
+		Beachtung des Exit-Status fort.
+
+Der Befehlsrumpf wird exakt so behandelt, als wrde er in die
+DOS-Kommandozeile eingegeben. Die Umleitung bzw. Weiterleitung von Ein-
+und Ausgabe werden allerdings nicht untersttzt.
+
+   BREAK      CD      CHDIR      CLS      COPY
+   MD         MKDIR   PATH       PROMPT   REN
+   RENAME     SET     TIME       TYPE     VER
+   VERIFY     VOL
+
+Fr alle anderen Befehlsnamen sttzt sich MAKE auf den DOS-
+Suchalgorithmus:
+
+1. MAKE sucht die Datei zuerst im aktuellen Verzeichnis, dann in
+   allen Verzeichnissen, die im Suchpfad angegeben sind.
+
+2. In jedem Verzeichnis sucht MAKE zuerst nach dem
+   spezifizierten Dateinamen mit der Namenserweiterung .COM. Kann
+   keine derartige Datei gefunden werden, sucht es nach demselben
+   Dateinamen, allerdings mit der Namenserweiterung .EXE. Ist auch
+   diese nicht vorhanden, sucht MAKE nach demselben Dateinamen,
+   diesmal mit der Namenserweiterung .BAT.
+
+3. Findet MAKE eine entsprechende .BAT-Datei, wird eine Kopie
+   von COMMAND.COM zur Ausfhrung der Batch-Datei aufgerufen.
+
+Falls MAKE eine .BAT-Datei findet, die zu dem auszufhrenden
+Kommando paát, wird eine Kopie des DOS-Kommandoprozessors
+(COMMAND.COM) aufgerufen, um das Kommando auszufhren.
+
+Wenn Sie in der Kommandozeile eine Dateinamenserweiterung
+angeben, sucht MAKE nur nach Dateien mit dieser Namenserweiterung.
+
+
+Makros
+------
+
+Sie werden bei Ihrer Arbeit bestimmte Befehle, Dateinamen oder
+Optionen immer wieder in Ihrer MAKE-Datei verwenden. Angenommen, Sie
+haben bei allen TPC-Aufrufen den Schalter /Tc:\tp5\bin angegeben (was
+bedeutet, daá sich TPC.CFG und TURBO.TPL im Verzeichnis C:\TP7\BIN
+befinden). Irgendwann m”chten Sie aber ein anderes Verzeichnis angeben.
+Ein Makro kann Ihnen die Arbeit ersparen, in der gesamten Make-Datei
+die Angabe /Tc:\tp5\bin zu „ndern.
+
+Ein Makro ist ein Name, der eine Zeichenkette repr„sentiert.
+Eine Makrodefinition gibt den Makronamen und den
+Erweiterungstext an. Wenn MAKE auf den Makronamen trifft,
+ersetzt es den Namen durch den Erweiterungstext.
+
+Nehmen wir an, daá Sie folgendes Makro am Beginn Ihrer MAKE-
+Datei definiert haben:
+
+   TURBO=c:\tp5\bin
+
+Das Makro TURBO ist damit gleichbedeutend mit dem String
+c:\tp5\bin. Die Make-Datei k”nnte nun wie folgt aussehen:
+
+   TURBO=c:\tp5\bin
+   myapp.exe:  myapp.pas myglobal.tpu myutils.tpu
+     tpc myapp /T$(TURBO)
+
+   myutils.tpu: myutils.pas myglobal.tpu myutil.obj
+     tpc myutils /T$(TURBO)
+
+
+Statt der Verzeichnisangabe rufen Sie das Makro auf - in unserem Fall
+$(TURBO). Bei der Ausfhrung von MAKE wird jedes Makro durch den
+entsprechenden Erweiterungstext ersetzt (also hier durch c:\tp5\bin).
+
+Wenn Sie die erste Zeile ganz weglassen, k”nnen Sie das gewnschte
+Unterverzeichnis durch Benutzung der Kommandozeilenoption -D
+(define) festlegen:
+
+   make -DTURBO=c:\tp5\project
+
+MAKE weiá jetzt, daá TURBO als Makro mit dem Erweiterungstext
+c:\tp5\project zu behandeln ist.
+
+Makrodefinitionen haben folgendes Aussehen:
+
+   MakroName = Erweiterungstext
+
+Dabei ist MakroName der Name des Makros, der sich aus
+Buchstaben und Ziffern ohne Whitespace zusammensetzen sollte.
+Zwischen MakroName und dem Gleichheitszeichen darf jedoch
+Whitespace sein. Erweiterungstext ist ein beliebiger String,
+der aus Buchstaben, Ziffern, Whitespace und Interpunktionszeichen
+bestehen kann und durch ein Zeilenvorschubzeichen beendet wird.
+
+Wurde MakroName bereits vorher definiert (entweder durch eine
+Makrodefinition in der MAKE-Datei oder in der Kommandozeile von
+MAKE), ersetzt die neue Definition die vorhergehende.
+
+Die Groá- und Kleinschreibung ist in Makros signifikant. Die
+Makronamen turbo, Turbo und TURBO werden demnach als drei
+unterschiedliche Namen interpretiert.
+
+Makros werden folgendermaáen aus der MAKE-Datei aufgerufen:
+
+   $(MakroName)
+
+Die Klammern mssen bei jedem Aufruf verwendet werden,
+ausgenommen, wenn der Makroname nur aus einem Zeichen besteht.
+Das Konstrukt $(MakroName) heiát Makro-Aufruf.
+
+Makros in Makros: Makros k”nnen nicht auf der linken Seite
+(MakroName) einer Makrodefinition aufgerufen werden. Sie
+drfen nur auf der rechten Seite stehen (Erweiterungstext).
+Erweitert werden sie allerdings erst dann, wenn das definierte
+Makro aufgerufen wird. Mit anderen Worten: Wenn ein Makroaufruf
+erweitert wird, werden auch die in den Erweiterungstext
+eingebetteten Makros erweitert.
+
+MAKE verfgt ber spezielle vordefinierte Makros: $d, $*, $<,
+$:, $. und $&. Das erste Makro ($d) berprft, ob ein Makroname
+definiert ist; es wird in den bedingten Anweisungen !if und !elif
+verwendet. Die anderen Makros sind Dateinamenmakros, die in expliziten
+und impliziten Regeln zur Anwendung kommen.
+
+Auáerdem werden die aktuellen Umgebungsvariablen als Makros geladen,
+und das Makro __MAKE__ wird als 1 definiert.
+
+Definitionsmakro ($d)
+---------------------
+Das Definitionsmakro ($d) wird auf 1 erweitert, wenn der
+angegebene Makroname definiert ist, ansonsten auf 0. Der Inhalt
+des Erweiterungstextes spielt keine Rolle. Dieses spezielle
+Makro ist nur in !if- und !elif-Anweisungen erlaubt.
+Angenommen, Sie m”chten eine MAKE-Datei dahingehend „ndern, daá
+sie ein bestimmtes Turbo-Pascal-Verzeichnis verwenden soll, falls
+keines angegeben wurde. Sie k”nnen dann folgendes an den Beginn Ihrer
+MAKE-Datei schreiben:
+
+   !if !$d(TURBO)            # wenn TURBO nicht definiert ist,
+   TURBO=c:\tp5\bin          # wird es als C:\TP5\BIN definiert.
+   !endif
+
+ Wenn Sie danach MAKE mit der Kommandozeile
+
+   make -DTURBO=c:\tp5\project
+
+aufrufen, ist TURBO als c:\tp5\project definiert. Wenn Sie aber nur MAKE
+aufrufen:
+
+   make
+
+dann ist TURBO als c:\tp5\bin definiert, wie es Ihrer Voreinstellung
+entspricht.
+
+Das Makro fr Dateinamen ($*)
+-----------------------------
+Dieses Makro ist in Befehlen fr explizite und implizite
+Regeln erlaubt. Das Makro $* wird auf den Namen der zu
+erzeugenden Datei erweitert, jedoch ohne Namenserweiterung:
+
+   Dateiname ist A:\P\TESTFILE.PAS
+   $* wird erweitert zu A:\P\TESTFILE
+
+Beispielweise k”nnen Sie die explizite Regel MYAPP.EXE folgendermaáen
+„ndern:
+
+   myapp.exe:  myapp.pas myglobal.tpu myutils.tpu
+     tpc $* /T$(TURBO)
+
+Makro fr vollst„ndige Dateinamen ($<)
+--------------------------------------
+Dieses Makro wird ebenfalls in Befehlen fr implizite und
+explizite Regeln eingesetzt.
+
+In einer expliziten Regel wird $< zu dem vollst„ndigen
+Zieldateinamen (inklusive Namenserweiterung) erweitert:
+
+   Dateiname ist A:\P\TESTFILE.PAS
+   $< wird erweitert zu A:\P\TESTFILE.PAS
+
+In einer impliziten Regel nimmt $< den Dateinamen plus die
+entsprechende Namenserweiterung der Quelldatei auf. Die
+implizite Regel
+
+   .asm.obj:
+     tasm $*.asm,$*.obj;
+
+produziert genau dasselbe Resultat wie
+
+   .asm.obj:
+      tasm $<,$*.obj;
+
+Das Makro fr Pfadnamen ($:)
+----------------------------
+wird auf den Pfadnamen (ohne den Dateinamen) erweitert:
+
+   Dateiname ist A:\P\TESTFILE.PAS
+   $: wird erweitert zu A:\P\
+
+Das Makro fr Dateiname und Erweiterung ($.)
+--------------------------------------------
+wird auf den Dateinamen mit Namenserweiterung erweitert, aber
+ohne Pfadnamen:
+
+   Dateiname ist A:\P\TESTFILE.PAS
+   $. wird erweitert zu TESTFILE.PAS
+
+Das Nur-Dateiname-Makro ($&)
+----------------------------
+wird nur auf den Dateinamen, ohne Pfad und Namenserweiterung
+erweitert:
+
+   Dateiname ist A:\P\TESTFILE.PAS
+   $& wird erweitert zu TESTFILE
+
+
+Anweisungen
+-----------
+MAKE von Borland erlaubt im Unterschied zu anderen MAKE-Programmen
+die Verwendung von Anweisungen, die denen in C und Pascal „hnlich
+sind. Sie k”nnen mit diesen Anweisungen eine Vielzahl leistungsstarker
+Aktionen durchfhren. Die Anweisungen beginnen mit einem Ausrufezeichen
+(!) als erstem Symbol in der Zeile. Die folgenden Anweisungen sind
+definiert:
+
+   !include
+   !if
+   !else
+   !elif
+   !endif
+   !error
+   !undef
+
+Die Anweisung (!include) legt eine Datei fest, die in die MAKE-
+Datei an der Stelle, wo die Anweisung steht, eingefgt werden
+soll. Die Anweisung hat folgende Syntax:
+
+   !include "Dateiname"
+
+oder
+
+   !include "Dateiname"
+
+!include-Anweisungen k”nnen beliebig tief geschachtelt werden.
+Wenn eine !include-Anweisung versucht, eine Datei einzufgen,
+die bereits auf einer anderen Schachtelungsebene eingefgt wurde
+und damit eine !include-Schleife entstehen wrde, wird die innere
+!include-Anweisung als Fehler zurckgewiesen.
+
+Die Anweisungen fr bedingte Ausfhrung (!if, !elif, !else und
+!endif) erh”hen die Flexibilit„t beim Aufbau von MAKE-Dateien.
+Regeln und Makros k”nnen als bedingt angelegt werden, so daá
+die Definition eines Kommandozeilenmakros (mit der Option -D)
+Bereiche der MAKE-Datei aktivieren oder in ihrer Wirkung
+ausschalten kann. Das Format dieser Anweisungen entspricht
+denen in C, Assembler und Pascal:
+
+   !if Ausdruck
+     [Zeilen]
+   !endif
+
+   !if Ausdruck
+     [Zeilen]
+   !else
+     [Zeilen]
+   !endif
+
+   !if Ausdruck
+     [Zeilen]
+   !elif Ausdruck
+     [Zeilen]
+   !endif
+
+Die bedingten Anweisungen bilden eine Gruppe, an deren Anfang
+wenigstens eine !if-, !ifdef- oder !ifndef-Anweisung und an deren
+Ende eine !endif-Anweisung steht.
+
+Alle Regeln, Befehle oder Anweisungen mssen in einer einzigen
+Quelldatei stehen.
+
+In !if- und !elif-Anweisungen sind Ausdrcke erlaubt, die in etwa
+der C-Syntax folgen. Ein Ausdruck wird als vorzeichenbehafteter
+einfacher 32-Bit-Integer bewertet.
+
+Numerische Werte k”nnen in dezimaler, oktaler oder hexadezimaler
+Notation eingegeben werden.
+
+   4536       # Dezimale Konstante
+   0677       # Oktale Konstante (wegen der fhrenden Null)
+   0x23aF     # Hexadezimale Konstante
+
+
+Ein Ausdruck kann folgende Operatoren verwenden :
+
+    (Un„re Operatoren)
+    -           Negation
+    ~           Bit-Komplement
+    !           Logisches NICHT
+
+    (Bin„re Operatoren)
+    +           Addition
+    -           Subtraktion
+    *           Multiplikation
+    /           Division
+    %           Modulo
+    >>          Rechtsschieben
+    <<          Linksschieben
+    &           Bit-weises UND
+    |           Bit-weises ODER
+    ^           Bit-weises Exklusives-ODER
+    &&          Logisches UND
+    ||          Logisches ODER
+    >           Gr”áer als (arbeitet auch mit String-Ausdrcken)
+    <           Kleiner als (arbeitet auch mit String-Ausdrcken)
+    >=          Gr”áer gleich (arbeitet auch mit String-Ausdrcken)
+    <=          Kleiner gleich (arbeitet auch mit String-Ausdrcken)
+    ==          Gleich (arbeitet auch mit String-Ausdrcken)
+    !=          Ungleich (arbeitet auch mit String-Ausdrcken)
+
+    (Tern„rer Operator)
+    ?:          Es wird auf den Ausdruck vor dem ? getestet:
+		Falls der Ausdruck einen Wert ungleich Null ergibt,
+		ist der zweite Operand (der nach dem ?) das Ergebnis
+		des Ausdrucks, sonst der dritte (nach dem :).
+
+
+
+Zur Gruppierung der Operanden in einem Ausdruck k”nnen Sie Klammern
+verwenden. Fehlen Klammern, gilt dieselbe Rangfolge der Operatoren
+wie in C.
+
+Die Gruppierung der Operanden von Operatoren mit gleichem
+Rang erfolgt von links nach rechts; lediglich der tern„re Operator
+(? :) wird von rechts nach links ausgewertet.
+
+Die Fehler-Anweisung !error bewirkt, daá MAKE die Ausfhrung mit
+einer Fehlermeldung, die den nach !error stehenden Text enth„lt,
+abbricht. Die Anweisung hat das folgende Format:
+
+  !error Beliebiger_Text
+
+Diese Anweisung ist fr den Einsatz in bedingten Anweisungen vorgesehen.
+Sie erlaubt die Angabe einer benutzerdefinierten Fehlerbedingung beim
+Abbruch von MAKE.
+
+Die Anweisung !undef bewirkt, daá die Definition fr das
+angebene Makro aufgehoben wird. Ist das Makro momentan nicht
+definiert, hat die Anweisung keine Wirkung. Die Syntax lautet:
+
+  !undef MakroName
+
+
+Der Aufruf von MAKE
+===================
+
+Mittlerweise haben Sie alles gelernt, was Sie wissen mssen, um MAKE-
+Dateien zu schreiben. Was noch fehlt, ist eine Anleitung, wie Sie
+diese Dateien mit MAKE verwenden. Der einfachste Aufruf von MAKE ist
+
+   make
+
+MAKE sucht daraufhin nach einer Datei namens MAKEFILE; findet es diese
+nicht, sucht es nach MAKEFILE.MAK; ist auch diese Datei nicht vorhanden,
+bricht MAKE mit einer Fehlermeldung ab.
+
+M”chten Sie eine andere Datei angeben, so verwenden Sie die Option -f:
+
+   make -fstars.mak
+
+Die Syntax von MAKE lautet wie folgt:
+
+   make [Option] [Option] ... [Ziel] [Ziel] ...
+
+Option ist eine MAKE-Option und Ziel ist der Name der Datei, die
+MAKE aktualisieren soll.
+
+Falls in der Kommandozeile kein Ziel angegeben ist, benutzt MAKE den
+ersten Dateinamen, der in einer expliziten Regel angegeben worden ist.
+Sind Zieldateien angegeben, erzeugt sie MAKE erforderlichenfalls.
+
+Einige Beispiele fr MAKE-Aufrufe:
+
+   make -n -fstars.mak
+   make -s
+   make -Iinclude -DTURBO=c:\tp5\project
+
+
+Die Datei BUILTINS.MAK
+----------------------
+Im Laufe Ihrer Arbeit werden Sie eine Reihe von MAKE-Makros und
+-Regeln erstellen, die Sie ”fters verwenden. Sie k”nnen diese
+in dreierlei Form verwalten:
+
+o Sie k”nnen sie in jede von Ihnen erzeugte MAKE-Datei
+  schreiben.
+
+o Sie k”nnen sie alle in eine Datei schreiben und die !include-
+  Anweisung in jeder von Ihnen erzeugten MAKE-Datei verwenden.
+
+o Sie k”nnen sie alle in die Datei BUILTINS.MAK-Datei schreiben.
+
+MAKE sucht bei jeder Abarbeitung nach der Datei BUILTINS.MAK,
+obwohl diese nicht notwendigerweise vorhanden sein muá. Findet
+MAKE diese Datei, wird sie als erste ausgewertet. Ist BUILTINS.MAK
+nicht vorhanden, f„hrt MAKE direkt mit der Auswertung der Datei
+MAKEFILE fort (oder mit einer mit der Option -f spezifizierten anderen
+MAKE-Datei).
+
+
+Wie MAKE nach Dateien sucht
+---------------------------
+MAKE sucht BUILTINS.MAK zuerst im aktuellen Verzeichnis. Wenn die Datei
+dort nicht vorhanden ist, sucht MAKE auch in dem Verzeichnis, aus dem
+MAKE.EXE selbst aufgerufen wurde. Sie sollten BUILTINS.MAK im selben
+Verzeichnis ablegen, das auch MAKE.EXE enth„lt.
+
+Die MAKE-Datei sucht MAKE immer nur im aktuellen Verzeichnis.
+Diese Datei enth„lt die Regeln fr die spezielle Programmdatei,
+die hergestellt werden soll. Fr BUILTINS.MAK und die MAKE-
+Datei gelten dieselben Syntaxregeln.
+
+MAKE sucht auch im aktuellen Verzeichnis nach !include-Dateien
+Wenn Sie die Option -I (Include) verwenden, wird auch im damit
+spezifizierten Verzeichnis gesucht.
+
+
+Kommandozeilenoptionen
+----------------------
+Im folgenden finden Sie eine vollst„ndige Zusammenstellung
+aller Kommandozeilenoptionen von MAKE. Achten Sie dabei auf die
+Groá- und Kleinschreibung: -d bedeutet nicht dasselbe wie -D.
+
+
+-DBezeichner   Definiert den benannten Bezeichner als String, der aus
+	       dem einzigen Zeichen 1 (eins) besteht.
+
+-DBez=string   Definiert den benannten Bezeichner Bez als den String,
+	       welcher nach dem Gleichheitszeichen steht. Der String
+	       kann keine Leerzeichen oder Tabulatoren enthalten.
+
+-IVerzeichnis  Sucht in dem angegebenen (und im aktuellen)
+	       Verzeichnis nach Include-Dateien.
+
+-UBezeichner   Hebt alle vorausgegangenen Definitionen des
+	       benannten Bezeichners auf.
+
+-n             Zeigt die Befehle an, fhrt sie aber nicht aus,
+	       was vor allem fr das Testen einer MAKE-Datei ntzlich ist.
+
+-s             Zeigt die Befehle vor der Ausfhrung nicht an.
+
+-fDateiname    Verwendet Dateiname als MAKE-Datei. Wenn Dateiname nicht
+	       existiert und keine Namenserweiterung angegeben ist, wird
+	       Dateiname.MAK angenommen.
+
+-? oder -h     Zeigt einen Hilfetext an.
+
+
+Die Fehlermeldungen von MAKE
+----------------------------
+
+Schwere Fehler
+--------------
+Don't know how to make XXXXXXXX
+(Kann XXXXXXXX nicht erzeugen)
+   Diese Meldung wird ausgegeben, wenn MAKE auf den Namen einer nicht
+   vorhandenen Datei st”át und es gleichzeitig keine Regel gibt, mit
+   der die Datei erzeugt werden k”nnte.
+
+Error directive: XXXX
+(Fehler-Anweisung: XXXX)
+   Diese Meldung wird ausgegeben, wenn MAKE eine !error-Anweisung in der
+   MAKE-Datei auswertet. Der in der Anweisung angegebene Text erscheint
+   mit der Meldung.
+
+Incorrect command line argument: XXX
+(Falsches Kommandozeilenargument: XXX)
+   Dieser Fehler tritt auf, wenn MAKE mit inkorrekten Kommandozeilen-
+   parametern aufgerufen worden ist.
+
+Not enough memory
+(Nicht gengend Speicher)
+   Es steht nicht gengend Arbeitspeicher zur Verfgung. Falls Ihr
+   Computer bereits mit 640K bestckt ist, k”nnen Sie nur noch die
+   MAKE-Datei vereinfachen.
+
+Unable to execute command
+(Kann Befehl nicht ausfhren)
+   M”glicherweise konnte die Befehlsdatei nicht gefunden werden, oder
+   Sie haben sich vertippt. Theoretisch (aber wenig wahrscheinlich) kann
+   die Befehlsdatei auch vorhanden, aber besch„digt sein.
+
+Unable to open makefile
+(MAKE-Datei nicht gefunden)
+   Die aktuelle Datei enth„lt keine Datei namens MAKEFILE oder
+   MAKEFILE.MAK oder nicht die Datei, die mit -f angegeben wurde.
+
+Fehler
+------
+Bad file name format in include statement
+(Ungltiges Dateinamensformat in einer !include-Anweisung)
+   Die Namen von include-Dateien mssen in Anfhrungsstrichen oder
+   spitzen Klammern stehen. Das fhrende Anfhrungszeichen bzw. die
+   spitze Klammer fehlt.
+
+Bad undef statement syntax
+(Unzul„ssige Anwendung von !undef)
+   Eine !undef-Anweisung darf ausschlieálich einen einzelnen Bezeichner
+   als Rumpf der Anweisung enthalten.
+
+Character constant too long
+(Zeichenkonstante zu lang)
+   Zeichenkonstanten drfen nur aus einem oder zwei Zeichen bestehen.
+
+Command arguments too long
+(Kommandozeilenparameter zu lang)
+   Die L„nge der Parameter eines Kommandos hat die von DOS zugelassene
+   Grenze von 127 Zeichen berschritten.
+
+Command syntax error
+(Syntaxfehler)
+   Diese Meldung kann eine Reihe von Ursachen haben:
+
+      o Die erste Regel in der Make-Datei enth„lt am Anfang Whitespace-
+	Zeichen.
+
+      o Eine implizite Regel wurde nicht als .ext.ext: definiert.
+
+      o In einer expliziten Regel steht vor dem Doppelpunkt kein Name.
+
+      o In einer Makrodefinition fehlt vor dem Gleichheitszeichen der
+	Name.
+
+Division by zero
+(Division durch Null)
+   Ein Divisions- oder Modulo-Operator in einer !if-Anweisung hat den
+   Divisor Null.
+
+Expression syntax error in !if statement
+(Syntaxfehler im Ausdruck einer !if-Anweisung)
+   Ursache k”nnen sein: fehlende oder berz„hlige Klammern, Operatoren,
+   Konstanten etc.
+
+File name too long
+(Dateiname zu lang)
+   Der Pfadname in einer !include-Anweisung war zu lang. Pfadnamen unter
+   DOS drfen nicht l„nger als 78 Zeichen sein.
+
+Illegal character in constant expression X
+(Nicht erlaubtes Zeichen in konstantem Ausdruck)
+   MAKE hat ein Zeichen gefunden, das in konstanten Ausdrcken nicht
+   erlaubt ist. Wenn es sich bei dem Zeichen um einen Buchstaben handelt,
+   haben Sie sich wahrscheinlich bei der Eingabe eines Bezeichners
+   vertippt.
+
+Illegal octal digit
+(Ungltige Oktalzahl)
+   Eine Oktalzahl enth„lt die Ziffer 8 oder 9.
+
+Macro expansion too long
+(Makro-Erweiterung zu lang)
+   Ein Makro kann nicht zu mehr als 4096 Zeichen erweitert werden. Der
+   Fehler tritt h„ufig dann auf, wenn ein Makro sich selbst rekursiv
+   aufruft. Ein Makro kann sich nie selbst erweitern.
+
+Misplaced elif statement
+(!elif-Anweisung an dieser Stelle nicht erlaubt)
+   Eine !elif-Anweisung wurde ohne zugeh”rige !if-Anweisung angetroffen.
+
+Misplaced else statement
+(!else-Anweisung an dieser Stelle nicht erlaubt)
+   Eine !else-Anweisung wurde ohne zugeh”rige !if-Anweisung angetroffen.
+
+Misplaced endif statement
+(!endif-Anweisung an dieser Stelle nicht erlaubt)
+   Eine !endif-Anweisung wurde ohne zugeh”rige !if-Anweisung angetroffen.
+
+No file name ending
+(Dateiname nicht korrekt abgeschlossen)
+   Hinter dem Dateinamen in einer !include-Anweisung fehlt die erforder-
+   liche schlieáende Klammer bzw. das abschlieáende Anfhrungszeichen.
+
+Redefinition of target XXXXXXXX
+(Neudefinition des Ziels XXXXXXXX)
+   Der Dateiname taucht mehr als einmal auf der linken Seite einer
+   expliziten Regel auf.
+
+Unable to open include file XXXXXXXXX.XXX
+(Include-Datei XXXXXXXXX.XXX kann nicht ge”ffnet werden)
+   Die Datei wurde nicht gefunden. Die Meldung wird auch ausgegeben,
+   wenn eine Datei eine !include-Anweisung auf sich selbst enth„lt.
+   Prfen Sie, ob die Datei existiert.
+
+Unexpected end of file in conditional started on line #
+(!if-Block vor Dateiende nicht abgeschlossen. Anfang der Bedingung in
+ Zeile #)
+   Das Ende einer Quelltextdatei wurde erreicht, bevor das zu einem !if
+   geh”rige !endif gefunden wurde. Das !endif fehlt oder wurde falsch
+   geschrieben.
+
+Unknown preprocessor statement
+(Unbekannte Pr„prozessor-Anweisung)
+   MAKE hat ein ! als erstes zeichen einer Zeile gefunden, und darauf
+   folgte etwas anderes als error, undef, if, elif, include, else oder
+   endif.
+
+
+
+			   *  *  *  *  *
+
+

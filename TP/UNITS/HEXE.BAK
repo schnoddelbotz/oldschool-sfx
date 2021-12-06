@@ -1,0 +1,23 @@
+Unit HeXe;
+interface
+
+const    abc:array[0..16] of byte = (48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,32);
+var a,b,by:byte;
+
+
+
+procedure hex (sim:byte);
+procedure deci(sim1,sim2:char);
+
+
+implementation
+
+procedure hex(sim:byte);                    {** DEC -> HEX }
+begin a:=trunc(sim/16);b:=sim-a shl 4 end;
+
+procedure deci(sim1,sim2:char);             {** HEX -> DEC }
+var q:byte; begin q:=0;while sim1<>chr(abc[q]) do inc(q);by:=q shl 4;
+                  q:=0;while sim2<>chr(abc[q]) do inc(q);inc (by,q) end;
+
+
+end.

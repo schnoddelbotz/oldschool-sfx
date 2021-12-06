@@ -1,0 +1,88 @@
+Program Checksum;
+uses dos;
+var
+          f : file;
+        res : text;
+      cs,ct : real;
+          y : integer;
+          x,z : longint;
+        buf : array[1..63750] of char;
+    dirinfo : searchrec;
+attr,numread:word;
+     dir,filename : string;
+label next;
+BEGIN
+
+
+
+writeln;
+findfirst('*.*',Archive,dirinfo);
+
+if paramstr(1) = '' then begin
+ filename:='RESULTS.CKS';
+ assign(res,'RESULTS.CKS'); {$I-} rewrite(res); {$I+}
+ if ioresult <> 0 then begin writeln(' Could not create result-file ',filename);exit;end;
+ writeln(' CHKSALL will save results to RESULTS.CKS      Û = reading, ğ = calculating.');
+ writeln(' úúúÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄúúú');
+end
+
+else begin
+
+ assign(res,paramstr(1)); {$I-} rewrite(res); {$I+}
+ if ioresult <> 0 then begin writeln(' Could not create result-file (',paramstr(1),').');exit;end;
+ writeln(' CHKSALL will save results to ',paramstr(1),'       Û = reading, ğ = calculating.');
+  writeln(' úúúÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄúúú');
+ filename:=paramstr(1);
+ for y:=1 to length(paramstr(1)) do begin filename[y]:=upcase(filename[y]);; end;
+
+end;
+
+
+
+writeln(res,'; ** CHKSALL ** Checksum-Calculator file. Do not modify...');getdir(0,dir);
+writeln(res,'; Taken from path: ',dir);
+
+while doserror = 0 do begin
+
+ cs:=0;
+ assign(f,dirinfo.name);
+ getfattr(F,attr);
+
+ if attr <> 32 then begin
+ writeln(' Read    file',dirinfo.name:13,#250,#250,'wrong attribute',#250,#250,'Skipped',#250,#250);
+ goto next;end;
+
+ if dirinfo.name=filename then goto next;
+
+ {$I-}
+ reset(f,1);
+ {$I+}
+ if ioresult <> 0 then begin write(' I/O ERROR !');erase(res);exit;end;
+
+
+ write(' Reading file ',dirinfo.name:12,'... ');
+ write(res,dirinfo.name:14);
+  repeat
+   write(#8,'Û');
+   blockread(f,buf,sizeof(buf),numread);
+   write(#8,'ğ');
+    for x:=1 to numread do begin
+     cs:=cs+ord(buf[x]);
+    end;
+  until numread=0;
+ ct:=ct+cs;
+ writeln(#8,#251,'  Checksum: ',cs:12:0);
+ writeln(res,cs:16:0);
+ close(f);
+ next:
+ findnext(dirinfo);inc(z);
+
+
+end;
+
+writeln(' úúúÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄúúú');
+writeln(' Total Checksum : ',ct:12:0,'   (',z,' files).');
+writeln(res,'Total Checksum  : ',ct:12:0);
+writeln(res,'; Program Terminated succesfully.');
+close(res);
+END.

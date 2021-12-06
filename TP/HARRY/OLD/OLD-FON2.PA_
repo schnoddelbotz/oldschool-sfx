@@ -1,0 +1,106 @@
+Program fon2; {today: let's do a blockrea :)
+               quattro: don't read around, just help me ! ;-)}
+uses crt;
+
+Var     kn,ab:file;
+           res:text;
+           bl:array [1..32000] of char;
+           wl:array [1..2000] of char;
+           ch:char;
+        x,z,wx,wy,la,wlx,look:integer;
+          y,blxr:longint;
+          pos:integer;
+      numRead:word;
+       rel:reaL;
+               s,ss:string;
+
+label cont,ente;
+BEGIN
+textmode(3+font8x8);
+window(1,1,80,50);textbackground(white);clrscr;
+assign(kn ,'d:\Tmp\kn-asc.txt');reset(kn,1);
+assign(res,'d:\tmp\phl.tmp');rewrite(res);
+
+textcolor(blue);for look:=1 to 49 do begin gotoxy(1,look);write('³');gotoxy(80,look);write('³');end;textcolor(white);
+window(1,50,80,50);textbackground(blue);clrscr;
+write('  Could ya PLEASE enter this god damin string that we might continue ?#$!');
+window(1,1,80,1);textbackground(blue);clrscr;
+write(' -- PHLs FON á (tm) now uses blockread ! Look, how fast it is ! -- [..........]');
+textbackground(white);window(2,1,79,50);
+
+writeln;textcolor(blue);
+writeln;write(' Enter Search-String : °°°°°°°°');gotoxy(wherex-8,wherey);readln(ss);
+window(2,2,79,49);textcolor(black);clrscr;
+window(1,50,80,50);textbackground(blue);clrscr;write(' Searching for :', ss);
+textbackground(white);
+
+
+repeat
+if keypressed then begin ch:=readkey; if ch=#27 then goto ente; end;
+blockread(kn,bl,sizeof(bl),numRead);inc(blxr);rel:= ( blxr*32000 / filesize(kn)*100);
+window(1,1,80,1);
+gotoxy(69,1);textcolor(red);
+        if rel>100 then begin write('±±±±±±±±±±');goto cont; end;
+         if rel>90 then begin write('±±±±±±±±±',#26,'');goto cont; end;
+         if rel>80 then begin write('±±±±±±±±',#26,'.');goto cont; end;
+         if rel>70 then begin write('±±±±±±±',#26,'..');goto cont; end;
+         if rel>60 then begin write('±±±±±±',#26,'...');goto cont; end;
+         if rel>50 then begin write('±±±±±',#26,'....');goto cont; end;
+         if rel>40 then begin write('±±±±',#26,'.....');goto cont; end;
+         if rel>30 then begin write('±±±',#26,'......');goto cont; end;
+         if rel>20 then begin write('±±',#26,'.......');goto cont; end;
+         if rel>10 then begin write('±',#26,'........');goto cont; end;
+         if rel<10 then begin write(#26,'.........');goto cont; end;
+
+textcolor(black);
+cont:
+window(2,2,79,50);
+gotoxy(wx,wy-1);
+
+
+writeln;
+
+ for x:=1 to 32000 do begin
+  if bl[x]=  'H' then begin
+  if bl[x+1]='A' then begin
+  if bl[x+2]='C' then begin
+  if bl[x+3]='K' then begin
+  if bl[x+4]='E' then begin
+  if bl[x+5]='R' then begin
+  if bl[x+6]=' ' then begin
+{  if bl[x+7]=' ' then begin}
+
+      textcolor(red);
+      write(^J^M,'Found chrs at :',filepos(kn)+x,^M^J);
+      textcolor(black);
+{
+      for wlx:=z+x-100 to z+x+100 do begin
+
+      wl[wlx]:=bl[wlx];
+      end;}
+
+         writeln(res,^M^J^M^J' *** At POSITON ',filepos(kn)+x,' in KN-ASC we found the following : ***');
+         for z:=1 to 200 do begin
+         write(bl[z+x-100]);
+         write(res,bl[z+x-100]);
+         end;wx:=wherex;wy:=wherey;
+
+  end;end;end;end;end;end;end;{end;} {max 8 chrs zum suchen ....}
+
+ end;
+
+
+until numread=0;
+
+
+ente:
+window(1,50,80,50);textbackground(blue);clrscr;
+textcolor(white);
+write('     ---->  *** watch out for the final version, quattro :) ***   <----');
+ch:=readkey;
+write(ord(ch));
+close(kn);close(res);
+window(1,1,80,50);
+textbackground(black);textcolor(7);
+clrscr;
+END.

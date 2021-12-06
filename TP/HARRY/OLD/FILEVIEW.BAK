@@ -1,0 +1,56 @@
+Program FileView;
+uses crt;
+var           f:file;
+             bl:array [1..3000] of char; {80*50 - 2 zeilen - 1 zeichen}
+             ch:char;
+          x,y,z:integer;
+          posif:longint;
+              c:word;
+BEGIN
+clrscr;
+window(1,1,80,50);textbackground(blue);clrscr;
+write(' Press up[a]/down[y] to scroll in text, [esc] to exit !');
+window(1,2,80,49);textbackground(white);clrscr;
+assign(f,'d:\tmp\pulp_fic.doc');reset(f,1);
+textcolor(black);
+blockread(f,bl,sizeof(bl),c);
+
+posif:=0;
+
+for x:=1 to 3000 do begin
+write(bl[x]);
+end;
+
+
+repeat
+ch:=readkey;
+window(1,50,80,50);textbackground(blue);textcolor(4);write(' Now we have: ',filepos(F)/filesize(F)*100:3:0,'%');
+
+
+window(1,2,80,49);textcolor(black);textbackground(white);
+
+ if upcase(ch)='Y' then begin
+  if filepos(f)<filesize(f)-3000 then begin
+          seek(f,posif+3000);blockread(f,bl,sizeof(bl),c);clrscr;
+          for x:=1 to 3000 do begin write(bl[x]);end;
+          posif:=posif+3000;
+  end;
+ end;
+
+ if upcase(ch)='A' then begin
+  if filepos(f)>3000 then begin
+          seek(f,posif-3000);blockread(f,bl,sizeof(bl),c);clrscr;
+          for x:=1 to 3000 do begin write(bl[x]);end;
+          posif:=posif-3000;
+  end;
+ end;
+
+
+until ch=#27;
+
+
+
+
+writeln(' That was it :) Good englished. ');
+
+end.

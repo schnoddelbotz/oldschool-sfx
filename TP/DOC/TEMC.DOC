@@ -1,0 +1,572 @@
+                       TURBO EDITOR MAKRO COMPILER (TEMC)
+                       ==================================
+
+In dieser Datei finden Sie Hinweise zur Benutzung von TEMC.EXE, dem Turbo
+Editor Makro Compiler, und eine Darstellung der Turbo-Editor-Makrosprache
+TEML.
+
+Inhalt:
+-------
+1. Was ist TEMC?
+2. Kommandozeilenoptionen von TEMC
+3. TEMC-Syntax
+4. Vordefinierte Editorbefehle
+
+
+1. Was ist TEMC?
+----------------
+
+TEMC.EXE ist ein Compiler fÅr Editormakros in der IDE, der integrierten
+Entwicklungsumgebung. TEMC bearbeitet eine Makrodatei, die Editormakros
+und Tastenzuweisungen definiert. Au·erdem wird eine Konfigurationsdatei
+erstellt. Diese wird von der IDE gelesen, um die Auswirkungen von
+Tastaturbefehlen im Editor festzulegen.
+
+Die Datei DEFAULTS.TEM enthÑlt Makrodefinitionen und Tastenzuordungen fÅr
+die IDE. Sie dient als Beispiele und Ausgangspunkt fÅr Ihre énderungen und
+Erweiterungen. Zum selben Zweck dienen die zusÑtzlichen TEM-Dateien.
+
+
+2. Kommandozeilenoptionen von TEMC
+----------------------------------
+
+TEMC wird von der DOS-Kommandozeile aus gestartet. Geben Sie den Befehl
+
+  temc [-c] <Makrodatei>[.TEM] <Konfigurationsdatei>[<.CMD>|<.TP>]
+
+ein. Die Erweiterung der Makrodatei ist .TEM, wenn Sie nichts anderes
+vorgeben. Die Namenserweiterung der Konfigurationsdatei mu· .TP sein.
+
+Es mu· eine TP-Datei vorhanden sein, in die TEMC die Tastenzuweisungen
+speichert. Den Namen dieser TP-Datei mÅssen Sie in der Kommandozeile
+angeben.
+
+Der optionale Parameter -c kann auch als /c angegeben werden. Er kann an
+jeder Position in der Kommandozeile verwendet werden. Benutzen Sie diesen
+Parameter, so werden existierende Kommandotabellen in der Konfigurations-
+datei verworfen, bevor die Makrodatei bearbeitet wird. Wird der Parameter
+-c nicht verwendet, fÅhrt TEMC die Tastenzuweisungen aus der Konfigu-
+rationsdatei mit den in der Makrodatei angegebenen zusammen.
+
+Mit DEAULTS.TEM kînnen Sie die ursprÅnglichen Editor-Befehle wiederher-
+stellen. Sie mÅssen die Datei dazu aber erst compilieren.
+
+
+TEMC-Syntax
+-----------
+
+Die Syntax zur Definition eines Makros sieht so aus:
+
+  MACRO  <Makroname>
+    <Befehl1>;
+    [ <Befehl2>; ... ]
+  END;
+
+<Makroname> kann jedes gÅltige C-Symbol sein, <Befehl> der Name eines
+vordefinierten Makros oder eines vordefinierten TEMC-Editorbefehls.
+Eine Tabelle dieser Befehle und ihrer Auswirkungen finden Sie weiter
+unten in dieser Datei.
+
+Bei der Definition eines Makros sind folgende Punkte zu beachten:
+
+1. Eine Anweisung definiert ein benanntes Makro oder eine Tastenzuweisung.
+
+2. Leerstellen und Zeilenschaltungen kînnen optional verwendet werden.
+
+3. Kommentare werden (wie in C) in die Symbole /* ... */ eingeschlossen.
+
+4. Im Unterschied zu C berÅcksichtigt TEMC Gro·- und Kleinschreibung nicht.
+
+5. Einige Editorbefehle haben eine Syntax, die einem Funktionsaufruf unter
+   C mit einem Argument gleicht:
+
+      SetMark(5);
+
+   In AbhÑngigkeit vom Befehl ist das Argument entweder eine Dezimal-
+   Integerkonstante, eine Zeichenkonstante oder ein literaler String.
+   Sie werden unter Verwendung der C-Syntax festgelegt.
+
+Hier das Beispiel einer Makrodefinition (aus TPWALT.TEM):
+
+    MACRO MacScrollUp
+      ScrollSreenUp; FixCursorPos;
+    END;
+
+Die Syntax fÅr Tastaturzuweisungen lautet
+
+    <Tastenfolge>: <Befehl>;
+
+oder
+
+    <Tastenfolge>: BEGIN <Befehl1>; [ <Befehl2>; ... ] END;
+
+<Tastenfolge> kann entweder eine Zeichentaste sein, die zusammen mit Ctrl
+oder Alt gedrÅckt wird, oder eine Folge von Tasten, die durch ein Plus (+)
+getrennt werden. Die Festlegung der Zeichentasten selbst mu· unter BerÅck-
+sichtigung der Klein- bzw. Gro·schreibung vorgenommen werden. Ctrl-k+B
+ist eine andere Tastenfolge als Ctrl-k+b, letztere jedoch identisch mit
+CTRL-K+b.
+
+Whitespaces zwischen Doppelpunkt und <Tastenfolge> sind erlaubt. Jeder
+<Befehl> kann entweder der Name eines bereits definierten Makros oder
+eines vordefinierten Editorbefehls sein.
+
+Jeder Taste in einer Tastenfolge (au·er der ersten) kann ein ^ oder
+ein @ vorangestellt werden. Das Zirkumflex (^) zeigt an, da· beim DrÅcken
+der Taste jede beliebige Kombination von Shift und Ctrl verwendet werden
+kann. Das Zeichen @ bezieht sich dagegen nur auf die Shift-Taste:
+
+Ctrl-k+b legt ein Ctrl-K, gefolgt von einem kleinen b, fest.
+
+Ctrl-k+^b legt ein Ctrl-K, gefolgt von b, B oder Ctrl-B, fest.
+
+Ctrl-k+@b legt ein Ctrl-K, gefolgt von b oder B, fest.
+
+Tasten werden durch Buchstaben, Ziffern oder Zeichen festgelegt. Ihnen
+kann jeweils ein Ctrl- oder ein Alt- vorangehen. Die folgenden Namen
+bestimmen Tasten, die in der TEMC-Syntax nicht als sie selbst eingegeben
+werden kînnen.
+
+Einige Tasten kînnen nicht direkt in eine TEMC-Makrodatei eingegeben
+werden. Auf diese Tasten kann aber Åber die in der folgenden Tabelle
+angegebenen Namen zugegriffen werden:
+
+       -------------------------------------------------------------
+          Tastenname    ErlÑuterung
+       -------------------------------------------------------------
+          Home          Taste Pos1
+          End           Taste Ende
+          PgUp          Taste BildAuf
+          PgDn          Taste BildAb
+          LfAr          Cursor nach links
+          RgAr          Cursor nach rechts
+          UpAr          Cursor nach oben
+          DnAr          Cursor nach unten
+          Ins           Taste Einfg
+          Del           Taste Entf
+          Enter
+          Return        wie Enter
+          BkSp          Backspace
+          Tab
+          BkTab         nicht mehr verfÅgbar, benutzen Sie Shift-Tab
+          Esc
+          Star          Taste * auf der numerischen Tastatur
+          Minus         Taste - auf der numerischen Tastatur
+          Plus          Taste + auf der numerischen Tastatur
+          Space         Leertaste
+          PrtSc         Taste Druck
+          F1 to F10     Funktionstasten
+       -------------------------------------------------------------
+
+
+4. Vordefinierte Editorbefehle
+------------------------------
+
+TEMC erlaubt die Verwendung eingebauter Editorbefehle und benutzer-
+definierter Makros auch als Befehle innerhalb von Makros. Dabei dÅrfen
+allerdings keine Schleifen erzeugt werden, in denen sich zwei Makros
+gegenseitig aufrufen. Beachten Sie, da· einige Befehle aus dem Editor
+aussteigen und in die IDE zurÅckspringen. Ihr Makro "pausiert" in diesem
+Fall, bis der Editor die Kontrolle zurÅckerlangt.
+
+Es folgt eine Liste aller vordefinierten TEMC-Editorbefehle. Danach folgen
+Befehle, die aus dem Editor aussteigen.
+
+
+BackspaceDelete             Lîscht das Zeichen links vom Cursor.
+
+BottomOfScreen              Bewegt den Cursor in die letzte Zeile des
+                            aktuellen Fensters. Die Spaltenposition
+                            bleibt unverÑndert.
+
+CenterFixScreenPos          Pa·t die Bildschirmanzeige so an, da· der
+                            Cursor sichtbar wird. Benutzen Sie diese
+                            Anpassung, wenn die Cursorposition nicht
+                            im sichtbaren Bereich liegen kînnte.
+                            Anschlie·end befindet sich der Cursor
+                            ungefÑhr in der Mitte des Bildschirms.
+
+CopyBlock                   Existiert ein gÅltiger markierter Textblock,
+                            wird dieser an die aktuelle Cursorposition
+                            kopiert.
+
+CursorCharLeft              Bewegt den Cursor ein Zeichen nach links.
+                            Tabulatoren und das Zeilenende der vorherigen
+                            Zeile werden Åbersprungen.
+
+CursorCharRight             Bewegt den Cursor ein Zeichen nach rechts.
+                            Tabulatoren und das Zeilenende der aktuellen
+                            Zeile werden Åbersprungen.
+
+CursorDown                  Cursor eine Zeile nach unten bewegen.
+
+CursorLeft                  Cursor eine Spalte nach links bewegen.
+
+CursorRight                 Cursor eine Spalte nach rechts bewegen.
+
+CursorSwitchedLeft          Wie CursorLeft, berÅcksichtigt aber
+                            Tabulatoreinstellungen (vergleichen Sie
+                            SetCursorThroughTabMode).
+
+CursorSwitchedRight         Wie CursorRight, berÅcksichtigt aber
+                            Tabulatoreinstellungen (vergleichen Sie
+                            SetCursorThroughTabMode).
+
+CursorUp                    Bewegt den Cursor eine Zeile nach oben
+
+DeleteBlock                 Existiert ein gÅltig markierter Textblock,
+                            wird er gelîscht.
+
+DeleteChar                  Lîscht das Zeichen auf dem der Cursor steht.
+
+DeleteLine                  Lîscht die aktuelle Zeile.
+
+DeleteToEOL                 Lîscht alle Zeichen aus der aktuellen Zeile,
+                            es bleibt eine Leerzeile zurÅck.
+
+DeleteWord                  Lîscht von der Cursorposition bis zum nÑchsten
+                            Wort.
+
+EndCursor                   Bewegt den Cursor ans Ende des Dateipuffers.
+
+ExtendBlockBeg              Leitet eine Serie von Befehlen ein, die
+                            einen Bereich des Textes selektieren und
+                            diesen Bereich als Textblock markieren.
+
+ExtendBlockEnd              Beendet eine durch ExtendBlockBeg eingeleitete
+                            Serie von Befehlen.
+
+FixCursorPos                Stellt sicher, da· der Cursorwert eine Zeile
+                            zwischen 1 und der Anzahl von Zeilen im Puffer
+                            darstellt und da· die Spalte grî·er als 0 ist.
+                            Ist die Option ØCursor through tabÆ nicht
+                            gesetzt, wird der Cursor nicht in die Mitte
+                            eines Tabulators gesetzt.
+
+FixScreenPos                Pa·t die Bildschirmanzeige an, um den Cursor
+                            sichtbar zu machen.
+
+FullPaintScreen             Zeichnet das gesamte Fenster neu, ohne die
+                            alten Inhalte zu Åbernehmen.
+
+HideBlock                   Setzt ein Flag, das anzeigt, da· der ausgewÑhl-
+                            te Block nicht markiert werden soll.
+
+HighlightBlock              Setzt ein Flag, das bei gÅltigen Textmarkie-
+                            rungen fÅr die Hervorhebung der markierten
+                            Blîcke sorgt.
+
+HomeCursor                  Bewegt den Cursor an den Anfang des Datei-
+                            puffers.
+
+IndentBlock                 FÅgt ein Leerzeichen am Anfang jeder Zeile des
+                            markierten (ausgewÑhlten) Textes ein.
+
+InsertText                  FÅgt den literalen String im Puffer an der
+                            aktuellen Cursorposition ein. Die Aufrufsyntax
+                            lautet InsertText(String).
+
+LeftOfLine                  Bewegt den Cursor an den Anfang der aktuellen
+                            Zeile.
+
+LiteralChar                 FÅgt ein Zeichen an der aktuellen Position
+                            des Cursors ein, ohne da· Zeichen wie Tabula-
+                            toren, Zeilenschaltungen usw. besonders
+                            behandelt werden. Die Syntax ist
+                            LiteralChar(c), wobei c ein Zeichen oder ein
+                            Integerwert sein kann.
+
+MarkBufModified             Setzt ein Flag, das anzeigt, da· der Inhalt des
+                            Puffers nicht mehr mit der entsprechenden Datei
+                            auf dem DatentrÑger Åbereinstimmt.
+
+MarkBufUnModified           Lîscht ein Flag und zeigt so an, da· von der
+                            IdentitÑt von Puffer und der Datei auf dem
+                            DatentrÑger ausgegangen werden kann.
+
+MatchPairBackward           Wie MatchPairForward. Allerdings wird ausgehend
+                            von einem ' oder einem " rÅckwÑrts gesucht.
+
+MatchPairForward            Steht der Cursor auf einem der Zeichen (, ),
+                            {, }, [, ] oder auf einem der ersten Zeichen
+                            der Zeichenpaare /* oder */, wird in der
+                            entsprechenden Richtung nach einem passenden
+                            Begrenzer gesucht. Steht der Cursor auf einem
+                            ' oder ", wird vorwÑrts gesucht. Der Cursor
+                            wird - sofern gefunden - auf die nÑchste Ent-
+                            sprechung gesetzt.
+
+MoveBlock                   Wie CopyBlock, jedoch wird das Original des
+                            ausgewÑhlten Textes gelîscht.
+
+MoveToBlockBegin            Bewegt den Cursor an den Anfang des ausgewÑhl-
+                            ten Textes.
+
+MoveToBlockEnd              Bewegt den Cursor ans Ende des ausgewÑhlten
+                            Textes.
+
+MoveToMark                  Bewegt den Cursor an die Position, die durch
+                            den Befehl SetMark(n) gesichert wurde.
+                            Verwenden Sie die Syntax MoveToMark(n).
+                            n ist eine einstellige Zahl zwischen 0 und 9.
+
+MoveToPrevPos               Bewegt den Cursor an die durch Øprevious
+                            position markerÆ bezeichnete Position.
+
+MoveToTempPos               Bewegt den Cursor zu einer gesicherten
+                            temporÑren Markierung.
+
+NullCmd                     Tut nichts. Kann dazu benutzt werden,
+                            eine Taste oder eine Tastenkombination
+                            "au·er Kraft" zu setzen.
+
+OutdentBlock                Lîscht fÅhrende Leerzeichen vom Anfang
+                            jeder Zeile des markierten (ausgewÑhlten)
+                            Textes.
+
+PageDown                    Bewegt den Cursor um die Anzahl der Zeilen
+                            im Fenster nach unten.
+
+PageScreenDown              Bildlauf um die Anzahl der Zeilen im Fenster
+                            nach unten. Die Position des Cursors Ñndert
+                            sich nicht.
+
+PageScreenUp                Bildlauf um die Anzahl der Zeilen im Fenster
+                            nach oben. Die Position des Cursors Ñndert
+                            sich nicht.
+
+PageUp                      Bewegt den Cursor um die Anzahl der Zeilen im
+                            Fenster nach oben.
+
+PaintScreen                 Zeichnet das Fenster neu und geht dabei davon
+                            aus, da· der Bildschirm die letzten énderungen
+                            durch den Editor richtig darstellt.
+
+ReDo                        FÅhrt eine Wiederholung durch. Die genauen
+                            Auswirkungen hÑngen von den Parameterein-
+                            stellungen ab.
+
+RightOfLine                 Bewegt den Cursor an das Ende der Zeile.
+
+RightOfWord                 Bewegt den Cursor in die dem Ende eines
+                            Wortes folgende Spalte.
+
+ScrollScreenDown            FÅhrt einen Bildlauf um eine Zeile nach unten
+                            durch, ohne die Cursorposition zu verÑndern.
+
+ScrollScreenUp              FÅhrt einen Bildlauf um eine Zeile nach oben
+                            durch, ohne die Cursorposition zu verÑndern.
+
+SetAutoIndent               Schaltet die Option Auto Indent ein.
+
+SetAutoOutdent              Schaltet die Option Backspace Unindents ein.
+
+SetBlockBeg                 Setzt das erste Zeichen des ausgewÑhlten Textes
+                            als aktuelle Cursorposition.
+
+SetBlockEnd                 Setzt das letzte Zeichen des ausgewÑhlten
+                            Textes als aktuelle Cursorposition.
+
+SetCursorThroughTabMode     Schaltet die Option ØCursor Through TabsÆ ein.
+
+SetInsertMode               Schaltet den EinfÅgemodus ein.
+
+SetMark                     Setzt eine Markierung auf das Zeichen der
+                            aktuellen Cursorposition, so da· ein nach-
+                            folgender Befehl MoveToMark(n) den Cursor
+                            an diese Position bewegen kann.
+                            Verwenden Sie die Syntax SetMark(n). n ist
+                            eine einstellige Zahl zwischen 0 und 9.
+
+SetOptimalFillMode          Schaltet die Option ØSet Optimal FillÆ ein.
+
+SetPrevPos                  Setzt eine Markierung (Øprevious position
+                            markerÆ) auf die aktuelle Cursorposition.
+                            Diese Markierung wird nur durch einen Aufruf
+                            von SetPrevPos oder SwapPrevPos verÑndert.
+
+SetTabbingMode              Schaltet die Option ØUse Tab CharÆ ein.
+
+SetTempPos                  Sichert die Cursorposition in einer temporÑren
+                            Markierung, die von einigen Editorbefehlen
+                            verwendet wird. In benutzerdefinierten Makros
+                            sollte stattdessen SetMark verwendet werden.
+
+SmartRefreshScreen          Stellt das Fenster neu dar und Åbergeht dabei
+                            alle Teile, die der Editor als unverÑndert
+                            seit der letzten Neudarstellung meldet.
+
+SmartTab                    FÅgt Leerzeichen bzw. Tabulatoren entsprechend
+                            der Einstellung der Tabulatorbreite in ØUse Tab
+                            CharÆ ein.
+
+SwapPrevPos                 Tauscht den Wert des Cursors und des Øprevious
+                            position markerÆ gegeneinander aus.
+
+ToggleAutoIndent            Schaltet den Status der Option ØAuto IndentÆ um.
+
+ToggleAutoOutdent           Schaltet den Status der Option ØBackspace
+                            UnindentsÆ um.
+
+ToggleCursorThroughTabMode  Schaltet den Status der Option ØCursor Through
+                            TabsÆ um.
+
+ToggleHideBlock             Schaltet den Status des Flags des markierten
+                            (ausgewÑhlten) Textes um.
+
+ToggleInsert                Schaltet den Status der Option Insert/Overwrite
+                            um.
+
+ToggleOptimalFillMode       Schaltet den Status der Option ØOptimal FillÆ
+                            um.
+
+ToggleTabbingMode           Schaltet den Status der Option ØUse Tab CharÆ
+                            um.
+
+TopOfScreen                 Bewegt den Cursor in die erste Zeile des
+                            aktuell dargestellten Fensters. Die Spalte
+                            bleibt unverÑndert.
+
+UnDo                        FÅhrt eine Undo-Operation (RÅckgÑngig machen)
+                            durch. Die jeweiligen Auswirkungen hÑngen von
+                            den Parametereinstellungen ab.
+
+WordLeft                    Bewegt den Cursor auf den Anfang des vorher-
+                            gehenden Wortes bzw. das Ende der vorherge-
+                            henden Zeile, je nachdem, was zuerst gefunden
+                            wird.
+
+WordRight                   Bewegt den Cursor auf den Anfang des nÑchsten
+                            Wortes bzw. das Ende der aktuellen Zeile, je
+                            nachdem, was zuerst gefunden wird.
+
+
+Die folgenden Befehle verursachen den Ausstieg aus dem Editor, weil
+zum Beispiel ein Dialogfenster geîffnet wird. Das Makro Åbernimmt
+erst dann wieder die Kontrolle, wenn das Editorfenster erneut den
+Fokus erhÑlt.
+
+ChangeDirectory             ôffnet ein Dialogfenster, das den Wechsel
+                            des aktuellen Verzeichnisses erlaubt.
+
+ChangeModeFlags             Wird nach bestimmten Befehlen (zum Beispiel
+                            ToggleInsert, der eine Editoroption Ñndert)
+                            benutzt und bewirkt, da· innerhalb der IDE
+                            MenÅoptionen oder Symbole aktualisiert
+                            werden.
+
+ClipCopy                    Kopiert ausgewÑhlten Text in die Zwischen-
+                            ablage.
+
+ClipCut                     Verschiebt ausgewÑhlten Text in die
+                            Zwischenablage.
+
+ClipPaste                   Schreibt den Inhalt der Zwischenablage
+                            an der Cursorposition in den Puffer.
+
+ClipShow                    Zeigt den aktuellen Inhalt der Zwischen-
+                            ablage.
+
+CloseWindow                 Schlie·t das Editorfenster.
+
+CompileFile                 Kompiliert den Inhalt des aktuellen Text-
+                            puffers.
+
+CompileMenu                 ôffnet das MenÅ Compilieren.
+
+CompilerOptions             Kopiert die aktuellen Compiler-Optionen
+                            an den Anfang des Textes im Editorpuffer.
+
+EditMenu                    ôffnet das MenÅ Bearbeiten.
+
+FileMenu                    ôffnet das MenÅ Datei.
+
+GetFindString               ôffnet das Dialogfenster fÅr Such-Operationen.
+
+GotoWindow1                 Editorfenster 1 erhÑlt den Fokus.
+
+GotoWindow2                 Editorfenster 2 erhÑlt den Fokus.
+
+GotoWindow3                 Editorfenster 3 erhÑlt den Fokus.
+
+GotoWindow4                 Editorfenster 4 erhÑlt den Fokus.
+
+GotoWindow5                 Editorfenster 5 erhÑlt den Fokus.
+
+GotoWindow6                 Editorfenster 6 erhÑlt den Fokus.
+
+GotoWindow7                 Editorfenster 7 erhÑlt den Fokus.
+
+GotoWindow8                 Editorfenster 8 erhÑlt den Fokus.
+
+GotoWindow9                 Editorfenster 9 erhÑlt den Fokus.
+
+Help                        ôffnet das Hilfefenster.
+
+HelpMenu                    ôffnet das MenÅ Hilfe.
+
+HelpIndex                   Stellt den Index des Hilfesystems dar.
+
+LastHelp                    ôffnet das vorherige Hilfefenster.
+
+MakeProject                 Aktualisiert das Projekt.
+
+Menu                        Aktiviert die MenÅleiste.
+
+Modify                      Wertet AusdrÅcke aus.
+
+NextWindow                  Das nÑchste Fenster in der IDE erhÑlt den
+                            Fokus.
+
+OpenFile                    ôffnet ein Dialogfenster, das erlaubt, eine
+                            Datei zu laden.
+
+OptionsMenu                 ôffnet das MenÅ Optionen.
+
+PrintBlock                  Gibt den markierten Textblock auf dem Drucker
+                            aus.
+
+ReadBlock                   ôffnet ein Dialogfenster, das die Eingabe eines
+                            Dateinamens erwartet. Die Datei wird an der
+                            aktuellen Cursorposition in den Puffer gelesen
+                            und als Textblock markiert.
+
+RepeatSearch                Wiederholt eine Suche mit den vorhergehenden
+                            Parametern.
+
+Replace                     ôffnet ein Dialogfenster fÅr die Funktion
+                            Replace (Ersetzen).
+
+RunMenu                     ôffnet das MenÅ AusfÅhren.
+
+RunProgram                  Aktualisiert ein Projekt und fÅhrt das
+                            Programm aus.
+
+SaveFile                    Sichert den aktuellen Editorpuffer.
+
+SaveFileAs                  ôffnet das Dialogfenster Sichern als.
+
+SearchMenu                  ôffnet das Dialogfenster Suchen.
+
+SystemMenu                  ôffnet das SystemmenÅ.
+
+WindowList                  Gibt die Liste der geîffneten Fenster
+                            aus.
+
+WindowMenu                  ôffnet das MenÅ Fenster.
+
+WindowCascade               Die offenen Fenster werden fÑcherfîrmig
+                            Åberlappend angeordnet.
+
+WindowTile                  Die offenen Fenster werden nebeneinander
+                            angeordnet.
+
+WordHelp                    Aktiviert kontextsensitive Hilfe.
+
+WriteBlock                  ôffnet ein Dialogfenster, in dem die Angabe
+                            einer Datei erwartet wird, in die dann der
+                            ausgewÑhlte Text geschrieben wird.
+
+ZoomWindow                  Vergrî·ert/verkleinert das aktuelle Fenster.
+
+===========================================================================

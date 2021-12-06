@@ -1,0 +1,55 @@
+Program LsPro; {Can you dig it ?}
+Uses crt,dos;
+Var          x,maxx,maxy:integer;
+            ch:char;
+          kbfree,kbatall:longint;
+         actpath:string;
+
+
+procedure hit;BEGIN textcolor(15);end;
+procedure lot;BEGIN textcolor(7);end;
+procedure inv;BEGIN textcolor(black);textbackground(7);end;
+procedure nin;BEGIN textcolor(7);textbackground(black);end;
+
+procedure info; BEGIN
+write(' This is ');hit;write(' LS ');lot;writeln(' Version 0.9á');
+write(' Reported OS-Version: ');hit;writeln(lo(dosversion),'.',hi(dosversion));lot;
+write(' There are ');inv;write('     ',#8,#8,#8,#8,#8);write(kbfree:5);nin;lot;
+write(' MB of ');inv;write('     ',#8,#8,#8,#8,#8);write(kbatall:5);nin;lot;writeln(' free on this drive.');
+writeln;
+writeln('  bugs ? sure ! contact the author :');hit;
+writeln('       hacker2@t-online.de');lot;
+writeln;writeln(' phl.-software: "software, die die welt nicht braucht !"');exit;
+
+
+
+
+
+END;
+
+
+
+
+
+
+BEGIN
+maxx:=MEM[$0040:$004a];
+maxy:=MEM[$0040:$0084];
+getdir(0,actpath);
+kbfree :=diskfree(0) div 1000000;
+kbatall:=disksize(0) div 1000000;
+clrscr;
+if paramstr(1)='/?' then INFO;if paramstr(1)='/h' then INFO;if paramstr(1)='/H' then INFO;
+writeln(' Directory of ',actpath);
+
+
+
+
+
+
+writeln;
+writeln(' The progaram is now finished. Press any key ...');
+
+ch:=readkey;
+
+END.

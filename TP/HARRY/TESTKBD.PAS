@@ -1,0 +1,33 @@
+Program ReadPayd;
+Uses crt;
+Var f1:file;
+    ch,chof:char;
+    x,whereisy: integer;
+    line:string;
+BEGIN
+clrscr;
+
+{assign(f1,'c:\tp\harry\dtaus1.txt');}
+assign(f1,'c:\comm\terminat\utils\nodelist.300');
+
+reset(f1);
+
+
+
+
+WHILE not EOF(f1) do begin
+
+blockread(f1,chof,21);
+write(chof);
+inc(whereisy);
+{if whereisy>23 then begin write('PRESS KEY');ch:=readkey;whereisy:=0;end;}
+
+end;
+
+
+
+
+
+
+ch:=readkey;
+END.

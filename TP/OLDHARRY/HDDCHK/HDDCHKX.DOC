@@ -1,0 +1,29 @@
+
+   ³ ³ ÚÄ¿ ÚÄ ³  / ÚÄ ÚÄ¿
+ ÃÄ´ ÃÄ´ ³  ³/   ÃÄ ÃÄÙ    presents  HDDCHK Ver 0.1294
+   ³ ³ ³ ³ ÀÄ ³\   ÀÄ ³\  
+           
+
+
+PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL PHL
+
+HDDCHECK  is  a (very,  very) simple  but quite  useful DOS-Program to show the
+actual free disk space of your HardDiskDrive(s).As I am a very bad programer, I
+was unable  to  program this program  (?)  with command-line  options. 
+This  is  why  you  received  (I hope so)  a  package with four files,
+
+   HDDCHKX.DOC  this document
+ * HDDCHK1.EXE  Version for one HDD with no other partitions *not released yet*
+   HDDCHK2.EXE  Version for two HDDs or one HDD with 2 partitons
+   HDDCHK3.EXE  2 HDDs/one of them with 2 partitions or 3 HDDs (?!)
+
+if not, you really have bad luck....
+
+Okay, HDDCHK  is quite useful to put into your autoexec.bat, so you are able to
+see at each  startup, how much space  is still available. It also tells you how
+much kB of Mainmemory is free. It just takes a few seconds at each startup, and
+is  really  quite practical. I will soon realese a new version (possibly verion
+0.9501 or 0.9502).  If you like the program,  you  don't  have to pay anything,
+because  it  is -> FREEWARE. (Who in hell would pay for this program of SHIT?).
+
+  Much fun, how I use to say, PÆµL......

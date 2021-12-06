@@ -1,0 +1,17 @@
+Program NoName;
+uses crt;
+var                    x,y,z:integer;
+                          ch:char;
+                           s:string;
+                           f:file;
+                           buf:array[1..80] of char;
+BEGIN
+assign(f,'poker.doc');rewrite(f);
+
+for y:=1 to 80 do buf[y]:=chr(y+100);
+
+for x:=1 to 200 do begin
+blockwrite(f,buf,1);
+end
+
+END.

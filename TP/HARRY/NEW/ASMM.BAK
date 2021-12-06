@@ -1,0 +1,16 @@
+Program NoName;
+uses crt;
+var                    x,y,z:integer;
+                          ch:char;
+                           s:string;
+
+BEGIN
+clrscr;write(' Calling INT 31h !!!');
+
+asm
+int 31h
+end;
+
+write(' called it.');
+ch:=readkey;
+END.

@@ -1,0 +1,11 @@
+Program NoName;
+uses yo,crt;
+var                        ch:char;
+
+
+BEGIN
+clrscr;
+ossi('+',33);
+
+ch:=readkey;
+END.

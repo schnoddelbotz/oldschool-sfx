@@ -1,0 +1,10 @@
+program mb;
+uses crt;
+var x:integer;
+BEGIN
+write(' Testing : ');textcolor(white);
+For x:=1 to 32 do begin;
+sound(30);delay(35);nosound;delay(15);write('.');end;
+textcolor(7);write(' : 32 MB ok !');
+
+END.

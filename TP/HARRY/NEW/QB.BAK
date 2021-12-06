@@ -1,0 +1,7 @@
+BEGIN
+write(' Press [return] to quickboot (only in mode without aspi)');readln;
+asm
+regs ah
+int 19h
+end;
+END.

@@ -1,0 +1,75 @@
+Program Startup;
+USES CRT,DOS;
+VAR a,b,c,d,e,x,f,g,h:real;
+                u,y:integer;
+                 m,s:string;
+Label syntxinf,ent,contd;
+{This Programs shows you your actual sysinfo at startups.
+ Here's the syntax to use with HDDCHK:
+   -n       n: a number from 1 up to 3, number of hdds.}
+BEGIN;
+clrscr;
+window(1,1,40,12);textbackground(15);clrscr;
+window(2,2,39,11);textbackground(8);clrscr;
+writeln;
+textcolor(4);
+writeln('     BootUp  HDD-Space Checker    ');
+writeln(' =================================');
+writeln('   written by Jan Ƕacker, 1994    ');
+if paramcount < 1 then
+ BEGIN;
+writeln(' Syntax:                          ');
+writeln('          HDDCHK x y z            ');
+writeln('  Where x,y,z are the names of    ');
+writeln('  the HHDs to check...            ');
+ goto ent;
+ END;
+if paramcount=1 then u:=3;
+if paramcount=2 then u:=4;
+if paramcount=3 then u:=5;
+if paramcount=4 then u:=6;
+writeln;textcolor(5);
+write(' Reading HDD informations.........');
+{ SECTION I     ---------------------------------------}
+writeln;
+for u:=3 to u do
+ BEGIN
+  write('   Drive         ',diskfree(u)/1000000:3:2);writeln('   MB free');
+ END;
+for u:=7 to u+4 do
+ BEGIN
+  gotoxy(9,u);write(' C:');
+ END;
+writeln;
+{ SECTION I done ------------------------------------}
+{textcolor(9);
+f:=diskfree(3)/1000000;
+g:=diskfree(4)/1000000;
+h:=diskfree(5)/1000000;
+writeln('   Drive C: ',f:3:2);
+writeln('   Drive D: ',g:3:2);
+writeln('   Drive E: ',h:3:2);}
+{writeln('--------------------------------');}
+writeln('----------------------');;
+a:=diskfree(3)/disksize(3);
+b:=diskfree(4)/disksize(4);
+x:=diskfree(5)/disksize(5);
+c:=a*100;d:=b*100;e:=x*100;
+writeln('   Drive C: ---> ',c:3:2);
+writeln('   Drive D: ---> ',d:3:2);
+writeln('   Drive E: ---> ',e:3:2);
+for y:=7 to 9 do
+BEGIN;
+ gotoxy(27,y);writeln('% free');
+END;
+{FOR y:=3 to 5 DO
+ BEGIN;
+  gotoxy(26,y);writeln('MB free');
+ END;}
+gotoxy(14,10);textcolor(4);
+writeln('Total ',diskfree(0),' MB free.');
+gotoxy(30,1);write('done.');
+ent:
+window(1,1,80,25);gotoxy(1,13);
+readln;
+END.

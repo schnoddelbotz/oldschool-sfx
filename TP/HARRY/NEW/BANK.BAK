@@ -1,0 +1,17 @@
+Program NoName;
+uses crt;
+var                   y1,y2,m1,m2,d1,d2{,years,months,days}:word;
+                          ch:char;
+                           s:string;
+
+BEGIN
+clrscr;
+writeln('  Tag, Monat, Jahr [1], dann [2] '^m^j);
+readln(d1,m1,y1,d2,m2,y2);
+{years :=abs(y2-y1)*360;
+months:=abs(m2-m1)*30;
+days  :=abs(d2-d1);
+write(^m^j'  Day-Total = ',years+days+months);}
+write(^m^j' Oder so, 3 var weniger : ',(abs(y2-y1)*360)+(abs(m2-m1)*30)+(abs(d2-d1)),' Tage.');
+ch:=readkey;
+END.

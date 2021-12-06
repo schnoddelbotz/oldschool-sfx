@@ -1,0 +1,45 @@
+
+Hi Boriá!
+
+Hier die original M”sit story. WOW! Aber gar nicht so einfach, dieses Progi
+(das noch einmal von groáer Bedeutung fr die Nachwelt sein wird :-))))
+zu schreiben......... Guck dir mal den Wandel an. Hilfe hab ich jetzt doch 
+noch eingebaut: Problem (mehr oder weniger groá): Sobald du in die Hilfe gehst
+wird das Fenster (wo dein eingetippter Krampf steht) gel”scht, und ein ; an-
+gezeigt. Naja, das werde ich dann wohl auch noch hinkriegen. Ich hab dir den
+quellcode mal mit rbergeschoben. guck halt mal rein. 
+Wenn du noch ideen hast, teil sie mir mit (fr Version 2.xxxxxxx). CU
+DOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM?
+
+
+M™SI 1.95á - DO NOT DISTRIBUTE -Registered to: Boris Gierszewski- (c) by PHL
+
+
+The M”sit story.
+
+Version 0.195á
+
+! first version !
+  only released to BAG and viewed by MK.
+- not comfortable
+- no information of entered text :-(
+- freehand morsing not available
+
+Version 1.95á
+
++ Window for viewing entered text.
+! word counter :-) (only on exit yet) - works quite good, but some errors (?).
+- Going into help will display  the ; - Character (but isn't counted)
+- freehandmorsing still not available
+> enter parameters at startup. And now ?!?! HELP !
+
+Version 2.x ?
+- sound-length switchable
+- better counter (?) What more shall he count? Time ?
+- more functions (enter a longer text and send him after its ?!? possible...)
+(-table with all characters available - just press a button...)
+
+Known problems in Ver 1.95á
+? The  '  w'ont be counted. %-(                               why ?
+- the counter isn't the safest! do not trust him !
+- tell me all problems !!!!!!!!!

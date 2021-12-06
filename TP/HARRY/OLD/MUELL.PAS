@@ -1,0 +1,18 @@
+uses crt;
+
+var f:text;
+   x:longint;
+
+BEGIN
+
+assign(f,'D:\TEMP\Hh.txt');rewrite(f);
+
+for x:=1 to 128000 do begin
+write(f,'h');
+write(f,'H');
+end;
+
+writeln(f);
+writeln(f,' Oha ! Hier endet es !');
+
+END.

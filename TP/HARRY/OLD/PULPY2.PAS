@@ -1,0 +1,39 @@
+Program pulpless;
+Uses crt;
+Var x,y,z:integer;
+        s:string;
+     c,ch:char;
+    f1,f2:text;
+BEGIN
+clrscr;
+assign(f1,'d:\temp\test');
+assign(f2,'d:\temp\f2');
+reset(f1);rewrite(f2);
+
+while not eof(f1) do begin
+
+readln(f1,s);
+ for x:=1 to length(s) do begin
+ write(f2,s[x]);
+ end;
+
+
+if length(s) < 14 then begin writeln(f2);writeln(f2);end;
+
+
+
+
+
+end;
+
+
+
+writeln('found ',z,' doublespaces');
+
+
+
+
+
+close(f1);close(f2);
+ch:=readkey;
+END.

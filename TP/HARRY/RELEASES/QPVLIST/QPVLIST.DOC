@@ -1,0 +1,16 @@
+QPVLIST ver. 1.0 (c) 1995 by phl
+
+Zweck: Soll zum erstellen von Listenfiles dienen, wenn man mit QPEG oder
+       anderen Programmen, die diese Funktion so unterstÅtzen, wenn man
+       sehr viele Files hat, und diese nicht alle einzeln abtippen mîchte.
+
+Bedienung: Wenig Komfort, nicht resourcenhungrig ;-)
+           Kein Parameter... QPVLIST einfach aufrufen.
+     
+         C   -   Wecheseln des Verzeichnisses... man muss keinen komletten
+                 Pfad angeben, es reicht einen der angezeigten Namen einzu-
+                 geben. Funktioniert auch mit ".." (CD ..).
+
+         M   -   Listfile von diesem Verzeichnis erstellen.
+
+        ESC  -   Verlassen. Spricht fÅr sich.

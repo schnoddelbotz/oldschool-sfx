@@ -1,0 +1,19 @@
+Program Liner;
+Uses crt;
+var x,y,z:longint;
+        c:char;
+      s,t:string;
+        f:text;
+BEGIN
+clrscr;
+assign(f,paramstr(1));reset(f);
+
+WHILE NOT EOF(f) DO BEGIN
+gotoxy(1,1);write('Now at line...',x:10);
+inc(x);
+readln(f,s);
+END;
+
+
+
+END.

@@ -1,0 +1,26 @@
+uses crt;
+var long:real;
+       s:string;
+       ch:char;ops:longint;x:integer;
+procedure fout(x,y,farb:byte;simm:string);  {** FASST-Output}
+var q:byte;add,fbo:word;
+begin     add:=y*160-162+x shl 1;fbo:=word(farb) shl 8;
+          for q:=1 to ord(simm[0]) do begin
+          memw[$b800:add]:=fbo+ord(simm[q]);inc(add,2) end end;
+
+BEGIN
+clrscr;
+{$I- $C- $S- $R-}
+long:=2.03;
+
+repeat
+write('.');
+long:=long*1.001;
+inc(ops);
+
+until long>10000;
+
+write(' Did ',ops:3,' operations.');
+sound(500);delay(100);nosound;
+ch:=readkey;
+END.

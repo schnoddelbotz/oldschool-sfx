@@ -1,0 +1,56 @@
+Program fon_inc;
+uses crt;
+var  f1,f2,f3,f4:file;
+           bl:array [1..64000] of char;
+           nr,nw:word;
+           ch:char;
+            x:longint;
+BEGIN
+clrscr;
+assign(f1,'D:\TMP\FON-seek.EXE');
+assign(f2,'D:\TMP\KN-ASC.TXT');
+assign(f3,'D:\TMP\AB-ASC.TXT');
+assign(f4,'D:\TMP\FON20_IN.EXE');
+
+reset(f1,1);reset(f2,1);reset(f3,1);rewrite(f4,1);
+
+write(' Reading Inputfile #1 and putting it into #4.');
+
+
+repeat
+  write('.');
+  BlockRead(F1, bl, SizeOf(Bl), NR);
+  BlockWrite(F4, bl, NR);
+until (NR = 0);
+
+
+write(^M^J,' #4 is now at: ',filepos(f4),'. Now adding #2 to #4 .');
+
+
+seek(f2,0);
+
+
+repeat
+  write('.');
+  BlockRead(F2, bl, SizeOf(Bl), NR);
+  BlockWrite(F4, bl, NR);
+until (NR = 0);
+
+
+
+write(^M^J,' #4 is now at: ',filepos(f4),'. Now adding #3 to #4 .');
+
+
+repeat
+  write('.');
+  BlockRead(F3, bl, SizeOf(Bl), NR);
+  BlockWrite(F4, bl, NR);
+until (NR = 0);
+
+
+
+writelN;
+writeln(' Program finished.');
+close(f1);close(f2);close(f3);close(f4);
+ch:=readkey;
+end.

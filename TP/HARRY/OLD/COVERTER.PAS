@@ -1,0 +1,22 @@
+Program Convert2BIGchar;
+uses crt;
+var
+  f1,f2:text;
+  x:integer;
+  s:string;
+BEGIN
+writeln('dong so');
+assign(f1,'ab-asc.txt');reset(f1);
+assign(f2,'ab-big.txt');rewrite(f2);
+
+repeat
+{while not eof(f1) do begin}
+
+readln(f1,s);
+for x:=1 to length(s) do begin s[x]:=upcase(s[x]);end;
+writeln(f2,s);
+
+until eof(f1);
+
+writeln('did so');close(f1);close(f2);
+end.

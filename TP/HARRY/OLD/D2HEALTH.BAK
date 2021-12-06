@@ -1,0 +1,86 @@
+Program D2Health;
+Uses crt,hexe;
+const
+           abc:array[0..16] of byte = (48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,32);
+Var x,y,z,posi,i,forx:integer;
+       a,b,sim:byte;
+  ch,sim1,sim2:char;
+             c:array [1..2] of byte;
+             f:file;
+
+         isnow:array [1..4] of byte;
+         to_be:array [1..4] of byte;
+
+             d,really,decc:real;
+          s,s2:string;
+
+
+procedure hex(sim:byte);                    {** DEC -> HEX }
+begin a:=trunc(sim/16);b:=sim-a shl 4 end;
+
+procedure deci(sim1,sim2:char); {was char !!!}            {** HEX -> DEC }
+var q:byte; begin q:=0;while sim1<>chr(abc[q]) do inc(q);by:=q shl 4;
+                  q:=0;while sim2<>chr(abc[q]) do inc(q);inc (by,q) end;
+
+
+procedure dec2hex(dec:real);begin
+d:=dec / 256;
+str(d:3:20,s);
+{writeln(s);}s2:=s;
+i:=trunc(d);{writeln(' vorm komma: ',i);}
+delete(s2,1,posi);s2:=s2;
+{writeln('nachm komma: ',s2);}
+really:=d-i;
+really:=really*256;
+{writeln(' This is really :',really:2:0);}
+str(really:2:0,s2);
+val(s2,y,z);
+{val(s2,y,z);write(y);
+y:=y*256;write(Y);write(z);}
+{write(' so it is ... ');textcolor(white);}
+hex(i);{write(chr(abc[a]),chr(abc[b]),' ');}
+isnow[1]:=a;isnow[2]:=b;
+hex(y);{writeln(chr(abc[a]),chr(abc[b]));textcolor(7);}
+isnow[3]:=a;isnow[4]:=b;
+end;
+
+procedure hex2dec(by1,by2,by3,by4:byte;decc:real);begin
+writeln;
+writeln(' *** welcome to hex2dec *** ');
+
+
+deci('F','f');
+writeln('ff is ... ',by);
+
+
+
+writeln(' *** hex2dec has finished *');
+writeln;
+end;
+
+
+BEGIN
+clrscr;
+writeln(' D2-Health .......... ');writeln;
+assign(f,'c:\tp\harry\new\d2-pro.exe');
+reset(f,1); { rewrite rewriterewriterewriterewriterewriterewrite}
+seek(f,1372918);
+blockread(f,c,2);
+x:=c[1];y:=c[2];
+hex(x);
+write(' The actual values are ... ',x,' and ',y,' (in hex: ',a,b);hex(y);
+writeln(' ',chr(abc[a]),chr(abc[b]),')');
+writeln;
+writeln(' These values give you a starting shield of ... ');
+{************dec2hex(20000,x,x,x,x);*****************}
+
+write(' 23647 in hex: ');dec2hex(23647);
+write(chr(abc[isnow[1]]));write(chr(abc[isnow[2]]));write(chr(abc[isnow[3]]));writeln(chr(abc[isnow[4]]));
+
+
+hex2dec(isnow[1],isnow[2],isnow[3],isnow[4],decc);
+
+
+writeln(' Program terminated .');
+ch:=readkey;
+end.

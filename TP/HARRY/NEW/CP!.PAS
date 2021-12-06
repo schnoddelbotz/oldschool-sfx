@@ -1,0 +1,57 @@
+        Program CP;
+Uses crt,dos;
+Var  x,z:longint;
+      err:integer;
+        t:real;
+        ch:char;
+         f:file;
+         s:string[200];
+       s1,s2,s3:string[5];
+         b:array [1..64000] of char;
+         y:word;
+      h, m, sec, hund : Word;
+
+BEGIN
+textcolor(white);
+if paramcount < 1 then begin writeln(' Syntax is: CP! FILENAME.EXT ... Unbelievable !');exit;end;
+assign(f,paramstr(1));
+{$I-}
+reset(f,1);
+{$I+}
+if ioresult <> 0 then begin writeln(' File not found ! ');exit;end;
+{textmode(3+font8x8);}
+settime(0,0,0,0);writeln;
+
+
+repeat
+
+ inc(z);
+ blockread (f ,b,sizeof(b),y);
+ {gotoxy(1,wherey);}
+ write(^M,z:5,' blocks … 64k read. (totally ',filepos(f)/1000000:3:1 ,' megabytes)');
+ if keypressed then begin ch:=readkey;if ch=#27 then begin writeln;writeln(' *-* User abort! *-*');close(f);exit;end;end;
+
+until y=0;
+
+
+gettime(h,m,sec,hund);
+writeln;writeln;
+writeln(' Needed ',sec,' seconds and ',hund,' msec for ',filesize(F)/1000000:3:1,' MB.');
+
+
+if sec <> 0 then begin
+
+str(sec,s1);str(hund,s2);if hund < 10 then begin s2:='0'+s2;end;
+s3:=s1+s2;val(s3,t,err);t:=t/100;
+
+writeln(' That are about ',(filesize(f)/t/1000000):2:2,' mbytes/sec !');
+{writeln(' s1: ',s1,'   s2: ',s2,'  s3: ',s3,'    t: ',t,'   err:',err);}
+end;
+
+if hund <> 0 then begin if sec < 1 then begin
+writeln(' That are about ',(filesize(f)/hund/10000):2:2,' mbytes/sec !');
+end;end;
+
+close(f);{close(f2);}{ch:=readkey;}
+textcolor(7);
+END.

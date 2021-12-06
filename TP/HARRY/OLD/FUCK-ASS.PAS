@@ -1,0 +1,37 @@
+Program Countit;
+uses crt;
+var x,y,z:integer;
+    f:text;
+    c:char;
+    s,ss:string;
+label rerun;
+BEGIN
+if paramstr(1)='' then begin write('no file speified.');exit;end;
+textmode(3+font8x8);
+rerun:
+clrscr;x:=0;y:=0;
+write(' Enter Searchstring:');readln(ss);
+assign(f,paramstr(1));reset(f);
+
+for y:=1 to length(ss) do begin ss[y]:=upcase(ss[y]);end;
+
+
+while not eof(f) do begin
+if wherey > 49 then begin write('Press a key .... [esc] exits');c:=readkey;
+if c=#27 then exit;clrscr;end;
+inc(z);
+readln(f,s);
+for y:=1 to length(s) do begin s[y]:=upcase(s[y]);end;
+if pos(ss,s) <> 0 then begin writeln('N.',x,'@l.',z,': ',s);inc(x);end;
+
+
+end;
+
+writeln;
+writeln('Found it ', x,' times.');
+writeln('done. [esc] exit, [space] search again.');
+c:=readkey;
+if c=#27 then begin close(f);exit;end;if c=#32 then goto rerun;
+close(f);
+gotoxy(1,50);
+END.

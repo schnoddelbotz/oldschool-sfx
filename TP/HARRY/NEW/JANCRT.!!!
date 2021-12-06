@@ -1,0 +1,46 @@
+Unit JanCrt;
+INTERFACE
+Uses crt;
+const normchr=['A'..'Z']+['a'..'z']+['0'..'9'];
+
+var       lv,wx,wy,wx2:integer; {laufvariable,wherex+y}
+                 six:integer;
+               ch:char;
+                s:string;
+procedure XR(x:integer;sss:string); {eXtended Readln}
+Implementation
+
+
+Procedure XR(x:integer;sss:string);begin
+wx:=wherex;wy:=wherey;
+textbackground(white);textcolor(black);
+for lv:=1 to x do write('°');
+gotoxy(wx,wy);write(sss);gotoxy(wx,wy);s:=sss;six:=length(sss);
+
+ repeat
+ ch:=readkey;
+{ write(ord(ch));}
+  if ch =#0 then begin ch:=readkey;
+  if ch =#75 then if wherex>wx   then gotoxy(wherex-1,wherey) else begin sound(750);delay(50);nosound;delay(25);end;
+  if ch =#77 then if wherex<wx+x then gotoxy(wherex+1,wherey) else begin sound(750);delay(50);nosound;delay(25);end;
+  if ch =#83 then begin delete(s,wherex-wx+1,1);dec(six);wx2:=wherex;gotoxy(wx,wy);
+             for lv:=1 to x do write('°');gotoxy(wx,wy);;write(S);gotoxy(wx2,wherey);;end;
+  ch:=#11;
+  end;
+
+ if ch =#8 {del}then if wherex>wx then begin gotoxy(wherex-1,wherey);write('°');gotoxy(wherex-1,wherey);
+                  delete(s,wherex-wx+1,1);dec(six);wx2:=wherex;gotoxy(wx,wy);
+             for lv:=1 to x do write('°');gotoxy(wx,wy);;write(S);gotoxy(wx2,wherey);
+         end
+         else begin sound(750);delay(50);nosound;delay(25);end;
+ if ch =#32 then if wherex<wx+x then begin write(' ');inc(six);s:=s+' ';end
+            else begin sound(750);delay(50);nosound;delay(25);end;
+
+ if ch in normchr then if wherex<wx+x then begin write(ch);inc(six);s:=s+ch;end
+    else begin sound(750);delay(50);nosound;delay(25);end;
+ until (ch=#13) or (ch=#27);
+
+end;
+
+
+END.

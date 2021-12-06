@@ -1,0 +1,17 @@
+Program Puttpix;
+USES Graph,Crt;
+Var    x,y:char;
+    Gd, Gm: Integer;
+     Color: Word;
+begin
+  Gd := Detect;
+  InitGraph(gd,gm,'c:\tp\bgi\');
+  Color := GetMaxColor;
+  Randomize;
+  Delay(1000);
+  repeat
+    PutPixel(Random(639), Random(479), Color); { Plot "stars" }
+
+  until KeyPressed;
+  CloseGraph;
+end.

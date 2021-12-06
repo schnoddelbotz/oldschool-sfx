@@ -1,0 +1,18 @@
+Unit Yo;
+interface
+
+uses crt;
+{var                    x,y,z:integer;
+                          ch:char;
+                           s:string;}
+
+
+procedure ossi(c:char;f:Integer);
+
+implementation
+
+procedure ossi(c:char;f:Integer);var l:integer;begin
+for l:=1 to f do  begin write(c);sound(l*20);delay(100);nosound;end;
+end;
+
+END.

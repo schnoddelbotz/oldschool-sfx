@@ -1,0 +1,291 @@
+DATEIEN AUF DEN DISKETTEN
+-------------------------
+
+Diskette 1
+----------
+INSTALL   EXE - Installationsprogramm
+README    COM - Zeigt die Datei Readme an
+BGI       ZIP - 
+   GRAPH     TPU - Unit Graph fÅr das Borland Graphics Interface
+
+BGIBIN    ZIP - 
+   ATT       BGI - Graphiktreiber fÅr AT&T 6300
+   BOLD      CHR - ZusÑtzlich installierbare BGI-Schrift
+   CGA       BGI - Grafiktreiber fÅr CGA und MCGA
+   EGAVGA    BGI - Grafiktreiber fÅr EGA und VGA
+   EURO      CHR - ZusÑtzlich installierbare BGI-Schrift
+   GOTH      CHR - Schrift Gothik
+   HERC      BGI - Hercules-Grafiktreiber
+   IBM8514   BGI - Grafiktreiber fÅr IBM 8514
+   LCOM      CHR - ZusÑtzlich installierbare BGI-Schrift
+   LITT      CHR - Kleine BGI-Schrift
+   PC3270    BGI - Grafiktreiber fÅr 3270 PC
+   SANS      CHR - Sans-Serif-Schrift
+   SCRI      CHR - ZusÑtzlich installierbare BGI-Schrift
+   SIMP      CHR - ZusÑtzlich installierbare BGI-Schrift
+   TRIP      CHR - Triplex-Schrift
+   TSCR      CHR - ZusÑtzlich installierbare BGI-Schrift
+   VESA16    BGI - BGI-Treiber fÅr VESA 16 Color
+
+BGIDEMOS  ZIP - 
+   ARTY      PAS - BGI-Grafik-Demo
+   BGIDEMO   PAS - BGI-Grafik-Demo
+   BGIDRIV   PAS - BGI-Grafik-Demo
+   BGIFONT   PAS - BGI-Grafik-Demo
+   BGILINK   MAK - BGI-Grafik-Demo
+   BGILINK   PAS - BGI-Grafik-Demo
+
+BREAKOUT  ZIP - 
+   BOUNDS    PAS - Quelltext fÅr Spielprogramm
+   BREAKOUT  PAS - Quelltext fÅr Spielprogramm
+   BRICKS    PAS - Quelltext fÅr Spielprogramm
+   COUNT     PAS - Quelltext fÅr Spielprogramm
+   SCREEN    PAS - Quelltext fÅr Spielprogramm
+   WALLS     PAS - Quelltext fÅr Spielprogramm
+
+DATEILST  DOC - Diese Datei
+DEMOS     ZIP - 
+   CRTDEMO   PAS - Demo fÅr die Unit CRT
+   DIRDEMO   PAS - Beispielprogramm
+   EXECDEMO  PAS - Beispielprogramm fÅr EXEC
+   FIB8087   PAS - 8087-Beispielprogramm
+   LISTER    PAS - Beispielprogramm, das Quelltexte druckt
+   OVRDEMO   PAS - Beispiel fÅr Overlays
+   OVRDEMO1  PAS - Beispiel fÅr Overlays
+   OVRDEMO2  PAS - Beispiel zu Turbo Profiler
+   PROCVAR   PAS - Beispiel fÅr Prozedurvariablen
+   QSORT     PAS - Sortierprogramm (Demo)
+   TEST286   PAS - Beispielprogramm fÅr Test auf 286er (oder hîher)
+
+DOCDEMO   ZIP - 
+   COLLECT1  PAS - Beispielprogramm aus den HandbÅchern
+   COLLECT2  PAS - Beispielprogramm aus den HandbÅchern
+   COLLECT3  PAS - Beispielprogramm aus den HandbÅchern
+   COLLECT4  PAS - Beispielprogramm aus den HandbÅchern
+   COUNT     PAS - Quelltext fÅr Spielprogramm
+   DRAGS     PAS - Beispielprogramm aus den HandbÅchern
+   ENDCMD    PAS - Beispielprogramm aus den HandbÅchern
+   HINTER    PAS - Beispielprogramm aus den HandbÅchern
+   IMPORT    PAS IMPORT - Beispielprogramm aus den HandbÅchern
+   INSWIN    PAS INSWIN - Beispielprogramm aus den HandbÅchern
+   ITEMS     DAT ITEMS - Beispielprogramm aus den HandbÅchern
+   ITEMS     TXT ITEMS - Beispielprogramm aus den HandbÅchern
+   MAKEDAT   BAT - Beispielprogramm aus den HandbÅchern
+   MINIMAL   PAS MINIMAL - Beispielprogramm aus den HandbÅchern
+   NEWBACK   PAS NEWBACK - Beispielprogramm aus den HandbÅchern
+   NORECVER  PAS - Beispielprogramm aus den HandbÅchern
+   ORDERS    DAT ORDERS - Beispielprogramm aus den HandbÅchern
+   ORDERS    PAS ORDERS - Beispielprogramm aus den HandbÅchern
+   ORDERS    TXT ORDERS - Beispielprogramm aus den HandbÅchern
+   OUTDIR    PAS OUTDIR - Beispielprogramm aus den HandbÅchern
+   PICKLIST  PAS - Beispielprogramm aus den HandbÅchern
+   RECOVER   PAS - Beispielprogramm aus den HandbÅchern
+   RESOURC1  PAS - Beispielprogramm aus den HandbÅchern
+   RESOURC2  PAS - Beispielprogramm aus den HandbÅchern
+   STOCKS    PAS STOCKS - Beispielprogramm aus den HandbÅchern
+   STREAM1   PAS STREAM1 - Beispielprogramm aus den HandbÅchern
+   STREAM2   PAS STREAM2 - Beispielprogramm aus den HandbÅchern
+   STRMERR   PAS STRMERR - Beispielprogramm aus den HandbÅchern
+   SUPPLIER  DAT - Beispielprogramm aus den HandbÅchern
+   SUPPLIER  PAS - Beispielprogramm aus den HandbÅchern
+   SUPPLIER  TXT - Beispielprogramm aus den HandbÅchern
+   TERMTEST  PAS - Beispielprogramm aus den HandbÅchern
+   TUTCONST  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR     PAS TUTOR - Beispielprogramm aus den HandbÅchern
+   TUTOR01   PAS TUTOR01 - Beispielprogramm aus den HandbÅchern
+   TUTOR02A  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR02B  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR02C  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR03A  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR03B  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR03C  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR04A  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR04B  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR04C  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR05   PAS TUTOR05 - Beispielprogramm aus den HandbÅchern
+   TUTOR06A  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR06B  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR07   PAS TUTOR07 - Beispielprogramm aus den HandbÅchern
+   TUTOR08A  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR08B  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR08C  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR09   PAS TUTOR09 - Beispielprogramm aus den HandbÅchern
+   TUTOR10   PAS TUTOR10 - Beispielprogramm aus den HandbÅchern
+   TUTOR11A  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR11B  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR11C  PAS - Beispielprogramm aus den HandbÅchern
+   TUTOR12   PAS TUTOR12 - Beispielprogramm aus den HandbÅchern
+   TUTORIAL  TVR - Beispielprogramm aus den HandbÅchern
+   TUTRES    PAS TUTRES - Beispielprogramm aus den HandbÅchern
+   TUTTYPES  PAS - Beispielprogramm aus den HandbÅchern
+   TWOSTAT   PAS - Beispielprogramm aus den HandbÅchern
+   WORKERS   PAS - Beispielprogramm aus den HandbÅchern
+   WORKLIST  PAS - Beispielprogramm aus den HandbÅchern
+
+HELP      CA2 - Teil von HELP.ZIP
+TPC       ZIP - Gepackte Datei enthÑlt:
+   TPC       EXE - Kommandozeilenversion des Compilers
+
+TPL       ZIP - Gepackte Datei enthÑlt:
+   TURBO     TPL - Turbo-Assembler-Beispiel
+
+UNITS     ZIP - Gepackte Datei enthÑlt:
+   APP       TPU - Application-Unit
+   COLORSEL  TPU - Unit ColorSelection
+   DIALOGS   TPU - Unit Dialogs
+   DRIVERS   TPU - Unit Drivers
+   EDITORS   TPU - Unit Editors
+   HISTLIST  TPU - Unit HistoryList
+   MEMORY    TPU - Unit MemoryManagement
+   MENUS     TPU - Unit Menus
+   MSGBOX    TPU - Unit MessageBox
+   OBJECTS   TPU - Unit Objects
+   OUTLINE   TPU - Unit Outline
+   STDDLG    TPU - Unit StandardDialogs
+   STRINGS   TPU - Unit Strings (Real Mode)
+   TEXTVIEW  TPU - Unit TextWindow
+   VALIDATE  TPU - Unit Validate
+   VIEWS     TPU - Unit Views
+   WINDOS    TPU - Unit WinDos (Real Mode)
+
+UNZIP     EXE - Packt archivierte Dateien aus
+UTILS     ZIP - Gepackte Datei enthÑlt:
+   BINOBJ    EXE - Konvertiert binÑre Daten in eine OBJ-Datei
+   BRIEF     TEM - Beispiel-Script fÅr TEMC
+   DEFAULTS  TEM - Beispiel-Script fÅr TEMC
+   DOSEDIT   TEM - Beispiel-Script fÅr TEMC
+   EPSILON   TEM - Beispiel-Script fÅr TEMC
+   GREP      COM - Borland Grep
+   GREP2MSG  EXE - GREP-Filterprogramm
+   GREP2MSG  PAS - Quelltext zu GREP
+   MAKE      EXE - Make-Dienstprogramm von Borland
+   PRNFLTR   EXE - Druckerfilter
+   PRNFLTR   PAS - Quelltext fÅr den Druckerfilter (IDE)
+   RTMRES    EXE - Programm, das RTM resident lÑdt
+   TEMC      EXE - Turbo Editor Makro Compiler
+   THELP     COM - Turbo Hilfe
+   TPUMOVER  EXE - Bibliotheksverwaltung
+
+README        - Wichtige Informationen
+
+Diskette 2
+----------
+HELP      CA1 - 
+   TURBO     TPH - Hilfe zu Pascal unter den DOS-IDEs
+   TVISION   TPH - Hilfedatei fÅr Turbo Vision
+
+
+Diskette 3
+----------
+DPMISYS   ZIP - 
+   DPMI16BI  OVL - DPMI-Server
+   DPMIINST  EXE - Konfigurationsprogramm fÅr DPMI-Server
+   DPMILOAD  EXE - DPMI-Lader (kompatibel mit RTM)
+   RTM       EXE - DPMI-Lader
+
+INTRFACE  ZIP - Gepackte Datei enthÑlt:
+   CRT       INT - Interface-Abschnitt der Unit CRT
+   DIALOGS   INT - Interface-Abschnitt der Unit Dialogs
+   DOS       INT - Interface-Abschnitt der Unit DOS
+   DRIVERS   INT - Interface-Abschnitt der Unit Drivers
+   GRAPH     INT - Interface-Abschnitt der Unit Graph
+   HISTLIST  INT - Interface-Abschnitt der Unit HistoryList
+   MEMORY    INT - Interface-Abschnitt der Unit MemoryManagement
+   MENUS     INT - Interface-Abschnitt der Unit Menus
+   OBJECTS   INT - Interface-Abschnitt der Unit Objects
+   OVERLAY   INT - Interface-Abschnitt der Unit Overlay
+   PRINTER   INT - Interface-Abschnitt der Unit Printer
+   SYSTEM    INT - Interface-Abschnitt der Unit System
+   TEXTVIEW  INT - Interface-Abschnitt der Unit TextView
+   VIEWS     INT - Interface-Abschnitt der Unit Views
+
+SOURCE    ZIP - Gepackte Datei enthÑlt:
+   APP       PAS - Quelltext der Unit Application
+   COLORSEL  PAS - Quelltext der Unit ColorInstallation
+   EDITORS   PAS - Quelltext der Unit Editors
+   MSGBOX    PAS - Quelltext der Unit MessageBox
+   OUTLINE   PAS - Quelltext der Unit Outline
+   STDDLG    PAS - Quelltext der Unit StandardDialogs
+   STRINGS   PAS - UnterstÅtzung fÅr den Typ PChar
+   VALIDATE  PAS - Quelltext zu Validierungsobjekten
+   WINDOS    PAS - E/A-Routinen mit PChar-Daten
+
+TPX       ZIP - Gepackte Datei enthÑlt:
+   TPX       EXE - Integrierte Entwicklungsumgebung
+   TPX       ICO - Symbol fÅr TPW.EXE
+   TPX       PIF - PIF-Datei fÅr TPX unter Windows
+   TPX        TP - Konfigurationsdatei fÅr TPX.EXE
+   TPX       GER - Integrierte Entwicklungsumgebung (German)
+
+TURBO     ZIP - Gepackte Datei enthÑlt:
+   TURBO     EXE - Integrierte Entwicklungsumgebung fÅr Turbo Pascal
+   TURBO     ICO - Symbol fÅr Turbo Pascal
+   TURBO      TP - Konfigurationsprogramm fÅr TURBO.EXE
+   TURBO     GER - Integrierte Entwicklungsumgebung fÅr Turbo Pascal (German)
+
+TURBO3    ZIP - Gepackte Datei enthÑlt:
+   GRAPH3    TPU - Stellt KompatibilitÑt zu Turbo Pascal 3.0 her
+   TURBO3    TPU - Stellt KompatibilitÑt zu Turbo Pascal 3.0 her
+
+TVDEBUG   ZIP - Gepackte Datei enthÑlt:
+   CMDNAMER  PAS - Beispiel zum Debuggen von Turbo-Vision-Anwendungen
+   KEYNAMER  PAS - Beispiel zum Debuggen von Turbo-Vision-Anwendungen
+   SHOWEVNT  PAS - Beispiel zum Debuggen von Turbo-Vision-Anwendungen
+   TVDEBUG   PAS - Beispiel zum Debuggen von Turbo-Vision-Anwendungen
+
+
+Diskette 4
+----------
+ONLINE    ZIP - Gepackte Datei enthÑlt:
+   TEMC      DOC - Beschreibung von TEMC
+   UTILS     DOC - Dokumentation zu Dienstprogrammen
+
+TFLOPPY   ZIP - Gepackte Datei enthÑlt:
+   TURBO     EXE - Integrierte Entwicklungsumgebung fÅr Turbo Pascal
+
+TVDEMOS   ZIP - Gepackte Datei enthÑlt:
+   ASCIITAB  PAS - Turbo-Vision-Beispiel
+   CALC      PAS - OWL-Demo: Windows-Taschenrechner
+   CALENDAR  PAS - Turbo-Vision-Beispiel
+   DEMOCMDS  PAS - Turbo-Vision-Beispiel
+   DEMOHELP  HLP - Turbo-Vision-Beispiel
+   DEMOHELP  PAS - Turbo-Vision-Beispiel
+   DEMOHELP  TXT - Turbo-Vision-Beispiel
+   DEMOSTRS  PAS - Turbo-Vision-Beispiel
+   GADGETS   PAS - Turbo-Vision-Beispiel
+   GENRDEMO  PAS - Turbo-Vision-Beispiel
+   HELPFILE  PAS - Turbo-Vision-Beispiel
+   MKRDEMO   BAT - Batch-Datei zum Erzeugen von TVRDEMO
+   MOUSEDLG  PAS - Turbo-Vision-Beispiel
+   PUZZLE    PAS - Turbo-Vision-Beispiel
+   TVDEMO    PAS - Turbo-Vision-Beispiel
+   TVEDIT    PAS - Turbo-Vision-Beispiel
+   TVHC      PAS - Turbo-Vision-Beispiel
+   TVRDEMO   PAS - Turbo-Vision-Beispiel
+
+TVFM      ZIP - Gepackte Datei enthÑlt:
+   ASSOC     PAS - TVFM-Demodatei
+   COLORS    PAS - TVFM-Demodatei
+   CYAN      PAL - TVFM-Demodatei
+   DEFAULT   PAL - TVFM-Demodatei
+   DIRVIEW   PAS - TVFM-Demodatei
+   DRAGDROP  PAS - TVFM-Demodatei
+   EDITPAL   PAS - TVFM-Demodatei
+   EQU       PAS - TVFM-Demodatei
+   FILECOPY  PAS - TVFM-Demodatei
+   FILEFIND  PAS - TVFM-Demodatei
+   FILEVIEW  PAS - TVFM-Demodatei
+   GAUGES    PAS - TVFM-Demodatei
+   GLOBALS   PAS - TVFM-Demodatei
+   INFOVIEW  PAS - TVFM-Demodatei
+   MAKERES   PAS - TVFM-Demodatei
+   MAKETVFM  BAT - TVFM-Demodatei
+   ROSE      PAL - TVFM-Demodatei
+   TOOLS     PAS - Malprogramm, das OWL einsetzt
+   TRASH     PAS - TVFM-Demodatei
+   TREEWIN   PAS - TVFM-Demodatei
+   TVFM      PAS - TVFM-Demodatei
+   TVFM      TVR - TVFM-Demodatei
+   VIEWHEX   PAS - TVFM-Demodatei
+   VIEWTEXT  PAS - TVFM-Demodatei
+

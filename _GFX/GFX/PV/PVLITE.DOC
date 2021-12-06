@@ -1,0 +1,206 @@
+Beschreibung zu PVLITE   V2.50 01.95 W. Wiedmann
+-------------------------------------------------
+
+1. Was macht PVLITE
+-------------------
+PV ist ein Programm, das es ermoeglicht Bilder verschiedener Bildformate und
+Animationen an einem AT-kompatiblen Rechner anzuzeigen. PVLITE eignet sich
+besonders als Kommandozeilenaufruf aus einem Dateiverwaltungsprogramm heraus.
+Es zeigt:
+
+- TIF         IBM und Macintosh, Bildverarbeitungssoftware und Desktop-
+              anwendungen wie z.B. Pagemaker, Designer, Photostyler.
+- TGA         Targa compatible Software.
+- PCX         Paintbrush, Publisher.
+- PIC         PcPaint, Pictor.
+- SCx,RIX     Colorix, Winrix, RIX-Present.
+- CUT         Dr Halo, Halovision, A4TECH - Scanner.
+- LBM,IFF     Deluxe Paint fuer IBM und Commodore.
+- GIF         Autodesk Animator, VPIC, VGIF, CSHOW, GWS...
+- BMP,RLE,DIB Windows 3.0 und OS/2 Anwendungen.
+- IMG,DTA     Kontron IBAS, ZEISS DSM Elektonenmikroskope. 
+- PCD         Kodak Photo CD Base Format 768x512. 
+- CVP         Passbildphotografiereinheit (Cannon/Kodak?) 512x512 24Bit.
+- JPG,JIF     Baseline JPEG 9R6 ( Image Alchemy ), lossless JPEG.
+- JTF         TIFF mit JPEG Kompression.
+- CEG         Edsun Continuous Edge Graphics (Mode d und f).
+- GEM-IMG,XIMG   Bilder von GEM und Ventura Publisher, Atari ST.
+- MSP         Bilder von MS -Paint ,Windows 2.0.
+- MAC         Bilder von Macintosh -Paint.
+- PIC         Macintosh PICT in 1,2,4,8,24 BPS.
+- WPG         Textverarbeitung mit Rastergrafikeinbindung Word Perfect.
+- ICO         Windows Icons
+- PMC         A4TECH scanner.
+- SFI         SIS Framegrabber.
+- EPS         Encapsulated Postscript mit Rasterdatenfeld.
+- RAS         Sun raster file unkomprimiert.
+- VI          Jovian.
+- DCX         FAX Format mit PCC.
+- FAX,FXD,QFX,..  G3 FAX Formate.
+- IM          KO-23 Satellitenbild mit 109-Block Fehlerkorrektur.
+- SGF         Starwriter Textverarbeitung mit Grafik ( Star Division Hamburg ).
+- SAT         Eumetsat Wettersatellitenbild (BTXSAT Austria)
+- SCR         Word Capture
+- SKD         Autosketch Icon
+- CDR         Corel draw 3.0 Icon
+- RAW
+- PNM         UNIX portable Bitmap 1,8,24 Bps (Jef Poskanzer);
+- ACB,BBM     IFF Brushes , ACBM Files.
+- DAT         Bilder des Framegrabbers Video 1000/2000 von Fricke.
+- FRM         ECHOLAB Testbildgenerator Fileformat.
+- FLM         Unkomprimierte Bilder der Sreenmachine I und II von FAST.
+- ART         First Publisher ART
+- BSG         Fontasy
+- PCP         Atari
+- TPI         Turbo Pascal
+- VM          Unkomprimierte Bilder der Videomachine von FAST.
+- AVI         Video for Windows bis 320x200x8Bit auch RLE, 160x120x16/24Bit unkomp.
+- FLI         Autodesk Animator FLIC's.
+- FLC         Autodesk Animator Pro FLIC's.
+- ANI         Das erste Bild aus Amiga Animationsfiles.
+- DL          Animation.
+- GL          Bilder die in GRASP Files enthalten sind.
+- TXT,DOC,HLP,BAT,BBS   Textfiles mit bis 128x73 Zeichen.
+
+PV erkennt die Bildformate sowie die Grafikkarte selbststaendig.
+
+
+2 Voraussetzungen
+-----------------
+AT kompatibler Rechner mit EGA- ,VGA- oder SVGA- Grafik und mind. 512KB
+Arbeitsspeicher und Festplatte. Fuer optimale Nutzung der Bildebearbeitungs-
+moeglichkeiten sollte eine SVGA oder 8514/A- Grafikkarte mit hoher Aufloesung
+verwendet werden. Unterstuetzt werden Grafikkarten mit ATI-, Paradise-, Ahead-
+Video7-, OAK, Chip&Technology, ET3000/4000- und Trident8900- Chip in fast allen
+Aufloesungen bis 1024x768x256. PV erkennt die Grafikkarte selbststaendig.
+Bei Bedarf erfolgt die Adaption an die Grafikkarte und die Auswahl der
+Aufloesung als Kommandozeilenparameter.
+Auf allen VGA's werden Bilder mit bis zu 10240x10240 in einem Uebersichts-
+Bild angezeigt. Auf allen VGA's sind zusaetzlich die speziellen Modes
+mit 360x512x256 und 720x512x16 verfuegbar. VGA's nach dem VESA-Standard werden
+erkannt und mit Hicolor/Truecolor sowie bis 1280x1024x256 unterstuetzt.
+8514/A, Tiga und XGA Grafikprozessoren werden ueber das AI-Interface unterstuetzt.
+ATI Ultra mit Mach32 u. 2MB werden mit True und Hicolor in voller Aufloesung
+unterstuetzt.
+
+
+3. Anpassung der Grafikkarte
+----------------------------
+Wird PVLITE ohne Parameter aufgerufen, so wird versucht die Grafikkarte auto-
+matisch zu erkennen. Sollte diese Erkennung Probleme machen, so kann folgender
+Parameter (wenn mehrere Parameter dann als letzter) beim Aufruf angehaengt
+werden:
+$10000 = ATI,  $20000 = VIDEO7,   $30000 = ET3000,  $40000 = ET4000,
+$50000 = PARADISE(WD),  $60000 = TRIDENT8900,  $70000 = AHEADB,
+$80000 = CHIP&TECH,  $90000 = OAK,   $A0000 = AHEADA,  $B0000 = EVEREX.
+Fuehrt dies nicht zum Erfolg, sollte der Parameter  $C0000 = VESA probiert
+werden. Alle neueren VGA's sind nach der VESA-Norm und koennen dann CHIP-
+unabhaengig angesteuert werden. Eventuell befindet sich auf ihrer VGA-Instal-
+lations Disk ein Treiber (z.B. VESA.COM) der vorher aufgerufen werden muss.
+PVLITE unterstuetzt folgende Modes, die je nach Bildgroesse automatisch
+selektiert werden (mind. 512k VGA vorausgesetzt):
+-  640x480x256
+-  800x600x256
+- 1024x768x256/16 je nach Karte
+Moechten Sie noch einen weiter Mode angeben oder PVLITE immer in einem festen
+Mode betreiben, so addieren Sie die Funktionsnummer des Modes als letzen
+Parameter:
+z.B.:
+ PVLITE $10065  oder auch  PV $65    = 1024x768x16 bei alten ATI-Karten
+ PVLITE $10055  oder auch  PV $55    = 1024x768x16 bei neuen ATI-Karten
+ PVLITE $nn6f02                      = VIDEO7 -Mode nn
+ PVLITE $38                          = ET4000 1024x768x256
+ PVLITE $12                          = 640x480x16 Standart VGA Aufloesung
+ PVLITE $13                          = 320x200x256 Standart VGA Aufloesung
+ PVLITE $F2                          = 720x510x16 Sonderformat VGA Aufloesung
+ PVLITE $F3                          = 360x512x256 Sonderformat VGA Aufloesung
+
+
+4. Zur Bedienung
+----------------
+- Kommandozeilenparameter:
+  PV [Path[Name.ext]] [-k /o /h /p] [$nn (VGA-Mode)]');
+  -k = verkuerzt die Wartezeit bis das Bild automatisch geladen wird, wenn
+       keine Taste gedrueckt wird auf 1 sec.
+  /p = keine Farboptimierung; Bilder mit mehr als 256 Farben werden normal
+       auf optimale Farbdarstellung mit 256 Farben umgerechnet. Dies kostet
+       viel Rechenzeit, liefert jedoch eine bessere Qualitaet. Wenn Ihnen
+       eine einfache Darstellung ausreicht benuetzen Sie /p.
+  /h = Verwendung von HiColor RAM-DAC. Wenn ihre Graphikkarte Hicolor (32768
+       Farben) besitzt werden Bilder mit mehr als 256 Farben in diesem Modus
+       dargestellt. Dies ist erheblich schneller als Farboptimierung und liefert
+       bessere Ergebnisse. Nachteilig ist die Reduktion der x-Aufloesung und
+       eine weitere Verarbeitung des Bildes, sowie Abspeichern liefert kein
+       sinnvolles Ergebnis. (Das gleiche gilt bei aktiviertem CEG-DSP).
+  /o = Schaltet den Hicolormodus ab.
+  $nn  ist the Funktionsnummer des EGA/VGA/XGA.. Modes und/oder kombiniert mit
+       der Nummer fuer den VGA-Chipsatz. Bitte achten Sie darauf, dass dies
+       immer der letzte Parameter in der Zeile sein muss.
+
+
+5. Zur Installation, Registrierung
+-----------------------------------
+Die registrierte Version zeigt den Namen der registrierten Person.
+
+Die Shareware-Version bringt bei grossen Bildern einen ca 10 sec
+Hinweis in eigener Sache.
+Sie darf nicht gewerblich genutzt werden ohne Registrierung.
+
+Der registrierte Benutzer ist angehalten sich bei mir oder nachstehend
+genannter Mailbox bzw Fido nach Neuerungen zu erkundigen.
+Bitte melden Sie sich bei Interesse an Updates. Es werden keine Updates
+automatisch verschickt.
+Registrierte Benutzer erhalten von mir bei Bedarf detailiertere Auskunft ueber
+PV, Grafikkartenprogrammierung oder Bildformate. Auf Wunsch werden andere
+Funktionen und Bildformate integriert (U.U. gegen Aufpreis je nach Aufwand).
+
+   PVLITE   [ ]  DM30,-
+
+Die Bezahlung erfolgt nach Ihrem Wunsch allerdings muss ich bei Nachnahme
+eine Gebuehr DM5,- erheben.
+
+- Geben Sie das gewuenschte Diskettenformat an, oder besser legen Sie eine
+  leere Diskette bei.
+- Geben Sie die gewuenschte Sprache an: Deutsch/Englisch.
+- Legen Sie am besten einen frankierten Umschlag mit Ihrer Anschrift bei.
+- Schicken Sie das alles an:
+
+   Wolfgang Wiedmann
+   Rechbergweg 4
+   73457 Essingen
+   Germany
+   07365-1419  (nach 17 Uhr oder am Wochenende)
+
+- Die jeweils neueste Shareware-Version erhalten Sie auch in der Mailbox
+  Ultraforce Aalen zum freien Download :
+
+  Line 1   : 0(049)7361-44117
+  Line 2   : 0(049)7361-45309
+  Login    : Gast
+  Passwort : Gast
+
+  FidoNet 2:2487/3108 (Magic PV)
+
+
+6. Rechtsansprueche, verwendete Warenzeichen.
+
+Alle verwendeten Produktnamen, Verfahren, und Bezeichnungen inklusive:
+Western Digital, MS-DOS, Silicon Graphics, FLIC, PCX, TIFF, AI, HAM, BMP, DIB,
+IBM, Macintosh, Pagemaker, Designer, Photostyler, Targa, Paintbrush, PcPaint,
+Pictor, Colorix, Winrix, RIX, Dr Halo, Halovision, Deluxe Paint, Commodore,
+Autodesk, VPIC, VGIF, CSHOW, GWS, Windows, OS/2, Edsun Continuous Edge Graphics,
+GEM, Ventura Publisher, MS-Paint, Word Perfect, A4TECH, SIS, Encapsulated
+Postscript, Sun, UNIX, Fricke, Sreenmachine, FAST-Electronik, Kontron, Zeiss,
+GRASP, Turbo Pascal, AT, EGA, VGA, SuperVGA, 8514/A, ATI, Paradise, Ahead,
+Video7-, OAK, Chip&Technology, ET3000/4000, Trident8900, VESA, Tiga, XGA, CEG,
+HiColor, JPG2GIF, GIF2JPG, Handmade Software, HSI, GIF87a, GIF89a, CompuServe,
+Atari, Huffman, LZW, PICIO, SGI, Image Alchemy, VTCOMPRESS, Stemmer, HDILOAD,
+ATI Wonder, Everex, Kodak, ..
+sind registrierte und unregistrierte Warenzeichen, oder Bezeichnungen der
+jeweiligen Firmen oder Organisationen.
+
+Ich uebernehme keine Haftung irgendeiner Art weder direkt noch impliziert
+einschliesslich Versand und Anwendbarkeit fuer bestimmte Zwecke.
+Unter keinen Umstaenden bin ich haftbar fuer Fehler in der Sofware und dieser
+Beschreibung oder fuer ingenwelche Schaeden die durch PV entstehen.
+PV wird vor der Auslieferung auf Viren untersucht.

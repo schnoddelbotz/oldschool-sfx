@@ -1,0 +1,36 @@
+Persistence of Vision Raytracer Version 2.0
+--------------------------------------------
+These are the demo scene files for use with the Persistence
+of Vision Raytracer version 2.0.
+  
+To use the POV-Ray ray tracer, you also need POVDOC.ZIP for documentation, 
+and an executable for your computer. See the file POVINFO.TXT for
+more information.
+
+These files should be available from the same source from where 
+you received this file.
+------------------------------------------------------------------------
+
+
+Files contained in DEMO sub-directory
+-------------------------------------
+AREALIT1.POV  <- Area light demo #1
+AREALIT2.POV  <- Area light demo #2
+AREALIT3.POV  <- Area light demo #3
+CHARS.POV     <- Demonstrates characters in CHARS.INC
+COLORS.POV    <- Reference image to all of the colors in COLORS.INC
+DEMO.CAT      <- This description file
+NORMAL.POV    <- Shows all basic POVRAY normal perturbing textures
+PIGMENT.POV   <- Shows all basic POVRAY internal predefined pigments
+PLASMA3.GIF   <- GIF for height field testing
+PRIMITIV.POV  <- Shows all basic POVRAY internal shape primitives
+SHAPES.POV    <- Uses one of every shape in SHAPES.INC
+SHAPES2.POV   <- Uses one of every shape in SHAPES2.INC
+SHOTXTR.INC   <- Studio for TEXTUREn.POV files.
+STAGE1.INC    <- Studio for NORMAL.POV, PIGMENT.POV and PRIMITIV.POV
+TEXTURE1.POV  <- Illustrates textures from TEXTURES.INC and STONES.INC
+TEXTURE2.POV  <- Illustrates textures from TEXTURES.INC and STONES.INC
+TEXTURE3.POV  <- Illustrates textures from TEXTURES.INC and STONES.INC
+TEXTURE4.POV  <- Illustrates textures from TEXTURES.INC and STONES.INC
+TEXTURE5.POV  <- Illustrates textures from TEXTURES.INC and STONES.INC
+TEXTURE6.POV  <- Illustrates textures from TEXTURES.INC and STONES.INC

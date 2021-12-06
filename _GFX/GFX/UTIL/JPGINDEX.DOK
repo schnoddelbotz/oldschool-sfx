@@ -1,0 +1,427 @@
+-----------------------------------------------------------------------------
+
+                        J P G I N D E X   1 . 3 e
+                      _____________________________
+                      ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
+
+Copyright (c) 1993 by TBH-Softworx --- all rights reserved
+              Oliver Fromme, Klingestr. 2, 3380 Goslar, Germany
+                      (nach dem 1.7.1993: 38640 Goslar, Germany)
+              Internet e-mail: inof@asterix.rz.tu-clausthal.de
+
+
+Fr den privaten Beutzer ist dieses Programm CARDWARE. Es darf unter den
+folgenden Bedingungen frei kopiert, weitergegeben und benutzt werden:
+
+ * Das Kopieren, Weitergeben bzw. Benutzen darf nur unentgeldlich
+   und nicht kommerziell erfolgen. Auch sogenannte "Kopiergebhren"
+   drfen nicht verlangt werden.
+
+ * Die zugeh”rigen Dateien drfen nicht getrennt werden, d. h. alle
+   Dateien des Paketes (wie unten aufgez„hlt) drfen nur zusammen
+   weitergegeben werden, am besten in einer Archiv-Datei.
+
+ * An den Dateien drfen keine Krzungen, Erg„nzungen oder Ver„nderungen
+   vorgenommen werden, d. h. alle Dateien (wie unten aufgez„hlt) mssen
+   im Original-Zustand verbleiben. Falls nderungen gewnscht werden,
+   bitte ich darum, es mir mitzuteilen, und ich werde tun, was ich kann.
+
+ * Wer dieses Programm benutzt oder es gut findet (oder beides...), m”ge
+   mir bitte eine Postkarte schreiben. Sie brauchen kein Geld zu schicken
+   (auáer, wenn Sie unbedingt wollen...)
+
+Wenn Sie dieses Programm fr Bilder auf einer BBS, Mailbox, ftp-Server,
+fsp-Server, irgendeiner Art von ”ffentlich zug„nglichen Software- oder
+Bilder-Bibliothek oder -Archiv oder etwas „hnlichem verwenden, MšSSEN SIE
+JPGINDEX REGISTRIEREN. Senden Sie einfach DM 20 oder US$ 20 (bar, keine
+anderen W„hrungen, keine Briefmarken) an meine obige Adresse. Ich werde
+Sie darber informieren, ob es eine neuere version von JPGIndex gibt.
+
+
+Die zum JPGIndex-Paket geh”rende Software umfaát die folgenden Dateien:
+   1. LIESMICH.TXT   -  enth„lt m”glicherweise Updates zur Anleitung
+   2. JPGINDEX.EXE   -  das ausfhrbare Hauptprogramm JPGIndex
+   3. TGASCALE.EXE   -  ein Programm zum Skalieren von Targa-Bildern
+   4. TGAMERGE.EXE   -  ein Programm zum Verbinden mehrerer Targa-Bilder
+   5. TGAWRITE.EXE   -  ein Programm zum Beschriften von Targa-Bilder
+   6. *.DOK          -  deutsche Dokumentationen
+   7. *.DOC          -  englische Dokumentationen
+Eventuell kommen noch weitere erg„nzende Text-Dateien dazu, z.B. eine
+Beschreibung der Entwicklungsgeschichte.
+Das Paket darf nur komplett, d.h. einschlieálich aller Dateien, weitergegeben
+werden.
+
+ACHTUNG:
+   Die Benutzung erfolgt auf eigene Gefahr!
+   Der Autor bernimmt keine Verantwortung oder Haftung fr Sch„den jeg-
+   licher Art an Personen, Sachen, Hard- oder Software, die aus der Ver-
+   wendung dieses Programmes direkt oder indirekt, beabsichtigt oder un-
+   beabsichtigt, durch einen Programmfehler oder durch regul„re Programm-
+   funktionen resultieren.
+   Der Autor bernimmmt keine Garantie fr die Funktionsf„higkeit und Ver-
+   wendbarkeit dieses Programmes in irgendeiner Situation oder auf irgend-
+   einem Rechner.
+
+JPGIndex ben”tigt zum korrekten Ablauf das Programm DJPEG von "The
+Independent JPEG Group", das bei allen gr”áeren PD-Quellen erh„ltlich
+ist. Falls das Ausgabebild im JPEG-Format vorliegen soll, wird auáerdem
+das Programm CJPEG (ebenfalls von IJG) ben”tigt.
+
+-----------------------------------------------------------------------------
+
+Prolog -- Was ist JPGIndex?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+JPGIndex ist ein Programm, mit dem aus einer beliebigen Anzahl von JPEG-
+Bildern ein sogenanntes Index-Bild w„hlbarer Gr”áe erstellt werden kann.
+
+ * Eingabe: Bild-Dateien im JPEG-Format (JFIF-Standard), Graustufen- oder
+            Farbbilder, Anzahl: zwei bis beliebig viele (ab einer gewissen
+            Anzahl -- ca. 200 bei 800x600 Pixel -- werden die Einzelbilder
+            im Indexbild so klein, daá sie praktisch unbrauchbar werden).
+            Alle Eingabebilder werden um den gleichen Faktor skaliert, d.h.
+            die Gr”áenverh„ltnisse bleiben erhalten.
+
+ * Ausgabe: Eine Bild-Datei im Targa- oder JPEG-Format, Gr”áe frei w„hlbar,
+            Graustufen oder Farbe w„hlbar. Jedes Einzebild wird mit dem
+            Dateinamen untertitelt. Abst„nde der Einzelbilder untereinander
+            frei w„hlbar. Sortierung der Bilder nach Dateinamen (abschaltbar)
+            oder Optimierung der Reihenfolge, um die Bilder m”glichst dicht
+            zu packen.
+            Ein Preview des Index-Images kann auf jeder Standard-VGA-Karte
+            dargestellt werden (abschaltbar).
+
+Die Eingabebilder werden mit Hilfe des Programmes TGAScale, das Teil des
+JPGIndex-Paketes ist, verkleinert. Beim Verkleinern werden nicht einfach
+Pixel entfernt, sondern es wird eine lineare Interpolation vorgenommen, so
+daá auch verkleinerte Bilder sehr glatt und sauber aussehen. Dies bedeutet,
+daá in ein Index-Bild sehr viele Enzelbilder hineinpassen, die trotzdem
+noch gut erkennbar sind.
+
+JPGIndex ist besonders ntzlich, wenn man gr”áere Mengen von JPEG-Bildern
+hat. Indexbilder helfen dabei, bestimmte Bilder schnell wiederzufinden.
+Besonders fr Mailboxen/BBS drfte JPGIndex von Interesse sein.
+
+Systemvoraussetzungen:
+ * AT-Rechner, mind. 80286 (es gibt von DJPEG/CJPEG spezielle 386-Versionen)
+ * eine schnelle Festplatte
+ * gengend Speicher fr DJPEG/CJPEG (siehe Dokumentation von IJG)
+ * wenn m”glich, eine ausreichend groáe RAM-Disk (1 bis 3 Mb), auf die man
+   die Umgebungsvariable TMP bzw. TEMP setzen sollte
+
+-----------------------------------------------------------------------------
+
+Quickstart -- ein erster Versuch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Der Aufruf sieht im einfachsten Fall so aus:
+   JPGINDEX .
+(Der Punkt geh”rt dazu, er steht fr das momentane Verzeichnis.)
+JPGIndex wird daraufhin alle JPEG-Dateien im momentanen Verzeichnis heraus-
+suchen und deren Gr”áe und Farbtiefe (Graustufen, d.h. 8 Bit, oder Truecolor,
+d.h. 24 Bit) ermitteln. Die Namen werden alphabetisch sortiert und auf dem
+Bildschirm ausgegeben.
+
+VORSICHT: JPGIndex sucht normalerweise nur Dateien mit der Endung .JPG.
+          Falls man JPEG-Dateien mit der Endung .JPE oder .J hat, sollte
+          man anstelle des Punktes "*.JPE" bzw. "*.J" (oder beides) angeben.
+
+Danach ermittelt JPGIndex in einem mehrstufigen Prozeá die bestm”gliche
+Verteilung und Skalierung (Verkleinerung) der Einzelbilder auf einem 800x600
+Pixel Bildschirm. Diese wird anschlieáend grafisch dargestellt (nur, wenn
+eine VGA-Karte vorhanden ist). Mit einem Tastendruck kehrt man in den
+Textmodus zurck.
+
+Abschlieáend erzeugt JPGIndex drei Dateien:
+ * INDEX.BAT    -  Eine Batch-Datei, die die komplette Bearbeitung der
+                   Einzelbilder und die Erzeugung des Indexbildes durchfhrt.
+ * INDEX.MRG    -  Enth„lt die Positionsdaten der Einzelbilder im Indexbild.
+                   Diese Datei wird von INDEX.BAT verdwendet und sollte vom
+                   Benutzer nicht ver„ndert werden.
+ * INDEX.WRT    -  Enth„lt die Positionen und Texte der Bildunterschriften.
+                   Diese Datei wird von INDEX.BAT verdwendet und sollte vom
+                   Benutzer nicht ver„ndert werden.
+ * CLEANUP.BAT  -  Wenn man mit der Index-JPEG-Datei zufrieden ist, die von
+                   INDEX.BAT erzeugt wurde, kann man mit dieser Batchdatei
+                   alle briggebliebenen tempor„ren Dateien (einschlieálich
+                   CLEANUP.BAT selbst) l”schen.
+Es gengt jetzt einfach, "INDEX" einzugeben, um die Batch-Datei zu starten.
+
+VORSICHT: Die Programme DJPEG.EXE, CJPEG.EXE, TGASCALE.EXE, TGAMERGE.EXE und
+          TGAWRITE.EXE sollten sich im Pfad befinden. Ist dies nicht der
+          Fall, bricht INDEX.BAT mit einer Fehlermeldung ab. Man sollte dann
+          das Verzeichnis, in dem o.g. Programme enthalten sind, in den Pfad
+          aufnehmen und INDEX.BAT erneut starten.
+
+Nachdem INDEX.BAT erfolgreich beendet wurde, hat man das fertige Index-Bild
+vorliegen, und zwar sowohl im Targa-Format als auch im JPEG-Format (Qualit„t
+75). Wenn einem Qualit„t und/oder Gr”áe des JPEG-Bildes nicht zusagen, kann
+man die Targa-Datei noch einmal "per Hand" mit CJPEG und einem geeigneten
+Qualit„ts-Wert einpacken (siehe Anleitung der IJG zu CJPEG).
+Wenn man mit dem JPEG-Bild zufrieden ist, kann man mit CLEANUP.BAT alle
+tempor„ren Dateien (dazu geh”ren auch alle briggebliebenen Targa-Bilder!)
+l”schen.
+
+Hier noch einmal die einzelnen Schritte in Stichworten:
+ 1. JPGIndex aufrufen. Auf der Kommandozeile k”nnen beliebig viele Dateien
+    und/oder Verzeichnisse, die JPEG-Dateien enthalten, angegeben werden.
+ 2. Den grafischen Preview begutachten. Wenn nicht zufrieden, JPGIndex
+    erneut mit anderen Parametern aufrufen (mehr dazu sp„ter).
+ 3. INDEX.BAT starten.
+ 4. Die erzeugte JPEG-Datei begutachten. Wenn mit Qualit„t/Gr”áe nicht
+    zufrieden, Targa-Datei mit anderem Qulait„ts-Wert einpacken.
+ 5. CLEANUP.BAT starten.
+ 6. Zufrieden sein.
+
+-----------------------------------------------------------------------------
+
+šbersicht ber die Optionen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Die vollst„ndige Syntax sieht so aus:
+   JPGINDEX files/directories ... [options ...]
+Dateien, Verzeichnisse und Optionen drfen in beliebiger Reihenfolge
+angegeben werden. Wenn keine Datei-Endung angegeben ist, wird .JPG
+vorausgesetzt. Dateien, die keine JPEG-Dateien sind, werden erkannt
+und automatisch von der Bearbeitung ausgeschlossen.
+
+Folgende Optionen sind in der Version 1.3e implementiert:
+
+   /Wx   Hiermit legt man die Breite des Index-Bildes fest. Fehlt diese
+         Option, wird ein 800 Pixel breites Bild erzeugt (/W800). Maximum
+         fr x ist 2048. Zwischen /W und x darf kein Leerzeichen stehen.
+         Wenn die Verteilung der Einzelbilder es erfordert, reduziert
+         JPGIndex evtl. die Breite noch geringfgig.
+
+   /Hx   Hiermit legt man die H”he des Index-Bildes fest. Fehlt diese
+         Option, wird ein 600 Pixel hohes Bild erzeugt (/H600). Maximum
+         fr x ist 2048. Zwischen /H und x darf kein Leerzeichen stehen.
+         Wenn die Verteilung der Einzelbilder es erfordert, reduziert
+         JPGIndex evtl. die Breite noch geringfgig.
+
+   /Sx   Legt den Abstand der Einzelbilder zueinander in Pixel fest (sowohl
+         horizontal als auch vertikal). In der Vertikalen ist es der Abstand
+         von der Oberkante eines Bildes zum unteren Rand der Bildunterschrift
+         des darberliegenden Bildes. Fehlt diese Option, wird der Abstand
+         auf 8 Pixel eingestellt (/S8). Wenn man /S0 angibt, berhren sich
+         nebeneinanderliegende Bilder.
+
+   /Tx   Legt den vertikalen Abstand der Bildunterschrift zum Bild fest.
+         Fehlt diese Option, wird der Abstand auf 2 Pixel eingestellt (/T2).
+         Wenn man /T0 angibt, berhrt die Bildunterschrift die Unterkante des
+         jeweiligen Bildes.
+
+   /G    Bei Angabe dieser Option wird ein Graustufen-Bild erzeugt, was in
+         erster Linie Zeit spart (sowohl bei der Erzeugung des Index als auch
+         beim sp„teren Auspacken/Ansehen des Index-Bildes), aber auch weniger
+         Platz fr die tempor„ren Dateien w„hrend der erzeugung ben”tigt.
+         Das Index-Bild selbst (im JPEG-Format) ist als Graustufenbild nicht
+         wesentlich kleiner als ein entsprechendes Farbbild.
+         Wenn alle Einzelbilder Graustufenbilder sind, wird automatisch ein
+         Graustufen-Indexbild erzeugt. Diese Option ist also nur dann
+         sinnvoll, wenn mindestens eines der Einzelbilder ein Farbbild ist.
+         (Vorsicht: einige JPEG-Bilder sind als "Farbbilder" erzeugt,
+         enthalten aber nur Grauwerte. Dies kann von JPGIndex nicht
+         festgestellt werden, d.h. solche Bilder werden als Farbbilder
+         angesehen.)
+
+   /C    Erzwingt ein Farb-Indexbild. Diese Option ist normalerweise
+         berflssig, da sowieso ein Farbbild erzeugt wird, wenn mindestens
+         ein Eingabebild ein Farbbild ist (und die Option /G nicht angegeben
+         wird).
+
+   /D-   Verhindert das Anzeigen des grafischen Previews. ist ganz ntzlich,
+         wenn man sich ber die Anordnung der Einzelbilder ohnehin im klaren
+         ist, oder wenn man die Fehlermeldung verhindern m”chte, falls man
+         keine VGA-Karte hat.
+
+   /N-   Verhindert das Sortieren der Bilder nach den Dateinamen, d.h. die
+         Bilder werden in der Reihenfolge bernommen, in der sie auf der
+         Kommandozeile angegeben sind, bzw. in der Reihenfolge, in der sie
+         auf der Festplatte stehen. Fehlt die Option /N, werden alle Bilder
+         nach den Dateinamen sortiert (entspricht /N+).
+
+   /N*   Ordnet die Einzelbilder so, daá sich m”glichst wenig Lcken im
+         Index-Bild ergeben. Mit dieser Option wird normalerweise eine
+         bessere Skalierung erreicht. Falls man nicht unbedingt eine
+         alphabetische Reihenfolge ben”tigt, sollte man diese Option
+         verwenden.
+
+   /A+   Hiermit erlaubt man JPGIndex, die Einzelbilder vertikal zu
+         verschieben, um Lcken in der Anordnung auszunutzen. Dies fhrt
+         gew”hnlich zu kompakterene Index-Bilder, kann aber unter Umst„nden
+         zu einem unregelm„áigen unteren Rand fhren. Bei /N- und /N+ ist
+         diese Verschiebung normalerweise ausgeschaltet (/A-), bei /N* ist
+         sie eingeschaltet (/A+).
+
+-----------------------------------------------------------------------------
+
+Wichtige Hinweise
+~~~~~~~~~~~~~~~~~
+
+ * Wie bereits erw„hnt, mssen sich die Programme DJPEG.EXE, CJPEG.EXE,
+   TGASCALE.EXE, TGAMERGE.EXE und TGAWRITE.EXE im Pfad befinden, damit sie
+   von INDEX.BAT gefunden werden.
+
+ * Es wird dringend davon abgeraten, manuelle nderungen an den Dateien
+   INDEX.BAT, INDEX.MRG und INDEX.WRT vorzunehmen. Der Interessierte
+   Benutzer m”ge sie sich ansehen (INDEX.BAT kann relativ lang und komplex
+   werden), aber jede nderung kann zu unberschaubaren Nebenreaktionen
+   fhren.
+
+ * Die Datei INDEX.BAT darf nur in dem Verzeichnis ausgefhrt werden, in
+   dem sie von JPGIndex angelegt wurde! Wenn man sie in einem anderen
+   Verzeichnis startet, fhrt dies zu Fehlfunktionen. Dies liegt in erster
+   Linie daran, daá DJPEG/CJPEG in der Version 4 einen kleinen Bug enthalten,
+   der zu Fehlermeldungen fhrt, falls die zu konvertierenden Dateien sich
+   nicht im aktuellen Verzeichnis befinden.
+
+ * JPGIndex gibt am Ende eine Absch„tzung des tempor„ren Speicherbedarfs
+   aus. Es handelt sich um einen Maximalwert, der angibt, wieviel Speicher
+   mindestens auf dem aktuellen Laufwerk frei sein sollte.
+
+ * Wenn man eine gengend groáe RAM-Disk hat, sollte man die Umgebungs-
+   Variable TMP oder TEMP so setzen, daá sie auf diese RAM-Disk zeigt.
+   JPGIndex verwendet dann die RAM-Disk fr die tempor„re Speicherung
+   des Index-Bildes im Targa-Format. Um den ungef„hren Platzbedarf dieses
+   Bildes auszurechnen, multipliziere man einfach Breite und H”he des
+   index-Bildes. Bie einem Farbbild muá man das Ergebnis noch mit drei
+   multiplizieren.
+
+ * Wenn man einen Index von sehr vielen Bildern macht, oder falls das
+   Index-Bild sehr klein ist, kann es vorkommen, daá die Skalierung einen
+   Wert von 0.01 unterschreitet (ein Hundertstel der Original-Gr”áe).
+   In diesem Fall bricht JPGIndex mit einer Fehlermeldung ab (bei dieser
+   Skalierung ist sowieso nicht mehr viel zu erkennen).
+
+ * Wenn w„hrend der Ausfhrung von INDEX.BAT ein Fehler auftritt (z.B.
+   nicht genug XMS-Speicher fr DJPEG, oder kein Platz mehr auf der
+   Festplatte), bricht die Batch-Datei mit einer Fehlermeldung ab.
+   Man kann dann die Fehlerursache beseitigen, und INDEX.BAT erneut starten,
+   wobei die Erzeugung des Index-Bildes an der unterbrochenen Stelle
+   fortgesetzt wird.
+
+ * Es ist auch m”glich, INDEX.BAT jederzeit mit Ctrl-C oder Ctrl-Break
+   (bzw. Strg-C oder Strg-Untbr) zu unterbrechen. Auch hier kann die
+   Erzeugung des Index-Bildes durch Neustart von INDEX.BAT an der
+   unterbrochenen Stelle fortgesetzt werden.
+
+-----------------------------------------------------------------------------
+
+Fr Insider -- wie's funktioniert
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Im folgenden wird beschrieben, wie die Erzeugung des Index-Bildes durch
+INDEX.BAT erfolgt.
+
+Fr jedes Einzelbild <name> werden die folgenden Operationen durchgefhrt:
+ * Es wird geprft, ob eine Datei <name>.TGS existiert. Falls ja, wird
+   die Bearbeitung von <name> bersprungen.
+ * DJPEG wird aufgerufen: aus <name> wird <name>.TGA erzeugt.
+ * TGASCALE wird aufgerufen: aus <name>.TGA wird <name>.TGS erzeugt.
+ * Die Datei <name>.TGA wird gel”scht.
+
+Nachdem diese Schritte fr alle Eingabedateien durchgefhrt wurden, werden
+die folgenden Operationen durchgefhrt:
+ * TGAMERGE wird mit INDEX.MRG als Parameter aufgerufen: aus allen *.TGS-
+   Dateien wird das Index-Bild INDEX.TGA erzeugt, und zwar in dem
+   Verzeichnis, das die Umgebungsvariable TMP bzw. TEMP angibt (falls
+   vorhanden).
+ * Die Dateien *.TGS werden gel”scht.
+ * TGAWRITE wird mit INDEX.WRT als Parameter aufgerufen: das Index-Bild
+   INDEX.TGA wird mit den Bildunterschriften versehen.
+ * Falls INDEX.TGA in einem anderen Verzeichnis angelegt wurde, wird es
+   jetzt ins aktuelle Verzeichnis verschoben (d.h. kopiert und im
+   Ursprungsverzeichnis gel”scht).
+ * CJPEG wird aufgerufen: aus INDEX.TGA wird INDEX.JPG erzeugt. Als
+   Qualit„tswert wird 75 verwendet, was in den meisten F„llen zu
+   zufriedenstellenden Resultaten fhrt.
+
+-----------------------------------------------------------------------------
+
+Epilog -- und was mir sonst noch am Herzen liegt
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Dies ist voraussichtlich nicht die letzte Version von JPGIndex. Ich habe noch
+einige Ideen, die ich gerne realisieren m”chte, z.B. eine Verbesserung der
+Anordnung der Bilder, andere Sortieroptionen, flexiblere Bildunterschriften
+(z.B. farbig, in anderen Gr”áen, Schriften usw. -- einen Schrift-Editor
+hab' ich schon fertig, mit dem man auch normale Textmodus-Zeichens„tze
+erzeugen und editieren kann). Auch die M”glichkeit, anstelle von JPEG-Bildern
+auch Targa-Bilder als Eingabe zuzulassen, ziehe ich in Erw„gung.
+
+Ich m”chte an dieser Stelle auch auf einige andere Tools zur Bearbeitung
+von Targa-Dateien hinweisen, die ich geschrieben habe, die aber nicht direkt
+zum JPGIndex-Paket geh”ren:
+ * TGACLIP   -  Ausschnitte aus einem Targabild herausschneiden.
+ * TGACOLOR  -  Farbbilder in Graustufenbilder umwandeln und umgekehrt
+ * TGACONTR  -  Kontrast, Helligkeit und Farbs„ttigung eines Targabildes
+                ver„ndern (sehr m„chtig!).
+ * TGAMIRR   -  wandelt Targa-Bilder mit Bottom-Up-Raster, wie sie z.B.
+                "Image Alchemy" produziert, in regul„re Top-Down-Raster um,
+                damit sie von den Targa-Tools verwendet werden k”nnen.
+                Kann auch normale Targa-Bilder spiegeln.
+ * TGAVIEW   -  zeigt Targa-Bilder auf den meisten g„ngigen VGA/Super-VGA-
+                Karten an, in Graustufen oder in Farbe (mit Dithering).
+                Man kann mit der Maus im Bild herumfahren und Farben
+                "herauspicken". Untersttzt auch einige True-Color-Karten,
+                auf denen Farbe ohne Dithering dargestellt werden kann.
+In Planung sind die folgenden Tools:
+ * GIF2TGA   -  wandelt GIF-Bilder in Targa-Bilder um (Farbe und Graustufen).
+ * TGA2GIF   -  wandelt Targa-Bilder in GIF-Bilder um (nur Graustufen).
+ * TGAENHNC  -  beseitigt Alias-Effekte (Treppenstufen) und Pixelmuster,
+                die bei der Konvertierung von palettierten Formaten auftreten
+                k”nnen, begnstigt auáerdem die JPEG-Kompression.
+Wie man sieht, habe ich mich mit dem Targa-Bildformat intensiv
+auseinandergesetzt. Auf lange Sicht plane ich, einen kleinen Grafikeditor
+(bzw. ein einfaches Malprogramm) fr Targa-Bilder zu schreiben, der die
+Funktionen aller Targa-Tools und einiges mehr in sich vereint.
+Selbstverst„ndlich soll es volle 24-Bit-Verarbeitung beinhalten.
+Anmerkung: Ich kann das Shareware-Malprogramm NEOPAINT 2.0a (OSCS Software
+Development, Inc.) sehr empfehlen, es l„át die meisten kommerziellen
+Konkurrenten ziemlich blaá aussehen. Leider kann es nur palettierte
+Formate mit maximal 8 Bit verarbeiten, d.h. GIF, PCX usw., ist aber
+fr die Bearbeitung von Graustufen-Targabildern hervorragend geeignet,
+die man ja problemlos in 8-Bit-GIF-Bilder kovertieren kann (und umgekehrt).
+
+
+Sonstiges:
+
+ * Wie man die neueste Version von JPGIndex bekommen kann:
+    - Wer die M”glichkeit zum "anonymous ftp" hat, kann JPGIndex demn„chst
+      (hoffentlich) von dem Server ftp.tu-clausthal.de bekommen. Dort kann
+      man auáerdem jede Menge andere Sachen finden, der Server ist aktuell
+      und gut sortiert.
+    - Wenn's nicht anders geht, verschicke ich JPGIndex auch per email in
+      uuencodierter Form.
+    - Wenn auch das nicht in Frage kommt, verschicke ich JPGIndex per
+      Snail-Mail (sprich: Deutsche Bundespost) gegen einen Unkostenbeitrag
+      von DM 10 (US$ 10). Da JPIndex allein noch keine Diskette fllt,
+      gebe ich einige meiner anderen Tools (nicht nur Targa-Tools) dazu.
+      Vorher erkundigen, ob es berhaupt eine neue Version gibt! Und nicht
+      vergessen, das gewnschte Diskettenformat anzugeben.
+
+ * Bitte keine Anrufe, sondern nur Post oder Email. Meine angegebene
+   Adresse in Goslar ist lediglich eine Post-Adresse.
+
+ * "The Graphics Interchange Format(c) is the Copyright property of
+    CompuServe Incorporated.  GIF(sm) is a Service Mark property of
+    CompuServe Incorporated."
+
+ * Ich habe diese Anleitung absichtlich nicht in Seiten unterteilt. Der Grund
+   ist zum einen, daá nicht jeder 12-Zoll-Papier verwendet, und zum anderen,
+   daá jeder ohnehin sein eigenes Programm zum Ausdrucken verwendet. Auáerdem
+   ist es so viel besser zum Online-Lesen geeignet.
+
+Abschlieáend ist es mir ein Bedrfnis, meinen Beta-Testern zu danken,
+insbesondere Lutz und Rainer. TNX!
+
+Per aspera ad astra!
+      - Olli -
+
+-----------------------------------------------------------------------------
+Oliver Fromme, Klingestr. 2, 3380 Goslar, Germany
+        (nach dem 1.7.1993: 38640 Goslar, Germany)
+Internet email: inof@asterix.rz.tu-clausthal.de
+-----------------------------------------------------------------------------
+THIS ROOM IS AIR CONDITIONED -- KEEP WINDOWS CLOSED!

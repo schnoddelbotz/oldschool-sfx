@@ -1,0 +1,892 @@
+Beschreibung zu PV.EXE Version 2.50 Stand 04.01.95 W.Wiedmann
+--------------------------------------------------------------
+
+Zum Inhalt
+
+1.  Was macht PV
+1.1 Voraussetzungen
+2.  Bildbearbeitung
+3.  Konvertierung
+4.  Details zu einigen Bildformaten
+4.1 PV kennt u.a folgende Bildformate
+4.2 PV erzeugt folgende Bildformate
+4.3 Anpassung von anderen Fileformaten.
+5.  Animation
+6.  Anpassung der Grafikkarte
+7.  Zur Bedienung, Menu, optionale Parameter
+8.  Zur Installation, Registrierung
+9.  RechtsansprÅche, verwendete Warenzeichen.
+
+1. Was macht PV
+---------------
+PV ist ein Programm, das es ermîglicht Bilder verschiedener Bildformate und
+Animationen an einem AT-kompatiblen Rechner anzuzeigen, zu konvertieren und in
+einem gewissen Umfang zu bearbeiten.
+Folgende Formate kînnen gelesen werden und alles was PV anzeigen kann, kann
+in folgende Formate konvertiert werden:
+
+- JPG         Baseline JPEG 8R8.
+- TIF         IBM und Macintosh, Bildverarbeitungssoftware und Desktop-
+	      anwendungen wie z.B. Pagemaker, Designer, Photostyler.
+- TGA         Targa compatible Software.
+- PCX         Paintbrush, Publisher.
+- PIC         PcPaint, Pictor.
+- SCx,RIX     Colorix, Winrix, RIX-Present.
+- CUT         Dr Halo, Halovision, A4TECH - Scanner.
+- LBM,IFF     Deluxe Paint fÅr IBM und Commodore.
+- GIF         Autodesk Animator, VPIC, VGIF, CSHOW, GWS...
+- BMP,RLE,DIB Windows 3.0 und OS/2 Anwendungen.
+- IMG,DTA     Kontron IBAS, ZEISS DSM Elektonenmikroskope.
+
+Folgende Bildformate kînnen gelesen werden:
+- PCD         Kodak Photo CD Base Format 768x512 und auch 512x768 Hochformat.
+- CVP         Pa·bildphotografiereinheit (Canon) 512x512 24Bit.
+- JPG,JIF     Baseline JPEG 9R6 ( Image Alchemy ), lossless JPEG.
+- JTF         TIFF mit JPEG Kompression.
+- CEG         Edsun Continuous Edge Graphics (Mode d und f).
+- GEM-IMG,XIMG   Bilder von GEM und Ventura Publisher incl 24Bit, Atari ST.
+- MSP         Bilder von MS -Paint ,Windows 2.0.
+- MAC         Bilder von Macintosh -Paint.
+- PIC         Macintosh PICT in 1,2,4,8,24 BPS.
+- WPG         Textverarbeitung mit Rastergrafikeinbindung Word Perfect.
+- ICO         Windows Icons
+- PMC         A4TECH scanner.
+- SFI         SIS Framegrabber.
+- EPS         Encapsulated Postscript mit Rasterdatenfeld.
+- RAS         Sun raster file unkomprimiert.
+- VI          Jovian.
+- DCX         FAX Format mit PCC.
+- FX*,FAX,QFX,BFX,
+  RIC,WFX,XFX FAX -Formate CCITT Group 3
+- IM          KO-23 Satellitenbild mit 109-Block Fehlerkorrektur.
+- SGF         Starwriter Textverarbeitung mit Grafik ( Star Division Hamburg ).
+- SAT         Eumetsat Wettersatellitenbild (BTXSAT Austria)
+- SCR         Word Capture
+- CDR,CCH     Corel Draw Icon
+- SKD         Autosketch Icon
+- RAW
+- PNM         UNIX portable Bitmap 1,8,24 Bps (Jef Poskanzer);
+- ACB,BBM     IFF Brushes , ACBM Files.
+- DAT         Bilder des Framegrabbers Video 1000/2000 von Fricke.
+- FRM         ECHOLAB Testbildgenerator Fileformat.
+- FLM         Unkomprimierte Bilder der Sreenmachine I und II von FAST.
+- VM          Unkomprimierte/komprimierte Bilder der Videomachine von FAST.
+- ART         First Publisher ART
+- BSG         Fontasy
+- PCP         Atari
+- TPI         Turbo Pascal
+
+- AVI         Video for Windows bis 320x200x8Bit auch RLE, 160x120x16/24Bit
+- FLI         Autodesk Animator FLIC's.
+- FLC         Autodesk Animator Pro FLIC's.
+- FLX         Animator FLIC's mit Hicolor (erfordrt 32768 Farben VESA Mode)
+- ANI         Das erste Bild aus Amiga Animationsfiles.
+- DL          Animation DLVIEW bis V.2.0
+- GL          Bilder die in GRASP Files enthalten sind.
+
+- TXT,DOC,HLP,BAT   Textfiles mit bis 128x73 Zeichen.
+- ANS         ANSI 80x25
+- MOD         Amiga Music Datei wird im PC-Lautsprecher oder auf Soundblaster
+	      gespielt. Bei Soundblaster ist die 'SET BLASTER=' -Anweisung in
+	      der Autoexec.bat erforderlich. Der Player basiert auf einer
+	      PD OBJ Datei von Marc Cox.
+
+PV kann fÅr alle Arten von Dateiformaten Batchprozesse ausfÅhren. Z.B. man
+kann sich mit PV das Inhaltsverzeichnis als ZIP gepackter Files anzeigen lassen,
+wenn man eine Datei ZIP.BAT im PV-Startverzeichnis speichert mit dem Inhalt z.B.
+PKUNZIP -v %1  oder HPGL *.PLT anzeigen wenn man in PLT.BAT einen PLT Viewer
+startet. Batchprozesse haben PrioritÑt gegenÅber Grundfunktionen, z.B.
+mit FLC.BAT kann ein anderer FLC Player aufgerufen werden. Z.B auch ANSI-
+Sequenzen anzeigen mit einem ANS.BAT mit  TYPE %1  als Aufruf.
+
+PV druckt auch auf HP DJ500C und Mitsubishi CP200 Termosublimation an LPT1.
+
+PV erkennt die Bildformate selbststÑndig, es besteht auch die
+Mîglichkeit verwandte Bildformate mit Hilfe einer 'Define-Header'-
+Funktion zu lesen. Dies sind z.B. Bilder von rasternden Bildgebern,
+wie Laserscanmikroskope, EDX-Anlagen, Satellitenbilder etc.
+Die Bildauswahl und das Einstellen verschiedener Parameter erfolgt Menu-
+gefÅhrt und/oder mit Kommandozeilenparameter.
+Eine mehrseitige Hilfe ist mit der F1 Taste erhÑltlich.
+PV ist mit Turbo Pascal 6.0 erstellt. Viele Programmteile sind mit Assembler-
+Code erstellt, so bietet PV z.B. eine sehr schnelle Bildausgabe, GIF, TIFF und
+JPEG-Dekompression. Viele verîffentlichte und unverîffentlichte z.T. extrem
+komplexe Bildformate sind in mÅhevoller Arbeit analysiert und in PV integriert
+worden.
+
+
+1.1 Voraussetzungen
+-------------------
+AT kompatibler Rechner mit EGA- ,VGA- oder SVGA- Grafik und mind. 512KB
+Arbeitsspeicher und Festplatte. FÅr optimale Nutzung der Bildebearbeitungs-
+mîglichkeiten sollte eine SVGA oder 8514/A- Grafikkarte mit hoher Auflîsung
+verwendet werden. UnterstÅtzt werden Grafikkarten mit ATI-, Paradise-, Ahead-
+Video7-, OAK, Chip&Technology, ET3000/4000- und Trident8900- Chip in fast allen
+Auflîsungen bis 1024x768x256. PV erkennt die Grafikkarte selbststÑndig.
+Bei Bedarf erfolgt die Adaption an die Grafikkarte und die Auswahl der
+Auflîsung als Kommandozeilenparameter.
+Auf allen VGA's kînnen Bilder mit bis zu 10240x10240 in einem öbersichts-
+Bild angezeigt werden. Auf allen VGA's sind zusÑtzlich die speziellen Modes
+mit 360x512x256 und 720x512x16 verfÅgbar. VGA's nach dem VESA-Standard werden
+erkannt. Falls genÅgend freier XMS Speicher zur VerfÅgung steht, kann das
+Bild im VGA Bildausschnitt komplett gescrollt werden, Sie mÅssen dann die
+Frage "Bild proportional reduzieren [P] oder Ausschneiden [N]" mit
+"N" beantworten.
+8514/A, Tiga und XGA Grafikprozessoren werden Åber das AI-Interface unterstÅtzt.
+Ausserdem werden CEG-Farb-DSP sowie HiColor RAM-DAC's unterstÅtzt.
+ATI Ultra mit Mach32 u. 2MB werden im 'ATI-VGA Auto' Modus mit True und Hicolor
+in voller Auflîsung unterstÅtzt.
+Die meisten Funktionen kînnen auch mit Maus bedient werden.
+PV druckt auf HP DJ500C und Mitsubishi CP200H.
+
+
+2.Bildbearbeitung
+-----------------
+Die Bearbeitungsfunktionen sind nur auf darstellbare Bilder begrenzt.
+Somit braucht man z.B. fÅr die Bearbeitung von Bildern der Grî·e
+512x512x256 mindestens eine SVGA-Grafik mit 800x600x256 um die Bilder
+ohne Verlust an Auflîsung darzustellen. Bei Grafikmodes mit 4Bit/Pixel
+wird ein 256-Farbenbild entweder auf 16 Graustufen (VGA) oder auf die
+16 Grundfarben (EGA-Palette) in Dithertechnik dargestellt. Es ist zu
+berÅcksichtigen, da· ein in den Farben oder Bildgrî·e reduziertes
+Bild beim Speichern auch reduziert bleibt. Ist die verwendete Grafik-
+Karte nicht in der Lage das Bild verlustfrei darzustellen, sollte die
+Bildkonvertierung ohne Anzeigen des Bildes geschehen. Bei EGA-Grafik
+sind keine Farbpaletten-Funktionen wie Invertieren, Kontrast-, Helligkeit-
+und SÑttigungs- Einstellung mîglich.
+Die Bearbeitungsfunktionen umfassen:
+- 3x3 Filter (6 feste und ein frei definierbarer).(256 Farben erforderlich).
+- Invertieren.
+- Spiegeln in X und Y.
+- Rotation.
+- Dithering.
+- Graustufen oder Falschfarbendarstellung von Bildern ohne Farbtabelle.
+- Zoom und Kontrakt in den Faktoren 2,4,8,.. unabhÑngig fÅr X und Y.
+- Helligkeit, Kontrast, Farbanpassung und SÑttigung fÅr jeden der Farb-
+  Anteile R,G,B getrennt oder zusammen.
+- Herausschneiden eines Bildausschnitts fÅr die Weiterbearbeitung.
+- Die Mîglichkeit einen automatischen Bildablauf einer Bildsequenz
+  zu generieren und ablaufen zu lassen (Animation).
+- Bearbeitete Bilder kînnen in jedem Bildformat gespeichert werden.
+Bei der Darstellung der Bilder wird insbesondere bei Reduktion gro·er
+Bilder in ein Display fÅllendes öbersichtsbild keine RÅcksicht genommen
+auf das korrekte SeitenverhÑltnis. Die Bilder kînnen jedoch im reinen
+Konvertier- Modus in ein Bild mit beliebigen SeitenverhÑltnis konvertiert
+werden.
+
+
+3.Konvertierung
+---------------
+Die Konvertiermîglichkeiten sind unabhÑngig von der verwendeten Grafik-
+karte. Man erreicht ihn entweder Åber die "O" Taste oder der Kommandozeilen-
+parameter /c.
+Es kînnen Bilder bis zur Grî·e 10240x10240x256 konvertiert werden.
+Bilder mit mehr als 256 Farben/Graustufen werden mit Hilfe einer Farb-
+optimierung auf 256 Farben/Graustufen reduziert wenn das Zielformat keine
+Truecolorformate beherrscht.
+Die Konvertierung und die Farboptimierung benîtigen viel XMS-Speicher.
+Wenn dieser nicht ausreicht, so verwendet PV auf der Festplatte
+(Laufwerk C:\) einen temporÑren Hilfspuffer. Es ist also dafÅr zu sorgen da·
+entsprechend der Bildgrî·e ausreichend Platz zur VerfÅgung steht. Sie kînnen
+aber auch ein anderes Laufwerk z.B. eine RAMDISK angeben. Dazu geben Sie im
+Environment z.B. die Anweisung  SET TEMP=D:\ .Sollte der Platz auf dem angegebenen
+Laufwerk nicht ausreichen oder falsch angegeben sein, so bricht PV mit einer
+Fehlermeldung ("Fehler beim Schreiben von ..PV.TMP") ab.
+Die Bildgrî·e des Ergebnisbildes kann beliebig von 8 bis 10240 Pixeln in
+Hîhe und Breite gewÑhlt werden.
+Das konvertierte Bild erhÑlt den Namen des Ausgangsbildes mit geÑnderter
+Extension. Das konvertierte Bild ist im selben Verzeichnis, es sei denn
+man gibt einen Zielpfad an. Bsp Aufruf:  PV *.* C:\BILDER\
+Es ist mîglich mehrere gleichartige Konvertierungen an einer Gruppe von Dateien
+ausfÅhren zu lassen. Z. B. durch den Aufruf:  PV *.* C:\BILDER\ /cj /m
+bestimmt man die Konvertierung. Mit "T" markiert man die gewÅnschten Dateien
+und mit Enter beginnt PV alle markierten Dateien ins Zielverzeichnis C:\BILDER\
+als monochrome *.JPG zu konvertieren.
+
+
+4.Details zu einigen Bildformaten
+---------------------------------
+Vorwort zu 24 Bit Bildern und JPEG-Konvertierung:
+ Bilder mit mehr als 256 Farben werden beim anzeigen oder konvertieren mit
+ einem komplexen Algorithmus auf 256 Farben reduziert die dann nach einem
+ Fehlerverteilungsverfahren (Dithering) eine virtuell hîhere Farbenvielfalt
+ auf einer VGA darstellt. Dadurch wirken jedoch manche vor allem bei niedriger
+ Auflîsung (320x200) dargestellte Bilder etwas grieselig oder verrauscht.
+
+ Alle Fileformate mit 256 Farben kînnen mit PV verlustfrei in einander
+ konvertiert werden. Bei der Konvertierung eines Farbbildes in ein JPEG jedoch
+ nicht.
+ Ein Farbbild mit 256 Farben wird dabei zunÑchst in den YUV Echtfarbraum
+ tranformiert. Dabei erhÑlt man ein IntensitÑtsbild und ein Farbdifferenzbild
+ mit halbierter Auflîsung. Dann werden diese Anteile getrennt mit einer DCT
+ transformiert und anschlie·end quantisiert. Hierbei gehen Informationen ver-
+ loren die zwar meist nicht sofort auffallen und man erhÑlt man dadurch einen
+ hohen Kompressionsgrad. Bei der RÅcktransformation wird dequantisiert und
+ IDCT transformiert und man erhÑlt dann ein YUV Farbbild mit einer Vielzahl
+ zum Original abweichenden Farbnuancen. Die originale Farbpalette mit 256
+ Farben kann nicht mehr hergestellt werden und so wird das Bild nach oben
+ beschriebenem Verfahren wieder auf 256 Farben reduziert.
+ Besonders bei Farbbildern kann daher eine sichtbare Verschlechterung der
+ BildqualitÑt auftreten. JPEG ist daher besonders bei Grauwertbildern zu
+ empfehlen. Im Konvertiermodus kînnen die Verluste bei Farbbildern klein
+ gehalten werden, wenn 24Bit Formate (BMP,TGA,TIFF) verwendet werden.
+ Andere JPEG komprimierende Programme wie JPG2GIF,GIF2JPG,Alchemy ( von HSI )
+ verwenden eine eigene nicht zum JPEG-Standard kompatible JPG Misch Kreation.
+ Diese enthÑlt GIF Fragmente und auch die originale Farbtabelle womit sich
+ speziell bei der Hin und ZurÅck-Konvertierung in GIF eine deutlich hîhere
+ QualitÑt erzielen lÑ·t. Dies ist jedoch eine spezielle Insellîsung, die
+ ich nicht vorhabe in PV zu Åbernehmen. Es wird dabei lediglich der JPG Anteil
+ extrahiert und angezeigt und kann zu versetzten Bildteilen fÅhren.
+
+4.1 PV kennt u.a folgende Bildformate:
+
+a.) DTA,IMG
+    DTA ist die gebrÑuchliche Kennung fÅr Bilder der ZEISS Bildver-
+    arbeitung BIVAS. IMG ist die gebrÑuchliche Kennung von Kontron-
+    Bildverarbeitung. Beide Formate sind fast gleich. DTA kann im Gegen-
+    Satz zu IMG eine zusÑtzliche Farbtabelle enthalten die von PV erkannt
+    wird. IMG kann im Gegensatz zu DTA eine Bildfolge enthalten. PV lÑdt
+    in diesem Fall nur das erste Bild der Folge. DSM962 Bilder haben ein
+    SeitenverhÑltnis von 1:1.25 und sollten fÅr eine korrekte Darstellung
+    vorher z.B. von 512x512 auf 640x512 konvertiert werden.
+    Ist keine Farbtabelle im File enthalten sucht PV einen *.COL file mit
+    768 ASCII Dezimal Werten.
+b.) IFF - Standard (LBM)
+    - PBM     verwendet bei IBM
+    - ILBM    verwendet bei IBM und Commodore
+    - ACBM    verwendet bei Commodore
+    PV lÑdt alle komprimierten und nicht komprimierten Bilder mit 1..8 Bit
+    Auflîsung pro Pixel fÅr alle obigen IFF-Unterformate. Bei ILBM wird
+    auch 24 Bit unterstÅtzt.
+    Der bei Commodore Åbliche CAMG-Chunk fÅr Farbbilder wird erkannt,
+    und fÅhrt fÅr HAM -Bilder nach dem Laden zu einer Farbconvertierung
+    auf 256 Farben. Halfbrite -Bilder erhalten eine angepa·te Farbtabelle.
+c.) CUT und PAL
+    CUT wird bei DR HALO zum Ablegen von Bildausschnitten verwendet.
+    PAL enthÑlt die Farbtabelle. Diese mu· 256 Farben (FilelÑnge =2048)
+    enthalten um von PV erkannt zu werden. Da CUT im Gegensatz zu allen
+    sonst Åblichen Formaten keine Formatkennung enthÑlt ist die File-
+    Extension CUT zwingend erforderlich.
+d.) GIF87a .. GIF89a - Standard
+    Verwendet auf IBM, Macintosh, Atari und Commodore. PV lÑdt Bilder
+    mit Farbtabelle bis zu 256 Farben. EnthÑlt der File mehrere Teilbilder
+    wird das nur das erste Teilbild geladen. Der GIF-Extensionblock wird
+    ignoriert.
+e.) TIFF 2a - Standard
+    Wegen der vielfÑltigen z.T. hardwarespezifischen Definitionen kînnen
+    nicht alle TIFF-Varianten geladen werden. PV ist jedoch eines der Programme
+    die am meisten TIFF-Varianten beherrscht.
+    PV erkennt
+    - IBM und Macintosh TIFF.
+    - Orientation = 1,5.
+    - PhotometricInterpret. = 0,1,2,3,6 (bilevel,grau,invers,RGB,Palette,YCbCr).
+    - Planarconfiguration = 1,2.
+    - Predictor = 1,2.
+    - Bits per Sample = 1,2,4,8,24,32.
+    - Compression = 1,2,3,5,6,32771,32773,32900,32901
+      (uncompressed,Huffman,FAXG3,FAXG4,LZW,JPEG,PackBits,PICIO,SGI-RLE).
+    In Zusammenhang mit RGB sind nur 24 Bits per Sample mîglich. Bei LZW
+    und Predictor = 2 werden jeweils 8 Bit Farbdifferenzwerte berechnet.
+    Die Planarconfiguration 2 wird nur in Verbindung mit 1,2 Bit per Sample
+    bearbeitet, ansonsten wird Planarconfiguration 1 vorausgesetzt.
+    Bei Planarconfiguration 2 kann es zu Problemen kommen, wenn die Streifen
+    der einzelnen Farbebenen nicht zusammenhÑngend gespeichert sind.
+f.) GEM IMG, XIMG - Format
+    Verwendet von IBM und Atari in Programmen wie GEM-Paint, Ventura Publisher.
+    Da das IMG Format keine Farbtabelle enthÑlt, kînnen Differenzen zu
+    der Darstellung in anderen Programmen auftreten. Bei XIMG ist u.U. eine
+    Farbtabelle enthalten. PV geht hierbei von einer RGB Tabelle aus.
+g.) RIX SCx- Format
+    Hier kann PV 8 Bit SCI,SCQ,SCR,SCF,SCP-Bilder laden mit und ohne Kompres-
+    sion. Ebenso sind 15 und 24 Bit unkomprimiert mîglich.
+h.) PCX,PCC - Format
+    PV kann alle PCX Versionen von Paintbrush 1 bis 4 plus mit und ohne
+    Farbtabelle mit und ohne Kompression mit 1 bis 8 Bit Auflîsung in Pixel-
+    und Zeilen-codierung, sowie 24 Bit. 
+i.) PIC - Format
+    PIC ist nicht standartisiert. Da es oft Åblich ist Bildern die Extension
+    PIC zu geben kommt es hier oft zu Mi·verstÑndnissen. PV lÑdt das von
+    PcPaint und Pictor verwendete Format mit 1,2,4 und 8 Bit Auflîsung.
+    Ebenso werden Macintosh PICT Bilder mit 1,2,4,8 Bit gelesen, Sie haben
+    meist auch die Extension PIC.
+j.) BMP - Format
+    PV lÑdt Windows 3.0 und OS/2 BMP mit 1,2,4,8,24 Bit Auflîsung. 24 Bit Bilder
+    werden zunÑchst als 12 Bit Bild mit 4096 Farben geladen und dann mit einer
+    Farbauswahl 256 aus 4096 Farben auf 8 Bit reduziert. UnterstÅtzt wird
+    auch die RLE-1,2,4,8 Kompression. RLE-1,2,4 kann nicht richtig geladen
+    werden, wenn die Runs und Strings die Bytegrenze verletzen.
+k.) TGA - Targa Standard
+    PV lÑdt Bilder mit 8,16,24 und 32 Bit Auflîsung. Bei 32 Bit wird
+    der Alphawert ignoriert. UnterstÅtzt wird auch die RLE Kompression.
+    Die Werte werden zunÑchst als 12 Bit Bild mit 4096 Farben geladen und
+    dann mit einer Farbauswahl 256 aus 4096 Farben auf 8 Bit reduziert.
+    8 Bit Bilder mit und ohne Palette werden ebenfalls geladen.
+l.) JPEG - Standard JFIF 8R8,9R6
+    PV kann Baseline JPEG fÅr Farbbilder mit YUV (H1:1:1,H2:1:1,H4:1:1,V1:1:1,
+    V2:1:1) und reine Graubilder (Y) . Ebenso ist die verlustfreie Kompres-
+    sion zum Teil integriert mit spatialer DPCM mit Predictor 0 und 1.
+    RSTm Marker wÑhrend der Bilddekompression werden beachtet.
+    Probleme mit einigen anderen JPG Programmen:
+    -Fast's Screenmachine bietet ebenfalls JPG - Kompression. Versionen vor 1993
+     sind jedoch weder mit PV noch mit anderen JPEG fÑhigen Programmen ladbar.
+     Hier sind die Bilddaten offensichtlich nicht JFIF, da auch der APP0 Marker
+     fehlt. Ab der Screemachine II gibt es eine JFIF kompatible Kompression
+     mit der Dateibezeichnung JIF.
+    -Image Alchemy ,Gif2Jpg, Jpg2Gif ( Handmade software Californien ) bietet
+     JFIF, jedoch ab der Version 1.5 wird ein spezieller Kompressionsmix aus
+     JPEG und GIF verwendet, der bei PV nicht korrekt geladen wird. Um hier eine
+     JPEG kompatible Kompression zu erzwingen mu· die Option -j gesetzt werden.
+     Ebenso kann PV die mit (-ja) arithmetisch kodierten Bilder derzeit noch
+     nicht korrekt laden.
+    -VTCOMPRESS ist ein JPG Kompressor unter Windows (STEMMER MÅnchen).
+     Die Daten sind zwar nach JPEG kodiert, jedoch alle zur Dekompression
+     nîtigen Tabellen und Parameter sind u.U. nicht im Bildfile enthalten,
+     wenn Sie nicht explizit ein JFIF kompatibles Format angeben.
+    PV versucht jedoch alle Files mit der Extension *.JPG zu laden und verwendet
+    dabei notfalls die unter 8R8 vorgeschlagenen Tabellen.
+    Sind die Dateien nach JFIF ist die Dateiextension fÅr PV egal.
+m.) WPG - Word Perfect
+    PV lÑdt Rastergraphikbilder mit 1..8 Bps. Vectorbilder werden nicht unter-
+    stÅtzt.
+n.) EPS - Encapsulated Postscript
+    PV lÑdt EPS Daten mit 1,2,4,8,24 Bps. EPS kann im Fileanhang ein TIFF-Bild
+    mit meist reduzierter Auflîsung enthalten. Viele EPS fÑhige Programme
+    laden nur diesen Teil. PV dagegen lÑdt die Postscriptdaten und versucht die
+    Bildparameter aus der Bildbeschreibung heraus zu interpretieren. Dies
+    kann manchmal schief gehen und kann dann mit Hilfe der "define-Header"
+    Funktion (4.3) korrigiert werden.
+
+4.2 PV erzeugt folgende Bildformate:
+
+a.) Kontron IMG Format und ZEISS DTA Format mit und ohne Farbtabelle.
+    Die GerÑtespezifischen Parameter im Header des DTA werden nicht gesetzt.
+    Um Kontron kompatible Bilder zu erhalten mu· monochrom konvertiert werden.
+    Da Kontronbilder normal keine Farbtabelle enthalten wird hierbei automatisch
+    in ein Monochrombild konvertiert. Um nur die reinen Pixeldaten ohne Mono-
+    chromekonversion zu speichern mu· "H0" gegeben werden.
+b.) TGA - Targa Standard
+    PV erzeugt 8Bit Targa mit und ohne Fartabelle ohne Kompression.
+    Im Konvertiermodus werden Bilder mit mehr als 256 Farben in 24Bit Targa
+    konvertiert.
+c.) IFF - Standard
+    ILBM unkomprimiert mit 8 Bit Auflîsung fÅr IBM, und ILBM unkomprimiert
+    mit 5 Bit Auflîsung fÅr Graubilder und 6 Bit Farbbilder mit HAM fÅr
+    Commodore Amiga ("H2"). Zur Verwendung fÅr Deluxe Paint 1, 2, 2 enhanced
+    und 3. Bedenken Sie da· Amigabilder maximal 360x512x4096 bzw 640x512x64
+    sind.
+d.) CUT und PAL
+    8 Bit CUT -File und 256 Farben PAL -File fÅr DR HALO.
+e.) GIF87a - Standard
+    8 Bit GIF -File mit Farbtabelle. "H4" erzielt eine bessere Kompressions-
+    Rate, dauert dafÅr jedoch erheblich lÑnger.
+f.) TIFF - Standard
+    IBM und Macintosh 1,2,4,8 Bits per Sample unkomprimiert ( Compression =1).
+    Graubilder werden mit Photometricinterpr. = 0 und Farbbilder werden
+    Farbtabelle und Photometricinterpr. = 3 gespeichert.
+    Im Konvertiermodus werden Bilder mit mehr als 256 Farben in 24Bit TIFF
+    konvertiert.
+g.) RIX-SCX
+    8 Bit RIX-File unkomprimiert mit Farbtabelle.
+h.) PCX - Standard
+    8 Bit Pixelcodiert nach Paintbrush 4 und 4+ und Windows 3.0 Paintbrush.
+i.) PIC - Format
+    8 Bit komprimiert fÅr Pictor, PcPaint.
+j.) BMP - Format
+    8 Bit BMP fÅr Windows 3.0 ohne Kompression oder mit 8 Bit RLE.
+    Im Konvertiermodus werden Bilder mit mehr als 256 Farben in 24Bit BMP
+    konvertiert.
+k.) JPG - Format
+    PV verwendet die verlustbehaftete Kompression nach Baseline 8R8 in dem
+    dafÅr vorgschlagenen JFIF Fileformat. Es werden 4:2:2 oder Graubilder
+    erzeugt. Es sind zwei Kompressionsstufen mîglich.
+    FÅr Bilder mit natÅrlichem Inhalt werden Kompressionen bis
+    ca. 1:5 und mit "HJ" bis 1:10 erreicht gegenÅber unkomprimierten
+    Grau- oder Farbpaletten Bildern. In Bezug auf 24 Bit RGB Bildern sind
+    Kompressionen bis ca. 1:20 erreichbar.
+
+4.3 Anpassung von anderen Fileformaten.
+
+Wenn PV das Bild nicht automatisch erkennt, hei·t das noch lange nicht, da·
+es mit PV nicht darstellbar ist. Zu diesem Zweck schaltet PV in den "Define
+Header" Modus. Diesen kann man z.B. auch erzwingen wenn man "U" drÅckt oder
+den Kommandozeilenparameter /u verwendet.
+Mit dieser Funktion kann man einige elementare Parameter ÅberprÅfen bzw
+verÑndern.
+Sie werden gefragt ob Sie die Bildparameter eingeben mîchten [J] oder ob Sie
+die Daten als Text [T] angezeigt haben mîchten. Andere Tasten als J und T
+brechen ab.
+Ansonsten haben Sie z.B. einen Bildfile der LÑnge 262944 Byte und Sie wissen,
+da· es ein 512x512x256 ( 8 Bit/Pixel ) ist, dann versuchen Sie es Z.B. mit:
+Start of body: 800   ( 262944 - 512x512 = 800 ,wenn der Header bei 0 anfÑngt)
+X-Size: 512          ( erlaubte Werte 1..10240 bzw 3413 bei 24 Bit/Pix)
+Y-Size: 512          ( erlaubte Werte 1..10240 )
+Bit/Pix: 8           ( erlaubte Werte 1..8,24 )
+Pixelmap [Y]         ( planemap wird bei machen CGA,EGA formaten verwendet, da
+		       dies der Speicherstruktur entspricht. öblich ist
+		       jedoch Pixelmap )
+Upsidedown [N]       ( Z.B. TGA,BMP und TIFF kînnen von unten nach oben
+		       laufen. öblich ist jedoch von oben nach unten )
+Start of colortable: ( geben Sie ENTER um anzugeben, da· keine Farbtabelle
+		       enthalten ist, oder geben Sie die Adresse an wo die
+		       Farbtabelle im File steht. Die Tabellenwerte werden in
+		       der Reihenfolge R0,G0,B0,R1,G1,B1,.. erwartet )
+Bit/colorvalue: 8    ( öblicherweise ist 0 schwarz und 255 wei·, dies ent-
+		       spricht 8 Bit Farbtabellenwerten )
+Color: [N]           ( 'N' hei·t Graubild, 'Y' bedeutet Pseudocolor oder wenn
+		       die Adresse der Farbtabelle eingegeben wurde wird diese
+		       verwendet )
+
+Wenn Sie mehrere Bilder von dem selben Format und den gleichen Parametern
+haben, so kînnen Sie sich dazu einen HDR Konfigurationsfile erstellen.
+Die Datei hat den Namen der Dateierweiterung Ihres Bildformats mit der
+Dateierweiterung .HDR.
+z.B. die Bilder heissen NASAxxx.IMG und sind unkomprimierte Bilder mit
+dem Format 512x512 mit 8 Bit, dann erstellen Sie eine Datei IMG.HDR in Ihrem
+Bilderverzeichniss oder im PV- Verzeichniss, mit folgenden EintrÑgen:
+
+800                  ( Start der Bilddaten )
+512                  ( X-Size 1..10240 )
+512                  ( Y-Size 1..10240 )
+8                    ( Bit / Pixel 1..8,16,24 )
+8                    ( Bit/colorvalue 6..8 )
+0                    ( Start der Farbtabelle, wenn keine Farbtabelle vorhanden
+		       ist, diesen einfach Eintrag weglassen )
+
+Es gibt weiterhin die Mîglichkeit andere Programme z.B. HPGL-Viewer zu starten,
+wenn man z.B. einen PLT.BAT erstellt. Dieser Batchfile ist ein ganz normaler
+DOS Batchfile und wird von PV automatisch gestartet.
+
+In Zukunft werden noch weitere Formate aufgenommen.
+Es gibt eine Vielzahl von Programmen die z.T. obige Formate unterstÅtzen,
+aber nicht einzeln erwÑhnt sind.
+
+
+
+
+5. Animation
+------------
+PV erkennt und generiert Slidefiles (Extension *.SLD). Diese Files enthalten
+im Klartext eine Folge von Bildfiles und Kommandos und kînnen auch mit
+Texteditoren bearbeitet werden. PV lÑdt die enthaltenen Bilder nacheinander und
+wiederholt diese Bilderfolge beliebig bis mit ESC unterbrochen wird.
+Dabei mu· beachtet werden:
+- Alle Bildnamen im Slidefile dÅrfen keinen Pfad oder Parameter enthalten,
+  und mÅssen mit ihrer Extension angegeben werden.
+- Es sind derzeit maximal 256 EintrÑge mîglich.
+- Die Bilder mÅssen im aktuellen Pfad enthalten sein.
+Der Slidefile kann Kommandos enthalten. Derzeitige Kommandos sind:
+  D:nnnnn          Delay in ms nach jedem Bild
+  X:nnn            Setzt die X-Position
+		   X:   ohne Parameter = automatische Zentrierung einschalten
+  Y:nnn            Setzt die Y-Position
+		   Y:   ohne Parameter = automatische Zentrierung einschalten
+  G:nn             Grafikmodus mit Funktionsnummer nn einschalten
+		   G:   ohne Funktionsnummer schaltet in den Textmodus
+  C:nn             Letztes Bild lîschen mit Lîschmodus nn = 0..99
+		   0 lîscht alles, 1..9 lîscht das letzte Bild nach
+		   verschiedenen Methoden.
+  S:nnn            Spinge auf SLD Zeile Nr nnn
+  Q:0              Beende SLD nach einem Durchlauf
+  P:drive\path     Wechsle auf einen bestimmten Pfad
+  T:Text           Zeigt Texteinblendung
+  A:nn             Autodetect VGA Modus bei den nÑchsten nn = 0..255 Bildern
+Z.B.:  G:$13
+       D:0000
+       Bild1.gif
+       C:16
+       D:2000
+       Animat.fli
+       G:$12
+       Bild2.lbm
+Nach Bild1 startet sofort der Animat.fli. Nanach und nach Bild2 wird 2 sec
+gewartet bevor Bild1 wieder startet. Bild1.gif und Animat.fli werden mit
+320x200x256 dargestellt, Bild2.lbm jedoch mit 640x480x16. Die Funktionsnummern
+fÅr die Grafikauflîsung stehen in ihrem VGA Handbuch.
+Bitte beachten Sie, da· pro Zeile nur 32 Zeichen eingegeben werden.
+Generell orientiert sich PV beim Aufruf im Auto-Display-Mode an den Bild-
+Parametern des letzten Bildes der SLD Liste. Kann dieses beim Start nicht
+ausgewertet werden (z.B. bei P: Angaben) so wird die default Einstellung
+640x480x256 versucht. Mit A:1 kann gezielt vor dem Laden eines Bildes ein
+passender Modus aktiviert werden. Dies sollte speziell bei Hicolor VGA's
+wenn Bilder mit true/hicolor und Farben <= 256 gemischt werden, da PV im
+Truecolor Modus z.B. keine Bilder <= 256 Farben anzeigen kann.
+Die Delay Funktion kann durch BetÑtigen der <Space> Taste verkÅrzt werden.
+
+
+6. Anpassung der Grafikkarte
+----------------------------
+Wird PV ohne Parameter aufgerufen, so wird versucht die Grafikkarte auto-
+matisch zu erkennen. Sollte diese Erkennung Probleme machen, so kann folgender
+Parameter (wenn mehrere Parameter dann als letzter) beim Aufruf angehÑngt
+werden:
+$10000 = ATI,  $20000 = VIDEO7,   $30000 = ET3000,  $40000 = ET4000,
+$50000 = PARADISE(WD),  $60000 = TRIDENT8900,  $70000 = AHEADB,
+$80000 = CHIP&TECH,  $90000 = OAK,   $A0000 = AHEADA,  $B0000 = EVEREX,
+$C0000 = VESA,  $D0000 = Genoa,   $E0000 = NCR,   $F0000 = Realtek.
+FÅhrt dies nicht zum Erfolg, sollte der Parameter  $C0000 = VESA probiert
+werden. Alle neueren VGA's sind nach der VESA-Norm und kînnen dann CHIP-
+unabhÑngig angesteuert werden. Eventuell befindet sich auf ihrer VGA-Instal-
+lations Disk ein Treiber (z.B. VESA.COM) der vorher aufgerufen werden mu·.
+PV unterstÅtzt folgende Modes, die je nach Bildgrî·e automatisch
+selektiert werden (mind. 512k VGA vorausgesetzt):
+-  640x480x256
+-  800x600x256
+- 1024x768x256/16 je nach Karte
+PV sucht sich den geeignetsten Modus aus ,es kann aber auch mit 'X' ein
+Modus ausgewÑhlt werden. PV zeigt die Auflîsung in der untersten Zeile
+im Menu an.
+Mîchten Sie noch einen weiter Mode angeben oder PV immer in einem festen
+Mode betreiben, so addieren Sie die Funktionsnummer des Modes als letzen
+Parameter:
+z.B.: PV /e $10065  oder auch  PV $65    = 1024x768x16 bei alten ATI-Karten
+      PV $nn6f02                         = VIDEO7 -Mode nn
+      PV /e $30                          = ET4000/3000 1024x768x16
+Der Parameter /e sollte angegeben werden, wenn es sich um einen 16 Farben-
+Modus handelt.
+Kann PV einen Mode auf ihrer Grafikkarte nicht finden, so wird die Darstellung
+von Bildern mit mehr als 16 Farben im Modus 360x512x256 versucht. Bei weniger
+Farben wird 720x512x16 versucht.
+Man kann diese beiden Auflîsungen auch Åber die Funktionsnummern $f2, $f3
+erreichen.
+Sollten diese Modes auf ihrer Karte nicht laufen, so sollten Sie
+PV /x $12 fÅr 640x480x16, PV /x $10 fÅr 640x350x16 ,PV /x $13 fÅr 320x200x256
+vesuchen oder irgend eine Funktionsnummer die laut ihrer VGA-Beschreibung laufen
+soll.
+Der Parameter /x bestimmt, da· der ModeParameter nur verwendet wird, wenn
+der Mode den PV sucht, nicht aufrufbar ist.
+z.B.: PV /x $65   dieser Aufruf ist bei alten ATI-Wonder Karten sinnvoll, da
+PV den 1024x768 Modus mit der Funktionsnummer $55 aufruft. Wenn PV feststellt,
+da· es diesen Modus nicht gibt wird automatisch $65 aufgerufen. Gibt es
+den ParameterModus nicht (z.B. bei 256K BestÅckung) verweigert PV die Anzeige
+und frÑgt ob das Bild dann wenigstens konvertiert werden soll.
+
+- 8514/A, TIGA und XGA werden verwendet sofern die AI-Schnittstelle (HDILOAD,
+8514AI,..) aufgerufen wurde. Workstations und Grafikkarten mit mind 1MB, TIGA
+bieten meist eine 8514 Emulation in ihrer Programmsammlung an.
+Es werden dann die Auflîsungen 640x480x256 und 1024x768x256 unterstÅtzt.
+Man kann die Parametermodes $17f oder $27f angeben um einen der 8514/A Modes
+zu wÑhlen.
+
+- 1280x1024x16/256 und 1600x1280x16/256. Sollte Ihre Karte eine dieser
+Auflîsungen beherrschen, so versuchen Sie es mit Kommandozeilenparameter.
+UnterstÅtzt die Karte AI (8514/AI) so versuchen Sie es mit $37f, $47f .. $f7f.
+Sollten Sie eine Karten mit VESA Bios haben versucht PV im Automode einen
+Modus mit 1280x1024 anzuwÑhlen, wenn ein Bild mit mehr als 1024 Pix pro Zeile
+gestartet wird. Bei Mach32 werden diese Auflîsungen nur bei installiertem
+VESA Treiber unterstÅtzt.
+
+- Virtuell verwaltet PV den kompletten Bildspeicher der Grafikkarte. D.h
+  es werden bei Bedarf mehr Bildzeilen beschrieben als sichtbar sind.
+  Das angezeigte Bild kann dann mit UP,DN oder der Maus hoch und runter
+  gescrollt werden. Dies ist z.B. nÅtzlich fÅr Bilder im Hochformat.
+   Mode           VGA       Virtuell rollbare Zeilen:
+   640x480        512Kb     819
+   640x480x256    1Mb       1024
+   360(720)x512   256Kb     728
+   800x600        512Kb     655
+   800x600x256    1Mb       1024
+   1024x768       512Kb     1024
+  Je nach Speicherorganisation der SVGA kann durch Scrolling verschieden weit
+  gescrollt werden. Derzeit gibt es keine Mîglichkeit das Scrolling in allen
+  Modes gezielt so zu begrenzen, da· nur solange gescrollt werden kann bis
+  die letzte virtuelle Zeile angezeigt wird. Es werden dann z.B. undefinierbare
+  Muster oder versetzte Teile des Bildanfangs nachgescrollt. Eventuell kann
+  man bei manchen SVGA auch nicht bis zur letzten Zeile durchscrollen.
+  Falls Sie oder Ihre VGA das Softscrolling oder die Verwaltung virtueller
+  Zeilen stîrt, kann dies durch den Aufruf  PV /s  unterdrÅckt werden.
+  Dieses Feature ist au·erdem nicht in 8514/A Modes verfÅgbar.
+
+- Truecolor, Hicolor
+  ATI Ultra mit Mach32 u. 2MB werden im 'ATI-VGA Auto' Modus mit Truecolor
+  (16,8 Mio) und Hicolor (65536) automatisch unterstÅtzt in folgenden Modes:
+  640x480x24Bit, 800x600x24Bit, 1024x768x16Bit.
+  Bei Mach32 mu· per ATI's Install die Option VGA RAM = Shared eingestellt
+  sein. Im Auto Modus versucht PV Hicolor oder Truecolor Modes zu verwenden.
+  Bei machen Karten wird Truecolor (16 Mio Farben) anders dargestellt, dabei
+  wird Rot mit Blau vertauscht (Diamond, Genoa). In diesem Fall mu· der
+  Parameter /b beim Aufruf angegeben sein.
+  Karten mit VESA Hicolor Modes (65536, 32768) haben derzeit keine einheitlichen
+  Funktionsnummern. Wenn Sie die Nummer eines VESA Hicolor Modes wissen, kînnen
+  Sie diesen beim Aufruf von PV angeben (z.B. PV /x $117  bei ATI, PV /x $302
+  bei  Diamond). Aktiviert wird dieser dann wenn Sie mit [X] auf Comandline-
+  Parameter wechseln und ein RGB Bild starten.
+  Sonstige Karten mit Hicolorchip werden eventuell unterstÅtzt, wenn PV mit
+  /h aufgerufen wird. Dabei wird derzeit jedoch nur die halbe X Auflîsung
+  angezeigt. Ich arbeite noch an einer besseren HicolorunterstÅtztung fÅr
+  weitere Grafikkarten.
+  Werden True und Hicolor nicht richtig aktiviert, so kann man mit Parameter /o
+  diese Funktionen abschalten.
+  ATI MACH64 Karten haben ein VESA kompatibles BIOS, brauchen aber
+  unverschÑmt lange um Ihre Konfiguration zu ermitteln. Hier empfehle ich den
+  Aufruf PV /h $C0000. Mit /h in dem Zusammenhang mit VESA ($C0000) umgeht die
+  automatische Erkennung und spezifiziert VESA V1.2 KompatibilitÑt mit voller
+  Hi-/Truecolor UnterstÅtzung.
+
+
+7. Zur Bedienung
+----------------
+- Kommandozeilenparameter:
+  PV [Path[Name.ext]] [Destination-path] [/c /m /e /p /d] [/x $nn (VGA-Mode)]');
+  Alternativ zum Bildnamen, kann auch eine Filemaske (z.B. *.GIF) gewÑhlt
+  werden.
+  /c = konvertiert nur; Wenn keine Graphikanzeige erwÅnscht bzw. vorhanden.
+       Gibt man den Konvertiertyp z.B. /cj an, so liegt das Dateiformat fest.
+       j : medium compressed JPG , hj : higher compressed JPG , 0 : IMG ,
+       1 : TGA , 2 : LBM , h2 : Amiga LBM , 3 : CUT , 4 : GIF , 5 : TIFF ,
+       h5 : Motorola TIFF , 6 : SCx , 7 : PCX , 8 : PIC , 9 : BMP , h9 : OS/2 BMP.
+  /m = monochrom; Z.B. bei monochromem EGA-Display. Das Menu und alle Bilder
+       werden monochrom angezeigt und konvertiert. Soll dann ein Bild trozdem
+       farbig behandelt werden kann mit "M" im Menu umgeschalten werden.
+  /e = 16 color mode; dieser Parameter sagt PV, da· es sich bei dem als Para-
+       meter $nn angegebenen Displaymode um 16 Farben handelt.
+  /d = dithering statt grau bei 16 Farben-Modes und Bildern mit mehr als 16
+       Farben. Sie sollten den Parameter bei einer EGA verwenden, da Sie dann
+       sowieso keine 16 Graustufen haben. Sonst werden Sie immer gefragt, ob
+       Sie EGA-Dithering oder Graustufen haben wollen. EGA zeigt anstelle
+       von Graustufen nur eine Falschfarbendarstellung.
+  /p = keine Farboptimierung; Bilder mit mehr als 256 Farben werden normal
+       auf optimale Farbdarstellung mit 256 Farben umgerechnet. Dies kostet
+       viel Rechenzeit, liefert jedoch eine bessere QualitÑt. Wenn Ihnen
+       eine einfache Darstellung ausreicht benÅtzen Sie /p.
+  /x = PV verwendet den Kommandozeilenmodus $nn nur dann wenn ein Bild mit den
+       normalen Modes nicht vollstÑndig oder gar nicht dargestellt werden kann.
+  $nn  ist the Funktionsnummer des EGA/VGA/XGA.. Modes und/oder kombiniert mit
+       der Nummer fÅr den VGA-Chipsatz. Bitte achten Sie darauf, da· dies
+       immer der letzte Parameter in der Zeile sein mu·.
+  /h = Verwendung von HiColor RAM-DAC. Wenn ihre Graphikkarte Hicolor (32768
+       Farben) besitzt werden Bilder mit mehr als 256 Farben in diesem Modus
+       dargestellt. Dies ist erheblich schneller als Farboptimierung und liefert
+       bessere Ergebnisse. Nachteilig ist die Reduktion der x-Auflîsung und
+       eine weitere Verarbeitung des Bildes, sowie Abspeichern liefert kein
+       sinnvolles Ergebnis. (Das gleiche gilt bei aktiviertem CEG-DSP).
+  /s = Schaltet das Softscrolling und die virtuelle Zeilenverwaltung ab.
+  /o = Schaltet den Hicolormodus ab.
+  /b = Manche Grafikkarten haben im 16 Mio Farben Modus Rot und Blau vertauscht
+       (z.B. Diamond Stealth Pro, Genoa 24). In diesem Fall ist dieser
+       Parameter erforderlich.
+  /v = UnterdrÅckt 1280x1024 und hîhere Auflîsungen. Verenden Sie das wenn
+       Ihr Monitor nicht syncronisiert.
+  /n = Schaltet bei Kommandozeilen Aufruf nach Verlassen nicht in den Textmodus
+       sondern zeigt weiter das Bild an.
+
+- Tasten im Fileauswahlmenu:
+  "F1"    Helpmenu.
+  up/down pgup,pgdn home,end = Durch die Pfade und Files durchblÑttern.
+  Enter = Bildfile auswÑhlen oder in einen Pfad wechseln.
+	  '..' steht fÅr den Åbergeordneten Pfad.
+	  Sind markierte Files innerhalb des Verzeichnisses, so werden zuerst
+	  Diese angezeigt.
+  "I"     Fileinfo.
+  "L"     Laufwerk wechseln.
+  "Z"     Zielpfad eingeben wohin Files gespeichert werden sollen.
+  "U"     Anzeigen / éndern der Bildparameter vor dem Laden ("Define Header").
+  "S"     Alle bisher angezeigten Files werden in der Datei PV.SLD gespeichert.
+  "M"     Farbe/Monochrom fÅr das nÑchste Bild');
+  "X,+,-" Auswahl des Display-modes; normal kennt PV den erforderlichen Mode.
+	  Sie kînnen jedoch die Verwendung des Kommandozeilen-Modes oder
+	  falls vorhanden die Auflîsungen 640x480, 800x600, 1024x768 erzwingen.
+  "F"     Hier werden 3x3 Koeffizienten eingegeben fÅr die Verwendung des
+	  Filters 4. Das Ergebnis dieser Filterfunktion erhalten Sie wenn ein
+	  Bild angezeigt wird und Sie geben "F" und "4". Die Koeffizienten
+	  dÅrfen von -127 .. +127 gehen.
+  "O"     Umschalten zwischen Konvertier- und Anzeigemodus fÅrs nÑchste Bild.
+  "D"     File lîschen.
+  "R"     File umbenennen. Bitte den vollen Namen mit Extension angeben und
+	  keine Wildcards oder Pfade angeben. Geben Sie nur ENTER ein wenn
+	  Sie nicht umbenennen wollen.
+  "P"     Farboptimierung. Bei Bildern mit mehr als 256 Farben wird bei
+	  Farboptimierung auf 256 VGA Farben eine bessere QualitÑt erreicht
+	  als bei der Darstellung mit einer Standard R3G3B2 Farbtabelle.
+	  Die Berechnung dauert jedoch etwas lÑnger. Falls Ihre Karte in der
+	  gewÑhlten Auflîsung Hi-/Truecolor unterstÅtzt kînnen Sie das
+	  ebefalls anwÑhlen.
+  "Y"     Filetype. Sie kînnen eine Filemaske setzen. Erlaubt sind alle DOS
+	  Wildcards. Z.B.  *.* , *.gif , test????.??? ,..
+  "T"     Markieren / Demarkieren einzelner Files.
+  "^T"    Markieren aller Files im Verzeichnis.
+  "^U"    Demarkieren aller Files.
+  "G"     Ermittelt selbst alle Bilder im aktuellen Verzeichnis und zeigt diese
+	  als Bildergallerie aus Iconen mit 128x96 Grî·e an. Aus diesem Modus
+	  heraus kînnen Bilder selektiert, markiert und gestartet werden.
+	  - Es gelten die Bildpfeile zum BlÑttern sowie die Pfeiltasten.
+	  - Mit "T" kînnen einzelne Dateien markiert werden.
+	  - Mit Enter wird das selektierte oder die markierten Bilder gezeigt.
+	  - Mit ESC wieder zurÅck ins MenÅ.
+	  Wenn Sie in Ihrer AUTOEXEC.BAT einen Eintrag der Form
+	  SET PVICONS=drive\path   definieren werden alle Iconen dort zwischen-
+	  gespeichert. PV kann auf vorhandene Iconen schneller zugreifen.
+
+- Tasten wÑhrend ein Bild angezeigt wird:
+  (Bei Hicolor, Truecolor , CEG sind derzeit nicht alle Funktionen mîglich).
+  Farbmetrische Funktionen:
+   "Home, End"  ("POS1, ENDE") VerÑndern der Helligkeit.
+   "PGUP, PGDN" ("Bild") VerÑndern des Kontrasts.
+   "F9,F10"     VerÑndern der FarbsÑttigung. Sie kînnen damit
+	     die SÑttigung verdoppeln oder zu Null machen (Graubild) oder
+	     sogar negieren.
+   "DEL"     Die ursprÅnglichen Farben werden wieder hergestellt.
+   "R,G,B"   Alle obige Funktionen wirken normal auf alle Farbanteile gemeinsam.
+	     Sie kînnen aber auch nur z.B. den Rotanteil Ñndern wenn Sie vor-
+	     her "R" eingeben. Die anderen Farbanteile bleiben unverÑndert.
+	     Das selbe gilt fÅr "G" GrÅn und "B" Blau.
+   <Space>"  Wieder alle Farbanteile gemeinsam verwenden. (default).
+   "I"       Invertieren der Helligkeit (Farbnegativ).
+   "M"       konvertieren zu monochrom (Graubild);
+   "C"       Farbrollen.
+  Geometrische Operationen und Bildverarbeitung:
+   "Pfeil-Tasten"
+	     Softscrolling. Schiebt den sichtbaren Ausschnitt des Bildes
+	     nach oben bzw unten. Hat das Bild mehr Zeilen als der Bildaus-
+	     schnitt, so kann man hiermit den Rest ansehen.
+	     Hat Ihr Rechner nicht genÅgend Speicher (XMS), so ist das
+	     Softscrolling auf die FÑhigkeiten Ihrer Grafikkarte beschrÑnkt
+	     (kein links/rechts-Scrollen und max. 1024 Zeilen).
+   "+,-"     Die Bildschirmauflîsung kann umgeschaltet werden.
+   "/X,*X"   Verkleinern/Vergrî·ern in 2er Stufen in Zeilenrichtung.
+   "/Y,*Y"   Verkleinern/Vergrî·ern in 2er Stufen in Spaltenrichtung.
+   "/Z,*Z"   Verkleinern/Vergrî·ern in 2er Stufen.
+   "U"       Bild wiederherstellen (UNDO-Funktion).
+   "D"       Graustufen-dither in verschiedenen Auflîsungen. Z.B. "D4"
+	     reduziert ein 256 Graustufenbild auf 16 Graustufen. Damit
+	     erhalten Sie u.U. bessere Ergebnisse beim Ausdrucken.
+	     D1 macht reine schwarz/wei· Darstellung.
+   "F"       3x3 Graubildfilter. Sie haben 7 vordefinierte Filter.
+	     Hochpa· (sharpen), Tiefpa· (smothing), Relief (conture),
+	     Laplace Kantenextraktion, Erosion, Median, Dilation.
+	     Laplace (userfilter) kann mit eigenen Koeffizienten belegt werden.
+	     (Fileauswahlmenu und "F").
+   "T"       Transformationen: "X,Y"-Spiegeln und "R"-Rotieren um 90 Grad.
+	     Wenn Sie um 180 Grad drehen sollten Sie besser "TX" und "TY"
+	     verwenden als zweimal "TR". Da bei extremen SeitenverhÑltnissen
+	     u.U. nicht vollstÑndig gedreht werden kann, sollten Sie vorher
+	     auf genÅgend hohe Display-Auflîsung umschalten.
+   "W"       Definieren eines Bildausschnittes ROI (region of interest).
+	     Alle obigen Operationen sowie das Speichern eines Bildes erfolgen
+	     in dieser ROI. Normal ist die ROI so gro· wie das ursprÅngliche
+	     Bild.
+	     "Q"        setzt die ROI zentrisch auf 512x512 (Bitte nur ab
+			640x480 Display Auflîsung verwenden)
+	     "F"        setzt die ROI auf die Display Auflîsung.
+	     "S"        setzt die ROI auf die bei der letzten ROI gewÑhlten
+			Werte.
+	     "Enter"    schaltet um zwischen Grî·e Ñndern (size) und Ver-
+			schieben (move). (entspricht der rechten Maustaste)
+	     "Pfeile"   Verschieben oder VerÑndern der Grî·e. (Geht besser
+			mit der Maus)
+	     "Space"    nimmt die ursprÅngliche Bildgrî·e.
+	     "Esc"      akzeptieren der ROI und verlassen. (ebenso mit linker
+			Maustaste)
+   "K"       Pixelanalyse. Die Funktion zeigt die IntensitÑtswerte an
+	     beliebigen Bildpositionen.
+
+  Speichern eines Bildes oder Bildausschnitts:
+   "F1"      zeigt den öberblick Åber die File- Formate und Funktionen.
+   "1..9"    Speichert das Bild oder den Auschnitt (ROI) mit der angezeigten
+	     QualitÑt.
+  Drucken eines Bildes oder Bildausschnitts:
+   "P"       Beantworten Sie dies mit "Y" oder "J" so druckt PV auf HP DJ500C.
+  Zu Animationen:
+   "A"       Zeigt alle seither angezeigten Bilder hintereinander im aktuellen
+	     Verzeichnis.
+   "S"       Speichern im file PV.SLD.
+
+- Zum Konversions-/Anzeige-Modus:
+Bilder mit mehr als 16 Farben/Graustufen werden bei 16 Farben VGA-Modes mit 16
+Graustufen dargestellt. Beim Speichern in ein anderes Bildformat gehen dabei
+je nach den Eigenschaften Ihrer Grafikkarte u.U. Informationen verloren. Im
+reinen Konvertiermodus kînnen Bilder bis 10240x10240x256 verlustfrei konver-
+tiert werden. Die Konvertierung erfordert temporÑr viel Platz. Wenn Sie nicht
+genÅgend XMS-Speicher haben, so verwendet PV Platz auf ihrer Platte.
+Z.B. fÅr einen TIFF File 800x600x24 werden etwa 1.5MB benîtigt. Mit
+SET TEMP=DRIVE:\PATH  in der Autoexec.bat wird das Laufwerk bestimmt. Ohne diese
+Angabe wird C:\ verwendet.
+
+
+8. Zur Installation, Registrierung
+-----------------------------------
+Die registrierte Version zeigt den Namen der registrierten Person bei Verlassen.
+
+Die Shareware-Version bringt gelegentlich und bei Verlassen des Programms
+einen Hinweis in eigener Sache.
+Sie darf nicht gewerblich genutzt werden ohne Registrierung.
+
+Angesichts des derzeitigen Leistungsumfangs halte ich einen Beitrag von
+100DM fÅr eine einmalige Registrierung incl. einem freien Update fÅr
+angemessen.
+Der registrierte Benutzer ist angehalten sich bei mir oder nachstehend
+genannter Mailbox bzw Fido nach Neuerungen zu erkundigen.
+Bitte melden Sie sich bei Interesse an Updates. Es werden keine Updates
+automatisch verschickt.
+Registrierte Benutzer erhalten von mir bei Bedarf detailiertere Auskunft Åber
+PV, Grafikkartenprogrammierung oder Bildformate. Auf Wunsch werden andere
+Funktionen und Bildformate integriert (U.U. gegen Aufpreis je nach Aufwand).
+Bei Updateservice werden in AbstÑnden von ca 2 pro Jahr Updateinfos versandt,
+sowie erhalten Sie die Parameter um sich selbst Zwischenversionen zu
+registrieren.
+
+
+   PV Registrierung ohne weitere UnterstÅtzung   [ ]  DM60,-
+
+   PV Registrierung + Updateservice
+      incl. ein freier Update                     [ ]  DM100,-
+      weitere Updates dann fÅr                   [ ]  DM15,-
+
+   PV Mehrfachlizenzen                  ab 5      [ ]  DM50,- je Lizenz
+                                           10     [ ]  DM40,-
+                                           50     [ ]  DM20,-
+
+Fragen Sie auch nach StudentenermÑ·igungen (Nachweis erforderlich).
+
+Die Bezahlung erfolgt nach Ihrem Wunsch allerdings mu· ich bei Nachnahme
+eine GebÅhr DM5,- erheben.
+öberweisungen bitte auf Raiffeisenbank Essingen BLZ 600 693 17  KNr 37 346 008.
+
+
+
+- Geben Sie das gewÅnschte Diskettenformat an, oder besser legen Sie eine
+  leere Diskette bei.
+- Geben Sie die gewÅnschte Sprache an: Deutsch/Englisch.
+- Legen Sie am besten einen frankierten Umschlag mit Ihrer Anschrift bei.
+- Schicken Sie das alles an:
+
+   Wolfgang Wiedmann
+   Rechbergweg 4
+   73457 Essingen
+   Germany     
+   07365-1419  (nach 17 Uhr oder am Wochenende, 
+                von den meisten ben. LÑndern aus gilt: 0049 7365-1419)
+
+- Die jeweils neueste Shareware-Version erhalten Sie auch in der Mailbox
+  Ultraforce Aalen zum freien Download :
+
+  Line 1   : 0(049)7361-44117
+  Line 2   : 0(049)7361-45309
+  Login    : Gast
+  Passwort : Gast
+
+  FidoNet 2:2487/3108 (Magic PV)
+
+
+9. RechtsansprÅche, verwendete Warenzeichen.
+
+Alle verwendeten Produktnamen, Verfahren, und Bezeichnungen inklusive:
+Western Digital, MS-DOS, Silicon Graphics, FLIC, PCX, TIFF, AI, HAM, BMP, DIB,
+IBM, Macintosh, Pagemaker, Designer, Photostyler, Targa, Paintbrush, PcPaint,
+Pictor, Colorix, Winrix, RIX, Dr Halo, Halovision, Deluxe Paint, Commodore,
+Autodesk, VPIC, VGIF, CSHOW, GWS, Windows, OS/2, Edsun Continuous Edge Graphics,
+GEM, Ventura Publisher, MS-Paint, Word Perfect, A4TECH, SIS, Encapsulated
+Postscript, Sun, UNIX, Fricke, Sreenmachine, FAST-Electronik, Kontron, Zeiss,
+GRASP, Turbo Pascal, AT, EGA, VGA, SuperVGA, 8514/A, ATI, Paradise, Ahead,
+Video7-, OAK, Chip&Technology, ET3000/4000, Trident8900, VESA, Tiga, XGA, CEG,
+HiColor, JPG2GIF, GIF2JPG, Handmade Software, HSI, GIF87a, GIF89a, CompuServe,
+Atari, Huffman, LZW, PICIO, SGI, Image Alchemy, VTCOMPRESS, Stemmer, HDILOAD,
+ATI Wonder, Everex, Kodak, Corel..
+sind registrierte und unregistrierte Warenzeichen, oder Bezeichnungen der
+jeweiligen Firmen oder Organisationen.
+
+Ich Åbernehme keine Haftung irgendeiner Art weder direkt noch impliziert
+einschlie·lich Versand und Anwendbarkeit fÅr bestimmte Zwecke.
+Unter keinen UmstÑnden bin ich haftbar fÅr Fehler in der Sofware und dieser
+Beschreibung oder fÅr ingenwelche SchÑden die durch PV entstehen.
+PV wird vor der Auslieferung auf Viren untersucht.
+

@@ -1,0 +1,204 @@
+ Here are the changes between public beta 7b and final 3.00 release.
+
+ 1) Fixed a problem in polygon lighting which no transformations are used.
+
+ 2) Added traps for negative square root, negative or zero log
+    and illegal mix of patterned and layered textures.
+
+ 3) Removed +Q10, +Q11, Quality=10, and Quality=11 options.  Too many users
+    thought that cranking up the value would make their scene better.
+    Radiosity is now turned on with +QR or Radiosity=on and turned off
+    with -QR or Radiosity=off.  Radiosity should be used with caution.
+    Only scenes designed to use it shoul attempt to use it.  There are
+    many parameters that control radiosity that need to be carefully
+    adjusted.  
+
+ 4) Faster compression for PNG output.
+
+ 5) Line numbers are now properly reported in error message after or
+    during a #while loop.
+
+ 6) Fixed problem with // comments ending in CR with no LF
+
+ 7) SPECIAL NOTICE!!!  Fixed bug in camera's angle keyword.  BEWARE!, 
+    old images using "angle" will look different.  The length 
+    of the direction vector was not calculated correctly on perspective
+    camera. Other camera types or those not using "angle" are not affected.
+    To convert old angle values, change any old angle A to this...
+    NewA=degrees(atan2(R*tan(radians(A/2)))*2) where R is the length of the
+    camera's "right" vector which is usually 4/3.  All sample scenes have
+    been updated already.
+    
+ 8) Fixed prism bug when the first height was larger than the second height
+
+ 9) MSDOS ONLY: Major rewrite of video code to support VESA 2.0 standard.
+    Note future releases of POV-Ray may drop hardware-specific code and
+    use VESA and standard VGA only.
+
+10) Fixed bug with multiple halos using already declared halos
+
+11) Fixed bug that occured when a CSG object had no texture
+
+
+ Here are the changes between public beta 7 and beta 7b.
+
+ 1) Fixed a serious problem in declared image_map and bump_maps.
+
+ 2) Fixed a serious problem with translated or rotated planes
+    which affected many scenes.
+
+ Here are the changes between public beta 6 and beta 7.
+
+ 1) Various bug fixes and changes to Windows, Linux and other
+    platforms that are too numerous to list here.
+
+ 2) Added warning when camera is inside any non-hollow object.
+
+ 3) Fixed bug in prism that crashed pov3demo\atmos\atmos2.pov
+    and prism CSG bug.
+
+ 4) Fixed fractal object bounding box problem. 
+
+ 5) Fixed matrix bug 
+
+ 6) Automically adjust the right and up vectors if the orthographic
+    camera is used (if orthographic is used after all other camera 
+    parameters you'll get the same area as perspective camera; see docs)
+
+ 7) Fixed several halo bugs. (appereance is now independent of any 
+    transformations applied to the container object)
+
+ 8) Fixed blob bug (individual component textures were not transformed
+    properly, i.e. they were not transformed with the object)
+    Also fixed black spot problems.  And opacity problems.
+
+ 9) Fixed bug in height field (holes that sometimes appeared; fixed gap 
+    between adjactent height fields; surface acne that sometimes appeared) 
+
+10) Fixed bug in random stream allocation
+
+11) Fixed bug in fog code (fog acne and floating point exceptions)
+
+12) Fixed substr bug.  Now will accept last character in string.
+
+13) Fixed polygon problems where valid polygons were improperly closed.
+
+14) Fixed bug in lighting code in distance based attenuation
+
+15) Fix problem with TTF accent centering.
+
+16) Fix problems with PNG file output added some more error checking.
+
+17) Fixed image map memory leaks 
+
+18) Fixed plane shearing bug
+
+19) Fixed cylindrical blob crack bug
+
+20) Fixed lathe bug (too many intersections)
+
+21) Fixed halo dust coloring bug (colors were ignored; see updated docs)
+
+22) Fixed ground fog bug (the density formula was wrong)
+
+23) Fixed bug in spotlight
+
+24) Fixed negative log problem.
+
+25) Prohibit slope_map when used in a pattern that can't use it.
+
+26) Allow escaping the comment ';' character in INI file settings
+    Use \; for literal ;
+
+27) Fix problem with Grayscale + Alpha PNG output
+
+28) Force histogram grid size to divide into image size evenly
+
+29) Various parsing speed-ups.
+
+30) Fixed atmosphere and halo dust color bug (now a color can be 
+    specified for the atmosphere and halo dust that is used to filter 
+    light coming from light sources; see docs for more detail)
+
+31) Probably other stuff too.
+
+ Here are the changes between public beta 5a and beta 6.
+ 
+ 1) Several INI files were accidently forgotten in the earliest
+    archives.  They have been included.  [MS-Dos Only]
+ 
+ 2) Numerous changes have been made in the scene files.
+ 
+ 3) The DOS4GW.EXE DOS extender is no longer necessary.  The new CauseWay 
+    extender has been linked into the executible.  See USER_WAT.DOC
+    for complete details.  [MS-Dos Only]
+ 
+ 4) Fixed a problem with scaled declared spotlights.
+ 
+ 5) The docs say that in addition to using +/- style switches on the
+    command line, you can also do Option=value style options not only
+    in INI files but on the command line as well.  However under some
+    circumstances an equals sign won't work on the command line.
+    We will allow Option#value as an alternative to using Option=value.
+ 
+ 6) Fixed problem with animation file numbering when a path is specified.
+ 
+ 7) Fixed problems with default extensions on output files.  Also if
+    you specify just a path it will append a default name.  For example
+      POVRAY +Imyfile +ft +O\povray3\outdir\
+    it will read myfile.pov and output \povray3\outdir\myfile.tga
+    because +O had a final \ meaning it was a directory.
+ 
+ 8) Fixed problems with default colors in brick, checker, and hexagon 
+    pigments.  Fixed comma problems with these patterns when using
+    pigments, normals or textures rather than colors.
+ 
+ 9) Memory leaks have been fixed in lbuffer.c when using radiosity
+    and in histogram.
+ 
+ 10) Fixed "eccentricity" keyword to work in halo {dust... } statements.
+ 
+ 11) Fixed a problem with transparent image_map or the "once" keyword
+     when used in layered textures.
+ 
+ 12) Fixed a bug in #switch #case #range.
+ 
+ 13) Fixed problems with mosaic preview and radiosity preview at
+     very high resolutions.  Perhaps fixed other high-res video problems.
+ 
+ 14) Many changes to halo.  See documentation for details.
+     NOTE:Earlier 3.0 scenes may need to be adjusted.
+ 
+ 15) Added "atmosphere" keyword to light source statement. By default light 
+     sources do interact with the atmosphere. If "atmosphere off" is used 
+     with a light source it is ignored by the atmosphere.
+ 
+ 16) Fixed problem with transformations to fog affecting the up direction.
+     Fixed bug that occured when -f +c was specified.
+     Fixed bug with negative atmosphere distance.
+ 
+ 17) Fixed bug with polygons/prisms and multiple holes. Now any number of 
+     closed polygons/prisms can be used in a polygon/prism statement. You 
+     get a hole where an even number of polygons/prisms overlaps (Note the 
+     new syntax described in the docs).
+ 
+ 18) Fixed bug in camera vector calculations made when look_at was used.
+     Fixed bug in camera parsing if the location and look_at are equal.
+ 
+ 19) Fixed bug in blob/lighting code 
+ 
+ 20) Fixed problem with redeclaring previously declared identifiers
+ 
+ 21) Added new #ifndef directive
+ 
+ 22) Added multi-component glyph support to ttf
+ 
+ 23) Added random number math functions "seed" and "rand".  See docs.
+ 
+ 24) Added transformations to sky_sphere
+ 
+ 25) Fixed bug with subsets of cyclic animations 
+ 
+ 26) Changed behaviour of hollow statement in CSG objects
+ 
+ 27) Added %p output path string to shellouts.

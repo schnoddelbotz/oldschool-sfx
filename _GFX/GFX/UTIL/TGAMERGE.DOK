@@ -1,0 +1,81 @@
+-----------------------------------------------------------------------------
+
+                        T G A M E R G E   1 . 3 e
+                      _____________________________
+                      ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
+
+Copyright (c) 1993 by TBH-Softworx --- all rights reserved
+              Oliver Fromme, Klingestr. 2, 3380 Goslar, Germany
+                      (nach dem 1.7.1993: 38640 Goslar, Germany)
+              Internet e-mail: inof@asterix.rz.tu-clausthal.de
+
+
+Dieses Programm ist Teil des JPGIndex-Paketes. Alle dort angegebenen
+Copyright-, Benutzungs- und Weitergabebestimmungen haben auch fr dieses
+Programm Gltigkeit, ebenso die Sicherheitshinweise.
+
+-----------------------------------------------------------------------------
+
+TGAMerge wird von JPGIndex verwendet (bzw. von der Batch-Datei, die von
+JPGIndex erzeugt wird). Dazu muá man nicht wissen, wie TGAMerge funktioniert.
+Wenn Sie nur JPGIndex verwenden m”chten, k”nnen Sie diese Dokumentation
+berspringen (es gengt, wenn Sie JPGINDEX.DOK lesen).
+
+TGAMerge dient dazu, mehrere Targa-Bilder zu einem gr”áeren Targa-Bild zu
+vereinen. Die Anzahl der Eingabebilder ist unbegrenzt. Es wird empfohlen,
+das Ausgabebild auf einer gengend groáen RAM-Disk zu erzeugen, da auf
+die Ausgabedatei in verst„rktem Maáe nicht-linear zugegriffen wird.
+
+Syntax:
+   TGAMERGE <output> <width> <height> <type> <script>
+
+Keiner der Parameter darf weggelassen werden, und sie mssen in der hier
+angegebenen Reihenfolge stehen! Ihre Bedeutung im einzelnen:
+
+<output> ist die Ausgabe-Datei, die erzeugt wird. Falls sie bereits
+         existiert, erfolgt eine Sicherheitsabfrage. Die Endung .TGA kann man
+         weglassen.
+
+<width>  Breite des zu erzeugenden Gesamtbildes in Pixel.
+
+<height> H”he des zu erzeugenden Gesamtbildes in Pixel.
+
+<type>   Entweder "C", um ein 24-Bit-Farbbild zu erzeugen, oder "G", um ein
+         8-Bit-Graustufenbild zu erzeugen.
+
+<script> Name einer Textdatei, die die Daten der Einzelbilder enth„lt. Jede
+         Zeile in diesr Datei muá den folgenden Aufbau haben (Leerzeilen
+         werden ignoriert):
+            <x> <y> <input>
+         Hierbei geben <x> und <y> die linke obere Ecke bezglich des
+         Gesamtbildes an. <input> ist die Eingabedatei (.TGA kann weggelassen
+         werden). Keine der Eingabedateien darf mit der Ausgabedatei
+         identisch sein.
+
+Man sollte darauf achten, daá jedes Eingabebild ganz im Ausgabebild liegt,
+da TGAMerge kein Clipping (Abschneiden an den Bildgrenzen) vornimmt. Falls
+eines der Eingabebilder ber die Grenzen des Ausgabebildes hinausragt, bricht
+TGAMerge mit einer entsprechenden Fehlermeldung ab. Man muá das Eingabebild
+dann entweder neu positionieren, oder mit dem Programm TGAClip (vom gleichen
+Autor) etwas abschneiden.
+
+Wenn ein Graustufenbild erzeugt wird (<type> = G), werden Farbbilder
+automatisch in Graustufenbilder konvertiert, bevor sie in die Ausgabedatei
+geschrieben werden.
+
+-----------------------------------------------------------------------------
+
+Allgemeine Hinweise zu den Targa-Tools findet man in der Datei
+JPGINDEX.DOK.
+
+Per aspera ad astra!
+      - Olli -
+
+-----------------------------------------------------------------------------
+Oliver Fromme, Klingestr. 2, 3380 Goslar, Germany
+        (nach dem 1.7.1993: 38640 Goslar, Germany)
+Internet email: inof@asterix.rz.tu-clausthal.de
+-----------------------------------------------------------------------------
+Das einzige, was zwischen verschiedenen Druckern standardisiert ist,
+ist das Netzkabel.
+   (Murphy's Grundsatz von den Druckerstandards)

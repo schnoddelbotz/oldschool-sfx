@@ -1,0 +1,20 @@
+Mit der hier beigelegten PVLITE.EXE ist es moeglich eine EXE Datei zu
+generieren, die ein Bild zeigt. Man muss nur mit dem DOS COPY Befehl
+ein GIF Bild oder eine FLI Animation zusammen kopieren.
+
+Bsp :
+
+COPY BILD.GIF+PVLITE.EXE BILD.EXE /B
+
+kopiert beide Dateien zusammen zu einem selbst anzeigenden EXE File.
+So einfach geht das.
+Andere Formate als GIF oder FLI sollten nicht verwendet werden.
+
+Die Datei BILD.EXE kann ansonsten alle Faehigkeiten von PVLITE.
+Z.B. zum Aufruf ohne Wartezeit:
+
+BILD . -k
+
+m.f.G.
+
+W. Wiedmann

@@ -1,0 +1,358 @@
+LV1.82 to LV1.85:
+
+- DELETE of images 'D'-key during fileselection
+- RENAME of images 'R'-key during fileselection
+- UNDO function 'U'-key reloads the original image to the display
+- RAS Sun raster files.
+- OS2 DIB and BMP RLE4-compression
+- ICO Windows Icons
+- TIF compression 5 (LZW) with less than 8 BPS
+- EPS Encapsulated Postscript
+- RIX 16 and 24 BPS
+- PCX 24 BPS
+- WPG 256 color raster images from Word perfect 5.1
+- TXT,DOC,BAT,HLP Textfiles to be viewed and converted as grafic
+- PMC,VMG A4TECH scanner format for 640x480x256 images
+- SFI SIS-Framegrabber format for DOS based menu
+- COL Kontron IBAS Lookup table files used when loading IMG files
+- ANI IFF animationfiles to show the first image
+- /h  parameter to take use of HICOLOR chips
+- recognize VESA VRAM VGA's with non continuous RAM (e.g. Diamond Stealth)
+- TEMP-File errors, if it's to big or unable to create LV aborts with a message
+- prepared for 1280x1024x256 resolution display (but not tested jet)
+
+- Improved speed and quality of grey loaded Images with more than 256 colors
+- TGA and JPG files are now recognized only by the fileextension
+- Fixed bug TIF RLE8 to be loaded correctly for variable x sizes
+- Fixed bug TIF use 1BPS as default if not specified in the header
+- Fixed bug TIF R2G2B2 images use correct colors (Epson scanner)
+- Fixed bug prevent from hang up if CUT file is corrupt
+- Fixed bug YUV to RGB conversion with correct greenintensity (JPG,FLM)
+- Fixed bug in Animation (SLD-Files) when color and grey images combined
+- Fixed bug OS2 DIB and BMP RLE8-compression
+
+LV1.85 to LV1.86:
+
+- JPG can be saved in two qualityclasses.
+- A timebar is shown when saving images.
+
+- Fixed bug DIB 8 to be loaded correctly for variable x sizes.
+- Fixed bug JPG Huffmandecoder correctly loads koefficients greater 10Bit.
+
+LV1.86 to PV2.01:
+
+- Coloroptimizing controlled by menukey 'P'
+- Filemask to be set by 'Y'
+
+- Totaly new outfit
+- Increased maximum count of files per directory to 1024
+- Speed up JPG loading 15%
+- Fixed bug JPG loading of YUV 4:4:4 color images
+- Fixed bugs resulting from the new menue PV2.0 to PV2.01
+
+PV2.02:
+- Added 360x512, 720x512, 320x200 VGA resolution to be selected by the menu.
+- Fixed bug handling ALCHEMY's V1.51 JPEG variable lenght huffman tables.
+- Added erosion, median, dilation filter.
+
+PV2.03
+- Fixed bug in dilation filter.
+- Fixed bug converting monocrome SCx and BMP into other fileformats.
+
+PV2.04
+- Added JPEG with vertical component resolutions 2:1:1 and 4:1:1;
+
+PV2.05
+- Added EPS 24Bit
+- Included all characters (exept $0d,$0a) to be shown when converting Text
+- Fixed bug in DIB RLE for accepting the EOL code within a line
+- Fixed bug in converting Amiga LBM 6Bps graylevel image
+- Fixed bugs in saving images from a 16 color/gray displaymode
+
+PV2.10
+- Added home/end to fileselectionbox
+- Added InfoBox message
+- Added 640x480x16 to be selected by the menu.
+- Added full NOVELL netware fileselection capabilities
+- Fixed bug in loading bilevel TIFF with compression $8005
+- Fixed bug in loading GIF when local BPS number differes to the global
+- Fixed bug with AheadA-VGA 256 color modes
+
+PV2.11
+- Fixed bug in JPEG horizontal component resolution (4:1:1)
+- Speed up JPEG and FLM Color images to be loaded 20% faster
+- Reduced Heap memory requirement when coloroptimizing
+- Added loading of GIF images contained in GRASP GL files
+- Added loading of FLI animations contained in GRASP GL files
+- Fixed bug with Video_7 mode 1024x768x16
+- Added *.VI Jovian images with 1,2,4,8,16,24 BPS
+- Fixed bug loading TGA files with 19 Byte header
+- Added new DL fileformat
+- Added GIF and TIFF to be saved with BPS 1,2,4.
+
+PV2.12
+- Added the Load_all_palette - entry in Autodesk Animator FLI files
+- Fixed bug in saving GIF with BPS 1,2,4 (since 2.11)
+
+PV2.13
+- Exit if called in CMD-line mode with a file that could not be loaded
+- Loaded faster in CMD-line mode.
+
+PV2.14
+- Fixed bug converting with resizing sometimes produces big tempfiles or
+  unusable results (since V1.85).  - I'm sorry.
+- Modified GIF saving. Some (E.g. alchemy V1.5) had problems to load it.
+- Added DCX FAX format.
+
+PV2.15
+- PV available with full german dialog.
+- Linked a 8x14 font into PV, some adapters do not provide fonts at all modes.
+- Added EGA BLOAD format.
+- Added TGA recognizion of offset byte 2.
+
+PV2.16
+- Fixed bug saving TIFF with 3,5,6,7 Bps.
+- Fixed bug loading GIF89 when extensionblock includs more than one block.
+- Improved sorting of filenames.
+- Enhanced the contrast of displayed binary images, it may be that ATI mode $65
+  (1024x768x16) may not work in this case from now on.
+- removed saving GIF with 1Bps. Many programs have problems to read it.
+
+PV2.17
+- Added colorcycling.
+- Added destination path to be selected by the menu.
+- Added KO-23 (UO-22) satellite imageformat.
+
+PV2.18
+- Fixed bug at BMP 24 Bps wordalign.
+- Fixed bug when JPG E0 marker length exceedes 8KB (Logitech Fototouch color V1.0).
+- Added FLC format from Autodesk animator pro.
+- Fixed bug in VESA detect (some VESA VGA hang up if called without Parm $C0000).
+- Prior check for VESA than for the VGA chiptype minimizes the SVGA problems.
+following changes not included in the CSL sharewareversion 2.18:
+- Fixed a bug in FLC with fillword sequence.
+- conversionnumber added to /C parameter enables converting within a batch.
+
+PV2.19
+- Fixed bug JPG Files smaller 8KB were refused since changes made in V2.18.
+- Added JTIFF Class Y TIFF with YCbCr and JPEG compression.
+- Modified Text to graphic conversion to get higher conversionspeed, also
+  'Reduce' works (if you do not want to reduce use 'N' for cut).
+
+PV2.20
+- Fixed bug in DCX FileFax format.
+- Added some SLD functions: 'C'lear, 'S'kip, 'Q'uit.
+- expanded SLD maximum lines to 256.
+
+PV2.21
+- Added Starwriter SGF format ( Star Division ).
+- Fixed a bug in saving TIFF with 1BPS and odd number of pix per line.
+- No longer limitations to the unregistered version but just some msg's.
+- Created PVLITE, a small commandline Pictureviewer.
+
+PV2.22
+- Prevent corrupt PCX from painting beyond the last line.
+- All images to be loaded about 5..10% faster on 386/486.. .
+- Slowmotion FLI,FLC,GL when keeping the right-shift-Key pressed.
+- PV2.22m experimental MOD player version.
+
+PV2.23
+- Modified DL to do the realtime animation instead showing the overview.
+- Modified GL to automaticaly initialize graylevel for PIC's without colortable.
+- Modified registrationprocedure
+
+PV2.24
+- Added Kodak Photo CD Baseformat 768x512.
+
+PV2.25
+- Images with more than 256 colors are automaticaly converted in 24Bit quality,
+  when converting into TGA, TIFF, BMP , JPG Files.
+- Corrected blue intensity on Kodak PCD YCC to RGB conversion.
+
+PV2.26
+- Added SAT satellite images from Eumetsat (BXTSAT via Austria).
+- Fixed bug in loading Kontron COL Files when they contain random coments.
+- Fixed bug, 720x512 Mode and other 16 color modes did not work correctly
+  since V2.25.
+- Added softscrolling with up to 1024 virtual lines at 1MB SVGA by PGUP,PGDN.
+- Changed saturationcontrol to be selected by the left and right keys.
+- Fixed bug to load ICO Windows Icons others than 4 BPS correctly.
+- Fixed warp around in some modes at some VGA's when loading big Gif's when
+  you choose 'cut to displaydimensions'.
+- Increased the size of TXT,DOC,.. to a maximum of 128x73 Characters.
+
+PV2.27
+- Modified WPG Bitmaprecognizion
+- Modified ICO Recognizion
+- Changed softscrolling to Cursor up/down to use with the mouse too
+- Changed saturation to be selected by F9 F10
+- Fixed bug new parameter /S doesn't work correctly in V2.26
+- Speed up unkompressed 24 and 16 BPS fileformats (TGA, BMP,..) about 10%
+- Added [I]nfo function to the mainmenu
+- Added FLM Screemachine II  YUYV Subsampling.
+
+PV2.28
+- Added Macintosh PICT format.
+- Added extended GEM format XIMG.
+
+PV2.30
+- Added all Hicolor and Truecolor modes of the ATI Ultra 2MB
+- Provided the VESA Hicolor support by comandlineparameter.
+- Modified IFF to allow MiniPics with up to 20KB before Body
+
+PV2.31
+- Fixed bugs from 2.30. Some truecolor images cannot be converted correctly
+  in the conversionmode. Overwriting images in the displaymode may cause a
+  corrupt strip at the top of the image. In Trucolor display modes the
+  Helpmessage destroyes a part of the image. Sorry for these bugs.
+- Added VESA Hicolor/truecolor recognizion.
+- VESAINFO utility to check your VESA VGA.
+- Added CVP format.
+
+PV2.32
+- Fixed bug CEG Chip did not work correctly on CEG files since LV V1.8
+- Added Sierra Hicolor recognizion and /o to disable Hicolor if fail.
+- Added TIFF 24 Bit with $8005 compression
+- Added proportional reduce function for a correct aspectratio
+- provided a special color setting for messages in graphicmode to ensure that
+  text could be seen. this may cause temporary wrong colors for the displayed
+  image.
+- Fixed a bug 320x200 didn't work correctly at Trident 8800 since softscrolling.
+- Fixed bug at 1280x1024x16 mode at segment border.
+- Added RSTm marker handling to JPG decompression (Aldus).
+
+PV2.33
+- Added VM Videomachine fileformat.
+- Added FRM Echolab imagegenerator fileformat.
+- Fixed bug loading some ICO with 1BPS.
+- Fixed bug recognizing the correct x-size on some BMP with 1BPS.
+- Added PCX with 0 - compression.
+
+PV2.34
+- Experimental printersupport for HP DJ500C.
+- Included REGISTER.EXE to make registrations
+- Drastically increased the speed of FLI,FLC loading from CD-ROM
+
+PV2.35
+- Added change path comand P:[Path] to SLD.
+- Added /b parameter if 24Bit modes show red and blue exchanged
+  (Diamond Stealth Pro, Genoa).
+- Fixed bug 8514/A adapters combined with VESA VGA did not work since V2.30 .
+- Added coloroptimizing to PVLITE.
+- Added 3 more lines in the fileselectionbox.
+
+PV2.36
+- Fixed bug recognizing the readonly flags on directories.
+- FLI,FLC,DL animations repeat continuously.
+- Fixed bug when displaying upsidedown images (TGA,BMP) in true-/hicolor modes.
+- Finally found the correct YCC to RGB colorconversion for Kodak PCD.
+- Fixed bug in SLD with P: ChangePath comand.
+- Added the PCD.SLD slidefile to provide a Diashow with your Photo-CD. You just
+  have to edit it for your CD driveletter.
+- Added Flip XY and Rotate for true-\hicolor modes.
+
+PV2.40
+- Added CDR,CCH Corel Draw Icon
+- Added SKD Autosketch Icon
+- Added SCR Word capture
+- Changed LUT programming done by BIOS for ATI Mach32 VESA221 1280x1024x256.
+- Fixed bug ATI Mach32 true/hicolor first bank was not selected since V2.34
+- Fixed bug recognizing the archive flags on directories.
+
+- Fixed bug PV hangs up when a MOD is used in a SLD.
+- Official licence from Marc Cox to use MODOBJ within PV.
+- Added CMYK to JPG (Adobe).
+- Added CMYK to TIFF.
+- Fixed bug TGA with interline compression.
+- Fixed bug PCX 256 colortable recognizion with double 0c marker.
+
+- Expanded SLD entries to 32 char per line.
+- Added t: comand to enable subscript text within the SLD.
+- Added a: comand to enable VGA Mode autodect before loading.
+- Added file tagging. ^T tags all files, ^U untags all and T tags single files.
+- Added /V parameter to disable higher resolutions than 1024 for slow monitors.
+- Added AVI Video for Windows
+- Added 32Bit TIFF.
+- Added Mitsubishi CP200 Thermosublimation videoprinter.
+- Added a pixelpicker to analyse the intensities ('K' when image is displayed).
+
+PV2.41
+- Added BBS files to be viewed as Text
+- Added child-process-call-capability for any extensions "EXT" with EXT.BAT,
+  see ZIP.BAT to list zipped files or ANS.BAT to show ANSI 80x25 in textmode.
+- Added ANS true ANSI sequences can be displayed.
+- Added saving BMP as 4BPS too.
+- Fixed bug some hires 16 color modes are displayed with line stepwidth of
+  8 lines with 7 blanked lines between since changes made in V2.34. Sorry !!
+- Added define window function "W" also available in hi/truecolor modes.
+- speed up JPG 15..50% . This seems to be the maximum speed available for
+  calculating without tables and not giving up 286 compatibility. May be a
+  faster coloroptimizing and YCbCr to RBG conversion would do another 10 %.
+- added <space> key to abort delay within a SLD and continue with the next file.
+- Modified OAK VGA driver. Added Cirrus recognizion. Added NCR, Realtek, Genoa
+  VGA support without recognizion, but with new CMD line parmameters.
+- Added /n cmdlineparameter to prevent PV to switch into textmode after leaving.
+
+PV2.42
+- Added Chip&Tech 655x0 VGA-chips.
+- Fixed Bug Ansi-display didn't work with DOS Share installed.
+- Added rotated PCD images to be displayed correctly and speed up normal PCDs.
+- Added compressed VM Videomachine format.
+- Added FLX 15BPS animations. (15 Bit Hicolor VESA VGA required).
+- Added Ventura Publisher 24BPS IMG
+- Added First Publisher ART
+- Added Fontasy BSG
+- Added Atari PCP
+- Added Turbo-Pascal TPI
+
+PV2.43
+- Added many common FAXG3 formats (FAX, WFS, QFX, BFX, ..)
+- Added also TIFF Class F FAXG3
+- Added OS/2 V2.1 BMP and RLE
+- Added Macintosh PICT Truecolor
+- Added Printerportselection
+- EPS TIFF Tender now used if included instead of searching for dataarrays
+- PVLITE defaults to a proportional reduce of big images
+- Fixed bug at TIFF with 4BPS and $8005 compression
+- Fixed bug at DCX FAX format
+- Fixed bug at Macintosh 8 Bit PICT
+- Added ATI Mach 32 PCI/VLB recognizion
+
+PV2.43x
+- Some minor bugfixings
+- Added Zoom for both dimensions by "Z"
+- Added XMS Support for temporary data
+- Speed up GIF decompression
+- Added autocentering for y dimension
+- Added X:nn and Y:nn to control positionizing pictures within SLD files.
+- Modified functions for tagged files. conversion, monocrome, .. stays
+  for all tagged files.
+- [P] allows selection of Hicolormode for all modes if supported.
+- Changed +,- selection for Zoomfunctions X,Y,Z into *,/.
+- +,- to switch between the VGA modes while a picture is displayed.
+- XMS Support for scolling big images in all directions. ( choose "N" for
+  cut to displaydimensions, or when switching to a lower VGA resolution).
+- Added support for 320x200 with Hi/Truecolor.
+
+PV2.50
+- Added galleryfunction providing the overview of all pictures in the current
+  path.
+- Speed up decoding of all hi-/true-color-fileformats at hi-/truecolor modes.
+- Speed up JPG another 10..20% percent.
+- Added 8Bit HAM IFF.
+- Added TIFF FAX Group4.
+- Added TIFF 32 bit with LZW compression.
+- Added conversion into a WIN3.1 compatible ICO Iconfiles.
+- Readded badcode-recognizion in GIF. It has been removed since V2.40 but
+  sometimes leads to hang up.
+- Modified SLD-comand C:0 clears the whole screen.
+- Added recognizion of Filetype mask by commandline e.g. PV *.gif .
+- Tagged file conversion makes all destinationfiles of the same size if you
+  enter discrete values for the destination size.
+- Used /h parameter in combination with VESA compatible VGA's to define the
+  VESA V1.2 standard. This is of fortune if the autdetection of VESA hicolor
+  fails or e.g the detection lasts extremly long about 8 seconds as with
+  ATI MACH64 (Here you should call PV /h $c0000).
+- Added EXT.HDR headerdefinition file for specifing *.EXT fileformats.
+- PVLITE is able to be combined with GIF or FLx files into a selfdisplaying
+  EXE file.

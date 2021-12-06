@@ -1,0 +1,170 @@
+-----------------------------------------------------------------------------
+                      R E G I S T E R . D O C   (QPV/386)
+-----------------------------------------------------------------------------
+
+This file answers the following questions:
+ - Why should you register?
+ - What to do if you don't want to register
+ - What to do if you want to register
+ - How to pay the registration fee
+ - How to get the JPEG Unit / the source code
+
+
+Why should you register?
+~~~~~~~~~~~~~~~~~~~~~~~~
+   QPV/386 is shareware, meaning that you can test the program free and check
+   if it is useful for you.  You have to register if it is useful for you
+   (i.e. you pay a small registration fee), then you'll receive the full
+   version of QPV/386, along with a so-called registration file (if you ever
+   get a newer shareware version, you'll atomatically have the registered
+   version of it).
+
+   As you can seen, shareware is pretty much like commercial software
+   you can buy in a shop, but you can test it before buying it.
+   If you continue using QPV/386 after a trial period (30 days maximum), you
+   have to register.  If you don't register, your copy of QPV/386 becomes an
+   illegal copy.
+
+   If you think QPV/386 is worth using, then it's certainly worth
+   registering.  And QPV/386 is really unexpensive.
+   A single registration is valid for all future versions, since registered
+   users receive a registration file.  If they ever get a new shareware
+   version (e.g. by modem, through a computer network like Fido or
+   CompuServe, or from a CD-ROM), it will automatically become the registered
+   version again because of the registration file.  Thus updating QPV/386
+   saves you and me time and money!
+
+   When you register, you'll get:
+    - printed installation instructions
+    - a disk containing the current shareware version
+    - your personal registration file
+    - an easy-to-use install program which installs both QPV/386 and your
+         registration file on your hard disk
+    - if you like, some more software that I have written
+    - some more sample images (if there's space left on the disk)
+
+   You should register NOW.  QPV/386's registration fee will rise sooner or
+   later (currently it's really inexpensive) due to inflation.
+
+
+What to do if you don't want to register
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   In this case you have to delete QPV/386 (including all files belonging to
+   it) after the trial period (30 days max) and discontinue using it.
+   If a newer version of QPV/386 is released which may fulfil your needs,
+   you can test it again, of course.
+
+
+What to do if you want to register
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Please complete and print the registration form (file REGISTER.FRM).
+
+       You can do that by typing the following command at the DOS prompt,
+       provided that your printer is attached to the first parallel port
+       and ready to print:
+          COPY REGISTER.FRM PRN
+       The form fits nicely on a single sheet of paper.
+
+       Please write clear and legible if you print the form first and then
+       complete it manually.  If you don't have a printer, please write the
+       most important items on a piece of paper:
+        - your current version of QPV/386
+        - your name and complete address (use your REAL name, no alias)
+        - if existing: your electronic mail address
+        - how you're going to pay the registration fee (see below)
+        - your signature
+        - if you want: comments, questions etc.
+
+       For a private registration you must use the name of a real person.
+       Both private and commercial license are valid for a single person
+       or a single PC respectively.  Please ask for prices of multiple
+       licences (group licences).
+
+       Please send the form by mail (not email) to one of the following
+       addresses:
+
+          Oliver Fromme                              Oliver Fromme
+          Leibnizstr. 18-61            or            Klingestr. 2
+          38678 Clausthal                            38640 Goslar
+          Germany                                    Germany
+
+       Mail sent to the first address (Clausthal) can be processed faster,
+       but that address is only valid until 30-September-1996.  If in doubt
+       please use the second address (Goslar).
+
+       Sometimes the processing of registrations can be delayed somewhat
+       (e.g. vacations, illness, examinations etc.).  I apologize for any
+       inconveniences if this happens.
+
+    2. Pay the registration fee (see next question).
+       If you pay cash or by cheque, please make sure that it is not
+       visible through the envelope.
+
+
+How to pay the registration fee
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   There are several possibilities:
+    - DM (Deutsche Mark) cash.
+    - US Dollar cash.  (Important:  a money order is not cash!)
+    - Other currencies:  Please refer to the file PRICES.DOC.
+      If you want to pay with a currency that is not covered by that file,
+      do the following:  Convert the DM amount (including cheque surcharge
+      if you pay by cheque or money order, see below) to your own currency
+      using the most current (today's) exchange rate, then add 5%.
+    - A Eurocheque.  The amount must be in DM.  No extra surcharge required.
+    - Foreign cheque or money order (+ 10 $US or 15 DM).  These kind of
+      cheques involve high costs for me, therefore you have to add another
+      10 $US or 15 DM surcharge if you pay this way.  Use this way if you
+      don't want to send cash through the mail (although you could send it
+      as "registered mail" or "recorded delivery") and you can't pay by
+      Eurocheque.
+
+   It is not possible to pay by C.O.D. (cash on delivery) or by credit card.
+   I don't accept International Money Transfer anymore, because it is rather
+   slow (depending on the country), and it involves high costs for me (18 DM,
+   that's about 12 $US).
+
+
+How to get the JPEG Unit / the source code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   You can get the JPEG Unit and their source code using the file
+   REGISTER.FRM.  Ordering the unit does not automatically include
+   a QPV/386 registration.  If you want both (to order the unit and to
+   register QPV/386), you have to pay for both.
+
+   The JPEG Unit is intended to be used by Pascal programmers, you don't
+   need to have experiences with Assembly programming.  You must have
+   Borland/Turbo Pascal 7.0.  You don't need to have an Assembler, except
+   if you want to modify the assembly source.
+
+   There are three versions of the Unit (for different prices):
+    - Version A:  This is for private use only.
+    - Version B:  (Not available anymore, please order "C" instead.)
+    - Version C:  For commercial applications.  It may be used for ONE
+                  commercial software.
+                  If you want to use it for several different programs,
+                  you must buy a licence for each of them.  Please mention
+                  the name of the software in the form.
+                  You may buy 'Version A' first to see if it fits your needs.
+    - Version D:  For an unlimited number of commercial applications.
+                  (Please contact me for pricing information.)
+
+   The Unit itself and its source code must not be given to someone else
+   (regardless of the version).  It can not be re-sold.
+
+   The JPEG Unit package includes:
+    - the Unit (*.TPU) for decoding JPEG files (see QPV.DOC for a more
+      detailed description of its capabilities)
+    - its source (*.PAS)
+    - the object file (*.OBJ) of the assembly part
+    - its source (*.ASM)
+    - A documentation file, explaining how to use the unit within your own
+      Pascal programs
+    - A help file (*.TPH) which can be loaded into the Pascal IDE, it
+      consists of almost the whole documentation.
+
+   A DLL library which can be used for Windows and protected mode
+   applications is under development and will be available soon.
+   I'm also working on a Delphi VLC component.
+
+-----------------------------------------------------------------------------

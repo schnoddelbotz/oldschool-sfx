@@ -1,0 +1,92 @@
+-----------------------------------------------------------------------------
+
+                        T G A S C A L E   1 . 1 a
+                      _____________________________
+                      ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
+
+Copyright (c) 1993 by TBH-Softworx --- all rights reserved
+              Oliver Fromme, Klingestr. 2, 3380 Goslar, Germany
+                      (nach dem 1.7.1993: 38640 Goslar, Germany)
+              Internet e-mail: inof@asterix.rz.tu-clausthal.de
+
+
+Dieses Programm ist Teil des JPGIndex-Paketes. Alle dort angegebenen
+Copyright-, Benutzungs- und Weitergabebestimmungen haben auch fÅr dieses
+Programm GÅltigkeit, ebenso die Sicherheitshinweise.
+
+-----------------------------------------------------------------------------
+
+TGAWrite wird von JPGIndex verwendet (bzw. von der Batch-Datei, die von
+JPGIndex erzeugt wird). Dazu mu· man nicht wissen, wie TGAWrite funktioniert.
+Wenn Sie nur JPGIndex verwenden mîchten, kînnen Sie diese Dokumentation
+Åberspringen (es genÅgt, wenn Sie JPGINDEX.DOK lesen).
+
+TGAWrite dient dazu, eine Text in ein Targa-Bild zu schreiben. In der
+vorliegenden Version ist nur wei·er Text auf schwarzem Hintergrund mîglich,
+und zwar in der 8x8-Standardschrift. Der Text kann von links nach rechts oder
+(um 90 gegen den Uhrzeigersinn gedreht) von unten nach oben dargestellt
+werden. (Die in der Planung befindliche nÑchste Version wird auch farbig
+beschriften und andere ZeichensÑtze unterstÅtzen kînnen. Ein komfortabler
+Zeichensatzeditor, der auch fÅr normale Textmodus-ZeichensÑtze verwendet
+werden kann, existiert bereits.)
+
+Es wird empfohlen, das zu beschriftende Bild auf einer genÅgend gro·en
+RAM-Disk zu bearbeiten, da auf die Ausgabedatei in verstÑrktem Ma·e
+nicht-linear zugegriffen wird.
+
+Syntax:
+   TGAWRITE <targafile> <x> <y> <direction> <text>
+oder:
+   TGAWRITE <targafile> @<script>
+
+Keiner der Parameter darf weggelassen werden, und sie mÅssen in der hier
+angegebenen Reihenfolge stehen! Ihre Bedeutung im einzelnen:
+
+<targafile> ist das zu beschriftende Targa-Bild (Graustufen- oder Farbbild).
+            Im Gegensatz zu den meisten anderen Targa-Tools gibt es hier
+            keine Ein- und Ausgabedatei, sondern es wird die angegebene
+            Datei direkt verÑndert. Man sollte also vorher eine Kopie davon
+            machen, falls man das unbeschriftete Bild hinterher noch braucht.
+
+<x> <y>     legen die linke obere Ecke fest, an der der Text positioniert
+            werden soll. Wenn man von unten nach oben schreibt, ist es die
+            linke obere Ecke aus der Sicht des Bildes (die rechte obere Ecke
+            aus der Sicht der Textes).
+
+<direction> Entweder "R" (left-Right), um den Text von links nach rechts zu
+            schreiben, oder "U" (bottom-Up), um den Text von unten nach oben
+            zu schreiben.
+
+<text>      ist der zu schreibende Text. Er darf auch Lerrzeichen enthalten,
+            allerdings werden mehrere Leerzeichen hintereinander zu einem
+            einzelnen Leerzeichen zusammengefa·t. Spezialzeichen von DOS
+            (im wesentlichen "<", ">" und "|") sind nicht erlaubt!
+
+<script>    Name einer Textdatei, die die Daten fÅr die Beschriftung enthÑlt.
+            Jede Zeile in diesr Datei mu· den folgenden Aufbau haben
+            (Leerzeilen werden ignoriert):
+               <x> <y> <direction> <text>
+            Hierbei darf der <text> auch die o.g. Sonderzeichen enthalten.
+            Mehrfache Leerzeichen werden nicht zusammengefa·t. Es sind
+            beliebig viele Zeilen mit Beschriftungsdaten erlaubt.
+
+Man sollte darauf achten, da· jeder Text auch ganz in das Targa-Bild pa·t.
+Sollte der Text Åber eine der Bildgrenzen hinausragen, bricht TGAWrite mit
+einer entsprechenden Fehlermeldung ab.
+
+-----------------------------------------------------------------------------
+
+Allgemeine Hinweise zu den Targa-Tools findet man in der Datei
+JPGINDEX.DOK.
+
+Per aspera ad astra!
+      - Olli -
+
+-----------------------------------------------------------------------------
+Oliver Fromme, Klingestr. 2, 3380 Goslar, Germany
+        (nach dem 1.7.1993: 38640 Goslar, Germany)
+Internet email: inof@asterix.rz.tu-clausthal.de
+-----------------------------------------------------------------------------
+Ein kostspieliger Chip, geschÅtzt durch eine schnell wirkende Sicherung,
+wird die Sicherung schÅtzen, indem er zuerst durchbrennt.
+   (Erstes Murphy'sches Bauteilegesetz)

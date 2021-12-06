@@ -1,0 +1,333 @@
+-----------------------------------------------------------------------------
+
+                          The "Quick Picture Viewer"
+                        ______________________________
+                        ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^
+
+                                Q P V / 3 8 6
+                              _________________
+                              ~^~^~^~^~^~^~^~^~
+
+      A fast JPEG viewer for MS-DOS.  VGA graphics and 80386+ required.
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Currently supports JPG, TGA, GIF, PCX, BMP, IFF/ILBM, PNM/PBM, PCD, PNG.
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Copyright (c) 1993-95 by Oliver Fromme -- All Rights Reserved
+          Oliver Fromme, Leibnizstr. 18-61, 38678 Clausthal, Germany
+
+          Internet email:  fromme@rz.tu-clausthal.de
+          WWW:  http://www.rz.tu-clausthal.de/~inof/Welcome.html
+
+This program is Shareware.  You may copy the unregistered version, use it,
+give it to your friends, upload it to a BBS or something similar, under the
+following conditions:
+
+ * Don't charge any money for it.  If you upload it to a BBS, make sure that
+   it can be downloaded free (without paying for downloading it, except
+   for usage fees that have to be paid anyway).  Small copying fees (up to
+   5 DM or 3 $US) may be charged.
+ * Only distribute the whole original package, with all the files included.
+ * Don't change the files in any way, except:
+   You may change the INI, CFG, ASM, and DRV files for private purposes.
+   Don't distribute modified versions of these files to others without
+   prior permission of the author of QPV/386.
+ * If you want to include QPV/386 on a CD-ROM and/or book, please send me
+   a free copy of the CD/book (this is not a must, but I would appreciate
+   it very much).
+
+Distribution of the unregistered shareware version is explicitely desired,
+provided that the above conditions are accepted.
+
+Graphics cards manufacturers:  How about bundling QPV/386 with your product?
+I'm sure many of your customers would appreciate that free extra bonus.
+
+This software consists of the following files:
+ - QPV.EXE        the main executable file
+ - QPV.INI        initialization file (ASCII text)
+ - QPV.CFG        standard configuration file (ASCII text)
+Subdirectories ENGLISH (*=K) and DEUTSCH (*=C):
+ - QPV.DO*        the documentation
+ - CHANGES.DO*     list of changes from previous versions
+ - CONFIG.DO*      how to configure QPV/386
+ - FAQ.DO*         frequently asked questions
+ - REGISTER.DO*    how to register
+ - REGISTER.FRM    registration form (English)
+ - REGISTER.FOR    registration form (German)
+ - UPDATES.DO*     how to get updated versions of QPV/386
+Other subdirectories:
+ - CFG\*.CFG       various configuration files
+ - CFG\CFG.DOC     description of the configuration file format
+ - DRV\*.DRV       various video driver files
+ - DRVSRC\*.ASM    source codes for the video drivers
+ - DRVSRC\DRV.DOC  description of the video driver file format
+
+Text files with a DOK extension are German, those with a DOC extension
+are English.
+There may also be some example JPEG files.  They are not part of the QPV/386
+software package.
+
+A few warnings, disclaimer etc:
+
+IMPORTANT:  Using modes that your hardware (graphics card and/or monitor)
+can't handle can damage your hardware!  Be sure to use only supported
+modes.  If you come across a mode which looks flickering or unstable
+(i.e. the monitor can't hold the picture), abort QPV/386 immediately and
+delete that mode from the configuration file.
+
+YOU ARE USING QPV/386 AT YOUR OWN RISK!  THE AUTHOR (OLIVER FROMME) IS NOT
+LIABLE FOR ANY DAMAGE CAUSED BY THE USE OF QPV/386 OR BY THE INABILITY
+TO USE QPV/386.  IF YOU ARE NOT SURE ABOUT THIS, OR IF YOU DON'T ACCEPT
+THIS, THEN DO NOT USE QPV/386!
+
+QPV/386 is inexpensive shareware.  If you continue using it after a trial
+period of 30 days, you are encouraged to pay a small registration fee.
+(I try to avoid saying that you MUST register, but actually you MUST.)
+The registration is valid for all future updates (you'll get a
+registration key which makes the delay disappear).  The source code of
+the JPEG decoding routines (Pascal and Asm) used by QPV/386 is also
+available.
+To become a registered user, please print the file REGISTER.FRM and send
+it to me with appropriate payment.  Read the file REGISTER.DOC for further
+information.
+
+All product names mentioned in this software and documentation are trademarks
+or registered trademarks of their respective owners.  They're used in this
+software and documentation for identification purposes only.
+
+"The Graphics Interchange Format(c) is the Copyright property of
+CompuServe Incorporated. GIF(sm) is a Service Mark property of
+CompuServe Incorporated."
+
+-----------------------------------------------------------------------------
+
+What is QPV/386?
+~~~~~~~~~~~~~~~~
+
+The "Quick Picture Viewer /386" (hereafter referred to as QPV/386) is a
+viewer for JPEG image files.  It is about twice as fast as other common JPEG
+viewers.  Compare it yourself, you'll be surprised.
+
+JPEG (Joint Photographic Experts Group, pronounce "Jay-Peg") is an image file
+format which uses a "lossy" compression.  JPEG images (they have usually a
+"JPG" file extension) are normally very small and offer better compression
+than any other image format.
+
+Decoding of JPEG images is a rather complicated process, thus it needs a lot
+of computing power and performance.  QPV/386 takes advantage of the advanced
+features of 80386, 80486 and Pentium (586) CPUs, and it uses large look-up
+tables instead of formulas.  Well, I don't want to get into details.  It's
+fast, that's all you could want to know.
+
+
+Features
+~~~~~~~~
+
+ - It's fast (have I mentioned that before?).
+ - Uses advanced features of 80386/486 processors (note, the Cyrix 486DLC
+   is only an improved 386 rather than a 486).
+ - Contains Pentium optimized code.  QPV/386 is immune against the
+   FDIV bug of Pentium processors.
+ - Nice preview ability which is even faster (lets you quickly browse through
+   lots of images, very useful if you're searching for a certain image).
+ - Works even with a standard VGA card (320x200x16, 640x480x16, 320x200x256).
+ - Supports many SVGA cards (virtually all with VESA capability).
+ - Uses truecolor (16M color), hicolor (32K color), 256 color (either
+   greyscale or dithered color), and 16 color (dithered greyscale) modes.
+ - You can pan across an image which is bigger than the current screen
+   resolution (scrolling).  Some XMS and/or EMS memory is needed for this.
+   You can even pan using your mouse, which is much fun (at least on fast
+   local bus machines).
+ - You can change the resolution without loading/decoding the image again
+   (this is restricted to the same color resolution, for example you can't
+   switch from hicolor to truecolor without reloading the image).
+ - Supports the following image file formats (more to come):
+    * JPEG/JFIF (see below)
+    * GIF:
+       + interlaced and non-interlaced
+       + GIF87a and GIF89a (87a subset only)
+       + displays the first image of a multi-image GIF
+    * Targa (TGA):
+       + truecolor (15, 16, 24 and 32 bit), greyscaled, or with palette
+       + uncompressed or rle compressed (run length encoded)
+       + supports all video modes (16, 256, 32K, 64K, 16M)
+    * PCX:
+       + 1 and 4 bit with standard palette
+       + 8 bit with extended palette
+       + 24 bit truecolor
+    * BMP (Windows)
+       + 1 bit monochrome with palette, uncompressed
+       + 4 and 8 bit with palette, uncompressed or RLE4/8 compressed
+       + 24 bit truecolor, uncompressed
+    * BMP (OS/2)
+       + 1, 4 and 8 bit with palette, uncompressed
+       + 24 bit truecolor, uncompressed
+       + also supports the new multi image format (BA-BMP)
+    * IFF/ILBM (LBM)
+       + 1 to 8 bit with palette, and 24 bit truecolor, also DP2 enhanced
+       + uncompressed or compressed (ByteRun-1)
+       + no HAM yet (due to lack of test images)
+    * PNM
+       + PBM (black/white), PGM (grey), PPM (truecolor)
+       + ASCII and raw/binary versions
+    * Photo-CD
+    * PNG ("ping")
+       + complies with the recommendations of the PNG specification
+         (draft #9, 7-March-1995)
+       + supports interlacing, alpha and transparency.
+
+
+Requirements
+~~~~~~~~~~~~
+
+ - 80386 or better CPU (33 MHz or faster recommended), 386SX is sufficient
+ - VGA graphics card (SuperVGA recommended, though QPV/386 will run on any
+   standard VGA card)
+ - some XMS and/or EMS memory (depending on the size of the images), though
+   QPV/386 will also run without any XMS/EMS, but then you will be unable to
+   do any panning/scrolling
+ - about 500 to 550 Kb of free conventional memory
+ - MS-DOS 5.0 or compatible operating system
+
+A mouse is not required, but it's much more fun than keyboard control!
+
+A numeric coprocessor is not required.  If present, it will not be used,
+because it would not speed up decoding/displaying.
+
+
+Using QPV/386
+~~~~~~~~~~~~~
+
+At first you have to configure QPV/386 for your video hardware by running
+the SETUP utility once.  Please read the CONFIG.DOC file for more
+information.
+
+Then just type 'QPV/386' to run it.  There are some command line options
+(type 'QPV/386 /?' to get a help message), but they're usually not needed.
+
+The graphical user interface of QPV/386 is rather intuitive, so there is no
+need for much documentation.  Press the 'F1' key to get a list of all
+keyboard functions.  Hit '?' to get a list of keys that can be used while
+viewing an image.  You can quit QPV/386 at any time by pressing Alt-X.
+
+QPV/386 can also be used as command line viewer (without graphical user
+interface).  Type 'QPV/386' followed by one or more filenames.  Wildcards
+('*' and '?') are allowed, too.  Type 'QPV/386 /?' for more information.
+
+Experienced users should have a look at the initialization file QPV.INI.
+It offers many possibilities to change QPV/386's behaviour, you can even
+enable some advanced features which are disabled by default (e.g. automatic
+video mode selection).  It's a standard ASCII text file, containing
+detailed comments for each topic.
+Some of these setting can also be changed while QPV/386 is running:
+press Alt-O (while the directory listing is displayed) to enter an options
+window.
+
+
+Restrictions and Bugs
+~~~~~~~~~~~~~~~~~~~~~
+
+QPV/386 can't handle all kinds of JPEG images.  Specifically, it can only
+decode files which comply with the JFIF standard.
+See 'Technical Information' below for more details.
+
+The maximum image width is 4000 pixel.  QPV/386 will refuse to decode larger
+images.  The image height is not limited, but if it's too large it may not
+fit into memory (XMS/EMS), thus you can't see the bottom part when scrolling
+down.  If this happens, try to use a video mode with less colors, because it
+needs less memory (see FAQ.DOC).  Or buy more memory :-)
+
+
+How to get an updated version of QPV/386
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Please refer to the UPDATES.DOC file.
+
+
+Revision history and changes from prior versions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Please refer to the CHANGES.DOC file.
+
+
+Technical Information
+~~~~~~~~~~~~~~~~~~~~~
+
+QPV/386 can decode greyscaled images (containing a single component using
+h1v1 upsampling) and YCbCr true color images (containing three interleaved
+components in a single scan, using either Yh2v2, Yh2v1 or Yh1v1 upsampling
+for Y and Ch1v1 for Cb/Cr), covering virtually all JFIF files in use today.
+
+QPV/386 can handle files that contain restart markers, but it will not use
+them for error recovery.  QPV/386 can also display JPEG files which were
+created with the 'Adobe Photoshop' (at least version 2.5).
+
+The basic JPEG decoding routines are written in pure 386 assembly language,
+everything else is written using Borland Pascal 7.0.  I am not using
+protected mode, because it would slow down the decoding rather than speeding
+it up.  I have linked the JPEG routines into a single easy to use Pascal
+unit, which can also be used within other applications.  If you want to
+purchase the unit, please read the file REGISTER.DOC for more information.
+
+The JPEG unit provides procedures to open and close a JPEG file, read the
+file header, and read the image row by row.  It contains routines which
+return the lines as 24 bit true color RGB/BGR, 15/16 bit hicolor, 256 color
+dithered, 256 color greyscaled, 16 color grayscaled/dithered, and 16 color
+greyscaled/dithered for preview (scaled to one eigth or one fourth).
+
+A DLL library which can be used for Windows and protected mode applications
+is under development and will be available soon.
+
+
+Equipment used for Development of QPV/386
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Many people are curious about this, so here it is.
+
+Hardware:
+ - Pentium 100 MHz, 512 Kb cache, 64 Mb RAM, PCI, Neptune chipset, Award BIOS
+ - 3.2 Gigabytes of harddisk space (WD, Quantum, Maxtor), both IDE and SCSI
+ - magneto optical disk drive (Fuji) 230 Mb, 4.2 Gigabytes of MO disks
+ - CD-ROM drive (Toshiba, doublespin)
+ - 250 Mb tape streamer, 15 tapes (3.75 Gigabytes)
+ - Cardex Challenger Pro graphics card, Tseng ET4000-W32p, 2 Mb, truecolor
+ - 15" color SVGA monitor w/ digital control & LCD display
+ - Advanced Gravis UltraSound (GUS) 1 Mb, SoundBlaster AWE32, 200 W amp
+ - 16 bit network card, Ethernet NE2000 compatible, twisted pair + coax
+ - 1200 dpi truecolor flatbed scanner
+ - TI microLaser PowerPro, 6 Mb RAM, 600 dpi, 12 ppm, Adobe PostScript
+ - NEC P60 dot matrix printer
+ - Genius mouse, three buttons
+ - Highspeed faxmodem 14.4
+ - Lots of 3.5" HD floppy disks (mainly Fuji)
+ - Printer spooler:
+    + intel 80486-DX2/66, 256 Kb cache, 16 Mb RAM, VLB, SIS chips, AMI BIOS
+    + 460 Mb harddisks (Fujitsu, Maxtor), IDE
+    + Cardex Cobra graphics card, Tseng ET4000/W32i chips, 2 Mb, truecolor
+    + 16 bit network card, Ethernet NE2000 compatible, coax
+    + Soundblaster
+ - Mailbox/BBS (available soon):
+    + intel 80386-DX33, 64 Kb cache, 20 Mb RAM, ISA, SIS chipset, AMI BIOS
+    + magneto optical disk drive (Fuji), 128 Mb
+    + 16 bit network card, Ethernet NE2000 compatible, coax
+    + Highspeed faxmodem 14.4
+
+Software:
+ - Novell DOS 7 by Novell Inc.
+ - Borland Pascal 7.0 by Borland Int.
+ - Borland Delphi by  Borland Int.
+ - Turbo Assembler 3.2 by Borland Int.
+ - XKEY, KEEP8, BOO by Oliver Fromme
+ - PKTINY 1.61 by Thomas M”nkemeier
+ - TURBODSK 1.1 by Ciriaco Garc¡a de Celis
+
+Special thanks to:
+   Thomas M”nkemeier, Lutz Kotoll, Thilo W. Fischer, Rainer Klaffehn,
+   Walter Schmies, Stefan Engel, Ben Jos Walbeehm, Uwe Schlenther
+   and all of my beta testers!
+
+All product names mentioned in this software and documentation are trademarks
+or registered trademarks of their respective owners.  They're used in this
+software and documentation for identification purposes only.
+
+-----------------------------------------------------------------------------

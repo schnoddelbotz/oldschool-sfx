@@ -1,0 +1,40 @@
+Persistence of Vision Raytracer Version 2.0
+--------------------------------------------
+These are the level 1 example scene files for use with the Persistence
+of Vision Raytracer version 2.0.
+
+To use the POV-Ray ray tracer, you also need POVDOC.ZIP for documentation,
+and an executable for your computer. See the file POVINFO.TXT for
+more information.
+
+These files should be available from the same source from where
+you received this file.
+------------------------------------------------------------------------
+
+
+Files contained in LEVEL1 sub-directory
+---------------------------------------
+BALLBOX1.POV  <- Sphere sits inside cage.  CSG, box, octaves examples.
+BASICVUE.POV  <- A good starting point for new images.  Keep a copy around.
+BLOB.POV      <- Demonstrates use of blob primitive
+BOX.POV       <- Demonstrates use of box primitive
+BUMPMAP.POV   <- Fractal image bumped into a blue sphere.
+CANTELOP.POV  <- Simple, but interesting CSG and ONION example.
+CHECKER2.POV  <- Sphere with checkerboard cutouts.  More tricks w/alpha.
+CLIPTST2.POV  <- A (new) example of the clipping function.
+DODEC2.POV    <- Various new wood textures displayed on tetrahedrons.
+FILTFUN.POV   <- Some interesting tricks using filtering (alpha) components.
+GLASSDISH.POV <- Swedish-style crystal dish.  Uses Glass3 texture.
+GLASS.POV     <- Demonstrates a simple glass sphere.
+GRANITE.POV   <- A test of the Granite texture type.
+INTEE1.POV    <- Intersected Tee of cylinders.  Nice stone texture!
+INTERP.POV    <- Demontrates imagemap interpolation on split sphere.
+LASER.POV     <- Tricks with spotlights and alpha color values.
+MAPPER.POV    <- Another example of spherical and planar imagemapping.
+MAPPR2.POV    <- Example of imagemaps on cylinder, hyperboloid & paraboloid.
+MATMAP.POV    <- Sample of material mapping.
+SHADOWS.POV   <- Extended (Area) Light Source test - 3 objects
+SPOTLITE.POV  <- Demonstration of spotlight useage.
+
+INCLUDE\BUMPMAP_.GIF  <- General mandelbrot GIF image for bump-map testing
+INCLUDE\POVMAP.GIF    <- General GIF image for testing mapping orientation & scale

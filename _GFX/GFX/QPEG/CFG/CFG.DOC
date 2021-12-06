@@ -1,0 +1,92 @@
+
+    QPV/386 configuration files
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This textfile is intended to be read by people who want to create their
+own configuration file or modify existing configuration files.
+You normally needn't do that, just pick the configuration file for your
+graphics card.  For more information please read the file INSTALL.DOC
+(directory ENGLISH).
+
+Before making any changes to QPV.CFG files, please read these
+instructions carefully.
+
+The QPV.CFG files define all available video modes that are used by
+QPV/386.  You may edit it with a standard ASCII text editor (for example EDIT
+which is distributed along with MS-DOS 5/6).  If you want to make changes,
+you should have some fundamental knowledge about your video modes.  Most
+VGAs come with a manual which contains at least a list of available
+modes and their corresponding mode numbers.  If you can't get certain
+modes to work, send me a letter or electronic mail, and I'll try to help
+you (of course I'll try harder if you're a registered user :-).
+However, there's no guarantee or obligation of any kind for me.
+
+Comments in QPV.CFG are preceded by either '#', ';', or '%'.
+Empty lines are ignored.
+
+The first line (not counting comments, of course) defines the type of your
+video card.  This is the format of the first line:
+   type order
+'type' and 'order' must be seperated by at least one space.
+
+'type' denotes which of the driver files will be used.  For example,
+if you specify 'ET4000', there must be a file ET4000.DRV.
+'order' must be either 'RGB' or 'BGR'.  It specifies the byte order in
+true color modes (24 bit).  If you're not sure about the order, try both,
+either 'RGB' or 'BGR' will give you the correct colors (if, for example,
+skin looks blue, try the other option).
+If you don't have a true color card (i.e. no 24 bit modes), the value of
+'order' doesn't matter (though it must be specified).
+
+All subsequent lines define the video modes available with your card.
+This is the format of each line:
+   width height colors line ax bx options
+All items must be seperated by at least one space.
+
+'colors' must be one of the following:
+ -  '16': 16 colors (4 bit), greyscale display only
+ - '256': 256 colors (8 bit), greyscale and dithered color display
+ - '32K': 32 K colors (hicolor, 15 bit), color display
+ - '64K': 64 K colors (hicolor, 16 bit), color display
+ - '16M': 16 M colors (truecolor, 24 bit), color display
+'line' specifies the amount of memory used for a single row of pixels.
+This is usually the width multiplied by the number of bytes used to store
+a single pixel.
+'ax' and 'bx' specify the register values for interrupt 10h.
+For standard modes, ax is the mode number, and bx is 0.
+'options' (optional) is zero, one, or more of the following characters
+(not seperated by spaces!):
+ - 'C': clear video memory (some SVGAs don't clear the screen at a mode
+        set, in this case use this option for the relevant mode).
+ - 'R': Reinitialize video mode instead of clearing the video memory
+        (this shouldn't be necessary for most cards).
+ - 'D': debug mode (for testing purposes only, not intended to be used
+        by the end user).
+ - 'M': this option might be necessary for the true color mode of the
+        MegaEva 1024-S.
+ - 'H': only necessary for 64K hicolor modes on ET4000 based cards,
+        it switches the ET4000 BIOS from 32K to 64K mode.
+ - '3': 3 bytes per pixel in truecolor mode.
+ - '4': 4 bytes per pixel in truecolor mode.  If neither '3' nor '4' is
+        specified, QPV/386 will try to autodetect the number of bytes per
+        pixel (which is usually correct).
+
+Values for 'width', 'height', 'line', 'ax', and 'bx' are in decimal.
+You can use hexadecimal notation by preceding the values with a dollar
+sign '$', for example '$10f0'.
+
+IMPORTANT:  Using modes that your hardware (graphics card and/or monitor)
+can't handle can damage your hardware!  Be sure to use only supported
+modes.  If you come across a mode which looks flickering or unstable
+(i.e. the monitor can't hold the picture), abort QPV/386 immediately and
+delete that mode from the configuration file.
+
+YOU ARE USING QPV/386 AT YOUR OWN RISK!  THE AUTHOR (OLIVER FROMME) IS NOT
+RESPONSIBLE FOR ANY DAMAGE CAUSED BY THE USE OF QPV/386 OR BY THE INABILITY
+TO USE QPV/386.  IF YOU ARE NOT SURE ABOUT THIS, OR IF YOU DON'T ACCEPT THIS,
+THEN DO NOT USE QPV/386!
+
+QPV/386 is inexpensive shareware.  If you continue using it after a trial
+period of 30 days, you are encouraged to pay a small registration fee.
+The source code of the JPEG decoding routines is also available.
+For more details please read the documentation of QPV/386.

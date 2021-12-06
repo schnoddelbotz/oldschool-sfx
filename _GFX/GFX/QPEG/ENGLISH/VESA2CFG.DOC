@@ -1,0 +1,38 @@
+-----------------------------------------------------------------------------
+                              V E S A 2 C F G
+                             ~~~~~~~~~~~~~~~~~
+       Copyright (c) 1994 by Oliver Fromme -- All Rights Reserved
+-----------------------------------------------------------------------------
+
+Autor:  Oliver Fromme, Klingestr. 2, 38640 Goslar, Germany
+        Internet email:  fromme@rz.tu-clausthal.de
+
+Licence & Disclaimer:
+~~~~~~~~~~~~~~~~~~~~~
+This program is freeware, i.e. you may use, copy and distribute it freely, as
+long as no money is charged for it.  Do not modify, disassemble, reengineer,
+or misuse this program.  Always distribute this documentation along with the
+program.
+
+If you want to bundle it with any commercial software, you'll need the
+explicit permission of the author, Oliver Fromme.
+
+You are using this program on your own risk.  The author is not liable for
+any damage or loss which may result directly or indirectly from the use of
+this program.
+
+-----------------------------------------------------------------------------
+
+Purpose of VESA2CFG:
+~~~~~~~~~~~~~~~~~~~~
+VESA2CFG checks the existence of an VBE (VESA BIOS Extension), either built
+into the VGA BIOS ROM, or installed as a TSR driver.  If an VBE is detected,
+an appropriate CFG file for QPV/386 is created.
+
+The name of the CFG file is QPV.CFG by default, but a different name may
+be specified on the command line.
+
+For further information about which VESA modes are supported by your graphics
+card, use the VESATEST utility (see VESATEST.DOC for details).
+
+-----------------------------------------------------------------------------

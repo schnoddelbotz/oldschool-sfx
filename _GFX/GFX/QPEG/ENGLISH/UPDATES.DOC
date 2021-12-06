@@ -1,0 +1,191 @@
+-----------------------------------------------------------------------------
+
+               How to get updates and new versions of QPV/386
+              ================================================
+
+
+This documentation file describes how to get updates and new versions of
+QPV/386.  This applies to both unregistered and registered users:
+ - Unregistered users can get updates of the unregistered shareware version.
+ - Registered users got a so-called personal registration file along with
+   their registration disk.  If you install a new shareware version (in the
+   same directory as your registered version), your registration file will
+   NOT be overwritten, thus you'll automatically have the registered version
+   again.
+
+There's a mailing list which you can subscribe to.  All recipients of the
+list will automatically be notified by email whenever a new version of
+QPV/386 is released.  To subscribe to the list, send an email with the
+subject "subscribe QPV/386" to my email address (fromme@rz.tu-clausthal.de).
+
+
+Internet FTP
+~~~~~~~~~~~~
+
+   GERMANY/EUROPE:
+
+      ftp.tu-clausthal.de (139.174.2.10) /pub/msdos/graphics/view
+
+      This is the primary distribution site.  New versions will be available
+      here first.  This site only has a small 64Kbit line, so please don't
+      connect during business hours if possible (local time CET/DLS).
+      This site also offers an email service (see below).
+
+   U.S.A./WORLD:
+
+      ftp.wustl.edu   /pub/msdos_uploads/graphics
+
+      The above sites will carry new QPV/386 versions one or two days after
+      release.  If you can't connect to "ftp.wustl.edu" (if that host is
+      unknown to your site), try "wuarchive.wustl.edu" instead.  I also
+      upload it to "uniwa.uwa.edu.au" (Australia) where it will be available
+      in /pub/povray/viewer, but I'm not sure how long that service will be
+      available.
+
+      ftp.best.com   /pub/bryanw/qpeg
+
+      This is the graphics archive of Bryan Woodworth.  You should always be
+      able to find the latest version of QPV/386 there.  Thanks Bryan!
+
+
+World Wide Web
+~~~~~~~~~~~~~~
+
+   http://www.rz.tu-clausthal.de/~inof/q.html
+
+      This WWW page contains pointers to several places where you can get
+      QPV/386 (usually FTP references).  You also find useful information
+      about QPV/386 here:  latest news, known bugs (including fixes or work-
+      arounds) and other interesting things.
+
+
+Usenet News
+~~~~~~~~~~~
+
+   Current versions of QPV/386 are posted regularly to the Usenet newsgroup
+   "alt.binaries.pictures.utilities".  You can get it from there through any
+   of its associated nets.
+
+
+Email Server
+~~~~~~~~~~~~
+
+   mail-server@ftp.tu-clausthal.de
+
+   You can get QPV/386 from the primary FTP server even if you don't have
+   FTP or Internet access.  However, you must be able to send and receive
+   email.  The FTP site at Clausthal maintains a so-called automatic mail
+   server which can send files from the server to anybody by email.
+   The server's email address is "mail-server@ftp.tu-clausthal.de".
+   Note that you won't reach a real person by mailing to that address, but
+   a program which reacts based on commands embedded in the email.
+   For more information send a mail containing the single word "HELP" to the
+   mail server.
+
+
+BBS / Mailboxes
+~~~~~~~~~~~~~~~
+
+   GERMANY/EUROPE:
+
+      "TBH-BOX" (Clausthal, Mid Germany), Sysop: Oliver Fromme
+
+         Modem phone number:  +49-5323-5143
+         Baud:  2,400 - 14,400 (downloads require 9,600 at least)
+
+      "Cyberbox" (Oldenburg, Northern Germany), Sysop: Sascha Klose
+
+         Line:   Modem phone number:                Fidonet node number:
+         -----   -------------------                --------------------
+           1     +49-441-3990031   (2400-28800)       2:2426/2030
+           2     +49-441-3990032   (2400-28800)       2:2426/2031
+           3     +49-441-3990033   (2400-28800)       2:2426/2032
+           4     +49-441-9390942   (2400-28800)       2:2426/2033
+           5     +49-441-9390944  (38400-64000 ISDN)  2:2426/2034
+
+         You can connect to the Cyberbox simply with your modem or through the
+         Fidonet.  If you are calling from Germany, replace the "+49" with a
+         "0".  Fidonet users can request the latest QPV/386 version using the
+         magic "QPV".
+
+         The Cyberbox is really one of the best mailboxes around here!
+         But remember that long distance calls may be expensive.
+
+   ITALY:
+
+      "SPQR Serviz Telematici" (Rome, Italy), Sysop: Alessandro Bucci
+
+         Line:   Modem phone number:
+         -----   -------------------
+           1     +39-6-87182083   (19.2 ZyXEL)
+           2     +39-6-87180915   (14.4 V.32b)
+
+         Fidonet node number:  2:335/348   (magic "QPV")
+         Caesar Network Int'l  175:391/1
+
+   ISRAEL:
+
+      "Back Adder BBS" (Israel), Sysop: Nimrod Carmi
+
+         Modem phone number:   +972-6-514404   (28,800)
+         Fidonet node number:  2:404/264
+
+   AUSTRALIA:
+
+      "Maximum Velocity BBS" (Perth, Western Australia), Sysop: Trevor Bloch
+
+         Line:   Modem phone number:
+         -----   -------------------
+           1     +619 276-1279   (14400)
+           2     +619 276-1295   (2400)
+
+         FidoNet access will be available shortly.
+
+   U.S.A.:
+
+      "The Itchy & Scratchy Show" (Sacramento, California, USA)
+
+         Sysop:  Mark Holtz
+         Modem phone number:   (916) 721-1701   (speed: 14,400 v.32bis)
+         Fidonet node number:  1:203/1701   (magic "QPV")
+
+         Guest Access:  Dial (916) 721-1701 and login as "guest".  The latest
+         version of QPV/386 can be found in the QPV file area.
+         NOTE:  Please do not apply for an account if you just want to
+         download files.
+
+      "Archives BBS" (Houston, Texas, USA)
+
+         Sysop:  Felix Dartmouth
+         Modem phone number:   (1) 713 896 1721
+         Fidonet node number:  1:106/111   (magic "QPV")
+
+      "Laura's Lair Premium Board" (Ava, Missouri, USA)
+
+         Sysop:  Laura Brito
+         Modem phone number:   417-683-5534
+         Fidonet node number:  1:284/63   (magic "QPV")
+
+         "My BBS is the Largest Woman run in the World, I have 13 Gigs,
+         10 lines, 5 women sysops, We have many nets [...].  We have modems
+         that range from 28.8 to 9600 - The main BBS number is 417-683-5534
+         it is a roll down 14.4 node." (Laura Brito)
+
+   If you are the sysop of a BBS and want to make it an official QPV/386
+   distribution site, please contact me.
+
+
+Snail Mail
+~~~~~~~~~~
+
+   Just send me 5 DM (10 DM outside Europe) or 5 $US, and I will send you
+   the current version of QPV/386.  Germans only:  You can also send me a
+   disk and a selfaddressed and stamped envelope (2 DM for DIN-B6/DL, or
+   3 DM for DIN-B5 or larger).
+
+   Please do not send me non-German stamps.  I can not use them, and I can
+   not exchange them.  Especially you French guys:  Do not send me French
+   stamps!  I have a pretty large collection of French stamps, and they are
+   absolutely useless for me.
+
+-----------------------------------------------------------------------------

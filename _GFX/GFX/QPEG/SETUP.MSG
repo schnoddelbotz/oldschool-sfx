@@ -1,0 +1,9 @@
+00:Directory %1 not found!
+01:Reading configuration files, please wait ...
+02:No configuration files found in %1 !
+03:Current configuration
+04:Video memory
+05:Please select your type of graphics card (Esc=cancel)
+06:more
+07:Enter your selection (Esc=cancel)
+08:File %1 not found!

@@ -1,0 +1,337 @@
+-----------------------------------------------------------------------------
+
+                         The "Quick Picture Viewer"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            Q P V / 3 8 6   F A Q
+                           ~~~~~~~~~~~~~~~~~~~~~~~
+                  Frequently Asked Questions about QPV/386
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------------------------
+
+Table of Contents
+~~~~~~~~~~~~~~~~~
+ 0. What happened with the name of this software?
+ 1. I can't get QPV/386 to work with my graphics card.  What can I do?
+ 2. QPV/386 displays images greyscaled only.  How do I get color?
+ 3. I'm using the VESA configuration.  16 and 256 color modes work, but I
+    can't get hicolor or truecolor.  What's wrong?
+ 4. Is it possible to switch off that annoying beep?
+ 5. When zooming or panning across large images, the bottom part is
+    distorted.  Why?
+ 6. When I try to zoom or pan, the screen turns black.  What happened?
+ 7. Will there be a Windows version?
+ 8. Why is the menu screen only black and white?
+ 9. Why do I get only greyscaled images in 16 color modes?
+10. Color dithering in 256 color modes looks bad.  Why?
+11. It takes so long to read a directory from a CD-ROM.  What can I do?
+12. Which configuration file should I use?
+13. VESA - what's that?
+14. Zooming ('+' and '-' keys) doesn't work.  What's wrong?
+15. Will QPV/386 support the TIFF format in the near future?
+
+-----------------------------------------------------------------------------
+
+Question 0:
+~~~~~~~~~~~
+ > What happened with the name of this software?
+
+It has changed.  It is now called "Quick Picture Viewer" (QPV), because it
+does much more than just viewing JPEG files.
+
+The new name does not affect features, support, registrations or other
+things related to the software.  It's just a new name.
+
+-----------------------------------------------------------------------------
+
+Question 1:
+~~~~~~~~~~~
+ > I can't get QPV/386 to work with my graphics card.  What can I do?
+
+First of all, perhaps QPV/386 can work with your graphics card, but you are
+not using the right configuration file.  For more information about choosing
+the right configuration file please refer to the answer of question 12.
+
+Sometimes none of the existing configuration files works with a certain
+graphics card.  In this case there are several ways:
+1. Use the VESA configuration if possible.  Please refer to question 13 and
+   its answer for more information about VESA.
+2. Use the standard VGA configuration (STDVGA.CFG).  However, this provides
+   only a very small number of video modes.
+3. If you are an experienced programmer, you can create a video driver
+   yourself.  Of course you must have some information about your
+   graphics hardware.  Read the file DRV.DOC for more information about
+   how to create a QPV/386 video driver.
+
+------------------
+
+Question 2:
+~~~~~~~~~~~
+ > QPV/386 displays images greyscaled only.  How do I get color?
+
+By default, QPV/386 uses the video mode 640x480x16 which only offers
+greyscaled display.
+To change the mode, use the '+' and '-' keys while in the directory screen
+(not while viewing an image!).  Watch the status line in the upper window:
+it tells you the currently selected resolution and number of colors.
+Hit the '+' key until it says at least '256 colors'.  Be sure not to be in
+greyscaled mode (if the status line says '<grey>', use the '$' key).
+Now QPV/386 will display images in color.
+You can change the default video mode by editing the initialization file
+QPV.INI.  For that purpose you can use any standard ASCII text editor
+(e.g. EDIT which is supplied with MS-DOS 5/6).  Please read the comments
+in QPV.INI, and you will be able to change QPV/386's defaults.
+(If you run QPV/386 from a non-writeable media, e.g. froma CD-ROM, then
+copy QPV.INI to the directory C:\QPV/386 first, otherwise you won't be
+able to modify it.)
+
+------------------
+
+Question 3:
+~~~~~~~~~~~
+ > I'm using the VESA configuration.  16 and 256 color modes work, but I
+   can't get hicolor or truecolor.  What's wrong?
+
+In order to be able to use hicolor and truecolor modes with the VESA driver,
+your VESA BIOS (or VESA VBE/TSR) must be at least version 1.2.
+Versions prior 1.2 of the VESA standard did not define hicolor and truecolor
+modes.
+(Use the VESATEST program to get the version of your VESA VBE/TSR).
+Try to get UNIVBE or UNIVESA.  These are TSRs (i.e. programs that stay
+resident in memory) which make your BIOS VESA 1.2 compatible.  They are
+available from most major PD/Shareware sources.
+
+------------------
+
+Question 4:
+~~~~~~~~~~~
+ > Is it possible to switch off that annoying beep?
+
+Yes, you can do that by editing the initialization file QPV.INI.
+For that purpose you can use any standard ASCII text editor (e.g. EDIT
+which is supplied with MS-DOS 5/6).  Please read the comments in QPV.INI,
+and you will be able to change QPV/386's defaults.
+(If you run QPV/386 from a non-writeable media, e.g. froma CD-ROM, then
+copy QPV.INI to the directory C:\QPV/386 first, otherwise you won't be
+able to modify it.)
+
+------------------
+
+Questions 5 and 6:
+~~~~~~~~~~~~~~~~~~
+ > When zooming or panning across large images, the bottom part is distorted.
+   Why?
+
+ > When I try to zoom or pan, the screen turns black.  What happened?
+
+Two questions, one answer:  there's not enough XMS/EMS memory.
+QPV/386 stores the decoded image in XMS/EMS memory (if such memory is present
+at all).  When zooming or panning, QPV/386 copies the visible part of the
+image back from XMS/EMS to video memory.
+If you don't have any XMS/EMS memory at all, the screen will turn black.
+If you have XMS/EMS memory, but it's not enough for the image, the bottom
+part will look distorted.  Remember that in truecolor modes each pixel
+takes three bytes (so a 640x480 image needs 900 Kb), in hicolor modes
+each pixel takes two bytes, in 256 and 16 color modes each pixel takes
+one byte.
+How to solve the problem?  Well, there are several ways:
+ - Don't use panning/zooming.
+ - Use a video mode with less colors.  For example, in 256 color modes
+   an image takes half the memory as compared to hicolor modes.
+ - Free some XMS/EMS memory.  For example, if you have installed a RAM disk
+   or disk cache program, removing it may give you some more memory.
+ - Buy more memory.
+
+------------------
+
+Question 7:
+~~~~~~~~~~~
+ > Will there be a Windows version?
+
+The current version of QPV/386 runs in fullscreen mode under Windows 3.1 and
+OS/2 2.1.  Under certain circumstances the display doesn't work correctly
+under Windows (that's probably the fault of Windows).  There's usually less
+XMS/EMS memory available when started under Windows or OS/2, so you may not
+be able to pan across larger images.
+
+By the way, there are plans to develop an OS/2 PM version.
+
+------------------
+
+Question 8:
+~~~~~~~~~~~
+ > Why is the directory screen only black and white?
+
+I'm using the 640x480 video mode with 16 colors for the directory/menu
+screen, because it's a standard VGA mode common to all VGA cards.
+See the next question.
+However, it is possible to use a 256 color mode for the directory sceen
+by changing an entry in the QPV.INI file, but you must be absolutely sure
+that the mode 640x480 with 256 colors works fine with your graphics card.
+(The entry to be changed is "Interface_256_Colors".)
+
+------------------
+
+Question 9:
+~~~~~~~~~~~
+ > Why do I get only greyscaled images in 16 color modes?
+
+16 colors are way too few to display truecolor images.  That's why QPV/386
+displays images greyscaled when in a 16 color mode.
+
+------------------
+
+Question 10:
+~~~~~~~~~~~~
+ > Color dithering in 256 color modes looks bad.  Why?
+
+QPV/386 was written for speed.  A 2-pass color quantization would yield
+better quality in 256 color modes, but at the cost of speed.
+To have both high speed and high image quality, use hicolor or truecolor
+modes.  If you don't have a graphics card capable of hicolor/truecolor,
+buy one.  They're not that expensive anymore.
+(To be honest, at first I didn't even plan to support 256 color modes
+at all, but later it became obvious that there are still many 256 color
+people...)
+
+------------------
+
+Question 11:
+~~~~~~~~~~~~
+ > It takes so long to read a directory from a CD-ROM.  What can I do?
+
+Switch 'File info' off using the '*' key before changing to the CD-ROM's
+directory.  Now QPV/386 won't examine each file anymore to get its width and
+height.  If you view images from CD-ROMs very frequently, you should change
+QPV/386's default setting for 'File info' to off, just edit the respective
+line in the QPV.INI file.
+
+------------------
+
+Question 12:
+~~~~~~~~~~~~
+ > Which configuration file should I use?
+
+Most "experts" know which chipset is used by their graphics card, and
+therefore they know which configuration file (*.CFG) to use (or which
+configuration to select if you use the SETUP utility).
+If you don't know that, there are several ways to find it out, one of them
+is usually successful:
+1. Have a look at the manual of your graphics card, it should mention the
+   name of the chipset being used by the card.  Often the name of the card
+   ist identical to the name of the chipset, or the chipset's name is part
+   of the card's name.
+2. When the computer is startet (after power up or reset, before the DOS
+   operating system is loaded) the chipset's name should be displayed on
+   the screen.
+3. Some graphics related programs and hardware test utilities are able to
+   detect and display the name of the graphics card's chipset.
+4. At the DOS prompt, enter "DEBUG".  Then (at the DEBUG prompt "-") enter
+   "dc000:0" to display the beginning of the video BIOS memory area.  It
+   usually contains the name of the graphics chipset.  You can type "d"
+   to view more of the video BIOS.
+   (Some graphics cards which are fixed part of the main board use a
+   different location for the BIOS, in this case try "de000:0" instead.)
+
+As soon as you know the name of the chipset, select the appropriate entry
+from the list of the SETUP utility.
+
+Alternatively, you can configure QPV/386 manually:  delete the old
+configuration file (QPV.CFG) and copy the new one to QPV.CFG;
+then you're finished.  If you can't find a suitable configuration file,
+please read question 1 and its answer.
+
+------------------
+
+Question 13:
+~~~~~~~~~~~~
+ > VESA - what's that?
+
+First of all, the VESA we are talking about has nothing to do with the
+VESA local bus (VLB).  You don't need a VLB equipped machine to be able
+to use QPV/386's VESA configurations.
+VESA (Video Electronics Standards Association) is a standardized method to
+put graphics on the screen.  The advantage is that it's independent from
+the VGA graphics card and its chipset, i.e. QPV/386's VESA driver works with
+all VGA cards which are 100% VESA compatible.
+
+You may be asking if your graphics card is VESA compatible.  Unfortunately
+not all of them are, otherwise QPV/386 wouldn't need all those drivers and
+configuration files, and the users wouldn't need to worry about configuring
+QPV/386.
+
+Have a look at your graphics card's manual, it should mention if your card
+is VESA compatible.  Many modern cards have VESA compatibility built into
+their BIOS ROM, such cards work with one of QPV/386's VESA configurations.
+You can use the VESATEST program (distributed with QPV/386) to check if there
+is any VESA support.
+
+Most cards which don't have built in VESA are shipped with a driver disk,
+containing a so-called VESA TSR (often referred to as VBE, i.e. VESA BIOS
+Extension).  Simply run that program before starting QPV/386 to make your
+graphics card VESA compatible.  Again, use the VESATEST utility to check
+for correct VESA support.
+
+If you don't have such a VESA TSR either, you can try to get one.  For
+example, there are UNIVBE and UNIVESA.  They're freeware or shareware
+programs, available at most major PD/Shareware sources.  They're on many
+graphics related CD ROMs, too.
+
+There's one small problem:  There are two VESA standards, an old one (1.0
+and 1.1) and a new one (1.2).  The old one supports only graphics modes
+using 16 and 256 colors, the new one additionally supports hicolor (32000
+and 65000 colors) and truecolor (16 million colors).  So if you have a
+graphics card capable of hicolor and/or truecolor and you wish to use
+that capabilities, you need to have VESA version 1.2.  (The VESATEST utility
+displays the VESA version.)
+
+Many users think that the VESA configuration is a makeshift, and that it's
+slow and has other disadvantages.  That is not true.  It supports everything
+that the other configurations support, and it's not noticeable slower.
+I'm using VESATRUE.CFG myself, although my ET4000/W32 card has a dedicated
+configuration (ET400032.CFG), because my VESA BIOS offers more video modes.
+
+------------------
+
+Question 14:
+~~~~~~~~~~~~
+ > Zooming ('+' and '-' keys) doesn't work.  What's wrong?
+
+First, be aware that those two keys just increase and decrease (respectively)
+the graphic resolution.  For example, in 800x600 mode, pressing the '-' key
+changes to the next smaller resolution (usually 640x480), effectively zooming
+into the image (because the image appears bigger because of the lower
+resolution).
+
+Note that the number of colors does not change, i.e. QPV/386 won't switch
+from hicolor to a 256 color mode this way, for example.  (This can be done
+from the directory screen only.)
+
+This leads to the following problem:  Many commonly used graphics cards only
+support one truecolor resolution, namely 640x480.  Thus, if an image is
+displayed in that mode, the '+' and '-' keys don't have any effect, because
+there are no truecolor modes with lower or higher resolution.
+
+The problem can be solved by not using the truecolor mode, but using hicolor
+modes instead.  Then there are more resolutions available (usually 320x200,
+640x480 and 800x600), therefore you can use the '+' and '-' keys.
+Don't worry about the image quality:  You will hardly notice any difference
+because of QPV/386's advanced dithering algorithm which is applied in hicolor
+modes -- resulting in truecolor-like quality.
+
+------------------
+
+Question 15:
+~~~~~~~~~~~~
+ > Will QPV/386 support the TIFF format in the near future?
+
+No.  I do have a TIFF libary, but including that in QPV/386 would enlarge
+the EXE file by about 55 Kb, which is not worth it.  It even doesn't support
+all different types of TIFF files (although most of them).
+
+I recommend to avoid the TIFF format at all.  It is just too complex and
+complicated, and I have yet to see a software which supports the complete
+TIFF standard.  For example, the new PNG format ("ping") is much simpler
+while it covers all needs as well as TIFF does.  That's my personal opinion,
+of course.
+
+-----------------------------------------------------------------------------

@@ -1,0 +1,48 @@
+              A Message From POV-Team Coordinator Chris Young 
+                               July 12, 1996
+
+      Over 26 months ago, on April 6, 1994, I uploaded a set of files 
+called "POV-Ray 3.0.alpha.0" to the private POV-Ray Team area on 
+CompuServe's Go GraphDev Forum.  It was a version of POV-Ray 2.2 with all 
+vectors and colors changed from structs to arrays.  This was just the first 
+of many huge changes that would turn version 2.2 into 3.00.
+      In the months that followed, various team members and I submitted 102 
+updates to create 19 full revisions of the 3.0 alpha version.  Well over 
+100 new features were added.  This was followed by 7 major beta versions 
+consisting of over 70 intermediate patches.
+      Dozens of new scenes have been created.  Documentation has been 
+totally rewritten.  Two totally new platforms have been added to those 
+officially supported.  It has been a tremendous effort by the finest bunch 
+of programmers, artists and testers I've ever had the pleasure of knowing.  
+From Germany, France, Hungary, Australia, Netherlands, Canada, USA and who 
+knows what other countries I've forgotten. the group of un-paid volunteers 
+known as the POV-Ray Team has poured countless hours of their lives into 
+this effort.
+      The problem is this: It isn't finished.
+      In some ways, it never will be.  There will always be bugs, design 
+limitations, unclear docs, scenes that need revision and countless other 
+changes.  But for now, we have to call it good enough.  The Team is facing 
+serious burn-out if we don't take a break.  We deserve a rest and you, our 
+loyal fans, deserve unrestricted access to the program.
+      Therefore today, July 12th, we will release "final" versions of POV-Ray 
+3.00 executables with full source code for at least MS-Dos, Mac & Unix/Linux.  
+There is no expiration date on these executables.  An updated Windows and 
+Amiga beta will be released soon.  A final Windows version will be ready in 
+early August and Amiga will be released afterwards.  
+      There is still be unfinished work on the "final" version.  The 
+tutorial section of the documentation will probably be incomplete.  The 
+reference section is 99% finished and should serve you well.  After final 
+release, we will set up a system where you may volunteer to help us finish 
+the tutorial.  Some early sample scenes which were designed to use halos 
+prior to beta 6 still need updating to look right under later versions.  We 
+will tell you soon how you can volunteer to help update these scenes.  
+There will still be bugs in this version.  We will release 3.01 or 3.02 
+bug-fix releases as the need arises.  However this unrestricted release 
+will relieve us of the pressure of releasing new betas just because the old 
+one is expiring. 
+      It has been a real labor of love to produce this program and we 
+continue to be excited and amazed by the wonderful images all of you turn 
+out using our program.  After a suitable period of rest we will dig in and 
+continue to try to make POV-Ray the greatest program available in the field 
+and we promise you it will always be free.
+      Chris Young - POV-Team Coordinator

@@ -1,0 +1,547 @@
+                   Persistence of Vision(tm) Ray Tracer
+
+                         POV-Ray(tm) Version 3.00
+
+                      Where to Get It and Other Info
+
+                               July 2, 1996
+
+      The Persistence of Vision(tm) Ray Tracer creates three-dimensional, 
+photo-realistic images using a rendering technique called ray tracing. It 
+reads in a text file containing information describing the objects and 
+lighting in a scene and generates an image of that scene from the view 
+point of a camera also described in the text file. Ray tracing is not a 
+fast process by any means, but it produces very high quality images with 
+realistic reflections, shading, perspective, and other effects.
+
+      The POV-Ray(tm) package includes detailed instructions on using the 
+ray tracer and creating scenes. Many stunning scenes are included with POV-
+Ray so you can start creating images immediately when you get the package. 
+These scenes can be modified by the user also so they don't have to start 
+from scratch.
+
+      In addition to the pre-defined scenes are a large library of 
+predefined shapes and materials that can be used in your own scenes by just 
+typing the name of the shape or material.
+
+      POV-Ray is easy to use, and also includes many advanced features like 
+bezier patches, blobs, height-fields, bump mapping, atmosphere, text 
+objects and more.
+
+      POV-Ray can be used under MS-Dos, Windows 3.x, NT & '95; Apple 
+Macintosh 68k and Power PC; Amiga; Linux, SunOS; UNIX, and other 
+computers.
+
+      Here is a list of the files that you need to use POV-Ray on your
+computer.
+
+      The latest versions of these files are available over CompuServe, 
+Internet, America Online, and several BBS's. See 'Where to find POV-Ray 
+files' section below for more info.
+
+----------------------------------------------------------------------------
+
+   For MS-Dos systems:
+   -------------------
+   The MS-Dos version runs under MS-Dos, or as a dos application under
+   Windows'95, Windows NT, Windows 3.1 or 3.11.  It also runs
+   under OS/2 and Warp.
+
+   Required hardware & software:
+      - A 386 or better CPU and at least 4 meg of RAM.
+      - About 6 meg disk space to install and 2-10 meg or more beyond
+        that for working space.
+      - A text editor capable of editing plain ASCII text files.
+        The EDIT program that comes with MS-Dos will work for moderate
+        size files.
+      - Graphic file viewer capable of viewing GIF and perhaps TGA
+        and PNG formats.
+
+   Required POV-Ray files:
+      - POVMSDOS.EXE -- a self-extracting archive containing 
+        the program, sample scenes, standard include files, and 
+        documentation in a hypertext help format with help viewer.
+        This file may be split into smaller files for easier downloading.  
+        Check the directory of your download or ftp site to see if 
+        other files are needed.
+
+   Recommended: 
+      - Pentium or 486dx or math co-processor for 386 or 486sx
+      - 8 meg or more RAM.
+      - SVGA display preferably with VESA interface and high color
+        or true color ability.
+
+   Optional:
+      The source code is not needed to use POV-Ray. It is provided 
+      for the curious and adventurous.  
+      - POVMSD_S.ZIP - The C source code for POV-Ray for MS-Dos.  
+        Contains generic parts and MS-Dos specific parts.  It does not
+        include sample scenes, standard include files, and documentation
+        so you should also get the executable archive as well.
+      - A C compiler that can create 32-bit protected mode applications.
+        We support Watcom 10.6, Borland 4.52 with Dos Power Pack and
+        the Gnu DJGPP 2.0 compilers.
+
+
+   For Windows systems:
+   --------------------
+   The Windows version runs under Windows'95, Windows NT, and under
+   Windows 3.1 or 3.11 if Win32s extensions are added.  Also runs under
+   OS/2 Warp.
+
+   Required hardware & software:
+      - A 386 or better CPU and at least 8 meg of RAM. 
+      - About 6 meg disk space to install and 2-10 meg or more beyond
+        that for working space.
+
+   Required POV-Ray files:
+      - User archive POVWIN3.EXE -- a self-extracting archive containing
+        the program, sample scenes, standard include file, and
+        documentation.  This file may be split into smaller files
+        for easier downloading.  Check the directory of your download or 
+        ftp site to see if other files are needed.
+
+   Recommended: 
+      - Pentium or 486dx or math co-processor for 386 or 486sx
+      - 16 meg or more RAM.  
+      - SVGA display preferably with high color or true color ability
+        and drivers installed.
+
+   Optional:
+      The source code is not needed to use POV-Ray. It is provided 
+      for the curious and adventurous.  
+      - POVWIN_S.ZIP - The C source code for POV-Ray for Windows.  
+        Contains generic parts and Windows specific parts.  It does not
+        include sample scenes, standard include files, and documentation
+        so you should also get the executable archive as well.
+
+      - POV-Ray can only be compiled using C compilers that create 
+        32-bit Windows applications. We support Watcom 10.6, and
+        Borland 4.52 or 5.0 compilers.
+
+
+   For Macintosh systems:
+   ----------------------
+   The Macintosh versions run under Apple's MacOS operating system
+   version 7.0 or better, on any 68020/030/040-based Macintosh
+   (with or without a floating point coprocessor), or any of the
+   Power Macintosh computers.
+
+   Required hardware & software:
+      > A 68020 or better CPU without a floating point unit
+        (LC/Performa/Centris series) and at least 8 MB RAM
+    *or*
+      > A 68020 or better CPU *with* a floating point unit
+        (Mac II/Quadra series) and at least 8 MB RAM
+    *or*
+      > Any Power Macintosh computer and at least 8 MB RAM.
+      - System 7 or newer and color QuickDraw (System 6 is
+        no longer supported.)
+      - About 6 MB free disk space to install and an additional
+        2-10 MB free space for working space.
+      - Graphic file viewer utility capable of viewing Mac PICT,
+        GIF, and perhaps TGA and PNG formats (the shareware
+        GIFConverter or GraphicConverter applications are good.)
+
+   Required POV-Ray files:
+      > POVMACNF.SIT or POVMACNF.SIT.HQX -- a Stuffit archive containing 
+        the non-FPU 68K Macintosh application, sample scenes, standard
+        include files, and documentation (slower version for Macs without
+        an FPU.)
+     *or*
+      > POVMAC68.SIT or POVMAC68.SIT.HQX -- a Stuffit archive containing 
+        the FPU 68K Macintosh application, sample scenes, standard include
+        files, and documentation. (faster version for Macs WITH an FPU.)
+    *or*
+      > POVPMAC.SIT or POVPMAC.SIT.HQX -- a Stuffit archive containing the 
+        native Power Macintosh application, sample scenes, standard include
+        files, and documentation.
+
+   Recommended:
+      - 68030/33 or faster with FPU, or any Power Macintosh
+      - 8 MB or more RAM for 68K Macintosh;
+        16 MB or more for Power Macintosh systems.
+      - Color monitor preferred, 256 colors OK, but thousands
+        or millions of colors is even better.
+
+   Optional:
+      The source code is not needed to use POV-Ray. It is provided
+      for the curious and adventurous.  POV-Ray can be compiled
+      using Apple's MPW 3.3, Metrowerks CodeWarrior 8, or Symantec 8.
+
+      - POVMACS.SIT or POVMACS.SIT.HQX - The full C source code for POV-Ray
+        for Macintosh.  Contains generic parts and Macintosh specific
+        parts.  It does not include sample scenes, standard include files,
+        and documentation so you should also get the executable archive 
+        as well.
+
+
+
+   For Amiga systems: 
+   ------------------ 
+      The Amiga version comes in several flavors, 68000/68020 without 
+      FPU, (not recommended, very slow) 68020/68881(68882), 68030/68882 
+      and 68040. There are also two sub-versions, one with a CLI-only 
+      interface, and one with a GUI (requires MUI 3.1).  All versions
+      run under OS2.1 and up. Support exists for pensharing and window 
+      display under OS3.x with 256 color palettes, and CybeGFX display 
+      library support.
+
+      Required:
+      - at least 4 meg of RAM.
+      - at least 2 meg of hard disk space for the necessities, 5-20 more
+        recommended for workspace.
+      - an ASCII text editor, GUI configurable to launch the editor of
+        your choice.
+      - Graphic file viewer - POV-Ray outputs to PNG, Targa (TGA), and 
+        PPM formats, converters from the PPMBIN distribution are 
+        included to convert these to IFF ILBM files.
+
+      Required POV-Ray files:
+      - POVAMI.LHA -- a LHA archive containing executable, sample scenes, 
+        standard include files, and documentation.
+
+      Recommended:
+       - 8 meg or more of RAM.
+       - 68030 & 68882 or higher processor.
+       - 24bit display card (CyberGFX library supported)
+
+      As soon as a stable compiler is released for Amiga PowerPC 
+      systems, plans are to add this to the flavor list.
+
+      Optional:
+
+      The source code is not needed to use POV-Ray. It is provided 
+      for the curious and adventurous. 
+
+      - POVAMI_S.LHA --- The C source code for POV-Ray for Amiga. 
+        Contains generic parts and Amiga specific parts.  It does not
+        include sample scenes, standard include files, and documentation
+        so you should also get the executable archive as well.
+
+
+   For Linux on Intel 80x86 CPU:
+   -----------------------------
+   Required hardware & software:
+
+      - A 386 or better CPU and at least 4 meg of RAM.
+      - About 6 meg disk space to install and 2-10 meg or more beyond that
+        for working space.
+      - A text editor capable of editing plain ASCII text files.
+      - Any recent (1994 onwards) Linux kernel and support for ELF format
+        binaries. POV-Ray for Linux is NOT in a.out format.
+      - ELF libraries libc.so.5, libm.so.5, and one or both of libX11.so.6
+        or libvga.so.1
+
+
+   Required POV-Ray files:
+
+      - POVLINUX.TGZ or POVLINUX.TAR.GZ --- archive containing an official
+        binary for each SVGALib and X-Windows modes. Also contains sample
+        scenes, standard include files, and documentation.
+
+
+   Recommended:
+
+      - Pentium or 486dx or math co-processor for 386 or 486sx
+      - 8 meg or more RAM.
+      - SVGA display preferably high color or true color ability.
+      - If you want display, you'll need either SVGALib or X-Windows.
+      - Graphic file viewer capable of viewing PPM, TGA or PNG formats.
+
+   Optional:
+
+      The source code is not needed to use POV-Ray. It is provided for the
+      curious and adventurous. 
+
+      - POVUNI_S.TGZ or POVUNI_S.TAR.GZ --- The C source code for POV-Ray
+        for Linux.  Contains generic parts and Linux specific parts.
+        It does not include sample scenes, standard include files, and
+        documentation so you should also get the executable archive as
+        well.
+
+      - The GNU C compiler and (optionally) the X include files and
+        libraries and KNOWLEDGE OF HOW TO USE IT. Although we provide
+        source code for generic Unix systems, we do not provide technical
+        support on how to compile the program.
+
+
+   For SunOS systems:
+   ------------------
+   Required hardware & software:
+
+      - A Sun SPARC processor and at least 4 meg of RAM
+      - About 6 meg disk space to install and 2-10 meg or more beyond that
+        for working space.
+      - A text editor capable of editing plain ASCII text files.
+      - SunOS 4.1.3 or other operating system capable of running such a
+        binary (possibly Solaris or Linux for Sparc)
+
+   Required POV-Ray files:
+
+      - POVSUNOS.TGZ or POVSUNOS.TAR.GZ --- archive containing an official
+        binary for each text-only and X-Windows modes. Also contains sample
+        scenes, standard include files, and documentation.
+
+   Recommended:
+
+      - 8 meg or more RAM.
+      - If you want display, you'll need X-Windows or an X-Term.
+      - preferably 24-bit TrueColor display ability, although the X
+        display code is known to work with ANY combination of visual
+        and color depth.
+      - Graphic file viewer capable of viewing PPM, TGA or PNG formats.
+
+   Optional:
+
+      The source code is not needed to use POV-Ray. It is provided for the
+      curious and adventurous. 
+
+      - POVUNI_S.TGZ or POVUNI_S.TAR.GZ --- The C source code for POV-Ray
+        for Linux.  Contains generic UNIX parts and Linux specific parts.
+        It does not include sample scenes, standard include files, and
+        documentation so you should also get the executable archive as
+        well.
+
+      - A C compiler and (optionally) the X include files and libraries
+        and KNOWLEDGE OF HOW TO USE IT. Although we provide source code
+        for generic Unix systems, we do not provide technical support on
+        how to compile the program.
+
+   For generic UNIX:
+   -----------------
+
+   Required: 
+      - POVUNI_S.TGZ or POVUNI_S.TAR.GZ --- The C source code for POV-Ray
+        for Unix.  Either archive contains full generic source, Unix and 
+        X-Windows specific source.
+      - POVUNI_D.TGZ or POVUNI_D.TAR.GZ or any archive containing the
+        sample scenes, standard include files, and documentation.  This
+        could be the Linux or SunOS executable archives described above.
+      - A C compiler for your computer and KNOWLEDGE OF HOW TO USE IT.
+        Although we provide source code for generic Unix systems, we
+        do not provide technical support on how to compile the program.
+      - A text editor capable of editing plain ASCII text files.
+
+   Optional: 
+      - X Windows if you want to be able to display as you render.
+      - You will need the X-Windows include files as well. If you're not 
+        familiar with compiling programs for X-Windows you may need some 
+        help from someone who is knowledgeable at your installation because 
+        the X include files and libraries are not always in a standard 
+        place.
+
+
+----------------------------------------------------------------------------
+
+      Each executable archive includes full documentation for POV-Ray
+itself as well as specific instructions for using POV-Ray with your type 
+of computer.
+
+ ** POV-Ray(tm) is copyrighted freeware written by the POV-Team(tm).
+ ** It may be freely distributed subject to the restrictions
+ ** defined in POVLEGAL.DOC found in all of our archives.
+ ** POV-Ray is NOT public domain software.
+
+ POV-Ray is based on DKBTrace 2.12 by David K. Buck and Aaron A. Collins.
+
+      The POV-Ray Team is a collection of volunteer programmers, designers, 
+animators and artists meeting via electronic mail on Compuserve's GRAPHDEV 
+forum.  GO GRAPHDEV.
+
+      The POV-Ray Team's goal is to create freely distributable, high 
+quality rendering and animation software written in C that can be easily 
+ported to many different computers.
+
+      If you have any questions about POV-Ray, please contact
+
+      Chris Young
+      [POV-Team Coordinator]
+
+      CIS: 76702,1655
+      Internet: 76702.1655@compuserve.com
+
+
+---------------------------------------------------------------------------
+Where to find the POV-Ray files
+---------------------------------------------------------------------------
+
+Graphics Developer Forum on CompuServe
+--------------------------------------
+POV-Ray headquarters are on CompuServe GRAPHDEV forum ray tracing sections. 
+We meet there to share info and graphics and discuss ray tracing, fractals 
+and other kinds of computer art.  Everyone is welcome to join in on the 
+action on CIS GRAPHDEV. Hope to see you there! You can get information 
+on joining CompuServe by calling (800)848-8990 or visit the CompuServe home 
+page http://www.compuserve.com. Direct CompuServe access is also available 
+in Japan, Europe and many other countries.
+
+
+Internet
+--------
+The internet home of POV-Ray is http://www.povray.org and ftp.povray.org.
+Please stop by often for the latest files, utilities, news and images from 
+the official POV-Ray internet site.
+
+The comp.graphics.rendering.raytracing newsgroup has many competent POV-Ray
+users that are very willing to share their knowledge.  They generally ask 
+that you first browse a few files to see if someone has already answered the 
+same question, and of course, that you follow proper "netiquette".  If you 
+have any doubts about the qualifications of the folks that frequent the 
+group, a few minutes spend at the Ray Tracing Competition pages at 
+www.povray.org will quickly convince you!
+
+
+PC Graphics area on America On-Line  
+-----------------------------------
+There's an area now on America On-Line dedicated to POV-Ray support
+and information. You can find it in the PC Graphics section of AOL.
+Jump keyword POV (the keyword PCGRAPHICS brings you to the top of the
+graphics related section). This area includes the Apple Macintosh
+executables also. It is best if messages are left in the "Company Support
+section. Currently, Bill Pulver (BPulver) is our representative there.
+
+
+The Graphics Alternative (TGA) BBS in El Cerrito, CA.
+-----------------------------------------------------
+For those on the West coast, you may want to find the POV-Ray files on The 
+Graphics Alternative BBS. It's a great graphics BBS run by Adam Shiffman.  
+TGA is high quality, active and progressive BBS system which offers both 
+quality messaging and files to its 1300+ users.
+
+    510-524-2780 (PM14400FXSA v.32bis 14.4k, Public)
+    510-524-2165 (USR DS v.32bis/HST 14.4k, Subscribers)
+
+
+PCGNet
+------
+TGA BBS serves as the central hub for a large network of graphics-oriented 
+BBS systems around the world.  Following is a concise listing of active 
+PCGNet nodes at the time of this writing.  The POV-Team can not vouch for 
+the currency of this information, nor verify that any of these boards may 
+carry POV-Ray.
+
+  USA and Canada
+    SAUG BBS                     Bellevue          WA      206-644-7115
+    The Happy Canyon             Denver            CO      303-759-3598
+    CHAOS BBS                    Columbia          MO      314-874-2930
+    411-Exchange                 Alpharetta        GA      404-345-0008
+    Autodesk Global Village      San Rafael        CA      415-507-5921
+    Space Command BBS            Kennewick         WA      509-735-4894
+    The Graphics Alternative     El Cerrito        CA      510-524-2780
+    The CAD/fx BBS               Mesa              AZ      602-835-0274
+    PC-AUG                       Phoenix           AZ      602-952-0638
+    Time-Out BBS                 Sadsburyville     PA      610-857-2648
+    John's Graphics              Brooklyn Park     MN      612-425-4436
+    CEAO BBS                     Columbus          OH      614-481-3194
+    Canis Major                  Nashville         TN      615-385-4268
+    CAD/Engineering Services     Hendersonville    TN      615-822-2539
+    The Virtual Dimension        Oceanside         CA      619-722-0746
+    Joes CODE BBS                West Bloomfield   MI      810-855-0894
+    The Drawing Board BBS        Anchorage         AK      907-349-5412
+    The New Graphics BBS         Piscataway        NJ      908-271-8878
+    The University               Shrewsbury Twp    NJ      908-544-8193
+    
+  Australia 
+    The Baud Room                Melbourne VIC            61-3-481-8720
+    Sydney PCUG Compaq BBS       Caringbah NSW            61-2-540-1842
+    My Computer Company          Erskineville NSW         61-2-557-1489
+    MULTI-CAD Magazine BBS       Toowong QLD              61-7-878-2940
+   
+  Austria
+    Austrian AutoCAD User Group  Graz                    43-316-574-426
+   
+  Belgium
+    Lucas Visions BBS            Boom                     32-3-8447-229
+   
+  Denmark
+    Horreby SuperBBS             Nykoebing Falster        45-53-84-7074
+   
+  Finland
+    DH-Online                    Jari Hiltunen           358-0-40562248
+    Triplex BBS                  Helsinki                358-0-5062277
+   
+  France
+    CAD Connection               Montesson                33-1-39529854
+    Zyllius BBS!                 Saint Paul                 33-93320505
+   
+  Germany
+    Tower of Magic               Gelsenkirchen            49-209-780670
+    Ray BBS Munich               Munich                    49-89-984723
+   
+  Netherlands
+    BBS Bennekom: Fractal Board  Bennekom                 +31-318-415331
+    CAD-BBS                      Nieuwegein               +31-30-6090287
+    Foundation One               Baarn                    +31-35-5422143
+
+  New Zealand
+    The Graphics Connection      Wellington               64-4-566-8450
+    The Graphics Connection II   New Plymouth             64-6-757-8092
+    The Graphics Connection III  Auckland                 64-9-309-2237
+   
+  Slovenia
+    MicroArt                     Koper                     386-66-34986
+   
+  Sweden
+    Autodesk On-line             Gothenburg                46-31-401718
+   
+  United Kingdom
+    Raytech BBS                  Tain, Scotland         44-1862-83-2020
+    The Missing Link             Surrey, England        44-181-641-8593
+    CADenza BBS                  Leicester, UK          44-116-259-6725
+ 
+  Country or long distance dial numbers may require additional numbers
+  to be used. Consult your local phone company.
+
+
+POV-Ray Related Books & CD-ROMs
+-------------------------------
+The following items were produced by POV-Team members.  Although they
+are only current to POV-Ray 2.2 they will still be helpful. Steps are
+being taken to update the POV-Ray CDROM to version 3.0, with a new
+version expected around October 1996.
+
+ 'The Official POV-Ray CDROM'
+
+ The Official POV-Ray CDROM is a compilation of images, scene source, 
+ program source, utilities and tips on POV-Ray and 3D graphics from 
+ the Internet and Compuserve. This CD is aimed not only at those who 
+ want to create their own images or do general 3D programming work, 
+ but also at those who want simply to experience some high-quality 
+ renderings done by some of the best POV-Ray artists, and to learn 
+ from their source code. The CDROM contains over 500 ray-traced images.
+
+ It's a good resource for those learning POV-Ray as well as those who
+ are already proficient, and contains a Microsoft Windows-based
+ interactive tutorial. The disk comes with a fold-out poster and
+ reference sheet. The CD is compatible with DOS/Windows and Macintosh
+ formats.
+
+ The CDROM is available for free retrieval and browsing on the World
+ Wide Web at http://www.povray.org/pov-cdrom. For more details you may 
+ also visit http://www.povray.org/povcd.
+
+The books listed below have been recently listed as out-of-print but may
+still be found in some bookstores or libraries (Visit
+http://www.dnai.com:80/waite/ for more details).
+
+ Ray Tracing Creations, 2d Ed.   
+ Chris Young and Drew Wells
+ ISBN 1-878739-69-7
+ Waite Group Press 1994
+   700 pages with color insert and POV-Ray 2.2 on 3.5" MS-Dos disk.
+
+ Ray Tracing Worlds with POV-Ray
+ Alexander Enzmann, Lutz Kretzschmar, Chris Young,
+ ISBN 1-878739-64-6
+ Waite Group Press 1994
+   Includes Moray 1.5x modeler and POV-Ray 2.2 on 3.5" MS-Dos disks.
+
+ Ray Tracing for the Macintosh CD
+ Eduard Schwan 
+ ISBN 1-878739-72-7
+ Waite Group Press, 1994 
+   Comes with a CD-ROM full of scenes, images, and QuickTime movies, 
+   and an interactive keyword reference. Also a floppy with POV-Ray for
+   those who don't have a CD ROM drive.
+

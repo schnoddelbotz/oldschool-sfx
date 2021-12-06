@@ -1,0 +1,21 @@
+     ARROWS - PGUP/PGDOWN - HOME/END :  To move among the file names.
+     If a directory is chosen, this will be the new current directory.
+
+     RETURN : To select an animation to view.
+
+     F1  = Help.
+     F2  = Toggle between COLOR MODE and BW MODE. This key can be pressed
+           even during the viewing of an animation.
+     F3  = Change Drive letter.
+     F10 = DOS SHELL (Even during....)
+      +  = More DELAY during the animation. Can be used even during the
+           viewing.
+      -  = Less DELAY. (Even during....)
+      *  = Maximum DELAY. (Even during....)
+      /  = Minimum DELAY. (Even during....)
+      =  = Return to default DELAY. (Even during....)
+     ESC = Quit from animation or from program.
+
+
+     Legal animations have extension .DL
+

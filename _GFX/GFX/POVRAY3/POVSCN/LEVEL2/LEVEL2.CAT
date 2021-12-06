@@ -1,0 +1,44 @@
+Persistence of Vision Raytracer Version 2.0
+--------------------------------------------
+These are the level 2 example scene files for use with the Persistence
+of Vision Raytracer version 2.0.
+
+To use the POV-Ray ray tracer, you also need POVDOC.ZIP for documentation,
+and an executable for your computer. See the file POVINFO.TXT for
+more information.
+
+These files should be available from the same source from where
+you received this file.
+------------------------------------------------------------------------
+
+
+Files contained in LEVEL2 sub-directory
+---------------------------------------
+ARCHES.POV    <- Arches standing in water - an Aquatic McDonalds?
+CLUSTER.POV   <- A cluster of mirrored spheres - classic test scene
+CRYSTAL.POV   <- A Crystal Ball on a Checkerboard - classic IOR test
+EIGHT.POV     <- Behind the 8-Ball!
+HFCLIP.POV    <- Height Field Clipped (Fractured) dowel
+IORTEST.POV   <- IOR Test
+LAMPPOST.POV  <- Old fashioned lamppost on a reflective floor
+MAGGLASS.POV  <- Magnifying Glass
+MTMAND.PAR    <- FRACTINT Parameter file for MTMAND Fractal
+MTMAND.POV    <- Mount Mandelbrot! - 3-D Mandelscape
+PACMAN.POV    <- Our Hero!  Pac-Man doing what he does best!
+PAWNS.POV     <- Three pawns on a chessboard - wood study
+PLANET.POV    <- So this is how they do the STNG title scenes!
+POLYWOOD.POV  <- Wooden Polyhedron CSG on a grassy hill
+POOLBALL.INC  <- Include file for POOLBALL.POV
+POOLBALL.POV  <- A collection of pool balls on a table w/cue
+SKYVASE.POV   <- Interesting use of Sky texture for a marble vase
+SOFT.POV      <- The letters "SOFT" casting soft-shadows (Area Lights)
+SUNSETHF.POV  <- Sunset over the Height Field Mountain Range
+WATERBOW.POV  <- A small bowl with water in it on a wood table
+WTORUS.POV    <- A wooden torus!
+
+INCLUDE\EIGHT.IFF     <- Image map for EIGHT.POV
+INCLUDE\FRACT003.GIF  <- Image/Height map for SUNSETHF.POV
+INCLUDE\PACMAN.IFF    <- Image map for PACMAN.POV
+INCLUDE\MTMANDJ.GIF   <- Low resolution version of bump map for MTMAND.POV
+INCLUDE\MTMAND.POT    <- Low resolution version of height field for MTMAND.POV
+INCLUDE\PLASMA2.GIF   <- Image/Height map for HFCLIP.POV

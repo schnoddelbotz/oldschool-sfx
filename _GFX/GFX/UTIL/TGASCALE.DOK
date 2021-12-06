@@ -1,0 +1,84 @@
+-----------------------------------------------------------------------------
+
+                        T G A S C A L E   1 . 3 e
+                      _____________________________
+                      ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
+
+Copyright (c) 1993 by TBH-Softworx --- all rights reserved
+              Oliver Fromme, Klingestr. 2, 3380 Goslar, Germany
+                      (nach dem 1.7.1993: 38640 Goslar, Germany)
+              Internet e-mail: inof@asterix.rz.tu-clausthal.de
+
+
+Dieses Programm ist Teil des JPGIndex-Paketes. Alle dort angegebenen
+Copyright-, Benutzungs- und Weitergabebestimmungen haben auch fÅr dieses
+Programm GÅltigkeit, ebenso die Sicherheitshinweise.
+
+-----------------------------------------------------------------------------
+
+TGAScale wird von JPGIndex verwendet (bzw. von der Batch-Datei, die von
+JPGIndex erzeugt wird). Dazu mu· man nicht wissen, wie TGAScale funktioniert.
+Wenn Sie nur JPGIndex verwenden mîchten, kînnen Sie diese Dokumentation
+Åberspringen (es genÅgt, wenn Sie JPGINDEX.DOK lesen).
+
+TGAScale dient dazu, eine Bilddatei im Targa-Format zu Verkleinern oder zu
+Vergrî·ern (zu "skalieren"). Dies ist unabhÑngig voneinander in x- und
+y-Richtung mîglich, d.h. man auch das Breiten/Hîhen-VerhÑltnis eines Bildes
+verÑndern, indem man fÅr Breite und Hîhe verschiedene Skalierungsfaktoren
+angibt.
+Beim Verkleinern werden nicht einfach Pixel entfernt, sondern es wird eine
+lineare Interpolation vorgenommen, so da· auch verkleinerte Bilder sehr
+glatt und sauber aussehen. Dabei spielt der Skalierungsfaktor keine Rolle.
+
+Syntax:
+   TGASCALE [/Q] <input> <output> [X*<xz>] [X/<xn>] [Y*<xz>] [Y/<xn>]
+Hierbei ist <input> die Eingabe-Datei. Falls eine Endung fehlt, wird .TGA
+angenommen. <output> ist die Ausgabe-Datei, die erzeugt wird. Falls sie
+bereits existiert, erfolgt eine Sicherheitsabfrage.
+Achtung: <input> und <output> dÅrfen nicht identisch sein.
+
+Optionen (sie kînnen an beliebiger Stelle auf der Kommandozeile stehen, und
+die Gro·/Kleinschreibung spielt keine Rolle):
+
+   /Q   Es wird nur eine kurze Meldung Åber die Konvertierung ausgegeben
+        sowie der Konvertierungsfortschritt in Prozent. Fehlt diese Option,
+        werden einige zusÑtzliche Daten ausgegeben.
+
+   X*<xz> X/<xn>
+        Hiermit wird die Skalierung in x-Richtung festgelegt. Bei <xz>
+        handelt es sich um den ZÑhler, bei <xn> um den Nenner des
+        Skalierungsfaktors. Beispiel: X*2 X/5 fÅhrt zu einer Verkleinerung
+        auf 2/5 = 0.4 der Originalgrî·e, X*3 X/2 fÅhrt zu einer Vergrî·erung
+        um 3/2 = 1.5.
+        Die Trennung des Skalierungsfaktors in ZÑher und Nenner ist zwar ein
+        bi·chen umstÑndlich, begÅnstigt aber die schnelle Integer-Arithmetik,
+        die TGAScale verwendet.
+        Wenn eine der Angaben X*<xz> oder X/<xn> (oder beide) fehlen, wird
+        fÅr den entsprechenden Wert 1 angenommen (d.h. X/5 ohne Angabe von
+        X*<xz> verkleinert auf 1/5 = 0.2).
+
+   Y*<xz> Y/<xn>
+        Hiermit wird in gleicher Weise die Skalierung in y-Richtung
+        festgelegt. Sie sollte die gleiche sein wie in x-Richtung, sonst
+        bekommt man ein entsprechend verzerrtes Ergebnis.
+
+-----------------------------------------------------------------------------
+
+Das war's auch schon. Ziemlich wenig Dokumentation fÅr soviel Programm...
+(In TGAScale steckt mehr, als man zunÑchst vermuten mag. Die komplette
+lineare Antialiasing-Interpolation wurde in 80286-Assembler mit Integer-
+Arithmetik geschrieben. Zur Beschleunigung der Ein/Ausgabe wurde eine
+zweistufige Schreib-Pufferung implementiert, ebenfalls in Assembler.)
+
+Allgemeine Hinweise zu den Targa-Tools findet man in der Datei
+JPGINDEX.DOK.
+
+Per aspera ad astra!
+      - Olli -
+
+-----------------------------------------------------------------------------
+Oliver Fromme, Klingestr. 2, 3380 Goslar, Germany
+        (nach dem 1.7.1993: 38640 Goslar, Germany)
+Internet email: inof@asterix.rz.tu-clausthal.de
+-----------------------------------------------------------------------------
+Windws is grt fr cmmunictns!

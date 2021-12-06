@@ -1,0 +1,40 @@
+Persistence of Vision Raytracer Version 2.0
+--------------------------------------------
+These are the level 3 example scene files for use with the Persistence
+of Vision Raytracer version 2.0.
+
+To use the POV-Ray ray tracer, you also need POVDOC.ZIP for documentation,
+and an executable for your computer. See the file POVINFO.TXT for
+more information.
+
+These files should be available from the same source from where
+you received this file.
+------------------------------------------------------------------------
+
+
+Files and directories contained in LEVEL3 sub-directory
+-------------------------------------------------------
+CHESS.POV     <- Ville Saari's Complete CSG Chess Board
+DESK.POV      <- Tom Price's Complete office desk with stuff
+LAMP.POV      <- Jorge Arreguin/AAC's Luxo Lamp
+LEVEL3.CAT    <- This description file
+OAK2.POV      <- Dan Farmer's Study in Oak Wood Texturing
+SNACK.POV     <- Tom Price's Quick Snack, POV-Style
+TAKEOFF.POV   <- David Mason's Buck Rogers style rocket
+TOMB.POV      <- Drew Wells' classic Halloween crypt scene
+WEALTH.POV    <- Tom Price - Mo Money, Mo Money, Mo Money!
+WG6.POV       <- Dan Farmer's re-worked Wine Glass and Chessboard
+DRUMS2/       <- (dir) Dan Farmer's Drum Set
+FISH13/       <- (dir) Mike Miller's Fish Out of Water
+IONIC5/       <- (dir) Mike Miller's Stone Panther/Serpent
+NTREAL/       <- (dir) Drew Wells' Not A Trace of Reality
+PENCIL/       <- (dir)
+PENCIL.POV    <- Jorge Arreguin/AAC/DKB Pencil
+FPENCIL.POV   <- Jorge Arreguin/AAC/DKB Pencil w/focal blur
+PIECE2/       <- (dir) Truman Brown's A Piece in the Woild Museum
+PIECE3/       <- (dir) Truman Brown's A Piece in the Woild Museum
+SNAIL/        <- (dir) Dan Farmer's (?) Snail
+TEAPOT/
+TEAPOT.POV    <- The classic Newell/Blinn/Enzmann Utah Teapot in Bezier
+TEAPOT.INC       patches.
+

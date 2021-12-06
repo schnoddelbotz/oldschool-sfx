@@ -1,0 +1,27 @@
+To get QPV/386 working for your graphics card, follow these steps:
+
+ 1. Run the setup utility by typing 'SETUP'.  Select your graphics card from
+    the list that is displayed.
+
+ 2. You should then browse through the configuration file QPV.CFG which
+    has been created/modified by the setup utility.  Read the comments and
+    check if everything looks okay.  (The configuration file is located in
+    C:\QPV/386 if you run QPV/386 from a non-writeable media, for example
+    from a CD-ROM.)
+
+ 3. Run QPV/386 by typing 'QPV/386'.  Try viewing images using different
+    video modes.  If everything works fine, sit back and relax.
+
+Some Hints:
+
+ - Some questions about configuring QPV/386 are discussed in the FAQ.DOC
+   file.  Please read it if you have problems configuring QPV/386.
+
+ - If you can't get a video driver to work, try to select VESA.
+   If your VGA BIOS hasn't embedded VESA compatibility, you have to install
+   a VESA BIOS extension (VBE) before starting QPV/386.  Most graphics cards
+   come with a VESA VBE/TSR (please refer to your card's manual).
+   Please read the file FAQ.DOC for more information about VESA.
+
+ - Experienced programmers can write their own video drivers.  Please read
+   the file DRVSRC\DRV.DOC for more information.

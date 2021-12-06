@@ -1,0 +1,378 @@
+This is a list of changes from previous versions (latest changes last).
+If you're new to QPV/386, please read QPV.DOC.
+
+Missing versions were only internal revisions, distributed only to a very
+small number of people, or revisions with a small number of changes.
+
+Versions prior to 0.5b were beta versions, released only to a small number
+of people.
+
+QPV/386 0.5b
+~~~~~~~~~~~~
+   First official release.  I still call it beta, since some drivers are
+   not tested and may not work.
+
+QPV/386 1.0c
+~~~~~~~~~~~~
+   * No beta version, but not a final release either.  I guess there will
+     never be a "final" release.
+   * Added support for Yh1v1 upsampled color images.  Suggested by Tom Lane
+     (IJG).  QPV/386 should now be able to view any JFIF compliant JPEG file,
+     and even some non-JFIF files.
+   * Switching back to text mode on exit now restores the same mode that was
+     used before starting QPV/386.  Suggested by Lutz Kotoll.
+   * Added GIF support.  Suggested by thousands of users :-)
+   * Added TBH logo.  Suggested by me :-)
+   * Added ability to delete and copy files.  Also suggested by many users.
+   * If the preview's height is smaller than 61 pixels, its size is doubled.
+     In other words, pictures with an original height of more than 480 are
+     scaled down by a factor of 8, otherwise by a factor of 4.
+   * The executable (QPV.EXE) is smaller.
+   * Added ability to switch greyscaled display on/off ('$' key).
+   * Added dithering routines for hicolor modes.  Now hicolor looks
+     almost like truecolor.
+   * Added initialization file (QPV.INI) for user changeable defaults:
+      - video mode
+      - file information on/off
+      - preview on/off
+      - beeps on/off
+      - hicolor dithering on/off
+      - greyscaled display on/off
+     Most of these settings can be changed within QPV/386.
+   * Fixed problems when viewing greyscaled images in hicolor or truecolor
+     modes.
+   * Fixed preview code which caused errors on some VGAs.  The preview
+     should now work on _ANY_ VGA graphics card.
+   * Changed ATI driver.  I'm not sure if it's fixed, since I can't test it.
+   * Fixed VESA driver.
+   * New driver for DELL S3 graphics cards.  Thanks to Lenny Lim!
+     (If it doesn't work, try the VESA driver.)
+
+QPV/386 1.0d
+~~~~~~~~~~~~
+   * QPV/386 now works with the VESA driver (both needed to be fixed).
+   * Changed the ATI driver (once again).
+   * English and German documentation.
+
+QPV/386 1.0e
+~~~~~~~~~~~~
+   * Driver for Diamond SpeedStar 24X.  Thanks to Jan van Loenen!
+   * Driver for NCR 77C22 chipset.  Thanks to Peter van Sebille!
+   * The executable (QPV.EXE) is considerably smaller.
+
+QPV/386 1.0f
+~~~~~~~~~~~~
+   * Doesn't lock up anymore on corrupt JPEG files.
+   * Slightly improved accuracy (this fixes a bug that caused a checkerboard
+     texture on extremely bright areas).
+   * Supports interlaced GIF files.
+   * Supports Adobe Photoshop JPEG file format (non-JFIF).
+
+QPV/386 1.1c
+~~~~~~~~~~~~
+   * Changed directory structure:
+     directory ENGLISH for English documentation, directory DEUTSCH
+     for German documentation.
+   * QPV/386 FAQ.
+   * Fixed NCR configuration.
+
+QPV/386 1.2d
+~~~~~~~~~~~~
+   * Changed registration system.
+   * Changed status window.  Press F1 for help.
+   * Fixed bug (blank screen when zooming very fast).
+   * Fixed bug in Cirrus driver file for 1280x1024x16 mode.
+     Thanks to Ben Jos Walbeehm!
+   * Driver for Realtek chipset.  Thanks to Christopher L. Tumber!
+   * Supports 64K hicolor modes (16 bit) using 65536 colors.
+   * Option for automatic video mode selection (depending on the image size),
+     see QPV.INI for details.
+
+QPV/386 1.2e
+~~~~~~~~~~~~
+   * Fixed bug (white areas occured when decoding high quality JPEG images).
+   * Fixed bug (QPV/386 didn't recognize write protected GIF files, for
+     example on CD ROMs).
+   * You can select images with the space key (tagging), then use shift+enter
+     to view the selected images only.
+
+QPV/386 1.2f
+~~~~~~~~~~~~
+   * Tagging bug fixed.
+   * Targa files are recognized (but not displayed yet).
+   * Truecolor modes (16M) work now with Diamond Viper and VESATRUE.CFG.
+   * Various bugs in the documentation fixed.
+   * There's a QPV/386 support BBS for fidonet and modem, see QPV.DOC.
+
+QPV/386 1.3c
+~~~~~~~~~~~~
+   * Displays Targa (TGA) files!  It supports:
+      - truecolor TGA, greyscaled/monochrome TGA and TGA with palette,
+      - uncompressed TGA and rle (run length encoded) compressed TGA,
+      - any TGA type can be displayed in any video mode (just like JPEGs),
+      - TGA display is   F A S T !
+   * Increased maximum number of video modes from 25 to 40.
+   * Total rewrite of the general graphics routines, adding new formats
+     (PCX, BMP, PBM/PNM etc) is now much easier.
+   * Mouse support!  Your mouse driver must be Microsoft compatible.
+     If you have a Genius mouse driver, it should be at least version 9.06,
+     otherwise you'll have to disable mouse support (see QPV.INI).
+   * Supports up to three mouse buttons.
+   * Freely configurable mouse buttons:  the mouse buttons can be programmed
+     to do anything which can be done with the keyboard.  See QPV.INI.
+   * Changed AUTO_MODE options in QPV.INI.
+   * The video driver (*.DRV) needn't be copied to the QPV/386 directory
+     anymore.
+   * Fixed truecolor mode with Diamond Viper (once again).
+   * Fixed another truecolor bug (VESA configuration) which caused previously
+     displayed images not to be cleared correctly.
+   * Now you can specify a drive or directory on the command line, and
+     QPV/386 will start up in that directory.
+   * QPV/386 gives the following error levels for command line viewing:
+      -  0 : ok (no error),
+      -  5 : at least one file is no valid graphics file,
+      - 20 : fatal error, e.g. unknown command line option, error in
+             configuration file etc.
+     Those error levels can be used for batch file processing.
+   * You can use Shift+Del to delete all tagged files at once.
+   * You can use Shift+Inst to copy all tagged files at once.
+   * Another ATI driver (ATI-3.DRV) for ATI VGA Wonder 18800.
+     Thanks to Yaron Keren!
+   * Fixed several bugs.
+
+QPV/386 1.3f
+~~~~~~~~~~~~
+   * Fixed sccolling bug.
+   * Updated documentation.
+   * The Diamond Viper / VESATRUE combination definitely works now.
+   * Fixed bug which caused the second image to be distorted when
+     using the VESATRUE configuration.
+   * Driver for Tseng Labs ET4000-W32, supports up to 4 Mb of video memory.
+     Thanks to German c't Magazine!
+   * /K command line option causes QPV/386 to exit immediately without
+     clearing the graphics screen.  Mainly for use in batch files.  Works
+     only in the registered version (because the shareware reminder must be
+     displayed in text mode).
+   * /C command line option just clears the screen and switches back to
+     text mode.  Pretty much the same as 'MODE CO80'.  Mainly for recovering
+     from a previously used /K option.
+   * Fixed bug:  TGA display with RGB truecolor graphics cards.
+   * Fixed bug:  Enter key didn't view next image if "file info" was
+     switched off.
+   * You're now able to tag non-image files.
+   * You can use your mouse to pan across images.
+   * More detailed memory information in the status window.
+
+QPV/386 1.3j
+~~~~~~~~~~~~
+   * Doesn't lock up anymore on corrupt GIF files.
+   * Fixed some bugs related to mouse control.
+   * Supports PCX images with 1, 4 or 8 bit, or 24 bit truecolor.
+   * Supports BMP images (Windows format compressed and uncompressed,
+     standard OS/2 format and multi image OS/2 format) with 1, 4 and 8 bit,
+     and 24 bit truecolor.
+   * QPV/386 also detects and uses a 486 processor.
+     Note:  a 486DLC (by Cyrix) is not a real 486, but an improved 386.
+   * Driver for Compaq graphics cards based on QVision/AVGA chipsets
+     (not yet tested).
+   * Now you can still use the cursor keys if Maus_Follow=On in QPV.INI.
+   * Fixed bug related to image rebuild.
+
+QPV/386 1.3n
+~~~~~~~~~~~~
+   * New install program (English and German) which hopefully works now.
+   * Fixed scrolling bug (only affected commandline viewing).
+   * You can't change to non-existant drives anymore.
+   * New keyboard functions:
+      - 'A'-'Z' and '0'-'9' move the cursor bar to the next file which starts
+        with that letter or digit.
+      - To change to another drive, hold down the shift key and press the
+        corresponding drive letter ('A'-'Z').
+   * More features for QPV.INI:
+      - Pan_Immediately=On/Off
+        Affects behaviour of panning (if you have a slow machine, it's
+        recommended to switch this option on).
+      - Pan_Step_X/Y=...
+        Selects the step size for panning, either in pixels or in
+        percent of current screen size.
+      - Sort_Order=...
+        Sort order for directory listing.
+      - File_Filter=...
+        File masks for directory listing (by default '*.*').
+     For detailed information please refer to QPV.INI.
+
+QPV/386 1.4a
+~~~~~~~~~~~~
+   * Driver for Ahead graphics cards based on Ahead chipsets (A or B)
+     (not yet tested).
+   * Fixed several problems in configuration files (not yet tested).
+   * Now gives a warning message if you try to delete a read-only file.
+   * Now you can assign the key '+' to a mouse button, e.g.:
+        View_Mouse_Button_Left=+   #(in QPV.INI file)
+   * New key functions while viewing an image:
+      'I' Display informationen about the image (name, type, size).
+      'R' Refresh the display and clear any text.
+   * More features for QPV.INI:
+      - View_While_Loading=On/Off
+        On:  The image is displayed while it's being loaded (like previous
+             versions).
+        Off: The image is displayed when loading is completed, till then
+             the previous image is kept on the screen.
+      - Fit_To_Screen=On/Off
+        On:  If an image is larger than the screen, it's shrunk to the size
+             of the screen.
+        Off: Images are not shrunk.  Therefore very large images may not fit
+             on the screen completely, thus making it necessary to pan/scroll
+             using the mouse or the cursor keys.
+      - Image_Description=...
+        You can specify which information to display while an image is
+        loaded.  For more information please refer to QPV.INI.
+   * New command line option:
+        /Iname
+     'name' specifies the filename of an initialization file (including drive
+     and directory if necessary).  If this option is not present, QPV/386
+     uses the file QPV.INI which is in the same directory like
+     QPV.EXE (just like previous versions).
+
+QPV/386 1.4d
+~~~~~~~~~~~~
+   * Available now:  QPV/386 on MO disk (magneto optical, format 3.5", 128 Mb
+     capacity).  The remaining disk space is filled with lots of images
+     (more than 1,000 images of different kinds).  See REGISTER.FOR.
+     If you have special wishes, please tell me.  I may be able to help you
+     due to my large image archive.
+   * Also available:  QPV/386 and images on streamer tape (type DC 2120,
+     format QIC-80).
+   * Fixed bug in VESATRUE (only occured with truecolor modes on cards using
+     4 bytes per pixel).
+   * Fixed bug with "View_While_Loading=Off".
+   * Some optimizations for Pentium processors.
+   * PicDex interface, i.e. QPV/386 can read and process PicDex' index files
+     (*.IDX).  See PICDEX.DOC.
+
+QPV/386 1.4e
+~~~~~~~~~~~~
+   * Command line option for slideshow mode:
+        /Ssecs
+     turns on slideshow mode.  Each image is displayed for 'secs' seconds,
+     then the next one is loaded.  If 'secs' is omitted (i.e. '/S' only),
+     each image is displayed for 10 seconds (like '/S10').
+   * Command line option for script files:
+        /@name
+     takes image file names from the file 'name' and displayes them, just
+     as if they were specified directly on the command line.  You can use
+     several '/@' commands on the command line.
+   * Fixed bug with incorrectly stored monochrome PCX files.
+
+QPV/386 1.5a
+~~~~~~~~~~~~
+   * Fixed Ahead driver, should work now.  In case it still doesn't work,
+     there's a special Ahead B driver which definitely works (tested).
+   * New driver for Chips&Technologies cards.  Not tested.
+   * Command line option /n (select graphics mode) works again.
+   * New features for QPV.INI:
+      - Interface_256_Colors=On/Off
+        Off: Use graphics mode 640x480 with 16 colors for user interface
+             (directory screen), just like previous versions (greyscaled).
+        On:  Use  graphics mode 640x480 with 256 colors for user interface
+             (directory screen), which is more colorful.  Also fixes some
+             problems with mouse pointers in 16 color modes.
+      - File_Exclude=...
+        The opposite of 'File_Filter'.  You can specify which files not to
+        display in the directory listing.
+      - Create_Descriptions=On/Off
+        Specify if QPV/386 should use DESCRIPT.ION files to store
+        information.  See QPV.INI for more information.  'On' is
+        recommended.
+   * Support for 4DOS/NDOS description files (DESCRIPT.ION):
+      - If there are any descriptions, they're displayed in the right hand
+        window, provided that 'File info' is switched on.
+      - Press Alt-E to edit an existing description, or to create a new
+        description.  There is a maximum of 200 characters per description,
+        though QPV/386 only displays the first 39 characters.
+     Note:  You needn't have 4DOS/NDOS to be able to use that feature.
+
+QPV/386 1.5b
+~~~~~~~~~~~~
+   * Updated documentation.  The program itself has not been changed.
+   * New:  official support BBS in the U.S.A., see UPDATES.DOC.
+
+QPV/386 1.5e
+~~~~~~~~~~~~
+   * Minor changes and bug fixes
+   * New official support BBS in the U.S.A., see UPDATES.DOC.
+   * New configuration file for V7 Spea Mercury.  Thanks to Michael Seewald!
+   * New VESATEST utility which checks for VESA support, VESA version and
+     supported VESA modes.
+   * It is now possible to specify multiple INI files ("/I" option).
+   * QPV/386 now doesn't create DESCRIPT.ION files if there are no graphics
+     files in the respective directory.  Description files are created and
+     updated only in one of the following cases:
+      - There's already a description file.
+      - There's at least one graphics file.
+     In either case, QPV/386 creates them only if "Create_Descriptions=On".
+     Existing description files are always updated if necessary, regardless
+     of the "Create_Descriptions" setting in the QPV.INI file.
+   * Fixed serious bug with BMP and RLE files.
+   * Fixed code for Pentium (586) detection.
+   * New graphics format:  IFF/ILBM.  Supports 1 to 8 and 24 bit images,
+     uncompressed and ByteRun-1 compressed.  Also supports PBM files created
+     by Deluxe Paint II enhanced.  Due to lack of test images there's
+     currently no support for HAM and other Amiga specific modes.
+
+QPV/386 1.6a
+~~~~~~~~~~~~
+   * Fixed bug which caused the PC to lock up on empty disks/partitions.
+   * QPV.INI will always be loaded, even if other INI files are specified
+     on the command line.  You can force QPV/386 not to load QPV.INI with
+     the command line option "/I-".
+   * You needn't use QPV.CFG as configuration file anymore.  There are
+     two possibilities to specify a different file:
+      - With this entry in one of the INI files which are loaded:
+           CFG=filename
+      - With this command line option:
+           /Ffilename
+     If you use both, then only the command line option will be recognized.
+     The extension ".CFG" can be omitted.  If no directory is explicitly
+     specified, then the file is first searched for in the directory which
+     holds QPV.EXE, then in the subdirectory "CFG".
+   * DOS shell:  Alt-D (currently in the directory listing only).
+   * You can (temporarily) jump to another image by pressing the 'F' key
+     when viewing an image.  Then enter the file name (+ extension), or
+     press the Esc key to cancel.
+   * New driver and configuration file for "Video 7 VRAM II".
+     Thanks to Kosmas Einbrodt!
+   * Completely new JPEG decoding routines.  About 25% faster on 486, about
+     45% faster on Pentium.  The QPV.DAT and TBHGLOGO.RLE files aren't
+     needed anymore (you can delete them if they still exist).
+   * "F" key (load image by file name) now works when QPV/386 has been
+     invoked without file selection screen.
+   * Supports PNM image file format (PBM, PGM, PPM).
+   * Supports Photo-CD (PCD) image file format!
+   * Supports the new PNG ("ping") format.
+
+QPV/386 1.6c
+~~~~~~~~~~~~
+   * A new name:  "Quick Picture Viewer" (QPV).
+   * The DOS shell finally works now!
+   * Options window which enables you to change some of the settings of the
+     QPV.INI file while QPV/386 is running.  Press Alt-O while the directory
+     listing is displayed to invoke the options window.
+   * QPV's support for PNG files ("ping") now fully complies with the
+     recommendations of the PNG specification (draft #9, 7-March-1995),
+     including interlacing, alpha and transparency.
+   * The PNG support has been optimized considerably:
+     QPV now displays PNG images faster than GIF images!
+
+   IMPORTANT REMARK:
+     I recommend that everybody who has got GIF files to convert them to
+     the PNG format.  PNG files are displayed faster, and they take up
+     less space on your hard disk.
+
+
+My to-do list is still long, so I will keep on developing and enhancing.
+Send any bug reports, comments, wishes, ideas etc to me.
+
+But please note that I am a student, and that QPV/386 is not my full-time
+job.  Unfortunately I can't spend as much time on enhancing QPV/386 as
+I'd like to do.  It's all a matter of time.

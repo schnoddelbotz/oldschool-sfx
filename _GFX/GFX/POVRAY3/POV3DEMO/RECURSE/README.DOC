@@ -1,0 +1,8 @@
+This directory contains some variations on the theme of a Menger sponge.  The
+implementations are recursive to an arbitrary depth.  This is done by having
+a file #include itself.  The different implementations demonstrate tradeoffs
+between parsing and rendering times, code size and corresponding speeds, and
+ways of modeling the sponge.
+
+Steve Demlow
+Jan. 1996

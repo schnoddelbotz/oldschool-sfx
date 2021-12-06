@@ -1,0 +1,243 @@
+Description to PVLITE   V2.50  01.95 W. Wiedmann
+------------------------------------------------
+
+1.What PVLITE is able to do:
+----------------------------
+
+PVLITE is used to display Images with different File formats on a
+AT-compatible machine. PV also played animationfiles and it supports
+all common color graphic adapters. It automaticaly recognizes the following
+imagefiles:
+
+- JPG         Baseline JPEG 8R8.
+- TIF         IBM and Macintosh, image processing and DTP like Pagemaker
+              Designer, Photostyler.
+- TGA         Targa supporting software.
+- PCX         Paintbrush and other paint software.
+- PIC         PcPaint, Pictor.
+- SCx,RIX     Colorix, Winrix,  RIX demo Present.
+- CUT         Dr Halo, Halovision, some scanners.
+- LBM,IFF     Deluxe Paint both IBM and Commodore.
+- GIF         Autodesk Animator, VPIC, VGIF, CSHOW, GWS and others.
+- BMP,RLE,DIB Windows 3.0,3.1 and OS/2.
+- IMG,DTA     Kontron image analysis, ZEISS DSM-series of digital microscopes.
+- PCD         Kodak Photo CD Base format 768x512 and 512x768.
+- CVP         Passport image photo unit (Canon) 512x512 24Bps.
+- JPG,JIF     Baseline JPEG 9R6 (Image Alchemy 1.0-1.5), Lossless JPEG.
+- JTF         TIFF with JPEG compression.
+- CEG         Edsun Continuous Edge Graphics (Modes d, f).
+- GEM-IMG,XIMG   GEM and Ventura Publisher up to 24Bps, Atari ST.
+- MSP         MS-Paint, Windows 2.0.
+- MAC         Macintosh-Paint.
+- PIC         Macintosh PICT in 1,2,4,8,24 BPS.
+- WPG         Raster graphic files from Word Perfect.
+- ICO         Windows Icons.
+- PMC         A4TECH Scanner.
+- SFI         SIS Framegrabber.
+- EPS         Encapsulated Postscript with raster data.
+- RAS         Sun raster file uncompressed.
+- VI          Jovian.
+- DCX         FAX Multiple PCC File Format.
+- FX*,FAX,QFX,BFX,
+  RIC,WFX,XFX FAX -formats CCITT Group 3   
+- IM          KO-23 satellite with 109 Block error correction.
+- SGF         Starwriter by Star Divison Hamburg
+- SAT         Eumetsat Wettersatellitenbild (BTXSAT Austria)
+- SCR         Word capture
+- CDR,CCH     Corel draw Icon
+- SKD         Autosketch Icon
+- RAW
+- PNM         UNIX Portable Bitmap 1,8,24 Bps (Jef Poskanzer).
+- ACB,BBM     IFF Brushes and ACBM Files.
+- DAT         Framegrabber Video 1000/2000  Fricke/Berlin.
+- FRM         Echolab
+- FLM         Uncompressed files from the Screenmachine  FAST-Electronic.
+- VM          files from a Videomachine  FAST-Electronic.
+- ART         First Publisher ART
+- BSG         Fontasy
+- PCP         Atari
+- TPI         Turbo Pascal
+
+- AVI         Video for Windows until 320x200x8Bps RLE too, 160x120x16/24 Bps
+- FLI         Autodesk Animator FLIC's run in realtime. Quickfli, Aaplay.
+- FLC         Autodesk Animator Pro FLIC's.
+- FLX         Animator FLIC's with Hicolor (Hicolor VESA VGA required)
+- ANI         The first image of IFF animation files.
+- DL          DL animations run in realtime.
+- GL          Sequential overview of the images included in GRASP files.
+
+- TXT,DOC,BAT,HLP   Text files and block graphics are shown in a size 128x54.
+- ANS         ANSI 80x25
+- MOD         Amiga music files can be played on PC-Speaker or Soundblaster.
+              For Soundblaster there must be a 'SET BLASTER=' command in
+              the autoexec.bat (The MOD Player is based on a PD OBJ file by
+              Marc Cox)
+
+
+2. Requirements
+----------------
+You need an AT compatible computer with an EGA, VGA, SuperVGA or 8514/A 
+compatible graphic adapter. Your computer should have a hard disk and at least
+512KB RAM. 
+sizes.
+PVLITE supports SuperVGA with ATI, Paradise, Ahead, Video7, OAK, Chip & 
+Technology, ET3000/4000 and Trident 8900 chipsets in nearly all resolutions
+up to 1024x768x256.
+PVLITE is generally successful in detecting the chipset, but you can also use
+command line parameters to configure PVLITE to the display functions.
+PVLITE works with very large images up to 10240x10240. It shows an overview or
+extracts a section if the image can not be completely displayed.
+All VGA's are supported by two special resolutions 360x512x256 and 720x512x16.
+VGA's with the new VESA conventions are supported via the VESA-calls.
+8514/A, Tiga and XGA often offer a AI interface. If it is installed it is
+automatically supported.
+The CEG-multicolor DSP is supported for the use with CEG images but you can
+also display and convert them even without this feature.     
+ATI ULTRA 2MB with MACH32 Chip is supported with 32768 colors and 65536 colors
+(5-6-5 mode) and truecolor.
+The HiColor RAM DAC is supported with 32768 color mode for the use with any
+image that contains more than 256 colors.
+
+
+3. Configuring the graphic adapter
+---------------------------------- 
+If PVLITE is called without parameters, it tries to find the adapter installed in
+your system. If this does not work reliably, you have to call PVLITE with command
+line parameters. The parameter that defines the type of adapter must be the
+last one:
+
+$10000 = ATI,  $20000 = VIDEO7,   $30000 = ET3000,  $40000 = ET4000,
+$50000 = PARADISE(WD),  $60000 = TRIDENT8900,  $70000 = AHEADB,
+$80000 = CHIP&TECH,  $90000 = OAK,   $A0000 = AHEADA,  $B0000 = EVEREX,
+$C0000 = VESA,  $D0000 = Genoa,   $E0000 = NCR,   $F0000 = Realtek.
+
+If you don't know your type or if the display does not show correct images,
+you can try the parameter $C0000 for VESA. This allows type independent
+access if your VGA supports the VESA interface. You might have to load a
+TSR utility like VESA.COM from your VGA disk before you start PV.
+
+PVLITE automatically supports the following resolutions on VGA's with 512kb/1Mb
+Video RAM:
+
+-  640x480x256
+-  800x600x256
+- 1024x768x256/16
+
+PVLITE chooses the appropriate resolution but you can also force a resolution by
+toggling the 'X' key. The resolution is displayed in the last line of the
+menu. If you want to add any other mode you just have to add the function
+number to the last parameter (remember it's a HEX code!). You can find it in
+your VGA reference manual.
+
+ eg    PVLITE /e $10065  or  PVLITE $65       = 1024x768x16 with older ATI Wonder's
+       PVLITE $nn6f02                         = VIDEO7 Mode nn
+       PVLITE /x /e $30                       = ET4000/3000 1024x768x16
+The parameter /e stands for 16 color modes.
+
+If PVLITE does not find the mode it tries 360x512x256 for color images or
+720x512x16 for monochrome images.
+You can force these modes by adding $f2 or $f3 to the command line.
+
+This should run on all VGA's but not on EGA. In this case try PVLITE /x $12 for
+640x480x16, PVLITE /x $10 for 640x350x16, PVLITE /x $13 for 320x200x256, or any
+function number listed in the adapter's manual.
+
+The parameter /x means that PVLITE uses that mode only if required.
+Eg : PVLITE /x $65  - this is for older ATI-Wonders that have the function $65 for
+1024x768x16. The default for PVLITE is $55 for newer ATI Wonders.
+If PVLITE does not find the $55 mode it then calls $65 from the command line.
+Be sure you give a valid function number. Otherwise PVLITE ignores your input,
+and automatically switches to conversion mode.
+
+- 8514/A, TIGA and XGA are supported if the AI is loaded (HDILOAD, 8514AI,..).
+Work stations and graphic adapters with 1MB & TIGA often offer a 8514/A 
+emulation. If you use it you will have 640x480x256 and 1024x768x256 display
+modes. You can select them using the command line parameters $17f or $27f.
+
+- 1280x1024x16/256 and 1600x1280x16/256 are provided but not tested yet.
+If your adapter supports such resolutions try out the mode by using the
+command line parameter. If you use the AI you can try $37f, $47f .. $f7f.
+
+- Truecolor, Hicolor
+  ATI Ultra with Mach32 and 2MB are supported in the 'ATI VGA Auto' mode with
+  16,8 Mio. and Hicolor (65536) automatically in the following resolutions:
+  640x480x24Bit, 800x600x24Bit, 1024x768x16Bit.
+
+  VGA's with VESA1.0 Hicolor Modes (65536, 32768) do not have unique
+  function numbers. If you know the number of the function you can use
+  it by calling PVLITE with that number (e.g. PVLITE /x $117  with ATI, PVLITE /x $302
+  with  Diamond Stealth). VGA's with VESA1.2 should work fine without adaptions.
+
+
+
+4. Commandlineoptions
+----------------------
+  PVLITE [Path[Name.ext]] [-k /o /h /p] [$nn (VGA-Mode)]');
+  -k = shortens the delay befor the image is displayed.
+  /p = no coloroptimizing. Images with more than 256 colors are normaly reduced
+       to a optimum set of colors with 256 color VGA's. This takes a lot of time.
+       but the result is better. If you prefer a faster output and a primitive
+       display quality take /p.
+  /o = disables the usage of Hicolormodes.
+  $nn  is the last parameter and it defines the VGA type or forces the VGA mode.
+
+
+5. Installation, Registration
+-------------------------------
+The registered version shows the Name of the User.
+
+The shareware-version makes additional waits with big images.
+And it may not be used comecialy witout registration.
+
+The registered user should inform in the Ultraforce BBS or via FIDO to new
+versions. I do not send automatically updates. please order them.
+If you wish I can include Functions and imageformats
+(it depends of the amount, it may be you pay the additional developments).
+
+
+   PVLITE   [ ]  DM30,-
+
+
+   Wolfgang Wiedmann
+   Rechbergweg 4
+   73457 Essingen
+   Germany
+   07365-1419  (nach 17 Uhr oder am Wochenende)
+
+- the newest shareware is available at Ultraforce BBS :
+
+  Line 1   : 0(049)7361-44117
+  Line 2   : 0(049)7361-45309
+  Login    : Gast
+  Password : Gast
+
+  FidoNet 2:2487/3108 (Magic PV)
+
+
+6. Trademarks , Disclaimer
+
+All other products or services mentioned, including:
+Western Digital, MS-DOS, Silicon Graphics, FLIC, PCX, TIFF, AI, HAM, BMP, DIB,
+IBM, Macintosh, Pagemaker, Designer, Photostyler, Targa, Paintbrush, PcPaint,
+Pictor, Colorix, Winrix, RIX, Dr Halo, Halovision, Deluxe Paint, Commodore,
+Autodesk, VPIC, VGIF, CSHOW, GWS, Windows, OS/2, Edsun Continuous Edge
+Graphics, GEM, Ventura Publisher, MS-Paint, Word Perfect, A4TECH, SIS,
+Encapsulated Postscript, Sun, UNIX, Fricke, Sreenmachine, FAST-Electronik,
+Kontron, Zeiss, GRASP, Turbo Pascal, AT, EGA, VGA, SuperVGA, 8514/A, ATI,
+Paradise, Ahead, Video7-, OAK, Chip&Technology, ET3000/4000, Trident8900,
+VESA, Tiga, XGA, CEG, HiColor, JPG2GIF, GIF2JPG, Handmade Software, HSI,
+GIF87a, GIF89a, CompuServe, Atari, Huffman, LZW, PICIO, SGI, Image Alchemy,
+VTCOMPRESS, Stemmer, HDILOAD, ATI Wonder, Everex, Kodak, Corel.. are trademarks,
+registered trademarks, or service marks of their respective companies or
+organizations.
+
+I offer no warranty of any kind, either expressed or implied, including
+but not limited to implied warranties of merchantability and fitness for a
+particular purpose.
+
+I am not liable for any errors contained herein or for incidental or
+consequential damages in connection with the furnishing, performance, or use
+of the PVLITE.EXE product or documentation.
+
+Before delivery, each disc is scanned for viruses.
+

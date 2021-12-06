@@ -1,0 +1,6 @@
+Bitte lesen Sie die Datei JPGINDEX.DOK. Sie enthÑlt alles, was Sie Åber
+JPGINDEX wissen mÅssen. Alle anderen Textdateien sollten Sie sich nur dann
+ansehen, wenn Sie die begleitenden Programme TGASCALE, TGAMERGE und TGAWRITE
+auch einzeln verwenden mîchten (normalerweise werden sie von JPGINDEX
+verwendet, und dies ist auch der einzige Grund, warum sie in diesem Paket
+enthalten sind).

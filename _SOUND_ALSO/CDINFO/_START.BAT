@@ -1,1 +1,0 @@
-cdinfo.exe -h -t

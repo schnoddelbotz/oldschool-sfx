@@ -1,0 +1,101 @@
+                         xm-2>wav 1.06 by digisnap
+                         =========================
+
+Warning:
+--------
+IF YOU DON'T USE THIS PROGRAM AT YOUR OWN RISK,
+YOU ARE NOT ALLOWED TO USE IT !!!
+You may copy it freely.
+
+Features:
+---------
+-Converts XM's to 16 bit stereo WAV's
+-High compatibility to FT2
+-Anti click algorithm
+-Four point (spline) interpolation to reduce sampling artifacts
+-NEW: Envelope interpolation
+-Built-in player for GUS, IW, SB and AWE
+-Dumb Memory Management system (DMM) for GUS, IW and AWE
+ (plays instead of complaining or crashing :-)
+
+Usage:
+------
+xm2wav [parameters]
+
+General parameters:
+xmname.xm          : XM-name, wildcarts possible (default: *.xm)
+-vx                : Amplification (1 - 32, default: 12, FT2 compatible)
+Convert parameters:
+-c                 : Convert (high quality)
+-cf                : Fast convert (less quality)
+-rx                : Convert rate (8000 - 48000, default: 44100)
+Play parameters:
+-8                 : SB16 : play in 8 bit mode
+-m                 : SB16, SBPro : play mono 8 bit
+-h                 : SB: play with halve mixing rate
+-1                 : SB: play in DSP 1.xx mode
+-o                 : AWE: play in SB mode, IW: play in GUS mode (old mode)
+
+Examples:
+---------
+xm2wav -c -r48000       : Convert all XM's in current directory with 48kHz
+xm2wav strangle.xm -cf  : Convert strangle.xm in fast mode
+xm2wav strangle.xm -v16 : Play strangle.xm louder than default
+
+Comments:
+---------
+A long time there was no xm to wav converter available with the quality
+needed to burn xm's on cd-rom. This is why I made this one. Thanks go to
+Jeroen Tel for strangle.xm, which was the best xm to test the quality of
+the converter. But finally FT 2.08 came out with a really good diskwriter.
+It nearly makes this converter obsolete, but it does not contain spline
+interpolation. So I continue to keep my converter up to date. The FT 2
+diskwriter also made it possible to find out the correct formula for
+converting the panning into a right/left volume. I also added and improved
+the envelope interpolation. If there are set volume commands, FT 2 misses
+to interpolate the envelope. This feature also works on slide commands
+like Axx.
+
+The fast mode (-cf) uses the SB16 mixing routine while converting. It only
+provides the anti click algorithm.
+
+Make sure that the xm to convert does not contain an endless pattern loop.
+
+SBPro: stereo can be reversed
+AWE: the effects engine is not initialized by the player
+     the -vx option does not have any effect
+
+Two effects are missing: set glissando control and set finetune.
+Just tell me if you need them.
+
+Hints for optimal use of your memory on the IW (GUS-PNP): If you have two
+memory modules of different size insert the bigger one into the first slot.
+If you have at least one 4M module and your card has 512k on-board, don't
+forget to change the jumper setting.
+
+ 256k and 1M modules             at least one 4M module
+
+ --------- edge                  --------- edge
+   :8:88                           8:8::
+
+With no RAM on-board don't change the jumpers.
+
+Contact:
+--------
+If something seems buggy or if you have any suggestions, please mail:
+digisnap@cs.tu-berlin.de.
+
+History:
+--------
+1.06   [12.09.97]   Little internal change
+1.05   [05.09.97]   New panning formula for more compatibility with FT2,
+                    Envelope interpolation, parameter for mixing rate,
+                    Special case porta bug fixed
+1.04   [24.08.97]   GUS/IW/AWE: Resampling if out of memory,
+                    New memory detect routine for GUS and IW,
+                    Fixed end command (F00)
+1.03   [22.06.97]   AWE support, some compatibility parameters
+1.02   [24.05.97]   Four point interpolation optional, wildcarts fixed
+1.01   [17.05.97]   Four point interpolation
+1.00   [12.05.97]   Volume parameter (-vx)
+0.00                Developing of the converter from my intro-player.
